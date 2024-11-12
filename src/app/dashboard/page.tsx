@@ -10,5 +10,5 @@ export default function Home() {
               height={20}
             /> */
   }
-  return <></>;
+  return <>This is the dashboard</>;
 }

@@ -14,6 +14,36 @@
   }
 }
 
+@layer base {
+   h1 {
+    @apply text-4xl leading-[60px] font-semibold font-mono text-primary;
+  }
+   h2 {
+    @apply text-3xl font-semibold font-mono text-primary;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold font-mono text-primary;
+  }
+
+  p {
+    @apply text-base text-primaryBlack font-mono;
+  }
+
+  span {
+    @apply text-sm text-gray-500;
+  }
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
