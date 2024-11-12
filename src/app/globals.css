@@ -35,6 +35,23 @@
   }
 }
 
+.custom-dropdown .ant-select-selector {
+  @apply rounded-lg border border-blue-500 shadow-md;
+  /* Tailwind CSS classes for rounded border, custom border color, and shadow */
+}
+
+.custom-dropdown .ant-select-selector:hover {
+  @apply border-blue-700; /* Hover border color */
+}
+
+.custom-dropdown .ant-select-item-option-selected {
+  @apply bg-pink-200 text-pink-500; /* Selected option background and text color */
+}
+
+.custom-dropdown .ant-select-item-option-active {
+  @apply bg-blue-100; /* Hover background color for options */
+}
+
 
 
 input:-webkit-autofill,

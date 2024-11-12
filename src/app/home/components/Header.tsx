@@ -1,6 +1,6 @@
 import CustomButton from "@/app/component/CustomButton";
 import CustomInput from "@/app/component/CustomInput";
-import { Button, Input, Space } from "antd";
+import { Button, Input, Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import React from "react";
 
@@ -14,13 +14,361 @@ type Tabsprops = {
 const Header = ({}: Props) => {
   const tabs = [
     { name: "Home", id: 1 },
-    { name: "Grants", id: 2, options: ["Options"] },
-    { name: "Guarantors", id: 3, options: ["Options"] },
-    { name: "Consultation", id: 4, options: ["Options"] },
-    { name: "Pricing", id: 5, options: ["Options"] },
-    { name: "resources", id: 6, options: ["Options"] },
-    { name: "Services", id: 7, options: ["Options"] },
-    { name: "About", id: 8, options: ["Options"] },
+    {
+      name: "Grants",
+      id: 2,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Grants For NGO
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.aliyun.com"
+            >
+              Grants for Individuals
+            </a>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Grants for Organizations
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              className=""
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Grants Application
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "Guarantors",
+      id: 3,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Become a Grantor/Donor
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.aliyun.com"
+            >
+              Benefits of Partnering with us
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "Consultation",
+      id: 4,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Become a consultant
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.aliyun.com"
+            >
+              Request a consultant
+            </a>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              FAQ About Consultation
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Testimonial from consultations
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Our Consultants Profile
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "Pricing",
+      id: 5,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Subdcription Plans
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Grants Writing Plans
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "resources",
+      id: 6,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Blog/Articles
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Grants Writing Guides
+            </a>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Templates & Tools
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Webinars and Workshops
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Frequently Asked Questions
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "Services",
+      id: 7,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Grant Writing Assistance
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Grant Research & Identification
+            </a>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Proposal reviews & Feedback
+            </a>
+          ),
+        },
+        {
+          key: "4",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Training & Worshops
+            </a>
+          ),
+        },
+        {
+          key: "5",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Consultation
+            </a>
+          ),
+        },
+      ],
+    },
+    {
+      name: "About",
+      id: 8,
+      options: [
+        {
+          key: "1",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.antgroup.com"
+            >
+              Our Mission and Vision
+            </a>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Meet the Team
+            </a>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              // href="https://www.luohanacademy.com"
+            >
+              Contact Information
+            </a>
+          ),
+        },
+      ],
+    },
     ,
   ];
 
@@ -91,21 +439,42 @@ const Header = ({}: Props) => {
 
       {/* Down */}
       <div className="bg-primary w-full flex items-center justify-between py-4 px-16">
-        {tabs?.map((tab) => (
-          <div key={tab?.id} className="flex items-center ">
-            <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
-              {tab?.name}
-            </p>
-            {tab?.options && (
-              <Image
-                className=""
-                src="/dropdownWhite.svg"
-                alt="Grant Logo"
-                width={15}
-                height={10}
-              />
+        {tabs?.map(({ name, id, options }: any) => (
+          <>
+            {options ? (
+              <Dropdown menu={{ items: options }} placement="bottom">
+                <div key={id} className="flex items-center ">
+                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
+                    {name}
+                  </p>
+                  {options && (
+                    <Image
+                      className=""
+                      src="/dropdownWhite.svg"
+                      alt="Grant Logo"
+                      width={15}
+                      height={10}
+                    />
+                  )}
+                </div>
+              </Dropdown>
+            ) : (
+              <div key={id} className="flex items-center ">
+                <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
+                  {name}
+                </p>
+                {options && (
+                  <Image
+                    className=""
+                    src="/dropdownWhite.svg"
+                    alt="Grant Logo"
+                    width={15}
+                    height={10}
+                  />
+                )}
+              </div>
             )}
-          </div>
+          </>
         ))}
         <div className="rounded-[10px] bg-white flex items-center justify-between w-[123px] p-2 ">
           <Image

@@ -4,13 +4,23 @@ import React from "react";
 type Props = {};
 type imageProps = {
   image: string;
+  name: string;
+  title: string;
 };
 
 const Experts = (props: Props) => {
   const ImageContainer = (data: imageProps) => {
     return (
-      <div className="w-[273px] m-4 h-[400px] rounded-[20px] ">
-        <img src={data.image} className="object-contain w-full h-full" />
+      <div className="">
+        <div className="w-[273px] m-4 h-[400px] rounded-[20px] ">
+          <img src={data.image} className="object-contain w-full h-full" />
+        </div>
+        <div className="w-full">
+          <h3 className="text-center">{data.name}</h3>
+          <p className=" text-borderColor text-[14px] leading-[16px] text-center ">
+            {data.title}
+          </p>
+        </div>
       </div>
     );
   };
@@ -31,18 +41,42 @@ const Experts = (props: Props) => {
       <div className="flex items-center justify-around px-24 ">
         {/* Left */}
         <div className="">
-          <ImageContainer image="/expert1.svg" />
+          <ImageContainer
+            name="PAUL SMITH"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert1.svg"
+          />
         </div>
         {/* Middle */}
         <div className="flex flex-wrap items-center justify-center w-[50%]">
-          <ImageContainer image="/expert2.svg" />
-          <ImageContainer image="/expert3.svg" />
-          <ImageContainer image="/expert4.svg" />
-          <ImageContainer image="/expert5.svg" />
+          <ImageContainer
+            name="ALICE BROOKLYN"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert2.svg"
+          />
+          <ImageContainer
+            name="BROWN KIGAI"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert3.svg"
+          />
+          <ImageContainer
+            name="WILLIAM BUTT"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert4.svg"
+          />
+          <ImageContainer
+            name="JANE DOE"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert5.svg"
+          />
         </div>
         {/* right */}
         <div className="">
-          <ImageContainer image="/expert6.svg" />
+          <ImageContainer
+            name="JAMES RWANDA"
+            title="Grant Consultant |Individual Advisor"
+            image="/expert6.svg"
+          />
         </div>
       </div>
 
