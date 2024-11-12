@@ -9,9 +9,7 @@ type Props = {};
 const GeneralSignup = (props: Props) => {
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
-      <h3 className="w-full">
-        Signup
-      </h3>
+      <h3 className="w-full">Signup</h3>
 
       <form className="mt-4 w-full">
         <CustomInput label="Full Name" inputType="input" type="text" value="" />
@@ -46,7 +44,7 @@ const GeneralSignup = (props: Props) => {
         <div className="mt-8">
           <CustomButton
             title="Sign up with Google"
-            IconLeft
+            IconLeft="/google.svg"
             textColor="text-secondaryTextColor"
             backgrounColor="bg-white"
             borderColor="border-borderColor"

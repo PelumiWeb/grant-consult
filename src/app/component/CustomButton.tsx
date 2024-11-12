@@ -4,7 +4,7 @@ import React, { MouseEvent } from "react";
 type Props = {
   title: string;
   loading?: boolean;
-  IconLeft?: boolean;
+  IconLeft?: string;
   textColor?: string;
   backgrounColor?: string;
   borderColor?: string;
@@ -44,7 +44,7 @@ const CustomButton = ({
       }  flex items-center justify-center p-4 ${
         radius ? radius : "rounded-[10px]"
       }   text-center text-white font-mono cursor-pointer`}>
-      {IconLeft && <img src="/google.svg" className="mr-2" />}
+      {IconLeft && <img src={IconLeft}className="mr-2" />}
       <p className={`${textColor ? textColor : "text-white"} `}>{title}</p>
     </button>
   );

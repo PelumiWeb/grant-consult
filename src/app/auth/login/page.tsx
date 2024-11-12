@@ -45,7 +45,7 @@ const Login = (props: Props) => {
         <div className="mt-8">
           <CustomButton
             title="Sign in with Google"
-            IconLeft
+            IconLeft="/google.svg"
             textColor="text-secondaryTextColor"
             backgrounColor="bg-white"
             borderColor="border-borderColor"

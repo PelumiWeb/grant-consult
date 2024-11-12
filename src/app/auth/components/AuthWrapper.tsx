@@ -9,7 +9,7 @@ type Props = {};
 const AuthWrapper = (props: Props) => {
   return (
     <section className=" fixed bottom-0 left-0 w-screen h-screen flex justify-center ">
-        {/* Left */}
+      {/* Left */}
       <div
         className="w-[45%] h-screen flex  px-4 flex-col justify-start items-start py-8 bg-backgroundColor
 ] relative">
@@ -82,7 +82,7 @@ const AuthWrapper = (props: Props) => {
           <div className="mt-8">
             <CustomButton
               title="Sign in with Google"
-              IconLeft
+              IconLeft="/google.svg"
               textColor="text-secondaryTextColor"
               backgrounColor="bg-white"
               borderColor="border-borderColor"

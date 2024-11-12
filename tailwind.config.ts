@@ -22,7 +22,8 @@ const config: Config = {
         'card': '0px 4px 15px -5px rgba(0, 0, 0, 0.5)',
         'grant-card': '0px 4px 4px 0px #00000040',
         'subscription-card': '0px 1.77px 22.08px 0px #00000040',
-        'testimony-card': "0px 4px 38px 0px #00000040"
+        'testimony-card': "0px 4px 38px 0px #00000040",
+        'related-news-card': "0px 4.46px 27.85px 0px #00000040"
       },
       colors: {
         background: "var(--background)",
@@ -40,7 +41,8 @@ const config: Config = {
         weekly: "#B632FD",
         // monthly: "",
         quaterly: "#15AE0BCC",
-        yearly: "#F9C03B"
+        yearly: "#F9C03B",
+        textColor: "#6E6E6E"
         
       },
       
