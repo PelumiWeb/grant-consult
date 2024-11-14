@@ -190,7 +190,7 @@ export default function Home() {
               <CustomButton title="Complete Payment" width="w-[431px]" />
             </div>
 
-            <p className="text-borderColor text-center leading-[23px] py-4">
+            <p className="text-borderColor text-center leading-[23px] py-4 w-[431px]">
               By confirming your subscription, you allow Grantsconsult to charge
               you for future payments in accordance with their terms. You can
               always cancel your subscription.{" "}

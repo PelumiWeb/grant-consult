@@ -15,6 +15,10 @@ const config: Config = {
         'footer': "url('/footerImage.svg')",
         "subscription": "url('/subscription.svg')",
         'linearGradient': 'linear-gradient(180deg, #FD32B2 0%, #F2D4E7 100%)',
+        'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",
+        'silver': "linear-gradient(90deg, #A19FA3 29.5%, rgba(255, 255, 255, 0.7) 100%)",
+        'gold': "linear-gradient(90deg, #C55001 0%, #FCF99C 100%)",
+        'platinum': "linear-gradient(90deg, #D289A1 0%, #EE632A 100%)"
       },
     extend: {
        boxShadow: {
@@ -23,7 +27,8 @@ const config: Config = {
         'grant-card': '0px 4px 4px 0px #00000040',
         'subscription-card': '0px 1.77px 22.08px 0px #00000040',
         'testimony-card': "0px 4px 38px 0px #00000040",
-        'related-news-card': "0px 4.46px 27.85px 0px #00000040"
+        'related-news-card': "0px 4.46px 27.85px 0px #00000040",
+        'grant-service-card': "0px 2px 25.01px 0px #00000040"
       },
       colors: {
         background: "var(--background)",
