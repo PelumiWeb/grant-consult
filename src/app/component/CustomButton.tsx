@@ -43,7 +43,7 @@ const CustomButton = ({
         borderColor ? borderColor : "border-none"
       }  flex items-center justify-center p-4 ${
         radius ? radius : "rounded-[10px]"
-      }   text-center text-white font-mono cursor-pointer`}>
+      }   text-center text-white font-mono cursor-pointer `}>
       {IconLeft && <img src={IconLeft}className="mr-2" />}
       <p className={`${textColor ? textColor : "text-white"} `}>{title}</p>
     </button>
