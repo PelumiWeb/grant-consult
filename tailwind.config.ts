@@ -18,7 +18,9 @@ const config: Config = {
         'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",
         'silver': "linear-gradient(90deg, #A19FA3 29.5%, rgba(255, 255, 255, 0.7) 100%)",
         'gold': "linear-gradient(90deg, #C55001 0%, #FCF99C 100%)",
-        'platinum': "linear-gradient(90deg, #D289A1 0%, #EE632A 100%)"
+        'platinum': "linear-gradient(90deg, #D289A1 0%, #EE632A 100%)",
+        'consultantTitle': "linear-gradient(90deg, #27AE60 0%, #104828 100%)",
+        'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)"
       },
     extend: {
        boxShadow: {
@@ -47,7 +49,8 @@ const config: Config = {
         // monthly: "",
         quaterly: "#15AE0BCC",
         yearly: "#F9C03B",
-        textColor: "#6E6E6E"
+        textColor: "#6E6E6E",
+        boderConsultant: "#6E6E6E1A"
         
       },
       
