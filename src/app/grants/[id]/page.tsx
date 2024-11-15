@@ -4,6 +4,7 @@ import Image from "next/image";
 import CustomInput from "../../component/CustomInput";
 import CustomButton from "../../component/CustomButton";
 import GrantCard from "../components/GrantCardMore";
+import FilterComponent from "@/app/component/FilterComponent";
 
 export default function Grants() {
   return (
@@ -23,38 +24,7 @@ export default function Grants() {
           </p>
         </div>
         {/* Filter Options */}
-        <div className="py-4 flex items-center justify-between w-full bg-backgroundColor px-16 mt-8">
-          <CustomInput
-            width="w-[250px]"
-            type="text"
-            placeholder="Select Country"
-            inputType="text"
-            label="Select Country"
-            value=""
-          />
-          <CustomInput
-            width="w-[250px]"
-            type="text"
-            placeholder="Grant Category"
-            inputType="text"
-            label="Grant Category"
-            value=""
-          />
-
-          <CustomInput
-            width="w-[250px]"
-            type="text"
-            placeholder="Grant Size"
-            inputType="text"
-            label="Grant Size"
-            value=""
-          />
-          <div className="flex items-center justify-center w-[78px] h-[47px] bg-primary rounded-[10px]">
-            <img src="/searchgrant.svg" className="object-contain" />
-          </div>
-
-          <p className="text-secondaryColor ">Advanced Search</p>
-        </div>
+       <FilterComponent />
       </div>
 
       {/* Grants Cards */}
