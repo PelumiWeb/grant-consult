@@ -1,5 +1,5 @@
-import CustomButton from "@/app/component/CustomButton";
-import CustomInput from "@/app/component/CustomInput";
+import CustomButton from "@/app/components/CustomButton";
+import CustomInput from "@/app/components/CustomInput";
 import { Button, Input, Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import React from "react";

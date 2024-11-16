@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../../component/CustomInput";
+import CustomInput from "../../../components/CustomInput";
 import { Checkbox } from "antd";
-import CustomButton from "../../../component/CustomButton";
+import CustomButton from "../../../components/CustomButton";
 
 type Props = {};
 

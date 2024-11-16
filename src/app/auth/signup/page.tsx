@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../component/CustomInput";
+import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
-import CustomButton from "../../component/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import GeneralSignup from "./components/GeneralUser";
 import Consultant from "./components/Consultant";
 import Grantor from "./components/Grantor";

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import CustomButton from "../../component/CustomButton";
-import GrantFunder from "../../home/components/GrantFunder";
+import CustomButton from "../../components/CustomButton";
+import GrantFunder from "../../components/GrantFunder";
 import InputComponent from "../component/InputComponent";
 import ConsultantComponent from "../component/ConsultantComponent";
 

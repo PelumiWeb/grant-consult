@@ -1,6 +1,6 @@
 "use client";
 
-import CustomButton from "@/app/component/CustomButton";
+import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

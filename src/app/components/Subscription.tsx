@@ -1,5 +1,5 @@
-import CustomButton from "@/app/component/CustomButton";
-import SubscriptionCard from "@/app/component/SubscriptionCard";
+import CustomButton from "@/app/components/CustomButton";
+import SubscriptionCard from "@/app/components/SubscriptionCard";
 import React from "react";
 
 type Props = {};
@@ -12,7 +12,6 @@ type Cardprops = {
 };
 
 const Subscription = (props: Props) => {
-  
   return (
     <div className="w-full h-[800px] px-16">
       <h1 className="text-center mb-16">Choose a Subscription Plan</h1>

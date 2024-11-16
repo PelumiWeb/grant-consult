@@ -1,4 +1,4 @@
-import CustomButton from "@/app/component/CustomButton";
+import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 
 type Props = {};

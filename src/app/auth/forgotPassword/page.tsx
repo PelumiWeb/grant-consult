@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../component/CustomInput";
+import CustomInput from "../../components/CustomInput";
 import { Checkbox, Input } from "antd";
-import CustomButton from "../../component/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
 
 type Props = {};
@@ -37,7 +37,9 @@ const CreateNewPassword = (props: Props) => {
           <div className="w-full flex items-center justify-center">
             <CustomButton title="Create New Password" width="w-[220px]" />
           </div>
-          <p className="text-secondaryColor200 text-center cursor-pointer py-2 hover:underline">Back to Sign in</p>
+          <p className="text-secondaryColor200 text-center cursor-pointer py-2 hover:underline">
+            Back to Sign in
+          </p>
         </form>
       </div>
     </div>

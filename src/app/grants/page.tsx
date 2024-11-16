@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import CustomInput from "../component/CustomInput";
-import CustomButton from "../component/CustomButton";
+import CustomInput from "../components/CustomInput";
+import CustomButton from "../components/CustomButton";
 import GrantCard from "./components/GrantCard";
-import FilterComponent from "../component/FilterComponent";
+import FilterComponent from "../components/FilterComponent";
 
 export default function Home() {
   return (

@@ -1,12 +1,7 @@
 "use client";
-
-import Image from "next/image";
-import CustomInput from "../component/CustomInput";
-import CustomButton from "../component/CustomButton";
-import SubscriptionCard from "../component/SubscriptionCard";
-import GrantFunder from "../home/components/GrantFunder";
 import Faq from "../subscription/components.tsx/Faq";
 import GrantService from "./component/GrantService";
+import GrantFunder from "../components/GrantFunder";
 
 export default function Home() {
   return (

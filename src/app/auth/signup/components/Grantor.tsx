@@ -1,17 +1,15 @@
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../../component/CustomInput";
+import CustomInput from "../../../components/CustomInput";
 import { Checkbox } from "antd";
-import CustomButton from "../../../component/CustomButton";
+import CustomButton from "../../../components/CustomButton";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%]">
-      <h3 className="w-full">
-        Sign up Donor/GRANTOR
-      </h3>
+      <h3 className="w-full">Sign up Donor/GRANTOR</h3>
 
       <form className="mt-8 w-full">
         <CustomInput label="Full Name" inputType="input" type="text" value="" />

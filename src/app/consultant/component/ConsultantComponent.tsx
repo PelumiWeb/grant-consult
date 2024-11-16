@@ -1,12 +1,11 @@
-import CustomButton from "@/app/component/CustomButton";
+import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 import { CalendarOutlined } from "@ant-design/icons";
-
 
 type Props = {};
 const ConsultantComponent = (props: Props) => {
   return (
-    <div className="m-8"> 
+    <div className="m-8">
       <div className="relative h-[320px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
         {/* Image container */}
         <div className=" absolute top-12 w-[130px] h-[130px] rounded-full">
@@ -50,7 +49,6 @@ const ConsultantComponent = (props: Props) => {
           backgrounColor="bg-white"
           borderColor="border-buttonPrimary"
           textColor="text-buttonPrimary"
-         
         />
       </div>
       <div className="my-4">

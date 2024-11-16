@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import CustomInput from "../component/CustomInput";
-import CustomButton from "../component/CustomButton";
-import SubscriptionCard from "../component/SubscriptionCard";
-import GrantFunder from "../home/components/GrantFunder";
+import CustomInput from "../components/CustomInput";
+import CustomButton from "../components/CustomButton";
+import SubscriptionCard from "../components/SubscriptionCard";
+import GrantFunder from "../components/GrantFunder";
 import Faq from "../subscription/components.tsx/Faq";
 import InputComponent from "./component/InputComponent";
 import ConsultantComponent from "./component/ConsultantComponent";
-import FilterComponent from "../component/FilterComponent";
+import FilterComponent from "../components/FilterComponent";
 import { Pagination } from "antd";
 
 export default function Home() {

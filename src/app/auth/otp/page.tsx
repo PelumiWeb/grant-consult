@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../component/CustomInput";
+import CustomInput from "../../components/CustomInput";
 import { Checkbox, Input } from "antd";
-import CustomButton from "../../component/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
 
 type Props = {};

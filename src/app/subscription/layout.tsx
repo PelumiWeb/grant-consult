@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
-import Header from "../home/components/Header";
-import Footer from "../home/components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function SubscriptionLayout({
   children,

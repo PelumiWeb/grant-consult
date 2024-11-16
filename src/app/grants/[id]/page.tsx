@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import CustomInput from "../../component/CustomInput";
-import CustomButton from "../../component/CustomButton";
+import CustomInput from "../../components/CustomInput";
+import CustomButton from "../../components/CustomButton";
 import GrantCard from "../components/GrantCardMore";
-import FilterComponent from "@/app/component/FilterComponent";
+import FilterComponent from "@/app/components/FilterComponent";
 
 export default function Grants() {
   return (
@@ -24,7 +24,7 @@ export default function Grants() {
           </p>
         </div>
         {/* Filter Options */}
-       <FilterComponent />
+        <FilterComponent />
       </div>
 
       {/* Grants Cards */}
