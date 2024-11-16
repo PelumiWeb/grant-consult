@@ -42,12 +42,8 @@ export default function RootLayout({
         className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
-        <Header />
         {/* Content */}
         <div className="">{children}</div>
-
-        {children}
-        <Footer />
       </body>
     </html>
   );
