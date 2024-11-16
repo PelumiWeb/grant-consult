@@ -59,9 +59,8 @@ const ConsultantComponent = (props: Props) => {
           backgrounColor="bg-white"
           borderColor="border-borderColor"
           textColor="text-borderColor"
-          iconRight=""
-          iconPosition="end"
-          icon={<CalendarOutlined style={{ fontSize: "16px" }} />}
+          iconRight="/calendar.svg"
+       
         />
       </div>
     </div>

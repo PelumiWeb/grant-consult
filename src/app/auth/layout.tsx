@@ -48,7 +48,7 @@ export default function AuthLayout({
           </div>
         </div>
         {/* Content */}
-        <div className="w-[55%] rounded-xl border-gray-500 bg-white  rounded-tl-xl rounded-bl-[100px]">
+        <div className="w-[55%]  border-gray-500 bg-white  ">
           {children}
         </div>
       </section>

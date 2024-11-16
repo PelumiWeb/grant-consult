@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, ConfigProvider } from "antd";
 import React, { MouseEvent, ReactNode } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
@@ -16,8 +16,6 @@ type Props = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   radius?: string;
   iconRight?: string;
-  icon?: ReactNode | Icon | null;
-  iconPosition?: "start" | "end" | undefined;
 };
 
 const CustomButton = ({
@@ -25,35 +23,30 @@ const CustomButton = ({
   loading,
   IconLeft,
   textColor,
-  backgrounColor,
-  borderColor,
-  width,
-  height,
+  backgrounColor = "bg-buttonPrimary",
+  borderColor = "border-none",
+  width = "w-[640px]",
+  height = "h-full",
   onClick,
-  radius,
+  radius = "rounded-[10px]",
   iconRight,
-  icon,
-  iconPosition="start"
 }: Props) => {
   // bg-gradient-to-b from-[#FD32B2] to-[#F2D4E7]
   // bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
 
   return (
-    <Button
-      icon={icon && (icon as React.ReactNode)}
-      iconPosition={iconPosition}
+    <button
+      // icon={icon && (icon as React.ReactNode)}
+      // iconPosition={iconPosition}
       onClick={onClick}
       className={`
-        ${backgrounColor ? backgrounColor : "bg-buttonPrimary"} 
-         ${width ? width : "w-[640px]"} ${height ? height : "h-full"} border ${
-        borderColor ? borderColor : "border-none"
-      }  flex items-center justify-center p-4 ${
-        radius ? radius : "rounded-[10px]"
-      }   text-center text-white font-mono cursor-pointer `}>
+        ${backgrounColor} 
+         ${width} ${height} border ${borderColor}  flex items-center justify-center p-4 ${radius}   text-center text-white font-mono cursor-pointer 
+           `}>
       {IconLeft && <img src={IconLeft} className="mr-2" />}
       <p className={`${textColor ? textColor : "text-white"} `}>{title}</p>
-      {iconRight && iconRight}
-    </Button>
+      {iconRight && <img src={iconRight} className="ml-2" />}
+    </button>
   );
 };
 
