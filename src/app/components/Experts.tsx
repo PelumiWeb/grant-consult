@@ -1,7 +1,8 @@
 "use client";
 import CustomButton from "@/app/components/CustomButton";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { MouseEventHandler } from "react";
+import CustomModal from "./Modal";
 
 type Props = {};
 type imageProps = {
@@ -12,9 +13,14 @@ type imageProps = {
 
 const Experts = (props: Props) => {
   const router = useRouter();
+  const [open, setOpen] = React.useState(false)
+  const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
+    // console.log("Div clicked!", event);
+    setOpen(true)
+  };
   const ImageContainer = (data: imageProps) => {
     return (
-      <div className="">
+      <div className="" onClick={handleClick}>
         <div className="w-[273px] m-4 h-[400px] rounded-[20px] ">
           <img src={data.image} className="object-contain w-full h-full" />
         </div>
@@ -91,6 +97,9 @@ const Experts = (props: Props) => {
           title="Meet Our Consultant"
         />
       </div>
+      <CustomModal open={open} setOpen={handleClick}>
+        <div>This is the modal</div>
+      </CustomModal>
     </div>
   );
 };

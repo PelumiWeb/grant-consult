@@ -30,7 +30,7 @@ const HeroPage = (props: Props) => {
           <CustomButton
             width="w-[226px]"
             backgrounColor="bg-transparent"
-            borderColor="border-secondaryColor border-[2px] "
+            borderColor="border-secondaryColor border-[1px] "
             title="Become a consultant"
             textColor="text-secondaryColor"
             radius="rounded-[5px]"
