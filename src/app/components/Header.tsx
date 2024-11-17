@@ -1,8 +1,11 @@
+"use client";
+
 import CustomButton from "@/app/components/CustomButton";
 import CustomInput from "@/app/components/CustomInput";
 import { Button, Input, Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 type Tabsprops = {
@@ -12,8 +15,9 @@ type Tabsprops = {
 };
 
 const Header = ({}: Props) => {
+  const router = useRouter();
   const tabs = [
-    { name: "Home", id: 1 },
+    { name: "Home", id: 1, url: "/" },
     {
       name: "Grants",
       id: 2,
@@ -21,11 +25,7 @@ const Header = ({}: Props) => {
         {
           key: "1",
           label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
+            <a rel="noopener noreferrer" href="/grants">
               Grants For NGO
             </a>
           ),
@@ -34,10 +34,9 @@ const Header = ({}: Props) => {
           key: "2",
           label: (
             <a
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.aliyun.com"
-            >
+              href="/grants">
               Grants for Individuals
             </a>
           ),
@@ -121,8 +120,7 @@ const Header = ({}: Props) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.aliyun.com"
-            >
+              href="/consultant/request">
               Request a consultant
             </a>
           ),
@@ -173,11 +171,10 @@ const Header = ({}: Props) => {
           key: "1",
           label: (
             <a
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
-              Subdcription Plans
+              href="/subscription">
+              Subscription Plans
             </a>
           ),
         },
@@ -185,10 +182,9 @@ const Header = ({}: Props) => {
           key: "2",
           label: (
             <a
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
+              href="/service">
               Grants Writing Plans
             </a>
           ),
@@ -376,13 +372,15 @@ const Header = ({}: Props) => {
     <div className=" w-full">
       {/* Up */}
       <div className="flex h-[122px] px-16 items-center justify-between w-full">
-        <Image
-          className=""
-          src="/grantLogo.svg"
-          alt="Grant Logo"
-          width={206}
-          height={30}
-        />
+        <div className="cursor-pointer" onClick={() => router.push("/")}>
+          <Image
+            src="/grantLogo.svg"
+            alt="Grant Logo"
+            width={206}
+            height={30}
+          />
+        </div>
+
         {/* Input */}
         <div className="flex items-center h-[40px] w-[420px]">
           <Input
@@ -398,6 +396,8 @@ const Header = ({}: Props) => {
         <div className="flex items-center">
           {true ? (
             <CustomButton
+            
+              onClick={() => router.push("/auth/login")}
               title="Login"
               width="w-[92px]"
               backgrounColor="bg-white"
@@ -439,7 +439,7 @@ const Header = ({}: Props) => {
 
       {/* Down */}
       <div className="bg-primary w-full flex items-center justify-between py-4 px-16">
-        {tabs?.map(({ name, id, options }: any) => (
+        {tabs?.map(({ name, id, options, url }: any) => (
           <>
             {options ? (
               <Dropdown menu={{ items: options }} placement="bottom">
@@ -459,7 +459,10 @@ const Header = ({}: Props) => {
                 </div>
               </Dropdown>
             ) : (
-              <div key={id} className="flex items-center ">
+              <div
+                onClick={() => router.push(url)}
+                key={id}
+                className="flex items-center ">
                 <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
                   {name}
                 </p>

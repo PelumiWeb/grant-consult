@@ -1,4 +1,6 @@
+"use client";
 import CustomButton from "@/app/components/CustomButton";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -16,6 +18,7 @@ const GrantService = ({
   title,
   price,
 }: Props) => {
+  const router = useRouter();
   return (
     <div
       className={`relative w-[234px] h-[424px] rounded-[10px]  ${
@@ -95,6 +98,7 @@ const GrantService = ({
         className=" absolute left-4 bottom-3 w-[200px] justify-center items-center 
       ">
         <CustomButton
+          onClick={() => router.push("/payments")}
           width="w-full"
           height="h-[40px]"
           title="Subscribe Now"

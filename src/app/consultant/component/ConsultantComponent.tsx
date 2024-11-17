@@ -2,7 +2,7 @@ import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 import { CalendarOutlined } from "@ant-design/icons";
 
-type Props = {};
+type Props = { showButton : boolean};
 const ConsultantComponent = (props: Props) => {
   return (
     <div className="m-8">
@@ -41,28 +41,31 @@ const ConsultantComponent = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="my-4">
-        <CustomButton
-          title="Select Consultant"
-          width="w-[221px]"
-          height="h-[40px]"
-          backgrounColor="bg-white"
-          borderColor="border-buttonPrimary"
-          textColor="text-buttonPrimary"
-        />
-      </div>
-      <div className="my-4">
-        <CustomButton
-          title="Select Consultant"
-          width="w-[221px]"
-          height="h-[40px]"
-          backgrounColor="bg-white"
-          borderColor="border-borderColor"
-          textColor="text-borderColor"
-          iconRight="/calendar.svg"
-       
-        />
-      </div>
+      {props.showButton && (
+        <>
+          <div className="my-4">
+            <CustomButton
+              title="Select Consultant"
+              width="w-[221px]"
+              height="h-[40px]"
+              backgrounColor="bg-white"
+              borderColor="border-buttonPrimary"
+              textColor="text-buttonPrimary"
+            />
+          </div>
+          <div className="my-4">
+            <CustomButton
+              title="Select Consultant"
+              width="w-[221px]"
+              height="h-[40px]"
+              backgrounColor="bg-white"
+              borderColor="border-borderColor"
+              textColor="text-borderColor"
+              iconRight="/calendar.svg"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };

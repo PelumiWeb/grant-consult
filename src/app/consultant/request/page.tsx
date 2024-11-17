@@ -116,7 +116,7 @@ export default function Home() {
           </h3>
           <div className="flex w-full flex-wrap items-center justify-center ">
             {[1, 2, 3, 4, 5, 6].map((data) => (
-              <ConsultantComponent key={data} />
+              <ConsultantComponent showButton key={data} />
             ))}
           </div>
         </div>

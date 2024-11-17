@@ -1,4 +1,6 @@
+"use client";
 import CustomButton from "@/app/components/CustomButton";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 type Props = {};
@@ -9,6 +11,7 @@ type imageProps = {
 };
 
 const Experts = (props: Props) => {
+  const router = useRouter();
   const ImageContainer = (data: imageProps) => {
     return (
       <div className="">
@@ -82,6 +85,7 @@ const Experts = (props: Props) => {
 
       <div className="flex items-center justify-center w-full pt-16">
         <CustomButton
+          onClick={() => router.push("/consultant")}
           width="w-[325px]"
           height="h-[50px]"
           title="Meet Our Consultant"

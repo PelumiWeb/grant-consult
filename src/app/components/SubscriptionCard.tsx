@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation";
 
 type Cardprops = {
   image: string;
@@ -10,6 +12,7 @@ type Cardprops = {
 };
 
 const SubscriptionCard = (data: Cardprops) => {
+  const router = useRouter();
   return (
     <div className=" ml-4 bg-white ">
       {/* Card */}
@@ -45,6 +48,7 @@ const SubscriptionCard = (data: Cardprops) => {
         </ol>
         <div className="w-full flex items-center justify-center mt-4 cursor-pointer">
           <CustomButton
+            onClick={() => router.push("/payments")}
             width="w-[170px]"
             height="h-[35px]"
             title="Subscribe Now"

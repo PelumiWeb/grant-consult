@@ -47,7 +47,7 @@ const Signup = (props: Props) => {
               </div>
             </div>
 
-            <div className="absolute bottom-[18%] w-full flex items-center justify-center">
+            <div className="absolute bottom-[10%] w-full flex items-center justify-center">
               <CustomButton
                 onClick={() => setUserTypeSelected(true)}
                 title="Continue"

@@ -5,10 +5,12 @@ import React from "react";
 import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
 import CustomInput from "@/app/components/CustomInput";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Login = (props: Props) => {
+  const router = useRouter();
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Login</h3>
@@ -56,7 +58,11 @@ const Login = (props: Props) => {
       <div>
         <p className="text-sm underline text-center mt-4 ">
           Don't have an account?{" "}
-          <span className="text-secondaryColor">Sign up here</span>
+          <span
+            className="text-secondaryColor cursor-pointer"
+            onClick={() => router.push("/auth/signup")}>
+            Sign up here
+          </span>
         </p>
       </div>
     </div>

@@ -28,7 +28,7 @@ export default function Home() {
         <div className=" w-full flex items-center justify-center flex-wrap ">
           {[...Array(25)].map((data) => (
             <div key={data}>
-              <ConsultantComponent />
+              <ConsultantComponent showButton={false} />
             </div>
           ))}
         </div>
