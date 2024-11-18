@@ -33,7 +33,7 @@ const ConsultantComponentModal = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between w-[221px]">
         <div className="my-4">
           <CustomButton
             title="Request Consultant"
@@ -44,13 +44,14 @@ const ConsultantComponentModal = (props: Props) => {
             padding="p-0"
             radius="rounded-[5px]"
             textStyle="text-buttonPrimary text-sm text-buttonPrimary"
+            borderColor="border-buttonPrimary"
           />
         </div>
         <div className="my-4">
           <CustomButton
             title="Save"
             width="w-[70px]"
-            height="h-[40px]"
+            height="h-[39px]"
             backgrounColor="bg-backgroundColor"
             borderColor="border-[1px] border-secondaryColor"
             IconLeft="/like.svg"

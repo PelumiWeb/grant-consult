@@ -5,6 +5,9 @@ import React, { MouseEventHandler } from "react";
 import CustomModal from "./Modal";
 import ConsultantComponent from "../consultant/component/ConsultantComponent";
 import ConsultantComponentModal from "./consultantComponentModal";
+import { Progress, Flex } from "antd";
+import { PlusOutlined, StarOutlined } from "@ant-design/icons";
+import CustomModalComponent from "./CustomModalComponent";
 
 type Props = {};
 type imageProps = {
@@ -18,7 +21,8 @@ const Experts = (props: Props) => {
   const [open, setOpen] = React.useState(false);
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
     // console.log("Div clicked!", event);
-    setOpen(true);
+    console.log("yoooo");
+    setOpen((prev) => !prev);
   };
   const ImageContainer = (data: imageProps) => {
     return (
@@ -99,26 +103,8 @@ const Experts = (props: Props) => {
           title="Meet Our Consultant"
         />
       </div>
-      <CustomModal open={open} setOpen={handleClick}>
-        <div className="w-full h-[700px] bg-backgroundColor px-16">
-          <div className="w-full h-full flex justify-between items-center">
-            {/*  */}
-            <div>
-              {/* Profile */}
-              <ConsultantComponentModal showButton />
-              {/* Content  */}
-              {/* Content  */}
-            </div>
-            <div>
-              {/* Bio */}
-              {/* Experience */}
-            </div>
-            <div>
-              {/* Grants */}
-              {/* Rating */}
-            </div>
-          </div>
-        </div>
+      <CustomModal open={open} setOpen={() => setOpen(false)}>
+        <CustomModalComponent />
       </CustomModal>
     </div>
   );
