@@ -24,16 +24,16 @@ const HeroPage = (props: Props) => {
             width="w-[226px]"
             backgrounColor="bg-primary"
             title="Become a donor"
-            textColor="text-white"
             radius="rounded-[5px]"
+            textStyle="text-white"
           />
           <CustomButton
             width="w-[226px]"
             backgrounColor="bg-transparent"
             borderColor="border-secondaryColor border-[1px] "
             title="Become a consultant"
-            textColor="text-secondaryColor"
             radius="rounded-[5px]"
+            textStyle="text-secondaryColor"
           />
         </div>
       </div>

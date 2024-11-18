@@ -58,9 +58,9 @@ const GrantCardMore = (props: Props) => {
               IconLeft={"/love.svg"}
               title="Save this grant"
               backgrounColor="bg-buttonPrimary"
-              textColor="text-white"
               height="h-[40px]"
               width="w-[200px]"
+              textStyle="text-white"
             />
             <div>
               <img src="/mesage.svg" />

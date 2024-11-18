@@ -396,14 +396,13 @@ const Header = ({}: Props) => {
         <div className="flex items-center">
           {true ? (
             <CustomButton
-            
               onClick={() => router.push("/auth/login")}
               title="Login"
               width="w-[92px]"
               backgrounColor="bg-white"
-              textColor="text-buttonPrimary"
               borderColor="border-buttonPrimary"
               height="h-[40px]"
+              textStyle="text-buttonPrimary"
             />
           ) : (
             <div className="flex items-center">
@@ -440,7 +439,7 @@ const Header = ({}: Props) => {
       {/* Down */}
       <div className="bg-primary w-full flex items-center justify-between py-4 px-16">
         {tabs?.map(({ name, id, options, url }: any) => (
-          <>
+          <div key={id}>
             {options ? (
               <Dropdown menu={{ items: options }} placement="bottom">
                 <div key={id} className="flex items-center ">
@@ -477,7 +476,7 @@ const Header = ({}: Props) => {
                 )}
               </div>
             )}
-          </>
+          </div>
         ))}
         <div className="rounded-[10px] bg-white flex items-center justify-between w-[123px] p-2 ">
           <Image

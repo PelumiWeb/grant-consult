@@ -2,7 +2,7 @@ import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 import { CalendarOutlined } from "@ant-design/icons";
 
-type Props = { showButton : boolean};
+type Props = { showButton: boolean };
 const ConsultantComponent = (props: Props) => {
   return (
     <div className="m-8">
@@ -50,7 +50,7 @@ const ConsultantComponent = (props: Props) => {
               height="h-[40px]"
               backgrounColor="bg-white"
               borderColor="border-buttonPrimary"
-              textColor="text-buttonPrimary"
+              textStyle="text-buttonPrimary"
             />
           </div>
           <div className="my-4">
@@ -60,8 +60,8 @@ const ConsultantComponent = (props: Props) => {
               height="h-[40px]"
               backgrounColor="bg-white"
               borderColor="border-borderColor"
-              textColor="text-borderColor"
               iconRight="/calendar.svg"
+              textStyle="text-borderColor"
             />
           </div>
         </>

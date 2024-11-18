@@ -83,9 +83,9 @@ const AuthWrapper = (props: Props) => {
             <CustomButton
               title="Sign in with Google"
               IconLeft="/google.svg"
-              textColor="text-secondaryTextColor"
               backgrounColor="bg-white"
               borderColor="border-borderColor"
+              textStyle="text-secondaryTextColor"
             />
           </div>
         </form>

@@ -45,9 +45,9 @@ const GeneralSignup = (props: Props) => {
           <CustomButton
             title="Sign up with Google"
             IconLeft="/google.svg"
-            textColor="text-secondaryTextColor"
             backgrounColor="bg-white"
             borderColor="border-borderColor"
+            textStyle="text-secondaryTextColor"
           />
         </div>
       </form>

@@ -100,8 +100,8 @@ export default function Home() {
                 width="w-[157px]"
                 height="h-[60px]"
                 backgrounColor="bg-white"
-                textColor="text-buttonPrimary"
                 borderColor="border-buttonPrimary"
+                textStyle="text-buttonPrimary"
               />
             </div>
             {/* Consultant Matching */}

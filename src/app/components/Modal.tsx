@@ -10,13 +10,15 @@ type Props = {
 const CustomModal = ({open, setOpen, children}: Props) => {
   return (
     <Modal
-      title="Modal 1000px width"
+      // title="Modal 1000px width"
       centered
       open={open}
       footer={false}
       onOk={() => setOpen}
       onCancel={() => setOpen}
-      width={1000}>
+      width={1000}
+    //   height={1024}
+      >
    {children}
     </Modal>
   );

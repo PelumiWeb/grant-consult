@@ -55,11 +55,11 @@ const Grants = (props: Props) => {
         </h4>
         <CustomButton
           title="Read More"
-          textColor="text-buttonPrimary"
           backgrounColor="bg-white"
           borderColor="border-buttonPrimary"
           width="w-[132px]"
           height="h-[40px]"
+          textStyle="text-buttonPrimary"
         />
       </div>
     );
