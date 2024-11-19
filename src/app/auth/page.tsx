@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {}
 
-const Auth = (props: Props) => {
+const Auth = () => {
   return (
     <div>Auth</div>
   )
