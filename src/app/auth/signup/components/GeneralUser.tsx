@@ -3,10 +3,12 @@ import React from "react";
 import CustomInput from "../../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const GeneralSignup = (props: Props) => {
+  const router = useRouter()
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Signup</h3>
@@ -39,7 +41,7 @@ const GeneralSignup = (props: Props) => {
           <p className="underline text-red-500 text-sm">Forgot Password</p>
         </div>
         <div className="mt-8">
-          <CustomButton title="Signup" />
+          <CustomButton title="Signup" onClick={() => router.push("/auth/otp")} />
         </div>
         <div className="mt-8">
           <CustomButton

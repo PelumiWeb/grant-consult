@@ -3,10 +3,12 @@ import React from "react";
 import CustomInput from "../../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
+  const router = useRouter()
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Sign up Donor/GRANTOR</h3>
@@ -49,7 +51,10 @@ const Consultant = (props: Props) => {
           rightIcon
         />
         <div className="mt-4">
-          <CustomButton title="Sign up" />
+          <CustomButton
+            title="Sign up"
+            onClick={() => router.push("/auth/otp")}
+          />
         </div>
       </form>
 

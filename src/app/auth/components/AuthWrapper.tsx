@@ -3,10 +3,12 @@ import React from "react";
 import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const AuthWrapper = (props: Props) => {
+  const router = useRouter()
   return (
     <section className=" fixed bottom-0 left-0 w-screen h-screen flex justify-center ">
       {/* Left */}
@@ -77,7 +79,7 @@ const AuthWrapper = (props: Props) => {
             <p className="underline text-red-500 text-sm">Forgot Password</p>
           </div>
           <div className="mt-8">
-            <CustomButton title="Login" />
+            <CustomButton title="Login"  onClick={() => router.push("/")}/>
           </div>
           <div className="mt-8">
             <CustomButton

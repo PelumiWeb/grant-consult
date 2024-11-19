@@ -8,7 +8,7 @@ const withAuth = (Component: React.ComponentType) => {
 
     useEffect(() => {
       if (!isAuthenticated) {
-        router.replace("auth/login"); // Redirect to login page
+        // router.replace("auth/login"); // Redirect to login page
       }
     }, [isAuthenticated, router]);
 

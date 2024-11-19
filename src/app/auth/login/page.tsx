@@ -39,10 +39,14 @@ const Login = (props: Props) => {
             </p>
           </div>
 
-          <p className="underline text-red-500 text-sm">Forgot Password</p>
+          <p
+            className="underline text-red-500 text-sm cursor-pointer"
+            onClick={() => router.push("/auth/forgotPassword")}>
+            Forgot Password
+          </p>
         </div>
         <div className="mt-8">
-          <CustomButton title="Login" />
+          <CustomButton title="Login" onClick={() => router.push("/")} />
         </div>
         <div className="mt-8">
           <CustomButton
@@ -55,12 +59,13 @@ const Login = (props: Props) => {
         </div>
       </form>
 
-      <div>
+      <div className="w-[640px] -ml-20">
         <p className="text-sm underline text-center mt-4 ">
           Don't have an account?{" "}
           <span
             className="text-secondaryColor cursor-pointer"
-            onClick={() => router.push("/auth/signup")}>
+            onClick={() => router.push("/auth/signup")}
+            >
             Sign up here
           </span>
         </p>
