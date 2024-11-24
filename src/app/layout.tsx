@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import StoreProvider from "../../lib/storeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,13 +37,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${mont.variable}
+      <StoreProvider>
+        <body
+          className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
-        {/* Content */}
-        <div className="">{children}</div>
-      </body>
+          {/* Content */}
+          <div className="">{children}</div>
+        </body>
+      </StoreProvider>
     </html>
   );
 }

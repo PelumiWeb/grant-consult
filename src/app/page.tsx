@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Image } from "antd";
 import HeroPage from "./components/HeroPage";
@@ -9,10 +11,14 @@ import Testimonial from "./components/Testimonial";
 import GrantFunder from "./components/GrantFunder";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { useAppSelector } from "../../lib/hooks";
 
 type Props = {};
 
 const Home = (props: Props) => {
+  const modal = useAppSelector((state) => state.modal);
+  console.log(modal, "This is the tabs");
+
   return (
     <section className="">
       <Header />
