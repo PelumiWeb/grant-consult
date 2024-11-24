@@ -27,12 +27,14 @@ const Experts = (props: Props) => {
   const ImageContainer = (data: imageProps) => {
     return (
       <div className="" onClick={handleClick}>
-        <div className="w-[273px] m-4 h-[400px] rounded-[20px] ">
+        <div className="sm:w-[150px] md:w-[220px]  xl:w-[273px] m-4 sm:h-[350px] xl:h-[400px] rounded-[20px] ">
           <img src={data.image} className="object-contain w-full h-full" />
         </div>
         <div className="w-full">
-          <h3 className="text-center">{data.name}</h3>
-          <p className=" text-borderColor text-[14px] leading-[16px] text-center ">
+          <h3 className="text-center sm:text-[16px] md:text-[20px] xl:text-[24px]">
+            {data.name}
+          </h3>
+          <p className=" text-borderColor sm:text-[10px] md:text-[12px] xl:text-[14px] leading-[16px] text-center ">
             {data.title}
           </p>
         </div>

@@ -28,13 +28,13 @@ export default function Home() {
               <InputComponent
                 label={"First Name"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter First Name"
               />
               <InputComponent
                 label={"Last Name"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Last Name"
               />
             </div>
@@ -42,13 +42,13 @@ export default function Home() {
               <InputComponent
                 label={"Email Address"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Email Address"
               />
               <InputComponent
                 label={"Phone"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Phone Number"
               />
             </div>
@@ -56,22 +56,25 @@ export default function Home() {
               <InputComponent
                 label={"Select Consultation Type"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Consultation Type"
+                select
               />
               <InputComponent
                 label={"Select Client Category"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Phone Number"
+                select
               />
             </div>
             <div className="flex w-full items-center justify-between">
               <InputComponent
                 label={"Select Grant Company"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Grant Company"
+                select
               />
               <InputComponent
                 label={"Grant Amount (Optional)"}
@@ -84,8 +87,9 @@ export default function Home() {
               <InputComponent
                 label={"Select Contry Residence"}
                 value=""
-                required={false}
+                required={true}
                 placeholder="Enter Grant Company"
+                select
               />
               <InputComponent
                 label={"Add a Message"}

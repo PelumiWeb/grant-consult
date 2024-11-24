@@ -7,12 +7,29 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1480px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
     clipPath: {
         mypolygon: "polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1rem))",
     },
      backgroundImage: {
         'hero': "url('/hero.png')",
         'footer': "url('/footerImage.svg')",
+        "footerOverlay": "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(31, 28, 28, 0.8) 100% ",
         "subscription": "url('/subscription.svg')",
         'linearGradient': 'linear-gradient(180deg, #FD32B2 0%, #F2D4E7 100%)',
         'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",
@@ -36,6 +53,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#1F4E79",
+        errorColor: "#FF0101",
         borderColor: "#6E6E6E80",
         backgroundColor: "#F4F6F9",
         secondaryColor: "#329DFD",
@@ -50,7 +68,11 @@ const config: Config = {
         quaterly: "#15AE0BCC",
         yearly: "#F9C03B",
         textColor: "#6E6E6E",
-        boderConsultant: "#6E6E6E1A"
+        boderConsultant: "#6E6E6E1A",
+        newPrimaryTextColor: "#333333",
+        grantBlack: " #000000",
+        profileHeaderColor: "#C2C9D4B2"
+
         
       },
       

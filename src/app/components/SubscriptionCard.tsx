@@ -14,7 +14,7 @@ type Cardprops = {
 const SubscriptionCard = (data: Cardprops) => {
   const router = useRouter();
   return (
-    <div className=" ml-4 bg-white ">
+    <div className=" ml-4 bg-white mt-4">
       {/* Card */}
       <div className="relative top-0 left-0  shadow-subscription-card rounded-[8.83px] py-8 w-full ">
         <div className=" absolute top-10 -left-[47px] ">

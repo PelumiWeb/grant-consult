@@ -12,13 +12,13 @@ export default function Home() {
       {/*  */}
       <div className="bg-white">
         <div className="flex items-center justify-between w-[15%] ">
-          <p className="text-borderColor">Home</p>
+          <p className="text-textColor">Home</p>
           <p>{">>"}</p>
-          <p className="text-borderColor">View All Grants</p>
+          <p className="text-textColor">View All Grants</p>
         </div>
         <div className="flex items-center">
           <div className="h-[25px] w-[2px] bg-buttonPrimary mr-2" />
-          <p className="text-borderColor">
+          <p className="text-textColor">
             Find opportunities that suit your business, corporate and Individual
             needs
           </p>

@@ -5,7 +5,7 @@ type Props = {
   label: string;
   placeholder: string;
   value: string;
-  required: boolean;
+  required?: boolean;
   width?: string;
   height?: string;
   mr?: string;
@@ -19,9 +19,18 @@ const InputComponent = (props: Props) => {
       className={`${props.width ? props.width : "w-[267px]"} my-4 ${
         props.mr ? "mr-2" : "mr-0"
       }`}>
-      <p className="text-sm font-normal my-2">{props.label}</p>
+      <div className="flex items-center">
+        <p className="text-sm font-normal my-2">{props.label}</p>
+        {props.required && (
+          <p className="text-sm font-normal text-errorColor ml-1"> *</p>
+        )}
+      </div>
+
       {props?.select ? (
-        <Select onChange={props.onChange}>
+        <Select
+          className={`${props.height ? props.height : "h-[55px]"} w-full`}
+          placeholder={props.placeholder}
+          onChange={props.onChange}>
           <Select.Option value="sample">Sample</Select.Option>
         </Select>
       ) : (

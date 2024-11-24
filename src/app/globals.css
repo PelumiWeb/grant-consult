@@ -14,19 +14,23 @@
   }
 }
 
-
-
-
 @layer base {
-   h1 {
+  h1 {
     @apply text-4xl leading-[60px] font-semibold font-mono text-primary;
   }
-   h2 {
+
+  .responsive-class {
+    @apply px-8 xl:px-16 py-8 xl:py-16;
+  }
+  h2 {
     @apply text-3xl font-semibold font-mono text-primary;
   }
 
   h3 {
     @apply text-2xl font-semibold font-mono text-primary;
+  }
+  h4 {
+    @apply text-[24px] font-semibold font-mono text-primary leading-[24px];
   }
 
   p {
@@ -55,13 +59,11 @@
   @apply bg-blue-100; /* Hover background color for options */
 }
 
-
-
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 body {

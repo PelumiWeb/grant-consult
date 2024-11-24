@@ -13,9 +13,9 @@ type Cardprops = {
 
 const Subscription = (props: Props) => {
   return (
-    <div className="w-full h-[800px] px-16  py-16">
+    <div className="w-full h-full px-16  py-16">
       <h1 className="text-center mb-16">Choose a Subscription Plan</h1>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full flex-wrap">
         <SubscriptionCard
           price={"$0"}
           plan="7 days"

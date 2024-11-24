@@ -69,36 +69,6 @@ const Header = ({}: Props) => {
       ],
     },
     {
-      name: "Guarantors",
-      id: 3,
-      options: [
-        {
-          key: "1",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
-              Become a Grantor/Donor
-            </a>
-          ),
-        },
-        {
-          key: "2",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.aliyun.com"
-            >
-              Benefits of Partnering with us
-            </a>
-          ),
-        },
-      ],
-    },
-    {
       name: "Consultation",
       id: 4,
       options: [
@@ -191,6 +161,7 @@ const Header = ({}: Props) => {
         },
       ],
     },
+
     {
       name: "resources",
       id: 6,
@@ -324,8 +295,8 @@ const Header = ({}: Props) => {
       ],
     },
     {
-      name: "About",
-      id: 8,
+      name: "Grantors",
+      id: 3,
       options: [
         {
           key: "1",
@@ -335,7 +306,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.antgroup.com"
             >
-              Our Mission and Vision
+              Become a Grantor/Donor
             </a>
           ),
         },
@@ -345,33 +316,34 @@ const Header = ({}: Props) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
+              // href="https://www.aliyun.com"
             >
-              Meet the Team
+              Benefits of Partnering with us
             </a>
           ),
         },
         {
-          key: "3",
+          key: "2",
           label: (
             <a
               target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
+              // href="https://www.aliyun.com"
             >
-              Contact Information
+              List a grant
             </a>
           ),
         },
       ],
     },
+
     ,
   ];
 
   return (
     <div className=" w-full">
       {/* Up */}
-      <div className="flex h-[122px] px-16 items-center justify-between w-full">
+      <div className="flex h-[122px] md:px-8 xl:px-16 items-center justify-between w-full">
         <div className="cursor-pointer" onClick={() => router.push("/")}>
           <Image
             src="/grantLogo.svg"
@@ -443,7 +415,7 @@ const Header = ({}: Props) => {
             {options ? (
               <Dropdown menu={{ items: options }} placement="bottom">
                 <div key={id} className="flex items-center ">
-                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
+                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor ">
                     {name}
                   </p>
                   {options && (
@@ -451,7 +423,7 @@ const Header = ({}: Props) => {
                       className=""
                       src="/dropdownWhite.svg"
                       alt="Grant Logo"
-                      width={15}
+                      width={10}
                       height={10}
                     />
                   )}
@@ -462,17 +434,18 @@ const Header = ({}: Props) => {
                 onClick={() => router.push(url)}
                 key={id}
                 className="flex items-center ">
-                <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor">
+                <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px]">
                   {name}
                 </p>
                 {options && (
-                  <Image
-                    className=""
-                    src="/dropdownWhite.svg"
-                    alt="Grant Logo"
-                    width={15}
-                    height={10}
-                  />
+                  <div></div>
+                  // <Image
+                  //   className=""
+                  //   src="/dropdownWhite.svg"
+                  //   alt="Grant Logo"
+                  //   width={10}
+                  //   height={6}
+                  // />
                 )}
               </div>
             )}

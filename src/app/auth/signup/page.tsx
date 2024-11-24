@@ -24,13 +24,13 @@ const Signup = (props: Props) => {
     if (!userTypeSelected) {
       return (
         <div className="relative h-screen px-4">
-          <h2 className="w-full py-6 ">Sign up</h2>
+          <h2 className="w-full py-6  pl-4">Sign up</h2>
           {/*  */}
           <div>
             <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-              <h3 className="w-full ml-8 ">Select User Type</h3>
+              <h3 className="w-full ml-16 ">Select User Type</h3>
 
-              <div className="flex  w-full px-4 justify-between items-center pt-4">
+              <div className="flex  w-full px-8 justify-between items-center pt-4">
                 {userType?.map((data) => (
                   <div
                     key={data.id}

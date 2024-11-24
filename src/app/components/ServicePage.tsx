@@ -6,17 +6,17 @@ type Props = {};
 
 const ServicePage = (props: Props) => {
   return (
-    <div className="w-full flex items-start justify-between  h-full relative py-16 pb-8 px-16 bg-white ">
-      <div className="w-[30%]">
+    <div className="w-full flex items-start justify-between  h-full relative py-16 pb-8 px-16 bg-white flex-wrap">
+      <div className=" w-[30%]">
         <h1 className="mb-8">Our Services</h1>
         <h3>
           Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
           iaculis. Est mauris nisl adipiscing interdum phasellus potenti
-          vulputate nibh. Amet mauris habitant tempor sem vel enim L
+          vulputate nibh. Amet mauris habitant tempor sem vel enim
         </h3>
 
         <h3 className="mt-4">
-          orem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
+          Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
           iaculis. Est mauris nisl adipiscing interdum.
         </h3>
       </div>

@@ -9,9 +9,9 @@ import GrantFunder from "../components/GrantFunder";
 
 export default function Home() {
   return (
-    <div className="w-full px-16">
+    <div className="w-full px-16 h-full">
       {/*  */}
-      <div className="w-full">
+      <div className="w-full h-full">
         <div className=" py-16">
           <h1 className="text-center text-secondaryColor">
             Choose Your Subscription Plan
@@ -22,7 +22,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex items-center justify-between w-full">
+        <div className="flex justify-between w-full flex-wrap">
           <SubscriptionCard
             price={"$0"}
             plan="7 days"
