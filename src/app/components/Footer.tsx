@@ -19,7 +19,7 @@ function Footer({}: Props) {
           <div className="w-[628px] flex items-center">
             <Input
               placeholder="Enter Email Address"
-              className="text-sm rounded-l-[10px] w-[80%] h-[60px]"
+              className="text-sm rounded-l-[10px] w-[80%] h-[60px] rounded-r-none "
             />
             <div className="bg-secondaryGreenColor  h-[60px] w-[20%] flex items-center rounded-r-[10px]">
               <p className="ml-8 text-white text-center ">Subscribe</p>

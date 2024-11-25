@@ -42,9 +42,6 @@ const CustomButton = ({
 
   return (
     <button
-      // icon={icon && (icon as React.ReactNode)}
-      // iconPosition={iconPosition}
-    
       onClick={onClick}
       className={`
         ${backgrounColor} 

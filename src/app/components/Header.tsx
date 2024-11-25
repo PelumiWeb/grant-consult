@@ -123,9 +123,9 @@ const Header = ({}: Props) => {
           key: "4",
           label: (
             <a
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
+              href="/dashboard/"
             >
               Our Consultants Profile
             </a>

@@ -1,6 +1,6 @@
-
 import { Input, Select } from "antd";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -8,9 +8,15 @@ type Props = {
 };
 
 const DashboardHeader = (props: Props) => {
+  const router = useRouter();
+
   return (
     <div className="flex items-center justify-between sticky top-0">
-      <div className="w-[40%]">
+      <div className="w-[40%]"
+       onClick={() => router.push("/")
+        
+       }
+        >
         <img src="/grantLogo.svg" />
       </div>
 

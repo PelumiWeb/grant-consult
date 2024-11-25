@@ -4,6 +4,7 @@ import React from "react";
 import TabsComponent from "./TabsComponent";
 import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
 import { setActiveTab } from "../../../../lib/features/Tabs/tabsLice";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 type TabsProps = { imageTitle: string; image: string; textColor?: string }[];
@@ -25,10 +26,11 @@ const Sidebar = (props: Props) => {
   const [activeTabs, setActiveTabs] = React.useState("profile");
   const dispatch = useAppDispatch();
   const tabName = useAppSelector((state) => state.tab.name);
+  const router = useRouter();
 
   return (
     <div className="bg-primary h-screen w-[20%] px-8 ">
-      <div className="pb-8">
+      <div className="pb-8 mt-6" onClick={() => router.push("/")}>
         <TabsComponent
           imageTitle="Home"
           image="/home.svg"

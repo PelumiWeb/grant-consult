@@ -1,9 +1,14 @@
 import CustomButton from "@/app/components/CustomButton";
 import React from "react";
 import { CalendarOutlined } from "@ant-design/icons";
+import { useAppDispatch } from "../../../../lib/hooks";
+import { openModal } from "../../../../lib/features/Modal/modalSlice";
+import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = { showButton: boolean };
 const ConsultantComponent = (props: Props) => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className="m-8">
       <div className="relative h-[320px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
@@ -31,7 +36,18 @@ const ConsultantComponent = (props: Props) => {
             Years of Experience: 25
           </p>
 
-          <div className="absolute bottom-2 w-full flex items-center justify-center">
+          <div
+            className="absolute bottom-2 w-full flex items-center justify-center"
+            onClick={() =>
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.consultantModal,
+                })
+              ) 
+
+              // console.log("View Profile clicked")
+            }>
             <CustomButton
               title="View Profile"
               backgrounColor="bg-consultanButton"

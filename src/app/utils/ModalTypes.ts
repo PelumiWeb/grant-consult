@@ -1,6 +1,6 @@
 
 
-export type dasboardModalTypes = {
+export type ModalTypes = {
     personalData: string;
     BioData: string;
     Expertise: string;  
@@ -10,9 +10,10 @@ export type dasboardModalTypes = {
     SecureGrant: string;
     Experience: string;
     editEducation: string;
+    consultantModal: string;
 }
 
-export const modalName:dasboardModalTypes = {
+export const modalName:ModalTypes = {
     personalData: "Personal Data",
     BioData: "bio",
     Expertise: "Expertise",
@@ -22,5 +23,8 @@ export const modalName:dasboardModalTypes = {
     SecureGrant: "Secure Grant",
     Experience: "Experience",
     editEducation: "editEducation",
+    consultantModal: "consultantModal",
+
+
 
 }

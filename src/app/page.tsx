@@ -12,15 +12,15 @@ import GrantFunder from "./components/GrantFunder";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useAppSelector } from "../../lib/hooks";
+import RenderModals from "./components/RenderModals";
 
 type Props = {};
 
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
-  
 
   return (
-    <section className="">
+    <div className="">
       <Header />
       <div className="bg-backgroundColor">
         <HeroPage />
@@ -31,9 +31,9 @@ const Home = (props: Props) => {
         <Testimonial />
         <GrantFunder />
       </div>
-
+      <RenderModals />
       <Footer />
-    </section>
+    </div>
   );
 };
 

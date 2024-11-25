@@ -3,6 +3,8 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Poppins, Montserrat } from "next/font/google";
+import CustomModal from "../components/Modal";
+import CustomModalComponent from "../components/CustomModalComponent";
 
 const poppins = Poppins({
   subsets: ["latin"],

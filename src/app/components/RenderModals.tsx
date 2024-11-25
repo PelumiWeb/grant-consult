@@ -1,17 +1,18 @@
 import React from "react";
-import { useAppSelector } from "../../../../lib/hooks";
+import { useAppSelector } from "../../../lib/hooks";
 import { modalName } from "@/app/utils/ModalTypes";
-import BioModal from "./Modals/BioModal";
-import PersonalData from "./Modals/PersonalData";
-import EditExpertise from "./Modals/EditExpertise";
-import AvailableTimes from "./Modals/AvailableTimesModal";
+import BioModal from "../dashboard/components/Modals/BioModal";
+import PersonalData from "../dashboard/components/Modals/PersonalData";
+import EditExpertise from "../dashboard/components/Modals/EditExpertise";
+import AvailableTimes from "../dashboard/components/Modals/AvailableTimesModal";
 
-import EditReference from "./Modals/EditReference";
-import EditResume from "./Modals/Resume";
-import SecuredGrant from "./Modals/SecureGrantmodal.tsx";
-import EditEducation from "./Modals/EditEducation";
-import EditExprience from "./Modals/EditExperience";
-
+import EditReference from "../dashboard/components/Modals/EditReference";
+import EditResume from "../dashboard/components/Modals/Resume";
+import SecuredGrant from "../dashboard/components/Modals/SecureGrantmodal.tsx";
+import EditEducation from "../dashboard/components/Modals/EditEducation";
+import EditExprience from "../dashboard/components/Modals/EditExperience";
+import ConsultantComponent from "../consultant/component/ConsultantComponent";
+import ConsultantModal from "../consultant/component/Modal/ConsultantModal";
 
 type Props = {};
 
@@ -56,6 +57,10 @@ const RenderModals = (props: Props) => {
       case modalName.personalData:
         // code block
         return <PersonalData />;
+        break;
+      case modalName.consultantModal:
+        // code block
+        return <ConsultantModal />;
         break;
 
       default:

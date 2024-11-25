@@ -8,6 +8,9 @@ import ConsultantComponentModal from "./consultantComponentModal";
 import { Progress, Flex } from "antd";
 import { PlusOutlined, StarOutlined } from "@ant-design/icons";
 import CustomModalComponent from "./CustomModalComponent";
+import { useAppDispatch } from "../../../lib/hooks";
+import { openModal } from "../../../lib/features/Modal/modalSlice";
+import { modalName } from "../utils/ModalTypes";
 
 type Props = {};
 type imageProps = {
@@ -18,11 +21,17 @@ type imageProps = {
 
 const Experts = (props: Props) => {
   const router = useRouter();
-  const [open, setOpen] = React.useState(false);
+  
+  const dispatch = useAppDispatch();
+
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
-    // console.log("Div clicked!", event);
-    console.log("yoooo");
-    setOpen((prev) => !prev);
+    dispatch(
+      openModal({
+        open: true,
+        modalType: modalName.consultantModal,
+      })
+    );
+    console.log("check the experts")
   };
   const ImageContainer = (data: imageProps) => {
     return (
@@ -105,9 +114,6 @@ const Experts = (props: Props) => {
           title="Meet Our Consultant"
         />
       </div>
-      <CustomModal open={open} setOpen={() => setOpen(false)}>
-        <CustomModalComponent />
-      </CustomModal>
     </div>
   );
 };

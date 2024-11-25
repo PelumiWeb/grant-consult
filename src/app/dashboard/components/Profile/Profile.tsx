@@ -17,7 +17,7 @@ import UploadProfile from "./components/Upload";
 import References from "./components/References";
 import CustomModal from "@/app/components/Modal";
 import LabelInput from "@/app/components/LabelInput";
-import RenderModals from "../RenderModals";
+import RenderModals from "../../../components/RenderModals";
 type Props = {};
 
 const Profile = (props: Props) => {
@@ -40,7 +40,7 @@ const Profile = (props: Props) => {
     },
   };
   return (
-    <div className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen">
+    <div className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth ">
       <DashboardHeader />
       <div className="">
         <ProfileHeader />
@@ -54,7 +54,6 @@ const Profile = (props: Props) => {
         <References />
       </div>
       <RenderModals />
-     
     </div>
   );
 };

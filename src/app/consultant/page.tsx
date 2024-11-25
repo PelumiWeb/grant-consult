@@ -9,6 +9,7 @@ import Faq from "../subscription/components.tsx/Faq";
 import ConsultantComponent from "./component/ConsultantComponent";
 import FilterComponent from "../components/FilterComponent";
 import { Pagination } from "antd";
+import RenderModals from "../components/RenderModals";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         <Pagination defaultCurrent={1} total={50} />
       </div>
       <GrantFunder />
+      <RenderModals />
     </div>
   );
 }
