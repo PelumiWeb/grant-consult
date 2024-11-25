@@ -1,4 +1,4 @@
-import InputComponent from "@/app/consultant/component/InputComponent";
+
 import { Input, Select } from "antd";
 import Image from "next/image";
 import React from "react";

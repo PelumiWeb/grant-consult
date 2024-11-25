@@ -1,8 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  openModal,
+  selectModal,
+} from "../../../../../lib/features/Modal/modalSlice";
+import { modalName } from "@/app/utils/ModalTypes";
+import { useAppDispatch } from "../../../../../lib/hooks";
 
 type Props = {};
 
 const ProfileHeader = (props: Props) => {
+  const dispatch = useAppDispatch();
   return (
     <div className="relative w-full h-[454px] flex flex-col mt-16 ">
       {/* Top */}
@@ -10,7 +18,16 @@ const ProfileHeader = (props: Props) => {
         <div className="absolute right-4 top-3 bg-white rounded-full  w-[40px] h-[40px] flex items-center justify-center ">
           <img src="/camera.svg" alt="" />
         </div>
-        <div className="absolute top-[45%] right-4 bg-backgroundColor rounded-full  w-[40px] h-[40px] flex items-center justify-center ">
+        <div
+          className="absolute top-[45%] right-4 bg-backgroundColor rounded-full  w-[40px] h-[40px] flex items-center justify-center cursor-pointer "
+          onClick={() =>
+            dispatch(
+              openModal({
+                open: true,
+                modalType: modalName.personalData,
+              })
+            )
+          }>
           <img src="/edit.svg" alt="" />
         </div>
       </div>

@@ -1,17 +1,24 @@
 import React from "react";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 
 type Props = {
     children: React.ReactNode
-    title: string
+    title: string,
+    modalType?: string
 };
 
 const ProfileComponent = (props: Props) => {
+  const dispatch = useAppDispatch()
   return (
     <div className="w-full p-8 bg-white my-8">
       {/* Header */}
       <div className="w-full flex items-center justify-between">
         <h3>{props.title}</h3>
-        <div className="bg-backgroundColor rounded-full  w-[40px] h-[40px] flex items-center justify-center ">
+        <div className="bg-backgroundColor rounded-full  w-[40px] h-[40px] flex items-center justify-center cursor-pointer" onClick={() => dispatch(openModal({
+          open:true,
+          modalType: props.modalType
+        })) }>
           <img src="/edit.svg" alt="" />
         </div>
       </div>

@@ -6,7 +6,6 @@ import CustomButton from "../components/CustomButton";
 import SubscriptionCard from "../components/SubscriptionCard";
 import GrantFunder from "../components/GrantFunder";
 import Faq from "../subscription/components.tsx/Faq";
-import InputComponent from "./component/InputComponent";
 import ConsultantComponent from "./component/ConsultantComponent";
 import FilterComponent from "../components/FilterComponent";
 import { Pagination } from "antd";

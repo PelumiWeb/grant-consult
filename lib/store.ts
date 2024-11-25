@@ -5,16 +5,18 @@ import { modalSlice } from './features/Modal/modalSlice'
 import { counterSlice } from './features/Counter/counterSlice'
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
+import { tabSlice } from './features/Tabs/tabsLice';
 
 const persistConfig = {
   key: 'root', // Key for storage
   storage, // Define where to store the data
-  whitelist: [""], // List of whitelisted files to be persisted into
+  blacklist: ["tab"], // List of
 };
 
 const rootReducer = {
   modal: modalSlice.reducer,
   counter: counterSlice.reducer,
+  tab: tabSlice.reducer,
 };
 
 const persistedReducer = persistReducer(persistConfig, combineReducers(rootReducer));

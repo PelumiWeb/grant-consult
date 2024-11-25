@@ -37,15 +37,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <StoreProvider>
-        <body
-          className={` ${mont.variable}
+      <body
+        className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
+        <StoreProvider>
           {/* Content */}
           <div className="">{children}</div>
-        </body>
-      </StoreProvider>
+        </StoreProvider>
+      </body>
     </html>
   );
 }

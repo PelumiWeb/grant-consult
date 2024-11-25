@@ -9,7 +9,7 @@ type Props = {};
 
 const Grants = (props: Props) => {
   const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
+    // console.log(currentSlide);
   };
 
   const responsive = {

@@ -17,7 +17,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
-  console.log(modal, "This is the tabs");
+  
 
   return (
     <section className="">

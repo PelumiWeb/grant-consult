@@ -3,8 +3,8 @@
 import Image from "next/image";
 import CustomButton from "../../components/CustomButton";
 import GrantFunder from "../../components/GrantFunder";
-import InputComponent from "../component/InputComponent";
 import ConsultantComponent from "../component/ConsultantComponent";
+import LabelInput from "@/app/components/LabelInput";
 
 export default function Home() {
   return (
@@ -25,13 +25,13 @@ export default function Home() {
         <div className="w-full h-full p-16 bg-white flex justify-between">
           <div className="w-[55%]">
             <div className="flex w-full items-center justify-between">
-              <InputComponent
+              <LabelInput
                 label={"First Name"}
                 value=""
                 required={true}
                 placeholder="Enter First Name"
               />
-              <InputComponent
+              <LabelInput
                 label={"Last Name"}
                 value=""
                 required={true}
@@ -39,13 +39,13 @@ export default function Home() {
               />
             </div>
             <div className="flex w-full items-center justify-between">
-              <InputComponent
+              <LabelInput
                 label={"Email Address"}
                 value=""
                 required={true}
                 placeholder="Enter Email Address"
               />
-              <InputComponent
+              <LabelInput
                 label={"Phone"}
                 value=""
                 required={true}
@@ -53,14 +53,14 @@ export default function Home() {
               />
             </div>
             <div className="flex w-full items-center justify-between">
-              <InputComponent
+              <LabelInput
                 label={"Select Consultation Type"}
                 value=""
                 required={true}
                 placeholder="Enter Consultation Type"
                 select
               />
-              <InputComponent
+              <LabelInput
                 label={"Select Client Category"}
                 value=""
                 required={true}
@@ -69,14 +69,14 @@ export default function Home() {
               />
             </div>
             <div className="flex w-full items-center justify-between">
-              <InputComponent
+              <LabelInput
                 label={"Select Grant Company"}
                 value=""
                 required={true}
                 placeholder="Enter Grant Company"
                 select
               />
-              <InputComponent
+              <LabelInput
                 label={"Grant Amount (Optional)"}
                 value=""
                 required={false}
@@ -84,14 +84,14 @@ export default function Home() {
               />
             </div>
             <div className="flex w-full items-center justify-between">
-              <InputComponent
+              <LabelInput
                 label={"Select Contry Residence"}
                 value=""
                 required={true}
                 placeholder="Enter Grant Company"
                 select
               />
-              <InputComponent
+              <LabelInput
                 label={"Add a Message"}
                 value=""
                 required={false}

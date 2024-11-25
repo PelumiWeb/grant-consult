@@ -2,6 +2,8 @@
 
 import React from "react";
 import TabsComponent from "./TabsComponent";
+import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
+import { setActiveTab } from "../../../../lib/features/Tabs/tabsLice";
 
 type Props = {};
 type TabsProps = { imageTitle: string; image: string; textColor?: string }[];
@@ -21,6 +23,9 @@ const tabs: TabsProps = [
 
 const Sidebar = (props: Props) => {
   const [activeTabs, setActiveTabs] = React.useState("profile");
+  const dispatch = useAppDispatch();
+  const tabName = useAppSelector((state) => state.tab.name);
+
   return (
     <div className="bg-primary h-screen w-[20%] px-8 ">
       <div className="pb-8">
@@ -33,10 +38,10 @@ const Sidebar = (props: Props) => {
       </div>
       {tabs?.map((tab) => (
         <TabsComponent
-          setActive={() => setActiveTabs(tab.imageTitle)}
+          setActive={() => dispatch(setActiveTab(tab.imageTitle))}
           image={tab.image}
           imageTitle={tab.imageTitle}
-          active={activeTabs.toLowerCase() === tab.imageTitle.toLowerCase()}
+          active={tabName.toLowerCase() === tab.imageTitle.toLowerCase()}
           textColor={tab.textColor && tab.textColor}
           //   setActive={() => setActiveTabs(tab.imageTitle)}
         />
