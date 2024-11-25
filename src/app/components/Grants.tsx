@@ -34,7 +34,7 @@ const Grants = (props: Props) => {
 
   const CardComponent = () => {
     return (
-      <div className="bg-white pr-4 py-4 shadow-grant-card  mr-6 h-[500px] rounded-[20px] px-4 my-4">
+      <div className="bg-white pr-4 py-4 shadow-grant-card  mr-6 rounded-[20px] px-4 my-4">
         <div className="flex items-center justify-between w-full py-4">
           <h3 className="text-primary">Category: Agriculture</h3>
           <div className="flex items-center ">
@@ -42,17 +42,17 @@ const Grants = (props: Props) => {
             <p className="ml-2">Canada</p>
           </div>
         </div>
-        <h4 className="w-full font-bold text-secondaryColor py-2">
+        <h4 className="w-full font-semibold text-secondaryColor pt-2">
           Excellent Business Grant for Women Owned Businesses 2024
         </h4>
-        <h4 className="w-full leading-[30px] py-4 text-[#000000]">
+        <p className="w-full leading-[30px] py-4 text-[#000000] font-poppins text-[16px]">
           Lorem ipsum dolor sit amet consectetur. Curabitur pellentesque sed
           sodales mauris ac malesuada. Venenatis fringilla est nec nisl lacus
           quisque scelerisque mauris. Eget orci cursus nunc arcu proin bibendum
           auctor metus feugiat. Tellus pretium turpis fringilla eu duis et.
           Tortor viverra iaculis donec enim nam vestibulum. Nunc congue arcu
           volutpat nec viverra ac vel volutpat.
-        </h4>
+        </p>
         <CustomButton
           title="Read More"
           backgrounColor="bg-white"

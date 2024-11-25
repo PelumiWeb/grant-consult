@@ -40,10 +40,10 @@ const LabelInput = (props: Props) => {
     } else {
       return (
         <Input
-          className={`${props.height ? props.height : "h-[55px]"} w-full`}
+          className={`${props.height ? props.height : "h-[55px]"} w-full placeholder-black`}
           placeholder={props.placeholder}
           suffix={props.righticon}
-          value={props.value}
+          // value={props.value}
         />
       );
     }

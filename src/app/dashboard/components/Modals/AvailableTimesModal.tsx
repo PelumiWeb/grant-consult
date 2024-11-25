@@ -24,7 +24,7 @@ const AvailableTimes = (props: Props) => {
       height="">
       <div className="w-full h-[588px]">
         <h3>Edit Available Times</h3>
-        <div className="flex items-center">
+        <div className="flex items-center justify-between w-[600px]">
           <LabelInput
             value=""
             placeholder="Select days"

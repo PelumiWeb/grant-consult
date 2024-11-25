@@ -125,8 +125,7 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              href="/dashboard/"
-            >
+              href="/dashboard/">
               Our Consultants Profile
             </a>
           ),
@@ -365,17 +364,43 @@ const Header = ({}: Props) => {
         </div>
         {/* Avatar */}
 
-        <div className="flex items-center">
+        <div className="flex items-center justify-between">
           {true ? (
-            <CustomButton
-              onClick={() => router.push("/auth/login")}
-              title="Login"
-              width="w-[92px]"
-              backgrounColor="bg-white"
-              borderColor="border-buttonPrimary"
-              height="h-[40px]"
-              textStyle="text-buttonPrimary"
-            />
+            <div className="flex items-center  justify-between w-[450px]">
+              <div>
+                <CustomButton
+                  onClick={() => router.push("/auth/login")}
+                  title="Login"
+                  width="w-[92px]"
+                  backgrounColor="bg-white"
+                  borderColor="border-buttonPrimary"
+                  height="h-[40px]"
+                  textStyle="text-buttonPrimary font-semibold "
+                />
+              </div>
+              <div>
+                <CustomButton
+                  onClick={() => router.push("/auth/login")}
+                  title="Try 7 days Free"
+                  width="w-full"
+                  backgrounColor="bg-[#27AE60]"
+                  borderColor="border-buttonPrimary"
+                  height="h-[40px]"
+                  textStyle="text-white font-semibold"
+                />
+              </div>
+              <div>
+                <CustomButton
+                  onClick={() => router.push("/auth/login")}
+                  title="Become a grantor"
+                  width="w-full"
+                  backgrounColor="bg-secondaryColor"
+                  borderColor="border-buttonPrimary"
+                  height="h-[40px]"
+                  textStyle="text-white font-semibold"
+                />
+              </div>
+            </div>
           ) : (
             <div className="flex items-center">
               <Image
@@ -395,16 +420,15 @@ const Header = ({}: Props) => {
                 width={8}
                 height={5}
               />
+              <div className="ml-4">
+                <CustomButton
+                  width="w-[167px]"
+                  height="h-[40px]"
+                  title="Subscribe now"
+                />
+              </div>
             </div>
           )}
-
-          <div className="ml-4">
-            <CustomButton
-              width="w-[167px]"
-              height="h-[40px]"
-              title="Subscribe now"
-            />
-          </div>
         </div>
       </div>
 

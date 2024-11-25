@@ -18,9 +18,10 @@ const Signup = (props: Props) => {
     { name: "Grantor(Donor)", id: 3 },
   ];
   const [activeUser, setActiveUser] = React.useState<string>(userType[0].name);
-  const [userTypeSelected, setUserTypeSelected] =
-    React.useState<boolean>(false);
+  const [userTypeSelected, setUserTypeSelected] = React.useState<boolean>(false);
+
   const renderComponents = (userTypeSelected: boolean, name: string) => {
+    
     if (!userTypeSelected) {
       return (
         <div className="relative h-screen px-4">

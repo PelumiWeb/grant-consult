@@ -1,9 +1,11 @@
 import React from "react";
 import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const HeroPage = (props: Props) => {
+  const router = useRouter();
   return (
     <div className="w-full flex items-start justify-between bg-hero md:h-[551px] lg:h-[651px] relative">
       {/* left  */}
@@ -13,10 +15,10 @@ const HeroPage = (props: Props) => {
         </h1>
         <p className="w-[90%] font-poppins text-newPrimaryTextColor font-medium leading-[38px] text-[24px]">
           Access grant opportunities, expert consultation, and personalized
-          support. At ullamcorper eu et i
+          support. At ullamcorper eu et
         </p>
         <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">
-          <div>
+          <div onClick={() => router.push("/grants")}>
             <CustomButton
               width="md:w-[170px] w-[190px]"
               height="h-[52px]"
@@ -26,7 +28,7 @@ const HeroPage = (props: Props) => {
               padding="p-0"
             />
           </div>
-          <div className="ml-4">
+          <div className="ml-4" onClick={() => router.push("/auth/signup")}>
             <CustomButton
               width="md:w-[170px] w-[200px]"
               height="h-[52px]"

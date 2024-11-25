@@ -23,17 +23,19 @@ const EditEducation = (props: Props) => {
       width="1000px"
       height="">
       <div className="w-full h-[588px]">
-        <h3>Edit Bio</h3>
+        <h3>Edit Education & Certification</h3>
         <p className="py-8">
-          You can tell us about your achievements, years of experience, skills,
-          industry or awards
+          List your highly valued skills and expertise here
         </p>
 
         <LabelInput
           value=""
-          placeholder="Alice is an experienced grant consultant with over 20 years in securing funding for NGOs, startups, and corporate organizations. Specializes in grant writing, application strategies, and proposal development. With a track record of successful awards and a deep understanding of funding landscapes, she helps clients navigate complex grant requirements to maximize funding opportunities. 
-
-Experienced grant consultant specializing in education, healthcare, and social services. Over 10 years in the industry with a proven track record of securing and managing grants for NGOs and corporate entities. Committed to empowering organizations to achieve sustainable funding solutions."
+          placeholder="Grant Writing
+Project Management
+Funding Strategy Development
+Impact Assessment and Reporting
+Nonprofit Consulting
+Stakeholder Management"
           textArea
           height="h-[300px]"
           width="w-[880px]"

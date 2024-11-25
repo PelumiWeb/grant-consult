@@ -11,9 +11,9 @@ export default function Grants() {
     <div className="w-full px-16 bg-white">
       {/*  */}
       <div className="bg-white">
-        <div className="flex items-center justify-between w-[15%] ">
+        <div className="flex items-center justify-between w-[20%] mt-4 mb-2">
           <p className="text-textColor">Home</p>
-          <p>{">>"}</p>
+          <p className="text-textColor mr-4">{">>"}</p>
           <p className="text-textColor">View All Grants</p>
         </div>
         <div className="flex items-center">
