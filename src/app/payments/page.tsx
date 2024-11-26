@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/*  */}
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between w-full px-8">
         {/* left */}
         <div className="w-[45%] mt-16">
           <div className="bg-white p-8 rounded-[10px]">

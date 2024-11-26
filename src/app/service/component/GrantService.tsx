@@ -25,24 +25,17 @@ const GrantService = ({
         backgroundColor && backgroundColor
       } shadow-grant-service-card  p-2`}>
       {/* Image */}
-      <div className="h-[30%]">
-        <div className="flex w-full items-center justify-center">
-          {images?.map((image) => (
-            <div className="h-[100px]">
-              <img src={image} className="object-contain w-full h-full" />
-            </div>
-          ))}
-        </div>
+      <div className="h-[20%]">
         {/* serviceType */}
-        <p className="font-semibold text-textColor text-[16px] leading-[28px] text-center mt-4">
-          {title}-{" "}
-          <span className="font-semibold text-textColor text-[16px] leading-[28px] text-center">
-            {price}
-          </span>
+        <p className="font-semibold text-newPrimaryTextColor text-[16px] leading-[28px] text-center mt-4">
+          {title}{" "}
+        </p>
+        <p className="font-semibold text-textColor text-[16px] leading-[28px] text-center">
+          {price}
         </p>
       </div>
       {/* lists */}
-      <ul className="list-disc px-8 mt-8">
+      <ul className="list-disc px-8  h-full">
         <li className=" text-[#982B24]">
           <div>
             <p className="font-semibold text-[12px] leading-[24px] text-[#333333]">
@@ -102,7 +95,9 @@ const GrantService = ({
           width="w-full"
           height="h-[40px]"
           title="Subscribe Now"
+          radius="rounded-[5px]"
           backgrounColor={buttonBackground}
+          textStyle="font-semibold text-white "
         />
       </div>
     </div>

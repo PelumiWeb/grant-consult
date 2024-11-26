@@ -1,6 +1,11 @@
 import { Input, Select } from "antd";
+import Image from "next/image";
 import React from "react";
 
+type SelectOption = {
+  value: string;
+  label: string | React.ReactNode;
+};
 type Props = {
   label?: string;
   placeholder: string;
@@ -12,37 +17,55 @@ type Props = {
   select?: boolean;
   onChange?: (value: string) => void;
   textArea?: boolean;
-  righticon?: any
+  righticon?: any;
+  leftIcon?: any;
+  options?: SelectOption[] | undefined;
 };
 
 const { TextArea } = Input;
+
+// {
+//   props.options?.map((option: SelectOption) => (
+//     <Select.Option value="sample">
+//       
+//     </Select.Option>
+//   ));
+// }
 
 const LabelInput = (props: Props) => {
   const RenderInputs = (props: Props) => {
     if (props.select) {
       return (
         <Select
-          className={`${props.height ? props.height : "h-[55px]"} w-full`}
+          className={`${
+            props.height ? props.height : "h-[55px]"
+          } w-full placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
-          onChange={props.onChange}>
-          <Select.Option value="sample">Sample</Select.Option>
-        </Select>
+          // defaultValue={props.options?.[0]?.value}
+          filterOption
+          onChange={props.onChange}
+          options={props.options}
+          />
+          
       );
     } else if (props.textArea) {
       return (
         <TextArea
           placeholder={props.placeholder}
-          className={`${props.height ? props.height : "h-[55px]"} w-full placeholder-black`}
-          allowClear
-        >
-        </TextArea>
+          className={`${
+            props.height ? props.height : "h-[55px]"
+          } w-full placeholder-black`}
+          allowClear></TextArea>
       );
     } else {
       return (
         <Input
-          className={`${props.height ? props.height : "h-[55px]"} w-full placeholder-black`}
+          className={`${
+            props.height ? props.height : "h-[55px]"
+          } w-full placeholder-black`}
           placeholder={props.placeholder}
           suffix={props.righticon}
+          prefix={props.leftIcon}
           // value={props.value}
         />
       );

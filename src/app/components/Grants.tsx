@@ -1,6 +1,7 @@
 "use client";
 
 import CustomButton from "@/app/components/CustomButton";
+import { useRouter } from "next/navigation";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,6 +12,8 @@ const Grants = (props: Props) => {
   const onChange = (currentSlide: number) => {
     // console.log(currentSlide);
   };
+
+  const router = useRouter();
 
   const responsive = {
     superLargeDesktop: {
@@ -53,14 +56,16 @@ const Grants = (props: Props) => {
           Tortor viverra iaculis donec enim nam vestibulum. Nunc congue arcu
           volutpat nec viverra ac vel volutpat.
         </p>
-        <CustomButton
-          title="Read More"
-          backgrounColor="bg-white"
-          borderColor="border-buttonPrimary"
-          width="w-[132px]"
-          height="h-[40px]"
-          textStyle="text-buttonPrimary"
-        />
+        <div onClick={() => router.push("/grants/1")}>
+          <CustomButton
+            title="Read More"
+            backgrounColor="bg-white"
+            borderColor="border-buttonPrimary"
+            width="w-[132px]"
+            height="h-[40px]"
+            textStyle="text-buttonPrimary"
+          />
+        </div>
       </div>
     );
   };
@@ -69,7 +74,11 @@ const Grants = (props: Props) => {
     <div className="w-full px-16 py-16 ">
       <div className="flex  items-center justify-between w-full py-4">
         <h1>Featured Grants</h1>
-        <h3 className="text-buttonPrimary">View all grants</h3>
+        <h3
+          className="text-buttonPrimary cursor-pointer hover:cursor-pointer  "
+          onClick={() => router.push("/grants")}>
+          View all grants
+        </h3>
       </div>
       <div className="bg-secondaryColor w-full pl-8 py-4">
         <Carousel

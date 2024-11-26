@@ -6,6 +6,7 @@ import { Button, Input, Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
+import LabelInput from "./LabelInput";
 
 type Props = {};
 type Tabsprops = {
@@ -300,11 +301,7 @@ const Header = ({}: Props) => {
         {
           key: "1",
           label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="auth/signup">
               Become a Grantor/Donor
             </a>
           ),
@@ -391,7 +388,7 @@ const Header = ({}: Props) => {
               </div>
               <div>
                 <CustomButton
-                  onClick={() => router.push("/auth/login")}
+                  onClick={() => router.push("/auth/signup")}
                   title="Become a grantor"
                   width="w-full"
                   backgrounColor="bg-secondaryColor"
@@ -475,23 +472,90 @@ const Header = ({}: Props) => {
             )}
           </div>
         ))}
-        <div className="rounded-[10px] bg-white flex items-center justify-between w-[123px] p-2 ">
-          <Image
-            className=""
-            src="/unitedKingdom.svg"
-            alt="Grant Logo"
-            width={24}
-            height={24}
-          />
-          <p>English</p>
-          <Image
-            className=""
-            src="/dropdownBlack.svg"
-            alt="Grant Logo"
-            width={15}
-            height={10}
-          />
-        </div>
+        <LabelInput
+          width="w-[123px]"
+          select
+          placeholder="English"
+          height="h-[40px]"
+          value=""
+          options={[
+            {
+              value: "English",
+              label: (
+                <div className="flex items-center w-full">
+                  <Image
+                    src={"/unitedKingdom.svg"}
+                    className="mr-1"
+                    alt="Grant Logo"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="font-normal text-[14px]">English</p>
+                </div>
+              ),
+            },
+            {
+              value: "Germany",
+              label: (
+                <div className="flex items-center w-full">
+                  <Image
+                    src={"/Germany (DE).svg"}
+                    className="mr-1"
+                    alt="Grant Logo"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="font-normal text-[14px]">Germany</p>
+                </div>
+              ),
+            },
+            {
+              value: "Portugal",
+              label: (
+                <div className="flex items-center w-full">
+                  <Image
+                    src={"/Portugal (PT).svg"}
+                    className="mr-1"
+                    alt="Grant Logo"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="font-normal text-[14px]">Portugal</p>
+                </div>
+              ),
+            },
+            {
+              value: "France",
+              label: (
+                <div className="flex items-center w-full">
+                  <Image
+                    src={"/France (FR).svg"}
+                    className="mr-1"
+                    alt="Grant Logo"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="font-normal text-[14px]">English</p>
+                </div>
+              ),
+            },
+            {
+              value: "China",
+              label: (
+                <div className="flex items-center w-full">
+                  <Image
+                    src={"/China (CN).svg"}
+                    className="mr-1"
+                    alt="Grant Logo"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="font-normal text-[14px]">Chinese</p>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
     </div>
   );
