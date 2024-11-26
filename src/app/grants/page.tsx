@@ -36,7 +36,7 @@ export default function Home() {
           ))}
         </div>
         {/* Right */}
-        <div className="mt-16">
+        <div className="hidden lg:block mt-16">
           <div className="w-[324px] h-[287px] ">
             <img src="/Ads.svg" className="w-full h-full object-contain" />
           </div>

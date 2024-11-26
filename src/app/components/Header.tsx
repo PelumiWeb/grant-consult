@@ -339,7 +339,7 @@ const Header = ({}: Props) => {
   return (
     <div className=" w-full">
       {/* Up */}
-      <div className="flex h-[122px] md:px-8 xl:px-16 items-center justify-between w-full">
+      <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => router.push("/")}>
           <Image
             src="/grantLogo.svg"
@@ -363,8 +363,8 @@ const Header = ({}: Props) => {
 
         <div className="flex items-center justify-between">
           {true ? (
-            <div className="flex items-center  justify-between w-[450px]">
-              <div>
+            <div className="flex items-center    justify-center 2lg:justify-between w-full lg:w-[450px]">
+              <div className="mr-2">
                 <CustomButton
                   onClick={() => router.push("/auth/login")}
                   title="Login"
@@ -375,7 +375,7 @@ const Header = ({}: Props) => {
                   textStyle="text-buttonPrimary font-semibold "
                 />
               </div>
-              <div>
+              <div className="hidden lg:block">
                 <CustomButton
                   onClick={() => router.push("/auth/login")}
                   title="Try 7 days Free"
@@ -386,7 +386,7 @@ const Header = ({}: Props) => {
                   textStyle="text-white font-semibold"
                 />
               </div>
-              <div>
+              <div className="hidden 2lg:block">
                 <CustomButton
                   onClick={() => router.push("/auth/signup")}
                   title="Become a grantor"
@@ -436,7 +436,7 @@ const Header = ({}: Props) => {
             {options ? (
               <Dropdown menu={{ items: options }} placement="bottom">
                 <div key={id} className="flex items-center ">
-                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor ">
+                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-sm lg:text-base">
                     {name}
                   </p>
                   {options && (

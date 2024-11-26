@@ -85,6 +85,7 @@ const Grants = (props: Props) => {
           responsive={responsive}
           //   swipeable={false}
           //   draggable={false}
+        
           showDots={true}
           //   ssr={true} // means to render carousel on server-side.
           //   infinite={true}
@@ -97,7 +98,7 @@ const Grants = (props: Props) => {
           //   removeArrowOnDeviceType={["tablet", "mobile"]}
           // //   deviceType={props.de}
           dotListClass="mt-8"
-          //   itemClass="carousel-item-padding-40-px"
+            itemClass="carousel-item-padding-40-px flex flex-wrap"
         >
           <CardComponent />
           <CardComponent />

@@ -7,9 +7,9 @@ type Props = {};
 const HeroPage = (props: Props) => {
   const router = useRouter();
   return (
-    <div className="w-full flex items-start justify-between bg-hero md:h-[551px] lg:h-[651px] relative">
+    <div className="w-full flex  items-start justify-between bg-hero  md:h-[551px] lg:h-[651px] relative">
       {/* left  */}
-      <div className="ml-8 xl:ml-16 mt-[10%] w-[40%]">
+      <div className="ml-8 xl:ml-16 mt-[10%] w-[50%]">
         <h1 className="sm:w-[70%] w-full ">
           Helping You Secure the Right Grants
         </h1>
@@ -54,16 +54,16 @@ const HeroPage = (props: Props) => {
       </div>
 
       {/* right */}
-      <div className="relative w-[60%] h-full">
-        <div
-          className="absolute bottom-0  right-0 w-[400px] sm:w-[400px] sm:h-[400px] lg:w-[500px] h-[500px] lg:h-[600px] bg-buttonPrimary"
-          style={{ clipPath: "polygon(64% 0, 100% 0%, 100% 100%, 30% 100%)" }}
-        />
-        <div className="absolute bottom-4 right-4">
-          <img
-            className=" z-0  sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px]"
-            src="/heroImage2.png"
+        <div className="relative w-[60%] h-full">
+          <div
+            className="absolute bottom-0  right-0 w-[400px] sm:w-[400px] sm:h-[400px] lg:w-[500px] h-[500px] lg:h-[600px] bg-buttonPrimary"
+            style={{ clipPath: "polygon(64% 0, 100% 0%, 100% 100%, 30% 100%)" }}
           />
+          <div className="absolute bottom-4 right-4">
+            <img
+              className=" z-0  sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px]"
+              src="/heroImage2.png"
+            />
         </div>
       </div>
     </div>
