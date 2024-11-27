@@ -1,13 +1,16 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
+import { useAppDispatch } from "../../../lib/hooks";
+import { setUserType } from "../../../lib/features/Signup/SignupSlice";
 
 type Props = {};
 
 const HeroPage = (props: Props) => {
+  const dispatch = useAppDispatch();
   const router = useRouter();
   return (
-    <div className="mt-4 lg:mt-0\">
+    <div className="mt-4 lg:mt-0">
       <div className="hidden lg:flex w-full  flex-col md:flex-row  items-start justify-between bg-hero  h-full md:h-[551px] lg:h-[651px] relative">
         {/* left  */}
         <div className="hidden lg:block ml-8 xl:ml-16 mt-[10%] w-full lg:w-[50%]">
@@ -29,7 +32,18 @@ const HeroPage = (props: Props) => {
                 padding="p-0"
               />
             </div>
-            <div className="ml-4" onClick={() => router.push("/auth/signup")}>
+            <div
+              className="ml-4"
+              onClick={() => {
+                dispatch(
+                  setUserType({
+                    userTypeSelected: true,
+                    userType: "Consultant",
+                  })
+                );
+
+                router.push("/auth/signup");
+              }}>
               <CustomButton
                 width="md:w-[170px] w-[200px]"
                 height="h-[52px]"
@@ -104,7 +118,17 @@ const HeroPage = (props: Props) => {
                 padding="p-0"
               />
             </div>
-            <div className="ml-4" onClick={() => router.push("/auth/signup")}>
+            <div
+              className="ml-4"
+              onClick={() => {
+                dispatch(
+                  setUserType({
+                    userTypeSelected: true,
+                    userType: "Consultant",
+                  })
+                );
+                router.push("/auth/signup");
+              }}>
               <CustomButton
                 width="w-[134px]"
                 height="h-[52px]"
@@ -117,15 +141,6 @@ const HeroPage = (props: Props) => {
                 padding="p-0"
               />
             </div>
-
-            {/* <CustomButton
-            width="w-[226px]"
-            backgrounColor="bg-transparent"
-            borderColor="border-secondaryColor border-[1px] "
-            title="Become a consultant"
-            radius="rounded-[5px]"
-            textStyle="text-secondaryColor"
-          /> */}
           </div>
         </div>
       </div>

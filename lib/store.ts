@@ -6,6 +6,7 @@ import { counterSlice } from './features/Counter/counterSlice'
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
 import { tabSlice } from './features/Tabs/tabsLice';
+import { SignupSlice } from './features/Signup/SignupSlice';
 
 const persistConfig = {
   key: 'root', // Key for storage
@@ -17,6 +18,7 @@ const rootReducer = {
   modal: modalSlice.reducer,
   counter: counterSlice.reducer,
   tab: tabSlice.reducer,
+  signup: SignupSlice.reducer,
 };
 
 const persistedReducer = persistReducer(persistConfig, combineReducers(rootReducer));

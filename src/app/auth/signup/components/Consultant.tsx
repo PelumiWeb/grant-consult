@@ -28,7 +28,7 @@ const Consultant = (props: Props) => {
           label="Select Country/Region"
           inputType="select"
           type="text"
-          defaultValue="Nogeria"
+          defaultValue="Nigeria"
           value=""
         />
         <CustomInput
