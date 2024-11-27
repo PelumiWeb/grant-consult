@@ -15,7 +15,7 @@ const ServiceComponent = ({ data }: { data: Props }) => {
         data.serviceTwo && "shadow-card mb-16"
       }  ${
         data.serviceTwo ? "border-none" : "border-secondaryColor"
-      }  rounded-[20px] sm:h-[170px] sm:w-[170px] lg:h-[200px] lg:w-[200px] 2lg:h-[251px] 2lg:w-[231px] m-4 ' ${
+      }  rounded-[20px] h-[150px] sm:w-[170px] lg:h-[200px] lg:w-[200px] 2lg:h-[211px] 2lg:w-[201px] m-4 ' ${
         data.margin ? "-mt-32 " : "mt-0"
       }`}>
       <div className="w-[50%] flex flex-col items-center justify-center">

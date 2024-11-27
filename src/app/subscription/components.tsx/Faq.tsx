@@ -13,16 +13,16 @@ const text = `Lorem ipsum dolor sit amet consectetur. Eget a eget ut ultrices et
 const Faq = (props: Props) => {
   return (
     <div>
-      <div className="py-16 relative left-0 right-0 bg-white m-8 flex w-full items-center justify-around">
+      <div className="py-16 relative left-0 right-0 bg-white m-8 flex-col md:flex-row flex w-full flex-wrap items-center justify-around">
         {/* <div className="w-full items-center justify-center">
         <img src="/bg-faq.svg" alt="" />
       </div> */}
-        <div className=" w-[50%] flex items-center justify-center">
+        <div className="w-[40%] lg:w-[50%] flex items-center justify-center">
           <img src="/FAQ.svg" />
         </div>
 
         <div className="w-[50%] h-[60%] flex flex-col justify-between pr-4">
-          <p className="font-poppins text-primary font-bold text-[36px] leading-[42px">
+          <p className="w-full text-center font-poppins text-primary font-bold text-[12px] leading-[12px] lg:text-[36px] lg:leading-[42px]">
             Frequently Asked Questions
           </p>
           <Collapse

@@ -8,21 +8,23 @@ function Footer({}: Props) {
     <div className="relative bg-footer px-8 mt-16 py-4 bg-repeat bg-cover bg-bottom">
       <div className=" h-full w-full bg-repeat bg-cover bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
-        <div className="bg-[#27AE6080] w-full flex items-center justify-between h-[151px] rounded-[10px] px-8">
+        <div className="bg-[#27AE6080] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8">
           <div>
-            <h3 className="text-white">Stay Updated on the Latest Grants</h3>
-            <p className="text-white text-sm leading-[15px] ">
+            <h3 className="text-white text-base">
+              Stay Updated on the Latest Grants
+            </h3>
+            <p className="text-white text-[8px] text-sm lg:leading-[15px] ">
               Sign up for our newsletter to receive updates on new grants and
               more.
             </p>
           </div>
-          <div className="w-[628px] flex items-center">
+          <div className="w-[400px] lg:w-[628px] flex items-center">
             <Input
               placeholder="Enter Email Address"
-              className="text-sm rounded-l-[10px] w-[80%] h-[60px] rounded-r-none "
+              className="text-sm rounded-l-[10px] rounded-r-none w-[70%] lg:w-[80%] h-[60px]"
             />
-            <div className="bg-secondaryGreenColor  h-[60px] w-[20%] flex items-center rounded-r-[10px]">
-              <p className="ml-8 text-white text-center ">Subscribe</p>
+            <div className="bg-secondaryGreenColor  h-[60px] w-[30%] lg:w-[20%] flex items-center justify-center rounded-r-[10px]">
+              <p className="ml-8 mr-5  text-white text-center ">Subscribe</p>
             </div>
           </div>
         </div>
@@ -30,14 +32,15 @@ function Footer({}: Props) {
         <div className="flex items-start justify-between w-full mt-8">
           {/* 1 */}
           <div>
-            <Image
-              className=""
+            <img
+              className="w-[150px] h-full object-cover lg:w-[280px] lg:h-[38px]"
               src="/grantLogo.svg"
               alt="Grant Logo"
-              width={286}
-              height={38}
+              // width={286}
+              // height={38}
+              
             />
-            <p className="w-[300px] text-white text-sm font-semibold ">
+            <p className="w-[150px] lg:w-[300px] text-white text-sm font-semibold ">
               Lorem ipsum dolor sit amet consectetur. Varius dignissim quam id
               fames. orem ipsum dolor sit amet consectetur. Varius dignissim
               quam id fames. orem ipsum dolor sit amet consectetur. Varius

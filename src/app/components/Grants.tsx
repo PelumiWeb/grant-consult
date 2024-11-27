@@ -39,13 +39,13 @@ const Grants = (props: Props) => {
     return (
       <div className="bg-white pr-4 py-4 shadow-grant-card  mr-6 rounded-[20px] px-4 my-4">
         <div className="flex items-center justify-between w-full py-4">
-          <h3 className="text-primary">Category: Agriculture</h3>
+          <h3 className="text-base lg:text-lg 2lg:text-3xl  text-primary">Category: Agriculture</h3>
           <div className="flex items-center ">
             <img src="/location-grant.svg" />
             <p className="ml-2">Canada</p>
           </div>
         </div>
-        <h4 className="w-full font-semibold text-secondaryColor pt-2">
+        <h4 className="w-full font-semibold text-secondaryColor pt-2 text-base lg:text-2xl">
           Excellent Business Grant for Women Owned Businesses 2024
         </h4>
         <p className="w-full leading-[30px] py-4 text-[#000000] font-poppins text-[16px]">
@@ -73,19 +73,19 @@ const Grants = (props: Props) => {
   return (
     <div className="w-full px-16 py-16 ">
       <div className="flex  items-center justify-between w-full py-4">
-        <h1>Featured Grants</h1>
+        <h1 className="text-lg lg:text-4xl">Featured Grants</h1>
         <h3
-          className="text-buttonPrimary cursor-pointer hover:cursor-pointer  "
+          className="text-buttonPrimary cursor-pointer hover:cursor-pointer text-lg lg:text-3xl "
           onClick={() => router.push("/grants")}>
           View all grants
         </h3>
       </div>
-      <div className="bg-secondaryColor w-full pl-8 py-4">
+      <div className="hidden lg:block bg-secondaryColor w-full pl-8 py-4">
         <Carousel
           responsive={responsive}
           //   swipeable={false}
           //   draggable={false}
-        
+
           showDots={true}
           //   ssr={true} // means to render carousel on server-side.
           //   infinite={true}
@@ -98,8 +98,7 @@ const Grants = (props: Props) => {
           //   removeArrowOnDeviceType={["tablet", "mobile"]}
           // //   deviceType={props.de}
           dotListClass="mt-8"
-            itemClass="carousel-item-padding-40-px flex flex-wrap"
-        >
+          itemClass="carousel-item-padding-40-px flex flex-wrap">
           <CardComponent />
           <CardComponent />
           <CardComponent />
@@ -111,6 +110,13 @@ const Grants = (props: Props) => {
           <p>1</p>
           <p>1</p> */}
         </Carousel>
+      </div>
+
+      <div className="block lg:hidden bg-secondaryColor w-full pl-8 py-4">
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export default function AuthLayout({
         <section className=" fixed bottom-0 left-0 w-screen h-screen flex justify-center ">
           {/* Left */}
           <div
-            className="w-[45%] h-screen flex  px-4 flex-col justify-start items-start py-8 bg-backgroundColor
+            className=" hidden lg:flex w-[45%] h-screen   px-4 flex-col justify-center lg:justify-start items-center lg:items-start py-8 bg-backgroundColor
 ] relative ">
             <div onClick={() => router.push("/")} className="cursor-pointer">
               <Image
@@ -69,7 +69,7 @@ export default function AuthLayout({
             </div>
           </div>
           {/* Content */}
-          <div className="w-[55%]  border-gray-500 bg-white  ">{children}</div>
+          <div className="w-full lg:w-[55%]  border-gray-500 bg-white  ">{children}</div>
         </section>
       </body>
     </html>

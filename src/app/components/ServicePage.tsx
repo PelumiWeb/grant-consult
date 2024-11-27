@@ -6,9 +6,9 @@ type Props = {};
 
 const ServicePage = (props: Props) => {
   return (
-    <div className="w-full flex items-start justify-between  h-full relative py-16 pb-8 px-16 bg-white flex-wrap">
+    <div className="w-full flex items-start justify-between   h-full relative py-16 pb-8 px-8 lg:px-16 bg-white flex-wrap">
       <div className="w-full lg:w-[25%] 2lg:w-[30%]">
-        <h1 className="mb-8 text-2xl lg:text-3xl">Our Services</h1>
+        <h1 className="text-center lg:text-left mb-8 text-2xl lg:text-3xl">Our Services</h1>
         <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl">
           Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
           iaculis. Est mauris nisl adipiscing interdum phasellus potenti
@@ -20,7 +20,7 @@ const ServicePage = (props: Props) => {
           iaculis. Est mauris nisl adipiscing interdum.
         </h3>
       </div>
-      <div className="mt-32 lg:mt-16 grid place-items-center w-full lg:w-[60%]">
+      <div className="mt-32 lg:mt-16 grid place-items-center w-full lg:w-[60%] ">
         <div className=" flex items-center">
           {[
             {

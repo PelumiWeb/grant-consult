@@ -21,6 +21,7 @@ const Login = (props: Props) => {
           inputType="input"
           type="text"
           value=""
+          width="w-full"
         />
         <CustomInput
           label="Password"
@@ -28,6 +29,7 @@ const Login = (props: Props) => {
           type="password"
           value=""
           rightIcon
+          width="w-full"
         />
 
         <div className="flex justify-between  items-center w-[85%] ">
@@ -46,10 +48,15 @@ const Login = (props: Props) => {
           </p>
         </div>
         <div className="mt-8">
-          <CustomButton title="Login" onClick={() => router.push("/")} />
+          <CustomButton
+            width="w-full"
+            title="Login"
+            onClick={() => router.push("/")}
+          />
         </div>
         <div className="mt-8">
           <CustomButton
+            width="w-full"
             title="Sign in with Google"
             IconLeft="/google.svg"
             backgrounColor="bg-white"
@@ -64,8 +71,7 @@ const Login = (props: Props) => {
           Don't have an account?{" "}
           <span
             className="text-secondaryColor cursor-pointer"
-            onClick={() => router.push("/auth/signup")}
-            >
+            onClick={() => router.push("/auth/signup")}>
             Sign up here
           </span>
         </p>

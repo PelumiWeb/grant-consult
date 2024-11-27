@@ -13,10 +13,10 @@ export default function Home() {
       {/*  */}
       <div className="w-full h-full">
         <div className=" py-16">
-          <h1 className="text-center text-secondaryColor">
+          <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
             Choose Your Subscription Plan
           </h1>
-          <p className="text-center text-borderColor">
+          <p className="py-4 text-textColor text-[12px] lg:text-[16px] leading-[20px]">
             Find the plan that best suits your needs and unlock full access to
             grant opportunities and expert services.
           </p>

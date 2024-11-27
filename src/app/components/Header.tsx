@@ -350,12 +350,12 @@ const Header = ({}: Props) => {
         </div>
 
         {/* Input */}
-        <div className="hidden lg:flex items-center h-[40px] w-[420px]">
+        <div className="hidden lg:flex items-center h-[40px] w-[420px] ml-8 2lg:ml-0">
           <Input
-            className="w-[80%] h-full rounded-r-[0px] "
+            className="w-[80%] h-full rounded-l-[5px] rounded-r-[0px] "
             placeholder="Search Site Content"
           />
-          <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[10px] ">
+          <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
             <img src="/searchgrant.svg" className="w-[20px]" />
           </div>
         </div>
@@ -436,11 +436,12 @@ const Header = ({}: Props) => {
       <div className="grid place-items-center">
         <div className="flex items-center lg:hidden h-[40px] w-full md:px-8 lg:px-0">
           <Input
-            className="w-[80%] h-full rounded-r-[0px] "
+            className="w-[80%] h-full rounded-l-[5px] rounded-r-[0px] "
             placeholder="Search Site Content"
           />
-          <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[10px] ">
-            <img src="/searchgrant.svg" className="w-[20px]" />
+          <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
+            <img src="/searchgrant.svg" className="hidden  lg:block w-[20px]" />
+            <img src="/filterOption.svg" className="block lg:hidden w-[20px]" />
           </div>
         </div>
         <div className="hidden bg-primary w-full lg:flex items-center justify-between py-4 px-16">

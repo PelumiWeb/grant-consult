@@ -27,7 +27,7 @@ const { TextArea } = Input;
 // {
 //   props.options?.map((option: SelectOption) => (
 //     <Select.Option value="sample">
-//       
+//
 //     </Select.Option>
 //   ));
 // }
@@ -37,32 +37,31 @@ const LabelInput = (props: Props) => {
     if (props.select) {
       return (
         <Select
-          className={`${
-            props.height ? props.height : "h-[55px]"
-          } w-full placeholder-black text-black font-normal`}
+          className={`${props.height ? props.height : "h-[55px]"} ${
+            props.width ? props.width : "w-full"
+          } placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
           // defaultValue={props.options?.[0]?.value}
           filterOption
           onChange={props.onChange}
           options={props.options}
-          />
-          
+        />
       );
     } else if (props.textArea) {
       return (
         <TextArea
           placeholder={props.placeholder}
-          className={`${
-            props.height ? props.height : "h-[55px]"
-          } w-full placeholder-black`}
+          className={`${props.height ? props.height : "h-[55px]"} ${
+            props.width ? props.width : "w-full"
+          } `}
           allowClear></TextArea>
       );
     } else {
       return (
         <Input
-          className={`${
-            props.height ? props.height : "h-[55px]"
-          } w-full placeholder-black`}
+          className={`${props.height ? props.height : "h-[55px]"} ${
+            props.width ? props.width : "w-full"
+          } placeholder-black`}
           placeholder={props.placeholder}
           suffix={props.righticon}
           prefix={props.leftIcon}
