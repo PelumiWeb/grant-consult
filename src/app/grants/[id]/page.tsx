@@ -11,7 +11,7 @@ export default function Grants() {
     <div className="w-full px-16 bg-white">
       {/*  */}
       <div className="bg-white">
-        <div className="flex items-center justify-between w-[20%] mt-4 mb-2">
+        <div className="flex items-center justify-between w-[70%] md:w-[40%] lg:w-[30%] mt-4">
           <p className="text-textColor">Home</p>
           <p className="text-textColor mr-4">{">>"}</p>
           <p className="text-textColor">View All Grants</p>
@@ -34,7 +34,7 @@ export default function Grants() {
           <GrantCard />
         </div>
         {/* Right */}
-        <div className="mt-16">
+        <div className="hidden xl:block mt-16">
           <div className="w-[324px] h-[287px] ">
             <img src="/Ads.svg" className="w-full h-full object-contain" />
           </div>

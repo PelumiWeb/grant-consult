@@ -9,10 +9,10 @@ type Props = {
 const FilterComponent = ({ backgroundColor }: Props) => {
   return (
     <div
-      className={`py-4 flex items-center justify-between w-full ${
+      className={`py-4 flex items-center justify-center lg:justify-between w-full ${
         backgroundColor ? backgroundColor : "bg-backgroundColor"
-      } px-4 mt-8 rounded-[10px]`}>
-      <div className="flex items-center justify-between ">
+      } px-4 mt-8 rounded-[10px] flex-wrap`}>
+      <div className="flex items-center justify-center lg:justify-between flex-wrap ">
         <div className="mr-2">
           <LabelInput
             width="w-[320px]"
@@ -47,7 +47,7 @@ const FilterComponent = ({ backgroundColor }: Props) => {
 
       <div className="flex justify-between items-center ">
         <div className="flex items-center justify-center w-[78px] h-[47px] bg-primary rounded-[10px] mr-4">
-          <img src="/searchgrant.svg" className="object-contain" />
+          <img src="/searchgrant.svg"  className="object-contain w-[20px] h-[20px]" />
         </div>
 
         <p className="text-secondaryColor ">Advanced Search</p>

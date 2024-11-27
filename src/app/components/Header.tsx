@@ -337,7 +337,7 @@ const Header = ({}: Props) => {
   ];
 
   return (
-    <div className=" w-full">
+    <div className=" w-full px-4 md:px-0">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => router.push("/")}>
@@ -350,7 +350,7 @@ const Header = ({}: Props) => {
         </div>
 
         {/* Input */}
-        <div className="flex items-center h-[40px] w-[420px]">
+        <div className="hidden lg:flex items-center h-[40px] w-[420px]">
           <Input
             className="w-[80%] h-full rounded-r-[0px] "
             placeholder="Search Site Content"
@@ -363,8 +363,11 @@ const Header = ({}: Props) => {
 
         <div className="flex items-center justify-between">
           {true ? (
-            <div className="flex items-center    justify-center 2lg:justify-between w-full lg:w-[450px]">
-              <div className="mr-2">
+            <div className="flex items-center justify-center 2lg:justify-between w-full lg:w-[450px]">
+              <div className="block lg:hidden">
+                <img src="/hamburger.svg" alt="" />
+              </div>
+              <div className="mr-2 hidden lg:block">
                 <CustomButton
                   onClick={() => router.push("/auth/login")}
                   title="Login"
@@ -430,132 +433,143 @@ const Header = ({}: Props) => {
       </div>
 
       {/* Down */}
-      <div className="bg-primary w-full flex items-center justify-between py-4 px-16">
-        {tabs?.map(({ name, id, options, url }: any) => (
-          <div key={id}>
-            {options ? (
-              <Dropdown menu={{ items: options }} placement="bottom">
-                <div key={id} className="flex items-center ">
-                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-sm lg:text-base">
+      <div className="grid place-items-center">
+        <div className="flex items-center lg:hidden h-[40px] w-full md:px-8 lg:px-0">
+          <Input
+            className="w-[80%] h-full rounded-r-[0px] "
+            placeholder="Search Site Content"
+          />
+          <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[10px] ">
+            <img src="/searchgrant.svg" className="w-[20px]" />
+          </div>
+        </div>
+        <div className="hidden bg-primary w-full lg:flex items-center justify-between py-4 px-16">
+          {tabs?.map(({ name, id, options, url }: any) => (
+            <div key={id}>
+              {options ? (
+                <Dropdown menu={{ items: options }} placement="bottom">
+                  <div key={id} className="flex items-center ">
+                    <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-sm lg:text-base">
+                      {name}
+                    </p>
+                    {options && (
+                      <Image
+                        className=""
+                        src="/dropdownWhite.svg"
+                        alt="Grant Logo"
+                        width={10}
+                        height={10}
+                      />
+                    )}
+                  </div>
+                </Dropdown>
+              ) : (
+                <div
+                  onClick={() => router.push(url)}
+                  key={id}
+                  className="flex items-center ">
+                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px]">
                     {name}
                   </p>
                   {options && (
-                    <Image
-                      className=""
-                      src="/dropdownWhite.svg"
-                      alt="Grant Logo"
-                      width={10}
-                      height={10}
-                    />
+                    <div></div>
+                    // <Image
+                    //   className=""
+                    //   src="/dropdownWhite.svg"
+                    //   alt="Grant Logo"
+                    //   width={10}
+                    //   height={6}
+                    // />
                   )}
                 </div>
-              </Dropdown>
-            ) : (
-              <div
-                onClick={() => router.push(url)}
-                key={id}
-                className="flex items-center ">
-                <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px]">
-                  {name}
-                </p>
-                {options && (
-                  <div></div>
-                  // <Image
-                  //   className=""
-                  //   src="/dropdownWhite.svg"
-                  //   alt="Grant Logo"
-                  //   width={10}
-                  //   height={6}
-                  // />
-                )}
-              </div>
-            )}
-          </div>
-        ))}
-        <LabelInput
-          width="w-[123px]"
-          select
-          placeholder="English"
-          height="h-[40px]"
-          value=""
-          options={[
-            {
-              value: "English",
-              label: (
-                <div className="flex items-center w-full">
-                  <Image
-                    src={"/unitedKingdom.svg"}
-                    className="mr-1"
-                    alt="Grant Logo"
-                    width={20}
-                    height={20}
-                  />
-                  <p className="font-normal text-[14px]">English</p>
-                </div>
-              ),
-            },
-            {
-              value: "Germany",
-              label: (
-                <div className="flex items-center w-full">
-                  <Image
-                    src={"/Germany (DE).svg"}
-                    className="mr-1"
-                    alt="Grant Logo"
-                    width={20}
-                    height={20}
-                  />
-                  <p className="font-normal text-[14px]">Germany</p>
-                </div>
-              ),
-            },
-            {
-              value: "Portugal",
-              label: (
-                <div className="flex items-center w-full">
-                  <Image
-                    src={"/Portugal (PT).svg"}
-                    className="mr-1"
-                    alt="Grant Logo"
-                    width={20}
-                    height={20}
-                  />
-                  <p className="font-normal text-[14px]">Portugal</p>
-                </div>
-              ),
-            },
-            {
-              value: "France",
-              label: (
-                <div className="flex items-center w-full">
-                  <Image
-                    src={"/France (FR).svg"}
-                    className="mr-1"
-                    alt="Grant Logo"
-                    width={20}
-                    height={20}
-                  />
-                  <p className="font-normal text-[14px]">English</p>
-                </div>
-              ),
-            },
-            {
-              value: "China",
-              label: (
-                <div className="flex items-center w-full">
-                  <Image
-                    src={"/China (CN).svg"}
-                    className="mr-1"
-                    alt="Grant Logo"
-                    width={20}
-                    height={20}
-                  />
-                  <p className="font-normal text-[14px]">Chinese</p>
-                </div>
-              ),
-            },
-          ]}
-        />
+              )}
+            </div>
+          ))}
+          <LabelInput
+            width="w-[123px]"
+            select
+            placeholder="English"
+            height="h-[40px]"
+            value=""
+            options={[
+              {
+                value: "English",
+                label: (
+                  <div className="flex items-center w-full">
+                    <Image
+                      src={"/unitedKingdom.svg"}
+                      className="mr-1"
+                      alt="Grant Logo"
+                      width={20}
+                      height={20}
+                    />
+                    <p className="font-normal text-[14px]">English</p>
+                  </div>
+                ),
+              },
+              {
+                value: "Germany",
+                label: (
+                  <div className="flex items-center w-full">
+                    <Image
+                      src={"/Germany (DE).svg"}
+                      className="mr-1"
+                      alt="Grant Logo"
+                      width={20}
+                      height={20}
+                    />
+                    <p className="font-normal text-[14px]">Germany</p>
+                  </div>
+                ),
+              },
+              {
+                value: "Portugal",
+                label: (
+                  <div className="flex items-center w-full">
+                    <Image
+                      src={"/Portugal (PT).svg"}
+                      className="mr-1"
+                      alt="Grant Logo"
+                      width={20}
+                      height={20}
+                    />
+                    <p className="font-normal text-[14px]">Portugal</p>
+                  </div>
+                ),
+              },
+              {
+                value: "France",
+                label: (
+                  <div className="flex items-center w-full">
+                    <Image
+                      src={"/France (FR).svg"}
+                      className="mr-1"
+                      alt="Grant Logo"
+                      width={20}
+                      height={20}
+                    />
+                    <p className="font-normal text-[14px]">English</p>
+                  </div>
+                ),
+              },
+              {
+                value: "China",
+                label: (
+                  <div className="flex items-center w-full">
+                    <Image
+                      src={"/China (CN).svg"}
+                      className="mr-1"
+                      alt="Grant Logo"
+                      width={20}
+                      height={20}
+                    />
+                    <p className="font-normal text-[14px]">Chinese</p>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );
