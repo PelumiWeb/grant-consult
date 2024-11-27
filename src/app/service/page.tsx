@@ -9,11 +9,11 @@ export default function Home() {
       {/*  */}
       <div className="w-full">
         <div className=" py-16">
-          <h1 className="text-center text-primaryBlack leading-[60px] text-[48px]  ">
+          <h1 className="text-lg text-center text-primaryBlack lg:leading-[60px] lg:text-[48px]  ">
             Grant Writing Services
           </h1>
           <div className="w-full flex items-center justify-center ">
-            <p className="text-center text-textColor w-[70%] mt-8">
+            <p className="texts-sm w-full text-center text-textColor lg:w-[70%] mt-8">
               Let our experienced team handle the entire grant process for you,
               from start to finish. All plans include an onboarding call,
               mission-matched grant research, custom grant calendar, grant
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-center lg:justify-between flex-wrap w-full">
           <GrantService
             title="BRONZE"
             price="$500"
@@ -58,13 +58,13 @@ export default function Home() {
             For your security, all orders are processed in USD via Stripe or
             PayPal.
           </p>
-          <div className="flex items-center justify-between w-[60%] my-4">
-            <img src="/card.svg" />
-            <img src="/card2.svg" />
-            <img src="/card3.svg" />
-            <img src="/card4.svg" />
-            <img src="/card5.svg" />
-            <img src="/card6.svg" />
+          <div className="flex items-center flex-wrap justify-between w-[60%] my-4">
+            <img src="/card.svg" className="m-2" />
+            <img src="/card2.svg" className="m-2" />
+            <img src="/card3.svg" className="m-2" />
+            <img src="/card4.svg" className="m-2" />
+            <img src="/card5.svg" className="m-2" />
+            <img src="/card6.svg" className="m-2" />
           </div>
 
           <p className="my-4">You can cancel your subscription anytime.</p>

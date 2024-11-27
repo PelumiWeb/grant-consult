@@ -131,6 +131,7 @@ export default function Home() {
             title="CONFIRM BOOKING/PROCEED TO PAYMENT"
             backgrounColor="bg-buttonPrimary"
             width="w-[370px]"
+            textStyle="text-white text-[12px] lg:text-lg"
             // height="h-[20px]"
           />
         </div>

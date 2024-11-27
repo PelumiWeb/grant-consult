@@ -16,7 +16,7 @@ export default function Home() {
           <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
             Choose Your Subscription Plan
           </h1>
-          <p className="py-4 text-textColor text-[12px] lg:text-[16px] leading-[20px]">
+          <p className="py-4 text-textColor text-center text-[12px] lg:text-[16px] leading-[20px]">
             Find the plan that best suits your needs and unlock full access to
             grant opportunities and expert services.
           </p>
@@ -63,13 +63,13 @@ export default function Home() {
             For your security, all orders are processed in USD via Stripe or
             PayPal.
           </p>
-          <div className="flex items-center justify-between w-[60%] my-4">
-            <img src="/card.svg" />
-            <img src="/card2.svg" />
-            <img src="/card3.svg" />
-            <img src="/card4.svg" />
-            <img src="/card5.svg" />
-            <img src="/card6.svg" />
+          <div className="flex items-center flex-wrap justify-between w-[60%] my-4">
+            <img src="/card.svg" className="m-2" />
+            <img src="/card2.svg" className="m-2" />
+            <img src="/card3.svg" className="m-2" />
+            <img src="/card4.svg" className="m-2" />
+            <img src="/card5.svg" className="m-2" />
+            <img src="/card6.svg" className="m-2" />
           </div>
 
           <p className="my-4">You can cancel your subscription anytime.</p>
