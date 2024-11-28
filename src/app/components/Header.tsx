@@ -462,7 +462,7 @@ const Header = ({}: Props) => {
               {options ? (
                 <Dropdown menu={{ items: options }} placement="bottom">
                   <div key={id} className="flex items-center ">
-                    <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-sm lg:text-base">
+                    <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-sm lg:text-base font-medium">
                       {name}
                     </p>
                     {options && (
@@ -481,7 +481,7 @@ const Header = ({}: Props) => {
                   onClick={() => router.push(url)}
                   key={id}
                   className="flex items-center ">
-                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px]">
+                  <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px] font-medium">
                     {name}
                   </p>
                   {options && (
