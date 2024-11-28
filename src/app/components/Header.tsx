@@ -138,7 +138,7 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              href="/dashboard/">
+              href="/consultant">
               Our Consultants Profile
             </a>
           ),

@@ -14,7 +14,9 @@ const tabs: TabsProps = [
   { imageTitle: "assigned grants", image: "/dashboard2.svg" },
   { imageTitle: "consultation", image: "/dashboard3.svg" },
   { imageTitle: "message", image: "/dashboard4.svg" },
-  { imageTitle: "revenue", image: "/dashboard5.svg" },
+  { imageTitle: "wallet", image: "/dashboard3.svg" },
+  { imageTitle: "settings", image: "/settings.svg" },
+  { imageTitle: "help & support", image: "/help.svg" },
   {
     imageTitle: "Logout",
     image: "/logout-gray.svg",
