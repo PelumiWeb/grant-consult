@@ -313,7 +313,16 @@ const Header = ({}: Props) => {
         {
           key: "1",
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="auth/signup">
+            <a
+              onClick={() => {
+                dispatch(
+                  setUserType({
+                    userTypeSelected: true,
+                    userType: "Grantor(Donor)",
+                  })
+                );
+                router.push("/auth/signup");
+              }}>
               Become a Grantor/Donor
             </a>
           ),
@@ -403,7 +412,15 @@ const Header = ({}: Props) => {
               </div>
               <div className="hidden 2lg:block">
                 <CustomButton
-                  onClick={() => router.push("/auth/signup")}
+                  onClick={() => {
+                    dispatch(
+                      setUserType({
+                        userTypeSelected: true,
+                        userType: "Grantor(Donor)",
+                      })
+                    );
+                    router.push("/auth/signup");
+                  }}
                   title="Become a grantor"
                   width="w-full"
                   backgrounColor="bg-secondaryColor"
