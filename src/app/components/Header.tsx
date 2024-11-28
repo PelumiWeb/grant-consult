@@ -7,6 +7,8 @@ import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
 import LabelInput from "./LabelInput";
+import { setUserType } from "../../../lib/features/Signup/SignupSlice";
+import { useDispatch } from "react-redux";
 
 type Props = {};
 type Tabsprops = {
@@ -17,6 +19,7 @@ type Tabsprops = {
 
 const Header = ({}: Props) => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const tabs = [
     { name: "Home", id: 1, url: "/" },
     {
@@ -77,10 +80,19 @@ const Header = ({}: Props) => {
           key: "1",
           label: (
             <a
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
+              // href="/auth/signup"
+              onClick={() => {
+                dispatch(
+                  setUserType({
+                    userTypeSelected: true,
+                    userType: "Consultant",
+                  })
+                );
+
+                router.push("/auth/signup");
+              }}>
               Become a consultant
             </a>
           ),

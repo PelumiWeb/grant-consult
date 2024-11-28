@@ -13,15 +13,23 @@ const GeneralSignup = (props: Props) => {
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Signup</h3>
 
-      <form className="mt-4 w-full">
-        <CustomInput label="Full Name" inputType="input" type="text" value="" />
+      <form className="mt-1 lg:mt-4 w-full">
         <CustomInput
+          width="w-full"
+          label="Full Name"
+          inputType="input"
+          type="text"
+          value=""
+        />
+        <CustomInput
+          width="w-full"
           label="Email Address"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
+          width="w-full"
           label="Password"
           inputType="input"
           type="password"
@@ -41,7 +49,10 @@ const GeneralSignup = (props: Props) => {
           <p className="underline text-red-500 text-sm">Forgot Password</p>
         </div>
         <div className="mt-8">
-          <CustomButton title="Signup" onClick={() => router.push("/auth/otp")} />
+          <CustomButton
+            title="Signup"
+            onClick={() => router.push("/auth/otp")}
+          />
         </div>
         <div className="mt-8">
           <CustomButton

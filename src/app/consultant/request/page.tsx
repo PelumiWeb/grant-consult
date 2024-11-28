@@ -5,6 +5,7 @@ import CustomButton from "../../components/CustomButton";
 import GrantFunder from "../../components/GrantFunder";
 import ConsultantComponent from "../component/ConsultantComponent";
 import LabelInput from "@/app/components/LabelInput";
+import RenderModals from "@/app/components/RenderModals";
 
 export default function Home() {
   return (
@@ -30,7 +31,6 @@ export default function Home() {
                 value=""
                 required={true}
                 placeholder="Enter First Name"
-              
               />
               <LabelInput
                 label={"Last Name"}
@@ -141,6 +141,7 @@ export default function Home() {
       </div>
 
       <GrantFunder />
+      <RenderModals />
     </div>
   );
 }

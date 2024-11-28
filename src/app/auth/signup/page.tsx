@@ -15,7 +15,7 @@ type UserType = { name: string; id: number }[];
 
 const Signup = (props: Props) => {
   const signupData = useAppSelector((state) => state.signup);
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   console.log(signupData, "Sign up data");
 
@@ -25,19 +25,15 @@ const Signup = (props: Props) => {
     { name: "Grantor(Donor)", id: 3 },
   ];
 
-  
-
   const renderComponents = (userTypeSelected: boolean, name: string) => {
     if (!signupData.userTypeSelected) {
       return (
-        <div className="relative h-screen px-4">
-          <h2 className="w-full py-6  pl-4 text-center lg:text-left text-base lg:text-3xl">
-            Sign up
-          </h2>
+        <div className="relative h-full lg:h-screen px-4">
+          <h2 className="w-full py-6  pl-4 text-base lg:text-3xl">Sign up</h2>
           {/*  */}
           <div>
             <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-              <h3 className="w-full ml-16 text-base lg:text-2xl text-center lg:text-left">
+              <h3 className="w-full ml-16 text-base lg:text-2xl">
                 Select User Type
               </h3>
 
@@ -47,13 +43,15 @@ const Signup = (props: Props) => {
                     key={data.id}
                     onClick={
                       () =>
-                        dispatch(setUserType({
-                          ...signupData,
-                          userType: data.name,
-                        }))
+                        dispatch(
+                          setUserType({
+                            ...signupData,
+                            userType: data.name,
+                          })
+                        )
                       // setActiveUser(data.name)
                     }
-                    className={`flex h-[179px] lg:h-[300px] w-[119px] lg:w-[200px] rounded-[10px] border  border-borderColor hover:shadow-custom-green justify-center ${
+                    className={`flex h-[179px] sm:h-[220px] lg:h-[300px] w-[119px] sm:w-[170px] lg:w-[200px] rounded-[10px] border  border-borderColor hover:shadow-custom-green justify-center ${
                       signupData.userType === data.name &&
                       "border-secondaryColor shadow-custom-green "
                     } hover:border-secondaryColor  cursor-pointer`}>
@@ -86,9 +84,15 @@ const Signup = (props: Props) => {
           </div>
         </div>
       );
-    } else if (signupData.userTypeSelected && signupData.userType === "(NGO, corporate, Individual)") {
+    } else if (
+      signupData.userTypeSelected &&
+      signupData.userType === "(NGO, corporate, Individual)"
+    ) {
       return <GeneralSignup />;
-    } else if (signupData.userTypeSelected && signupData.userType === "Consultant") {
+    } else if (
+      signupData.userTypeSelected &&
+      signupData.userType === "Consultant"
+    ) {
       return <Consultant />;
     } else {
       return <Grantor />;
