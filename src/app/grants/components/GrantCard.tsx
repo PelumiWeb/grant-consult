@@ -3,12 +3,14 @@ import React from "react";
 
 type Props = {
   moreDetails?: boolean;
+  border?: boolean;
+  showMore?: boolean;
 };
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCard = (props: Props) => {
   const router = useRouter();
   return (
-    <div className="flex flex-col justify-between border-[0.5px] border-borderColor  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0">
+    <div className={`flex flex-col justify-between border-[0.5px] ${!props.border && "border-borderColor"}  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0`}>
       <h4 className=" block lg:hidden text-primary mx-2 text-[16px] leading-[26px] font-semibold">
         Aspire Coronation Trust (ACT) Foundation Grant 2024
       </h4>
@@ -44,7 +46,7 @@ const GrantCard = (props: Props) => {
             <p className="text-[#1E1E1E blur">Grant Size</p>
             <p className="text-textColor ml-4 blur-sm">$100,000 to $500,000</p>
           </div>
-          <p className={`hidden lg:block w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
+        {!props?.showMore && <p className={`hidden lg:block w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
             Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
             ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing
             tellus est posuere dolor sit am
@@ -53,10 +55,10 @@ const GrantCard = (props: Props) => {
               onClick={() => router.push("/grants/1")}>
               Read more...
             </span>
-          </p>
+          </p>}
         </div>
       </div>
-      <p className={`block lg:hidden w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
+      {!props.showMore && <p className={`block lg:hidden w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
         Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
         ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing tellus
         est posuere dolor sit am
@@ -65,7 +67,7 @@ const GrantCard = (props: Props) => {
           onClick={() => router.push("/grants/1")}>
           Read more...
         </span>
-      </p>
+      </p>}
     </div>
   );
 };

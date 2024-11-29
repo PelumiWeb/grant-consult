@@ -1,0 +1,26 @@
+"use client";
+import React from "react";
+import AssignedGrant from "./AssignedGrant";
+import AssignedDetails from "./AssignedDetails";
+
+type Props = {};
+const assignedScreens = [
+  { name: "home", id: 1 },
+  { name: "details", id: 2 },
+];
+
+const AssignedHome = (props: Props) => {
+  const [activeScreen, setActiveScreen] = React.useState(
+    assignedScreens[1].name
+  );
+  const renderScreens = () => {
+    if (activeScreen === "home") {
+      return <AssignedGrant />;
+    } else {
+      return <AssignedDetails />;
+    }
+  };
+  return renderScreens();
+};
+
+export default AssignedHome;

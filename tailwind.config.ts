@@ -40,7 +40,8 @@ const config: Config = {
         'gold': "linear-gradient(90deg, #C55001 0%, #FCF99C 100%)",
         'platinum': "linear-gradient(90deg, #D289A1 0%, #EE632A 100%)",
         'consultantTitle': "linear-gradient(90deg, #27AE60 0%, #104828 100%)",
-        'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)"
+        'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)",
+        grantColor: "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)"
       },
     extend: {
        boxShadow: {
@@ -74,7 +75,8 @@ const config: Config = {
         boderConsultant: "#6E6E6E1A",
         newPrimaryTextColor: "#333333",
         grantBlack: " #000000",
-        profileHeaderColor: "#C2C9D4B2"
+        profileHeaderColor: "#C2C9D4B2",
+        dashboardActionColor: "#27AE60"
 
         
       },

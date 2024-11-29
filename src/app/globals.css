@@ -14,10 +14,6 @@
   }
 }
 
-.ant-picker-input input::placeholder {
-  color: #000000; /* Tailwind's gray-400 */
-  opacity: 1; /* Ensure the placeholder color applies */
-}
 
 @layer base {
   h1 {
@@ -64,6 +60,10 @@
   @apply bg-blue-100; /* Hover background color for options */
 }
 
+
+.ant-picker-suffix {
+  color: #3b82f6; /* Tailwind's blue-500 */
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

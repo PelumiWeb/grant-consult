@@ -13,12 +13,12 @@ import EditEducation from "../dashboard/components/Modals/EditEducation";
 import EditExprience from "../dashboard/components/Modals/EditExperience";
 import ConsultantComponent from "../consultant/component/ConsultantComponent";
 import ConsultantModal from "../consultant/component/Modal/ConsultantModal";
+import ExtensiionModal from "../dashboard/components/Modals/ExtensionModal";
 
 type Props = {};
 
 const RenderModals = (props: Props) => {
   const modalType = useAppSelector((state) => state.modal.modalType);
-  console.log(modalType, "this is modal type");
   const showContents = (tab: any) => {
     switch (modalType) {
       case modalName.BioData:
@@ -61,6 +61,10 @@ const RenderModals = (props: Props) => {
       case modalName.consultantModal:
         // code block
         return <ConsultantModal />;
+        break;
+      case modalName.extensionModal:
+        // code block
+        return <ExtensiionModal />;
         break;
 
       default:

@@ -3,10 +3,10 @@ import React from "react";
 import { tabsName } from "@/app/utils/TabsTypes";
 import Profile from "./Profile/Profile";
 import { useAppSelector } from "../..//../../lib/hooks";
-import AssignedGrant from "./AssignedGrant/AssignedGrant";
 import Consultation from "./Consultation/Consultation";
 import Message from "./Message/Message";
 import Revenue from "./Revenue/Revenue";
+import AssignedHome from "./AssignedGrant/AssignedHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -18,7 +18,7 @@ export default function RenderContents() {
         break;
       case tabsName.assignedGrants:
         // code block
-        return <AssignedGrant />;
+        return <AssignedHome />;
         break;
       case tabsName.consultation:
         // code block
