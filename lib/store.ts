@@ -7,11 +7,12 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
 import { tabSlice } from './features/Tabs/tabsLice';
 import { SignupSlice } from './features/Signup/SignupSlice';
+import { scrollSlice } from './features/Scrolled/Scrolled';
 
 const persistConfig = {
   key: 'root', // Key for storage
   storage, // Define where to store the data
-  blacklist: ["tab"], // List of
+  blacklist: ["tab", "scrolled"], // List of
 };
 
 const rootReducer = {
@@ -19,6 +20,8 @@ const rootReducer = {
   counter: counterSlice.reducer,
   tab: tabSlice.reducer,
   signup: SignupSlice.reducer,
+  scrolled: scrollSlice.reducer
+
 };
 
 const persistedReducer = persistReducer(persistConfig, combineReducers(rootReducer));

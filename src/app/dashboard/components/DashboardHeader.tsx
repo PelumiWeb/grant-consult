@@ -2,6 +2,7 @@ import { Input, Select } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { useAppSelector } from "../../../../lib/hooks";
 
 type Props = {
   onChange?: any;
@@ -10,13 +11,17 @@ type Props = {
 const DashboardHeader = (props: Props) => {
   const router = useRouter();
 
+   const {isScrolled} = useAppSelector((state) => state.scrolled);
+
+
+
   return (
-    <div className="flex items-center justify-between sticky top-0">
-      <div className="w-[40%]"
-       onClick={() => router.push("/")
-        
-       }
-        >
+    <div
+      className={`${
+        isScrolled &&
+        "bg-white border-b-borderColor border-b-[.5px] h-[100px] z-30 px-2"
+      } flex items-center justify-between sticky -top-10  transition-all`}>
+      <div className="w-[40%]" onClick={() => router.push("/")}>
         <img src="/grantLogo.svg" />
       </div>
 

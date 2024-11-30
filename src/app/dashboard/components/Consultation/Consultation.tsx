@@ -3,6 +3,8 @@ import DashboardHeader from "../DashboardHeader";
 import DashboardfilterOptions from "../DashboardfilterOptions";
 import CustomTable from "../CustomTable";
 import CustomButton from "@/app/components/CustomButton";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import { useAppDispatch } from "../../../../../lib/hooks";
 
 type Props = {};
 
@@ -132,8 +134,30 @@ const columns = [
 ];
 
 const Consultation = (props: Props) => {
+  const dispatch = useAppDispatch();
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+
+    if (!scrollContainer) return;
+
+    const handleScroll = () => {
+      const scrollTop = scrollContainer.scrollTop; // Get the scroll position
+      console.log("Scroll Top:", scrollTop); // Debugging scroll value
+      dispatch(setIsScrolled(scrollTop > 50));
+    };
+
+    scrollContainer.addEventListener("scroll", handleScroll);
+
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth">
+    <div
+      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth"
+      ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
         <div className="flex items-center w-[280px] mt-8">
