@@ -11,9 +11,11 @@ import EditResume from "../dashboard/components/Modals/Resume";
 import SecuredGrant from "../dashboard/components/Modals/SecureGrantmodal.tsx";
 import EditEducation from "../dashboard/components/Modals/EditEducation";
 import EditExprience from "../dashboard/components/Modals/EditExperience";
-import ConsultantComponent from "../consultant/component/ConsultantComponent";
 import ConsultantModal from "../consultant/component/Modal/ConsultantModal";
 import ExtensiionModal from "../dashboard/components/Modals/ExtensionModal";
+import EditToDoListModal from "../dashboard/components/Modals/EditToDoListModal";
+import RescheduleModal from "../dashboard/components/Modals/RescheduleConsultation";
+import EditDiscussion from "../dashboard/components/Modals/EditDiscussion";
 
 type Props = {};
 
@@ -65,6 +67,18 @@ const RenderModals = (props: Props) => {
       case modalName.extensionModal:
         // code block
         return <ExtensiionModal />;
+        break;
+      case modalName.editListModal:
+        // code block
+        return <EditToDoListModal />;
+        break;
+      case modalName.rescheduleConsulation:
+        // code block
+        return <RescheduleModal />;
+        break;
+      case modalName.editDiscussion:
+        // code block
+        return <EditDiscussion />;
         break;
 
       default:

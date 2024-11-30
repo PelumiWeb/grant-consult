@@ -12,6 +12,9 @@ export type ModalTypes = {
     editEducation: string;
     consultantModal: string;
     extensionModal: string;
+    editDiscussion:string
+    rescheduleConsulation: string;
+    editListModal: string;
 }
 
 export const modalName:ModalTypes = {
@@ -25,7 +28,11 @@ export const modalName:ModalTypes = {
     Experience: "Experience",
     editEducation: "editEducation",
     consultantModal: "consultantModal",
-    extensionModal: "extensionModal"
+    extensionModal: "extensionModal",
+    editDiscussion: "editDiscussion",
+    rescheduleConsulation: "rescheduleConsulation",
+    editListModal: "editListModal",
+
 
 
 

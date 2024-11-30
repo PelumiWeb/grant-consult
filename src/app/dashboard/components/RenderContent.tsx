@@ -7,6 +7,7 @@ import Consultation from "./Consultation/Consultation";
 import Message from "./Message/Message";
 import Revenue from "./Revenue/Revenue";
 import AssignedHome from "./AssignedGrant/AssignedHome";
+import ConsultanHome from "./Consultation/ConsulatationHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -22,9 +23,8 @@ export default function RenderContents() {
         break;
       case tabsName.consultation:
         // code block
-        return <Consultation />;
+        return <ConsultanHome />;
         break;
-
       case tabsName.message:
         // code block
         return <Message />;
