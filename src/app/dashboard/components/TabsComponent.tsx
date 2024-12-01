@@ -20,7 +20,7 @@ const TabsComponent = ({
     <div
       className={`w-[224px] cursor-pointer h-[51px] rounded-[5px] flex items-center ${
         active && "bg-secondaryColor"
-      } my-4 mr-5 pl-4`}
+      } my-4 mr-5 pl-4 transition-all`}
       onClick={setActive}>
       <img src={image} />
       <p

@@ -39,7 +39,7 @@ const LabelInput = (props: Props) => {
         <Select
           className={`${props.height ? props.height : "h-[55px]"} ${
             props.width ? props.width : "w-full"
-          } placeholder-black text-black font-normal`}
+          } !placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
           // defaultValue={props.options?.[0]?.value}
           filterOption
