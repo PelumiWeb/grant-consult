@@ -3,7 +3,9 @@ import DashboardHeader from "../DashboardHeader";
 import DashboardfilterOptions from "../DashboardfilterOptions";
 import CustomTable from "../CustomTable";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -93,6 +95,10 @@ const dataSource = [
   },
 ];
 
+const AssignedGrant = (props: Props) => {
+ const dispatch = useAppDispatch();
+ const consultation = useAppSelector((state) => state.dashboard.consultation);
+
 const columns = [
   {
     title: "Grant Title",
@@ -153,15 +159,20 @@ const columns = [
     title: "Action",
     dataIndex: "action",
     render: (item: string) => (
-      <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
+      <p
+        onClick={() => {dispatch(
+          setActiveRoute({
+            consultation,
+            assignedGrant: dashboardRouteName.assignDetails
+          })
+        );}}
+        className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
         View Details
       </p>
     ),
   },
 ];
 
-const AssignedGrant = (props: Props) => {
- const dispatch = useAppDispatch();
  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
  React.useEffect(() => {
    const scrollContainer = scrollContainerRef.current;
@@ -202,7 +213,7 @@ const AssignedGrant = (props: Props) => {
         <DashboardfilterOptions />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
-      <div className="flex items-center">
+      <div className="flex items-center cursor-pointer">
         <img src="/arrowLeft.svg" alt="" />
         <p className="text-secondaryColor ml-2">Return to Dashboard</p>
       </div>

@@ -4,7 +4,9 @@ import DashboardfilterOptions from "../DashboardfilterOptions";
 import CustomTable from "../CustomTable";
 import CustomButton from "@/app/components/CustomButton";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 
 type Props = {};
 
@@ -75,67 +77,80 @@ const dataSource = [
   },
 ];
 
-const columns = [
-  {
-    title: "Consultation Title",
-    dataIndex: "ConsultationTitle",
-    render: (item: string) => (
-      <p className="font-semibold text-[14px] leading-[22px] text-grantBlack w-[140px]">
-        {item}
-      </p>
-    ),
-  },
-  {
-    title: "Client Name",
-    dataIndex: "clientName",
-    render: (item: string) => (
-      <p className="font-semibold text-[14px] leading-[22px] text-grantBlack">
-        {item}
-      </p>
-    ),
-  },
-  {
-    title: "Date/Time",
-    dataIndex: "DateTime",
-    render: (item: string) => (
-      <p className="font-semibold text-[14px] leading-[22px] text-grantBlack w-[140px]">
-        {item}
-      </p>
-    ),
-  },
-  {
-    title: "Status",
-    dataIndex: "Status",
-    render: (item: string) => (
-      <p className="font-semibold text-[14px] leading-[22px] text-grantBlack">
-        <p>{item}</p>
-        <span className="bg-green w-4 h-4 rounded-full" />
-      </p>
-    ),
-  },
-  {
-    title: "Actions",
-    dataIndex: "actions",
-    render: (item: string) => (
-      <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
-        {item}
-      </p>
-    ),
-  },
-  {
-    title: "Actions",
-    dataIndex: "Actions",
-    render: (item: string) => (
-      <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
-        {item}
-      </p>
-    ),
-  },
-];
-
 const Consultation = (props: Props) => {
   const dispatch = useAppDispatch();
+  const assignedGrant = useAppSelector(
+    (state) => state.dashboard.assignedGrant
+  );
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const columns = [
+    {
+      title: "Consultation Title",
+      dataIndex: "ConsultationTitle",
+      render: (item: string) => (
+        <p className="font-semibold text-[14px] leading-[22px] text-grantBlack w-[140px]">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Client Name",
+      dataIndex: "clientName",
+      render: (item: string) => (
+        <p className="font-semibold text-[14px] leading-[22px] text-grantBlack">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Date/Time",
+      dataIndex: "DateTime",
+      render: (item: string) => (
+        <p className="font-semibold text-[14px] leading-[22px] text-grantBlack w-[140px]">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Status",
+      dataIndex: "Status",
+      render: (item: string) => (
+        <p className="font-semibold text-[14px] leading-[22px] text-grantBlack">
+          <p>{item}</p>
+          <span className="bg-green w-4 h-4 rounded-full" />
+        </p>
+      ),
+    },
+    {
+      title: "Actions",
+      dataIndex: "actions",
+      render: (item: string) => (
+        <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Actions",
+      dataIndex: "Actions",
+      render: (item: string) => (
+        <p
+          className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]"
+          onClick={() => {
+            dispatch(
+              setActiveRoute({
+                assignedGrant,
+                consultation: dashboardRouteName.consultationDetails,
+              })
+            );
+          }}>
+          {item}
+        </p>
+      ),
+    },
+  ];
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
@@ -256,6 +271,14 @@ const Consultation = (props: Props) => {
             />
 
             <CustomButton
+              onClick={() => {
+                dispatch(
+                  setActiveRoute({
+                    assignedGrant,
+                    consultation: dashboardRouteName.performanceMetrics,
+                  })
+                );
+              }}
               width="w-[300px]"
               height="h-[40px]"
               title="View Your Performance Metrics"

@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage'; // Default: localStorage for we
 import { tabSlice } from './features/Tabs/tabsLice';
 import { SignupSlice } from './features/Signup/SignupSlice';
 import { scrollSlice } from './features/Scrolled/Scrolled';
+import { dashboardSlice } from './features/DashboardRoutes/dashboardSlice';
 
 const persistConfig = {
   key: 'root', // Key for storage
@@ -20,7 +21,9 @@ const rootReducer = {
   counter: counterSlice.reducer,
   tab: tabSlice.reducer,
   signup: SignupSlice.reducer,
-  scrolled: scrollSlice.reducer
+  scrolled: scrollSlice.reducer,
+  dashboard: dashboardSlice.reducer
+
 
 };
 

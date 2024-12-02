@@ -33,6 +33,8 @@ const CustomTable = (props: Props) => {
       className="mt-4"
       dataSource={props.dataSource}
       columns={props.columns}
+      // headerBg="red"
+      
     />
   );
 };

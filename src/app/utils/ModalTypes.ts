@@ -32,8 +32,4 @@ export const modalName:ModalTypes = {
     editDiscussion: "editDiscussion",
     rescheduleConsulation: "rescheduleConsulation",
     editListModal: "editListModal",
-
-
-
-
 }

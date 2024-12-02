@@ -1,0 +1,34 @@
+'use client';
+
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
+import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
+
+export interface DashboardState {
+    assignedGrant: string;
+    consultation:string
+}
+
+const initialState: DashboardState = {
+assignedGrant: dashboardRouteName.assignedGrant,
+consultation: dashboardRouteName.consultation
+}
+
+
+export const dashboardSlice = createSlice({
+    name: "dashboard",
+    initialState,
+    reducers:{
+        setActiveRoute: (state, action) => {
+            state.assignedGrant = action.payload.assignedGrant;
+            state.consultation = action.payload.consultation;
+        }
+    }
+}) 
+
+
+export const {setActiveRoute} = dashboardSlice.actions
+
+export const selectDashboardRoute = (state: RootState) => state.dashboard
+
+export default dashboardSlice.reducer

@@ -41,7 +41,8 @@ const config: Config = {
         'platinum': "linear-gradient(90deg, #D289A1 0%, #EE632A 100%)",
         'consultantTitle': "linear-gradient(90deg, #27AE60 0%, #104828 100%)",
         'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)",
-        grantColor: "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)"
+        'grantColor': "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)",
+       
       },
     extend: {
        boxShadow: {
@@ -51,7 +52,8 @@ const config: Config = {
         'subscription-card': '0px 1.77px 22.08px 0px #00000040',
         'testimony-card': "0px 4px 38px 0px #00000040",
         'related-news-card': "0px 4.46px 27.85px 0px #00000040",
-        'grant-service-card': "0px 2px 25.01px 0px #00000040"
+        'grant-service-card': "0px 2px 25.01px 0px #00000040",
+        'graphchart': "0px 2px 10px 0px #329DFD40"
       },
       colors: {
         background: "var(--background)",

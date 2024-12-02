@@ -4,11 +4,13 @@ import DashboardHeader from "../DashboardHeader";
 import CustomButton from "@/app/components/CustomButton";
 import LabelInput from "@/app/components/LabelInput";
 import GrantCard from "@/app/grants/components/GrantCard";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/utils/ModalTypes";
 import RenderModals from "@/app/components/RenderModals";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -16,6 +18,9 @@ type Props = {
 
 const ConsultationDetails = (props: Props) => {
   const dispatch = useAppDispatch();
+  const assignedGrant = useAppSelector(
+    (state) => state.dashboard.assignedGrant
+  );
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -264,7 +269,16 @@ const ConsultationDetails = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center mt-16 ml-4">
+      <div
+        className="flex items-center mt-16 ml-4 cursor-pointer"
+        onClick={() => {
+          dispatch(
+            setActiveRoute({
+              assignedGrant,
+              consultation: dashboardRouteName.consultation,
+            })
+          );
+        }}>
         <img src="/arrowLeft.svg" alt="" />
         <p className="text-secondaryColor ml-2">Return to Dashboard</p>
       </div>

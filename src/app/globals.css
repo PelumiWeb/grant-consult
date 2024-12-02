@@ -76,3 +76,10 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.ant-table-thead > tr > th {
+  background-color: #1F4E79 !important; /* Set your background color */
+  color: white !important;              /* Set text color */
+  font-weight: bold;                   /* Make text bold */
+  text-align: center;                  /* Align text center */
+}
