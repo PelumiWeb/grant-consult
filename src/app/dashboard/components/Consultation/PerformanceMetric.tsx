@@ -196,6 +196,7 @@ const PerformanceMetric = (props: Props) => {
         <div className="flex w-full items-center justify-between">
           <LabelInput select placeholder="Select Month" value="" />
           <LabelInput select 
+          value=""
           
           placeholder="Completion Rate"  />
           <LabelInput select placeholder="Consultation Type" value="" />
