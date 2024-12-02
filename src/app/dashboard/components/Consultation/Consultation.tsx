@@ -128,7 +128,7 @@ const Consultation = (props: Props) => {
       dataIndex: "actions",
       render: (item: string) => (
         <p
-          className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px] cursor-pointer"
+          className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]"
           onClick={() => {
             dispatch(
               setActiveRoute({
