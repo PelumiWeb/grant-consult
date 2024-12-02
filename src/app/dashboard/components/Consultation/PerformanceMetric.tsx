@@ -12,11 +12,10 @@ import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import dynamic from "next/dynamic";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
+import BarchartComponent from "@/app/components/BarChart";
+import PieChartComponent from "@/app/components/PieChart";
+import { DatePicker } from "antd";
 // import  BarChart  from "@/app/components/BarChart";
-const BarChart = dynamic(() => import("@/app/components/BarChart"), {
-  ssr: false,
-});
-
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
 };
@@ -86,36 +85,9 @@ const PerformanceMetric = (props: Props) => {
     };
   }, []);
 
-  const data = {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [
-      {
-        label: "Sales",
-        data: [65, 59, 80, 81, 56, 55],
-        backgroundColor: "rgba(75, 192, 192, 0.6)", // Bar color
-        borderColor: "rgba(75, 192, 192, 1)", // Border color
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "top" as const, // Explicitly specify 'top' to satisfy TypeScript
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true, // Ensure the y-axis starts at 0
-      },
-    },
-  };
   const HeaderChart = (data: HeaderChartProps) => {
     return (
-      <div className="flex flex-col justify-between w-[158px] h-[190px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px]">
+      <div className="flex flex-col justify-between w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px]">
         <div className="w-[40px] h-[40px]">
           <img
             src={data?.data?.image}
@@ -169,12 +141,25 @@ const PerformanceMetric = (props: Props) => {
             <HeaderChart data={data} />
           ))}
         </div>
-        <div className="bg-white w-[340px] h-[190px] shadow-graphchart"></div>
+        <div className="bg-white w-[340px] h-[210px] shadow-graphchart px-4 flex flex-col items-center justify-center">
+          <div className="flex items-center justify-between w-full mt-1">
+            <p className="font-semibold text-[10px] leading-[13px]">
+              Total Cancelled Consultation
+            </p>
+            <DatePicker className="w-[100px] h-[30px]" placeholder="Today" />
+          </div>
+          <div className="w-[160px] h-[160px]">
+            <PieChartComponent />
+          </div>
+        </div>
       </div>
 
       {/* Preview Overview Bar chart */}
-      <div className="h-[500px] w-full bg-white mb-4">
-        {/* <BarChart data={data} options={options} /> */}
+      <div className="h-[500px] w-full bg-white mb-4 py-8">
+        <h4 className="font-semibold text-[20px] leading-[26px] ml-8 mb-4">
+          Performance Overview
+        </h4>
+          <BarchartComponent />
       </div>
       {/* Key metric and insights */}
       <div className="flex justify-between w-full items-center">

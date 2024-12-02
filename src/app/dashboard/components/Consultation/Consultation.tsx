@@ -127,17 +127,8 @@ const Consultation = (props: Props) => {
       title: "Actions",
       dataIndex: "actions",
       render: (item: string) => (
-        <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
-          {item}
-        </p>
-      ),
-    },
-    {
-      title: "Actions",
-      dataIndex: "Actions",
-      render: (item: string) => (
         <p
-          className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]"
+          className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px] cursor-pointer"
           onClick={() => {
             dispatch(
               setActiveRoute({
@@ -146,6 +137,15 @@ const Consultation = (props: Props) => {
               })
             );
           }}>
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Actions",
+      dataIndex: "Actions",
+      render: (item: string) => (
+        <p className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">
           {item}
         </p>
       ),
