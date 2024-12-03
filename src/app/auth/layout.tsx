@@ -36,7 +36,12 @@ export default function AuthLayout({
           <div
             className=" hidden lg:flex w-[45%] h-screen   px-4 flex-col justify-center lg:justify-start items-center lg:items-start py-8 bg-backgroundColor
 ] relative ">
-            <div onClick={() => router.push("/")} className="relative z-40 cursor-pointer">
+            <div
+              onClick={async () => {
+                router.prefetch("/");
+                // router.refresh();
+              }}
+              className="relative z-40 cursor-pointer">
               <Image
                 src="/grantLogo.svg"
                 alt="Grant Logo"
@@ -69,7 +74,9 @@ export default function AuthLayout({
             </div>
           </div>
           {/* Content */}
-          <div className="w-full lg:w-[55%]  border-gray-500 bg-white  ">{children}</div>
+          <div className="w-full lg:w-[55%]  border-gray-500 bg-white  ">
+            {children}
+          </div>
         </section>
       </body>
     </html>
