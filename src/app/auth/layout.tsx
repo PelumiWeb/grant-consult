@@ -6,8 +6,8 @@ import React from "react";
 import CustomInput from "../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../components/CustomButton";
-import { useRouter } from "next/navigation";
 import { Poppins, Montserrat } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,8 +38,8 @@ export default function AuthLayout({
 ] relative ">
             <div
               onClick={async () => {
-                router.prefetch("/");
                 // router.refresh();
+                router.replace("/");
               }}
               className="relative z-40 cursor-pointer">
               <Image
