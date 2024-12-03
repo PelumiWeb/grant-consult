@@ -7,11 +7,14 @@ import { modalName } from "@/app/utils/ModalTypes";
 export interface ModalState {
     open: boolean;
     modalType: string;
+    modalContent?: string;
+
 }
 
 const initialState: ModalState = {
     open: false,
-    modalType: ""
+    modalType: "",
+    modalContent: ""
 }
 
 
@@ -24,10 +27,14 @@ export const modalSlice = createSlice({
         openModal: (state, action) => {
             state.open = action.payload.open;
             state.modalType = action.payload.modalType;
+            state.modalContent = action.payload.modalContent;
+
         },
         closeModal: (state) => {
             state.open = false;
             state.modalType = ""
+            state.modalContent = ""
+
         }
     }
 }) 

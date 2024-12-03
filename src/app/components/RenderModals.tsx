@@ -16,11 +16,21 @@ import ExtensiionModal from "../dashboard/components/Modals/ExtensionModal";
 import EditToDoListModal from "../dashboard/components/Modals/EditToDoListModal";
 import RescheduleModal from "../dashboard/components/Modals/RescheduleConsultation";
 import EditDiscussion from "../dashboard/components/Modals/EditDiscussion";
+import PinModal from "../dashboard/components/Modals/PinModal";
+import WithdrawFunds from "../dashboard/components/Modals/WithdrawFunds";
+import AddNewBank from "../dashboard/components/Modals/AddNewBank";
+import EditBankAccount from "../dashboard/components/Modals/EditBankAccount";
+import SuccessModal from "../dashboard/components/Modals/SuccessModal";
 
 type Props = {};
 
 const RenderModals = (props: Props) => {
   const modalType = useAppSelector((state) => state.modal.modalType);
+  console.log(
+    modalType,
+    "modaltype`--------------------------------------------------------"
+  );
+
   const showContents = (tab: any) => {
     switch (modalType) {
       case modalName.BioData:
@@ -79,6 +89,26 @@ const RenderModals = (props: Props) => {
       case modalName.editDiscussion:
         // code block
         return <EditDiscussion />;
+        break;
+      case modalName.pinModal:
+        // code block
+        return <PinModal />;
+        break;
+      case modalName.withdraFundsModal:
+        // code block
+        return <WithdrawFunds />;
+        break;
+      case modalName.addNewBank:
+        // code block
+        return <AddNewBank />;
+        break;
+      case modalName.editBankAccount:
+        // code block
+        return <EditBankAccount />;
+        break;
+      case modalName.successModal:
+        // code block
+        return <SuccessModal />;
         break;
 
       default:

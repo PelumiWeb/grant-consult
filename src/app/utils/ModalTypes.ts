@@ -15,6 +15,14 @@ export type ModalTypes = {
     editDiscussion:string
     rescheduleConsulation: string;
     editListModal: string;
+    pinModal: string;
+    addNewBank: string;
+    editBankAccount: string;
+    successModal: string;
+    withdraFundsModal: string;
+
+
+
 }
 
 export const modalName:ModalTypes = {
@@ -32,4 +40,9 @@ export const modalName:ModalTypes = {
     editDiscussion: "editDiscussion",
     rescheduleConsulation: "rescheduleConsulation",
     editListModal: "editListModal",
+    pinModal: "pinModal",
+    addNewBank: "addNewBank",
+    editBankAccount: "editBankAccount",
+    successModal: "successModal",
+    withdraFundsModal: "withdraFundsModal",
 }

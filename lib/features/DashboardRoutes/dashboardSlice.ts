@@ -26,6 +26,8 @@ export const dashboardSlice = createSlice({
         setActiveRoute: (state, action) => {
             state.assignedGrant = action.payload.assignedGrant;
             state.consultation = action.payload.consultation;
+            state.wallet = action.payload.wallet;
+
         }
     }
 }) 

@@ -5,10 +5,15 @@ import CustomTable from "../CustomTable";
 import CustomButton from "@/app/components/CustomButton";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import {
+  selectDashboardRoute,
+  setActiveRoute,
+} from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 import CustomInput from "@/app/components/CustomInput";
 import WalletFilterPption from "./components/WalletFilterOptions";
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
+import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
@@ -74,9 +79,7 @@ const dataSource = [
 
 const Wallet = (props: Props) => {
   const dispatch = useAppDispatch();
-  const assignedGrant = useAppSelector(
-    (state) => state.dashboard.assignedGrant
-  );
+  const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
@@ -124,12 +127,12 @@ const Wallet = (props: Props) => {
         <p
           className="font-semibold text-[14px] leading-[22px] text-grantBlack"
           onClick={() => {
-            dispatch(
-              setActiveRoute({
-                assignedGrant,
-                consultation: dashboardRouteName.consultationDetails,
-              })
-            );
+            // dispatch(
+            //   setActiveRoute({
+            //     assignedGrant,
+            //     consultation: dashboardRouteName.consultationDetails,
+            //   })
+            // );
           }}>
           {item}
         </p>
@@ -172,7 +175,17 @@ const Wallet = (props: Props) => {
         <div>
           <div className="flex w-full justify-between items-center py-4">
             <h4 className="text-[20px] leading-[26px]">Earnings Summary</h4>
-            <p className="underline text-secondaryColor font-semibold text-[14px] leading-[16px] ">
+            <p
+              className="underline text-secondaryColor font-semibold text-[14px] leading-[16px] cursor-pointer"
+              onClick={() => {
+                // console.log("What's wrong!!!")
+                dispatch(
+                  setActiveRoute({
+                    ...dashboardRoute,
+                    wallet: dashboardRouteName.walletHistory,
+                  })
+                );
+              }}>
               View Transaction History
             </p>
           </div>
@@ -195,6 +208,16 @@ const Wallet = (props: Props) => {
                 </p>
               </div>
               <CustomButton
+                onClick={() => {
+                  dispatch(
+                    openModal({
+                      open: true,
+                      modalType: modalName.withdraFundsModal,
+                    })
+                  );
+
+                  console.log("View Profile clicked");
+                }}
                 title="Withdraw"
                 width="w-[107px]"
                 height="h-[41px]"

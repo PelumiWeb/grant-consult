@@ -79,8 +79,8 @@ const dataSource = [
 
 const Consultation = (props: Props) => {
   const dispatch = useAppDispatch();
-  const assignedGrant = useAppSelector(
-    (state) => state.dashboard.assignedGrant
+  const dashboardRoute = useAppSelector(
+    (state) => state.dashboard
   );
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
@@ -132,7 +132,7 @@ const Consultation = (props: Props) => {
           onClick={() => {
             dispatch(
               setActiveRoute({
-                assignedGrant,
+                ...setActiveRoute,
                 consultation: dashboardRouteName.consultationDetails,
               })
             );
@@ -274,7 +274,7 @@ const Consultation = (props: Props) => {
               onClick={() => {
                 dispatch(
                   setActiveRoute({
-                    assignedGrant,
+                    ...dashboardRoute,
                     consultation: dashboardRouteName.performanceMetrics,
                   })
                 );

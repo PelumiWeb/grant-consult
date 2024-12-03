@@ -97,7 +97,7 @@ const dataSource = [
 
 const AssignedGrant = (props: Props) => {
  const dispatch = useAppDispatch();
- const consultation = useAppSelector((state) => state.dashboard.consultation);
+ const dashboardRoute = useAppSelector((state) => state.dashboard);
 
 const columns = [
   {
@@ -162,8 +162,8 @@ const columns = [
       <p
         onClick={() => {dispatch(
           setActiveRoute({
-            consultation,
-            assignedGrant: dashboardRouteName.assignDetails
+            ...dashboardRoute,
+            assignedGrant: dashboardRouteName.assignDetails,
           })
         );}}
         className="underline text-dashboardActionColor cursor-pointer text-[12px] leading-[21px]">

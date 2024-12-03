@@ -7,7 +7,7 @@ import CustomInput from "../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../components/CustomButton";
 import { Poppins, Montserrat } from "next/font/google";
-import { useRouter } from "next/navigation";
+import { useRouter , redirect, } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,7 +39,7 @@ export default function AuthLayout({
             <div
               onClick={async () => {
                 // router.refresh();
-                router.replace("/");
+                redirect("/");
               }}
               className="relative z-40 cursor-pointer">
               <Image

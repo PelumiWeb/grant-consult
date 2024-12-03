@@ -18,7 +18,7 @@ type Props = {
 
 const AssignedDetails = (props: Props) => {
   const dispatch = useAppDispatch();
-   const consultation = useAppSelector((state) => state.dashboard.consultation);
+   const dashboardRoute = useAppSelector((state) => state.dashboard);
             
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
@@ -322,7 +322,7 @@ const AssignedDetails = (props: Props) => {
         onClick={() => {
           dispatch(
             setActiveRoute({
-              consultation,
+              ...dashboardRoute,
               assignedGrant: dashboardRouteName.assignedGrant,
             })
           );
