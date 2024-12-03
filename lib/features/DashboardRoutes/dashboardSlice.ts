@@ -7,11 +7,15 @@ import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 export interface DashboardState {
     assignedGrant: string;
     consultation:string
+    wallet:string
+
 }
 
 const initialState: DashboardState = {
 assignedGrant: dashboardRouteName.assignedGrant,
-consultation: dashboardRouteName.consultation
+consultation: dashboardRouteName.consultation,
+    wallet:dashboardRouteName.wallet
+
 }
 
 

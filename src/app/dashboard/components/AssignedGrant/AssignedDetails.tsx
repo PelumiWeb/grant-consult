@@ -318,7 +318,7 @@ const AssignedDetails = (props: Props) => {
         </div>
       </div>
       <div
-        className="flex items-center mt-16 ml-4 cursor-pointer "
+        className="flex items-center mt-16 ml-4 cursor-pointer"
         onClick={() => {
           dispatch(
             setActiveRoute({

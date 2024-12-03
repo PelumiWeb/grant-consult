@@ -53,7 +53,8 @@ const config: Config = {
         'testimony-card': "0px 4px 38px 0px #00000040",
         'related-news-card': "0px 4.46px 27.85px 0px #00000040",
         'grant-service-card': "0px 2px 25.01px 0px #00000040",
-        'graphchart': "0px 2px 10px 0px #329DFD40"
+        'graphchart': "0px 2px 10px 0px #329DFD40",
+        'walletSummary': "0px 2px 10px 0px #329DFD4D"
       },
       colors: {
         background: "var(--background)",

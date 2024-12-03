@@ -4,7 +4,7 @@ profile: string;
 assignedGrants: string;
 consultation: string;
 message: string;
-revenue: string;
+wallet: string;
 settings: string;
 logout: string;
 }
@@ -14,7 +14,7 @@ profile: "Profile",
 assignedGrants: "assigned grants",
 consultation: "consultation",
 message: "message",
-revenue: "revenue",
+wallet: "wallet",
 settings: "settings",
 logout: "logout",
 }

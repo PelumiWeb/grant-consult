@@ -8,9 +8,11 @@ import Message from "./Message/Message";
 import Revenue from "./Revenue/Revenue";
 import AssignedHome from "./AssignedGrant/AssignedHome";
 import ConsultanHome from "./Consultation/ConsulatationHome";
+import WalletHome from "./Wallet/WalletHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
+  console.log(tab);
   const showContents = (tab: any) => {
     switch (tab) {
       case tabsName.profile:
@@ -29,9 +31,9 @@ export default function RenderContents() {
         // code block
         return <Message />;
         break;
-      case tabsName.revenue:
+      case tabsName.wallet:
         // code block
-        return <Revenue />;
+        return <WalletHome />;
         break;
 
       default:
