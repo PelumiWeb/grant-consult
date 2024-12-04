@@ -71,7 +71,15 @@ const WithdrawFunds = (props: Props) => {
               Set as Default
             </p>
           </button>
-          <button>
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.editBankAccount,
+                })
+              );
+            }}>
             <p className="text-buttonPrimary font-medium mx-4">Edit</p>
           </button>
           <button>
@@ -116,7 +124,15 @@ const WithdrawFunds = (props: Props) => {
           <p className="font-medium text-[12px] leading-[17px] text-textColor">
             Select any of the previously saved accounts or add a new one
           </p>
-          <button>
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.addNewBank,
+                })
+              );
+            }}>
             <p className="text-buttonPrimary ">
               +{" "}
               <span className="underline text-buttonPrimary ">

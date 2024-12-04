@@ -169,7 +169,7 @@ const Wallet = (props: Props) => {
           <p className="text-textColor">Wallet </p>
         </div>
         <div className="flex flex-col mb-6">
-          <h2 className="text-secondaryColor text-left">Your Wallet</h2>
+          <h2 className="text-secondaryColor text-left my-4">Your Wallet</h2>
           <p className="text-left">Manage your earnings and payouts</p>
         </div>
         <div>
