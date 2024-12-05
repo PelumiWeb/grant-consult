@@ -18,8 +18,7 @@ type Props = {
 
 const AssignedDetails = (props: Props) => {
   const dispatch = useAppDispatch();
-   const dashboardRoute = useAppSelector((state) => state.dashboard);
-            
+  const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
@@ -41,7 +40,7 @@ const AssignedDetails = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth"
+      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>

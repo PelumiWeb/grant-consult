@@ -40,9 +40,9 @@ const Profile = (props: Props) => {
   return (
     <div
       className={`bg-backgroundColor
- w-full p-8 overflow-scroll h-screen scroll-smooth `}
+ w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
       ref={scrollContainerRef}>
-      <DashboardHeader  />
+      <DashboardHeader />
       <div className="">
         <ProfileHeader />
         <Bio />

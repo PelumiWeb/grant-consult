@@ -159,7 +159,7 @@ const PerformanceMetric = (props: Props) => {
         <h4 className="font-semibold text-[20px] leading-[26px] ml-8 mb-4">
           Performance Overview
         </h4>
-          <BarchartComponent />
+        <BarchartComponent />
       </div>
       {/* Key metric and insights */}
       <div className="flex justify-between w-full items-center">
@@ -195,10 +195,7 @@ const PerformanceMetric = (props: Props) => {
         <h4 className="font-semibold text-[20px] leading-[26px]">Filters</h4>
         <div className="flex w-full items-center justify-between">
           <LabelInput select placeholder="Select Month" value="" />
-          <LabelInput select 
-          value=""
-          
-          placeholder="Completion Rate"  />
+          <LabelInput select value="" placeholder="Completion Rate" />
           <LabelInput select placeholder="Consultation Type" value="" />
           <CustomButton
             width="w-[120px]"
