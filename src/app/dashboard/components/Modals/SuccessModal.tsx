@@ -22,7 +22,7 @@ const SuccessModal = (props: Props) => {
       setOpen={() => openMmodal()}
       width="738px"
       height="">
-      <div className="w-full h-[140px] flex items-center">
+      <div className="w-full h-[70px] flex items-center">
         <h3 className="font-semibold text-[20px] leading-[36px]">
           {modalContent}
         </h3>

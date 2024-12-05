@@ -47,7 +47,7 @@ const Profile = (props: Props) => {
         <ProfileHeader />
         <Bio />
         <Expertise />
-        <Availability />
+        {/* <Availability /> */}
         <Experience />
         <Education />
         <SecuredGrant />

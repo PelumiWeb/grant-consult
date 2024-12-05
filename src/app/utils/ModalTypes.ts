@@ -20,6 +20,10 @@ export type ModalTypes = {
     editBankAccount: string;
     successModal: string;
     withdraFundsModal: string;
+    deleteModal: string;
+    changePasswordModal: string;
+    confirmPasswordModal: string;
+    setTransactionsModal: string;
 
 
 
@@ -45,4 +49,9 @@ export const modalName:ModalTypes = {
     editBankAccount: "editBankAccount",
     successModal: "successModal",
     withdraFundsModal: "withdraFundsModal",
+    deleteModal: "deleteModal",
+     changePasswordModal: "changePasswordModal",
+    confirmPasswordModal: "confirmPasswordModal",
+    setTransactionsModal: "setTransactionsModal",
+
 }

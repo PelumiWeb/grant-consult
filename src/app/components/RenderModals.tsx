@@ -21,6 +21,9 @@ import WithdrawFunds from "../dashboard/components/Modals/WithdrawFunds";
 import AddNewBank from "../dashboard/components/Modals/AddNewBank";
 import EditBankAccount from "../dashboard/components/Modals/EditBankAccount";
 import SuccessModal from "../dashboard/components/Modals/SuccessModal";
+import DeleteAccountModal from "../dashboard/components/Modals/DeleteAccountModal";
+import ConfirmTransactionPin from "../dashboard/components/Modals/ConfirmTransactionPin";
+import SetTransactionPin from "../dashboard/components/Modals/setTransactionPinModal";
 
 type Props = {};
 
@@ -109,6 +112,19 @@ const RenderModals = (props: Props) => {
       case modalName.successModal:
         // code block
         return <SuccessModal />;
+        break;
+
+      case modalName.deleteModal:
+        // code block
+        return <DeleteAccountModal />;
+        break;
+      case modalName.confirmPasswordModal:
+        // code block
+        return <ConfirmTransactionPin />;
+        break;
+      case modalName.setTransactionsModal:
+        // code block
+        return <SetTransactionPin />;
         break;
 
       default:

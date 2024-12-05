@@ -1,6 +1,6 @@
 'use client';
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { modalName } from "@/app/utils/ModalTypes";
 
@@ -24,7 +24,7 @@ export const modalSlice = createSlice({
     name: "modal",
     initialState,
     reducers:{
-        openModal: (state, action) => {
+        openModal: (state, action: PayloadAction<ModalState>) => {
             state.open = action.payload.open;
             state.modalType = action.payload.modalType;
             state.modalContent = action.payload.modalContent;
