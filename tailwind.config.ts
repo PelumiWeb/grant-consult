@@ -42,6 +42,7 @@ const config: Config = {
         'consultantTitle': "linear-gradient(90deg, #27AE60 0%, #104828 100%)",
         'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)",
         'grantColor': "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)",
+        'qa-background': 'linear-gradient(176.45deg, #B2EBF2 2.73%, #D1C4E9 127.16%)'
        
       },
     extend: {
@@ -54,7 +55,8 @@ const config: Config = {
         'related-news-card': "0px 4.46px 27.85px 0px #00000040",
         'grant-service-card': "0px 2px 25.01px 0px #00000040",
         'graphchart': "0px 2px 10px 0px #329DFD40",
-        'walletSummary': "0px 2px 10px 0px #329DFD4D"
+        'walletSummary': "0px 2px 10px 0px #329DFD4D",
+        'qa-shadow': "0px 0px 42.03px -1.72px #00000030"
       },
       colors: {
         background: "var(--background)",

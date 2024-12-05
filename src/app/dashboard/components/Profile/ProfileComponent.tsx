@@ -17,7 +17,7 @@ const ProfileComponent = (props: Props) => {
         <h3>{props.title}</h3>
         <div className="bg-backgroundColor rounded-full  w-[40px] h-[40px] flex items-center justify-center cursor-pointer" onClick={() => dispatch(openModal({
           open:true,
-          modalType: props.modalType
+          modalType: props?.modalType
         })) }>
           <img src="/edit.svg" alt="" />
         </div>

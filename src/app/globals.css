@@ -43,6 +43,13 @@
   }
 }
 
+.ant-collapse-header {
+  @apply text-gray-800 font-semibold text-lg transition-colors;
+}
+.ant-collapse-item-active > .ant-collapse-header {
+  @apply text-blue-500;
+}
+
 .custom-dropdown .ant-select-selector {
   @apply rounded-lg border border-blue-500 shadow-md;
   /* Tailwind CSS classes for rounded border, custom border color, and shadow */

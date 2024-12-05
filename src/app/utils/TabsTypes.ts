@@ -6,6 +6,7 @@ consultation: string;
 message: string;
 wallet: string;
 settings: string;
+helpSupport: string;
 logout: string;
 }
 
@@ -16,5 +17,6 @@ consultation: "consultation",
 message: "message",
 wallet: "wallet",
 settings: "settings",
+helpSupport: "help & support",
 logout: "logout",
 }

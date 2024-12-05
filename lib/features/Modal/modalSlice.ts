@@ -6,7 +6,7 @@ import { modalName } from "@/app/utils/ModalTypes";
 
 export interface ModalState {
     open: boolean;
-    modalType: string;
+    modalType: string | undefined;
     modalContent?: string;
 
 }
