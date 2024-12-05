@@ -16,21 +16,21 @@ const Consultant = (props: Props) => {
 
       <form className="mt-1 lg:mt-8 w-full">
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Full Name"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Email"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           contentLeft
           label="Phone Number"
           inputType="input"
@@ -38,7 +38,7 @@ const Consultant = (props: Props) => {
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Select Country/Region"
           inputType="select"
           type="text"
@@ -46,7 +46,7 @@ const Consultant = (props: Props) => {
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Expertise"
           inputType="select"
           type="text"
@@ -54,14 +54,14 @@ const Consultant = (props: Props) => {
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Years of Experience"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Password"
           inputType="input"
           type="password"
@@ -69,7 +69,7 @@ const Consultant = (props: Props) => {
           rightIcon
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="confirm Password"
           inputType="input"
           type="password"
@@ -78,7 +78,7 @@ const Consultant = (props: Props) => {
         />
         <div className="mt-4">
           <CustomButton
-            width="w-full"
+            width="w-full lg:w-[616px]"
             title="Sign up"
             onClick={() => router.push("/auth/otp")}
           />

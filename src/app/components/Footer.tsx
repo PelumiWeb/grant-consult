@@ -62,9 +62,7 @@ function Footer({}: Props) {
               <p className="text-white text-sm font-semibold cursor-pointer">
                 Our Team
               </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Portfolio
-              </p>
+            
               <p className="text-white text-sm font-semibold cursor-pointer">
                 FAQ
               </p>

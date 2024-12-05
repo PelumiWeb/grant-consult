@@ -74,7 +74,7 @@ const DashboardHeader = (props: Props) => {
             height={40}
           />
 
-          <p className="text-primary mx-4">William Smith </p>
+          <p className="text-primary mx-4">Alice brooklyn </p>
 
           <Image
             className=""

@@ -9,6 +9,7 @@ import Revenue from "./Revenue/Revenue";
 import AssignedHome from "./AssignedGrant/AssignedHome";
 import ConsultanHome from "./Consultation/ConsulatationHome";
 import WalletHome from "./Wallet/WalletHome";
+import Settings from "./Settings/Settings";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -34,6 +35,10 @@ export default function RenderContents() {
       case tabsName.wallet:
         // code block
         return <WalletHome />;
+        break;
+      case tabsName.settings:
+        // code block
+        return <Settings />;
         break;
 
       default:

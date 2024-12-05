@@ -10,26 +10,26 @@ type Props = {};
 const GeneralSignup = (props: Props) => {
   const router = useRouter()
   return (
-    <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
+    <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Signup</h3>
 
       <form className="mt-1 lg:mt-4 w-full">
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Full Name"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Email Address"
           inputType="input"
           type="text"
           value=""
         />
         <CustomInput
-          width="w-full"
+          width="w-full lg:w-[616px]"
           label="Password"
           inputType="input"
           type="password"
@@ -50,12 +50,14 @@ const GeneralSignup = (props: Props) => {
         </div>
         <div className="mt-8">
           <CustomButton
+            width="w-full lg:w-[616px]"
             title="Signup"
             onClick={() => router.push("/auth/otp")}
           />
         </div>
         <div className="mt-8">
           <CustomButton
+            width="w-full lg:w-[616px]"
             title="Sign up with Google"
             IconLeft="/google.svg"
             backgrounColor="bg-white"

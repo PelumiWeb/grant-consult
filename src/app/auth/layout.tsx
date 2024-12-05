@@ -31,50 +31,53 @@ export default function AuthLayout({
         className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
-        <section className=" fixed bottom-0 left-0 w-screen h-screen flex justify-center ">
+        <section className=" flex justify-center ">
           {/* Left */}
-          <div
-            className=" hidden lg:flex w-[45%] h-screen   px-4 flex-col justify-center lg:justify-start items-center lg:items-start py-8 bg-backgroundColor
-] relative ">
+          <div className="fixed bottom-0 left-0  h-screen w-[45%] ">
             <div
-              onClick={async () => {
-                // router.refresh();
-                redirect("/");
-              }}
-              className="relative z-40 cursor-pointer">
-              <Image
-                src="/grantLogo.svg"
-                alt="Grant Logo"
-                width={206}
-                height={30}
-              />
-            </div>
+              className=" hidden lg:flex  h-screen   px-4 flex-col justify-center lg:justify-start items-center lg:items-start py-8 bg-backgroundColor
+] relative ">
+              <div
+                onClick={async () => {
+                  // router.refresh();
+                  redirect("/");
+                }}
+                className="relative z-40 cursor-pointer">
+                <Image
+                  src="/grantLogo.svg"
+                  alt="Grant Logo"
+                  width={206}
+                  height={30}
+                />
+              </div>
 
-            <div className="z-20 ">
-              <img
-                src="/path1.svg"
-                className=" w-[370px] h-[392px] absolute -top-[15%] -left-[15%]"
-              />
-              <img
-                src="/path2.svg"
-                className="h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              />
-              <img
-                src="/path3.svg"
-                className="w-[450px] h-[465px] absolute -left-[15%] top-[55%] overflow-hidden"
-              />
-            </div>
+              <div className="z-20 ">
+                <img
+                  src="/path1.svg"
+                  className=" w-[370px] h-[392px] absolute -top-[15%] -left-[15%]"
+                />
+                <img
+                  src="/path2.svg"
+                  className="h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                />
+                <img
+                  src="/path3.svg"
+                  className="w-[450px] h-[465px] absolute -left-[15%] top-[55%] overflow-hidden"
+                />
+              </div>
 
-            <div className="flex items-center justify-center h-screen flex-1 w-full absolute top-0 z-30">
-              <img
-                className="max-w-full h-auto"
-                src="/people.svg"
-                alt="Grant Logo"
-              />
+              <div className="flex items-center justify-center h-screen flex-1 w-full absolute top-0 z-30">
+                <img
+                  className="max-w-full h-auto"
+                  src="/people.svg"
+                  alt="Grant Logo"
+                />
+              </div>
             </div>
           </div>
+
           {/* Content */}
-          <div className="w-full lg:w-[55%]  border-gray-500 bg-white  ">
+          <div className="w-full lg:w-[55%]  border-gray-500 bg-white absolute top-0 right-0  ">
             {children}
           </div>
         </section>

@@ -12,6 +12,7 @@ type Props = {
   defaultValue?: string;
   contentLeft?: boolean;
   width?: string;
+  
 };
 
 const CustomInput = (props: Props) => {
