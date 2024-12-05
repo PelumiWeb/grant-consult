@@ -24,6 +24,7 @@ import SuccessModal from "../dashboard/components/Modals/SuccessModal";
 import DeleteAccountModal from "../dashboard/components/Modals/DeleteAccountModal";
 import ConfirmTransactionPin from "../dashboard/components/Modals/ConfirmTransactionPin";
 import SetTransactionPin from "../dashboard/components/Modals/setTransactionPinModal";
+import ChangePassword from "../dashboard/components/Modals/ChangePasswordModal";
 
 type Props = {};
 
@@ -125,6 +126,10 @@ const RenderModals = (props: Props) => {
       case modalName.setTransactionsModal:
         // code block
         return <SetTransactionPin />;
+        break;
+      case modalName.changePasswordModal:
+        // code block
+        return <ChangePassword />;
         break;
 
       default:

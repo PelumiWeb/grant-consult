@@ -155,13 +155,20 @@ const Settings = (props: Props) => {
           iconPosition="none"
           showTitle
           border
+          edit
+          onClick={() => {
+            dispatch(openModal({
+              open: true,
+              modalType: modalName.changePasswordModal,
+            }))
+          }}
         />
         <SettingsComponent
         onClick={() => {
           dispatch(openModal({
             open: true,
             modalType: modalName.setTransactionsModal,
-            
+
           }))
         }}
           title="Set Transaction Pin"

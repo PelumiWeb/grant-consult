@@ -56,13 +56,13 @@ const ChangePassword = (props: Props) => {
             placeholder="Password must be at least 8 characters"
           />
         </div>
-        <div>
+        <div className="flex items-center py-2">
           <Checkbox />
-          <p className="text-[12px] font-medium leading-[17px]">
+          <p className="text-[12px] font-medium leading-[17px] ml-2">
             Require all devices to sign in with new password
           </p>
         </div>
-        <div>
+        <div className="w-[90%] flex justify-between">
           <CustomButton
             title="Save"
             width="w-[120px]"
