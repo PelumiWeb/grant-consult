@@ -10,7 +10,7 @@ import {
 import { Input, QRCode } from "antd";
 import { OTPProps } from "antd/es/input/OTP";
 import { modalName } from "@/app/utils/ModalTypes";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+
 
 type Props = {};
 

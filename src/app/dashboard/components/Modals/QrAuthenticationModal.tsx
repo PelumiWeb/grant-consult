@@ -1,7 +1,7 @@
 import CustomButton from "@/app/components/CustomButton";
 import LabelInput from "@/app/components/LabelInput";
 import CustomModal from "@/app/components/Modal";
-import React from "react";
+import React, { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import {
   closeModal,
@@ -14,6 +14,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 type Props = {};
 
+const TypedCopyToClipboard: any = CopyToClipboard;
 const QrAuthentication = (props: Props) => {
   const open = useAppSelector((state) => state.modal.open);
   const dispatch = useAppDispatch();
@@ -77,7 +78,7 @@ const QrAuthentication = (props: Props) => {
                   </p>
                 </div>
 
-                <CopyToClipboard
+                <TypedCopyToClipboard
                   text={"Copy to Clickboard"}
                   // onCopy={() => this.setState({ copied: true })}
                 >
@@ -89,7 +90,7 @@ const QrAuthentication = (props: Props) => {
                     borderColor="border-borderColor"
                     textStyle="text-textColor"
                   />
-                </CopyToClipboard>
+                </TypedCopyToClipboard>
               </div>
             )}
             <button onClick={() => setShowCode((prev) => !prev)}>

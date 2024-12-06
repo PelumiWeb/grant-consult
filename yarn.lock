@@ -3755,7 +3755,7 @@ __metadata:
     react-calendar: ^5.1.0
     react-chartjs-2: ^5.2.0
     react-charts: beta
-    react-copy-to-clipboard: ^5.1.0
+    react-copy-to-clipboard: latest
     react-dom: 19.0.0-rc-02c0e824-20241028
     react-hook-form: ^7.53.1
     react-multi-carousel: ^2.8.5
@@ -5956,7 +5956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-copy-to-clipboard@npm:^5.1.0":
+"react-copy-to-clipboard@npm:latest":
   version: 5.1.0
   resolution: "react-copy-to-clipboard@npm:5.1.0"
   dependencies:
