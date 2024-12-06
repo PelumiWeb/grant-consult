@@ -5,6 +5,7 @@ import CustomInput from "../../components/CustomInput";
 import { Checkbox, Input } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -12,6 +13,8 @@ const Otp = (props: Props) => {
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
   };
+
+  const router = useRouter()
 
   const sharedProps: OTPProps = {
     onChange,
@@ -34,7 +37,11 @@ const Otp = (props: Props) => {
           />
         </div>
         <div className="flex items-center justify-center w-full mt-16">
-          <CustomButton width="w-[204px]" title="Verify and submit" />
+          <CustomButton
+            width="w-[204px]"
+            title="Verify and submit"
+            onClick={() => router.push("/dashboard")}
+          />
         </div>
       </div>
     </div>

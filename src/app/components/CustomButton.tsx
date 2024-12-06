@@ -20,6 +20,7 @@ type Props = {
   borderWidth?: string;
   textStyle?: string;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset" | undefined;
 };
 
 const CustomButton = ({
@@ -38,12 +39,14 @@ const CustomButton = ({
   borderWidth = "border",
   textStyle = `${textColor}`,
   disabled,
+  type = "button",
 }: Props) => {
   // bg-gradient-to-b from-[#FD32B2] to-[#F2D4E7]
   // bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
 
   return (
     <button
+      type={type}
       disabled={disabled}
       onClick={onClick}
       className={`

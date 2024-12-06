@@ -57,6 +57,7 @@ const GeneralSignup = (props: Props) => {
         </div>
         <div className="mt-8">
           <CustomButton
+          
             width="w-full lg:w-[616px]"
             title="Sign up with Google"
             IconLeft="/google.svg"
