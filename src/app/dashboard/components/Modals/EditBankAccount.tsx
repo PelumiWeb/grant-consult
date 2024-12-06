@@ -64,10 +64,17 @@ const AddNewBank = (props: Props) => {
               );
             }}
           />
-          <button>
+          <button 
+          onClick={ () => {
+            dispatch(openModal({
+              open: true,
+              modalType: modalName.addNewBank
+            }))
+          }}
+          >
             <p className="text-buttonPrimary underline font-semibold">
               Add New Account
-            </p>
+            </p>s
           </button>
         </div>
       </div>

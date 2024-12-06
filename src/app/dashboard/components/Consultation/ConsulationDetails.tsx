@@ -216,6 +216,135 @@ const ConsultationDetails = (props: Props) => {
                 </li>
               </ul>
             </div>
+
+            <div className="relative w-full p-4 pr-16 bg-white my-2">
+              <h4>Discussion Notes</h4>
+              {/* <ul className="list-disc ml-4 mt-4">
+                <p className="text-textColor text-sm -ml-4">
+                  Here you can jot down notes on{" "}
+                </p>
+                <li>
+                  <p className="text-textColor text-sm my-1">
+                    client goals and resources
+                  </p>
+                </li>
+                <li>
+                  <p className="text-textColor text-sm">
+                    Further steps for application draft review
+                  </p>
+                </li>
+              </ul> */}
+              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                <img src="/folder.svg" alt="" />
+                <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                  Grant Proposal Template (PDF)
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  Uploaded By Alice Brooklyn
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  17.07.2024
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  8:34 AM
+                </p>
+
+                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                  Download
+                </p>
+                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                  Delete
+                </p>
+              </div>
+              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                <img src="/folder.svg" alt="" />
+                <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                  Grant Proposal Template (PDF)
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  Uploaded By Alice Brooklyn
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  17.07.2024
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  8:34 AM
+                </p>
+
+                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                  Download
+                </p>
+                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                  Delete
+                </p>
+              </div>
+              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                <img src="/folder.svg" alt="" />
+                <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                  Grant Proposal Template (PDF)
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  Uploaded By Alice Brooklyn
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  17.07.2024
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  8:34 AM
+                </p>
+
+                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                  Download
+                </p>
+                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                  Delete
+                </p>
+              </div>
+              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                <img src="/folder.svg" alt="" />
+                <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                  Grant Proposal Template (PDF)
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  Uploaded By Alice Brooklyn
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  17.07.2024
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  8:34 AM
+                </p>
+
+                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                  Download
+                </p>
+                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                  Delete
+                </p>
+              </div>
+              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                <img src="/folder.svg" alt="" />
+                <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                  Grant Proposal Template (PDF)
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  Uploaded By Alice Brooklyn
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  17.07.2024
+                </p>
+                <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                  8:34 AM
+                </p>
+
+                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                  Download
+                </p>
+                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                  Delete
+                </p>
+              </div>
+            </div>
             {/* Component 4 */}
             <div className="relative w-full p-4 bg-white my-2">
               <div
