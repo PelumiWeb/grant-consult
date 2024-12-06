@@ -3,7 +3,8 @@ import LabelInput from "@/app/components/LabelInput";
 import CustomModal from "@/app/components/Modal";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { closeModal } from "../../../../../lib/features/Modal/modalSlice";
+import { closeModal, openModal } from "../../../../../lib/features/Modal/modalSlice";
+import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
@@ -40,6 +41,15 @@ Experienced grant consultant specializing in education, healthcare, and social s
         />
         <div className="mt-8">
           <CustomButton
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.successModal,
+                  modalContent: "Bio Edited Successfully",
+                })
+              );
+            }}
             width="w-[123px]"
             height="h-[60px]"
             title="Save"

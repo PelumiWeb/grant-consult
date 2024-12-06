@@ -1417,6 +1417,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-copy-to-clipboard@npm:^5.0.7":
+  version: 5.0.7
+  resolution: "@types/react-copy-to-clipboard@npm:5.0.7"
+  dependencies:
+    "@types/react": "*"
+  checksum: adc2970c8756e648daa06e294c422df3dc076a784344ab2ecb78a17ebd7e8e3dfd7f31e68c24267de4815cdeec573a743d952a308b45b8380f6b7912a9a8b911
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^17.0.9":
   version: 17.0.25
   resolution: "@types/react-dom@npm:17.0.25"
@@ -2303,7 +2312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-to-clipboard@npm:^3.3.3":
+"copy-to-clipboard@npm:^3.3.1, copy-to-clipboard@npm:^3.3.3":
   version: 3.3.3
   resolution: "copy-to-clipboard@npm:3.3.3"
   dependencies:
@@ -3732,6 +3741,7 @@ __metadata:
     "@reduxjs/toolkit": ^2.3.0
     "@types/node": ^20
     "@types/react": ^18
+    "@types/react-copy-to-clipboard": ^5.0.7
     "@types/react-dom": ^18
     antd: ^5.21.6
     axios: ^1.7.7
@@ -3745,9 +3755,11 @@ __metadata:
     react-calendar: ^5.1.0
     react-chartjs-2: ^5.2.0
     react-charts: beta
+    react-copy-to-clipboard: ^5.1.0
     react-dom: 19.0.0-rc-02c0e824-20241028
     react-hook-form: ^7.53.1
     react-multi-carousel: ^2.8.5
+    react-qr-code: ^2.0.15
     react-redux: ^9.1.2
     react-router-dom: ^6.28.0
     react-toastify: ^10.0.6
@@ -5326,6 +5338,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qr.js@npm:0.0.0":
+  version: 0.0.0
+  resolution: "qr.js@npm:0.0.0"
+  checksum: 5ac6c393967bdeaa660e7fd3a501a25eb538c1f6008a4d30ab2b97bbe520e5c236530090773f1578aa0a523cdaa6923c866615e21143f9e7cd22abd41c789b69
+  languageName: node
+  linkType: hard
+
 "queue-microtask@npm:^1.2.2":
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
@@ -5937,6 +5956,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-copy-to-clipboard@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "react-copy-to-clipboard@npm:5.1.0"
+  dependencies:
+    copy-to-clipboard: ^3.3.1
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^15.3.0 || 16 || 17 || 18
+  checksum: f00a4551b9b63c944a041a6ab46af5ef20ba1106b3bc25173e7ef9bffbfba17a613368682ab8820cfe8d4b3acc5335cd9ce20229145bcc1e6aa8d1db04c512e5
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:19.0.0-rc-02c0e824-20241028":
   version: 19.0.0-rc-02c0e824-20241028
   resolution: "react-dom@npm:19.0.0-rc-02c0e824-20241028"
@@ -5987,6 +6018,18 @@ __metadata:
   version: 2.8.5
   resolution: "react-multi-carousel@npm:2.8.5"
   checksum: aa41112c4ab548570d0c65f9f30cddb1219d1ca7f9e43022a4f7c5fcb394e66028df3bd1a6a907282720ca7b83aeda8c7101fda300f8a32e959ef1cdc11a3db9
+  languageName: node
+  linkType: hard
+
+"react-qr-code@npm:^2.0.15":
+  version: 2.0.15
+  resolution: "react-qr-code@npm:2.0.15"
+  dependencies:
+    prop-types: ^15.8.1
+    qr.js: 0.0.0
+  peerDependencies:
+    react: "*"
+  checksum: 4124b7c2ce71bfe94279d85322175c881ba87dcc9b67f3c6d6e2806854a8792cf5f9ed8e10ea04c22e39aa060ef12fb39e679e780cba14f168d3cd6cffb7086d
   languageName: node
   linkType: hard
 

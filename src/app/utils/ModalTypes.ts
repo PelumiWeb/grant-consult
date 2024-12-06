@@ -24,6 +24,10 @@ export type ModalTypes = {
     changePasswordModal: string;
     confirmPasswordModal: string;
     setTransactionsModal: string;
+    forgotTransactionPin: string;
+    twoStepVerification: string;
+    qrAuthentication: string;
+    smsVerfifications: string; 
 
 
 
@@ -53,5 +57,10 @@ export const modalName:ModalTypes = {
      changePasswordModal: "changePasswordModal",
     confirmPasswordModal: "confirmPasswordModal",
     setTransactionsModal: "setTransactionsModal",
+    forgotTransactionPin: "forgotTransactionPin",
+    twoStepVerification: "twoStepVerification",
+    qrAuthentication: "qrAuthentication",
+    smsVerfifications: "smsVerfifications"
+
 
 }

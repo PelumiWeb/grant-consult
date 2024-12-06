@@ -64,6 +64,14 @@ const ChangePassword = (props: Props) => {
         </div>
         <div className="w-[90%] flex justify-between">
           <CustomButton
+          onClick={() => {
+            dispatch(openModal({
+              open: true,
+              modalType: modalName.successModal,
+              modalContent: "Password Saved Successfully"
+
+            }))
+          }}
             title="Save"
             width="w-[120px]"
             height="h-[60px]"

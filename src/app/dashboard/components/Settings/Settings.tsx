@@ -148,6 +148,14 @@ const Settings = (props: Props) => {
           iconPosition="top"
           border
           showTitle
+          onClick={() => {
+            dispatch(
+              openModal({
+                open: true,
+                modalType: modalName.twoStepVerification,
+              })
+            );
+          }}
         />
         <SettingsComponent
           title="Change Password"
@@ -157,20 +165,23 @@ const Settings = (props: Props) => {
           border
           edit
           onClick={() => {
-            dispatch(openModal({
-              open: true,
-              modalType: modalName.changePasswordModal,
-            }))
+            dispatch(
+              openModal({
+                open: true,
+                modalType: modalName.changePasswordModal,
+              })
+            );
           }}
         />
         <SettingsComponent
-        onClick={() => {
-          dispatch(openModal({
-            open: true,
-            modalType: modalName.setTransactionsModal,
-
-          }))
-        }}
+          onClick={() => {
+            dispatch(
+              openModal({
+                open: true,
+                modalType: modalName.setTransactionsModal,
+              })
+            );
+          }}
           title="Set Transaction Pin"
           message="Necessary for funds withdrawal"
           iconPosition="none"
@@ -183,6 +194,14 @@ const Settings = (props: Props) => {
           message="Reset PIN here"
           iconPosition="none"
           showTitle
+          onClick={() => {
+            dispatch(
+              openModal({
+                open: true,
+                modalType: modalName.forgotTransactionPin,
+              })
+            );
+          }}
           //   border
           edit
         />

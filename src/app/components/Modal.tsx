@@ -26,6 +26,7 @@ const CustomModal = ({
       onCancel={() => setOpen()}
       width={width}
       height={height}
+      
     >
       {children}
     </Modal>

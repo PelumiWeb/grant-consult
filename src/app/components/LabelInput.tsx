@@ -15,11 +15,12 @@ type Props = {
   height?: string;
   mr?: string;
   select?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: any;
   textArea?: boolean;
   righticon?: any;
   leftIcon?: any;
   options?: SelectOption[] | undefined;
+  handleChange?: (value: string) => void
 };
 
 const { TextArea } = Input;
@@ -33,6 +34,8 @@ const { TextArea } = Input;
 // }
 
 const LabelInput = (props: Props) => {
+ 
+
   const RenderInputs = (props: Props) => {
     if (props.select) {
       return (
@@ -43,7 +46,7 @@ const LabelInput = (props: Props) => {
           placeholder={props.placeholder}
           defaultValue={props.placeholder}
           filterOption
-          onChange={props.onChange}
+          onChange={props.handleChange}
           options={props.options}
         />
       );

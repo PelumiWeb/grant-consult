@@ -25,6 +25,10 @@ import DeleteAccountModal from "../dashboard/components/Modals/DeleteAccountModa
 import ConfirmTransactionPin from "../dashboard/components/Modals/ConfirmTransactionPin";
 import SetTransactionPin from "../dashboard/components/Modals/setTransactionPinModal";
 import ChangePassword from "../dashboard/components/Modals/ChangePasswordModal";
+import TwoStepVerfication from "../dashboard/components/Modals/TwoStepVerification";
+import ForgotTransactionPin from "../dashboard/components/Modals/ForgotTransactionPin";
+import QrAuthentication from "../dashboard/components/Modals/QrAuthenticationModal";
+import SmsVerification from "../dashboard/components/Modals/SmsVerification";
 
 type Props = {};
 
@@ -130,6 +134,22 @@ const RenderModals = (props: Props) => {
       case modalName.changePasswordModal:
         // code block
         return <ChangePassword />;
+        break;
+      case modalName.forgotTransactionPin:
+        // code block
+        return <ForgotTransactionPin />;
+        break;
+      case modalName.twoStepVerification:
+        // code block
+        return <TwoStepVerfication />;
+        break;
+      case modalName.qrAuthentication:
+        // code block
+        return <QrAuthentication />;
+        break;
+      case modalName.smsVerfifications:
+        // code block
+        return <SmsVerification />;
         break;
 
       default:
