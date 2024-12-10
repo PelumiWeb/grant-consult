@@ -25,7 +25,6 @@ const tabs: TabsProps = [
 ];
 
 const Sidebar = (props: Props) => {
-  const [activeTabs, setActiveTabs] = React.useState("profile");
   const dispatch = useAppDispatch();
   const tabName = useAppSelector((state) => state.tab.name);
   const router = useRouter();
