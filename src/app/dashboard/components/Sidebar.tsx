@@ -5,6 +5,7 @@ import TabsComponent from "./TabsComponent";
 import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
 import { setActiveTab } from "../../../../lib/features/Tabs/tabsLice";
 import { useRouter } from "next/navigation";
+import { tabsName } from "@/app/utils/TabsTypes";
 
 type Props = {};
 type TabsProps = { imageTitle: string; image: string; textColor?: string }[];
@@ -28,6 +29,7 @@ const Sidebar = (props: Props) => {
   const dispatch = useAppDispatch();
   const tabName = useAppSelector((state) => state.tab.name);
   const router = useRouter();
+  console.log(tabName , "TabName")
 
   return (
     <div className="bg-primary h-screen w-[20%] px-8 ">

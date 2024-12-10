@@ -9,7 +9,7 @@ interface tab {
 
 // Define the initial state using that type
 const initialState: tab = {
-  name: tabsName,
+  name: tabsName.profile,
 }
 
 export const tabSlice = createSlice({
