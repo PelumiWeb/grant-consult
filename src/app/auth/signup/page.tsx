@@ -10,6 +10,7 @@ import Consultant from "./components/Consultant";
 import Grantor from "./components/Grantor";
 import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
 import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
+import { userTypeName } from "@/app/utils/userTypes";
 type Props = {};
 type UserType = { name: string; id: number }[];
 
@@ -86,12 +87,12 @@ const Signup = (props: Props) => {
       );
     } else if (
       signupData.userTypeSelected &&
-      signupData.userType === "(NGO, corporate, Individual)"
+      signupData.userType === userTypeName.general
     ) {
       return <GeneralSignup />;
     } else if (
       signupData.userTypeSelected &&
-      signupData.userType === "Consultant"
+      signupData.userType === userTypeName.consultant
     ) {
       return <Consultant />;
     } else {

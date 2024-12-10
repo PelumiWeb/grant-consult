@@ -11,6 +11,7 @@ import ConsultanHome from "./Consultation/ConsulatationHome";
 import WalletHome from "./Wallet/WalletHome";
 import Settings from "./Settings/Settings";
 import HelpSupport from "./HelpSupport/HelpSupport";
+import ProfileHome from "./Profile/ProfileHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -19,7 +20,7 @@ export default function RenderContents() {
     switch (tab) {
       case tabsName.profile:
         // code block
-        return <Profile />;
+        return <ProfileHome />;
         break;
       case tabsName.assignedGrants:
         // code block

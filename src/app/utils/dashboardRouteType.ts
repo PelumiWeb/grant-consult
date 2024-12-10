@@ -1,6 +1,7 @@
 
 
 export type DashboardRoute = {
+  profile: string;
   assignedGrant: string;
   assignDetails: string; 
   consultation: string;
@@ -11,6 +12,7 @@ export type DashboardRoute = {
 }
 
 export const dashboardRouteName:DashboardRoute = {
+  profile: "profile",
    assignedGrant: "assignedGrant",
   assignDetails: "assignDetails",
   consultation: "consultation",
