@@ -28,6 +28,7 @@ export type ModalTypes = {
     twoStepVerification: string;
     qrAuthentication: string;
     smsVerfifications: string; 
+    editAboutModal: string;
 
 
 
@@ -60,7 +61,8 @@ export const modalName:ModalTypes = {
     forgotTransactionPin: "forgotTransactionPin",
     twoStepVerification: "twoStepVerification",
     qrAuthentication: "qrAuthentication",
-    smsVerfifications: "smsVerfifications"
+    smsVerfifications: "smsVerfifications",
+    editAboutModal: "editAboutModal"
 
 
 }

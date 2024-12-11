@@ -34,7 +34,7 @@ const ProfileGeneralHeader = (props: Props) => {
       {/* Bottom */}
       <div className="bg-white h-[60%]">
         <img src="/generalUser.svg" className="absolute top-16 left-8" />
-        <div className="flex w-full justify-between items-center absolute bottom-20 ml-4">
+        <div className="flex w-full justify-between items-center absolute bottom-20 ml-8">
          
           <div className="mr-20 ">
             <h4 className="font-mono my-2">Contact Information</h4>

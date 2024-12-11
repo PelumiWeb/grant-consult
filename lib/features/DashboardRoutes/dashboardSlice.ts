@@ -1,6 +1,6 @@
 'use client';
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 
@@ -8,13 +8,15 @@ export interface DashboardState {
     assignedGrant: string;
     consultation:string
     wallet:string
+    dashboard:string
 
 }
 
 const initialState: DashboardState = {
 assignedGrant: dashboardRouteName.assignedGrant,
 consultation: dashboardRouteName.consultation,
-    wallet:dashboardRouteName.wallet
+    wallet:dashboardRouteName.wallet,
+    dashboard: dashboardRouteName.generalDashboard
 
 }
 
@@ -23,10 +25,11 @@ export const dashboardSlice = createSlice({
     name: "dashboard",
     initialState,
     reducers:{
-        setActiveRoute: (state, action) => {
+        setActiveRoute: (state, action:PayloadAction<DashboardState>) => {
             state.assignedGrant = action.payload.assignedGrant;
             state.consultation = action.payload.consultation;
             state.wallet = action.payload.wallet;
+            state.dashboard = action.payload.dashboard
 
         }
     }

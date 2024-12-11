@@ -8,6 +8,10 @@ wallet: string;
 settings: string;
 helpSupport: string;
 logout: string;
+generalDashboard: string;
+grant: string;
+manageSubscription: string
+
 }
 
 export const tabsName:tabsTypes = {
@@ -19,4 +23,9 @@ wallet: "wallet",
 settings: "settings",
 helpSupport: "help & support",
 logout: "logout",
+  generalDashboard: "Dashboard",
+
+  grant: "grant",
+  manageSubscription: "manageSubscription"
+
 }

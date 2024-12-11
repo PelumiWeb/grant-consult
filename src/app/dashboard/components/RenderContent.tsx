@@ -12,6 +12,8 @@ import WalletHome from "./Wallet/WalletHome";
 import Settings from "./Settings/Settings";
 import HelpSupport from "./HelpSupport/HelpSupport";
 import ProfileHome from "./Profile/ProfileHome";
+import GeneralDashboard from "./GeneralDashboard";
+import GeneralDashboardHome from "./GeneralDashboard/GeneralDashboardHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -45,6 +47,10 @@ export default function RenderContents() {
       case tabsName.helpSupport:
         // code block
         return <HelpSupport />;
+        break;
+      case tabsName.generalDashboard:
+        // code block
+        return <GeneralDashboardHome />;
         break;
 
       default:

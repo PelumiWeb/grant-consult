@@ -29,6 +29,8 @@ import TwoStepVerfication from "../dashboard/components/Modals/TwoStepVerificati
 import ForgotTransactionPin from "../dashboard/components/Modals/ForgotTransactionPin";
 import QrAuthentication from "../dashboard/components/Modals/QrAuthenticationModal";
 import SmsVerification from "../dashboard/components/Modals/SmsVerification";
+import About from "../dashboard/components/Profile/components/About";
+import EditAbout from "../dashboard/components/Modals/AboutModal";
 
 type Props = {};
 
@@ -150,6 +152,10 @@ const RenderModals = (props: Props) => {
       case modalName.smsVerfifications:
         // code block
         return <SmsVerification />;
+        break;
+      case modalName.editAboutModal:
+        // code block
+        return <EditAbout />;
         break;
 
       default:

@@ -42,7 +42,9 @@ const config: Config = {
         'consultantTitle': "linear-gradient(90deg, #27AE60 0%, #104828 100%)",
         'consultanButton': "linear-gradient(90.26deg, #176337 26.49%, #50FF99 85.48%)",
         'grantColor': "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)",
-        'qa-background': 'linear-gradient(176.45deg, #B2EBF2 2.73%, #D1C4E9 127.16%)'
+        'qa-background': 'linear-gradient(176.45deg, #B2EBF2 2.73%, #D1C4E9 127.16%)',
+        'gradient-border': 'linear-gradient(180deg, rgba(52, 168, 83, 0.5) 0%, #191919 24.5%, rgba(28, 243, 254, 0.7))',
+        
        
       },
     extend: {
@@ -56,7 +58,10 @@ const config: Config = {
         'grant-service-card': "0px 2px 25.01px 0px #00000040",
         'graphchart': "0px 2px 10px 0px #329DFD40",
         'walletSummary': "0px 2px 10px 0px #329DFD4D",
-        'qa-shadow': "0px 0px 42.03px -1.72px #00000030"
+        'qa-shadow': "0px 0px 42.03px -1.72px #00000030",
+        'genera-user-shdow-card': "0px 4px 25px 1px #4285F440",
+        'active-summary': "4px 0px 25px 0px #4285F440",
+        'grant-card-dashboard': "0px 4px 4px 0px #4285F440",
       },
       colors: {
         background: "var(--background)",
@@ -81,7 +86,8 @@ const config: Config = {
         newPrimaryTextColor: "#333333",
         grantBlack: " #000000",
         profileHeaderColor: "#C2C9D4B2",
-        dashboardActionColor: "#27AE60"
+        dashboardActionColor: "#27AE60",
+        subscriptionBackground: "#329DFD52"
 
         
       },

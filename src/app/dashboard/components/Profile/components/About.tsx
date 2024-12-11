@@ -10,8 +10,8 @@ const About = (props: Props) => {
   return (
     <ProfileComponent
       title="About"
-      modalType={modalName.BioData}
-      notEditable={props.notEditable}>
+      modalType={modalName.editAboutModal}
+      >
       <div className="w-full mt-4">
         <p className="mb-4 text-newPrimaryTextColor">
           I am a passionate educator with a strong commitment to promoting
