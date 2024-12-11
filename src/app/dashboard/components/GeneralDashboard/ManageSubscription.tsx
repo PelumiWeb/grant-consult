@@ -11,7 +11,7 @@ import RenderModals from "@/app/components/RenderModals";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
-import { Switch } from "antd";
+import { Input, Switch } from "antd";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -121,7 +121,7 @@ const ManageSubscription = (props: Props) => {
               </div>
               <div className="flex justify-between items-center">
                 <p className="font-bold text-[15px] leading-[17.1px] text-[#003399] mr-2">
-                  Auto renew
+                  Auto-Renew
                 </p>
                 <Switch />
               </div>
@@ -209,8 +209,8 @@ const ManageSubscription = (props: Props) => {
       </div>
 
       <div className="flex justify-between items-center p-4 bg-white my-4">
-        <div>
-          <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary ">
+        <div className="flex flex-col justify-start h-[190px]">
+          <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary mb-8">
             Manage Payment Methods
           </h4>
           <div>
@@ -242,6 +242,85 @@ const ManageSubscription = (props: Props) => {
             </div>
           </div>
         </div>
+        <div>
+          <p className="text-textColor py-1 font-bold text-[16px] leading-[19px]">
+            Add New Card
+          </p>
+          <div className="w-[530px] h-[170px]  rounded-[6.11px] border border-borderColor ">
+            {/* Top */}
+            <div className="flex items-center border-b border-b-borderColor justify-between py-1 ">
+              <div className="h-[54.81px] w-full cursor-pointer px-4">
+                <input
+                  type="text"
+                  className="h-full w-full outline-none placeholder:text-textColor placeholder:text-[16px] placeholder:leading-[23.24px] placeholder:font-mono placeholder:ml-2 font-mono text-[16px] leading-[23.24px] font-medium"
+                  placeholder="Williams Smith"
+                />
+              </div>
+            </div>
+
+            <div className="h-[50px] w-full cursor-pointer flex border-b border-b-borderColor px-4">
+              <input
+                type="card"
+                className="h-full w-full outline-none placeholder:text-textColor placeholder:text-[16px] placeholder:leading-[23.24px] placeholder:font-mono font-mono text-[16px] leading-[23.24px] font-medium"
+                placeholder="0000 0000 0000 0000"
+              />
+              <div className="flex items-center justify-around w-[150px]">
+                <img src="/card-visa.png" />
+                <img src="/card-master.svg" />
+                <img src="/card-pay.svg" />
+              </div>
+            </div>
+
+            <div className="h-[50px] w-full cursor-pointer flex px-4">
+              <input
+                type="text"
+                placeholder="MM/YY"
+                className="h-full w-[50%] border-r border-r-borderColor outline-none"
+              />
+              <div className="w-[50%] flex justify-between items-center px-4">
+                <input type="text" className="h-full w-full outline-none" />
+                <img src="/cardIcon.svg" className="" alt="" />
+              </div>
+            </div>
+          </div>
+          <button>
+            <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] underline mt-8">
+              Save Card
+            </p>
+          </button>
+        </div>
+      </div>
+
+      <div className=" p-4 bg-white my-4">
+        <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary mb-8">
+          Notifications & Alert
+        </h4>
+
+        <div className="flex justify-between items-center w-[30%] py-2">
+          <p className="font-medium text-[14px] leading-[30.8px] text-textColor">
+            Enable Renewal Reminder
+          </p>
+          <Switch size="small" />
+        </div>
+        <div className="flex justify-between items-center w-[30%]">
+          <p className="font-medium text-[14px] leading-[30.8px] text-textColor">
+            Notify on Payment Failures
+          </p>
+          <Switch size="small" />
+        </div>
+      </div>
+      <div
+        className="flex items-center mt-16 ml-4 cursor-pointer"
+        onClick={() => {
+          dispatch(
+            setActiveRoute({
+              ...dashboardRoute,
+              dashboard: dashboardRouteName.generalDashboard,
+            })
+          );
+        }}>
+        <img src="/arrowLeft.svg" alt="" />
+        <p className="text-secondaryColor ml-2">Return to Dashboard</p>
       </div>
       <RenderModals />
     </div>
