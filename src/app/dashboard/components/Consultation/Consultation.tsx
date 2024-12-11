@@ -132,7 +132,7 @@ const Consultation = (props: Props) => {
           onClick={() => {
             dispatch(
               setActiveRoute({
-                ...setActiveRoute,
+                ...dashboardRoute,
                 consultation: dashboardRouteName.consultationDetails,
               })
             );
