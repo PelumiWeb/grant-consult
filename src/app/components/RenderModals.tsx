@@ -31,6 +31,8 @@ import QrAuthentication from "../dashboard/components/Modals/QrAuthenticationMod
 import SmsVerification from "../dashboard/components/Modals/SmsVerification";
 import About from "../dashboard/components/Profile/components/About";
 import EditAbout from "../dashboard/components/Modals/AboutModal";
+import WarnignModal from "../dashboard/components/Modals/WarningModal";
+import EditCardModal from "../dashboard/components/Modals/EditCardModal";
 
 type Props = {};
 
@@ -156,6 +158,14 @@ const RenderModals = (props: Props) => {
       case modalName.editAboutModal:
         // code block
         return <EditAbout />;
+        break;
+      case modalName.warning:
+        // code block
+        return <WarnignModal />;
+        break;
+      case modalName.editCardModal:
+        // code block
+        return <EditCardModal />;
         break;
 
       default:

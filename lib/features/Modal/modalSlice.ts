@@ -8,6 +8,7 @@ export interface ModalState {
     open: boolean;
     modalType: string | undefined;
     modalContent?: string;
+    from?: string;
 
 }
 

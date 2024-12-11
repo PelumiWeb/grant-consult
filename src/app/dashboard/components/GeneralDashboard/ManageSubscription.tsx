@@ -14,7 +14,7 @@ import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 import { Input, Switch } from "antd";
 
 type Props = {
-  //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
+  //   setActiveScreen: Dispatch<SetStateActionf<undefined>>;
 };
 
 const ManageSubscription = (props: Props) => {
@@ -132,10 +132,24 @@ const ManageSubscription = (props: Props) => {
               </p>
             </div>
             <div className="flex  items-center">
-              <p className="underline text-[#007AFF] mr-4">Upgrade Plan</p>
-              <p className="text-textColor text-[14px] leading-[21.96px]">
-                Cancel Subscription
-              </p>
+              <button>
+                <p className="underline text-[#007AFF] mr-4">Upgrade Plan</p>
+              </button>
+              <button
+                onClick={() =>
+                  dispatch(
+                    openModal({
+                      open: true,
+                      modalType: modalName.warning,
+                      modalContent:
+                        "Are you sure you want to cancel your subscription? You can subscribe again",
+                    })
+                  )
+                }>
+                <p className="text-textColor text-[14px] leading-[21.96px] underline">
+                  Cancel Subscription
+                </p>
+              </button>
             </div>
           </div>
         </div>
@@ -151,9 +165,11 @@ const ManageSubscription = (props: Props) => {
               Here, you can view all your past payment history both successful
               and declined ones{" "}
             </p>
-            <p className="underline font-semibold text-secondaryColor text-[16px] leading-[18.88px]">
-              View More
-            </p>
+            <button>
+              <p className="underline font-semibold text-secondaryColor text-[16px] leading-[18.88px] w-full text-left">
+                View More
+              </p>
+            </button>
           </div>
 
           <div>
@@ -219,12 +235,35 @@ const ManageSubscription = (props: Props) => {
                 1. Visa ****1234{" "}
               </p>
               <div className="flex items-center">
-                <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
-                  Remove
-                </p>
-                <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
-                  Edit
-                </p>
+                <button
+                  onClick={() =>
+                    dispatch(
+                      openModal({
+                        open: true,
+                        modalType: modalName.warning,
+                        modalContent:
+                          "Are you sure you want to delete this Card? You can not undo this action",
+                        from: "cancel-subscription",
+                      })
+                    )
+                  }>
+                  <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
+                    Remove
+                  </p>
+                </button>
+                <button
+                  onClick={() =>
+                    dispatch(
+                      openModal({
+                        open: true,
+                        modalType: modalName.editCardModal,
+                      })
+                    )
+                  }>
+                  <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
+                    Edit
+                  </p>
+                </button>
               </div>
             </div>
             <div className="flex justify-between">
@@ -232,12 +271,35 @@ const ManageSubscription = (props: Props) => {
                 2. Mastercard ****5678
               </p>
               <div className="flex items-center">
-                <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
-                  Remove
-                </p>
-                <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
-                  Edit
-                </p>
+                <button
+                  onClick={() =>
+                    dispatch(
+                      openModal({
+                        open: true,
+                        modalType: modalName.warning,
+                        modalContent:
+                          "Are you sure you want to delete this Card? You can not undo this action",
+                      })
+                    )
+                  }>
+                  <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
+                    Remove
+                  </p>
+                </button>
+
+                <button
+                  onClick={() =>
+                    dispatch(
+                      openModal({
+                        open: true,
+                        modalType: modalName.editCardModal,
+                      })
+                    )
+                  }>
+                  <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
+                    Edit
+                  </p>
+                </button>
               </div>
             </div>
           </div>

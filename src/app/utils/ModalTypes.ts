@@ -29,6 +29,8 @@ export type ModalTypes = {
     qrAuthentication: string;
     smsVerfifications: string; 
     editAboutModal: string;
+    warning: string;
+    editCardModal: string;
 
 
 
@@ -62,7 +64,9 @@ export const modalName:ModalTypes = {
     twoStepVerification: "twoStepVerification",
     qrAuthentication: "qrAuthentication",
     smsVerfifications: "smsVerfifications",
-    editAboutModal: "editAboutModal"
+    editAboutModal: "editAboutModal",
+    warning: "warning",
+    editCardModal: "editCardModal",
 
 
 }
