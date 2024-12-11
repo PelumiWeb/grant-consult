@@ -14,6 +14,7 @@ import HelpSupport from "./HelpSupport/HelpSupport";
 import ProfileHome from "./Profile/ProfileHome";
 import GeneralDashboard from "./GeneralDashboard";
 import GeneralDashboardHome from "./GeneralDashboard/GeneralDashboardHome";
+import Grant from "./Grant/Grant";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -51,6 +52,10 @@ export default function RenderContents() {
       case tabsName.generalDashboard:
         // code block
         return <GeneralDashboardHome />;
+        break;
+      case tabsName.grant:
+        // code block
+        return <Grant />;
         break;
 
       default:
