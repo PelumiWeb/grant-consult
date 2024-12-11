@@ -63,9 +63,7 @@ const Chartdata = [
 
 const PerformanceMetric = (props: Props) => {
   const dispatch = useAppDispatch();
-  const assignedGrant = useAppSelector(
-    (state) => state.dashboard.assignedGrant
-  );
+  const dashboardRoute = useAppSelector((state) => state.dashboard);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -213,7 +211,7 @@ const PerformanceMetric = (props: Props) => {
         onClick={() => {
           dispatch(
             setActiveRoute({
-              assignedGrant,
+              ...dashboardRoute,
               consultation: dashboardRouteName.consultation,
             })
           );
