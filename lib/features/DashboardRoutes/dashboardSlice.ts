@@ -15,8 +15,8 @@ export interface DashboardState {
 const initialState: DashboardState = {
 assignedGrant: dashboardRouteName.assignedGrant,
 consultation: dashboardRouteName.consultation,
-    wallet:dashboardRouteName.wallet,
-    dashboard: dashboardRouteName.generalDashboard
+wallet:dashboardRouteName.wallet,
+dashboard: dashboardRouteName.generalDashboard
 
 }
 
@@ -30,7 +30,6 @@ export const dashboardSlice = createSlice({
             state.consultation = action.payload.consultation;
             state.wallet = action.payload.wallet;
             state.dashboard = action.payload.dashboard
-
         }
     }
 }) 

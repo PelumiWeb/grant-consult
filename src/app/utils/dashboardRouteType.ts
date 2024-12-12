@@ -11,6 +11,7 @@ export type DashboardRoute = {
   walletHistory: string;
   generalDashboard: string;
   manageSubscription: string;
+  grantConsulatation: string;
 
 }
 
@@ -25,5 +26,6 @@ export const dashboardRouteName:DashboardRoute = {
   performanceMetrics: "performanceMetrics",
   wallet: "wallet",
   walletHistory: "walletHistory",
-  manageSubscription: "manageSubscription"
+  manageSubscription: "manageSubscription",
+  grantConsulatation: "grantConsulatation"
 }

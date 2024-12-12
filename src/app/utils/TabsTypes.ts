@@ -11,6 +11,7 @@ logout: string;
 generalDashboard: string;
 grant: string;
 manageSubscription: string
+grantConsulatation: string
 
 }
 
@@ -26,6 +27,7 @@ logout: "logout",
   generalDashboard: "Dashboard",
 
   grant: "grant",
-  manageSubscription: "manageSubscription"
+  manageSubscription: "manageSubscription",
+  grantConsulatation: "grantConsulatation"
 
 }
