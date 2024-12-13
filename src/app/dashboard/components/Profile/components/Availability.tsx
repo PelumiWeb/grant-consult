@@ -1,12 +1,12 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
 const Availability = (props: Props) => {
   return (
-    <ProfileComponent title="Availability" modalType={modalName.EditAvailable}>
+    <ContentComponent title="Availability" modalType={modalName.EditAvailable}>
       <div className="mt-4">
         <ul className="list-disc">
           <li className="ml-6">
@@ -19,7 +19,7 @@ const Availability = (props: Props) => {
           </li>
         </ul>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

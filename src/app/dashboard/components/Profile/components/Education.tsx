@@ -1,12 +1,14 @@
-import React from 'react'
-import ProfileComponent from '../ProfileComponent';
-import { modalName } from '@/app/utils/ModalTypes';
+import React from "react";
+import ContentComponent from "../ContentComponent";
+import { modalName } from "@/app/utils/ModalTypes";
 
-type Props = {}
+type Props = {};
 
 const Education = (props: Props) => {
   return (
-    <ProfileComponent title="Education & Certification" modalType={modalName.editEducation}>
+    <ContentComponent
+      title="Education & Certification"
+      modalType={modalName.editEducation}>
       <ul className="mt-4 list-disc">
         <li className="ml-6">
           <p>
@@ -31,8 +33,8 @@ const Education = (props: Props) => {
           </p>
         </li>
       </ul>
-    </ProfileComponent>
+    </ContentComponent>
   );
-}
+};
 
-export default Education
+export default Education;

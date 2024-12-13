@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import CustomButton from "@/app/components/CustomButton";
 import type { UploadProps } from "antd";
 import { Button, message, Upload } from "antd";
@@ -9,7 +9,7 @@ type Props = {};
 
 const UploadProfile = (props: Props) => {
   return (
-    <ProfileComponent title="Resume Upload" modalType={modalName.Resume}>
+    <ContentComponent title="Resume Upload" modalType={modalName.Resume}>
       <div>
         <p className="mt-4">Upload your professional resume here</p>
 
@@ -26,7 +26,7 @@ const UploadProfile = (props: Props) => {
           </Upload>
         </div>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

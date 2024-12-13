@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 import LabelInput from "@/app/components/LabelInput";
 import { Checkbox, DatePicker } from "antd";
@@ -11,7 +11,7 @@ type Props = {
 
 const EditProfile = (props: Props) => {
   return (
-    <ProfileComponent
+    <ContentComponent
       title="Edit Profile"
       modalType={modalName.BioData}
       notEditable={props.notEditable}>
@@ -119,9 +119,14 @@ const EditProfile = (props: Props) => {
             </div>
           </div>
         </div>
-        <CustomButton title="Save" width="w-[123px]" height="h-[60px]" backgrounColor="bg-primary" />
+        <CustomButton
+          title="Save"
+          width="w-[123px]"
+          height="h-[60px]"
+          backgrounColor="bg-primary"
+        />
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

@@ -1,12 +1,12 @@
-import React from 'react'
-import ProfileComponent from '../ProfileComponent';
-import { modalName } from '@/app/utils/ModalTypes';
+import React from "react";
+import ContentComponent from "../ContentComponent";
+import { modalName } from "@/app/utils/ModalTypes";
 
-type Props = {}
+type Props = {};
 
 const SecuredGrant = (props: Props) => {
   return (
-    <ProfileComponent title="Secured Grants" modalType={modalName.SecureGrant}>
+    <ContentComponent title="Secured Grants" modalType={modalName.SecureGrant}>
       <div className="border-borderColor border-[.5px] border-solid p-2  mt-8">
         <ul className="mt-4 list-disc w-[428px] ">
           <p className="font-bold">Community Health Grant</p>
@@ -73,8 +73,8 @@ const SecuredGrant = (props: Props) => {
           </li>
         </ul>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
-}
+};
 
-export default SecuredGrant
+export default SecuredGrant;

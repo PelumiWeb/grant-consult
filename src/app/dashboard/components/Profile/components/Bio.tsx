@@ -1,12 +1,12 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
 const Bio = (props: Props) => {
   return (
-    <ProfileComponent title="Bio" modalType={modalName.BioData}>
+    <ContentComponent title="Bio" modalType={modalName.BioData}>
       <div className="w-full mt-4">
         <p className="mb-4 text-newPrimaryTextColor">
           Alice is an experienced grant consultant with over 20 years in
@@ -24,7 +24,7 @@ const Bio = (props: Props) => {
           funding solutions.
         </p>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

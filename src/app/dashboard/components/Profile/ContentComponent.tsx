@@ -9,7 +9,7 @@ type Props = {
     notEditable?: boolean;
 };
 
-const ProfileComponent = (props: Props) => {
+const ContentComponent = (props: Props) => {
   const dispatch = useAppDispatch()
   return (
     <div className="w-full p-8 bg-white my-8">
@@ -28,4 +28,4 @@ const ProfileComponent = (props: Props) => {
   );
 };
 
-export default ProfileComponent;
+export default ContentComponent;

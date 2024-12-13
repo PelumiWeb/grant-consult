@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 import LabelInput from "@/app/components/LabelInput";
 
@@ -7,7 +7,7 @@ type Props = {};
 
 const SelectUserType = (props: Props) => {
   return (
-    <ProfileComponent
+    <ContentComponent
       title="Select User Type"
       modalType={modalName.BioData}
       notEditable>
@@ -28,7 +28,7 @@ const SelectUserType = (props: Props) => {
           select
         />
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

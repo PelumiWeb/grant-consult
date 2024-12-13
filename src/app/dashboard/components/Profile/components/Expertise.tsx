@@ -1,12 +1,12 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
 const Expertise = (props: Props) => {
   return (
-    <ProfileComponent title="Expertise" modalType={modalName.Expertise}>
+    <ContentComponent title="Expertise" modalType={modalName.Expertise}>
       <ul className="mt-4 list-disc">
         <li className="ml-6">
           <p>Grant Writing</p>
@@ -29,7 +29,7 @@ const Expertise = (props: Props) => {
           <p>Stakeholder Management</p>
         </li>
       </ul>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

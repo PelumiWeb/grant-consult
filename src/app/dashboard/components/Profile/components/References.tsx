@@ -1,12 +1,12 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {};
 
 const References = (props: Props) => {
   return (
-    <ProfileComponent title="References" modalType={modalName.References}>
+    <ContentComponent title="References" modalType={modalName.References}>
       <div>
         <div className="border-[.5px] border-borderColor p-4 mt-8">
           <p className="font-medium">
@@ -67,7 +67,7 @@ const References = (props: Props) => {
           </p>
         </div>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

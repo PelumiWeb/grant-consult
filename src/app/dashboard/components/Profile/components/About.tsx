@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileComponent from "../ProfileComponent";
+import ContentComponent from "../ContentComponent";
 import { modalName } from "@/app/utils/ModalTypes";
 
 type Props = {
@@ -8,10 +8,7 @@ type Props = {
 
 const About = (props: Props) => {
   return (
-    <ProfileComponent
-      title="About"
-      modalType={modalName.editAboutModal}
-      >
+    <ContentComponent title="About" modalType={modalName.editAboutModal}>
       <div className="w-full mt-4">
         <p className="mb-4 text-newPrimaryTextColor">
           I am a passionate educator with a strong commitment to promoting
@@ -23,7 +20,7 @@ const About = (props: Props) => {
           and empower youth."
         </p>
       </div>
-    </ProfileComponent>
+    </ContentComponent>
   );
 };
 

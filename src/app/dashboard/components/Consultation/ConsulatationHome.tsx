@@ -7,6 +7,8 @@ import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { userTypeName } from "@/app/utils/userTypes";
+import GrantConsultation from "./GrantConsultation";
+import GeneralConsultantDetails from "./GeneralConsultantDetails";
 // import AssignedGrant from "./AssignedGrant";
 // import AssignedDetails from "./AssignedDetails";
 
@@ -52,6 +54,12 @@ const ConsultanHome = (props: Props) => {
         break;
       case dashboardRouteName.performanceMetrics:
         return <PerformanceMetric />;
+        break;
+      case dashboardRouteName.grantConsulatation:
+        return <GrantConsultation />;
+        break;
+      case dashboardRouteName.generalConsultationDetails:
+        return <GeneralConsultantDetails />;
         break;
       default:
         return null;
