@@ -107,16 +107,27 @@ const GeneralConsultantDetails = (props: Props) => {
           <div className="mt-4 flex items-center w-full justify-between">
             {/* Left */}
             <div className="flex items-center">
-              <div className="w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
+              <div className="w-[173px] h-[40px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4 rounded-[5px]">
                 <p className="font-semibold text-sm">Status : Ongoing 🟢</p>
               </div>
               {/* Update Status */}
-              <LabelInput
-                placeholder="Update Status"
-                value=""
-                select
-                width="w-[173px]"
-                height=" h-[50px]"
+              <CustomButton
+                onClick={() => {
+                  dispatch(
+                    openModal({
+                      open: true,
+                      modalType: modalName.requestStatusModal,
+                    })
+                  );
+                }}
+                title="Request Status Update"
+                width="w-[220px]"
+                height="h-[40px] "
+                backgrounColor="bg-white"
+                borderColor="border-borderColor"
+                borderWidth="border-[0.5px]"
+                textStyle="font-semibold text-[14px] leading-[22px] "
+                radius="rounded-[5px]"
               />
             </div>
             {/* Right */}
@@ -136,7 +147,7 @@ const GeneralConsultantDetails = (props: Props) => {
                   dispatch(
                     openModal({
                       open: true,
-                      modalType: modalName.extensionModal,
+                      modalType: modalName.requestRescheduleModal,
                     })
                   );
                 }}
@@ -151,7 +162,7 @@ const GeneralConsultantDetails = (props: Props) => {
 
           <div>
             {/* Component 1 */}
-            <ContentComponent title="Consultation Overview">
+            <ContentComponent title="Consultation Overview" notEditable>
               <p className="font-semibold my-4">
                 Title:
                 <span className="font-semibold ml-2">
@@ -191,7 +202,9 @@ const GeneralConsultantDetails = (props: Props) => {
               {/* Component 2 */}
             </ContentComponent>
 
-            <ContentComponent title="Progress Update">
+            <ContentComponent
+              title="Progress Update"
+              modalType={modalName.editprogressModal}>
               <p className="font-semibold text-[15px] leading-[33px] text-textColor">
                 Reviewed initial draft; feedback shared on July 18, 2024.
               </p>
@@ -311,7 +324,9 @@ const GeneralConsultantDetails = (props: Props) => {
                 </p>
               </div>
             </ContentComponent>
-            <ContentComponent title="Next Step">
+            <ContentComponent
+              title="Next Step"
+              modalType={modalName.editNextModal}>
               <p className="font-semibold text-[15px] leading-[33px] text-textColor">
                 Consultant to finalize the review by August 1, 2024.
               </p>

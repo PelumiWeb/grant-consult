@@ -31,6 +31,10 @@ export type ModalTypes = {
     editAboutModal: string;
     warning: string;
     editCardModal: string;
+    requestRescheduleModal: string;
+    requestStatusModal: string;
+    editprogressModal: string;
+    editNextModal: string;
 
 
 
@@ -67,6 +71,10 @@ export const modalName:ModalTypes = {
     editAboutModal: "editAboutModal",
     warning: "warning",
     editCardModal: "editCardModal",
+     requestRescheduleModal: "requestRescheduleModal",
+    requestStatusModal: "requestStatusModal",
+    editprogressModal: "editprogressModal",
+    editNextModal: "editNextModal",
 
 
 }

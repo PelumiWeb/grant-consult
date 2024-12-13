@@ -33,6 +33,10 @@ import About from "../dashboard/components/Profile/components/About";
 import EditAbout from "../dashboard/components/Modals/AboutModal";
 import WarnignModal from "../dashboard/components/Modals/WarningModal";
 import EditCardModal from "../dashboard/components/Modals/EditCardModal";
+import EditProgress from "../dashboard/components/Modals/EditProgress";
+import EditNextStep from "../dashboard/components/Modals/EditNextStep";
+import RescheduleStatus from "../dashboard/components/Modals/RescheduleStatus";
+import RescheduleUpdateModal from "../dashboard/components/Modals/RescheduleUpdateModal";
 
 type Props = {};
 
@@ -166,6 +170,22 @@ const RenderModals = (props: Props) => {
       case modalName.editCardModal:
         // code block
         return <EditCardModal />;
+        break;
+      case modalName.editprogressModal:
+        // code block
+        return <EditProgress />;
+        break;
+      case modalName.editNextModal:
+        // code block
+        return <EditNextStep />;
+        break;
+      case modalName.requestStatusModal:
+        // code block
+        return <RescheduleStatus />;
+        break;
+      case modalName.requestRescheduleModal:
+        // code block
+        return <RescheduleUpdateModal />;
         break;
 
       default:
