@@ -2,10 +2,10 @@
 import React from "react";
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 import { useAppSelector } from "../../../../../lib/hooks";
-import ProfileGrant from "./ProfileGeneralUser";
 import ProfileGeneral from "./ProfileGeneralUser";
 import Profile from "./Profile";
 import { userTypeName } from "@/app/utils/userTypes";
+import ProfileGrant from "./ProfileGrant";
 
 type Props = {};
 const assignedScreens = [
@@ -31,6 +31,9 @@ const ProfileHome = (props: Props) => {
         break;
       case userTypeName.consultant:
         return <Profile />;
+        break;
+      case userTypeName.grantor:
+        return <ProfileGrant />;
         break;
       default:
         return null;

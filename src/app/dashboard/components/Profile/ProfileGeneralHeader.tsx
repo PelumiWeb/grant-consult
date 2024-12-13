@@ -7,7 +7,12 @@ import {
 import { modalName } from "@/app/utils/ModalTypes";
 import { useAppDispatch } from "../../../../../lib/hooks";
 
-type Props = {};
+type Props = {
+  image: string;
+  contactInformation: string;
+  email: string;
+  phone: string;
+};
 
 const ProfileGeneralHeader = (props: Props) => {
   const dispatch = useAppDispatch();
@@ -33,20 +38,25 @@ const ProfileGeneralHeader = (props: Props) => {
       </div>
       {/* Bottom */}
       <div className="bg-white h-[60%]">
-        <img src="/generalUser.svg" className="absolute top-16 left-8" />
+        <img src={props.image} className="absolute top-16 left-8" />
         <div className="flex w-full justify-between items-center absolute bottom-20 ml-8">
          
           <div className="mr-20 ">
-            <h4 className="font-mono my-2">Contact Information</h4>
+            <h4 className="font-mono my-2">{props.contactInformation}</h4>
             <div className="flex items-center my-1">
               <img src="/email.svg" alt="" />
               <p className="ml-2 text-secondaryColor ">
-                alicebrooklyn@gmail.com
+                {props.email}
+               
               </p>
             </div>
             <div className="flex items-center my-1">
               <img src="/callImage.svg" alt="" />
-              <p className="ml-2 text-secondaryColor ">+31 890 783 456</p>
+              <p className="ml-2 text-secondaryColor ">
+                {props.phone}
+                
+                
+                </p>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ const EditProfile = (props: Props) => {
   return (
     <ContentComponent
       title="Edit Profile"
-      modalType={modalName.BioData}
+      modalType={modalName.editAboutModal}
       notEditable={props.notEditable}>
       <div className="w-full mt-4">
         <LabelInput

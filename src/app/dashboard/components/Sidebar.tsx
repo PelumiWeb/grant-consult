@@ -33,7 +33,6 @@ const generalTabs: TabsProps | undefined = [
   { imageTitle: tabsName.grant, image: "/dashboard2.svg" },
   { imageTitle: tabsName.consultation, image: "/dashboard3.svg" },
   { imageTitle: tabsName.message, image: "/dashboard4.svg" },
-  { imageTitle: tabsName.wallet, image: "/dashboard3.svg" },
   { imageTitle: tabsName.settings, image: "/settings.svg" },
   { imageTitle: tabsName.helpSupport, image: "/help.svg" },
   {
@@ -41,7 +40,18 @@ const generalTabs: TabsProps | undefined = [
     image: "/logout-gray.svg",
     textColor: "text-textColor",
   },
+];
 
+const grantTabs: TabsProps | undefined = [
+  { imageTitle: tabsName.profile, image: "/profileDashboard.svg" },
+  { imageTitle: tabsName.grant, image: "/dashboard2.svg" },
+  { imageTitle: tabsName.settings, image: "/settings.svg" },
+  { imageTitle: tabsName.helpSupport, image: "/help.svg" },
+  {
+    imageTitle: tabsName.logout,
+    image: "/logout-gray.svg",
+    textColor: "text-textColor",
+  },
 ];
 
 const Sidebar = (props: Props) => {
@@ -56,10 +66,9 @@ const Sidebar = (props: Props) => {
     } else if (userType == userTypeName.consultant) {
       return tabs;
     } else {
-      return ["name"];
+      return grantTabs;
     }
   }, []);
-
 
   // console.log(renderTabs, "Render tabs...");
 
