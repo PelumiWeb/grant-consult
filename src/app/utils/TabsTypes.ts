@@ -13,6 +13,7 @@ grant: string;
 manageSubscription: string
 grantConsulatation: string
 generalConsultationDetails: string;
+myGrants: string
 
 }
 
@@ -30,6 +31,8 @@ logout: "logout",
   grant: "grant",
   manageSubscription: "manageSubscription",
   grantConsulatation: "grantConsulatation",
-  generalConsultationDetails: "generalConsultationDetails"
+  generalConsultationDetails: "generalConsultationDetails",
+myGrants: "my Grants"
+
 
 }

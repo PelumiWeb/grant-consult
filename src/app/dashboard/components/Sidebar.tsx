@@ -44,7 +44,7 @@ const generalTabs: TabsProps | undefined = [
 
 const grantTabs: TabsProps | undefined = [
   { imageTitle: tabsName.profile, image: "/profileDashboard.svg" },
-  { imageTitle: tabsName.grant, image: "/dashboard2.svg" },
+  { imageTitle: tabsName.myGrants, image: "/dashboard2.svg" },
   { imageTitle: tabsName.settings, image: "/settings.svg" },
   { imageTitle: tabsName.helpSupport, image: "/help.svg" },
   {

@@ -8,7 +8,8 @@ export interface DashboardState {
     assignedGrant: string;
     consultation:string
     wallet:string
-    dashboard:string
+    dashboard:string;
+    mygrant:string
 
 }
 
@@ -16,7 +17,9 @@ const initialState: DashboardState = {
 assignedGrant: dashboardRouteName.assignedGrant,
 consultation: dashboardRouteName.consultation,
 wallet:dashboardRouteName.wallet,
-dashboard: dashboardRouteName.generalDashboard
+dashboard: dashboardRouteName.generalDashboard,
+mygrant:dashboardRouteName.myGrants
+
 
 }
 

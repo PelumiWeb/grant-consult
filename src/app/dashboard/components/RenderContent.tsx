@@ -15,6 +15,7 @@ import ProfileHome from "./Profile/ProfileHome";
 import GeneralDashboard from "./GeneralDashboard";
 import GeneralDashboardHome from "./GeneralDashboard/GeneralDashboardHome";
 import Grant from "./Grant/Grant";
+import MyGrantsHome from "./MyGrants/MyGrantsHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
@@ -56,6 +57,10 @@ export default function RenderContents() {
       case tabsName.grant:
         // code block
         return <Grant />;
+        break;
+      case tabsName.myGrants:
+        // code block
+        return <MyGrantsHome />;
         break;
 
       default:
