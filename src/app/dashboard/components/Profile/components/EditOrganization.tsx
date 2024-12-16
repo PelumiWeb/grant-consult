@@ -16,22 +16,44 @@ const EditOrganization = (props: Props) => {
       modalType={modalName.editAboutModal}
       notEditable={props.notEditable}>
       <div className="w-full mt-4">
-        <LabelInput
-          placeholder="U.S. Agency for International Development (USAID)"
-          label="Organization Name"
-          value=""
-          width="w-[444px]"
-          height="h-[55px]"
-          required
-        />
-        <LabelInput
-          placeholder="usaidglobal@gmail.com"
-          label="Email Address"
-          value=""
-          width="w-[444px]"
-          height="h-[55px]"
-          required
-        />
+        <div className="w-full flex justify-between items-center">
+          <LabelInput
+            placeholder="U.S. Agency for International Development (USAID)"
+            label="Organization Name"
+            value=""
+            width="w-[444px]"
+            height="h-[55px]"
+            required
+          />
+          <LabelInput
+            placeholder="contactperson@gmail.com"
+            value=""
+            width="w-[444px]"
+            height="h-[55px]"
+            required
+            label="Contact Email"
+          />
+        </div>
+
+        <div className="w-full flex justify-between items-center">
+          <LabelInput
+            placeholder="usaidglobal@gmail.com"
+            label="Email Address"
+            value=""
+            width="w-[444px]"
+            height="h-[55px]"
+            required
+          />
+
+          <LabelInput
+            placeholder="+1 3334 567 89 0"
+            label="Contact Phone Number"
+            value=""
+            width="w-[444px]"
+            height="h-[55px]"
+            required
+          />
+        </div>
 
         <LabelInput
           placeholder="+1 234 567 89 0"
@@ -95,7 +117,7 @@ const EditOrganization = (props: Props) => {
           required
           select
         />
-  
+
         <CustomButton
           title="Save"
           width="w-[123px]"
@@ -108,3 +130,27 @@ const EditOrganization = (props: Props) => {
 };
 
 export default EditOrganization;
+
+//  {
+//    centroid && (
+//      <Annotation
+//        subject={centroid}
+//        dx={-10} // Horizontal offset
+//        dy={10} // Vertical offset
+//        // connectorProps={""}
+//      >
+//        <text
+//          x={0}
+//          y={0}
+//          textAnchor="middle"
+//          style={{
+//            fontFamily: "Arial",
+//            fontSize: "12px",
+//            fill: "#000",
+//            fontWeight: "bold",
+//          }}>
+//          {stateName}
+//        </text>
+//      </Annotation>
+//    );
+//  }
