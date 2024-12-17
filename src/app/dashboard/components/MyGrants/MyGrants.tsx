@@ -117,6 +117,8 @@ const MyGrants = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoutes = useAppSelector((state) => state.dashboard);
 
+  console.log(dashboardRoutes, "dashboard routes");
+
   const columns = [
     {
       title: "Title",
@@ -219,7 +221,7 @@ const MyGrants = (props: Props) => {
             );
           }}
           className="underline text-secondaryColor cursor-pointer text-[14px] leading-[21.98px] font-semibold">
-          View Performance 
+          View Performance
         </p>
       ),
     },
@@ -280,6 +282,26 @@ const MyGrants = (props: Props) => {
           </div>
 
           <CustomButton
+            // onClick={() => {
+            //   console.log("ypppp")
+            //   dispatch(
+            //     setActiveRoute({
+            //       ...dashboardRoutes,
+            //       consultation: dashboardRouteName.generalConsultationDetails,
+            //     })
+            //   );
+            // }}
+
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.allGrants,
+                })
+              );
+
+              console.log("yoojkfnfoo");
+            }}
             width="w-[200.21px]"
             height="h-[30px]"
             title="View all Grant"

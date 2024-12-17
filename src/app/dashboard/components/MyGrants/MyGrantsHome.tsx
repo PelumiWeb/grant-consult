@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { userTypeName } from "@/app/utils/userTypes";
 import MyGrants from "./MyGrants";
+import AllGrants from "./AllGrants";
 
 // import AssignedGrant from "./AssignedGrant";
 // import AssignedDetails from "./AssignedDetails";
@@ -46,8 +47,8 @@ const MyGrantsHome = (props: Props) => {
       case dashboardRouteName.myGrants:
         return <MyGrants />;
         break;
-      case dashboardRouteName.consultationDetails:
-        return null;
+      case dashboardRouteName.allGrants:
+        return <AllGrants />;
         break;
       case dashboardRouteName.performanceMetrics:
         return <div />;

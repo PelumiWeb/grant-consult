@@ -33,6 +33,8 @@ export const dashboardSlice = createSlice({
             state.consultation = action.payload.consultation;
             state.wallet = action.payload.wallet;
             state.dashboard = action.payload.dashboard
+            state.mygrant = action.payload.mygrant
+
         }
     }
 }) 
