@@ -60,6 +60,8 @@ const Sidebar = (props: Props) => {
   const router = useRouter();
   const userType = useAppSelector((state) => state.signup.userType);
 
+  console.log(userType, "User type: ");
+
   const renderTabs = React.useMemo(() => {
     if (userType == userTypeName.general) {
       return generalTabs;

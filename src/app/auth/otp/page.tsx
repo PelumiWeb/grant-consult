@@ -6,6 +6,8 @@ import { Checkbox, Input } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
 import { useRouter } from "next/navigation";
+import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
+import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
 
 type Props = {};
 
@@ -13,8 +15,10 @@ const Otp = (props: Props) => {
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
   };
+  const signupData = useAppSelector((state) => state.signup);
 
-  const router = useRouter()
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const sharedProps: OTPProps = {
     onChange,
@@ -40,7 +44,15 @@ const Otp = (props: Props) => {
           <CustomButton
             width="w-[204px]"
             title="Verify and submit"
-            onClick={() => router.push("/dashboard")}
+            onClick={() => {
+              dispatch(
+                setUserType({
+                  ...signupData,
+                  userTypeSelected: false,
+                })
+              );
+              router.push("/dashboard");
+            }}
           />
         </div>
       </div>

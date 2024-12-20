@@ -8,6 +8,7 @@ import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dash
 import { dashboardRouteName } from "@/app/utils/dashboardRouteType";
 import CustomButton from "@/app/components/CustomButton";
 import { Pagination } from "antd";
+import GrantPieChart from "./components/GrantPieChart";
 import GrantBarChart from "./components/GrantBarChart";
 
 type Props = {
@@ -102,7 +103,7 @@ const GrantPerformance = (props: Props) => {
             Engagement By Audience Type
           </h4>
           <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4">
-            <GrantBarChart />
+            <GrantPieChart />
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <div className="w-[12.46px] h-[12.46px] border-[1.36px] rounded-full border-[#EECA34] mr-2" />
@@ -130,7 +131,9 @@ const GrantPerformance = (props: Props) => {
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Views By Location
           </h4>
-          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant"></div>
+          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant">
+            <GrantBarChart />
+          </div>
         </div>
       </div>
 

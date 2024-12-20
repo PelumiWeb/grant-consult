@@ -1,74 +1,160 @@
 import React, { PureComponent } from "react";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
-
+import {
+  BarChart,
+  Bar,
+  ResponsiveContainer,
+  YAxis,
+  XAxis,
+  ReferenceLine,
+} from "recharts";
 
 const data = [
-  { name: "A1", value: 43 },
-  { name: "A2", value: 30 },
-  { name: "B1", value: 27 },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 1,
+    year: "Jan",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 7,
+    year: "Feb",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 16,
+    year: "Mar",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 5,
+    year: "Apr",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 8,
+    year: "May",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 11,
+    year: "Jun",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 15,
+    year: "Jul",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 16,
+    year: "Aug",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 13,
+    year: "Sep",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 15,
+    year: "Oct",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 11,
+    year: "Nov",
+  },
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 14,
+    year: "Dec",
+  },
 ];
 
-
-const COLORS = ["#EECA34", "#64BDC6", "#2B72FB"];
-
 const GrantBarChart = () => {
-  const demoUrl = "https://codesandbox.io/s/pie-chart-of-two-levels-gor24";
+  const getBarColor = (year: any) => {
+    if (year === "Jan") return "#2B72FB"; // Light purple for low values
+    if (year === "Feb") return "#64BDC6"; // Green for medium values
+    if (year === "Mar") return "#EECA34"; // Yellow for higher values
+    if (year === "Apr") return "#FE6A35"; // Yellow for higher values
+    if (year === "May") return "#FA4B42"; // Yellow for higher values
+    if (year === "Jun") return "#EE60E0"; // Yellow for higher values
+    if (year === "Jul") return "#7B47E9"; // Yellow for higher values
+    if (year === "Aug") return "#5D89DF"; // Yellow for higher values
+    if (year === "Sep") return "#6AD1FE"; // Yellow for higher values
+    if (year === "Oct") return "#3FDC7E"; // Yellow for higher values
+    if (year === "Nov") return "#2B72FB"; // Yellow for higher values
+    if (year === "Dec") return "#64BDC6"; // Yellow for higher values
 
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={400} height={400}>
-          <Pie
-            data={data}
-            dataKey="value"
-            cx="50%"
-            cy="50%"
-            innerRadius={50}
-            outerRadius={100}
-            fill="#82ca9d"
-            label={({
-              cx,
-              cy,
-              midAngle,
-              innerRadius,
-              outerRadius,
-              value,
-              index,
-            }) => {
-              const RADIAN = Math.PI / 180;
-              const radius = innerRadius + (outerRadius - innerRadius) / 2;
-              const x = cx + radius * Math.cos(-midAngle * RADIAN);
-              const y = cy + radius * Math.sin(-midAngle * RADIAN);
+    return "#ff8042"; // Orange for the highest values
+  };
+  const maxY = Math.max(...data.map((d) => d.amt)); // Find the max value from the data
+  const evenTicks = Array.from(
+    { length: Math.ceil(20 / 2) + 1 },
+    (_, i) => i * 2
+  ); // Generate even ticks up to max
 
-              return (
-                <text
-                  x={x}
-                  y={y}
-                  fill="black"
-                  textAnchor={x > cx ? "middle" : "end"}
-                  dominantBaseline="central"
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    fontFamily: "Montserrat",
-                  }}>
-                  {data[index].value + "%"}
-                </text>
-              );
-            }}
-            labelLine={false}>
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-                stroke="transparent"
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}>
+        {evenTicks.map((tick) => (
+          <ReferenceLine
+            key={tick}
+            y={tick}
+            stroke="lightGray" // Light gray line
+            // strokeDasharray="3 3"
+          />
+        ))}
+        <Bar
+          dataKey="amt"
+          fill="#8884d8"
+          shape={(props: any) => (
+            <rect
+              {...props}
+              fill={getBarColor(props.payload.year)} // Pass the value to the color function
+            />
+          )}
+        />
+        <YAxis dataKey="amt" ticks={evenTicks} domain={[0, 20]} />
 
-                // shape={() => <CustomShape index={index} {...entry} />}
-              ></Cell>
-            ))}
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
-    );
-}
+        {/* XAxis for years */}
+        <XAxis dataKey="year" />
 
-export default GrantBarChart
+        {/* Add a ReferenceLine at each even tick */}
+      </BarChart>
+    </ResponsiveContainer>
+  );
+};
+
+export default GrantBarChart;

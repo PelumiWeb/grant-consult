@@ -4,11 +4,12 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { modalSlice } from './features/Modal/modalSlice'
 import { counterSlice } from './features/Counter/counterSlice'
 import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
+// import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
 import { tabSlice } from './features/Tabs/tabsLice';
 import { SignupSlice } from './features/Signup/SignupSlice';
 import { scrollSlice } from './features/Scrolled/Scrolled';
 import { dashboardSlice } from './features/DashboardRoutes/dashboardSlice';
+import storage from './storage';
 
 const persistConfig = {
   key: 'root', // Key for storage
@@ -50,10 +51,13 @@ export const makeStore = () => {
 }
 
 
-export const persistor = persistStore(makeStore());
+export const store = makeStore();
+export const persistor = persistStore(store);
+
 
 // Infer the type of makeStore
 export type AppStore = ReturnType<typeof makeStore>
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore['getState']>
-export type AppDispatch = AppStore['dispatch']
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
