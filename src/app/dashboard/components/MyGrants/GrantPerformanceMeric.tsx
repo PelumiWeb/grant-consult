@@ -10,6 +10,7 @@ import CustomButton from "@/app/components/CustomButton";
 import { Pagination } from "antd";
 import GrantPieChart from "./components/GrantPieChart";
 import GrantBarChart from "./components/GrantBarChart";
+import GrantAreaChart from "./components/GrantAreaChart";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -131,14 +132,134 @@ const GrantPerformance = (props: Props) => {
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Views By Location
           </h4>
-          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant">
+          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-center p-4">
             <GrantBarChart />
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
+          Engagement Overtime
+        </h4>
+        <div className="w-full shadow-chart-grant h-[431px] bg-white rounded-[5px] mt-2  py-8 px-4">
+          <GrantAreaChart />
+        </div>
+      </div>
+
+      <div className="flex items-start justify-between  bg-white shadow-chart-grant mt-8 w-full p-8">
+        <div className="w-[370px]">
+          <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
+            Summary/Key Metrics
+          </h4>
+          <div className="h-full bg-white border-[0.5px] border-borderColor p-4">
+            <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+              Grant Status:
+              <span className="font-normal ml-2">Active</span>
+            </p>
+
+            <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+              Posted Date:
+              <span className="font-normal ml-2">October 15, 2024</span>
+            </p>
+
+            <div className="mt-4">
+              <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
+                Engagement Metrics:
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Total Views:
+                <span className="font-normal ml-2">152</span>
+              </p>
+            </div>
+            <div className="mt-4">
+              <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
+                Views by Audience:
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Individuals:
+                <span className="font-normal ml-2">65 views (43%)</span>
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                INGOs:
+                <span className="font-normal ml-2">45 views (30%)</span>
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Corporate Bodies:
+                <span className="font-normal ml-2">42 views (27%)</span>
+              </p>
+            </div>
+            <div className="mt-4">
+              <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
+                Views by Location:
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Lagos:
+                <span className="font-normal ml-2">60 views (39%)</span>
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Abuja:
+                <span className="font-normal ml-2">40 views (26%)</span>
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Kaduna:
+                <span className="font-normal ml-2">30 views (20%)</span>
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Others:
+                <span className="font-normal ml-2">22 views (15%)</span>
+              </p>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
+                Engagement Over Time:
+              </p>
+              <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
+                Highest daily views:
+                <span className="font-normal ml-2">
+                  30 views (Oct 18, 2024)
+                </span>
+              </p>
+              <p className="font-mono font-normal text-[14px] leading-[30.8px] text-textColor">
+                Declining trend after Week 2.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
+            Suggestions for Improvement
+          </h4>
+          <div className="w-[446px] h-[330px] bg-white border-[0.5px] border-borderColor p-4">
+            <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
+              Optimize Grant Description and Tags:
+            </p>
+
+            <p className="font-normal text-[14px] leading-[30px] font-mono text-textColor mt-4">
+              Review and enhance the grant description to include keywords
+              frequently searched by users. Additionally, utilize specific and
+              popular tags (e.g., "community support," "development projects")
+              to ensure the grant appears in more filtered searches.
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <CustomButton
+              title="Download Report"
+              IconLeft="/download-new.svg"
+              textStyle="font-inter font-semibold text-[16px] leading-[16px] text-center text-secondaryColor"
+              borderColor="border-secondaryColor"
+              height="h-[40px]"
+              width="w-[220px]"
+              backgrounColor="bg-white"
+              radius="rounded-[5px]"
+            />
           </div>
         </div>
       </div>
 
       <div
-        className="flex items-center cursor-pointer ml-4"
+        className="flex items-center cursor-pointer ml-4 mt-8"
         onClick={() => {
           dispatch(
             setActiveRoute({

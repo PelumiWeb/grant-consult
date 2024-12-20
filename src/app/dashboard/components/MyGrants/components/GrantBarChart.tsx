@@ -13,108 +13,43 @@ const data = [
     name: "Page A",
     uv: 4000,
     pv: 2400,
-    amt: 1,
-    year: "Jan",
+    amt: 50,
+    year: "Lagos",
   },
   {
     name: "Page A",
     uv: 4000,
     pv: 2400,
-    amt: 7,
-    year: "Feb",
+    amt: 30,
+    year: "Abuja",
   },
   {
     name: "Page A",
     uv: 4000,
     pv: 2400,
-    amt: 16,
-    year: "Mar",
+    amt: 20,
+    year: "Kaduna",
   },
   {
     name: "Page A",
     uv: 4000,
     pv: 2400,
-    amt: 5,
-    year: "Apr",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 8,
-    year: "May",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 11,
-    year: "Jun",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 15,
-    year: "Jul",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 16,
-    year: "Aug",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 13,
-    year: "Sep",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 15,
-    year: "Oct",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 11,
-    year: "Nov",
-  },
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 14,
-    year: "Dec",
+    amt: 10,
+    year: "Others",
   },
 ];
 
 const GrantBarChart = () => {
   const getBarColor = (year: any) => {
-    if (year === "Jan") return "#2B72FB"; // Light purple for low values
-    if (year === "Feb") return "#64BDC6"; // Green for medium values
-    if (year === "Mar") return "#EECA34"; // Yellow for higher values
-    if (year === "Apr") return "#FE6A35"; // Yellow for higher values
-    if (year === "May") return "#FA4B42"; // Yellow for higher values
-    if (year === "Jun") return "#EE60E0"; // Yellow for higher values
-    if (year === "Jul") return "#7B47E9"; // Yellow for higher values
-    if (year === "Aug") return "#5D89DF"; // Yellow for higher values
-    if (year === "Sep") return "#6AD1FE"; // Yellow for higher values
-    if (year === "Oct") return "#3FDC7E"; // Yellow for higher values
-    if (year === "Nov") return "#2B72FB"; // Yellow for higher values
-    if (year === "Dec") return "#64BDC6"; // Yellow for higher values
-
+    if (year === "Lagos") return "#2B72FB"; // Light purple for low values
+    if (year === "Abuja") return "#64BDC6"; // Green for medium values
+    if (year === "Kaduna") return "#EECA34"; // Yellow for higher values
+    if (year === "Others") return "#FE6A35"; // Yellow for higher values
     return "#ff8042"; // Orange for the highest values
   };
   const maxY = Math.max(...data.map((d) => d.amt)); // Find the max value from the data
   const evenTicks = Array.from(
-    { length: Math.ceil(20 / 2) + 1 },
+    { length: Math.ceil(60 / 2) + 1 },
     (_, i) => i * 2
   ); // Generate even ticks up to max
 
@@ -128,14 +63,14 @@ const GrantBarChart = () => {
           left: 20,
           bottom: 5,
         }}>
-        {evenTicks.map((tick) => (
+        {/* {evenTicks.map((tick) => (
           <ReferenceLine
             key={tick}
             y={tick}
             stroke="lightGray" // Light gray line
             // strokeDasharray="3 3"
           />
-        ))}
+        ))} */}
         <Bar
           dataKey="amt"
           fill="#8884d8"
@@ -146,10 +81,43 @@ const GrantBarChart = () => {
             />
           )}
         />
-        <YAxis dataKey="amt" ticks={evenTicks} domain={[0, 20]} />
+        <YAxis
+          dataKey="amt"
+          // ticks={evenTicks}
+          // label={"Views"}
+          label={{
+            value: "Views",
+            angle: -90,
+            position: "insideLeft",
+            style: {
+              textAnchor: "middle",
+              fill: "#666666",
+              fontSize: 12,
+              fontWeight: 400,
+              fontFamily: "Inter",
+            },
+          }}
+          axisLine={false}
+          domain={[0, 60]}
+          tickLine={false}
+          tick={{
+            fontSize: 12,
+            fontWeight: 400,
+            fontFamily: "Inter",
+            fill: "#000000",
+          }}
+        />
 
-        {/* XAxis for years */}
-        <XAxis dataKey="year" />
+        <XAxis
+          dataKey="year"
+          tickLine={false}
+          tick={{
+            fontSize: 12,
+            fontWeight: 400,
+            fontFamily: "Inter",
+            fill: "#000000",
+          }}
+        />
 
         {/* Add a ReferenceLine at each even tick */}
       </BarChart>
