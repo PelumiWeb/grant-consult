@@ -6,6 +6,7 @@ import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dash
 import { userTypeName } from "@/app/utils/userTypes";
 import MyGrants from "./MyGrants";
 import AllGrants from "./AllGrants";
+import GrantPerformance from "./GrantPerformanceMeric";
 
 // import AssignedGrant from "./AssignedGrant";
 // import AssignedDetails from "./AssignedDetails";
@@ -50,10 +51,10 @@ const MyGrantsHome = (props: Props) => {
       case dashboardRouteName.allGrants:
         return <AllGrants />;
         break;
-      case dashboardRouteName.performanceMetrics:
-        return <div />;
+      case dashboardRouteName.grantPerformanceMetric:
+        return <GrantPerformance />;
         break;
-    
+
       default:
         return null;
     }

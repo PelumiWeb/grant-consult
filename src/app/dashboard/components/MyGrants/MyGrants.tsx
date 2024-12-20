@@ -216,7 +216,7 @@ const MyGrants = (props: Props) => {
             dispatch(
               setActiveRoute({
                 ...dashboardRoutes,
-                consultation: dashboardRouteName.generalConsultationDetails,
+                mygrant: dashboardRouteName.grantPerformanceMetric,
               })
             );
           }}
@@ -299,8 +299,6 @@ const MyGrants = (props: Props) => {
                   mygrant: dashboardRouteName.allGrants,
                 })
               );
-
-              console.log("yoojkfnfoo");
             }}
             width="w-[200.21px]"
             height="h-[30px]"

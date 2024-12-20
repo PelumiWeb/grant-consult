@@ -62,6 +62,8 @@ const config: Config = {
         'genera-user-shdow-card': "0px 4px 25px 1px #4285F440",
         'active-summary': "4px 0px 25px 0px #4285F440",
         'grant-card-dashboard': "0px 4px 4px 0px #4285F440",
+        'headline-shadow': "0px 4px 50px 0px #00000080 inset",
+        'chart-grant': "0px 4px 25px 0px #329DFD40"
       },
       colors: {
         background: "var(--background)",

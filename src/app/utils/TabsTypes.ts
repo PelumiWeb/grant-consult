@@ -15,6 +15,7 @@ grantConsulatation: string
 generalConsultationDetails: string;
 myGrants: string
   allGrants: string;
+  grantPerformanceMetric: string;
 
 
 }
@@ -35,7 +36,8 @@ logout: "logout",
   grantConsulatation: "grantConsulatation",
   generalConsultationDetails: "generalConsultationDetails",
 myGrants: "my Grants",
-  allGrants: "allGrants"
+  allGrants: "allGrants",
+  grantPerformanceMetric: "grantPerformanceMetric"
 
 
 

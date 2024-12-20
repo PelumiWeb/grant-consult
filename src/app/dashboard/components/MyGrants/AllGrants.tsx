@@ -159,10 +159,20 @@ const AllGrants = (props: Props) => {
         <Pagination />
       </div>
 
-      {/* <div className="flex items-center cursor-pointer">
+      <div
+        className="flex items-center cursor-pointer ml-4"
+        onClick={() => {
+          dispatch(
+            setActiveRoute({
+              ...dashboardRoute,
+              // dashboard: dashboardRouteName.generalDashboard,
+              mygrant: dashboardRouteName.myGrants,
+            })
+          );
+        }}>
         <img src="/arrowLeft.svg" alt="" />
         <p className="text-secondaryColor ml-2">Return to Dashboard</p>
-      </div> */}
+      </div>
     </div>
   );
 };
