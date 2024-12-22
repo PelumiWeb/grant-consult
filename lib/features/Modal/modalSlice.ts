@@ -2,12 +2,12 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
-import { modalName } from "@/app/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/ModalTypes";
 
 export interface ModalState {
     open: boolean;
     modalType: string | undefined;
-    modalContent?: string;
+    modalContent?: string | any;
     from?: string;
 
 }
