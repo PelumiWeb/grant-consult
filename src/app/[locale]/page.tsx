@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import { useAppSelector } from "../../../lib/hooks";
 import RenderModals from "./components/RenderModals";
 import { useTranslations } from "next-intl";
+import fetchTranslation from "./utils/fetchTranslation";
 
 type Props = {};
 
@@ -21,6 +22,18 @@ const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
   //  const t = useTranslations();
   //  console.log(t, "are you muted");
+
+  // React.useEffect(() => {
+  //   const fetchData = async () => {
+  //     // Usage:
+  //     const translatedText = await fetchTranslation(
+  //       "Choose a Subscription Plan",
+  //       "fr"
+  //     );
+  //     console.log(translatedText, "Testing this out"); // Outputs: "Connexion"
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="">

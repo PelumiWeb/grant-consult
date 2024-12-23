@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {
@@ -9,6 +10,10 @@ type Props = {
 };
 
 const ServiceComponent = ({ data }: { data: Props }) => {
+  const t = useTranslations("Homepage");
+
+  console.log(data.content, "Cpntenttt")
+
   return (
     <div
       className={`flex items-center justify-center border ${

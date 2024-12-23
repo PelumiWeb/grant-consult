@@ -1,10 +1,12 @@
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import React from "react";
 import { Rate } from "antd";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const Testimonial = (props: Props) => {
+  const t = useTranslations("Homepage")
   const TestimonalProfile = () => {
     return (
       <div className="relative top-8 w-full grid place-items-center">
@@ -35,13 +37,13 @@ const Testimonial = (props: Props) => {
     <div className=" flex items-center md:items-start  justify-between flex-wrap w-full h-full xl:h-[600px] bg-white p-16">
       <div className="w-full lg:w-[50%] mb-8 lg:mb-0 mt-0 md:mt-16">
         <p className="text-primary text-sm md:text-base lg:text-lg xl:text-3xl">
-          Our Testimonials
+          {t("Testimonial.title")}
         </p>
         <h4 className=" text-buttonPrimary font-poppins font-semibold text-3xl lg:text-[48px] leading-[54px] ">
-          What Our Clients
+          {t("Testimonial.header1")}
         </h4>
         <h4 className="text-primary font-poppins font-semibold text-3xl lg:text-[48px] leading-[54px]">
-          Have to Say About Us
+          {t("Testimonial.header2")}
         </h4>
         <p className="text-primaryBlack font-poppins w-full lg:w-[70%] py-2 leading-[20px] font-normal mb-4">
           Lorem ipsum dolor sit amet consectetur. Scelerisque sed tincidunt

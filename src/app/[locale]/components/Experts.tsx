@@ -1,7 +1,7 @@
 "use client";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import { useRouter } from "next/navigation";
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useTransition } from "react";
 import CustomModal from "./Modal";
 import ConsultantComponent from "../consultant/component/ConsultantComponent";
 import ConsultantComponentModal from "./consultantComponentModal";
@@ -11,6 +11,7 @@ import CustomModalComponent from "./CustomModalComponent";
 import { useAppDispatch } from "../../../../lib/hooks";
 import { openModal } from "../../../../lib/features/Modal/modalSlice";
 import { modalName } from "../utils/ModalTypes";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props = {};
 type imageProps = {
@@ -21,6 +22,10 @@ type imageProps = {
 
 const Experts = (props: Props) => {
   const router = useRouter();
+    const t = useTranslations("Homepage");
+  const locale = useLocale();
+
+
 
   const dispatch = useAppDispatch();
 
@@ -53,7 +58,7 @@ const Experts = (props: Props) => {
 
   return (
     <div className="bg-white h-full w-full py-16">
-      <h1 className="text-center ">Work with Our Experts</h1>
+      <h1 className="text-center ">{t("Experts.title")}</h1>
       <div className="w-full flex items-center justify-center">
         <p className="text-[#6E6E6E] text-center w-full lg:w-[60%] px-4 lg:px-0 py-4">
           Lorem ipsum dolor sit amet consectetur. Diam augue dui elit fermentum
@@ -68,7 +73,7 @@ const Experts = (props: Props) => {
         <div className="">
           <ImageContainer
             name="PAUL SMITH"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert1.svg"
           />
         </div>
@@ -76,22 +81,22 @@ const Experts = (props: Props) => {
         <div className="flex flex-wrap items-center justify-center w-[50%]">
           <ImageContainer
             name="ALICE BROOKLYN"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert2.svg"
           />
           <ImageContainer
             name="BROWN KIGAI"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert3.svg"
           />
           <ImageContainer
             name="WILLIAM BUTT"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert4.svg"
           />
           <ImageContainer
             name="JANE DOE"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert5.svg"
           />
         </div>
@@ -99,7 +104,7 @@ const Experts = (props: Props) => {
         <div className="">
           <ImageContainer
             name="JAMES RWANDA"
-            title="Grant Consultant |Individual Advisor"
+            title={t("Experts.name")}
             image="/expert6.svg"
           />
         </div>
@@ -107,10 +112,10 @@ const Experts = (props: Props) => {
 
       <div className="flex items-center justify-center w-full pt-16">
         <CustomButton
-          onClick={() => router.push("/consultant")}
+          onClick={() => router.push(`${locale}/consultant`)}
           width="w-[325px]"
           height="h-[50px]"
-          title="Meet Our Consultant"
+          title={t("Experts.meet")}
         />
       </div>
     </div>

@@ -1,12 +1,14 @@
-import React from "react";
+import { useTranslations } from "next-intl";
+import React, { useTransition } from "react";
 
 type Props = {};
 
 const GrantFunder = (props: Props) => {
+  const t = useTranslations("Homepage")
   return (
     <div className="py-32 flex flex-col items-center justify-center">
       <h3 className="text-center py-8">
-        Over $1 billion in active grants from funders like:
+        {t("Grants.content")}
       </h3>
       <div className="w-[40%] flex items-center justify-center my-2">
         <div className="w-full h-full flex items-center justify-center">

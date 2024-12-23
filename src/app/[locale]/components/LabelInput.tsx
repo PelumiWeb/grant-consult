@@ -44,7 +44,7 @@ const LabelInput = (props: Props) => {
             props.width ? props.width : "w-full"
           } !placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
-          defaultValue={props.placeholder}
+          defaultValue={props.value ? props.value : props.placeholder}
           filterOption
           onChange={props.handleChange}
           options={props.options}

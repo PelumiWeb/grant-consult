@@ -35,14 +35,11 @@ const Header = ({}: Props) => {
   const HandleLanguageChange = (value: string | string[]) => {
     const path = pathname.split("/").slice(2).join("/");
     const newPath = `${value}/${path}`;
-    console.log(newPath, "This is a new path");
     router.push(newPath);
   };
 
-  console.log(locale, "from header--------------------");
-
   const tabs = [
-    { name: "Home", id: 1, url: "/" },
+    { name: "Home", id: 1, url: `/${locale}` },
     {
       name: "Grants",
       id: 2,
@@ -112,7 +109,7 @@ const Header = ({}: Props) => {
                   })
                 );
 
-                router.push("/auth/signup");
+                router.push(`${locale}/auth/signup`);
               }}>
               Become a consultant
             </a>
@@ -342,7 +339,7 @@ const Header = ({}: Props) => {
                     userType: "Grantor(Donor)",
                   })
                 );
-                router.push("/auth/signup");
+                router.push(`${locale}/auth/signup`);
               }}>
               Become a Grantor/Donor
             </a>
@@ -382,7 +379,7 @@ const Header = ({}: Props) => {
     <div className=" w-full px-4 md:px-0">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
-        <div className="cursor-pointer" onClick={() => router.push("/")}>
+        <div className="cursor-pointer" onClick={() => router.push(`/${locale}`)}>
           <Image
             src="/grantLogo.svg"
             alt="Grant Logo"
@@ -411,7 +408,7 @@ const Header = ({}: Props) => {
               </div>
               <div className="mr-2 hidden lg:block">
                 <CustomButton
-                  onClick={() => router.push("/auth/login")}
+                  onClick={() => router.push(`${locale}/auth/login`)}
                   title="Login"
                   width="w-[92px]"
                   backgrounColor="bg-white"
@@ -422,7 +419,7 @@ const Header = ({}: Props) => {
               </div>
               <div className="hidden lg:block">
                 <CustomButton
-                  onClick={() => router.push("/auth/login")}
+                  onClick={() => router.push(`${locale}/auth/login`)}
                   title="Try 7 days Free"
                   width="w-full"
                   backgrounColor="bg-[#27AE60]"
@@ -440,7 +437,7 @@ const Header = ({}: Props) => {
                         userType: "Grantor(Donor)",
                       })
                     );
-                    router.push("/auth/signup");
+                    router.push(`${locale}/auth/signup`);
                   }}
                   title="Become a grantor"
                   width="w-full"
@@ -543,6 +540,7 @@ const Header = ({}: Props) => {
             placeholder="English"
             height="h-[40px]"
             value={locale}
+          
             options={[
               {
                 value: "en",
@@ -575,7 +573,7 @@ const Header = ({}: Props) => {
                 ),
               },
               {
-                value: "Portugal",
+                value: "pt",
                 label: (
                   <div className="flex items-center w-full">
                     <Image

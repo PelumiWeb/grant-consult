@@ -2,6 +2,7 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 type Cardprops = {
   image: string;
@@ -12,6 +13,8 @@ type Cardprops = {
 };
 
 const SubscriptionCard = (data: Cardprops) => {
+  const locale = useLocale();
+
   const router = useRouter();
   return (
     <div className="  bg-white mt-4 w-[250px] 2lg:w-[200px] m-8 2lg:m-2">
@@ -48,7 +51,7 @@ const SubscriptionCard = (data: Cardprops) => {
         </ol>
         <div className="w-full flex items-center justify-center mt-4 cursor-pointer">
           <CustomButton
-            onClick={() => router.push("/payments")}
+            onClick={() => router.push(`${locale}/payments`)}
             width="w-[170px]"
             height="h-[35px]"
             title="Subscribe Now"

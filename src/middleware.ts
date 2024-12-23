@@ -10,5 +10,5 @@ defaultLocale: 'en'
 
 
 export const config = {
-  matcher: ['/', '/(de|en|fr|es|zh)/:path*']
+  matcher: ['/', '/(de|en|fr|es|zh|pt)/:path*']
 }

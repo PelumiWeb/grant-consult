@@ -4,11 +4,14 @@ import CustomInput from "../../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
   const router = useRouter();
+  const locale = useLocale();
+
   
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%]">
@@ -80,7 +83,7 @@ const Consultant = (props: Props) => {
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Sign up"
-            onClick={() => router.push("/auth/otp")}
+            onClick={() => router.push(`${locale}/auth/otp`)}
           />
         </div>
       </form>

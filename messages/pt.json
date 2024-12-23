@@ -1,6 +1,36 @@
 {
   "Homepage": {
-    "title": "帮助您获得合适的资助",
-    "content": "This is the homepage content"
+    "title": "Ajudando você a garantir as bolsas certas",
+    "content": "Acesse oportunidades de subsídios, consultoria especializada e suporte personalizado no GrantsConsult.",
+    "button": "Subvenção disponível",
+    "button2": "Torne-se um consultor",
+    "service": "Nossos Serviços",
+    "Service": {
+      "service": "Nossos Serviços",
+      "card1": "Consultoria e Assessoria",
+      "card2": "Assistência para redação de subsídios",
+      "card3": "Grant Research & Identification",
+      "card4": "Pesquisa e Identificação de Subsídios",
+      "card5": "Bolsa de estudos",
+      "card6": "Treinamento e Workshops"
+    },
+    "Experts": {
+      "title": "Trabalhe com nossos especialistas",
+      "name": "Consultor de Subsídios | Consultor Individual",
+      "meet": "Conheça Nossos Consultores"
+    },
+    "Subscription": {
+      "title": "Escolha um plano de assinatura",
+      "subscriptionCard": {}
+    },
+    "Testimonial": {
+      "title": "Nossos Testemunhos",
+      "header1": "O que nossos clientes",
+      "header2": "O que tem a dizer sobre nós"
+    },
+    "Grants": {
+      "content": "Mais de US$ 1 bilhão em subsídios ativos de financiadores como"
+    }
   }
+  
 }

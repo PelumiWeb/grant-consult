@@ -1,6 +1,7 @@
 "use client";
 
 import CustomButton from "@/app/[locale]/components/CustomButton";
+import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Carousel from "react-multi-carousel";
@@ -9,6 +10,8 @@ import "react-multi-carousel/lib/styles.css";
 type Props = {};
 
 const Grants = (props: Props) => {
+  const locale = useLocale();
+
   const onChange = (currentSlide: number) => {
     // console.log(currentSlide);
   };
@@ -58,7 +61,7 @@ const Grants = (props: Props) => {
           Tortor viverra iaculis donec enim nam vestibulum. Nunc congue arcu
           volutpat nec viverra ac vel volutpat.
         </p>
-        <div onClick={() => router.push("/grants/1")}>
+        <div onClick={() => router.push(`${locale}/grants/1`)}>
           <CustomButton
             title="Read More"
             backgrounColor="bg-white"
@@ -78,7 +81,7 @@ const Grants = (props: Props) => {
         <h1 className="text-lg lg:text-4xl">Featured Grants</h1>
         <h3
           className="text-buttonPrimary cursor-pointer hover:cursor-pointer text-lg lg:text-3xl "
-          onClick={() => router.push("/grants")}>
+          onClick={() => router.push(`${locale}/grants`)}>
           View all grants
         </h3>
       </div>

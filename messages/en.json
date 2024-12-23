@@ -1,7 +1,38 @@
 {
-    "Homepage": {
-        "title": "Helping You Secure the Right Grants",
-        "content": "This is the homepage content"
+  "Homepage": {
+    "title": "Helping You Secure the Right Grants",
+    "content": "Access grant opportunities, expert consultation, and personalized support at GrantsConsult.",
+    "button": "Available grant",
+    "button2": "Become a consultant",
+    "Service": {
+      "service": "Our Services",
+      "card1": "Consultation & Advisory",
+      "card2": "Grant Writing Assistance",
+      "card3": "Grant Research & Identification",
+      "card4": "Proposal Review and Feedback:",
+      "card5": "Scholarship",
+      "card6": "Training & Workshops"
+    },
+    "Experts": {
+      "title": "Work with Our Experts",
+      "name": "Grant Consultant |Individual Advisor",
+      "meet": "Meet Our Consultants"
+      
+    },
+    "Subscription": {
+      "title": "Choose a Subscription Plan",
+      "subscriptionCard": {
 
+      }
+    },
+    "Testimonial": {
+      "title" : "Our Testimonials",
+      "header1": "What Our Clients",
+      "header2": "Have to Say About Us"
+    },
+      "Grants": {
+      "content" : "Over $1 billion in active grants from funders like"
     }
+  }
+
 }

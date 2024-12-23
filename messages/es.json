@@ -1,6 +1,35 @@
 {
   "Homepage": {
     "title": "Ayudándole a conseguir las subvenciones adecuadas",
-    "content": "This is the homepage content"
+    "content": "Acceda a oportunidades de subvenciones, consultas con expertos y apoyo personalizado en GrantsConsult.",
+    "button": "Conviértete en consultor",
+    "service": "Nuestros servicios",
+    "Service": {
+      "service": "Nuestros servicios",
+      "card1": "Consulta y Asesoría",
+      "card2": "Asistencia para la redacción de subvenciones",
+      "card3": "Investigación e identificación de subvenciones",
+      "card4": "Revisión de propuestas y retroalimentación",
+      "card5": "Beca",
+      "card6": "Capacitaciones y talleres"
+    },
+    "Experts": {
+      "title": "Trabaje con nuestros expertos",
+      "name": "Consultor de subvenciones | Asesor individual",
+      "meet": "Conozca a nuestros consultores"
+    },
+    "Subscription": {
+      "title": "Elija un plan de suscripción",
+      "subscriptionCard": {}
+    },
+    "Testimonial": {
+      "title": "Nuestros Testimonios",
+      "header1": "Lo que nuestros clientes",
+      "header2": "Tengo que decir sobre nosotros"
+    },
+    "Grants": {
+      "content": "Más de mil millones de dólares en subvenciones activas de financiadores como"
+    }
   }
+
 }

@@ -1,6 +1,34 @@
 {
   "Homepage": {
-    "title": "Helping You Secure the Right Grants",
-    "content": "This is the homepage content"
+    "title": "Wir helfen Ihnen, die richtigen Zuschüsse zu erhalten",
+    "content": "Erhalten Sie Zugriff auf Fördermöglichkeiten, Expertenberatung und persönliche Unterstützung bei GrantsConsult.",
+    "button": "Verfügbarer Zuschuss",
+    "button2": "Berater werden",
+    "Service": {
+      "service": "Unsere Dienste",
+      "card1": "Consultoria e Assessoria",
+      "card2": "Assistência para redação de subsídios",
+      "card3": "Pesquisa e Identificação de Subsídios",
+      "card4": "Revisão e feedback da proposta:",
+      "card5": "Bolsa de estudos",
+      "card6": "Treinamento e Workshops"
+    },
+    "Experts": {
+      "title": "Arbeiten Sie mit unseren Experten",
+      "name": "Zuschussberater | Einzelberater",
+      "meet": "Lernen Sie unsere Berater kennen"
+    },
+    "Subscription": {
+      "title": "Wählen Sie einen Abonnementplan",
+      "subscriptionCard": {}
+    },
+    "Testimonial": {
+      "title": "Unsere Referenzen",
+      "header1": "Was unsere Kunden",
+      "header2": "Was Sie über uns sagen können"
+    },
+    "Grants": {
+      "content": "Über 1 Milliarde US-Dollar an aktiven Zuschüssen von Geldgebern wie"
+    }
   }
 }

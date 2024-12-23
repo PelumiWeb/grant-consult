@@ -6,11 +6,13 @@ import { Checkbox, Input } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 type Props = {};
 
 const CreateNewPassword = (props: Props) => {
   const router = useRouter();
+  const locale = useLocale()
   return (
     <div className="py-32 px-8 w-full flex flex-col items-center justify-center ">
       <div className="mt-[10%] w-full">
@@ -41,7 +43,7 @@ const CreateNewPassword = (props: Props) => {
           </div>
           <p
             className="text-secondaryColor200 text-center cursor-pointer py-2 hover:underline"
-            onClick={() => router.push("/auth/login")}>
+            onClick={() => router.push(`${locale}/auth/login`)}>
             Back to Sign in
           </p>
         </form>

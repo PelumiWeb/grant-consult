@@ -8,10 +8,13 @@ import { OTPProps } from "antd/es/input/OTP";
 import { useRouter } from "next/navigation";
 import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { useLocale } from "next-intl";
 
 type Props = {};
 
 const Otp = (props: Props) => {
+  const locale = useLocale();
+
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
   };
@@ -51,7 +54,7 @@ const Otp = (props: Props) => {
                   userTypeSelected: false,
                 })
               );
-              router.push("/dashboard");
+              router.push(`${locale}/dashboard`);
             }}
           />
         </div>

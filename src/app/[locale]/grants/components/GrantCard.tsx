@@ -1,3 +1,4 @@
+import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -8,6 +9,8 @@ type Props = {
 };
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCard = (props: Props) => {
+  const locale = useLocale();
+
   const router = useRouter();
   return (
     <div className={`flex flex-col justify-between border-[0.5px] ${!props.border && "border-borderColor"}  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0`}>
@@ -52,7 +55,7 @@ const GrantCard = (props: Props) => {
             tellus est posuere dolor sit am
             <span
               className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-              onClick={() => router.push("/grants/1")}>
+              onClick={() => router.push(`${locale}/grants/1`)}>
               Read more...
             </span>
           </p>}
@@ -64,7 +67,7 @@ const GrantCard = (props: Props) => {
         est posuere dolor sit am
         <span
           className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-          onClick={() => router.push("/grants/1")}>
+          onClick={() => router.push(`${locale}/grants/1`)}>
           Read more...
         </span>
       </p>}

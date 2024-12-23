@@ -1,6 +1,36 @@
 {
   "Homepage": {
     "title": "Vous aider à obtenir les bonnes subventions",
-    "content": "This is the homepage content"
+    "content": "Accédez à des opportunités de subventions, à des consultations d'experts et à un soutien personnalisé sur GrantsConsult.",
+    "button": "Subvention disponible",
+    "button2": "Devenir consultant",
+    "service": "Nos services",
+    "Service": {
+      "service": "Nos services",
+      "card1": "Consultation et conseil",
+      "card2": "Aide à la rédaction de demandes de subvention",
+      "card3": "Recherche et identification de subventions",
+      "card4": "Examen et commentaires des propositions",
+      "card5": "Bourse",
+      "card6": "Formations et ateliers"
+    },
+    "Experts": {
+      "title": "Travaillez avec nos experts",
+      "name": "Conseiller en subventions | Conseiller individuel",
+      "meet": "Rencontrez nos consultants"
+    },
+    "Subscription": {
+      "title": "Choisissez un plan d'abonnement",
+      "subscriptionCard": {}
+    },
+    "Testimonial": {
+      "title": "Nos témoignages",
+      "header1": "Ce que disent nos clients",
+      "header2": "Il faut dire quelque chose sur nous"
+    },
+    "Grants": {
+      "content": "Plus d'un milliard de dollars de subventions actives provenant de bailleurs de fonds comme"
+    }
   }
+
 }

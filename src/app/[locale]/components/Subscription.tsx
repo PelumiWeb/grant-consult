@@ -1,5 +1,6 @@
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import SubscriptionCard from "@/app/[locale]/components/SubscriptionCard";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {};
@@ -12,10 +13,11 @@ type Cardprops = {
 };
 
 const Subscription = (props: Props) => {
+  const t = useTranslations("Homepage")
   return (
     <div className="w-full h-full px-16  py-16">
       <h1 className="text-lg md:text-2xl text-center mb-16">
-        Choose a Subscription Plan
+        {t("Subscription.title")}
       </h1>
       <div className="flex items-center justify-center 2lg:justify-between w-full flex-wrap">
         <SubscriptionCard

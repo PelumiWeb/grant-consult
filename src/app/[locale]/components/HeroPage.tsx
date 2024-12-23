@@ -3,13 +3,15 @@ import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
 import { useAppDispatch } from "../../../../lib/hooks";
 import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props = {};
 
 const HeroPage = (props: Props) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const locale = useLocale();
+
   const t = useTranslations("Homepage");
 
   return (
@@ -19,15 +21,14 @@ const HeroPage = (props: Props) => {
         <div className="hidden lg:block ml-8 xl:ml-16 mt-[10%] w-full lg:w-[50%]">
           <h1 className="sm:w-[70%] w-full ">{t("title")}</h1>
           <p className="w-[90%] font-poppins text-newPrimaryTextColor font-medium leading-[38px] text-[24px]">
-            Access grant opportunities, expert consultation, and personalized
-            support. At ullamcorper eu et
+            {t("content")}
           </p>
           <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">
-            <div onClick={() => router.push("/grants")}>
+            <div onClick={() => router.push(`${locale}/grants`)}>
               <CustomButton
                 width="md:w-[170px] w-[190px]"
                 height="h-[52px]"
-                title="Available Grants"
+                title={t("button")}
                 radius="rounded-[5px]"
                 textStyle="lg:text-sm font-semibold text-white"
                 padding="p-0"
@@ -43,13 +44,13 @@ const HeroPage = (props: Props) => {
                   })
                 );
 
-                router.push("/auth/signup");
+                router.push(`${locale}/auth/signup`);
               }}>
               <CustomButton
                 width="md:w-[170px] w-[200px]"
                 height="h-[52px]"
                 backgrounColor="bg-transparent"
-                title="Become a consultant"
+                title={t("button2")}
                 radius="rounded-[5px]"
                 textStyle=" sm:text-[12px] lg:text-sm  text-primary font-semibold text-center  "
                 borderWidth="border-[2px]"
@@ -102,14 +103,13 @@ const HeroPage = (props: Props) => {
         {/* Bottom */}
         <div className="">
           <h1 className="w-full font-semibold text-[20px] leading-[26px] text-center   lg:w-full ">
-            Helping You Secure the Right Grants
+            {t("title")}
           </h1>
           <p className="w-full font-poppins text-newPrimaryTextColor font-medium leading-[23px] text-[14px] text-center">
-            Access grant opportunities, expert consultation, and personalized
-            support. At ullamcorper eu et
+            {t("content")}
           </p>
           <div className="flex items-center justify-center w-full mt-4">
-            <div onClick={() => router.push("/grants")}>
+            <div onClick={() => router.push(`${locale}/grants`)}>
               <CustomButton
                 width="w-[134px]"
                 height="h-[52px]"
@@ -128,7 +128,7 @@ const HeroPage = (props: Props) => {
                     userType: "Consultant",
                   })
                 );
-                router.push("/auth/signup");
+                router.push(`${locale}/auth/signup`);
               }}>
               <CustomButton
                 width="w-[134px]"

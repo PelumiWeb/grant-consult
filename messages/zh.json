@@ -1,6 +1,35 @@
 {
   "Homepage": {
     "title": "帮助您获得合适的资助",
-    "content": "This is the homepage content"
+    "content": "在 GrantsConsult 获取资助机会、专家咨询和个性化支持。",
+    "button": "可用补助金",
+    "button2": "成为顾问",
+    "Service": {
+      "service": "我们的服务",
+      "card1": "培训与研讨会",
+      "card2": "资助写作协助",
+      "card3": "资助研究与鉴定",
+      "card4": "提案审查与反馈",
+      "card5": "奖学金",
+      "card6": "培训与研讨会"
+    },
+    "Experts": {
+      "title": "与我们的专家合作",
+      "name": "资助顾问 | 个人顾问",
+      "meet": "认识我们的顾问"
+    },
+    "Subscription": {
+      "title": "选择订阅计划",
+      "subscriptionCard": {}
+    },
+    "Testimonial": {
+      "title": "我们的评价",
+      "header1": "我们的客户",
+      "header2": "关于我们"
+    },
+    "Grants": {
+      "content": "来自以下资助者的超过 10 亿美元活跃资助"
+    }
   }
+
 }
