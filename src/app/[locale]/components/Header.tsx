@@ -11,6 +11,8 @@ import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
 import { useDispatch } from "react-redux";
 import { getLocale } from "next-intl/server";
 import { useLocale, useTranslations } from "next-intl";
+import useHandleNavigation from "../utils/HandleNavigation";
+
 
 // import { getLocale } from "next-intl";
 
@@ -29,6 +31,8 @@ const Header = ({}: Props) => {
   const locale = useLocale();
 
   console.log("current server", locale);
+    const handleNavigation = useHandleNavigation();
+
 
   // const {} = useParams()
 
@@ -109,7 +113,7 @@ const Header = ({}: Props) => {
                   })
                 );
 
-                router.push(`${locale}/auth/signup`);
+                handleNavigation(`/auth/signup`);
               }}>
               Become a consultant
             </a>
@@ -339,7 +343,7 @@ const Header = ({}: Props) => {
                     userType: "Grantor(Donor)",
                   })
                 );
-                router.push(`${locale}/auth/signup`);
+                handleNavigation(`/auth/signup`);
               }}>
               Become a Grantor/Donor
             </a>
@@ -379,7 +383,9 @@ const Header = ({}: Props) => {
     <div className=" w-full px-4 md:px-0">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
-        <div className="cursor-pointer" onClick={() => router.push(`/${locale}`)}>
+        <div
+          className="cursor-pointer"
+          onClick={() => handleNavigation(`/`)}>
           <Image
             src="/grantLogo.svg"
             alt="Grant Logo"
@@ -408,7 +414,7 @@ const Header = ({}: Props) => {
               </div>
               <div className="mr-2 hidden lg:block">
                 <CustomButton
-                  onClick={() => router.push(`${locale}/auth/login`)}
+                  onClick={() => handleNavigation("/auth/login")}
                   title="Login"
                   width="w-[92px]"
                   backgrounColor="bg-white"
@@ -419,7 +425,7 @@ const Header = ({}: Props) => {
               </div>
               <div className="hidden lg:block">
                 <CustomButton
-                  onClick={() => router.push(`${locale}/auth/login`)}
+                  onClick={() => handleNavigation(`/auth/login`)}
                   title="Try 7 days Free"
                   width="w-full"
                   backgrounColor="bg-[#27AE60]"
@@ -437,7 +443,7 @@ const Header = ({}: Props) => {
                         userType: "Grantor(Donor)",
                       })
                     );
-                    router.push(`${locale}/auth/signup`);
+                    handleNavigation(`/auth/signup`);
                   }}
                   title="Become a grantor"
                   width="w-full"
@@ -513,7 +519,7 @@ const Header = ({}: Props) => {
                 </Dropdown>
               ) : (
                 <div
-                  onClick={() => router.push(url)}
+                  onClick={() => handleNavigation(url)}
                   key={id}
                   className="flex items-center ">
                   <p className="uppercase text-white mr-2 cursor-pointer hover:text-secondaryColor text-[16px] leading-[18px] font-medium">
@@ -540,7 +546,6 @@ const Header = ({}: Props) => {
             placeholder="English"
             height="h-[40px]"
             value={locale}
-          
             options={[
               {
                 value: "en",

@@ -1,21 +1,23 @@
-import {notFound} from 'next/navigation';
-import {getRequestConfig} from 'next-intl/server';
-import { locales } from './config';
- 
-// Can be imported from a shared config
- 
-export default getRequestConfig(async (context) => {
- const requestLocale = await context.requestLocale; // Ensure this resolves before use
+import { notFound } from "next/navigation";
+import { getRequestConfig, GetRequestConfigParams } from "next-intl/server";
+import { locales } from "./config";
 
-  console.log("Resolved requestLocale:", requestLocale);
+export default getRequestConfig(async (context: GetRequestConfigParams) => {
+  // Resolve the `requestLocale` since it is a Promise
+  const requestLocale = await context.requestLocale;
 
-  // Validate locale
-  if (!locales.includes(requestLocale as any)) {
-    console.error("Invalid locale detected:", requestLocale);
-    notFound(); // This triggers a 404
+  // Validate the locale
+  if (!requestLocale || !locales.includes(requestLocale)) {
+    console.error("Invalid or missing locale detected:", requestLocale);
+    notFound(); // Trigger a 404 if the locale is invalid
   }
 
+  // Load and resolve the messages
+  const messages = (await import(`../messages/${requestLocale}.json`)).default;
+
+  // Return the configuration with resolved `messages`
   return {
-    messages: (await import(`../messages/${requestLocale}.json`)).default,
+    locale: requestLocale,
+    messages, // Resolved messages object
   };
 });

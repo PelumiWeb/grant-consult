@@ -7,12 +7,15 @@ import CustomButton from "../../components/CustomButton";
 import CustomInput from "@/app/[locale]/components/CustomInput";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "../../utils/HandleNavigation";
 
 type Props = {};
 
 const Login = (props: Props) => {
   const router = useRouter();
   const locale = useLocale()
+    const handleNavigation = useHandleNavigation();
+
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Login</h3>
@@ -45,7 +48,7 @@ const Login = (props: Props) => {
 
           <p
             className="underline text-red-500 text-sm cursor-pointer"
-            onClick={() => router.push(`${locale}/auth/forgotPassword`)}>
+            onClick={() => handleNavigation(`/auth/forgotPassword`)}>
             Forgot Password
           </p>
         </div>
@@ -53,7 +56,7 @@ const Login = (props: Props) => {
           <CustomButton
             width="w-full"
             title="Login"
-            onClick={() => router.push(`/${locale}`)}
+            onClick={() => handleNavigation(`/`)}
           />
         </div>
         <div className="mt-8">
@@ -73,7 +76,7 @@ const Login = (props: Props) => {
           Don't have an account?{" "}
           <span
             className="text-secondaryColor cursor-pointer"
-            onClick={() => router.push(`${locale}/auth/signup`)}>
+            onClick={() => handleNavigation(`/auth/signup`)}>
             Sign up here
           </span>
         </p>

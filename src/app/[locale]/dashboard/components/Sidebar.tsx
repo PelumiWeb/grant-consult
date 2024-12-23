@@ -9,6 +9,7 @@ import { tabsName } from "@/app/[locale]/utils/TabsTypes";
 import { userTypeName } from "@/app/[locale]/utils/userTypes";
 import { AnyAaaaRecord } from "dns";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "../../utils/HandleNavigation";
 
 type Props = {};
 type TabsProps = { imageTitle: string; image: string; textColor?: string }[];
@@ -61,6 +62,8 @@ const Sidebar = (props: Props) => {
   const router = useRouter();
   const userType = useAppSelector((state) => state.signup.userType);
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   console.log(userType, "User type: ");
 
@@ -78,7 +81,7 @@ const Sidebar = (props: Props) => {
 
   return (
     <div className="bg-primary h-screen w-[20%] px-8 ">
-      <div className="pb-8 mt-6" onClick={() => router.push(`/${locale}`)}>
+      <div className="pb-8 mt-6" onClick={() => handleNavigation(`/`)}>
         <TabsComponent
           imageTitle="Home"
           image="/home.svg"

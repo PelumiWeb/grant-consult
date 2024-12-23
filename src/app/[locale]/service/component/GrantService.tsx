@@ -3,6 +3,7 @@ import CustomButton from "@/app/[locale]/components/CustomButton";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
+import useHandleNavigation from "../../utils/HandleNavigation";
 
 type Props = {
   images: any[];
@@ -21,6 +22,8 @@ const GrantService = ({
 }: Props) => {
   const router = useRouter();
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   return (
     <div
@@ -94,7 +97,7 @@ const GrantService = ({
         className=" absolute left-4 bottom-3 w-[200px] justify-center items-center 
       ">
         <CustomButton
-          onClick={() => router.push(`${locale}/payments`)}
+          onClick={() => handleNavigation(`/payments`)}
           width="w-full"
           height="h-[40px]"
           title="Subscribe Now"

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useAppDispatch } from "../../../../lib/hooks";
 import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
 import { useLocale, useTranslations } from "next-intl";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {};
 
@@ -11,6 +12,7 @@ const HeroPage = (props: Props) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
 
   const t = useTranslations("Homepage");
 
@@ -24,7 +26,7 @@ const HeroPage = (props: Props) => {
             {t("content")}
           </p>
           <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">
-            <div onClick={() => router.push(`${locale}/grants`)}>
+            <div onClick={() => (`${locale}/grants`)}>
               <CustomButton
                 width="md:w-[170px] w-[190px]"
                 height="h-[52px]"
@@ -44,7 +46,7 @@ const HeroPage = (props: Props) => {
                   })
                 );
 
-                router.push(`${locale}/auth/signup`);
+                handleNavigation(`/auth/signup`);
               }}>
               <CustomButton
                 width="md:w-[170px] w-[200px]"
@@ -109,7 +111,7 @@ const HeroPage = (props: Props) => {
             {t("content")}
           </p>
           <div className="flex items-center justify-center w-full mt-4">
-            <div onClick={() => router.push(`${locale}/grants`)}>
+            <div onClick={() => handleNavigation(`${locale}/grants`)}>
               <CustomButton
                 width="w-[134px]"
                 height="h-[52px]"
@@ -128,7 +130,7 @@ const HeroPage = (props: Props) => {
                     userType: "Consultant",
                   })
                 );
-                router.push(`${locale}/auth/signup`);
+                handleNavigation(`/auth/signup`);
               }}>
               <CustomButton
                 width="w-[134px]"

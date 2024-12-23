@@ -12,6 +12,7 @@ import { useAppDispatch } from "../../../../lib/hooks";
 import { openModal } from "../../../../lib/features/Modal/modalSlice";
 import { modalName } from "../utils/ModalTypes";
 import { useLocale, useTranslations } from "next-intl";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {};
 type imageProps = {
@@ -24,6 +25,8 @@ const Experts = (props: Props) => {
   const router = useRouter();
     const t = useTranslations("Homepage");
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
 
 
@@ -112,7 +115,7 @@ const Experts = (props: Props) => {
 
       <div className="flex items-center justify-center w-full pt-16">
         <CustomButton
-          onClick={() => router.push(`${locale}/consultant`)}
+          onClick={() => handleNavigation(`/consultant`)}
           width="w-[325px]"
           height="h-[50px]"
           title={t("Experts.meet")}

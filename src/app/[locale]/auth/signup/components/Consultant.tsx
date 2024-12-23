@@ -5,12 +5,15 @@ import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   
   return (
@@ -83,7 +86,7 @@ const Consultant = (props: Props) => {
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Sign up"
-            onClick={() => router.push(`${locale}/auth/otp`)}
+            onClick={() => handleNavigation(`${locale}/auth/otp`)}
           />
         </div>
       </form>

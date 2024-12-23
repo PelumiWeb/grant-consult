@@ -6,11 +6,14 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {};
 
 const Grants = (props: Props) => {
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   const onChange = (currentSlide: number) => {
     // console.log(currentSlide);
@@ -61,7 +64,7 @@ const Grants = (props: Props) => {
           Tortor viverra iaculis donec enim nam vestibulum. Nunc congue arcu
           volutpat nec viverra ac vel volutpat.
         </p>
-        <div onClick={() => router.push(`${locale}/grants/1`)}>
+        <div onClick={() => handleNavigation(`/grants/1`)}>
           <CustomButton
             title="Read More"
             backgrounColor="bg-white"
@@ -81,7 +84,7 @@ const Grants = (props: Props) => {
         <h1 className="text-lg lg:text-4xl">Featured Grants</h1>
         <h3
           className="text-buttonPrimary cursor-pointer hover:cursor-pointer text-lg lg:text-3xl "
-          onClick={() => router.push(`${locale}/grants`)}>
+          onClick={() => handleNavigation(`${locale}/grants`)}>
           View all grants
         </h3>
       </div>

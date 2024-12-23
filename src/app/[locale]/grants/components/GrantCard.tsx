@@ -1,6 +1,7 @@
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
+import useHandleNavigation from "../../utils/HandleNavigation";
 
 type Props = {
   moreDetails?: boolean;
@@ -10,6 +11,8 @@ type Props = {
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCard = (props: Props) => {
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+  
 
   const router = useRouter();
   return (
@@ -55,7 +58,7 @@ const GrantCard = (props: Props) => {
             tellus est posuere dolor sit am
             <span
               className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-              onClick={() => router.push(`${locale}/grants/1`)}>
+              onClick={() => handleNavigation(`/grants/1`)}>
               Read more...
             </span>
           </p>}
@@ -67,7 +70,7 @@ const GrantCard = (props: Props) => {
         est posuere dolor sit am
         <span
           className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-          onClick={() => router.push(`${locale}/grants/1`)}>
+          onClick={() => handleNavigation(`/grants/1`)}>
           Read more...
         </span>
       </p>}

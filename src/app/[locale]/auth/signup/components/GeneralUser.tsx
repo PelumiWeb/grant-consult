@@ -5,12 +5,14 @@ import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 
 type Props = {};
 
 const GeneralSignup = (props: Props) => {
   const router = useRouter()
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
 
   return (
     <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
@@ -55,7 +57,7 @@ const GeneralSignup = (props: Props) => {
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Signup"
-            onClick={() => router.push(`${locale}/auth/otp`)}
+            onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
         <div className="mt-8">

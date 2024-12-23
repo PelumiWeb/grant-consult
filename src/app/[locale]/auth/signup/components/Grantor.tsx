@@ -5,12 +5,15 @@ import { Checkbox } from "antd";
 import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%] ">
@@ -82,7 +85,7 @@ const Consultant = (props: Props) => {
             width="w-full lg:w-[616px]"
             title="Sign up"
             radius="rounded-[5px]"
-            onClick={() => router.push(`${locale}/auth/otp`)}
+            onClick={() => handleNavigation(`${locale}/auth/otp`)}
           />
         </div>
       </form>

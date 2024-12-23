@@ -9,11 +9,14 @@ import { useRouter } from "next/navigation";
 import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { useLocale } from "next-intl";
+import useHandleNavigation from "../../utils/HandleNavigation";
 
 type Props = {};
 
 const Otp = (props: Props) => {
   const locale = useLocale();
+    const handleNavigation = useHandleNavigation();
+
 
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
@@ -54,7 +57,7 @@ const Otp = (props: Props) => {
                   userTypeSelected: false,
                 })
               );
-              router.push(`${locale}/dashboard`);
+              handleNavigation(`${locale}/dashboard`);
             }}
           />
         </div>
