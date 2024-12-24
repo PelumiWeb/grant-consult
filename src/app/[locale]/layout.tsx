@@ -5,6 +5,7 @@ import StoreProvider from "../../../lib/storeProvider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
+import getMessagesSync from "./utils/getMessageAsync";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default async function RootLayout({
   children: ReactNode;
   params: { locale: string };
 }) {
-  const messages = await getMessages(); // Pass the locale to `getMessages`
+  const messages = getMessagesSync();
   return (
     <html lang={params.locale}>
       <body
