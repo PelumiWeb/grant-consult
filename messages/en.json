@@ -6,6 +6,7 @@
     "button2": "Become a consultant",
     "Service": {
       "service": "Our Services",
+      "content": "Applying for grants can be complex, but we’re here to simplify the process. With customized advice, professional writing, and expert consultation. Our team is dedicated to helping you secure the funding you need.",
       "card1": "Consultation & Advisory",
       "card2": "Grant Writing Assistance",
       "card3": "Grant Research & Identification",
@@ -21,14 +22,18 @@
     },
     "Subscription": {
       "title": "Choose a Subscription Plan",
+      "content": "At GrantsConsult, we offer flexible subscription plans that allow you to choose the level of service and support that fits your needs. Whether you’re just starting out or are looking for comprehensive management, we’ve got the right plan for you.",
       "subscriptionCard": {
 
       }
     },
     "Testimonial": {
-      "title" : "Our Testimonials",
+      "title": "Our Testimonials",
       "header1": "What Our Clients",
-      "header2": "Have to Say About Us"
+      "header2": "Have to Say About Us",
+      "content": "We’ve helped hundreds of organizations secure the funding they need to grow and succeed. Hear from some of our satisfied clients about how our services made a difference in their grant applications and project development.",
+      "card1": "Thanks to GrantsConsult’s expert team, we were able to secure a key funding opportunity that took our project to the next level. Their guidance made all the difference.",
+      "card2": "The personalized attention we received helped us fine-tune our grant proposals and double our funding success rate. We couldn’t be happier"
     },
       "Grants": {
       "content" : "Over $1 billion in active grants from funders like"

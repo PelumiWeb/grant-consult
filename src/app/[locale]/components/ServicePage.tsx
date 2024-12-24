@@ -15,15 +15,13 @@ const ServicePage = (props: Props) => {
           {t("Service.service")}
         </h1>
         <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl">
-          Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
-          iaculis. Est mauris nisl adipiscing interdum phasellus potenti
-          vulputate nibh. Amet mauris habitant tempor sem vel enim
+          {t("Service.content")}
         </h3>
 
-        <h3 className="mt-4 text-textColor text-base lg:text-xl 2lg:text-2xl">
+        {/* <h3 className="mt-4 text-textColor text-base lg:text-xl 2lg:text-2xl">
           Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu
           iaculis. Est mauris nisl adipiscing interdum.
-        </h3>
+        </h3> */}
       </div>
       <div className="mt-32 lg:mt-16 grid place-items-center w-full lg:w-[60%] ">
         <div className=" flex items-center">

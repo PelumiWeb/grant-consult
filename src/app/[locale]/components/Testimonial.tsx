@@ -6,12 +6,13 @@ import { useTranslations } from "next-intl";
 type Props = {};
 
 const Testimonial = (props: Props) => {
-  const t = useTranslations("Homepage")
-  const TestimonalProfile = () => {
+  const t = useTranslations("Homepage");
+  const TestimonalProfile = (data:any) => {
+    console.log(data.image, "What ;s up here?")
     return (
       <div className="relative top-8 w-full grid place-items-center">
         <div className="w-[72px] h-[72px] rounded-full border-primaryBlack">
-          <img src="./clients.svg" className="w-full h-full  object-contain" />
+          <img src={data.image} className="w-full h-full  object-contain" />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
           <p>Stephen Martins</p>
@@ -20,15 +21,13 @@ const Testimonial = (props: Props) => {
       </div>
     );
   };
-  const TestimonyCard = () => {
+  const TestimonyCard = ({message}: any) => {
+    // console.log('Testimoney data', data);
     return (
       <div className="my-16 xl:my-0 w-[298px] h-[269px] shadow-testimony-card bg-white rounded-[20px] flex flex-col items-center justify-between px-5 ">
-        <p className="text-primaryBlack mt-12">
-          Lorem ipsum dolor sit amet consectetur. Aliquet a eu sapien donec sit
-          in eget. Consequat commodo sed eget donec ipsum tortor metus at dui.
-        </p>
-        <Rate defaultValue={5} className="mt-4" />
-        <TestimonalProfile />
+        <p className="text-primaryBlack mt-6 h-[120px]">{message?.message}</p>
+        <Rate defaultValue={5} className="mt-12" />
+        <TestimonalProfile image={message.image} />
       </div>
     );
   };
@@ -46,8 +45,7 @@ const Testimonial = (props: Props) => {
           {t("Testimonial.header2")}
         </h4>
         <p className="text-primaryBlack font-poppins w-full lg:w-[70%] py-2 leading-[20px] font-normal mb-4">
-          Lorem ipsum dolor sit amet consectetur. Scelerisque sed tincidunt
-          felis donec dictumst ipsum. Est egestas euismod tellus tempor quam.
+          {t("Testimonial.content")}
         </p>
         <CustomButton
           backgrounColor="bg-secondaryColor"
@@ -57,8 +55,20 @@ const Testimonial = (props: Props) => {
         />
       </div>
       <div className="w-full lg:w-[50%] flex-wrap flex items-center justify-center md:justify-between lg:justify-center 2lg:justify-between">
-        <TestimonyCard />
-        <TestimonyCard />
+        {[
+          {
+            id: 1,
+            message: t("Testimonial.card1"),
+            image: "/clients.svg",
+          },
+          {
+            id: 2,
+            message: t("Testimonial.card2"),
+            image: "/Testimonial2.svg",
+          },
+        ].map((data) => (
+          <TestimonyCard message={data} />
+        ))}
       </div>
     </div>
   );

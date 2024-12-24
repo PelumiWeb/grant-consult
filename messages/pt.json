@@ -7,6 +7,7 @@
     "service": "Nossos Serviços",
     "Service": {
       "service": "Nossos Serviços",
+      "content": "Solicitar subsídios pode ser complexo, mas estamos aqui para simplificar o processo. Com aconselhamento personalizado, redação profissional e consultoria especializada. Nossa equipe se dedica a ajudar você a garantir o financiamento de que precisa.",
       "card1": "Consultoria e Assessoria",
       "card2": "Assistência para redação de subsídios",
       "card3": "Grant Research & Identification",
@@ -21,12 +22,16 @@
     },
     "Subscription": {
       "title": "Escolha um plano de assinatura",
+      "content": "Na GrantsConsult, oferecemos planos de assinatura flexíveis que permitem que você escolha o nível de serviço e suporte que se encaixa em suas necessidades. Não importa se você está apenas começando ou está procurando por um gerenciamento abrangente, temos o plano certo para você.",
       "subscriptionCard": {}
     },
     "Testimonial": {
       "title": "Nossos Testemunhos",
+      "content": "Ajudámos centenas de organizações a garantir o financiamento de que necessitam para crescer e ter sucesso. Ouça alguns dos nossos clientes satisfeitos sobre como os nossos serviços fizeram a diferença nos seus pedidos de subsídios e no desenvolvimento de projetos.",
       "header1": "O que nossos clientes",
-      "header2": "O que tem a dizer sobre nós"
+      "header2": "O que tem a dizer sobre nós",
+      "card1": "Graças à equipa de especialistas da GrantsConsult, conseguimos garantir uma oportunidade de financiamento importante que levou o nosso projeto ao próximo nível. A orientação deles fez toda a diferença.",
+      "card2": "A atenção personalizada que recebemos ajudou-nos a aperfeiçoar as nossas propostas de subvenção e a duplicar a nossa taxa de sucesso de financiamento. Não podíamos estar mais felizes"
     },
     "Grants": {
       "content": "Mais de US$ 1 bilhão em subsídios ativos de financiadores como"

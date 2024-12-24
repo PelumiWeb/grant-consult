@@ -7,6 +7,7 @@
     "service": "Nos services",
     "Service": {
       "service": "Nos services",
+      "content": "Demander une subvention peut être complexe, mais nous sommes là pour simplifier le processus. Avec des conseils personnalisés, une rédaction professionnelle et des consultations d'experts, notre équipe se consacre à vous aider à obtenir le financement dont vous avez besoin.",
       "card1": "Consultation et conseil",
       "card2": "Aide à la rédaction de demandes de subvention",
       "card3": "Recherche et identification de subventions",
@@ -21,12 +22,16 @@
     },
     "Subscription": {
       "title": "Choisissez un plan d'abonnement",
+      "content": "Chez GrantsConsult, nous proposons des formules d'abonnement flexibles qui vous permettent de choisir le niveau de service et d'assistance qui correspond à vos besoins. Que vous débutiez ou que vous recherchiez une gestion complète, nous avons la formule qui vous convient.",
       "subscriptionCard": {}
     },
     "Testimonial": {
       "title": "Nos témoignages",
+      "content": "Nous avons aidé des centaines d’organisations à obtenir le financement dont elles ont besoin pour se développer et réussir. Écoutez certains de nos clients satisfaits raconter comment nos services ont fait la différence dans leurs demandes de subvention et le développement de leurs projets.",
       "header1": "Ce que disent nos clients",
-      "header2": "Il faut dire quelque chose sur nous"
+      "header2": "Il faut dire quelque chose sur nous",
+      "card1": "Grâce à l’équipe d’experts de GrantsConsult, nous avons pu obtenir une opportunité de financement clé qui a permis à notre projet de passer à l’étape supérieure. Leurs conseils ont fait toute la différence.",
+      "card2": "L’attention personnalisée que nous avons reçue nous a aidé à peaufiner nos demandes de subvention et à doubler notre taux de réussite de financement. Nous ne pourrions être plus heureux."
     },
     "Grants": {
       "content": "Plus d'un milliard de dollars de subventions actives provenant de bailleurs de fonds comme"

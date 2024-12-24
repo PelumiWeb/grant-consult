@@ -6,6 +6,7 @@
     "button2": "Berater werden",
     "Service": {
       "service": "Unsere Dienste",
+      "content": "Die Beantragung von Zuschüssen kann kompliziert sein, aber wir vereinfachen den Prozess. Mit individueller Beratung, professionellem Schreiben und fachkundiger Beratung. Unser Team ist bestrebt, Ihnen dabei zu helfen, die Finanzierung zu erhalten, die Sie benötigen.",
       "card1": "Consultoria e Assessoria",
       "card2": "Assistência para redação de subsídios",
       "card3": "Pesquisa e Identificação de Subsídios",
@@ -20,12 +21,16 @@
     },
     "Subscription": {
       "title": "Wählen Sie einen Abonnementplan",
+      "content": "Bei GrantsConsult bieten wir flexible Abonnements an, mit denen Sie das Service- und Supportniveau wählen können, das Ihren Anforderungen entspricht. Egal, ob Sie gerade erst anfangen oder nach umfassendem Management suchen, wir haben den richtigen Plan für Sie.",
       "subscriptionCard": {}
     },
     "Testimonial": {
       "title": "Unsere Referenzen",
+      "content": "Wir haben Hunderten von Organisationen geholfen, die Finanzierung zu erhalten, die sie für Wachstum und Erfolg benötigen. Hören Sie von einigen unserer zufriedenen Kunden, wie unsere Dienste bei ihren Zuschussanträgen und der Projektentwicklung einen Unterschied gemacht haben.",
       "header1": "Was unsere Kunden",
-      "header2": "Was Sie über uns sagen können"
+      "header2": "Was Sie über uns sagen können",
+      "card1": "Dank des Expertenteams von GrantsConsult konnten wir uns eine wichtige Finanzierungsmöglichkeit sichern, die unser Projekt auf die nächste Stufe brachte. Ihre Beratung machte den entscheidenden Unterschied.",
+      "card2": "Die persönliche Betreuung, die wir erhielten, half uns, unsere Förderanträge zu verfeinern und unsere Finanzierungserfolgsquote zu verdoppeln. Wir könnten nicht zufriedener sein"
     },
     "Grants": {
       "content": "Über 1 Milliarde US-Dollar an aktiven Zuschüssen von Geldgebern wie"
