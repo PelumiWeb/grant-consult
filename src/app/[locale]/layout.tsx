@@ -28,11 +28,13 @@ export default async function RootLayout({
   params,
 }: {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const messages = getMessagesSync();
+  const resolvedParams = await params; // Resolve the promise
+  const messages = await getMessages();
+  // const messages = getMessagesSync();
   return (
-    <html lang={params.locale}>
+    <html lang={resolvedParams.locale}>
       <body
         className={` ${mont.variable}
         ${poppins.variable}
