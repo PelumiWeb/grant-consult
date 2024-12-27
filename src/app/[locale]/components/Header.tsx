@@ -13,7 +13,6 @@ import { getLocale } from "next-intl/server";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
 
-
 // import { getLocale } from "next-intl";
 
 type Props = { locale?: string };
@@ -31,8 +30,7 @@ const Header = ({}: Props) => {
   const locale = useLocale();
 
   console.log("current server", locale);
-    const handleNavigation = useHandleNavigation();
-
+  const handleNavigation = useHandleNavigation();
 
   // const {} = useParams()
 
@@ -51,7 +49,11 @@ const Header = ({}: Props) => {
         {
           key: "1",
           label: (
-            <a rel="noopener noreferrer" href="/grants">
+            <a
+              rel="noopener noreferrer"
+              onClick={() => handleNavigation("/grants")}
+              // href=""
+            >
               Grants For NGO
             </a>
           ),
@@ -62,7 +64,10 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              href="/grants">
+              onClick={() => handleNavigation("/grants")}
+      
+              
+              >
               Grants for Individuals
             </a>
           ),
@@ -125,7 +130,8 @@ const Header = ({}: Props) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="/consultant/request">
+              // href="/consultant/request"
+              onClick={() => handleNavigation("/consultant/request")}>
               Request a consultant
             </a>
           ),
@@ -158,9 +164,8 @@ const Header = ({}: Props) => {
           key: "4",
           label: (
             <a
-              // target="_blank"
               rel="noopener noreferrer"
-              href="/consultant">
+              onClick={() => handleNavigation("/consultant")}>
               Our Consultants Profile
             </a>
           ),
@@ -177,7 +182,7 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              href="/subscription">
+              onClick={() => handleNavigation("/subscription")}>
               Subscription Plans
             </a>
           ),
@@ -188,7 +193,7 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              href="/service">
+              onClick={() => handleNavigation("/service")}>
               Grants Writing Plans
             </a>
           ),
@@ -395,9 +400,7 @@ const Header = ({}: Props) => {
     <div className=" w-full px-4 md:px-0">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
-        <div
-          className="cursor-pointer"
-          onClick={() => handleNavigation(`/`)}>
+        <div className="cursor-pointer" onClick={() => handleNavigation(`/`)}>
           <Image
             src="/grantLogo.svg"
             alt="Grant Logo"

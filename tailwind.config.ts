@@ -34,6 +34,7 @@ const config: Config = {
         'footer': "url('/footerImage.svg')",
         "footerOverlay": "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(31, 28, 28, 0.8) 100% ",
         "subscription": "url('/subscription.svg')",
+        "becomeGrantImage": "url('/becomeGrantor.svg')",
         'linearGradient': 'linear-gradient(180deg, #FD32B2 0%, #F2D4E7 100%)',
         'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",
         'silver': "linear-gradient(90deg, #A19FA3 29.5%, rgba(255, 255, 255, 0.7) 100%)",
