@@ -268,82 +268,82 @@ const Header = ({}: Props) => {
       ],
     },
     {
-      name: "Services",
+      name: "Our Services",
       id: 7,
-      options: [
-        {
-          key: "1",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.antgroup.com"
-            >
-              Grant Writing Assistance
-            </a>
-          ),
-        },
-        {
-          key: "2",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
-              Grant Research & Identification
-            </a>
-          ),
-        },
-        {
-          key: "3",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
-              Proposal reviews & Feedback
-            </a>
-          ),
-        },
-        {
-          key: "4",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
-              Training & Worshops
-            </a>
-          ),
-        },
-        {
-          key: "5",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
-              Consultation & Advisory
-            </a>
-          ),
-        },
-        {
-          key: "6",
-          label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://www.luohanacademy.com"
-            >
-              Scholarships
-            </a>
-          ),
-        },
-      ],
+      // options: [
+      //   {
+      //     key: "1",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.antgroup.com"
+      //       >
+      //         Grant Writing Assistance
+      //       </a>
+      //     ),
+      //   },
+      //   {
+      //     key: "2",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.luohanacademy.com"
+      //       >
+      //         Grant Research & Identification
+      //       </a>
+      //     ),
+      //   },
+      //   {
+      //     key: "3",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.luohanacademy.com"
+      //       >
+      //         Proposal reviews & Feedback
+      //       </a>
+      //     ),
+      //   },
+      //   {
+      //     key: "4",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.luohanacademy.com"
+      //       >
+      //         Training & Worshops
+      //       </a>
+      //     ),
+      //   },
+      //   {
+      //     key: "5",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.luohanacademy.com"
+      //       >
+      //         Consultation & Advisory
+      //       </a>
+      //     ),
+      //   },
+      //   {
+      //     key: "6",
+      //     label: (
+      //       <a
+      //         target="_blank"
+      //         rel="noopener noreferrer"
+      //         // href="https://www.luohanacademy.com"
+      //       >
+      //         Scholarships
+      //       </a>
+      //     ),
+      //   },
+      // ],
     },
     {
       name: "Grantors",
