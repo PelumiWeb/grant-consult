@@ -110,7 +110,7 @@ const page = (props: Props) => {
         ))}
       </div>
 
-      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8">
+      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8 mt-8">
         <p className="text-center font-mono font-bold text-[24px] leading-[36px] text-white">
           Ready to Get Started?
         </p>
