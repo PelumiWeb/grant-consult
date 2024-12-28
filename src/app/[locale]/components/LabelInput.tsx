@@ -14,13 +14,14 @@ type Props = {
   width?: string;
   height?: string;
   mr?: string;
+  my?: string;
   select?: boolean;
   onChange?: any;
   textArea?: boolean;
   righticon?: any;
   leftIcon?: any;
   options?: SelectOption[] | undefined;
-  handleChange?: any
+  handleChange?: any;
 };
 
 const { TextArea } = Input;
@@ -34,8 +35,6 @@ const { TextArea } = Input;
 // }
 
 const LabelInput = (props: Props) => {
- 
-
   const RenderInputs = (props: Props) => {
     if (props.select) {
       return (
@@ -57,7 +56,8 @@ const LabelInput = (props: Props) => {
           className={`${props.height ? props.height : "h-[55px]"} ${
             props.width ? props.width : "w-full"
           } `}
-          allowClear></TextArea>
+          allowClear
+        />
       );
     } else {
       return (
@@ -76,9 +76,9 @@ const LabelInput = (props: Props) => {
 
   return (
     <div
-      className={`${props.width ? props.width : "w-[267px]"} my-4 ${
-        props.mr ? "mr-2" : "mr-0"
-      }`}>
+      className={`${props.width ? props.width : "w-[267px]"} ${
+        props.my ? props.my : "my-4"
+      } ${props.mr ? "mr-2" : "mr-0"}`}>
       <div className="flex items-center">
         {props.label && (
           <p className="text-sm font-normal my-2">{props.label}</p>

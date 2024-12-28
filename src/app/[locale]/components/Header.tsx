@@ -64,10 +64,7 @@ const Header = ({}: Props) => {
             <a
               // target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleNavigation("/grants")}
-      
-              
-              >
+              onClick={() => handleNavigation("/grants")}>
               Grants for Individuals
             </a>
           ),
@@ -111,14 +108,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="/auth/signup"
               onClick={() => {
-                dispatch(
-                  setUserType({
-                    userTypeSelected: true,
-                    userType: "Consultant",
-                  })
-                );
-
-                handleNavigation(`/auth/signup`);
+                handleNavigation(`/consultant/become`);
               }}>
               Become a consultant
             </a>
@@ -269,7 +259,10 @@ const Header = ({}: Props) => {
     },
     {
       name: "Our Services",
+
       id: 7,
+      url: "/service/services",
+
       // options: [
       //   {
       //     key: "1",
@@ -351,20 +344,7 @@ const Header = ({}: Props) => {
       options: [
         {
           key: "1",
-          label: (
-            <a
-              onClick={() => {
-                dispatch(
-                  setUserType({
-                    userTypeSelected: true,
-                    userType: "Grantor(Donor)",
-                  })
-                );
-                handleNavigation(`/auth/signup`);
-              }}>
-              Become a Grantor/Donor
-            </a>
-          ),
+          label: <a onClick={() => {}}>Become a Grantor/Donor</a>,
         },
         // {
         //   key: "2",
@@ -385,7 +365,7 @@ const Header = ({}: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               // href="https://www.aliyun.com"
-            >
+              onClick={() => handleNavigation("/grants/list")}>
               List a grant
             </a>
           ),
@@ -452,13 +432,7 @@ const Header = ({}: Props) => {
               <div className="hidden 2lg:block">
                 <CustomButton
                   onClick={() => {
-                    dispatch(
-                      setUserType({
-                        userTypeSelected: true,
-                        userType: "Grantor(Donor)",
-                      })
-                    );
-                    handleNavigation(`/auth/signup`);
+                    handleNavigation(`/grants/become`);
                   }}
                   title="Become a grantor"
                   width="w-full"

@@ -1,5 +1,8 @@
 import React from "react";
 import CustomButton from "../../components/CustomButton";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import useHandleNavigation from "../../utils/HandleNavigation";
+import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 
 type Props = {};
 
@@ -34,6 +37,8 @@ const PartnerCard = (data: any) => {
 };
 
 const page = (props: Props) => {
+  const dispatch = useAppDispatch();
+  const handleNavigation = useHandleNavigation();
   return (
     <div className="pb-20">
       <div className="min-h-[421px] bg-becomeConsultantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
@@ -50,6 +55,16 @@ const page = (props: Props) => {
           </p>
 
           <CustomButton
+            onClick={() => {
+              dispatch(
+                setUserType({
+                  userTypeSelected: true,
+                  userType: "Consultant",
+                })
+              );
+
+              handleNavigation(`/auth/signup`);
+            }}
             title="Sign Up Now"
             textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"
             radius="rounded-[5px]"

@@ -47,8 +47,12 @@ const config: Config = {
         'grantColor': "linear-gradient(90deg, #1F4E79 0%, #3990DF 100%)",
         'qa-background': 'linear-gradient(176.45deg, #B2EBF2 2.73%, #D1C4E9 127.16%)',
         'gradient-border': 'linear-gradient(180deg, rgba(52, 168, 83, 0.5) 0%, #191919 24.5%, rgba(28, 243, 254, 0.7))',
-        
-       
+        'service-card-1': "linear-gradient(180deg, #F3F8FF 0%, #FAFCFE 100%)",
+        'service-card-2': "linear-gradient(180deg, rgba(243, 232, 255, 0.5) 0%, #FEFDFF 100%)",
+        'service-card-3': "linear-gradient(180deg, #EAF5ED 0%, #FFFFFF 100%)",
+        'service-card-4': "linear-gradient(180deg, rgba(243, 240, 210, 0.1) 0%, #FFFFFF 67.5%)",
+        'service-card-5': " linear-gradient(180deg, rgba(252, 231, 243, 0.4) 0%, #FFFFFF 75%)",
+        'service-card-6': "linear-gradient(180deg, rgba(255, 237, 213, 0.2) 19%, #FFFFFF 100%)",
       },
     extend: {
        boxShadow: {
@@ -66,7 +70,10 @@ const config: Config = {
         'active-summary': "4px 0px 25px 0px #4285F440",
         'grant-card-dashboard': "0px 4px 4px 0px #4285F440",
         'headline-shadow': "0px 4px 50px 0px #00000080 inset",
-        'chart-grant': "0px 4px 25px 0px #329DFD40"
+        'chart-grant': "0px 4px 25px 0px #329DFD40",
+        'service-shadow': "4px 10px 15px 0px #329DFD4D;"
+
+
       },
       colors: {
         background: "var(--background)",

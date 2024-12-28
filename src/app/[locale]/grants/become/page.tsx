@@ -1,5 +1,10 @@
+"use client";
+
 import React from "react";
 import CustomButton from "../../components/CustomButton";
+import { useDispatch } from "react-redux";
+import useHandleNavigation from "../../utils/HandleNavigation";
+import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 
 type Props = {};
 
@@ -35,6 +40,8 @@ const PartnerCard = (data: any) => {
 };
 
 const page = (props: Props) => {
+  const dispatch = useDispatch();
+  const handleNavigation = useHandleNavigation();
   return (
     <div className="pb-20">
       <div className="min-h-[421px] bg-becomeGrantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
@@ -118,6 +125,15 @@ const page = (props: Props) => {
           Join our platform and connect with potential grantees today
         </p>
         <CustomButton
+          onClick={() => {
+            dispatch(
+              setUserType({
+                userTypeSelected: true,
+                userType: "Grantor(Donor)",
+              })
+            );
+            handleNavigation(`/auth/signup`);
+          }}
           title="Sign Up Now"
           textStyle="font-bold text-[16px] leading-[16px] text-secondaryColor"
           backgrounColor="bg-white"
