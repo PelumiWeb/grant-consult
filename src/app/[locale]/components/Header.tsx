@@ -250,7 +250,7 @@ const Header = ({}: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
-            >
+              onClick={() => handleNavigation("/faq")}>
               Frequently Asked Questions
             </a>
           ),
