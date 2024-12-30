@@ -89,7 +89,7 @@ const Card = (data: any) => {
 const ServiceCard = (data: serviceDataProps) => {
   return (
     <div
-      className={`w-[415px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
+      className={`w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
       <div className="flex items-center py-2">
         <img src={data.image} alt="" />
         <p className="font-bold text-[16px] leading-[18px] text-black ml-6">
@@ -123,7 +123,7 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="p-16 flex items-center justify-between flex-wrap">
+      <div className="p-16 flex items-center justify-center xl:justify-between flex-wrap">
         {serviceData.map((data) => (
           <ServiceCard key={data.id} {...data} />
         ))}
