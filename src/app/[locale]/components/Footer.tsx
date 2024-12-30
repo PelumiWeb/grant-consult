@@ -5,7 +5,7 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="relative bg-footer px-8 mt-16 py-4 bg-repeat bg-cover bg-bottom">
+    <div className="relative bg-footer px-8 mt-16 py-4 bg-repeat bg-cover bg-bottom bottom-0">
       <div className=" h-full w-full bg-repeat bg-cover bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
         <div className="bg-[#27AE6080] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8">

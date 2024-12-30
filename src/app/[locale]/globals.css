@@ -31,7 +31,7 @@
     @apply text-2xl font-semibold font-mono text-primary;
   }
   h4 {
-    @apply text-[24px] font-semibold font-mono text-primary leading-[24px];
+    @apply text-[24px] font-semibold font-mono text-primary leading-[26px];
   }
 
   p {

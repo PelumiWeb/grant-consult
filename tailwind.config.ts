@@ -84,6 +84,7 @@ const config: Config = {
         backgroundColor: "#F4F6F9",
         secondaryColor: "#329DFD",
         secondaryColor200: "#61A6E4",
+        secondarycolor300: "#EFF6FF",
         secondaryGreenColor: "#329DFD",
         buttonPrimary: "#27AE60",
         secondaryTextColor: "#6E6E6E",
