@@ -5,8 +5,8 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="relative bg-footer px-8 mt-16 py-4 bg-repeat bg-cover bg-bottom bottom-0">
-      <div className=" h-full w-full bg-repeat bg-cover bg-bottom  bg-[#1F1C1CCC]">
+    <div className="relative bg-footer mt-16  bg-repeat bg-cover bg-bottom bottom-0">
+      <div className=" h-full w-full bg-repeat bg-cover px-8 py-4  bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
         <div className="bg-[#27AE6080] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8">
           <div>
@@ -36,23 +36,17 @@ function Footer({}: Props) {
               className="w-[150px] h-full object-cover lg:w-[280px] lg:h-[38px]"
               src="/grantLogo.svg"
               alt="Grant Logo"
-              // width={286}
-              // height={38}
-              
             />
             <p className="w-[150px] lg:w-[300px] text-white text-sm font-semibold ">
-              Lorem ipsum dolor sit amet consectetur. Varius dignissim quam id
-              fames. orem ipsum dolor sit amet consectetur. Varius dignissim
-              quam id fames. orem ipsum dolor sit amet consectetur. Varius
-              dignissim quam id fames. orem ipsum dolor sit amet consectetur.
-              Varius dignissim quam id fames
+              Your trusted platform for navigating the world of grant
+              opportunities. We provide comprehensive access to active grants,
+              expert consultations, and essential tools to help nonprofits,
+              businesses, and individuals secure funding with confidence.
             </p>
             <p className="w-[300px] text-white text-sm font-semibold  mt-4">
-              Lorem ipsum dolor sit amet consectetur. Varius dignissim quam id
-              fames. orem ipsum dolor sit amet consectetur. Varius dignissim
-              quam id fames. orem ipsum dolor sit amet consectetur. Varius
-              dignissim quam id fames. orem ipsum dolor sit amet consectetur.
-              Varius dignissim quam id fames
+              Note: GrantsConsult connects you with grant information and offers
+              application assistance but does not award grants directly. Avoid
+              scams; never pre-pay for guaranteed funding.
             </p>
           </div>
           {/* 2 About Us */}
@@ -62,7 +56,7 @@ function Footer({}: Props) {
               <p className="text-white text-sm font-semibold cursor-pointer">
                 Our Team
               </p>
-            
+
               <p className="text-white text-sm font-semibold cursor-pointer">
                 FAQ
               </p>
