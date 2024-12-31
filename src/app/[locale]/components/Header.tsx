@@ -214,7 +214,7 @@ const Header = ({}: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
-            >
+              onClick={() => handleNavigation("/grant-guidelines")}>
               Grants Writing Guides
             </a>
           ),
@@ -244,7 +244,7 @@ const Header = ({}: Props) => {
           ),
         },
         {
-          key: "2",
+          key: "5",
           label: (
             <a
               target="_blank"

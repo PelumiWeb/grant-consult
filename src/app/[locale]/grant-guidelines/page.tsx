@@ -2,6 +2,7 @@ import React from "react";
 import CustomButton from "../components/CustomButton";
 import { title } from "process";
 import Footer from "../components/Footer";
+import { Progress } from "antd";
 
 type Props = {};
 
@@ -17,6 +18,7 @@ type IconProps = {
   title?: string;
   id?: number;
   textColor?: string;
+  ml?: string;
 };
 
 const guidelinesList: IconProps[] = [
@@ -72,10 +74,11 @@ const IconComponent = ({
   icon,
   title,
   textColor = "text-secondaryColor",
+  ml = "ml-0",
 }: IconProps) => {
   return (
     <div
-      className="w-full  h-[30px] bg-transparent border-none flex items-center my-2"
+      className={`w-full  h-[30px] bg-transparent border-none flex items-center my-2 ${ml} `}
       key={id}>
       <img src={icon} alt="" />
       <p
@@ -205,6 +208,7 @@ const page = (props: Props) => {
                 title="Budget Template"
                 icon="/file-excel.svg"
                 textColor="text-textColor"
+                ml="-ml-1"
               />
               <IconComponent
                 id={1}
@@ -220,13 +224,28 @@ const page = (props: Props) => {
                 Our expert consultants are here to guide you through the grant
                 writing process
               </p>
-              <CustomButton 
-              backgrounColor="bg-secondaryColor"
-              textStyle="font-bold text-[16px] leading-[16px] text-white"
-              title="Request Consultation"
-              width="w-full"
-              height="h-[30px]"
+              <CustomButton
+                backgrounColor="bg-secondaryColor"
+                textStyle="font-bold text-[16px] leading-[16px] text-white"
+                title="Request Consultation"
+                width="w-full"
+                height="h-[30px]"
               />
+            </div>
+
+            <div className="w-full  bg-white p-6 m-4 rounded-[5px] flex flex-col items-start">
+              <h4 className="mb-8">Success Rate</h4>
+              <div>
+                <p className="text-[14px] leading-[21px] font-semibold text-textColor -mb-3">
+                  Grant Approval Rate
+                </p>
+
+                <Progress
+                  percent={80}
+                  className="text-secondaryColor "
+                  size={[250, 5]}
+                />
+              </div>
             </div>
           </div>
         </div>
