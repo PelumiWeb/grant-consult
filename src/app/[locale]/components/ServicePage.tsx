@@ -17,6 +17,9 @@ const ServicePage = (props: Props) => {
         <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl">
           {t("Service.content")}
         </h3>
+        <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl mt-4">
+          {t("Service.content2")}
+        </h3>
 
         {/* <h3 className="mt-4 text-textColor text-base lg:text-xl 2lg:text-2xl">
           Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu

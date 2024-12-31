@@ -6,7 +6,8 @@
     "button2": "Become a consultant",
     "Service": {
       "service": "Our Services",
-      "content": "Applying for grants can be complex, but we’re here to simplify the process. With customized advice, professional writing, and expert consultation. Our team is dedicated to helping you secure the funding you need.",
+      "content": "Applying for grants can be complex, but we’re here to simplify the process.",
+      "content2": "With customized advice, professional writing, and expert consultation. Our team is dedicated to helping you secure the funding you need.",
       "card1": "Consultation & Advisory",
       "card2": "Grant Writing Assistance",
       "card3": "Grant Research & Identification",

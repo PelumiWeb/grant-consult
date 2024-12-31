@@ -592,7 +592,7 @@ const Header = ({}: Props) => {
                       width={20}
                       height={20}
                     />
-                    <p className="font-normal text-[14px]">English</p>
+                    <p className="font-normal text-[14px]">France</p>
                   </div>
                 ),
               },
