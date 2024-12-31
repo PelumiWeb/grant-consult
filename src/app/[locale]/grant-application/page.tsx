@@ -106,13 +106,13 @@ const page = (props: Props) => {
 
       <div className=" p-16 w-full">
         <h4 className="text-center w-full leading-[31px] pt-8">Our Process</h4>
-        <p className="px-64 text-center py-8">
+        <p className="px-4 md:px-16 lg:px-64 text-center py-8">
           We provide comprehensive guidance through every step of the
           application process. Our dedicated expert consultants support you
           until your funding goals are met.
         </p>
 
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-center flex-wrap">
           {[
             {
               title: "Initial Consultation",
