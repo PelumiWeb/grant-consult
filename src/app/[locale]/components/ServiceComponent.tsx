@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import React from "react";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {
   id: number;
@@ -7,16 +8,19 @@ type Props = {
   content?: string;
   margin?: boolean;
   serviceTwo?: boolean;
+  url?: any;
+
 };
 
 const ServiceComponent = ({ data }: { data: Props }) => {
   const t = useTranslations("Homepage");
+  const handleNavigation = useHandleNavigation()
 
-  console.log(data.content, "Cpntenttt")
 
   return (
     <div
-      className={`flex items-center justify-center border ${
+      onClick={() => handleNavigation(data?.url)}
+      className={`flex items-center justify-center border cursor-pointer ${
         data.serviceTwo && "shadow-card mb-16"
       }  ${
         data.serviceTwo ? "border-none" : "border-secondaryColor"

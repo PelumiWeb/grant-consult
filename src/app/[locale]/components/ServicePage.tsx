@@ -33,6 +33,7 @@ const ServicePage = (props: Props) => {
               id: 1,
               image: "/service1.svg",
               content: t("Service.card1"),
+              url: "",
             },
             {
               id: 2,
@@ -40,6 +41,7 @@ const ServicePage = (props: Props) => {
               content: t("Service.card2"),
               margin: true,
               serviceTwo: true,
+              url: "/grant-guidelines",
             },
             {
               id: 3,
