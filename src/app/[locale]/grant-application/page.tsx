@@ -15,7 +15,7 @@ const page = (props: Props) => {
     <div className="h-full bg-backgroundColor">
       {/* Hero Page */}
       <div className="flex flex-col md:flex-row items-start justify-between h-full md:h-[550px] bg-white ">
-        <div className="w-[55%] h-full px-16 flex flex-col justify-start">
+        <div className="w-[55%] h-full px-4 md:px-16 flex flex-col justify-start">
           <div className="flex items-center w-[580px] mt-8 pb-10">
             <p className="text-textColor"> Home </p>
             <p className="text-textColor mx-3">{">>"}</p>
@@ -71,7 +71,7 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="bg-white w-full flex justify-between flex-wrap p-16">
+      <div className="bg-white w-full flex justify-center md:justify-between flex-wrap p-16">
         {[
           {
             image: "/grant-consult.svg",

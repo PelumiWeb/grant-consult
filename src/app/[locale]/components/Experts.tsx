@@ -23,12 +23,9 @@ type imageProps = {
 
 const Experts = (props: Props) => {
   const router = useRouter();
-    const t = useTranslations("Homepage");
+  const t = useTranslations("Homepage");
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
-
-
+  const handleNavigation = useHandleNavigation();
 
   const dispatch = useAppDispatch();
 
@@ -64,11 +61,7 @@ const Experts = (props: Props) => {
       <h1 className="text-center ">{t("Experts.title")}</h1>
       <div className="w-full flex items-center justify-center">
         <p className="text-[#6E6E6E] text-center w-full lg:w-[60%] px-4 lg:px-0 py-4">
-          Lorem ipsum dolor sit amet consectetur. Diam augue dui elit fermentum
-          sed. Elit urna ut leo dignissim enim cursus porttitor mattis. Lorem
-          ipsum dolor sit amet consectetur. Diam augue dui elit fermentum sed.
-          Elit urna ut leo dignissim enim cursus porttitor mattis. Lorem ipsum
-          dolor sit amet consectetur. Diam{" "}
+          {t("Experts.content")}
         </p>
       </div>
       <div className="flex items-center justify-center  w-[100%] ">

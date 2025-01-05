@@ -1,13 +1,13 @@
 {
   "Homepage": {
-    "title": "Helping You Secure the Right Grants",
-    "content": "Access grant opportunities, expert consultation, and personalized support at GrantsConsult.",
+    "title": "Get Your Grants",
+    "title2": "On GrantsConsult.",
+    "content": "Imagine your vision for impact taking flight. Whether you're a grassroots nonprofit or a growing organization, GrantsConsult bridges the gap between your goals and the funding you need, providing expert guidance every step of the way.",
     "button": "Available grant",
     "button2": "Become a consultant",
     "Service": {
       "service": "Our Services",
-      "content": "Applying for grants can be complex, but we’re here to simplify the process.",
-      "content2": "With customized advice, professional writing, and expert consultation. Our team is dedicated to helping you secure the funding you need.",
+      "content": "Applying for grants can be complex, but we’re here to simplify the process. With customized advice, professional writing, and expert consultation. Our team is dedicated to helping you secure the funding you need. ",
       "card1": "Consultation & Advisory",
       "card2": "Grant Writing Assistance",
       "card3": "Grant Research & Identification",
@@ -17,16 +17,14 @@
     },
     "Experts": {
       "title": "Work with Our Experts",
+      "content": "GrantsConsult welcomes talented individuals with expertise and knowledge in grant consultancy. If you have strong skills in grant management, a passion for the complexities of grant writing, and the drive to provide advisory services from start to finish, we want you on our team.",
       "name": "Grant Consultant |Individual Advisor",
       "meet": "Meet Our Consultants"
-      
     },
     "Subscription": {
       "title": "Choose a Subscription Plan",
       "content": "At GrantsConsult, we offer flexible subscription plans that allow you to choose the level of service and support that fits your needs. Whether you’re just starting out or are looking for comprehensive management, we’ve got the right plan for you.",
-      "subscriptionCard": {
-
-      }
+      "subscriptionCard": {}
     },
     "Testimonial": {
       "title": "Our Testimonials",
@@ -36,8 +34,8 @@
       "card1": "Thanks to GrantsConsult’s expert team, we were able to secure a key funding opportunity that took our project to the next level. Their guidance made all the difference.",
       "card2": "The personalized attention we received helped us fine-tune our grant proposals and double our funding success rate. We couldn’t be happier"
     },
-      "Grants": {
-      "content" : "Over $1 billion in active grants from funders like"
+    "Grants": {
+      "content": "Over $1 billion in active grants from funders like"
     }
   }
 

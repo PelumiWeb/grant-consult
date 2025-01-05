@@ -11,57 +11,60 @@ type Cardprops = {
   bgColor?: string;
   plan?: string;
   textColor?: string;
+  list: string[];
 };
 
 const SubscriptionCard = (data: Cardprops) => {
-  const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
-
-  const router = useRouter();
+  const handleNavigation = useHandleNavigation();
   return (
-    <div className="  bg-white mt-4 w-[250px] 2lg:w-[200px] m-8 2lg:m-2">
-      {/* Card */}
-      <div className="relative top-0 left-0  shadow-subscription-card rounded-[8.83px] py-8 w-full ">
-        <div className=" absolute top-10 -left-[47px] ">
-          <img src={data.image} className="h-[220px] w-[220px] " />
-          <p className="absolute top-[37%] left-[50%] text-white font-medium leading-[25px] text-center text-[30px] ">
-            {data.price}
-          </p>
-        </div>
-        <p
-          className={`font-semibold text-[20px] leading-[24px] text-center ${
-            data.textColor ? data?.textColor : "text-secondaryColor"
-          } `}>
-          {data.plan}
-        </p>
-        <p className="text-center text-borderColor">7 days</p>
-        <ol className="mt-24 px-4">
-          {[
-            "Lorem ipsum dolor sit amet",
-            "Orci egestas ornare pharetra",
-            "In in quis malesuada",
-            "Mauris amet venenatis",
-            "bibendum cursus odio",
-            "Lorem ipsum dolor sit amet",
-            "Lorem ipsum dolor sit amet",
-            "Lorem ipsum dolor sit amet",
-          ].map((data) => (
-            <li key={data} className="text-left font-normal my-1 text-[13px] ">
+    <div className="  bg-white mt-4 w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative">
+      <p className="font-semibold text-[16px] leading-[20px] text-primary text-center my-2">
+        {data.plan}
+      </p>
+      <p
+        className="text-[29px] leading-[34px] font-bold text-center
+      text-black my-2">
+        {data.price}
+      </p>
+      <p className="text-[13px] leading-[16px] text-textColor text-center">
+        {data.plan === "Free Trial" ? "7 days" : "30 days"}
+      </p>
+      <ul className="mt-2">
+        {data.list?.map((data: string) => (
+          <li className="flex items-center justify-around w-full j-full">
+            {/* list */}
+            <div className="w-[20%]">
+              <img src="/check.svg" alt="" className="w-[12px] h-[12px]" />
+            </div>
+            <p className="font-medium text-[11px] leading-[16px] text-textColor w-[80%]">
               {data}
-            </li>
-          ))}
-        </ol>
-        <div className="w-full flex items-center justify-center mt-4 cursor-pointer">
-          <CustomButton
-            onClick={() => handleNavigation(`/payments`)}
-            width="w-[170px]"
-            height="h-[35px]"
-            title="Subscribe Now"
-            backgrounColor={data.bgColor ? data.bgColor : "bg-linearGradient"}
-          />
-        </div>
+            </p>
+          </li>
+        ))}
+      </ul>
+
+      <div className="absolute bottom-[5%] flex justify-center items-center w-full -ml-2">
+        <CustomButton
+          width="w-[180px]"
+          height="h-[33px]"
+          borderColor="border-none"
+          backgrounColor={`${
+            data.plan === "Free Trial"
+              ? "bg-backgroundColor"
+              : "bg-secondaryColor"
+          }`}
+          textStyle={`${
+            data.plan === "Free Trial" ? "text-textColor" : "text-white"
+          } font-inter font-bold text-[13px] leading-[13px] `}
+          title={
+            data.plan === "Free Trial"
+              ? "Start Free Trial"
+              : `Choose ${data.plan}`
+          }
+        />
       </div>
+
+      {/* Card */}
     </div>
   );
 };

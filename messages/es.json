@@ -1,7 +1,8 @@
 {
   "Homepage": {
-    "title": "Ayudándole a conseguir las subvenciones adecuadas",
-    "content": "Acceda a oportunidades de subvenciones, consultas con expertos y apoyo personalizado en GrantsConsult.",
+    "title": "Obtenga sus subvenciones",
+    "title2": "En GrantsConsult",
+    "content": "Solicitar subvenciones puede ser una tarea compleja, pero estamos aquí para simplificar el proceso. Con asesoramiento personalizado, redacción profesional y consultas con expertos, nuestro equipo se dedica a ayudarlo a obtener la financiación que necesita.",
     "button": "Conviértete en consultor",
     "service": "Nuestros servicios",
     "Service": {
@@ -16,6 +17,7 @@
     },
     "Experts": {
       "title": "Trabaje con nuestros expertos",
+      "content": "GrantsConsult da la bienvenida a personas talentosas con experiencia y conocimiento en consultoría de subvenciones. Si tiene sólidas habilidades en gestión de subvenciones, pasión por las complejidades de la redacción de solicitudes de subvenciones y el impulso para brindar servicios de asesoramiento de principio a fin, lo queremos en nuestro equipo.",
       "name": "Consultor de subvenciones | Asesor individual",
       "meet": "Conozca a nuestros consultores"
     },

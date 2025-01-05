@@ -1,7 +1,8 @@
 {
   "Homepage": {
-    "title": "Ajudando você a garantir as bolsas certas",
-    "content": "Acesse oportunidades de subsídios, consultoria especializada e suporte personalizado no GrantsConsult.",
+    "title": "Obtenha as suas doações",
+    "title2": "Sobre GrantsConsult",
+    "content": "Imagine sua visão de impacto alçando voo. Seja você uma organização sem fins lucrativos de base ou uma organização em crescimento, a GrantsConsult preenche a lacuna entre suas metas e o financiamento de que você precisa, fornecendo orientação especializada em cada etapa do caminho.",
     "button": "Subvenção disponível",
     "button2": "Torne-se um consultor",
     "service": "Nossos Serviços",
@@ -17,6 +18,7 @@
     },
     "Experts": {
       "title": "Trabalhe com nossos especialistas",
+      "content": "A GrantsConsult recebe pessoas talentosas com expertise e conhecimento em consultoria de subsídios. Se você tem fortes habilidades em gestão de subsídios, paixão pelas complexidades da redação de subsídios e motivação para fornecer serviços de consultoria do início ao fim, queremos você em nossa equipe.",
       "name": "Consultor de Subsídios | Consultor Individual",
       "meet": "Conheça Nossos Consultores"
     },

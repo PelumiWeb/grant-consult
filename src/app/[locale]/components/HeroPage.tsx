@@ -20,13 +20,15 @@ const HeroPage = (props: Props) => {
     <div className="mt-4 lg:mt-0">
       <div className="hidden lg:flex w-full  flex-col md:flex-row  items-start justify-between bg-hero  h-full md:h-[551px] lg:h-[651px] relative">
         {/* left  */}
-        <div className="hidden lg:block ml-8 xl:ml-16 mt-[10%] w-full lg:w-[50%]">
+        <div className="hidden lg:block ml-8 xl:ml-16 mt-[5%] w-full lg:w-[50%]">
           <h1 className="sm:w-[70%] w-full ">{t("title")}</h1>
+          <h1 className="sm:w-[70%] w-full text-buttonPrimary">{t("title2")}</h1>
+
           <p className="w-[90%] font-poppins text-newPrimaryTextColor font-medium leading-[38px] text-[24px]">
             {t("content")}
           </p>
           <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">
-            <div onClick={() => (`${locale}/grants`)}>
+            <div onClick={() => `${locale}/grants`}>
               <CustomButton
                 width="md:w-[170px] w-[190px]"
                 height="h-[52px]"

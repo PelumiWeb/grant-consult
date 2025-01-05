@@ -14,12 +14,12 @@ const ServicePage = (props: Props) => {
         <h1 className="text-center lg:text-left mb-8 text-2xl lg:text-3xl">
           {t("Service.service")}
         </h1>
-        <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl">
+        <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl font-medium">
           {t("Service.content")}
         </h3>
-        <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl mt-4">
+        {/* <h3 className="text-textColor text-base lg:text-xl 2lg:text-2xl mt-4">
           {t("Service.content2")}
-        </h3>
+        </h3> */}
 
         {/* <h3 className="mt-4 text-textColor text-base lg:text-xl 2lg:text-2xl">
           Lorem ipsum dolor sit amet consectetur. Ac sollicitudin potenti arcu

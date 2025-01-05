@@ -1,7 +1,8 @@
 {
   "Homepage": {
-    "title": "Vous aider à obtenir les bonnes subventions",
-    "content": "Accédez à des opportunités de subventions, à des consultations d'experts et à un soutien personnalisé sur GrantsConsult.",
+    "title": "Obtenez vos subventions",
+    "title2": "Sur GrantsConsult",
+    "content": "Imaginez que votre vision de l'impact prenne son envol. Que vous soyez une association à but non lucratif ou une organisation en pleine croissance, GrantsConsult comble le fossé entre vos objectifs et le financement dont vous avez besoin, en vous fournissant des conseils d'experts à chaque étape du processus.",
     "button": "Subvention disponible",
     "button2": "Devenir consultant",
     "service": "Nos services",
@@ -17,6 +18,7 @@
     },
     "Experts": {
       "title": "Travaillez avec nos experts",
+      "content": "GrantsConsult accueille des personnes talentueuses possédant une expertise et des connaissances en matière de conseil en subventions. Si vous avez de solides compétences en gestion de subventions, une passion pour les complexités de la rédaction de subventions et la volonté de fournir des services de conseil du début à la fin, nous vous souhaitons une place dans notre équipe.",
       "name": "Conseiller en subventions | Conseiller individuel",
       "meet": "Rencontrez nos consultants"
     },

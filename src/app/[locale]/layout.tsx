@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import getMessagesSync from "./utils/getMessageAsync";
+import ReactQueryProvider from "./utils/ReactQueryProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default async function RootLayout({
   children: ReactNode;
   params: Promise<{ locale: string }>;
 }) {
+  
   const resolvedParams = await params; // Resolve the promise
   const messages = await getMessages();
   // const messages = getMessagesSync();
@@ -40,9 +42,11 @@ export default async function RootLayout({
         ${poppins.variable}
         antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <StoreProvider>
-            <div className="">{children}</div>
-          </StoreProvider>
+          <ReactQueryProvider>
+            <StoreProvider>
+              <div className="">{children}</div>
+            </StoreProvider>
+          </ReactQueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

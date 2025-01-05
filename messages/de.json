@@ -1,7 +1,8 @@
 {
   "Homepage": {
-    "title": "Wir helfen Ihnen, die richtigen Zuschüsse zu erhalten",
-    "content": "Erhalten Sie Zugriff auf Fördermöglichkeiten, Expertenberatung und persönliche Unterstützung bei GrantsConsult.",
+    "title": "Erhalten Sie Ihre Zuschüsse",
+    "title2": "Über GrantsConsult",
+    "content": "Stellen Sie sich vor, Ihre Vision nimmt Gestalt an. Ob Sie eine gemeinnützige Basisorganisation oder eine wachsende Organisation sind, GrantsConsult schließt die Lücke zwischen Ihren Zielen und der benötigten Finanzierung und bietet Ihnen auf jedem Schritt des Weges fachkundige Beratung.",
     "button": "Verfügbarer Zuschuss",
     "button2": "Berater werden",
     "Service": {
@@ -16,6 +17,7 @@
     },
     "Experts": {
       "title": "Arbeiten Sie mit unseren Experten",
+      "content": "GrantsConsult begrüßt talentierte Personen mit Fachwissen und Erfahrung in der Fördermittelberatung. Wenn Sie über ausgeprägte Fähigkeiten im Fördermittelmanagement, eine Leidenschaft für die Komplexität des Fördermittelschreibens und den Antrieb verfügen, Beratungsdienste von Anfang bis Ende anzubieten, möchten wir Sie in unserem Team haben.",
       "name": "Zuschussberater | Einzelberater",
       "meet": "Lernen Sie unsere Berater kennen"
     },

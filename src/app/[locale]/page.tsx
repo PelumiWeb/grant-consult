@@ -15,15 +15,30 @@ import { useAppSelector } from "../../../lib/hooks";
 import RenderModals from "./components/RenderModals";
 import { useTranslations } from "next-intl";
 import fetchTranslation from "./utils/fetchTranslation";
+import { useQuery } from "@tanstack/react-query";
+import getMovies from "./requests/getMovies";
+import { useApiQuery } from "./utils/useApi";
+import endpoints from "../../../lib/endpoints";
 
 type Props = {};
 
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
+  const { data, isLoading, error, isError } = useApiQuery<any[]>(
+    ["users"], // Query key
+    endpoints.createUser
+
+    //   {
+    //   staleTime: (1000 * 60 * 5),
+    //   // retry: 2,
+    //   // enabled: true,
+    // }
+  );
+  console.log(data, isLoading, isError, "This is the response");
   //  const t = useTranslations();
   //  console.log(t, "are you muted");
 
-  // React.useEffect(() => {
+  // React.useEffect(() => {z
   //   const fetchData = async () => {
   //     // Usage:
   //     const translatedText = await fetchTranslation(
