@@ -21,19 +21,22 @@ export const useApiQuery = <T>(
 // import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 // import { apiInstance } from "../../../../lib/api/Api";
 
-export const useApiMutation = <T, R = Record<string, unknown>>(
+export const useApiMutation = <
+  T extends unknown,
+  R = Record<string, unknown>
+>(
   method: "post" | "put" | "delete",
   path: string,
   options?: UseMutationOptions<T, unknown, R>
 ) => {
-  // Define the mutation function with explicit typing
-  const mutationFn: MutationFunction<T, R> = async (data: R) => {
-    const response = await apiInstance[method]<T>(path, data);
-    return response;
+  const mutationFn: MutationFunction<T, R> = async (data: any) => {
+    const response:any = await apiInstance[method]<T>(path, data);
+    return response?.data as T; // Ensure type compatibility
   };
 
   return useMutation<T, unknown, R>({
     mutationFn,
-    ...options, // Spread additional options like onSuccess, onError, etc.
+    ...options,
   });
 };
+
