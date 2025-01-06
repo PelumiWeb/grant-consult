@@ -344,7 +344,7 @@ const Header = ({}: Props) => {
       options: [
         {
           key: "1",
-          label: <a onClick={() => {}}>Become a Grantor/Donor</a>,
+          label: <a onClick={() =>  handleNavigation(`/grants/become`)}>Become a Grantor/Donor</a>,
         },
         // {
         //   key: "2",

@@ -9,7 +9,6 @@ import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 type Props = {};
 
 const Card = (data: any) => {
-  console.log(data, "This is data from Card");
   return (
     <div className="w-[400px] flex items-center justify-center bg-white h-[138px]">
       <div>
@@ -69,7 +68,7 @@ const page = (props: Props) => {
         </div>
       </div>
 
-      <div className="p-16 flex justify-between items-center">
+      <div className="p-16 flex justify-center lg:justify-between items-center flex-wrap">
         {[
           {
             name: "1,000+",
