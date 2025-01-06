@@ -78,14 +78,13 @@ const Consultant = (props: Props) => {
           type="password"
           value=""
           rightIcon
-        
         />
         <div className="mt-4">
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Sign up"
             radius="rounded-[5px]"
-            onClick={() => handleNavigation(`${locale}/auth/otp`)}
+            onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
       </form>

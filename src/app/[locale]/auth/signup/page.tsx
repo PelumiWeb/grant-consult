@@ -11,20 +11,62 @@ import Grantor from "./components/Grantor";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { userTypeName } from "@/app/[locale]/utils/userTypes";
+import { useApiMutation } from "../../utils/useApi";
+import endpoints from "../../../../../lib/endpoints";
 type Props = {};
 type UserType = { name: string; id: number }[];
+type User = any;
+type SignupData = {
+  usertype: string;
+  fullName: string;
+  phoneNumber?: string;
+  email: string;
+  country?: string;
+  expertise?: string;
+  password: string;
+  confirmPassword: string;
+};
 
 const Signup = (props: Props) => {
   const signupData = useAppSelector((state) => state.signup);
   const dispatch = useAppDispatch();
 
-  console.log(signupData, "Sign up data");
+  // console.log(signupData, "Sign up data");
 
   const userType: UserType = [
     { name: "(NGO, corporate, Individual)", id: 1 },
     { name: "Consultant", id: 2 },
     { name: "Grantor(Donor)", id: 3 },
   ];
+
+  const { mutate } = useApiMutation<User, SignupData>(
+    "post",
+    endpoints.createUser,
+    {
+      onSuccess: (data) => {
+        console.log("User created:", data);
+      },
+      onError: (data) => {
+        console.log("User error:", data);
+      },
+    }
+  );
+
+  React.useEffect(() => {
+    const fetchData = () => {
+      const res = mutate({
+        fullName: "John Doe",
+        email: "john.doe@example.com",
+        usertype: "GENERAL_USER",
+        password: "Javascript20",
+        confirmPassword: "Javascript20",
+      });
+
+      console.log(res, "Here is the response from");
+    };
+
+    fetchData();
+  }, []);
 
   const renderComponents = (userTypeSelected: boolean, name: string) => {
     if (!signupData.userTypeSelected) {

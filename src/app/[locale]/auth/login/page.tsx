@@ -8,6 +8,8 @@ import CustomInput from "@/app/[locale]/components/CustomInput";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+
 
 type Props = {};
 
@@ -16,26 +18,69 @@ const Login = (props: Props) => {
   const locale = useLocale()
     const handleNavigation = useHandleNavigation();
 
+     const { handleSubmit, control, reset } = useForm({
+       defaultValues: {
+         email: "",
+         password: "",
+       },
+     });
+
+     
+     const onSubmit = async (data: any) => {
+      console.log(data);
+
+     };
+
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Login</h3>
 
-      <form className="mt-8 w-full">
-        <CustomInput
-          label="Email Address"
-          inputType="input"
-          type="text"
-          value=""
-          width="w-full"
+
+      <form className="mt-8 w-full" 
+      onSubmit={handleSubmit(onSubmit)}
+      >
+        <Controller
+          name="email"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { value, onChange, ref } }) =>  
+            { 
+              return(
+            <CustomInput
+              ref={ref}
+              onChange={onChange}
+              // value={value}
+              label="Email Address"
+              inputType="input"
+              type="text"
+              // value=""
+              width="w-full"
+            />
+          )}}
         />
-        <CustomInput
-          label="Password"
-          inputType="input"
-          type="password"
-          value=""
-          rightIcon
-          width="w-full"
+
+
+
+
+        <Controller
+          name="password"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { value, onChange, ref } }) => (
+            <CustomInput
+              ref={ref}
+              onChange={onChange}
+              value={value}
+              label="Enter Password"
+              inputType="input"
+              // value=""
+              width="w-full"
+              type="password"
+              rightIcon
+            />
+          )}
         />
+  
 
         <div className="flex justify-between  items-center w-[85%] ">
           <div className="flex items-center">
@@ -56,7 +101,9 @@ const Login = (props: Props) => {
           <CustomButton
             width="w-full"
             title="Login"
-            onClick={() => handleNavigation(`/`)}
+            // type="submit"
+            
+            onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
         <div className="mt-8">

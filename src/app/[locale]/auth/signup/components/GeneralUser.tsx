@@ -6,40 +6,95 @@ import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
+import { Controller, useForm } from "react-hook-form";
 
 type Props = {};
 
 const GeneralSignup = (props: Props) => {
-  const router = useRouter()
+  const router = useRouter();
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
+  const handleNavigation = useHandleNavigation();
+
+  const { handleSubmit, control, reset } = useForm({
+    defaultValues: {
+      fullName: "",
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (data: any) => {
+    console.log(data);
+  };
 
   return (
     <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Signup</h3>
 
-      <form className="mt-1 lg:mt-4 w-full">
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Full Name"
-          inputType="input"
-          type="text"
-          value=""
+      <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="fullName"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { value, onChange, ref } }) => (
+            <CustomInput
+              ref={ref}
+              onChange={onChange}
+              value={value}
+              label="Full Name"
+              inputType="input"
+              // value=""
+              type="text"
+              rightIcon
+              width="w-full lg:w-[616px]"
+            />
+          )}
         />
-        <CustomInput
+
+        <Controller
+          name="email"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { value, onChange, ref } }) => (
+            <CustomInput
+              ref={ref}
+              onChange={onChange}
+              value={value}
+              inputType="input"
+              // value=""
+              type="text"
+              rightIcon
+              width="w-full lg:w-[616px]"
+              label="Email Address"
+            />
+          )}
+        />
+
+        {/* <CustomInput
           width="w-full lg:w-[616px]"
           label="Email Address"
           inputType="input"
           type="text"
           value=""
-        />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Password"
-          inputType="input"
-          type="password"
-          value=""
-          rightIcon
+        /> */}
+
+        <Controller
+          name="password"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { value, onChange, ref} }) => (
+            <CustomInput
+              ref={ref}
+              onChange={onChange}
+              value={value}
+              inputType="input"
+              width="w-full lg:w-[616px]"
+              label="Password"
+              type="password"
+              rightIcon
+            />
+          )}
+        
         />
 
         <div className="flex justify-between  items-center w-[85%] ">
@@ -57,12 +112,12 @@ const GeneralSignup = (props: Props) => {
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Signup"
+            // type="submit"
             onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
         <div className="mt-8">
           <CustomButton
-          
             width="w-full lg:w-[616px]"
             title="Sign up with Google"
             IconLeft="/google.svg"

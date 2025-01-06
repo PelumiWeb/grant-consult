@@ -3844,7 +3844,7 @@ __metadata:
     react-charts: beta
     react-copy-to-clipboard: latest
     react-dom: 19.0.0-rc-02c0e824-20241028
-    react-hook-form: ^7.53.1
+    react-hook-form: ^7.54.2
     react-multi-carousel: ^2.8.5
     react-qr-code: ^2.0.15
     react-redux: ^9.1.2
@@ -6111,12 +6111,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.53.1":
-  version: 7.53.1
-  resolution: "react-hook-form@npm:7.53.1"
+"react-hook-form@npm:^7.54.2":
+  version: 7.54.2
+  resolution: "react-hook-form@npm:7.54.2"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: 6c0cb09335fda48dd533b5d144c9a7a5692de1d8af0ac4f1fffedefc9ccfb995e44f9213dd2c13a72b7b7cb46c55ab05dfed884c5e64e174b137ecc658da04b5
+  checksum: 49a867ece9894dca82f6552e5eefd012b7db962c56a7543f9275ae0b6ec202d549973c3694e7f97436afc2396549cb8fc8777241dd660b71793547aa9c8e5686
   languageName: node
   linkType: hard
 

@@ -86,7 +86,7 @@ const Consultant = (props: Props) => {
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Sign up"
-            onClick={() => handleNavigation(`${locale}/auth/otp`)}
+            onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
       </form>

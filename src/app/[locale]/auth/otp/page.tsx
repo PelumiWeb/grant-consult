@@ -57,7 +57,7 @@ const Otp = (props: Props) => {
                   userTypeSelected: false,
                 })
               );
-              handleNavigation(`${locale}/dashboard`);
+              handleNavigation(`/dashboard`);
             }}
           />
         </div>

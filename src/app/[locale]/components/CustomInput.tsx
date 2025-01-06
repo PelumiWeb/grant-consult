@@ -1,5 +1,5 @@
 import { Input, Select, Space, Tooltip } from "antd";
-import React from "react";
+import React, { forwardRef } from "react";
 
 type Props = {
   label: string;
@@ -12,10 +12,12 @@ type Props = {
   defaultValue?: string;
   contentLeft?: boolean;
   width?: string;
-  
+  ref?: any;
 };
 
-const CustomInput = (props: Props) => {
+export type Ref = any;
+
+const CustomInput = forwardRef<Props, Ref>((props, ref) => {
   return (
     <div
       className={`relative ${
@@ -25,26 +27,33 @@ const CustomInput = (props: Props) => {
         className={`${props?.width ? props?.width : " w-[640px]"}`}>
         {props.contentLeft && (
           <Input
+            ref={props.ref}
             style={{ width: "20%" }}
             placeholder="+234"
             defaultValue="+234"
+            value={props.value}
+            onChange={props.onChange}
           />
         )}
 
         {props.inputType === "input" ? (
           <Input
+            ref={props.ref}
             style={{ width: "100%" }}
             type={props.type ?? "text"}
             // id="default_outlined"
             className="flex px-2.5 w-full text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer cursor-pointer active:bg-red-500 autofill:bg-red-500 py-4"
             placeholder=""
             suffix={props?.rightIcon && <img src="/eye.svg" />}
+            value={props.value}
+            onChange={props.onChange}
           />
         ) : (
           <Select
-            //   ref={data.ref}
+            ref={props.ref}
             defaultValue={props.defaultValue}
             placeholder={props.placeholder}
+            value={props.value}
             // value={props.value}
             onChange={props.onChange}
             className="block  w-full h-14 text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer "
@@ -67,6 +76,6 @@ const CustomInput = (props: Props) => {
       </label>
     </div>
   );
-};
+});
 
 export default CustomInput;
