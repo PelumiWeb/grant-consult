@@ -10,7 +10,7 @@ type Props = {};
 
 const Card = (data: any) => {
   return (
-    <div className="w-[400px] flex items-center justify-center bg-white h-[138px]">
+    <div className="w-[400px] flex items-center justify-center bg-white h-[138px] m-1 lg:m-0">
       <div>
         <p className="font-semibold font-mono text-[36px] leading-[43px] text-secondaryColor text-center">
           {data.name}
@@ -26,7 +26,7 @@ const Card = (data: any) => {
 
 const PartnerCard = (data: any) => {
   return (
-    <div className="max-h-[300px] max-w-[320px] flex flex-col items-center justify-around">
+    <div className="max-h-[300px] max-w-[320px] flex flex-col items-center justify-around my-4 lg:my-0">
       <img src={data.image} alt="" />
       <p className="font-bold text-black font-mono text-center text-[16px] leading-[19px] my-4">
         {data.name}
@@ -43,7 +43,7 @@ const page = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   return (
     <div className="pb-20">
-      <div className="min-h-[421px] bg-becomeGrantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
+      <div className="min-h-[421px] bg-becomeGrantImage bg-cover  bg-left md:bg-center bg-no-repeat relative mt-8 sm:mt-0">
         <div className="w-[600px] min-h-[316px] px-16 flex flex-col justify-between absolute top-[15%]">
           <h3 className="font-mono font-bold text-[25px] md:text-[35px] lg:text-[45px] leading-[30px] lg:leading-[60px] text-white">
             {" "}
@@ -89,7 +89,7 @@ const page = (props: Props) => {
 
       <h3 className="text-center pb-12">Benefits of Partnering with Us</h3>
 
-      <div className="bg-white flex items-start p-8 justify-between ">
+      <div className="bg-white flex items-start p-8 justify-center lg:justify-between flex-wrap ">
         {[
           {
             name: "Global Leading Platform",
