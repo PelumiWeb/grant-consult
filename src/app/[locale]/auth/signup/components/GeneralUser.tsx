@@ -51,15 +51,18 @@ const GeneralSignup = (props: Props) => {
     "post",
     endpoints.createUser,
     {
-      onSuccess: ({data}) => {
+      onSuccess: (data) => {
         console.log("User created:", data);
-        if (data) {
-          dispatch(setUser({ ...data, userActivated: false }));
+        if (data.success) {
+          dispatch(setUser({ ...data.data, userActivated: false }));
           loginNotify();
           handleNavigation(`/auth/otp`);
+        } else {
+          const loginNotify = () => toast.error(data.message);
+          loginNotify();
         }
       },
-      onError: (data) => {
+      onError: (data: any) => {
         console.log("User error:", data);
       },
     }
