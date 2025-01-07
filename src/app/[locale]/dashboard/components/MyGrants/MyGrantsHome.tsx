@@ -3,7 +3,7 @@ import React from "react";
 import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { userTypeName } from "@/app/[locale]/utils/userTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import MyGrants from "./MyGrants";
 import AllGrants from "./AllGrants";
 import GrantPerformance from "./GrantPerformanceMeric";

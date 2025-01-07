@@ -1,6 +1,6 @@
 import React from "react";
 import ContentComponent from "../ContentComponent";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = {};
 

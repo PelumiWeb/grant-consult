@@ -9,7 +9,7 @@ import {
 } from "../../../../../../lib/features/Modal/modalSlice";
 import { Input } from "antd";
 import { OTPProps } from "antd/es/input/OTP";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = {};
 

@@ -6,6 +6,18 @@ import CustomButton from "../../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
+import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
+import { setUserType } from "../../../../../../lib/features/Signup/SignupSlice";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import endpoints from "../../../../../../lib/endpoints";
+import { toast } from "react-toastify";
+import { useApiMutation } from "@/app/[locale]/utils/useApi";
+import { Controller, useForm } from "react-hook-form";
+import { setUser } from "../../../../../../lib/features/User/userSlice";
+import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+
+
+
 
 type Props = {};
 
@@ -13,13 +25,74 @@ const Consultant = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
     const handleNavigation = useHandleNavigation();
+        const dispatch = useAppDispatch();
+        const signupData = useAppSelector((state) => state.signup);
+
+        const {
+          handleSubmit,
+          control,
+          reset,
+          formState: { errors },
+        } = useForm({
+          defaultValues: {
+            fullName: "",
+            email: "",
+            password: "",
+          },
+        });
+        const loginNotify = () => toast.success("Signup successful");
+
+        const { mutate, data, isPending } = useApiMutation<User, SignupData>(
+          "post",
+          endpoints.createUser,
+          {
+            onSuccess: (data) => {
+              console.log("User created:", data);
+              if (data.success) {
+                dispatch(setUser({ ...data.data, userActivated: false }));
+                loginNotify();
+                handleNavigation(`/auth/otp`);
+              } else {
+                const loginNotify = () => toast.error(data.message);
+                loginNotify();
+              }
+            },
+            onError: (data: any) => {
+              console.log("User error:", data);
+            },
+          }
+        );
+
+        const onSubmit = async (data: any) => {
+          const res = mutate({
+            fullName: data.fullName,
+            email: data.email,
+            usertype: "GENERAL_USER",
+            password: data.password,
+            confirmPassword: data.password,
+          });
+        };
 
 
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%] ">
+      <button
+        className="w-full mb-4 flex"
+        onClick={
+          () =>
+            dispatch(
+              setUserType({
+                ...signupData,
+                userTypeSelected: false,
+              })
+            )
+          // setUserTypeSelected(true)
+        }>
+        <ArrowLeftOutlined style={{ fontSize: 24, color: "#1F4E79" }} />
+      </button>
       <h3 className="w-full">Sign up Donor/GRANTOR</h3>
 
-      <form className="mt-1 lg:mt-8 w-full">
+      <form className="mt-1 lg:mt-4 w-full">
         <CustomInput
           width="w-full lg:w-[616px]"
           label="Full Name"

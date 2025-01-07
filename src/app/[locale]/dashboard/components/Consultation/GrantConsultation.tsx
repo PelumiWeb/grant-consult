@@ -6,7 +6,7 @@ import LabelInput from "@/app/[locale]/components/LabelInput";
 import GrantCard from "@/app/[locale]/grants/components/GrantCard";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";

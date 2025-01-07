@@ -1,6 +1,6 @@
 import React from "react";
 // import { useAppSelector } from "../app/hook";
-import { tabsName } from "@/app/[locale]/utils/TabsTypes";
+import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
 import Profile from "./Profile/Profile";
 import { useAppSelector } from "../../../../../lib/hooks";
 import Consultation from "./Consultation/Consultation";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppSelector } from "../../../../lib/hooks";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import BioModal from "../dashboard/components/Modals/BioModal";
 import PersonalData from "../dashboard/components/Modals/PersonalData";
 import EditExpertise from "../dashboard/components/Modals/EditExpertise";

@@ -4,7 +4,7 @@ import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled"
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { Checkbox, Switch } from "antd";
 import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 
 type Props = {};

@@ -13,7 +13,7 @@ import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
 import CustomInput from "@/app/[locale]/components/CustomInput";
 import WalletFilterPption from "./components/WalletFilterOptions";
 import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = {};
 

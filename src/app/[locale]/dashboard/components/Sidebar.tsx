@@ -5,8 +5,8 @@ import TabsComponent from "./TabsComponent";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
 import { useRouter } from "next/navigation";
-import { tabsName } from "@/app/[locale]/utils/TabsTypes";
-import { userTypeName } from "@/app/[locale]/utils/userTypes";
+import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { AnyAaaaRecord } from "dns";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
@@ -62,8 +62,7 @@ const Sidebar = (props: Props) => {
   const router = useRouter();
   const userType = useAppSelector((state) => state.signup.userType);
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
+  const handleNavigation = useHandleNavigation();
 
   console.log(userType, "User type: ");
 

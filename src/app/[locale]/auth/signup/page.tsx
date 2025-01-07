@@ -10,7 +10,7 @@ import Consultant from "./components/Consultant";
 import Grantor from "./components/Grantor";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
-import { userTypeName } from "@/app/[locale]/utils/userTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 type Props = {};
@@ -52,21 +52,21 @@ const Signup = (props: Props) => {
     }
   );
 
-  React.useEffect(() => {
-    const fetchData = () => {
-      const res = mutate({
-        fullName: "John Doe",
-        email: "john.doe@example.com",
-        usertype: "GENERAL_USER",
-        password: "Javascript20",
-        confirmPassword: "Javascript20",
-      });
+  // React.useEffect(() => {
+  //   const fetchData = () => {
+  //     const res = mutate({
+  //       fullName: "John Doe",
+  //       email: "john.doe@example.com",
+  //       usertype: "GENERAL_USER",
+  //       password: "Javascript20",
+  //       confirmPassword: "Javascript20",
+  //     });
 
-      console.log(res, "Here is the response from");
-    };
+  //     console.log(res, "Here is the response from");
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const renderComponents = (userTypeSelected: boolean, name: string) => {
     if (!signupData.userTypeSelected) {

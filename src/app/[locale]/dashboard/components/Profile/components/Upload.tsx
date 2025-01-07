@@ -3,7 +3,7 @@ import ContentComponent from "../ContentComponent";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import type { UploadProps } from "antd";
 import { Button, message, Upload } from "antd";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = {};
 

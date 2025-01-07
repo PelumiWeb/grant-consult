@@ -1,6 +1,6 @@
 'use client';
 
-import { tabsName } from "@/app/[locale]/utils/TabsTypes";
+import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface tab {

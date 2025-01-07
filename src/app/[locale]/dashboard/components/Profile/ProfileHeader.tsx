@@ -4,7 +4,7 @@ import {
   openModal,
   selectModal,
 } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import { useAppDispatch } from "../../../../../../lib/hooks";
 
 type Props = {};

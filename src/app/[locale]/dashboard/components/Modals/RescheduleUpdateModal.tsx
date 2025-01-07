@@ -7,7 +7,7 @@ import {
   closeModal,
   openModal,
 } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import { DatePicker, TimePicker } from "antd";
 
 type Props = {};

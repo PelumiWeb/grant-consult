@@ -4,7 +4,7 @@ import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
 import { useAppSelector } from "../../../../../../lib/hooks";
 import ProfileGeneral from "./ProfileGeneralUser";
 import Profile from "./Profile";
-import { userTypeName } from "@/app/[locale]/utils/userTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import ProfileGrant from "./ProfileGrant";
 
 type Props = {};

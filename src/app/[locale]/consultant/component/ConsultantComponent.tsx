@@ -3,7 +3,7 @@ import React from "react";
 import { CalendarOutlined } from "@ant-design/icons";
 import { useAppDispatch } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = { showButton: boolean };
 const ConsultantComponent = (props: Props) => {

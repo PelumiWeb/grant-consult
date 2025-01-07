@@ -12,24 +12,15 @@ import { useApiMutation } from "@/app/[locale]/utils/useApi";
 import endpoints from "../../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { setUser } from "../../../../../../lib/features/User/userSlice";
-import { useAppDispatch } from "../../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { setUserType } from "../../../../../../lib/features/Signup/SignupSlice";
+import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+
 
 type Props = {};
-type User = any;
-type SignupData = {
-  usertype: string;
-  fullName: string;
-  phoneNumber?: string;
-  email: string;
-  country?: string;
-  expertise?: string;
-  password: string;
-  confirmPassword: string;
-};
 
 const GeneralSignup = (props: Props) => {
-  const router = useRouter();
-  const locale = useLocale();
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
 
@@ -46,6 +37,8 @@ const GeneralSignup = (props: Props) => {
     },
   });
   const loginNotify = () => toast.success("Signup successful");
+  const signupData = useAppSelector((state) => state.signup);
+
 
   const { mutate, data, isPending } = useApiMutation<User, SignupData>(
     "post",
@@ -80,6 +73,21 @@ const GeneralSignup = (props: Props) => {
 
   return (
     <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
+      <button
+        className="w-full mb-4 flex"
+        onClick={
+          () =>
+            dispatch(
+              setUserType({
+                ...signupData,
+                userTypeSelected: false,
+              })
+            )
+          // setUserTypeSelected(true)
+        }>
+        <ArrowLeftOutlined style={{ fontSize: 24, color: "#1F4E79" }} />
+      </button>
+
       <h3 className="w-full">Signup</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
