@@ -10,6 +10,9 @@ import { Controller, useForm } from "react-hook-form";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
 import { useApiMutation } from "@/app/[locale]/utils/useApi";
 import endpoints from "../../../../../../lib/endpoints";
+import { toast } from "react-toastify";
+import { setUser } from "../../../../../../lib/features/User/userSlice";
+import { useAppDispatch } from "../../../../../../lib/hooks";
 
 type Props = {};
 type User = any;
@@ -28,7 +31,7 @@ const GeneralSignup = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
-  
+  const dispatch = useAppDispatch();
 
   const {
     handleSubmit,
@@ -42,36 +45,35 @@ const GeneralSignup = (props: Props) => {
       password: "",
     },
   });
+  const loginNotify = () => toast.success("Signup successful");
 
-   const { mutate } = useApiMutation<User, SignupData>(
-       "post",
-       endpoints.createUser,
-       {
-         onSuccess: (data) => {
-           console.log("User created:", data);
-         },
-         onError: (data) => {
-           console.log("User error:", data);
-         },
-       }
-     );
+  const { mutate, data, isPending } = useApiMutation<User, SignupData>(
+    "post",
+    endpoints.createUser,
+    {
+      onSuccess: ({data}) => {
+        console.log("User created:", data);
+        if (data) {
+          dispatch(setUser({ ...data, userActivated: false }));
+          loginNotify();
+          handleNavigation(`/auth/otp`);
+        }
+      },
+      onError: (data) => {
+        console.log("User error:", data);
+      },
+    }
+  );
 
   const onSubmit = async (data: any) => {
-    console.log(data);
-
-         const res = mutate({
-           fullName: data.fullName,
-           email: data.email,
-           usertype: "GENERAL_USER",
-           password: data.password,
-           confirmPassword: data.password
-         });
-
-         console.log(res, "Here is the response from");
-       };
-
-
-  
+    const res = mutate({
+      fullName: data.fullName,
+      email: data.email,
+      usertype: "GENERAL_USER",
+      password: data.password,
+      confirmPassword: data.password,
+    });
+  };
 
   return (
     <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
@@ -109,8 +111,8 @@ const GeneralSignup = (props: Props) => {
           rules={{
             required: "Email Address is required",
             pattern: {
-              value: /^(?=.*[0-9])(?=.*[^a-zA-Z0-9]).+$/,
-              message: `Email must have at least one non-alphanumeric character and one digit.`,
+              value: /^(?=.)(?=.*[^a-zA-Z0-9]).+$/,
+              message: `Email must have at least one non-alphanumeric character.`,
             },
           }}
           render={({ field: { value, onChange, ref } }) => (
@@ -145,6 +147,10 @@ const GeneralSignup = (props: Props) => {
           control={control}
           rules={{
             required: "Password is required",
+            pattern: {
+              value: /^(?=.)(?=.*[^a-zA-Z0-9]).+$/,
+              message: `Password must have at least one non-alphanumeric character.`,
+            },
 
             minLength: {
               value: 6,
@@ -187,6 +193,7 @@ const GeneralSignup = (props: Props) => {
             width="w-full lg:w-[616px]"
             title="Signup"
             type="submit"
+            loading={isPending}
             // onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>

@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { getLocale } from "next-intl/server";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
+import { useAppSelector } from "../../../../lib/hooks";
 
 // import { getLocale } from "next-intl";
 
@@ -28,6 +29,9 @@ const Header = ({}: Props) => {
   const dispatch = useDispatch();
   const pathname = usePathname();
   const locale = useLocale();
+  const { user } = useAppSelector((state) => state.user);
+  console.log(user)
+
 
   console.log("current server", locale);
   const handleNavigation = useHandleNavigation();
@@ -402,7 +406,7 @@ const Header = ({}: Props) => {
         {/* Avatar */}
 
         <div className="flex items-center justify-between">
-          {true ? (
+          {!user ? (
             <div className="flex items-center justify-center 2lg:justify-between w-full lg:w-[450px]">
               <div className="block lg:hidden">
                 <img src="/hamburger.svg" alt="" />
@@ -444,30 +448,35 @@ const Header = ({}: Props) => {
               </div>
             </div>
           ) : (
-            <div className="flex items-center">
-              <Image
-                className=""
-                src="/avatargrant.svg"
-                alt="Grant Logo"
-                width={40}
-                height={40}
-              />
-
-              <p className="text-primary mx-4">William Smith </p>
-
-              <Image
-                className=""
-                src="/dropdowngrant.svg"
-                alt="Grant Logo"
-                width={8}
-                height={5}
-              />
-              <div className="ml-4">
-                <CustomButton
-                  width="w-[167px]"
-                  height="h-[40px]"
-                  title="Subscribe now"
+            <div>
+              <div className="block lg:hidden">
+                <img src="/hamburger.svg" alt="" />
+              </div>
+              <div className=" hidden lg:flex items-center cursor-pointer">
+                <Image
+                  className=""
+                  src="/avatargrant.svg"
+                  alt="Grant Logo"
+                  width={40}
+                  height={40}
                 />
+
+                <p className="text-primary mx-4">{user.fullName} </p>
+
+                <Image
+                  className=""
+                  src="/dropdowngrant.svg"
+                  alt="Grant Logo"
+                  width={8}
+                  height={5}
+                />
+                <div className="ml-4">
+                  <CustomButton
+                    width="w-[167px]"
+                    height="h-[40px]"
+                    title="Subscribe now"
+                  />
+                </div>
               </div>
             </div>
           )}

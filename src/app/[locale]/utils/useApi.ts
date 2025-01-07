@@ -31,7 +31,7 @@ export const useApiMutation = <
 ) => {
   const mutationFn: MutationFunction<T, R> = async (data: any) => {
     const response:any = await apiInstance[method]<T>(path, data);
-    return response?.data as T; // Ensure type compatibility
+    return response as T; // Ensure type compatibility
   };
 
   return useMutation<T, unknown, R>({

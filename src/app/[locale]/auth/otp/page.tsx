@@ -10,21 +10,53 @@ import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
+import { useApiMutation } from "../../utils/useApi";
+import endpoints from "../../../../../lib/endpoints";
+import { toast } from "react-toastify";
 
 type Props = {};
+type ActivateAccount = {
+  email: string | undefined;
+  otp: string;
+};
+type User = any;
 
 const Otp = (props: Props) => {
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
+  const handleNavigation = useHandleNavigation();
 
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
   };
   const signupData = useAppSelector((state) => state.signup);
+  const { user } = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const loginSuccessfully = () => toast.success("Signup successful");
+
+  const { mutate, data, isPending } = useApiMutation<User, ActivateAccount>(
+    "post",
+    endpoints.activateAccount,
+    {
+      onSuccess: (data) => {
+        console.log(data, "it's success");
+        if (data.success) {
+          loginSuccessfully();
+          dispatch(
+            setUserType({
+              ...signupData,
+              userTypeSelected: false,
+            })
+          );
+          handleNavigation(`/dashboard`);
+        }
+      },
+      onError: (data) => {
+        console.log("User error:", data);
+      },
+    }
+  );
 
   const sharedProps: OTPProps = {
     onChange,
@@ -36,7 +68,7 @@ const Otp = (props: Props) => {
         <h3 className="text-center">Check your email</h3>
         <p>
           please enter the six digit verification code that we sent to
-          example@gmail.com{" "}
+          {user?.email}
         </p>
         <div className="w-full flex justify-center items-center my-8">
           <Input.OTP
@@ -50,14 +82,12 @@ const Otp = (props: Props) => {
           <CustomButton
             width="w-[204px]"
             title="Verify and submit"
+            loading={isPending}
             onClick={() => {
-              dispatch(
-                setUserType({
-                  ...signupData,
-                  userTypeSelected: false,
-                })
-              );
-              handleNavigation(`/dashboard`);
+              mutate({
+                otp: "770444",
+                email: user?.email,
+              });
             }}
           />
         </div>

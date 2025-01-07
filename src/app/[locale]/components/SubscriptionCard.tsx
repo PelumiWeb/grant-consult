@@ -12,13 +12,28 @@ type Cardprops = {
   plan?: string;
   textColor?: string;
   list: string[];
+  days?: string;
+  popular?: boolean;
 };
 
 const SubscriptionCard = (data: Cardprops) => {
   const handleNavigation = useHandleNavigation();
   return (
     <div className="  bg-white mt-4 w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative">
-      <p className="font-semibold text-[16px] leading-[20px] text-primary text-center my-2">
+      {data.popular && (
+        <div className="absolute -top-4 left-[35px]">
+          <CustomButton
+            backgrounColor="bg-secondaryColor"
+            radius="rounded-[18px]"
+            width="w-[145px]"
+            height="h-[30px]"
+            padding="py-[8px] px-[38pd]"
+            title="Most popular"
+            textStyle="text-white font-inter font-bold text-[13px] leading-[13px]"
+          />
+        </div>
+      )}
+      <p className="font-semibold text-[16px] leading-[20px] text-primary text-center my-2 mt-5">
         {data.plan}
       </p>
       <p
@@ -27,7 +42,7 @@ const SubscriptionCard = (data: Cardprops) => {
         {data.price}
       </p>
       <p className="text-[13px] leading-[16px] text-textColor text-center">
-        {data.plan === "Free Trial" ? "7 days" : "30 days"}
+        {data.days}
       </p>
       <ul className="mt-2">
         {data.list?.map((data: string) => (

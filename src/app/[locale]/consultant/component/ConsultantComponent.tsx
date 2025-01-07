@@ -10,12 +10,12 @@ const ConsultantComponent = (props: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="m-8">
+    <div className="m-16">
       <div className="relative h-[320px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
         {/* Image container */}
         <div className=" absolute top-12 w-[130px] h-[130px] rounded-full">
           <img
-            src="/consultantImage.svg"
+            src="/consultantProfileImage.svg"
             className="w-full h-full object-contain"
           />
         </div>

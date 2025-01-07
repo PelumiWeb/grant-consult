@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center lg:justify-between flex-wrap w-full">
+        <div className="flex items-center justify-center lg:justify-between flex-wrap w-full px-8 md:px-32">
           <GrantService
             title="BRONZE"
             price="$500"

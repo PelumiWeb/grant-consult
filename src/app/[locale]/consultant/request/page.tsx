@@ -12,7 +12,7 @@ export default function Home() {
     <div className="w-full px-16">
       <div className="flex flex-col items-center justify-center py-8">
         <p className="text-secondaryColor font-semibold text-[24px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
-          Request A Consultant
+          Request Consultation
         </p>
 
         <p className="py-4 text-textColor text-[12px] lg:text-[16px] leading-[20px] ">
@@ -58,14 +58,14 @@ export default function Home() {
                 label={"Select Consultation Type"}
                 value=""
                 required={true}
-                placeholder="Enter Consultation Type"
+                placeholder="Select Consultation Type"
                 select
               />
               <LabelInput
                 label={"Select Client Category"}
                 value=""
                 required={true}
-                placeholder="Enter Phone Number"
+                placeholder="Select Client Category"
                 select
               />
             </div>
@@ -89,17 +89,19 @@ export default function Home() {
                 label={"Select Contry Residence"}
                 value=""
                 required={true}
-                placeholder="Enter Grant Company"
+                placeholder="Select Country"
                 select
               />
               <LabelInput
                 label={"Add a Message"}
                 value=""
+                height="h-[70px]"
                 required={false}
                 placeholder="Enter Message"
+                textArea
               />
             </div>
-            <div className="mt-4">
+            <div className="mt-4 flex w-full items-start ">
               <CustomButton
                 title="Save"
                 width="w-[157px]"
@@ -112,7 +114,7 @@ export default function Home() {
             {/* Consultant Matching */}
           </div>
           <div className="hidden 2lg:block w-[35%]">
-            <img src="/consultant.svg" />
+            <img src="/consultantImage.svg" />
           </div>
         </div>
         <div className="w-full">
@@ -120,7 +122,7 @@ export default function Home() {
             Consultant Matching
           </h3>
           <div className="flex w-full flex-wrap items-center justify-center ">
-            {[1, 2, 3, 4, 5, 6].map((data) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((data) => (
               <ConsultantComponent showButton key={data} />
             ))}
           </div>

@@ -26,6 +26,7 @@ export default function Home() {
           <SubscriptionCard
             price={"$0"}
             plan="Free Trial"
+            days="7 days"
             bgColor="bg-secondaryColor"
             image="/subscription.svg"
             list={[
@@ -36,6 +37,7 @@ export default function Home() {
           />
           <SubscriptionCard
             price={"$10"}
+            days="7 days"
             plan="WEEKLY"
             textColor="text-[#B632FD]"
             bgColor="bg-weekly"
@@ -52,6 +54,8 @@ export default function Home() {
           <SubscriptionCard
             price={"$25"}
             image="/subscription3.svg"
+            popular
+            days="30 days"
             plan="MONTHLY"
             textColor="text-[#B6B6B6]"
             list={[
@@ -67,6 +71,7 @@ export default function Home() {
           <SubscriptionCard
             price={"$65"}
             bgColor="bg-quaterly"
+            days="90 days"
             image="/subscription4.svg"
             plan="QUARTERLY"
             textColor="text-[#B6B6B6]"
@@ -79,6 +84,7 @@ export default function Home() {
           <SubscriptionCard
             price={"$150"}
             bgColor="bg-yearly"
+            days="360 days"
             image="/subscription5.svg"
             plan="YEARLY"
             textColor="text-[#F9C03B]"

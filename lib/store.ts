@@ -10,6 +10,7 @@ import { SignupSlice } from './features/Signup/SignupSlice';
 import { scrollSlice } from './features/Scrolled/Scrolled';
 import { dashboardSlice } from './features/DashboardRoutes/dashboardSlice';
 import storage from './storage';
+import { userSlice } from './features/User/userSlice';
 
 const persistConfig = {
   key: 'root', // Key for storage
@@ -23,7 +24,9 @@ const rootReducer = {
   tab: tabSlice.reducer,
   signup: SignupSlice.reducer,
   scrolled: scrollSlice.reducer,
-  dashboard: dashboardSlice.reducer
+  dashboard: dashboardSlice.reducer,
+  user: userSlice.reducer,
+
 
 
 };

@@ -23,6 +23,7 @@ const Subscription = (props: Props) => {
         <SubscriptionCard
           price={"$0"}
           plan="Free Trial"
+          days="7 days"
           bgColor="bg-secondaryColor"
           image="/subscription.svg"
           list={[
@@ -34,6 +35,7 @@ const Subscription = (props: Props) => {
         <SubscriptionCard
           price={"$10"}
           plan="WEEKLY"
+          days="7 days"
           textColor="text-[#B632FD]"
           bgColor="bg-weekly"
           image="/subscription2.svg"
@@ -50,6 +52,8 @@ const Subscription = (props: Props) => {
           price={"$25"}
           image="/subscription3.svg"
           plan="MONTHLY"
+          days="30 days"
+          popular
           textColor="text-[#B6B6B6]"
           list={[
             "Full access to all grant listings and a personalized dashboard. ",
@@ -64,6 +68,7 @@ const Subscription = (props: Props) => {
         <SubscriptionCard
           price={"$65"}
           bgColor="bg-quaterly"
+          days="90 days"
           image="/subscription4.svg"
           plan="QUARTERLY"
           textColor="text-[#B6B6B6]"
@@ -76,6 +81,7 @@ const Subscription = (props: Props) => {
         <SubscriptionCard
           price={"$150"}
           bgColor="bg-yearly"
+          days="360 days"
           image="/subscription5.svg"
           plan="YEARLY"
           textColor="text-[#F9C03B]"

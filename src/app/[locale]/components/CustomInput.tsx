@@ -52,9 +52,9 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
             placeholder=""
             suffix={
               props?.rightIcon && (
-                <button onClick={() => setShow((prev) => !prev)}>
+                <div onClick={() => setShow((prev) => !prev)}>
                   <img src="/eye.svg" />
-                </button>
+                </div>
               )
             }
             value={props.value}

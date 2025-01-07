@@ -8,6 +8,9 @@ import { Checkbox } from "antd";
 import CustomButton from "../components/CustomButton";
 import { Poppins, Montserrat } from "next/font/google";
 import { useRouter , redirect, } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -80,6 +83,7 @@ export default function AuthLayout({
           <div className="w-full lg:w-[55%]  border-gray-500 bg-white absolute top-0 right-0  ">
             {children}
           </div>
+          <ToastContainer />
         </section>
       </body>
     </html>
