@@ -24,9 +24,11 @@ type User = any;
 const Otp = (props: Props) => {
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
+  const [otp, setOtp] = React.useState("");
 
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
+    setOtp(text);
   };
   const signupData = useAppSelector((state) => state.signup);
   const { user } = useAppSelector((state) => state.user);
@@ -85,7 +87,7 @@ const Otp = (props: Props) => {
             loading={isPending}
             onClick={() => {
               mutate({
-                otp: "770444",
+                otp,
                 email: user?.email,
               });
             }}

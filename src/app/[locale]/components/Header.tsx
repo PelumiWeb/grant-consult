@@ -30,8 +30,7 @@ const Header = ({}: Props) => {
   const pathname = usePathname();
   const locale = useLocale();
   const { user } = useAppSelector((state) => state.user);
-  console.log(user)
-
+  console.log(user);
 
   console.log("current server", locale);
   const handleNavigation = useHandleNavigation();
@@ -58,7 +57,9 @@ const Header = ({}: Props) => {
               onClick={() => handleNavigation("/grants")}
               // href=""
             >
-              Grants For NGO
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants For NGO
+              </p>
             </a>
           ),
         },
@@ -69,7 +70,9 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/grants")}>
-              Grants for Individuals
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants for Individuals
+              </p>
             </a>
           ),
         },
@@ -81,7 +84,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              Grants for Organizations
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants for Organizations
+              </p>
             </a>
           ),
         },
@@ -94,7 +99,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/grant-application")}>
-              Grants Application
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants Application
+              </p>
             </a>
           ),
         },
@@ -114,7 +121,9 @@ const Header = ({}: Props) => {
               onClick={() => {
                 handleNavigation(`/consultant/become`);
               }}>
-              Become a consultant
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Become a consultant
+              </p>
             </a>
           ),
         },
@@ -126,7 +135,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="/consultant/request"
               onClick={() => handleNavigation("/consultant/request")}>
-              Request a consultant
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Request a consultant
+              </p>
             </a>
           ),
         },
@@ -138,7 +149,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              FAQ About Consultation
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                FAQ About Consultation
+              </p>
             </a>
           ),
         },
@@ -150,7 +163,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              Testimonial from consultations
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Testimonial from consultations
+              </p>
             </a>
           ),
         },
@@ -160,7 +175,9 @@ const Header = ({}: Props) => {
             <a
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/consultant")}>
-              Our Consultants Profile
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Our Consultants Profile
+              </p>
             </a>
           ),
         },
@@ -177,7 +194,9 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/subscription")}>
-              Subscription Plans
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Subscription Plans
+              </p>
             </a>
           ),
         },
@@ -188,7 +207,9 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/service")}>
-              Grants Writing Plans
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants Writing Plans
+              </p>
             </a>
           ),
         },
@@ -207,7 +228,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.antgroup.com"
             >
-              Blog/Articles
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Blog/Articles
+              </p>
             </a>
           ),
         },
@@ -219,7 +242,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/grant-guidelines")}>
-              Grants Writing Guides
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Grants Writing Guides
+              </p>
             </a>
           ),
         },
@@ -231,7 +256,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              Templates & Tools
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Templates & Tools
+              </p>
             </a>
           ),
         },
@@ -243,7 +270,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              Webinars and Workshops
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Webinars and Workshops
+              </p>
             </a>
           ),
         },
@@ -255,7 +284,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/faq")}>
-              Frequently Asked Questions
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Frequently Asked Questions
+              </p>
             </a>
           ),
         },
@@ -348,7 +379,13 @@ const Header = ({}: Props) => {
       options: [
         {
           key: "1",
-          label: <a onClick={() =>  handleNavigation(`/grants/become`)}>Become a Grantor/Donor</a>,
+          label: (
+            <a onClick={() => handleNavigation(`/grants/become`)}>
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                Become a Grantor/Donor
+              </p>
+            </a>
+          ),
         },
         // {
         //   key: "2",
@@ -370,7 +407,9 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.aliyun.com"
               onClick={() => handleNavigation("/grants/list")}>
-              List a grant
+              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                List a grant
+              </p>
             </a>
           ),
         },
@@ -452,24 +491,116 @@ const Header = ({}: Props) => {
               <div className="block lg:hidden">
                 <img src="/hamburger.svg" alt="" />
               </div>
+
               <div className=" hidden lg:flex items-center cursor-pointer">
-                <Image
-                  className=""
-                  src="/avatargrant.svg"
-                  alt="Grant Logo"
-                  width={40}
-                  height={40}
-                />
+                <Dropdown
+                  overlayClassName="w-[100px]"
+                  menu={{
+                    items: [
+                      {
+                        key: "1",
+                        label: (
+                          <a
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            // href="/auth/signup"
+                            onClick={() => {
+                              handleNavigation(`/consultant/become`);
+                            }}>
+                            <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                              My Favourites
+                            </p>
+                          </a>
+                        ),
+                      },
+                      {
+                        key: "2",
+                        label: (
+                          <a
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            // href="/auth/signup"
+                            onClick={() => {
+                              handleNavigation(`/consultant/become`);
+                            }}>
+                            <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                              Update Profile
+                            </p>
+                          </a>
+                        ),
+                      },
+                      {
+                        key: "3",
+                        label: (
+                          <a
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            // href="/auth/signup"
+                            onClick={() => {
+                              handleNavigation(`/consultant/become`);
+                            }}>
+                            <p className="text-primaryBlack font-semibold  text-[13px] text-center">
+                              My Account Settings
+                            </p>
+                          </a>
+                        ),
+                      },
+                      {
+                        key: "4",
+                        label: (
+                          <a
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            // href="/auth/signup"
+                            onClick={() => {
+                              handleNavigation(`/consultant/become`);
+                            }}>
+                            <p className="text-primaryBlack font-semibold  text-[13px] text-center">
+                              Help & Support
+                            </p>
+                          </a>
+                        ),
+                      },
+                      {
+                        key: "5",
+                        label: (
+                          <a
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            // href="/auth/signup"
+                            onClick={() => {
+                              handleNavigation(`/consultant/become`);
+                            }}>
+                            <p className="text-primaryBlack font-semibold text-[13px] text-center">
+                              Logout
+                            </p>
+                          </a>
+                        ),
+                      },
+                    ],
+                  }}
+                  placement="bottom">
+                  <div className="flex items-center cursor-pointer">
+                    <Image
+                      className=""
+                      src="/avatargrant.svg"
+                      alt="Grant Logo"
+                      width={40}
+                      height={40}
+                    />
 
-                <p className="text-primary mx-4">{user.fullName} </p>
+                    <p className="text-primary font-semibold mx-4">{user.fullName} </p>
 
-                <Image
-                  className=""
-                  src="/dropdowngrant.svg"
-                  alt="Grant Logo"
-                  width={8}
-                  height={5}
-                />
+                    <Image
+                      className=""
+                      src="/dropdowngrant.svg"
+                      alt="Grant Logo"
+                      width={8}
+                      height={5}
+                    />
+                  </div>
+                </Dropdown>
+
                 <div className="ml-4">
                   <CustomButton
                     width="w-[167px]"

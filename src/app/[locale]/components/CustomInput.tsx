@@ -1,4 +1,5 @@
 import { Input, Select, Space, Tooltip } from "antd";
+import { DefaultOptionType } from "antd/es/select";
 import React, { forwardRef } from "react";
 
 type Props = {
@@ -14,12 +15,13 @@ type Props = {
   width?: string;
   ref?: any;
   error?: boolean;
+  options?: any[];
 };
 
 export type Ref = any;
 
 const CustomInput = forwardRef<Props, Ref>((props, ref) => {
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = React.useState(false);
   return (
     <div
       className={`relative ${
@@ -29,11 +31,11 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
         className={`${props?.width ? props?.width : " w-[640px]"}`}>
         {props.contentLeft && (
           <Input
-            ref={props.ref}
+            // ref={props.ref}
             style={{ width: "20%" }}
             placeholder="+234"
             defaultValue="+234"
-            value={props.value}
+            value={"+234"}
             onChange={props.onChange}
           />
         )}
@@ -49,7 +51,7 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
                 ? "border-errorColor dark:border-errorColor  dark:focus:border-errorColor focus:border-errorColor"
                 : "border-borderColor dark:border-borderColor dark:focus:border-borderColor focus:border-borderColor  "
             } appearance-none dark:text-white focus:outline-none focus:ring-0 peer cursor-pointer active:bg-white autofill:bg-white py-4`}
-            placeholder=""
+            placeholder={props.placeholder}
             suffix={
               props?.rightIcon && (
                 <div onClick={() => setShow((prev) => !prev)}>
@@ -64,19 +66,16 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
           <Select
             ref={props.ref}
             defaultValue={props.defaultValue}
-            placeholder={props.placeholder}
-            value={props.value}
+            placeholder={props.placeholder ? props.placeholder : props.value}
+            // value={props.value}
             // value={props.value}
             onChange={props.onChange}
-            className={`block  w-full h-14 text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer`}
-            options={[
-              {
-                value: "General User (NGOs, Corporates, Individuals)",
-                label: (
-                  <span>General User (NGOs, Corporates, Individuals)</span>
-                ),
-              },
-            ]}
+            className={`block  w-full h-14 text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer placeholder:text-black`}
+            options={props.options}
+            showSearch
+            filterOption={(input, option: any) =>
+              option?.label?.toLowerCase().includes(input.toLowerCase())
+            }
           />
         )}
       </Space.Compact>

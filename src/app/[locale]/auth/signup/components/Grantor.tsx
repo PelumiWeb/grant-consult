@@ -15,6 +15,8 @@ import { useApiMutation } from "@/app/[locale]/utils/useApi";
 import { Controller, useForm } from "react-hook-form";
 import { setUser } from "../../../../../../lib/features/User/userSlice";
 import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
+import { countryData, expertiseData, organizationType } from "@/app/[locale]/utils/customData";
 
 
 
@@ -22,8 +24,16 @@ import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
 type Props = {};
 
 const Consultant = (props: Props) => {
-  const router = useRouter();
-  const locale = useLocale();
+
+
+  const countriesData = React.useMemo(() => {
+    const data = countryData?.map((data) => ({
+      label: data.name,
+      value: data.name,
+    }));
+
+    return data;
+  }, []);
     const handleNavigation = useHandleNavigation();
         const dispatch = useAppDispatch();
         const signupData = useAppSelector((state) => state.signup);
@@ -37,7 +47,13 @@ const Consultant = (props: Props) => {
           defaultValues: {
             fullName: "",
             email: "",
+            phone: "",
+            country: "",
+            sector: "",
+            organizationType: "",
             password: "",
+            confirmPassword: "",
+            organizationName: ""
           },
         });
         const loginNotify = () => toast.success("Signup successful");
@@ -63,13 +79,15 @@ const Consultant = (props: Props) => {
           }
         );
 
-        const onSubmit = async (data: any) => {
+        const onSubmit = async (data: SignupData) => {
           const res = mutate({
             fullName: data.fullName,
             email: data.email,
-            usertype: "GENERAL_USER",
+            usertype: "GRANTOR",
             password: data.password,
-            confirmPassword: data.password,
+            confirmPassword: data.confirmPassword,
+            country: data.country,
+            expertise: data.expertise,
           });
         };
 
@@ -92,72 +110,247 @@ const Consultant = (props: Props) => {
       </button>
       <h3 className="w-full">Sign up Donor/GRANTOR</h3>
 
-      <form className="mt-1 lg:mt-4 w-full">
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Full Name"
-          inputType="input"
-          type="text"
-          value=""
+      <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="fullName"
+          control={control}
+          rules={{ required: "Full Name  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                inputType="input"
+                // value=""
+                type="text"
+                error={errors.fullName}
+                width="w-full lg:w-[616px]"
+                label="Full Name"
+              />
+
+              {errors.fullName && (
+                <ErrorMessage message={errors.fullName.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Email"
-          inputType="input"
-          type="text"
-          value=""
+
+        <Controller
+          name="email"
+          control={control}
+          rules={{ required: "Email  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.fullName}
+                width="w-full lg:w-[616px]"
+                label="Email"
+                inputType="input"
+                type="text"
+              />
+
+              {errors.email && (
+                <ErrorMessage message={errors?.email?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Phone Number"
-          inputType="input"
-          type="text"
-          value=""
-          contentLeft
+
+        <Controller
+          name="phone"
+          control={control}
+          rules={{ required: "Phone  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.phone}
+                width="w-full lg:w-[616px]"
+                contentLeft
+                label="Phone Number"
+                inputType="input"
+                type="text"
+              />
+
+              {errors.phone && (
+                <ErrorMessage message={errors?.phone?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Select Country/Region"
-          inputType="input"
-          type="text"
-          value=""
+
+        <Controller
+          name="country"
+          control={control}
+          rules={{ required: "Country  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.country}
+                width="w-full lg:w-[616px]"
+                label="Select Country/Region"
+                inputType="select"
+                type="text"
+                defaultValue="Nigeria"
+                options={countriesData}
+                // options
+              />
+
+              {errors.country && (
+                <ErrorMessage message={errors?.country?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Expertise"
-          inputType="input"
-          type="text"
-          value=""
+
+        <Controller
+          name="organizationName"
+          control={control}
+          // rules={{ required: "Oragnization Name is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.organizationName}
+                width="w-full lg:w-[616px]"
+                label="Organization Name"
+                inputType="input"
+                type="text"
+                placeholder="if representing an organization"
+              />
+
+              {errors.organizationName && (
+                <ErrorMessage message={errors?.organizationName?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Years of Experience"
-          inputType="input"
-          type="text"
-          value=""
+
+        <Controller
+          name="organizationType"
+          control={control}
+          rules={{ required: "organization Type  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.organizationType}
+                width="w-full lg:w-[616px]"
+                label="Organization Type"
+                inputType="select"
+                type="text"
+                options={organizationType}
+              />
+
+              {errors.organizationType && (
+                <ErrorMessage message={errors?.organizationType?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="Password"
-          inputType="input"
-          type="password"
-          value=""
-          rightIcon
+        <Controller
+          name="sector"
+          control={control}
+          rules={{ required: "Sectore  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.sector}
+                width="w-full lg:w-[616px]"
+                label="Sector"
+                inputType="select"
+                type="text"
+                options={organizationType}
+              />
+
+              {errors.sector && (
+                <ErrorMessage message={errors?.sector?.message} />
+              )}
+            </>
+          )}
         />
-        <CustomInput
-          width="w-full lg:w-[616px]"
-          label="confirm Password"
-          inputType="input"
-          type="password"
-          value=""
-          rightIcon
+        <Controller
+          name="password"
+          control={control}
+          rules={{ required: "Password  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.fullName}
+                width="w-full lg:w-[616px]"
+                // defaultValue="Health"
+                label="Password"
+                inputType="input"
+                type="password"
+                rightIcon
+              />
+
+              {errors.password && (
+                <ErrorMessage message={errors?.password?.message} />
+              )}
+            </>
+          )}
+        />
+        <Controller
+          name="confirmPassword"
+          control={control}
+          rules={{ required: "Confirm Password  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.confirmPassword}
+                width="w-full lg:w-[616px]"
+                // defaultValue="Health"
+                label="Confirm Password"
+                inputType="input"
+                type="password"
+                rightIcon
+              />
+
+              {errors.confirmPassword && (
+                <ErrorMessage message={errors?.confirmPassword?.message} />
+              )}
+            </>
+          )}
         />
         <div className="mt-4">
           <CustomButton
             width="w-full lg:w-[616px]"
             title="Sign up"
             radius="rounded-[5px]"
-            onClick={() => handleNavigation(`/auth/otp`)}
+            loading={isPending}
+            type="submit"
+            // onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
       </form>

@@ -1,6 +1,6 @@
 
 export type SignupData = {
-  usertype: string;
+  usertype?: string;
   fullName: string;
   phoneNumber?: string;
   email: string;
