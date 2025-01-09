@@ -3,7 +3,6 @@ import React from "react";
 import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import MyGrants from "./MyGrants";
 import AllGrants from "./AllGrants";
 import GrantPerformance from "./GrantPerformanceMeric";
@@ -19,30 +18,8 @@ const assignedScreens = [
 ];
 
 const MyGrantsHome = (props: Props) => {
-  const [activeScreen, setActiveScreen] = React.useState(
-    assignedScreens[2].name
-  );
-  const dispatch = useAppDispatch();
-  const dashboardRoute = useAppSelector((state) => state.dashboard);
-  const { userType } = useAppSelector((state) => state.signup);
-  //   console.log(userType);
 
   const mygrant = useAppSelector((state) => state.dashboard.mygrant);
-
-  //   React.useEffect(() => {
-  //     const fetchData = () => {
-  //       dispatch(
-  //         setActiveRoute({
-  //           ...dashboardRoute,
-  //           consultation:
-  //             userType === userTypeName.general
-  //               ? dashboardRouteName.grantConsulatation
-  //               : dashboardRouteName.consultation,
-  //         })
-  //       );
-  //     };
-  //     fetchData();
-  //   }, []);
   const renderScreens = (route: any) => {
     switch (route) {
       case dashboardRouteName.myGrants:

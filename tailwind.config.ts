@@ -71,7 +71,8 @@ const config: Config = {
         'grant-card-dashboard': "0px 4px 4px 0px #4285F440",
         'headline-shadow': "0px 4px 50px 0px #00000080 inset",
         'chart-grant': "0px 4px 25px 0px #329DFD40",
-        'service-shadow': "4px 10px 15px 0px #329DFD4D;"
+        'service-shadow': "4px 10px 15px 0px #329DFD4D",
+        'article-shadow': "1px 1px 15px 0px #329DFD4D"
 
 
       },

@@ -59,17 +59,19 @@ const grantTabs: TabsProps | undefined = [
 const Sidebar = (props: Props) => {
   const dispatch = useAppDispatch();
   const tabName = useAppSelector((state) => state.tab.name);
+  const { user } = useAppSelector((state) => state.user);
+
   const router = useRouter();
   const userType = useAppSelector((state) => state.signup.userType);
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
 
-  console.log(userType, "User type: ");
+  console.log(user?.userType, "User type: ");
 
   const renderTabs = React.useMemo(() => {
-    if (userType == userTypeName.general) {
+    if (user?.userType == userTypeName.general) {
       return generalTabs;
-    } else if (userType == userTypeName.consultant) {
+    } else if (user?.userType == userTypeName.consultant) {
       return tabs;
     } else {
       return grantTabs;

@@ -17,7 +17,6 @@ import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled"
 import ProfileGeneralHeader from "./ProfileGeneralHeader";
 import About from "./components/About";
 import EditProfile from "./components/EditProfile";
-import SelectUserType from "./components/SelectUserType";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import EditOrganization from "./components/EditOrganization";
 type Props = {};

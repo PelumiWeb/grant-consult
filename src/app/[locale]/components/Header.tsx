@@ -7,7 +7,6 @@ import Image from "next/image";
 import React, { ChangeEvent } from "react";
 import { useRouter, useParams, usePathname } from "next/navigation";
 import LabelInput from "./LabelInput";
-import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
 import { useDispatch } from "react-redux";
 import { getLocale } from "next-intl/server";
 import { useLocale, useTranslations } from "next-intl";

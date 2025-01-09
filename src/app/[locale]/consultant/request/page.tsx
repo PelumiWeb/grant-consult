@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+
 
 import Image from "next/image";
 import CustomButton from "../../components/CustomButton";
@@ -6,8 +8,18 @@ import GrantFunder from "../../components/GrantFunder";
 import ConsultantComponent from "../component/ConsultantComponent";
 import LabelInput from "@/app/[locale]/components/LabelInput";
 import RenderModals from "@/app/[locale]/components/RenderModals";
+import { countryData } from "../../utils/customData";
 
 export default function Home() {
+
+    const countriesData = React.useMemo(() => {
+      const data = countryData?.map((data) => ({
+        label: data.name,
+        value: data.name,
+      }));
+
+      return data;
+    }, []);
   return (
     <div className="w-full px-16">
       <div className="flex flex-col items-center justify-center py-8">
@@ -86,11 +98,13 @@ export default function Home() {
             </div>
             <div className="flex w-full items-center justify-between flex-wrap">
               <LabelInput
-                label={"Select Contry Residence"}
+                label={"Select Conutry Of Residence"}
                 value=""
                 required={true}
                 placeholder="Select Country"
                 select
+                options={countriesData}
+             
               />
               <LabelInput
                 label={"Add a Message"}

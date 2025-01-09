@@ -7,7 +7,7 @@ export type userType = {
 }
 
 export const userTypeName:userType = {
- general: "(NGO, corporate, Individual)",
- consultant: "Consultant",
- grantor: "Grantor(Donor)"
+ general: "GENERAL",
+ consultant: "CONSULTANT",
+ grantor: "GRANTOR",
 }

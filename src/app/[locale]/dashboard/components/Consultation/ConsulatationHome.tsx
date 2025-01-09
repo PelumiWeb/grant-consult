@@ -26,7 +26,10 @@ const ConsultanHome = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
   const { userType } = useAppSelector((state) => state.signup);
+  const { user } = useAppSelector((state) => state.user);
+
   console.log(userType);
+  
 
   const consultation = useAppSelector((state) => state.dashboard.consultation);
 
@@ -36,7 +39,7 @@ const ConsultanHome = (props: Props) => {
         setActiveRoute({
           ...dashboardRoute,
           consultation:
-            userType === userTypeName.general
+            user?.userType === userTypeName.general
               ? dashboardRouteName.grantConsulatation
               : dashboardRouteName.consultation,
         })

@@ -10,6 +10,12 @@ export type SignupData = {
   confirmPassword: string;
 };
 
+export type LoginData = {
+
+  email: string;
+  password: string;
+};
+
 
 
 export type User = any

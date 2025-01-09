@@ -19,7 +19,6 @@ import MyGrantsHome from "./MyGrants/MyGrantsHome";
 
 export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
-  console.log(tab);
   const showContents = (tab: any) => {
     switch (tab) {
       case tabsName.profile:

@@ -44,9 +44,12 @@ const LabelInput = (props: Props) => {
           } !placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
           defaultValue={props.value ? props.value : props.placeholder}
-          filterOption
           onChange={props.handleChange}
           options={props.options}
+          showSearch
+          filterOption={(input, option: any) =>
+            option?.label?.toLowerCase().includes(input.toLowerCase())
+          }
         />
       );
     } else if (props.textArea) {

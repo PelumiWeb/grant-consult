@@ -165,12 +165,12 @@ const page = (props: Props) => {
           height="h-[60px]"
           radius="rounded-[5px]"
           onClick={() => {
-            dispatch(
-              setUserType({
-                userTypeSelected: true,
-                userType: "Grantor(Donor)",
-              })
-            );
+            // dispatch(
+            //   setUserType({
+            //     userTypeSelected: true,
+            //     userType: "Grantor(Donor)",
+            //   })
+            // );
             handleNavigation(`/auth/signup`);
           }}
         />

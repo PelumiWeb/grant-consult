@@ -31,6 +31,11 @@ export const useApiMutation = <
 ) => {
   const mutationFn: MutationFunction<T, R> = async (data: any) => {
     const response:any = await apiInstance[method]<T>(path, data);
+      const token = response?.data?.token?.token 
+      if (token) {
+           console.log(token, "from UseApiMutation")
+          apiInstance.setAuth(token);
+      }
     return response as T; // Ensure type compatibility
   };
 

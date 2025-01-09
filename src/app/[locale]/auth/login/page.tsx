@@ -9,58 +9,85 @@ import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-
+import { useApiMutation } from "../../utils/useApi";
+import { LoginData, User } from "../../utils/types/SignupData";
+import { toast } from "react-toastify";
+import endpoints from "../../../../../lib/endpoints";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { setUser } from "../../../../../lib/features/User/userSlice";
 
 type Props = {};
 
 const Login = (props: Props) => {
   const router = useRouter();
-  const locale = useLocale()
-    const handleNavigation = useHandleNavigation();
+  const locale = useLocale();
+  const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
 
-     const { handleSubmit, control, reset } = useForm({
-       defaultValues: {
-         email: "",
-         password: "",
-       },
-     });
+  const { handleSubmit, control, reset } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
-     
-     const onSubmit = async (data: any) => {
-      console.log(data);
+  const loginSuccessfully = () => toast.success("Login successful");
+  const loginFailed = () => toast.error("Login Failed");
 
-     };
+  const { mutate, data, isPending } = useApiMutation<User, LoginData>(
+    "post",
+    endpoints.loginUser,
+    {
+      onSuccess: (data) => {
+        console.log(data, "it's success");
+        if (data.success) {
+          loginSuccessfully();
+          console.log(data.data, "from login");
+          dispatch(setUser({ ...data.data, userActivated: false }));
+          handleNavigation(`/dashboard`);
+        } else {
+          const loginFailed = () => toast.error(data.message);
+          loginFailed()
+        }
+      },
+      onError: (data) => {
+        console.log("User error:", data);
+      },
+    }
+  );
+
+  const onSubmit = async (data: LoginData) => {
+    console.log(data);
+    mutate({
+      email: data.email,
+      password: data.password,
+    });
+  };
 
   return (
     <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Login</h3>
 
-
-      <form className="mt-8 w-full" 
-      onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="mt-8 w-full" onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="email"
           control={control}
           rules={{ required: true }}
-          render={({ field: { value, onChange, ref } }) =>  
-            { 
-              return(
-            <CustomInput
-              ref={ref}
-              onChange={onChange}
-              // value={value}
-              label="Email Address"
-              inputType="input"
-              type="text"
-              // value=""
-              width="w-full"
-            />
-          )}}
+          render={({ field: { value, onChange, ref } }) => {
+            return (
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                label="Email Address"
+                inputType="input"
+                type="text"
+                // value=""
+                width="w-full"
+              />
+            );
+          }}
         />
-
-
-
 
         <Controller
           name="password"
@@ -80,7 +107,6 @@ const Login = (props: Props) => {
             />
           )}
         />
-  
 
         <div className="flex justify-between  items-center w-[85%] ">
           <div className="flex items-center">
@@ -101,9 +127,10 @@ const Login = (props: Props) => {
           <CustomButton
             width="w-full"
             title="Login"
-            // type="submit"
-            
-            onClick={() => handleNavigation(`/auth/otp`)}
+            type="submit"
+            loading={isPending}
+
+            // onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
         <div className="mt-8">

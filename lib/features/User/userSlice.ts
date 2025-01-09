@@ -5,7 +5,7 @@ import { RootState } from "../../store";
 
 export interface UserState {
     user: {
-        accountStatus: null,
+accountStatus: null,
 code: string
 country: null
 countryName: null
