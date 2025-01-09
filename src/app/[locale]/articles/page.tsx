@@ -1,9 +1,10 @@
 "use client";
 
-import { Input } from "antd";
+import { Input, Pagination } from "antd";
 import React from "react";
 import LabelInput from "../components/LabelInput";
 import { title } from "process";
+import CustomButton from "../components/CustomButton";
 
 type Props = {};
 
@@ -82,6 +83,29 @@ const articleData = [
   },
 ];
 
+const latestArticleData = [
+  {
+    image: "/latestArticle1.svg",
+    title: "Resources",
+    headline: "Essential tools for Modern Grant Writers",
+    content:
+      "Discover the latest software and resources that can streamline your grant writing process...",
+    authorImage: "/articleImage.svg",
+    authorName: "Genevieve Aningo ",
+    dateCreated: "December 31st, 2024",
+  },
+  {
+    image: "/latestArticle2.svg",
+    title: "Tips & Tricks",
+    headline: "Time Management Strategies for Grant Writers",
+    content:
+      "Learn how to effectively manage multiple grant applications and meet deadlines...",
+    authorImage: "/articleImage.svg",
+    authorName: "Genevieve Aningo ",
+    dateCreated: "December 31st, 2024",
+  },
+];
+
 const ArticleComponent = (data: ArticleData) => {
   return (
     <div className="shadow-article-shadow bg-white rounded-[5px] w-[405px] h-[430px] m-2">
@@ -126,6 +150,56 @@ const ArticleComponent = (data: ArticleData) => {
             <img src="/arrowRight.svg" alt="" />
           </button>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const LatestArticleComponent = (data: ArticleData) => {
+  return (
+    <div className="shadow-article-shadow bg-white rounded-[5px] full h-[220px] m-2 flex items-center justify-between p-4">
+      {/* image */}
+
+      <div className="w-[226px] h-[130px] ">
+        <img src={data.image} className="w-full h-full object-cover" alt="" />
+      </div>
+      <div className="ml-8">
+        {/* content */}
+        <div>
+          <p className="font-semibold text-secondaryColor text-[12px] leading-[18px] my-1">
+            {data.title}
+          </p>
+          <p className="text-primary font-semibold text-[15px] leading-[22px] my-2">
+            {data.headline}
+          </p>
+
+          <p className="font-normal text-[14px] leading-[22px] text-textColor my-2">
+            {data.content}
+          </p>
+
+          <div className="flex justify-between items-center h-[40px] mt-6">
+            {/* Left */}
+            <div className="flex items-center">
+              <img src={data.authorImage} alt="" />
+              <div className="ml-2">
+                <p className="text-primary leading-[14px] text-[12px] font-semibold">
+                  {data.authorName}
+                </p>
+                <p className="font-normal text-[10px] leading-[13px] text-textColor">
+                  {data.dateCreated}
+                </p>
+              </div>
+            </div>
+            {/* right */}
+            <button className="flex items-center ">
+              <p className="font-semibold text-[14px] leading-[14px] text-secondaryColor">
+                Read More
+              </p>
+              <img src="/arrowRight.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        {/* user */}
       </div>
     </div>
   );
@@ -177,11 +251,105 @@ const page = (props: Props) => {
         </div>
       </div>
 
-      <div>
+      <div className="mt-4">
         <div className="flex items-center justify-between">
           {articleData.map((data: ArticleData) => (
             <ArticleComponent {...data} />
           ))}
+        </div>
+
+        <div>
+          <h4 className="text-secondaryColor m-2 my-4">Latest Articles</h4>
+          <div className="w-full flex justify-between items-start">
+            <div className="flex flex-col justify-between w-[65%]">
+              {latestArticleData.map((data: ArticleData) => (
+                <LatestArticleComponent {...data} />
+              ))}
+              <div className="mt-8">
+                <Pagination defaultCurrent={1} total={500} />
+              </div>
+            </div>
+
+            <div className="w-[30%]">
+              <div className="shadow-article-shadow w-full rounded-[5px] bg-[#FFFFFF] h-[150px] p-4 my-4">
+                <p className="text-primary font-semibold text-[14px] leading-[21px]">
+                  Popular Tags
+                </p>
+                <div className="w-full flex justify-between flex-wrap">
+                  {[
+                    "Grant Writings",
+                    "Education",
+                    "Healthcare",
+                    "Research",
+                    "Nonprofit",
+                    "Tips",
+                    "Success Stories",
+                  ].map((data) => (
+                    <button className="bg-backgroundColor p-1 m-1  rounded-[5px]">
+                      <p className="font-normal text-[12px] leading-[18px]">
+                        {data}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="shadow-article-shadow w-full rounded-[5px] bg-[#FFFFFF] h-full p-4 my-4">
+                <p className="text-primary font-semibold text-[14px] leading-[21px]">
+                  Newsletter
+                </p>
+
+                <p className="font-normal text-[12px] leading-[18px]">
+                  Stay updated with the latest grant writing tips and resources
+                </p>
+
+                <LabelInput
+                  placeholder="Enter your email"
+                  value=""
+                  height="h-[36px]"
+                  width="w-full"
+                />
+                <CustomButton
+                  title="Subscribe"
+                  textStyle="text-white font-semibold text-[14px] leading-[21px] text-center"
+                  height="h-[22px]"
+                  width="w-full"
+                  backgrounColor="bg-secondaryColor"
+                />
+              </div>
+
+              <div className="shadow-article-shadow w-full rounded-[5px] bg-[#FFFFFF] h-full p-4 my-4">
+                <p className="text-primary font-semibold text-[14px] leading-[21px]">
+                  Newsletter
+                </p>
+
+                <div className="my-4">
+                  <p className="text-[12px] leading-[18px] font-semibold text-textColor">
+                    10 Common Grant Writing Mistakes to Avoid
+                  </p>
+                  <p className="text-[12px] font-normal leading-[18px] text-textColor">
+                    3 min read
+                  </p>
+                </div>
+                <div className="my-4">
+                  <p className="text-[12px] leading-[18px] font-semibold text-textColor">
+                    Grant Budget Planning Guide
+                  </p>
+                  <p className="text-[12px] font-normal leading-[18px] text-textColor">
+                    5 min read
+                  </p>
+                </div>
+                <div className="my-4">
+                  <p className="text-[12px] leading-[18px] font-semibold text-textColor">
+                    Building Strong Grant Partnerships
+                  </p>
+                  <p className="text-[12px] font-normal leading-[18px] text-textColor">
+                    6 min read
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
