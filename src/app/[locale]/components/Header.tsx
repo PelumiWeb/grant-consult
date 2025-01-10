@@ -226,7 +226,7 @@ const Header = ({}: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               // href="https://www.antgroup.com"
-            >
+              onClick={() => handleNavigation("/articles")}>
               <p className="text-primaryBlack font-semibold text-[13px] text-center">
                 Blog/Articles
               </p>
@@ -588,7 +588,9 @@ const Header = ({}: Props) => {
                       height={40}
                     />
 
-                    <p className="text-primary font-semibold mx-4">{user.fullName} </p>
+                    <p className="text-primary font-semibold mx-4">
+                      {user.fullName}{" "}
+                    </p>
 
                     <Image
                       className=""

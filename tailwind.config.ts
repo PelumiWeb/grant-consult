@@ -73,8 +73,9 @@ const config: Config = {
         'chart-grant': "0px 4px 25px 0px #329DFD40",
         'service-shadow': "4px 10px 15px 0px #329DFD4D",
         'article-shadow': "1px 1px 15px 0px #329DFD4D",
-        'article-tags': "0px 0px 4px 0px #329DFD4D"
-
+        'article-tags': "0px 0px 4px 0px #329DFD4D",
+        "read-more-shadow":'0px 0px 4px 0px #329DFD4D'
+        
 
       },
       colors: {
@@ -102,7 +103,8 @@ const config: Config = {
         grantBlack: " #000000",
         profileHeaderColor: "#C2C9D4B2",
         dashboardActionColor: "#27AE60",
-        subscriptionBackground: "#329DFD52"
+        subscriptionBackground: "#329DFD52",
+        tagsBackground: "#EAF4FE"
 
         
       },
