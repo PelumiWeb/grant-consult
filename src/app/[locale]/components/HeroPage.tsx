@@ -12,7 +12,7 @@ const HeroPage = (props: Props) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
+  const handleNavigation = useHandleNavigation();
 
   const t = useTranslations("Homepage");
 
@@ -20,9 +20,11 @@ const HeroPage = (props: Props) => {
     <div className="mt-4 lg:mt-0">
       <div className="hidden lg:flex w-full  flex-col md:flex-row  items-start justify-between bg-hero  h-full md:h-[551px] lg:h-[651px] relative">
         {/* left  */}
-        <div className="hidden lg:block ml-8 xl:ml-16 mt-[5%] w-full lg:w-[50%]">
+        <div className="hidden lg:block ml-8 xl:ml-16 mt-[10%] w-full lg:w-[50%] ">
           <h1 className="sm:w-[70%] w-full ">{t("title")}</h1>
-          <h1 className="sm:w-[70%] w-full text-buttonPrimary">{t("title2")}</h1>
+          <h1 className="sm:w-[70%] w-full text-buttonPrimary">
+            {t("title2")}
+          </h1>
 
           <p className="w-[90%] font-poppins text-newPrimaryTextColor font-medium leading-[25px] text-[16px] my-4">
             {t("content")}
@@ -83,7 +85,7 @@ const HeroPage = (props: Props) => {
           <div className="absolute bottom-4 right-4">
             <img
               className=" z-0  sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px]"
-              src="/heroImage2.png"
+              src="/newHeroImage.svg"
             />
           </div>
         </div>
@@ -100,7 +102,7 @@ const HeroPage = (props: Props) => {
           <div className="relative right-4 w-full h-full z-10 top-4">
             <img
               className=" w-full object-contain z-10"
-              src="/mobileHero.svg"
+              src="/newHeroImage.svg"
             />
           </div>
         </div>
