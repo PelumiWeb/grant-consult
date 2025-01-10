@@ -56,7 +56,7 @@ const Header = ({}: Props) => {
               onClick={() => handleNavigation("/grants")}
               // href=""
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants For NGO
               </p>
             </a>
@@ -69,7 +69,7 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/grants")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants for Individuals
               </p>
             </a>
@@ -83,7 +83,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants for Organizations
               </p>
             </a>
@@ -98,7 +98,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/grant-application")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants Application
               </p>
             </a>
@@ -120,7 +120,7 @@ const Header = ({}: Props) => {
               onClick={() => {
                 handleNavigation(`/consultant/become`);
               }}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Become a consultant
               </p>
             </a>
@@ -134,7 +134,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="/consultant/request"
               onClick={() => handleNavigation("/consultant/request")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Request a consultant
               </p>
             </a>
@@ -148,7 +148,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 FAQ About Consultation
               </p>
             </a>
@@ -162,7 +162,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Testimonial from consultations
               </p>
             </a>
@@ -174,7 +174,7 @@ const Header = ({}: Props) => {
             <a
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/consultant")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Our Consultants Profile
               </p>
             </a>
@@ -193,7 +193,7 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/subscription")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Subscription Plans
               </p>
             </a>
@@ -206,7 +206,7 @@ const Header = ({}: Props) => {
               // target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavigation("/service")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants Writing Plans
               </p>
             </a>
@@ -227,7 +227,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.antgroup.com"
               onClick={() => handleNavigation("/articles")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Blog/Articles
               </p>
             </a>
@@ -241,7 +241,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/grant-guidelines")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Grants Writing Guides
               </p>
             </a>
@@ -255,7 +255,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Templates & Tools
               </p>
             </a>
@@ -269,7 +269,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
             >
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Webinars and Workshops
               </p>
             </a>
@@ -283,7 +283,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.luohanacademy.com"
               onClick={() => handleNavigation("/faq")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Frequently Asked Questions
               </p>
             </a>
@@ -380,7 +380,7 @@ const Header = ({}: Props) => {
           key: "1",
           label: (
             <a onClick={() => handleNavigation(`/grants/become`)}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 Become a Grantor/Donor
               </p>
             </a>
@@ -406,7 +406,7 @@ const Header = ({}: Props) => {
               rel="noopener noreferrer"
               // href="https://www.aliyun.com"
               onClick={() => handleNavigation("/grants/list")}>
-              <p className="text-primaryBlack font-semibold text-[13px] text-center">
+              <p className="text-primaryBlack font-semibold text-[13px] text-left">
                 List a grant
               </p>
             </a>
