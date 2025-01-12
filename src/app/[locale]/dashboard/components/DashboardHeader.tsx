@@ -1,6 +1,6 @@
+"use client";
 import { Input, Select } from "antd";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { useAppSelector } from "../../../../../lib/hooks";
 import { useLocale } from "next-intl";
@@ -11,12 +11,9 @@ type Props = {
 };
 
 const DashboardHeader = (props: Props) => {
-  const router = useRouter();
   const { isScrolled } = useAppSelector((state) => state.scrolled);
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
-
+  const handleNavigation = useHandleNavigation();
 
   return (
     <div

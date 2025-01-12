@@ -2,17 +2,19 @@
 
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 
 const useHandleNavigation = () => {
   const router = useRouter();
   const locale = useLocale();
-
-  const handleNavigation = (path: string) => {
-    const targetPath = path.startsWith(`/${locale}`)
+  const [isPending, startTransition] = useTransition();
+  const handleNavigation = (path: string | undefined) => {
+    const targetPath = path?.startsWith(`/${locale}`)
       ? path
       : `/${locale}${path}`;
-    router.push(targetPath);
+    startTransition(() => {
+      router.push(targetPath);
+    });
   };
   return handleNavigation;
 };

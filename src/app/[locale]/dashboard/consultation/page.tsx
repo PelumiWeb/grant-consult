@@ -4,8 +4,8 @@ import Consultation from "./Consultation";
 import ConsulationDetails from "./ConsulationDetails";
 import PerformanceMetric from "./PerformanceMetric";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import GrantConsultation from "./GrantConsultation";
 import GeneralConsultantDetails from "./GeneralConsultantDetails";
@@ -45,6 +45,7 @@ const ConsultanHome = (props: Props) => {
     };
     fetchData();
   }, []);
+  
   const renderScreens = (route: any) => {
     switch (route) {
       case dashboardRouteName.consultation:

@@ -12,6 +12,7 @@ type Props = {
   active: boolean;
   setActive?: any;
   textColor?: string;
+  url?: string | undefined;
 };
 
 const TabsComponent = ({
@@ -20,6 +21,7 @@ const TabsComponent = ({
   active,
   setActive,
   textColor = " text-white",
+  url,
 }: Props) => {
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
@@ -31,8 +33,10 @@ const TabsComponent = ({
         active && "bg-secondaryColor"
       } my-4 mr-5 pl-4 transition-all`}
       onClick={() => {
+        console.log("Yooooo");
+        handleNavigation(url);
         setActive(dispatch(setActiveTab(imageTitle)));
-        handleNavigation("/dashboard/page1");
+
       }}>
       <img src={image} />
       <p

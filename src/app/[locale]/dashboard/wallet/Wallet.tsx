@@ -1,19 +1,20 @@
 import React from "react";
-import DashboardHeader from "../DashboardHeader";
-import DashboardfilterOptions from "../DashboardfilterOptions";
-import CustomTable from "../CustomTable";
+import DashboardHeader from "../components/DashboardHeader";
+import DashboardfilterOptions from "../components/DashboardfilterOptions";
+import CustomTable from "../components/CustomTable";
 import CustomButton from "@/app/[locale]/components/CustomButton";
-import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import {
   selectDashboardRoute,
   setActiveRoute,
-} from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
+} from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import CustomInput from "@/app/[locale]/components/CustomInput";
-import WalletFilterPption from "./components/WalletFilterOptions";
-import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
+
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
+import WalletFilterPption from "./components/WalletFilterOptions";
 
 type Props = {};
 

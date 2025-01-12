@@ -3,7 +3,7 @@ import React from "react";
 import AssignedGrant from "./AssignedGrant";
 import AssignedDetails from "./AssignedDetails";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
-import { useAppSelector } from "../../../../../../lib/hooks";
+import { useAppSelector } from "../../../../../lib/hooks";
 
 type Props = {};
 const assignedScreens = [

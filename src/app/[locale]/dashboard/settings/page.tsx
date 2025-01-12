@@ -1,9 +1,11 @@
+"use client";
+
 import React, { MouseEvent } from "react";
-import DashboardHeader from "../DashboardHeader";
-import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
+import DashboardHeader from "../components/DashboardHeader";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { Checkbox, Switch } from "antd";
-import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 

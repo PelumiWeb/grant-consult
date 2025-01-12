@@ -1,17 +1,17 @@
 "use client";
 import React, { Dispatch, SetStateAction } from "react";
-import DashboardHeader from "../DashboardHeader";
+import DashboardHeader from "../components/DashboardHeader";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import LabelInput from "@/app/[locale]/components/LabelInput";
 import GrantCard from "@/app/[locale]/grants/components/GrantCard";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
-import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
-import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
-import ContentComponent from "../../profile/ContentComponent";
+import ContentComponent from "../profile/ContentComponent";
 import { Upload, UploadFile, UploadProps, Rate } from "antd";
 
 const imageProps: UploadProps = {

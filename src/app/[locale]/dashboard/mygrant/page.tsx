@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import MyGrants from "./MyGrants";
 import AllGrants from "./AllGrants";
 import GrantPerformance from "./GrantPerformanceMeric";
@@ -11,12 +10,6 @@ import GrantPerformance from "./GrantPerformanceMeric";
 // import AssignedDetails from "./AssignedDetails";
 
 type Props = {};
-const assignedScreens = [
-  { name: "home", id: 1 },
-  { name: "details", id: 2 },
-  { name: "performance", id: 3 },
-];
-
 const MyGrantsHome = (props: Props) => {
   const mygrant = useAppSelector((state) => state.dashboard.mygrant);
   const renderScreens = (route: any) => {

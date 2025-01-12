@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
-import { useAppSelector } from "../../../../../../lib/hooks";
+import { useAppSelector } from "../../../../../lib/hooks";
 import Wallet from "./Wallet";
 import WalletHistory from "./WalletHistory";
 import RenderModals from "@/app/[locale]/components/RenderModals";
@@ -26,7 +26,7 @@ const WalletHome = (props: Props) => {
     }
   };
   return (
-    <div>
+    <div className="w-full">
       {renderScreens(wallet)}
       <RenderModals />
     </div>
