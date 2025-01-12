@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { useAppSelector } from "../../../../../../lib/hooks";
 import ManageSubscription from "./ManageSubscription";
 import GeneralDashboard from "../GeneralDashboard";

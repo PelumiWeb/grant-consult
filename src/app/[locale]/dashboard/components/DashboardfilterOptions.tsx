@@ -7,7 +7,6 @@ type Props = {};
 
 const DashboardfilterOptions = (props: Props) => {
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
   };
   return (
     <div

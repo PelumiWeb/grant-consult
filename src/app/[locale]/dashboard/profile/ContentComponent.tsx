@@ -1,6 +1,7 @@
 import React from "react";
-import { useAppDispatch } from "../../../../../../lib/hooks";
-import { openModal } from "../../../../../../lib/features/Modal/modalSlice";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { openModal } from "../../../../../lib/features/Modal/modalSlice";
+
 
 type Props = {
   children: React.ReactNode;

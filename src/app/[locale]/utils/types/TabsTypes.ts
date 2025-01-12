@@ -14,8 +14,8 @@ manageSubscription: string
 grantConsulatation: string
 generalConsultationDetails: string;
 myGrants: string
-  allGrants: string;
-  grantPerformanceMetric: string;
+allGrants: string;
+grantPerformanceMetric: string;
 
 
 }

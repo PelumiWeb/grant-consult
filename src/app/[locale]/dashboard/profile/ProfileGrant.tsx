@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import DashboardHeader from "../DashboardHeader";
+import DashboardHeader from "../components/DashboardHeader";
 import ProfileHeader from "./ProfileHeader";
 import Bio from "./components/Bio";
 import Expertise from "./components/Expertise";
@@ -10,18 +10,18 @@ import Education from "./components/Education";
 import SecuredGrant from "./components/SecuredGrant";
 import UploadProfile from "./components/Upload";
 import References from "./components/References";
-import RenderModals from "../../../components/RenderModals";
+import RenderModals from "../../components/RenderModals";
 import { useDispatch } from "react-redux";
-import { useAppDispatch } from "../../../../../../lib/hooks";
-import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import ProfileGeneralHeader from "./ProfileGeneralHeader";
 import About from "./components/About";
 import EditProfile from "./components/EditProfile";
-import SelectUserType from "./components/SelectUserType";
 import CustomButton from "@/app/[locale]/components/CustomButton";
+import EditOrganization from "./components/EditOrganization";
 type Props = {};
 
-const ProfileGeneral = (props: Props) => {
+const ProfileGrant = (props: Props) => {
   const dispatch = useAppDispatch();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
@@ -48,25 +48,18 @@ const ProfileGeneral = (props: Props) => {
  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
       ref={scrollContainerRef}>
       <DashboardHeader />
-      <div className="">
+      <div className="usaidglobal@gmail.com">
         <ProfileGeneralHeader
-          email=" alicebrooklyn@gmail.com"
-          phone="+31 890 783 456"
-          image="/generalUser.svg"
-          contactInformation="Contact Information"
+          email="usaidglobal@gmail.com"
+          phone="+1 234 567 89 0"
+          image="/grantImage.svg"
+          contactInformation="U.S. Agency for International Development (USAID) ·"
         />
-        <SelectUserType />
         <About
-          title="About"
-          content=" I am a passionate educator with a strong commitment to promoting
-          access to quality education in underserved communities. With over five
-          years of experience in grassroots advocacy, I have successfully
-          organized literacy programs and mentorship initiatives that have
-          impacted over 500 students. I am eager to collaborate on grant
-          opportunities that align with my mission to bridge educational gaps
-          and empower youth."
+          title="Mission Statement/Bio"
+          content="At U.S Agency for International Development, we are revolutionizing the tech industry by fostering a culture of inclusivity and innovation. Our company specializes in developing cutting-edge software solutions for education and healthcare sectors. With a team of 150 talented professionals, we have delivered impactful projects across 15 countries. We aim to partner with organizations that share our vision of using technology to solve real-world problems."
         />
-        <EditProfile notEditable />
+        <EditOrganization notEditable />
       </div>
 
       <RenderModals />
@@ -74,4 +67,4 @@ const ProfileGeneral = (props: Props) => {
   );
 };
 
-export default ProfileGeneral;
+export default ProfileGrant;

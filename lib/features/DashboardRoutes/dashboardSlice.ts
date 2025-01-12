@@ -2,7 +2,7 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 
 export interface DashboardState {
     assignedGrant: string;

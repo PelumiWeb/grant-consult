@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import DashboardHeader from "../DashboardHeader";
+// import DashboardHeader from "./DashboardHeader";
 import ProfileHeader from "./ProfileHeader";
 import Bio from "./components/Bio";
 import Expertise from "./components/Expertise";
@@ -10,10 +10,11 @@ import Education from "./components/Education";
 import SecuredGrant from "./components/SecuredGrant";
 import UploadProfile from "./components/Upload";
 import References from "./components/References";
-import RenderModals from "../../../components/RenderModals";
+import RenderModals from "../../components/RenderModals";
 import { useDispatch } from "react-redux";
-import { useAppDispatch } from "../../../../../../lib/hooks";
-import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
+import DashboardHeader from "../components/DashboardHeader";
 type Props = {};
 
 const Profile = (props: Props) => {

@@ -1,6 +1,6 @@
 'use client';
 
-import { createSlice } from "@reduxjs/toolkit";
+import { Action, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
 export interface UserState {
@@ -36,7 +36,7 @@ userType: string;
 }
 
 const initialState: UserState = {
-    user: null
+    user: null,
 }
 
 
@@ -46,18 +46,19 @@ export const userSlice = createSlice({
     name: "user",
     initialState,
     reducers:{
-        setUser: (state, action) => {
-           state.user = action.payload
+        setUser: (state, action:PayloadAction<UserState>) => {
+           state.user = action.payload.user
+
         },
-        deleteUser: (state) => {
-            state.user = null;
+        logout: (state) => {
+              state.user = null
         }
     }
 }) 
 
 
-export const {setUser, deleteUser} = userSlice.actions
+export const {setUser, logout} = userSlice.actions
 
-export const selectModal = (state: RootState) => state.modal
+export const selectUser = (state: RootState) => state.user
 
 export default userSlice.reducer

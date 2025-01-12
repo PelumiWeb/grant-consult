@@ -12,6 +12,7 @@ import { getLocale } from "next-intl/server";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
 import { useAppSelector } from "../../../../lib/hooks";
+import { logout } from "../../../../lib/features/User/userSlice";
 
 // import { getLocale } from "next-intl";
 
@@ -568,7 +569,8 @@ const Header = ({}: Props) => {
                             rel="noopener noreferrer"
                             // href="/auth/signup"
                             onClick={() => {
-                              handleNavigation(`/consultant/become`);
+                              // handleNavigation(`/consultant/become`);
+                              dispatch(logout());
                             }}>
                             <p className="text-primaryBlack font-semibold text-[13px] text-center">
                               Logout

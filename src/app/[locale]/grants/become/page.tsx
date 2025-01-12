@@ -4,7 +4,6 @@ import React from "react";
 import CustomButton from "../../components/CustomButton";
 import { useDispatch } from "react-redux";
 import useHandleNavigation from "../../utils/HandleNavigation";
-import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 
 type Props = {};
 
@@ -125,13 +124,7 @@ const page = (props: Props) => {
         </p>
         <CustomButton
           onClick={() => {
-            dispatch(
-              setUserType({
-                userTypeSelected: true,
-                userType: "Grantor(Donor)",
-              })
-            );
-            handleNavigation(`/auth/signup`);
+            handleNavigation(`/auth/signup/grantor`);
           }}
           title="Sign Up Now"
           textStyle="font-bold text-[16px] leading-[16px] text-secondaryColor"

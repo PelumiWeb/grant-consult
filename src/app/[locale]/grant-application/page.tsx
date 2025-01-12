@@ -3,7 +3,6 @@ import React from "react";
 import CustomButton from "../components/CustomButton";
 import { title } from "process";
 import useHandleNavigation from "../utils/HandleNavigation";
-import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
 import { useAppDispatch } from "../../../../lib/hooks";
 
 type Props = {};
@@ -154,13 +153,7 @@ const page = (props: Props) => {
         </p>
         <CustomButton
           onClick={() => {
-            dispatch(
-              setUserType({
-                userTypeSelected: true,
-                userType: "Grantor(Donor)",
-              })
-            );
-            handleNavigation(`/auth/signup`);
+            handleNavigation(`/auth/signup/grantor`);
           }}
           title="Request Consultation"
           textStyle="font-bold text-[16px] leading-[16px] text-secondaryColor"

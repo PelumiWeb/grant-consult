@@ -11,7 +11,7 @@ import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import dynamic from "next/dynamic";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import BarchartComponent from "@/app/[locale]/components/BarChart";
 import PieChartComponent from "@/app/[locale]/components/PieChart";
 import { DatePicker } from "antd";

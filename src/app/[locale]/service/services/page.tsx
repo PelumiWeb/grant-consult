@@ -2,7 +2,6 @@
 import { title } from "process";
 import React from "react";
 import CustomButton from "../../components/CustomButton";
-import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { useDispatch } from "react-redux";
 import useHandleNavigation from "../../utils/HandleNavigation";
 
@@ -165,13 +164,8 @@ const page = (props: Props) => {
           height="h-[60px]"
           radius="rounded-[5px]"
           onClick={() => {
-            // dispatch(
-            //   setUserType({
-            //     userTypeSelected: true,
-            //     userType: "Grantor(Donor)",
-            //   })
-            // );
-            handleNavigation(`/auth/signup`);
+          
+            handleNavigation(`/auth/signup/consultant`);
           }}
         />
       </div>

@@ -3,7 +3,7 @@ import React from "react";
 import Consultation from "./Consultation";
 import ConsulationDetails from "./ConsulationDetails";
 import PerformanceMetric from "./PerformanceMetric";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
@@ -25,11 +25,9 @@ const ConsultanHome = (props: Props) => {
   );
   const dispatch = useAppDispatch();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
-  const { userType } = useAppSelector((state) => state.signup);
+
   const { user } = useAppSelector((state) => state.user);
 
-  console.log(userType);
-  
 
   const consultation = useAppSelector((state) => state.dashboard.consultation);
 

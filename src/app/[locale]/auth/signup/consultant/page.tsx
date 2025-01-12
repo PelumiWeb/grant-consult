@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import CustomInput from "../../../components/CustomInput";
@@ -8,7 +9,6 @@ import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import { setUserType } from "../../../../../../lib/features/Signup/SignupSlice";
 import { Controller, useForm } from "react-hook-form";
 import { setUser } from "../../../../../../lib/features/User/userSlice";
 import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
@@ -53,7 +53,6 @@ const Consultant = (props: Props) => {
     },
   });
   const loginNotify = () => toast.success("Signup successful");
-  const signupData = useAppSelector((state) => state.signup);
 
   const { mutate, data, isPending } = useApiMutation<User, SignupData>(
     "post",
@@ -91,20 +90,6 @@ const Consultant = (props: Props) => {
 
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%]">
-      <button
-        className="w-full mb-4 flex"
-        onClick={
-          () =>
-            dispatch(
-              setUserType({
-                ...signupData,
-                userTypeSelected: false,
-              })
-            )
-          // setUserTypeSelected(true)
-        }>
-        <ArrowLeftOutlined style={{ fontSize: 24, color: "#1F4E79" }} />
-      </button>
       <h3 className="w-full">Sign up Consultant</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -328,6 +313,16 @@ const Consultant = (props: Props) => {
           />
         </div>
       </form>
+      <div className="w-full flex justify-center items-center">
+        <p className="text-sm py-2 mx-16">
+          Already hanve an account
+          <button onClick={() => handleNavigation("/auth/login")}>
+            <span className="underline text-secondaryColor ml-1">
+              Click to login
+            </span>
+          </button>
+        </p>
+      </div>
 
       <div className="w-full">
         <p className="text-sm py-2 mx-16">

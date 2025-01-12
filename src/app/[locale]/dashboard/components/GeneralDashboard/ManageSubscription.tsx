@@ -10,7 +10,7 @@ import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { Input, Switch } from "antd";
 
 type Props = {

@@ -5,7 +5,7 @@ import CustomTable from "../CustomTable";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;

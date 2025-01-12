@@ -2,7 +2,6 @@ import React from "react";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
 import { useAppDispatch } from "../../../../lib/hooks";
-import { setUserType } from "../../../../lib/features/Signup/SignupSlice";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
 
@@ -43,14 +42,7 @@ const HeroPage = (props: Props) => {
             <div
               className="ml-4"
               onClick={() => {
-                dispatch(
-                  setUserType({
-                    userTypeSelected: true,
-                    userType: "Consultant",
-                  })
-                );
-
-                handleNavigation(`/auth/signup`);
+                handleNavigation(`/auth/signup/consultant`);
               }}>
               <CustomButton
                 width="md:w-[170px] w-[200px]"
@@ -128,13 +120,7 @@ const HeroPage = (props: Props) => {
             <div
               className="ml-4"
               onClick={() => {
-                dispatch(
-                  setUserType({
-                    userTypeSelected: true,
-                    userType: "Consultant",
-                  })
-                );
-                handleNavigation(`/auth/signup`);
+                handleNavigation(`/auth/signup/consultant`);
               }}>
               <CustomButton
                 width="w-[134px]"

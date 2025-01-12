@@ -6,7 +6,6 @@ import { Checkbox, Input } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { OTPProps } from "antd/es/input/OTP";
 import { useRouter } from "next/navigation";
-import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
@@ -30,7 +29,7 @@ const Otp = (props: Props) => {
     console.log("onChange:", text);
     setOtp(text);
   };
-  const signupData = useAppSelector((state) => state.signup);
+  
   const { user } = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();
@@ -45,12 +44,6 @@ const Otp = (props: Props) => {
         console.log(data, "it's success");
         if (data.success) {
           loginSuccessfully();
-          dispatch(
-            setUserType({
-              ...signupData,
-              userTypeSelected: false,
-            })
-          );
           handleNavigation(`/dashboard`);
         }
       },

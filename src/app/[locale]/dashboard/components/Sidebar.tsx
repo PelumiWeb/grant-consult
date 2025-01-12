@@ -62,11 +62,13 @@ const Sidebar = (props: Props) => {
   const { user } = useAppSelector((state) => state.user);
 
   const router = useRouter();
-  const userType = useAppSelector((state) => state.signup.userType);
+  
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
 
   console.log(user?.userType, "User type: ");
+
+
 
   const renderTabs = React.useMemo(() => {
     if (user?.userType == userTypeName.general) {
@@ -92,7 +94,7 @@ const Sidebar = (props: Props) => {
       </div>
       {renderTabs?.map((tab: any) => (
         <TabsComponent
-          setActive={() => dispatch(setActiveTab(tab.imageTitle))}
+          // setActive={() => dispatch(setActiveTab(tab.imageTitle))}
           image={tab.image}
           imageTitle={tab.imageTitle}
           active={tabName.toLowerCase() === tab.imageTitle.toLowerCase()}

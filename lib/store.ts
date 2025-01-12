@@ -6,7 +6,7 @@ import { counterSlice } from './features/Counter/counterSlice'
 import { persistReducer, persistStore } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage'; // Default: localStorage for web
 import { tabSlice } from './features/Tabs/tabsLice';
-import { SignupSlice } from './features/Signup/SignupSlice';
+
 import { scrollSlice } from './features/Scrolled/Scrolled';
 import { dashboardSlice } from './features/DashboardRoutes/dashboardSlice';
 import storage from './storage';
@@ -22,12 +22,9 @@ const rootReducer = {
   modal: modalSlice.reducer,
   counter: counterSlice.reducer,
   tab: tabSlice.reducer,
-  signup: SignupSlice.reducer,
   scrolled: scrollSlice.reducer,
   dashboard: dashboardSlice.reducer,
   user: userSlice.reducer,
-
-
 
 };
 

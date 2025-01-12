@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
-import { useAppSelector } from "../../../../../../lib/hooks";
+
+import { useAppSelector } from "../../../../../lib/hooks";
 import ProfileGeneral from "./ProfileGeneralUser";
 import Profile from "./Profile";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
@@ -18,13 +18,16 @@ const ProfileHome = (props: Props) => {
   const [activeScreen, setActiveScreen] = React.useState(
     assignedScreens[1].name
   );
-  const userType = useAppSelector((state) => state.signup.userType);
+ 
+  const { user } = useAppSelector((state) => state.user);
 
   const assignedGrant = useAppSelector(
     (state) => state.dashboard.assignedGrant
   );
 
   const renderScreens = (route: any) => {
+    console.log(route);
+
     switch (route) {
       case userTypeName.general:
         return <ProfileGeneral />;
@@ -39,7 +42,7 @@ const ProfileHome = (props: Props) => {
         return null;
     }
   };
-  return renderScreens(userType);
+  return renderScreens(user?.userType);
 };
 
 export default ProfileHome;

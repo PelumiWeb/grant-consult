@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import MyGrants from "./MyGrants";
@@ -18,7 +18,6 @@ const assignedScreens = [
 ];
 
 const MyGrantsHome = (props: Props) => {
-
   const mygrant = useAppSelector((state) => state.dashboard.mygrant);
   const renderScreens = (route: any) => {
     switch (route) {

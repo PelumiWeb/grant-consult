@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import {
   openModal,
   selectModal,
-} from "../../../../../../lib/features/Modal/modalSlice";
+} from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
-import { useAppDispatch } from "../../../../../../lib/hooks";
+import { useAppDispatch } from "../../../../../lib/hooks";
 
 type Props = {
   image: string;

@@ -1,7 +1,6 @@
 import React from "react";
 // import { useAppSelector } from "../app/hook";
 import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
-import Profile from "./Profile/Profile";
 import { useAppSelector } from "../../../../../lib/hooks";
 import Consultation from "./Consultation/Consultation";
 import Message from "./Message/Message";
@@ -11,7 +10,7 @@ import ConsultanHome from "./Consultation/ConsulatationHome";
 import WalletHome from "./Wallet/WalletHome";
 import Settings from "./Settings/Settings";
 import HelpSupport from "./HelpSupport/HelpSupport";
-import ProfileHome from "./Profile/ProfileHome";
+// import ProfileHome from "./Profile/ProfileHome";
 import GeneralDashboard from "./GeneralDashboard";
 import GeneralDashboardHome from "./GeneralDashboard/GeneralDashboardHome";
 import Grant from "./Grant/Grant";
@@ -21,10 +20,10 @@ export default function RenderContents() {
   const tab = useAppSelector((state) => state.tab.name);
   const showContents = (tab: any) => {
     switch (tab) {
-      case tabsName.profile:
-        // code block
-        return <ProfileHome />;
-        break;
+      // case tabsName.profile:
+      //   // code block
+      //   return <ProfileHome />;
+      //   break;
       case tabsName.assignedGrants:
         // code block
         return <AssignedHome />;
@@ -63,7 +62,7 @@ export default function RenderContents() {
         break;
 
       default:
-        return <Profile />;
+        return <div></div>;
       // code block
     }
   };

@@ -5,57 +5,41 @@ import React from "react";
 import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
-import GeneralSignup from "./components/GeneralUser";
-import Consultant from "./components/Consultant";
-import Grantor from "./components/Grantor";
+
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
+import useHandleNavigation from "../../utils/HandleNavigation";
 type Props = {};
-type UserType = { name: string; id: number }[];
+type UserType = { name: string; id: number; url: string }[];
 type User = any;
-type SignupData = {
-  usertype: string;
-  fullName: string;
-  phoneNumber?: string;
-  email: string;
-  country?: string;
-  expertise?: string;
-  password: string;
-  confirmPassword: string;
-};
+// type SignupData = {
+//   usertype: string;
+//   fullName: string;
+//   phoneNumber?: string;
+//   email: string;
+//   country?: string;
+//   expertise?: string;
+//   password: string;
+//   confirmPassword: string;
+// };
 
 const Signup = (props: Props) => {
-  const signupData = useAppSelector((state) => state.signup);
   const dispatch = useAppDispatch();
-
-  // console.log(signupData, "Sign up data");
-
-  const userType: UserType = [
-    { name: "(NGO, corporate, Individual)", id: 1 },
-    { name: "Consultant", id: 2 },
-    { name: "Grantor(Donor)", id: 3 },
-  ];
-
-  const { mutate } = useApiMutation<User, SignupData>(
-    "post",
-    endpoints.createUser,
+  const handleNavigation = useHandleNavigation();
+    const userType: UserType = [
     {
-      onSuccess: (data) => {
-        console.log("User created:", data);
-      },
-      onError: (data) => {
-        console.log("User error:", data);
-      },
-    }
-  );
+      name: "(NGO, corporate, Individual)",
+      id: 1,
+      url: "/auth/signup/general",
+    },
+    { name: "Consultant", id: 2, url: "/auth/signup/consultant" },
+    { name: "Grantor(Donor)", id: 3, url: "/auth/signup/grantor" },
+  ]; //  
+  const [url, seturl] = React.useState(userType[0].url);
 
-  // React.useEffect(() => {
-  //   const fetchData = () => {
-  //     const res = mutate({
-  //       fullName: "John Doe",
+
   //       email: "john.doe@example.com",
   //       usertype: "GENERAL_USER",
   //       password: "Javascript20",
@@ -68,79 +52,44 @@ const Signup = (props: Props) => {
   //   fetchData();
   // }, []);
 
-  const renderComponents = (userTypeSelected: boolean, name: string) => {
-    if (!signupData.userTypeSelected) {
-      return (
-        <div className="relative h-full lg:h-screen px-4">
-          <h2 className="w-full py-6  pl-4 text-base lg:text-3xl">Sign up</h2>
-          {/*  */}
-          <div>
-            <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-              <h3 className="w-full ml-16 text-base lg:text-2xl">
-                Select User Type
-              </h3>
+  return (
+    <div className="relative h-full lg:h-screen px-4">
+      <h2 className="w-full py-6  pl-4 text-base lg:text-3xl">Sign up</h2>
+      {/*  */}
+      <div>
+        <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+          <h3 className="w-full ml-16 text-base lg:text-2xl">
+            Select User Type
+          </h3>
 
-              <div className="flex  w-full px-8 justify-between items-center pt-4">
-                {userType?.map((data) => (
-                  <div
-                    key={data.id}
-                    onClick={
-                      () =>
-                        dispatch(
-                          setUserType({
-                            ...signupData,
-                            userType: data.name,
-                          })
-                        )
-                      // setActiveUser(data.name)
-                    }
-                    className={`flex h-[179px] sm:h-[220px] lg:h-[300px] w-[119px] sm:w-[170px] lg:w-[200px] rounded-[10px] border  border-borderColor hover:shadow-custom-green justify-center ${
-                      signupData.userType === data.name &&
-                      "border-secondaryColor shadow-custom-green "
-                    } hover:border-secondaryColor  cursor-pointer`}>
-                    <p
-                      key={data.id}
-                      className=" text-center text-[10px] lg:text-lg mt-[20%] ">
-                      {data.name}
-                    </p>
-                  </div>
-                ))}
+          <div className="flex  w-full px-8 justify-between items-center pt-4">
+            {userType?.map((data) => (
+              <div
+                key={data.id}
+                onClick={() => seturl(data.url)}
+                className={`flex h-[179px] sm:h-[220px] lg:h-[300px] w-[119px] sm:w-[170px] lg:w-[200px] rounded-[10px] border  border-borderColor hover:shadow-custom-green justify-center ${
+                  data.url === url &&
+                  "border-secondaryColor shadow-custom-green "
+                } hover:border-secondaryColor  cursor-pointer`}>
+                <p
+                  key={data.id}
+                  className=" text-center text-[10px] lg:text-lg mt-[20%] ">
+                  {data.name}
+                </p>
               </div>
-            </div>
-
-            <div className="absolute bottom-[10%] w-full flex items-center justify-center">
-              <CustomButton
-                onClick={
-                  () =>
-                    dispatch(
-                      setUserType({
-                        ...signupData,
-                        userTypeSelected: true,
-                      })
-                    )
-                  // setUserTypeSelected(true)
-                }
-                title="Continue"
-                width="w-[262px]"
-              />
-            </div>
+            ))}
           </div>
         </div>
-      );
-    } else if (
-      signupData.userTypeSelected &&
-      signupData.userType === userTypeName.general
-    ) {
-      return <GeneralSignup />;
-    } else if (
-      signupData.userTypeSelected &&
-      signupData.userType === userTypeName.consultant
-    ) {
-      return <Consultant />;
-    } else {
-      return <Grantor />;
-    }
-  };
-  return renderComponents(signupData.userTypeSelected, signupData.userType);
+
+        <div className="absolute bottom-[10%] w-full flex items-center justify-center">
+          <CustomButton
+            onClick={() => handleNavigation(url)}
+            title="Continue"
+            width="w-[262px]"
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 export default Signup;

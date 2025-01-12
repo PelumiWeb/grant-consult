@@ -10,8 +10,8 @@ import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
-import ContentComponent from "../Profile/ContentComponent";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
+import ContentComponent from "../../profile/ContentComponent";
 import { Upload, UploadFile, UploadProps, Rate } from "antd";
 
 const imageProps: UploadProps = {

@@ -6,7 +6,7 @@ import CustomButton from "@/app/[locale]/components/CustomButton";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { Collapse } from "antd";
 import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
 const { Panel } = Collapse;

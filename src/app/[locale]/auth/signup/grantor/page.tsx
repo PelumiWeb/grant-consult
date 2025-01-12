@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import CustomInput from "../../../components/CustomInput";
@@ -7,8 +9,6 @@ import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import { setUserType } from "../../../../../../lib/features/Signup/SignupSlice";
-import { ArrowLeftOutlined } from "@ant-design/icons";
 import endpoints from "../../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { useApiMutation } from "@/app/[locale]/utils/useApi";
@@ -16,16 +16,15 @@ import { Controller, useForm } from "react-hook-form";
 import { setUser } from "../../../../../../lib/features/User/userSlice";
 import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
-import { countryData, expertiseData, organizationType } from "@/app/[locale]/utils/customData";
-
-
-
+import {
+  countryData,
+  expertiseData,
+  organizationType,
+} from "@/app/[locale]/utils/customData";
 
 type Props = {};
 
 const Consultant = (props: Props) => {
-
-
   const countriesData = React.useMemo(() => {
     const data = countryData?.map((data) => ({
       label: data.name,
@@ -34,80 +33,64 @@ const Consultant = (props: Props) => {
 
     return data;
   }, []);
-    const handleNavigation = useHandleNavigation();
-        const dispatch = useAppDispatch();
-        const signupData = useAppSelector((state) => state.signup);
+  const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
 
-        const {
-          handleSubmit,
-          control,
-          reset,
-          formState: { errors },
-        } = useForm({
-          defaultValues: {
-            fullName: "",
-            email: "",
-            phone: "",
-            country: "",
-            sector: "",
-            organizationType: "",
-            password: "",
-            confirmPassword: "",
-            organizationName: ""
-          },
-        });
-        const loginNotify = () => toast.success("Signup successful");
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      country: "",
+      sector: "",
+      organizationType: "",
+      password: "",
+      confirmPassword: "",
+      organizationName: "",
+    },
+  });
+  const loginNotify = () => toast.success("Signup successful");
 
-        const { mutate, data, isPending } = useApiMutation<User, SignupData>(
-          "post",
-          endpoints.createUser,
-          {
-            onSuccess: (data) => {
-              console.log("User created:", data);
-              if (data.success) {
-                dispatch(setUser({ ...data.data, userActivated: false }));
-                loginNotify();
-                handleNavigation(`/auth/otp`);
-              } else {
-                const loginNotify = () => toast.error(data.message);
-                loginNotify();
-              }
-            },
-            onError: (data: any) => {
-              console.log("User error:", data);
-            },
-          }
-        );
+  const { mutate, data, isPending } = useApiMutation<User, SignupData>(
+    "post",
+    endpoints.createUser,
+    {
+      onSuccess: (data) => {
+        console.log("User created:", data);
+        if (data.success) {
+          dispatch(setUser({ ...data.data, userActivated: false }));
+          loginNotify();
+          handleNavigation(`/auth/otp`);
+        } else {
+          const loginNotify = () => toast.error(data.message);
+          loginNotify();
+        }
+      },
+      onError: (data: any) => {
+        console.log("User error:", data);
+      },
+    }
+  );
 
-        const onSubmit = async (data: SignupData) => {
-          const res = mutate({
-            fullName: data.fullName,
-            email: data.email,
-            usertype: "GRANTOR",
-            password: data.password,
-            confirmPassword: data.confirmPassword,
-            country: data.country,
-            expertise: data.expertise,
-          });
-        };
-
+  const onSubmit = async (data: SignupData) => {
+    const res = mutate({
+      fullName: data.fullName,
+      email: data.email,
+      usertype: "GRANTOR",
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+      country: data.country,
+      expertise: data.expertise,
+    });
+  };
 
   return (
     <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%] ">
-      <button
-        className="w-full mb-4 flex"
-        onClick={
-          () =>
-            dispatch(
-              setUserType({
-                ...signupData,
-                userTypeSelected: false,
-              })
-            )
-          // setUserTypeSelected(true)
-        }>
-        <ArrowLeftOutlined style={{ fontSize: 24, color: "#1F4E79" }} />
-      </button>
       <h3 className="w-full">Sign up Donor/GRANTOR</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -354,8 +337,18 @@ const Consultant = (props: Props) => {
           />
         </div>
       </form>
+      <div className="w-full flex justify-center items-center">
+        <p className="text-sm py-2 mx-16">
+          Already hanve an account
+          <button onClick={() => handleNavigation("/auth/login")}>
+            <span className="underline text-secondaryColor ml-1">
+              Click to login
+            </span>
+          </button>
+        </p>
+      </div>
 
-      <div className="w-full">
+      <div className="w-full flex justify-center items-center">
         <p className="text-sm py-2 mx-16">
           By creating an account, you agree to Grantsconsult {" "}
           <span className="underline text-secondaryColor">

@@ -9,7 +9,7 @@ import {
   selectDashboardRoute,
   setActiveRoute,
 } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import CustomInput from "@/app/[locale]/components/CustomInput";
 import WalletFilterPption from "./components/WalletFilterOptions";
 import { openModal } from "../../../../../../lib/features/Modal/modalSlice";

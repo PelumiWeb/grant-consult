@@ -9,7 +9,7 @@ import CustomButton from "@/app/[locale]/components/CustomButton";
 import GrantCard from "@/app/[locale]/grants/components/GrantCard";
 import { Pagination } from "antd";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { dashboardRouteName } from "@/app/[locale]/utils/dashboardRouteType";
+import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 type Props = {};
 
 const GeneralDashboard = (props: Props) => {

@@ -1,9 +1,8 @@
+"use client";
 import React from "react";
 import CustomButton from "../../components/CustomButton";
 import { useAppDispatch } from "../../../../../lib/hooks";
 import useHandleNavigation from "../../utils/HandleNavigation";
-import { setUserType } from "../../../../../lib/features/Signup/SignupSlice";
-
 type Props = {};
 
 const Card = (data: any) => {
@@ -56,14 +55,7 @@ const page = (props: Props) => {
 
           <CustomButton
             onClick={() => {
-              dispatch(
-                setUserType({
-                  userTypeSelected: true,
-                  userType: "Consultant",
-                })
-              );
-
-              handleNavigation(`/auth/signup`);
+              handleNavigation(`/auth/signup/consultant`);
             }}
             title="Sign Up Now"
             textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"
