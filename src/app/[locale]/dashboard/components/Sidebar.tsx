@@ -75,7 +75,7 @@ const Sidebar = (props: Props) => {
     {
       imageTitle: tabsName.generalDashboard,
       image: "/generalDashboard.svg",
-      url: `/${locale}/dashboard`,
+      url: `/${locale}/dashboard/general`,
     },
     {
       imageTitle: tabsName.profile,
