@@ -521,7 +521,7 @@ const Header = ({}: Props) => {
                             rel="noopener noreferrer"
                             // href="/auth/signup"
                             onClick={() => {
-                              handleNavigation(`/consultant/become`);
+                              handleNavigation(`/dashboard/profile`);
                             }}>
                             <p className="text-primaryBlack font-semibold text-[13px] text-center">
                               Update Profile
@@ -537,7 +537,7 @@ const Header = ({}: Props) => {
                             rel="noopener noreferrer"
                             // href="/auth/signup"
                             onClick={() => {
-                              handleNavigation(`/consultant/become`);
+                              handleNavigation(`/dashboard/settings`);
                             }}>
                             <p className="text-primaryBlack font-semibold  text-[13px] text-center">
                               My Account Settings
@@ -553,7 +553,7 @@ const Header = ({}: Props) => {
                             rel="noopener noreferrer"
                             // href="/auth/signup"
                             onClick={() => {
-                              handleNavigation(`/consultant/become`);
+                              handleNavigation(`/dashboard/help`);
                             }}>
                             <p className="text-primaryBlack font-semibold  text-[13px] text-center">
                               Help & Support
