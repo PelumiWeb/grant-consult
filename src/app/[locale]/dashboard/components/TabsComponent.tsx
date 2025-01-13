@@ -33,10 +33,10 @@ const TabsComponent = ({
         active && "bg-secondaryColor"
       } my-4 mr-5 pl-4 transition-all`}
       onClick={() => {
-        console.log("Yooooo");
+        setActive();
+        // console.log("Yooooo");
         handleNavigation(url);
-        setActive(dispatch(setActiveTab(imageTitle)));
-
+        // setActive(dispatch(setActiveTab(imageTitle)));
       }}>
       <img src={image} />
       <p

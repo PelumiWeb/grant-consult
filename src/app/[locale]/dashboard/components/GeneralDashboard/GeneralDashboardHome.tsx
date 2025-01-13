@@ -23,7 +23,7 @@ const GeneralDashboardHome = (props: Props) => {
         return null;
     }
   };
-  return renderScreens(dashboard);
+  return <div className="w-full h-full">{renderScreens(dashboard)};</div>;
 };
 
 export default GeneralDashboardHome;

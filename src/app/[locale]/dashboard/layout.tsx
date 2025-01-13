@@ -1,10 +1,14 @@
 "use client";
 import type { Metadata } from "next";
-import React, { useEffect, useState, useTransition } from "react";
+import React, { Suspense, useEffect, useState, useTransition } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "./components/Sidebar";
 import { Poppins, Montserrat } from "next/font/google";
+import { useParams, usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
+import ScaleLoader from "react-spinners/ScaleLoader";
+
 // import { useRouter } from "next/navi";
 
 const poppins = Poppins({
@@ -23,26 +27,6 @@ export default function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isPending,] = useTransition();
-
-  console.log(isPending, "it's pendingggggg");
-
-  //   // Start loading when route changes
-  //   const handleStart = () => setIsLoading(true);
-  //   const handleComplete = () => setIsLoading(false);
-
-  //   router.events.on("routeChangeStart", handleStart);
-  //   router.events.on("routeChangeComplete", handleComplete);
-  //   router.events.on("routeChangeError", handleComplete);
-
-  //   // Cleanup listeners on unmount
-  //   return () => {
-  //     router.events.off("routeChangeStart", handleStart);
-  //     router.events.off("routeChangeComplete", handleComplete);
-  //     router.events.off("routeChangeError", handleComplete);
-  //   };
-  // }, [router.events]);
-
   return (
     <html lang="en">
       <body
@@ -53,13 +37,14 @@ export default function DashboardLayout({
           {/* <Main /> */}
           <div className="w-full flex justify-between items-start">
             <Sidebar />
-
-            {isPending && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-800"></div>
-              </div>
-            )}
-            {children}
+            <Suspense
+              fallback={
+                <div className="w-full h-screen bg-white flex justify-center items-center">
+                  <ScaleLoader color="rgb(54, 215, 183)" />
+                </div>
+              }>
+              <div className="w-[80%] h-full ">{children}</div>
+            </Suspense>
           </div>
           {/* Footer */}
           <div>

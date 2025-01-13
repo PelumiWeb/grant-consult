@@ -4,12 +4,12 @@ import React from "react";
 import TabsComponent from "./TabsComponent";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
-import { AnyAaaaRecord } from "dns";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
+import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 
 type Props = {};
 type TabsProps = {
@@ -19,130 +19,130 @@ type TabsProps = {
   url?: string | undefined;
 }[];
 
-const tabs: TabsProps | undefined = [
-  {
-    imageTitle: tabsName.profile,
-    image: "/dashboard.svg",
-    url: "/dashboard/profile",
-  },
-  {
-    imageTitle: tabsName.assignedGrants,
-    image: "/dashboard2.svg",
-    url: "/dashboard/assigned",
-  },
-  {
-    imageTitle: tabsName.consultation,
-    image: "/dashboard3.svg",
-    url: "/dashboard/consultation",
-  },
-  {
-    imageTitle: tabsName.message,
-    image: "/dashboard4.svg",
-    url: "/dashboard/message",
-  },
-  {
-    imageTitle: tabsName.wallet,
-    image: "/dashboard3.svg",
-    url: "/dashboard/wallet",
-  },
-  {
-    imageTitle: tabsName.settings,
-    image: "/settings.svg",
-    url: "/dashboard/settings",
-  },
-  {
-    imageTitle: tabsName.helpSupport,
-    image: "/help.svg",
-    url: "/dashboard/help",
-  },
-  {
-    imageTitle: tabsName.logout,
-    image: "/logout-gray.svg",
-    textColor: "text-textColor",
-  },
-];
-
-const generalTabs: TabsProps | undefined = [
-  {
-    imageTitle: tabsName.generalDashboard,
-    image: "/generalDashboard.svg",
-    url: "/dashboard/",
-  },
-  {
-    imageTitle: tabsName.profile,
-    image: "/profileDashboard.svg",
-    url: "/dashboard/profile",
-  },
-  {
-    imageTitle: tabsName.grant,
-    image: "/dashboard2.svg",
-    url: "/dashboard/grants",
-  },
-  {
-    imageTitle: tabsName.consultation,
-    image: "/dashboard3.svg",
-    url: "/dashboard/consultation",
-  },
-  {
-    imageTitle: tabsName.message,
-    image: "/dashboard4.svg",
-    url: "/dashboard/message",
-  },
-  {
-    imageTitle: tabsName.settings,
-    image: "/settings.svg",
-    url: "/dashboard/settings",
-  },
-  {
-    imageTitle: tabsName.helpSupport,
-    image: "/help.svg",
-    url: "/dashboard/help",
-  },
-  {
-    imageTitle: tabsName.logout,
-    image: "/logout-gray.svg",
-    textColor: "text-textColor",
-  },
-];
-
-const grantTabs: TabsProps | undefined = [
-  {
-    imageTitle: tabsName.profile,
-    image: "/profileDashboard.svg",
-    url: "/dashboard/profile",
-  },
-  {
-    imageTitle: tabsName.myGrants,
-    image: "/dashboard2.svg",
-    url: "/dashboard/mygrant",
-  },
-  {
-    imageTitle: tabsName.settings,
-    image: "/settings.svg",
-    url: "/dashboard/settings",
-  },
-  {
-    imageTitle: tabsName.helpSupport,
-    image: "/help.svg",
-    url: "/dashboard/help",
-  },
-  {
-    imageTitle: tabsName.logout,
-    image: "/logout-gray.svg",
-    textColor: "text-textColor",
-  },
-];
-
 const Sidebar = (props: Props) => {
-  const dispatch = useAppDispatch();
   const tabName = useAppSelector((state) => state.tab.name);
   const { user } = useAppSelector((state) => state.user);
-
-  const router = useRouter();
+  const pathName = usePathname();
+  const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const locale = useLocale();
-  const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
 
+  const tabs: TabsProps | undefined = [
+    {
+      imageTitle: tabsName.profile,
+      image: "/dashboard.svg",
+      url: `/${locale}/dashboard/profile`,
+    },
+    {
+      imageTitle: tabsName.assignedGrants,
+      image: "/dashboard2.svg",
+      url: `/${locale}/dashboard/assigned`,
+    },
+    {
+      imageTitle: tabsName.consultation,
+      image: "/dashboard3.svg",
+      url: `/${locale}/dashboard/consultation`,
+    },
+    {
+      imageTitle: tabsName.message,
+      image: "/dashboard4.svg",
+      url: `/${locale}/dashboard/message`,
+    },
+    {
+      imageTitle: tabsName.wallet,
+      image: "/dashboard3.svg",
+      url: `/${locale}/dashboard/wallet`,
+    },
+    {
+      imageTitle: tabsName.settings,
+      image: "/settings.svg",
+      url: `/${locale}/dashboard/settings`,
+    },
+    {
+      imageTitle: tabsName.helpSupport,
+      image: "/help.svg",
+      url: `/${locale}/dashboard/help`,
+    },
+    {
+      imageTitle: tabsName.logout,
+      image: "/logout-gray.svg",
+      textColor: "text-textColor",
+    },
+  ];
+
+  const generalTabs: TabsProps | undefined = [
+    {
+      imageTitle: tabsName.generalDashboard,
+      image: "/generalDashboard.svg",
+      url: `/${locale}/dashboard`,
+    },
+    {
+      imageTitle: tabsName.profile,
+      image: "/profileDashboard.svg",
+      url: `/${locale}/dashboard/profile`,
+    },
+    {
+      imageTitle: tabsName.grant,
+      image: "/dashboard2.svg",
+      url: `/${locale}/dashboard/grants`,
+    },
+    {
+      imageTitle: tabsName.consultation,
+      image: "/dashboard3.svg",
+      url: `/${locale}/dashboard/consultation`,
+    },
+    {
+      imageTitle: tabsName.message,
+      image: "/dashboard4.svg",
+      url: `/${locale}/dashboard/message`,
+    },
+    {
+      imageTitle: tabsName.settings,
+      image: "/settings.svg",
+      url: `/${locale}/dashboard/settings`,
+    },
+    {
+      imageTitle: tabsName.helpSupport,
+      image: "/help.svg",
+      url: `/${locale}/dashboard/help`,
+    },
+    {
+      imageTitle: tabsName.logout,
+      image: "/logout-gray.svg",
+      textColor: "text-textColor",
+    },
+  ];
+
+  const grantTabs: TabsProps | undefined = [
+    {
+      imageTitle: tabsName.profile,
+      image: "/profileDashboard.svg",
+      url: `${locale}/dashboard/profile`,
+    },
+    {
+      imageTitle: tabsName.myGrants,
+      image: "/dashboard2.svg",
+      url: `${locale}/dashboard/mygrant`,
+    },
+    {
+      imageTitle: tabsName.settings,
+      image: "/settings.svg",
+      url: `${locale}/dashboard/settings`,
+    },
+    {
+      imageTitle: tabsName.helpSupport,
+      image: "/help.svg",
+      url: `${locale}/dashboard/help`,
+    },
+    {
+      imageTitle: tabsName.logout,
+      image: "/logout-gray.svg",
+      textColor: "text-textColor",
+    },
+  ];
+
+  const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
     if (user?.userType == userTypeName.general) {
       return generalTabs;
@@ -153,7 +153,20 @@ const Sidebar = (props: Props) => {
     }
   }, []);
 
-  // console.log(renderTabs, "Render tabs...");
+  React.useEffect(() => {
+    const FetchData = () => {
+      dispatch(
+        setActiveRoute({
+          ...dashboardRoute,
+          initialDashboardRoute: renderTabs[0]?.url,
+        })
+      );
+    };
+
+    FetchData();
+  }, []);
+
+  const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
   return (
     <div className="bg-primary h-screen w-[20%] px-8 ">
@@ -167,11 +180,12 @@ const Sidebar = (props: Props) => {
       </div>
       {renderTabs?.map((tab: any) => (
         <TabsComponent
+          setActive={() => setActiveUrl(tab?.url)}
           // setActive={() => dispatch(setActiveTab(tab.imageTitle))}
           image={tab.image}
           url={tab?.url}
           imageTitle={tab.imageTitle}
-          active={tabName.toLowerCase() === tab.imageTitle.toLowerCase()}
+          active={pathName === tab?.url}
           textColor={tab.textColor && tab.textColor}
         />
       ))}

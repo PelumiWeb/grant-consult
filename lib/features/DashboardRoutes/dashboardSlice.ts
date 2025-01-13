@@ -10,6 +10,8 @@ export interface DashboardState {
     wallet:string
     dashboard:string;
     mygrant:string
+initialDashboardRoute: string | undefined;
+
 
 }
 
@@ -18,7 +20,8 @@ assignedGrant: dashboardRouteName.assignedGrant,
 consultation: dashboardRouteName.consultation,
 wallet:dashboardRouteName.wallet,
 dashboard: dashboardRouteName.generalDashboard,
-mygrant:dashboardRouteName.myGrants
+mygrant:dashboardRouteName.myGrants,
+initialDashboardRoute: "",
 
 
 }
@@ -34,6 +37,7 @@ export const dashboardSlice = createSlice({
             state.wallet = action.payload.wallet;
             state.dashboard = action.payload.dashboard
             state.mygrant = action.payload.mygrant
+            state.initialDashboardRoute = action.payload.initialDashboardRoute
 
         }
     }

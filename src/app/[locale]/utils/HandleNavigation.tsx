@@ -12,9 +12,7 @@ const useHandleNavigation = () => {
     const targetPath = path?.startsWith(`/${locale}`)
       ? path
       : `/${locale}${path}`;
-    startTransition(() => {
-      router.push(targetPath);
-    });
+    router.push(targetPath);
   };
   return handleNavigation;
 };
