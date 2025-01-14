@@ -44,7 +44,7 @@ const ServicePage = (props: Props) => {
             <ServiceComponent data={data} key={data.id} />
           ))}
         </div>
-        <div className="70% flex items-center ">
+        <div className=" flex items-center ">
           {[
             {
               id: 4,
