@@ -60,6 +60,7 @@ const SubscriptionCard = (data: Cardprops) => {
 
       <div className="absolute bottom-[5%] flex justify-center items-center w-full -ml-2">
         <CustomButton
+          onClick={() => handleNavigation("/payments")}
           width="w-[180px]"
           height="h-[33px]"
           borderColor="border-none"

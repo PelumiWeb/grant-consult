@@ -29,14 +29,13 @@
     "Testimonial": {
       "title": "Our Testimonials",
       "header1": "What Our Clients",
-      "header2": "Have to Say About Us",
-      "content": "We’ve helped hundreds of organizations secure the funding they need to grow and succeed. Hear from some of our satisfied clients about how our services made a difference in their grant applications and project development.",
-      "card1": "Thanks to GrantsConsult’s expert team, we were able to secure a key funding opportunity that took our project to the next level. Their guidance made all the difference.",
-      "card2": "The personalized attention we received helped us fine-tune our grant proposals and double our funding success rate. We couldn’t be happier"
+      "header2": "Say About Us",
+      "content": "We've helped numerous individuals, organizations, and NGOs achieve their grant goals. Here's what they have to say about our services.",
+      "card1": "The team at GrantsConsult made our grant application process so smooth. Their expert guidance helped us secure the funding we needed to expand our NGO's outreach programs. Highly recommend!",
+      "card2": "GrantsConsult exceeded our expectations. Their platform is user-friendly, and their consultants were incredibly knowledgeable. Thanks to their support, we landed two major grants this year!"
     },
     "Grants": {
       "content": "Over $1 billion in active grants from funders like"
     }
   }
-
 }
