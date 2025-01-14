@@ -29,7 +29,6 @@ import TwoStepVerfication from "../dashboard/components/Modals/TwoStepVerificati
 import ForgotTransactionPin from "../dashboard/components/Modals/ForgotTransactionPin";
 import QrAuthentication from "../dashboard/components/Modals/QrAuthenticationModal";
 import SmsVerification from "../dashboard/components/Modals/SmsVerification";
-import About from "../dashboard/components/Profile/components/About";
 import EditAbout from "../dashboard/components/Modals/AboutModal";
 import WarnignModal from "../dashboard/components/Modals/WarningModal";
 import EditCardModal from "../dashboard/components/Modals/EditCardModal";
