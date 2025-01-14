@@ -3,6 +3,7 @@ import CustomButton from "../components/CustomButton";
 import { title } from "process";
 import Footer from "../components/Footer";
 import { Progress } from "antd";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {};
 
@@ -92,6 +93,8 @@ const IconComponent = ({
 };
 
 const page = (props: Props) => {
+  const handleNavigation = useHandleNavigation();
+
   return (
     <div className=" relative w-full p-16 bg-backgroundColor">
       <div className="  ">
@@ -228,6 +231,7 @@ const page = (props: Props) => {
                 backgrounColor="bg-secondaryColor"
                 textStyle="font-bold text-[16px] leading-[16px] text-white"
                 title="Request Consultation"
+                onClick={() => handleNavigation("/consultant/request")}
                 width="w-full"
                 height="h-[30px]"
               />

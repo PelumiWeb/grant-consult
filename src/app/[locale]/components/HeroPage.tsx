@@ -29,8 +29,11 @@ const HeroPage = (props: Props) => {
             {t("content")}
           </p>
           <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">
-            <div onClick={() => `${locale}/grants`}>
+            <div>
               <CustomButton
+                onClick={() => {
+                  handleNavigation(`/grants`);
+                }}
                 width="md:w-[170px] w-[190px]"
                 height="h-[52px]"
                 title={t("button")}
@@ -39,11 +42,7 @@ const HeroPage = (props: Props) => {
                 padding="p-0"
               />
             </div>
-            <div
-              className="ml-4"
-              onClick={() => {
-                handleNavigation(`/auth/signup/consultant`);
-              }}>
+            <div className="ml-4">
               <CustomButton
                 width="md:w-[170px] w-[200px]"
                 height="h-[52px]"
@@ -54,6 +53,9 @@ const HeroPage = (props: Props) => {
                 borderWidth="border-[2px]"
                 borderColor="border-primary"
                 padding="p-0"
+                onClick={() => {
+                  handleNavigation(`/consultant/become`);
+                }}
               />
             </div>
 

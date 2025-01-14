@@ -85,7 +85,7 @@ export default function Home() {
               <LabelInput
                 label={"Select Grant Company"}
                 value=""
-                required={true}
+                // required={true}
                 placeholder="Enter Grant Company"
                 select
               />
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
             <div className="flex w-full items-center justify-between flex-wrap">
               <LabelInput
-                label={"Select Conutry Of Residence"}
+                label={"Select Country Of Residence"}
                 value=""
                 required={true}
                 placeholder="Select Country"

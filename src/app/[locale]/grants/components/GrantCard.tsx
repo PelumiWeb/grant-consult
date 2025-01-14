@@ -2,6 +2,7 @@ import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
 import useHandleNavigation from "../../utils/HandleNavigation";
+import { useAppSelector } from "../../../../../lib/hooks";
 
 type Props = {
   moreDetails?: boolean;
@@ -11,12 +12,15 @@ type Props = {
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCard = (props: Props) => {
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-  
+  const handleNavigation = useHandleNavigation();
+  const { user } = useAppSelector((state) => state.user);
 
   const router = useRouter();
   return (
-    <div className={`flex flex-col justify-between border-[0.5px] ${!props.border && "border-borderColor"}  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0`}>
+    <div
+      className={`flex flex-col justify-between border-[0.5px] ${
+        !props.border && "border-borderColor"
+      }  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0`}>
       <h4 className=" block lg:hidden text-primary mx-2 text-[16px] leading-[26px] font-semibold">
         Aspire Coronation Trust (ACT) Foundation Grant 2024
       </h4>
@@ -44,36 +48,55 @@ const GrantCard = (props: Props) => {
             <p className="text-[#1E1E1E]">Category</p>
             <p className="text-textColor ml-4">Agriculture</p>
           </div>
-          <div className="flex items-center mx-2">
+          {/* <div className="flex items-center mx-2">
             <p className="text-[#1E1E1E]">Grant Size</p>
             <p className="text-textColor ml-4">$100,000 to $500,000</p>
-          </div>
+          </div> */}
           <div className="flex items-center mx-2">
-            <p className="text-[#1E1E1E blur">Grant Size</p>
-            <p className="text-textColor ml-4 blur-sm">$100,000 to $500,000</p>
+            <p className={`text-[#1E1E1E] ${user ? "blur-none" : "blur-sm"}`}>
+              Grant Size
+            </p>
+            <p
+              className={`text-textColor ml-4 ${
+                user ? "blur-none" : "blur-sm"
+              }`}>
+              $100,000 to $500,000
+            </p>
           </div>
-        {!props?.showMore && <p className={`hidden lg:block w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
-            Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
-            ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing
-            tellus est posuere dolor sit am
-            <span
-              className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-              onClick={() => handleNavigation(`/grants/1`)}>
-              Read more...
-            </span>
-          </p>}
+          <div>
+            {!props?.showMore && (
+              <p
+                className={`hidden lg:block w-[500px] ml-2 ${
+                  user ? "blur-none" : "blur-sm"
+                }`}>
+                Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
+                ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing
+                tellus est posuere dolor sit am
+              </p>
+            )}
+            <button onClick={() => handleNavigation(`/grants/1`)}>
+              <p className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer">
+                Read more...
+              </p>
+            </button>
+          </div>
         </div>
       </div>
-      {!props.showMore && <p className={`block lg:hidden w-[500px] ml-2 ${true ? "blur-none" : "blur-sm"}`}>
-        Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
-        ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing tellus
-        est posuere dolor sit am
-        <span
-          className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
-          onClick={() => handleNavigation(`/grants/1`)}>
-          Read more...
-        </span>
-      </p>}
+      {!props.showMore && (
+        <p
+          className={`block lg:hidden w-[500px] ml-2 ${
+            user ? "blur-none" : "blur-sm"
+          }`}>
+          Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
+          ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing tellus
+          est posuere dolor sit am
+          <span
+            className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
+            onClick={() => handleNavigation(`/grants/1`)}>
+            Read more...
+          </span>
+        </p>
+      )}
     </div>
   );
 };

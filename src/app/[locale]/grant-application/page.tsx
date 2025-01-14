@@ -39,6 +39,7 @@ const page = (props: Props) => {
           </p>
 
           <CustomButton
+            onClick={() => handleNavigation("/consultant/request")}
             title="Request Consultation"
             backgrounColor="bg-secondaryColor"
             radius="rounded-[5px]"
@@ -152,9 +153,7 @@ const page = (props: Props) => {
           Take the first step now
         </p>
         <CustomButton
-          onClick={() => {
-            handleNavigation(`/auth/signup/grantor`);
-          }}
+          onClick={() => handleNavigation("/consultant/request")}
           title="Request Consultation"
           textStyle="font-bold text-[16px] leading-[16px] text-secondaryColor"
           backgrounColor="bg-white"

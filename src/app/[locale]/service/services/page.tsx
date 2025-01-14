@@ -86,8 +86,10 @@ const Card = (data: any) => {
 };
 
 const ServiceCard = (data: serviceDataProps) => {
+  const handleNavigation = useHandleNavigation();
   return (
-    <div
+    <button
+      onClick={() => handleNavigation("/consultant/request")}
       className={`w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
       <div className="flex items-center py-2">
         <img src={data.image} alt="" />
@@ -100,11 +102,10 @@ const ServiceCard = (data: serviceDataProps) => {
           {data.content}
         </p>
       </div>
-    </div>
+    </button>
   );
 };
 const page = (props: Props) => {
-  const dispatch = useDispatch();
   const handleNavigation = useHandleNavigation();
 
   return (
@@ -163,10 +164,7 @@ const page = (props: Props) => {
           width="w-[250px]"
           height="h-[60px]"
           radius="rounded-[5px]"
-          onClick={() => {
-          
-            handleNavigation(`/auth/signup/consultant`);
-          }}
+          onClick={() => handleNavigation("/consultant/request")}
         />
       </div>
     </div>
