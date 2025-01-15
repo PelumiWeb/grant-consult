@@ -5,6 +5,7 @@ import React from "react";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
 import { useAppDispatch } from "../../../../../lib/hooks";
+import { useRouter } from "next/navigation";
 
 type Props = {
   image: string;
@@ -23,9 +24,7 @@ const TabsComponent = ({
   textColor = " text-white",
   url,
 }: Props) => {
-  const locale = useLocale();
   const handleNavigation = useHandleNavigation();
-  const dispatch = useAppDispatch();
   return (
     <button
       // href={`${locale}/dashboard/page1`}
@@ -33,10 +32,8 @@ const TabsComponent = ({
         active && "bg-secondaryColor"
       } my-4 mr-5 pl-4 transition-all`}
       onClick={() => {
-        setActive();
-        // console.log("Yooooo");
+        // setActive();
         handleNavigation(url);
-        // setActive(dispatch(setActiveTab(imageTitle)));
       }}>
       <img src={image} />
       <p

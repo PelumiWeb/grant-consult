@@ -63,7 +63,15 @@ const Consultant = (props: Props) => {
       onSuccess: (data) => {
         console.log("User created:", data);
         if (data.success) {
-          dispatch(setUser({ ...data.data, userActivated: false }));
+          console.log(data);
+          dispatch(
+            setUser({
+              user: {
+                ...data.data,
+                userActivated: false,
+              },
+            })
+          );
           loginNotify();
           handleNavigation(`/auth/otp`);
         } else {
@@ -78,6 +86,7 @@ const Consultant = (props: Props) => {
   );
 
   const onSubmit = async (data: SignupData) => {
+    console.log(data);
     const res = mutate({
       fullName: data.fullName,
       email: data.email,
@@ -86,6 +95,8 @@ const Consultant = (props: Props) => {
       confirmPassword: data.confirmPassword,
       country: data.country,
       expertise: data.expertise,
+      organizationName: data?.organizationName,
+      organizationGroup: data?.organizationType,
     });
   };
 

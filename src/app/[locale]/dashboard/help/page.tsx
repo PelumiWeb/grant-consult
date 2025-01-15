@@ -20,7 +20,7 @@ const HelpSupport = (props: Props) => {
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  React.useCallback(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

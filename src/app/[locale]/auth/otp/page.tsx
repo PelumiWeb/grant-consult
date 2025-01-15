@@ -29,12 +29,13 @@ const Otp = (props: Props) => {
     console.log("onChange:", text);
     setOtp(text);
   };
-  
+
   const { user } = useAppSelector((state) => state.user);
+  console.log(user);
 
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const loginSuccessfully = () => toast.success("Signup successful");
+  const loginSuccessfully = () => toast.success("User authenticated");
 
   const { mutate, data, isPending } = useApiMutation<User, ActivateAccount>(
     "post",
@@ -44,7 +45,7 @@ const Otp = (props: Props) => {
         console.log(data, "it's success");
         if (data.success) {
           loginSuccessfully();
-          handleNavigation(`/dashboard`);
+          handleNavigation(`/auth/login`);
         }
       },
       onError: (data) => {
@@ -61,8 +62,8 @@ const Otp = (props: Props) => {
     <div className="py-32 px-8 flex flex-col items-center justify-center ">
       <div className="mt-[20%]">
         <h3 className="text-center">Check your email</h3>
-        <p>
-          please enter the six digit verification code that we sent to
+        <p className="text-center">
+          please enter the six digit verification code that we sent to {" "}
           {user?.email}
         </p>
         <div className="w-full flex justify-center items-center my-8">

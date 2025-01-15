@@ -61,7 +61,14 @@ const Consultant = (props: Props) => {
       onSuccess: (data) => {
         console.log("User created:", data);
         if (data.success) {
-          dispatch(setUser({ ...data.data, userActivated: false }));
+          dispatch(
+            setUser({
+              user: {
+                ...data.data,
+                userActivated: false,
+              },
+            })
+          );
           loginNotify();
           handleNavigation(`/auth/otp`);
         } else {

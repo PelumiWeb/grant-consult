@@ -21,7 +21,7 @@ export type DashboardRoute = {
 
 export const dashboardRouteName:DashboardRoute = {
   profile: "Profile",
-  generalDashboard: "Dashboard",
+  generalDashboard: "dashboard",
 
    assignedGrant: "assignedGrant",
   assignDetails: "assignDetails",

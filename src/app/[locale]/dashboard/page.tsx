@@ -12,7 +12,7 @@ export default function Home() {
   const handleNavigation = useHandleNavigation();
   const { initialDashboardRoute } = useAppSelector((state) => state.dashboard);
 
-  React.useEffect(() => {
+  React.useCallback(() => {
     handleNavigation(initialDashboardRoute);
   }, []);
 

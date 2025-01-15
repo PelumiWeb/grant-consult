@@ -149,7 +149,7 @@ const Consultation = (props: Props) => {
       ),
     },
   ];
-  React.useEffect(() => {
+  React.useCallback(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

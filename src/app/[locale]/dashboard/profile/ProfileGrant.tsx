@@ -24,7 +24,7 @@ type Props = {};
 const ProfileGrant = (props: Props) => {
   const dispatch = useAppDispatch();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
+  React.useCallback(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

@@ -153,7 +153,7 @@ const Sidebar = (props: Props) => {
     }
   }, []);
 
-  React.useEffect(() => {
+  React.useCallback(() => {
     const FetchData = () => {
       dispatch(
         setActiveRoute({

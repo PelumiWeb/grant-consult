@@ -30,7 +30,7 @@ const Header = ({}: Props) => {
   const pathname = usePathname();
   const locale = useLocale();
   const { user } = useAppSelector((state) => state.user);
-  console.log(user);
+  // console.log(user);
 
   console.log("current server", locale);
   const handleNavigation = useHandleNavigation();

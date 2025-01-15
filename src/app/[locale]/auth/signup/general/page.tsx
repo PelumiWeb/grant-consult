@@ -37,7 +37,6 @@ const GeneralSignup = (props: Props) => {
     },
   });
   const loginNotify = () => toast.success("Signup successful");
-  
 
   const { mutate, data, isPending } = useApiMutation<User, SignupData>(
     "post",
@@ -46,7 +45,16 @@ const GeneralSignup = (props: Props) => {
       onSuccess: (data) => {
         console.log("User created:", data);
         if (data.success) {
-          dispatch(setUser({ ...data.data, userActivated: false }));
+          console.log(data.data, "here is the data");
+          dispatch(
+            setUser({
+              user: {
+                ...data.data,
+                userActivated: false,
+              },
+              
+            })
+          );
           loginNotify();
           handleNavigation(`/auth/otp`);
         } else {
@@ -72,7 +80,6 @@ const GeneralSignup = (props: Props) => {
 
   return (
     <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
-
       <h3 className="w-full">Signup</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>

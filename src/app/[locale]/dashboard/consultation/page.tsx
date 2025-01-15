@@ -31,7 +31,7 @@ const ConsultanHome = (props: Props) => {
 
   const consultation = useAppSelector((state) => state.dashboard.consultation);
 
-  React.useEffect(() => {
+  React.useCallback(() => {
     const fetchData = () => {
       dispatch(
         setActiveRoute({

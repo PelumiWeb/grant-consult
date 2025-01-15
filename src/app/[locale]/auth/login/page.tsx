@@ -43,11 +43,18 @@ const Login = (props: Props) => {
         if (data.success) {
           loginSuccessfully();
           console.log(data.data, "from login");
-          dispatch(setUser({ ...data.data, userActivated: false }));
-          handleNavigation(`/dashboard`);
+          dispatch(
+            setUser({
+              user: {
+                ...data.data,
+                userActivated: false,
+              },
+            })
+          );
+          handleNavigation(`/dashboard/profile`);
         } else {
           const loginFailed = () => toast.error(data.message);
-          loginFailed()
+          loginFailed();
         }
       },
       onError: (data) => {

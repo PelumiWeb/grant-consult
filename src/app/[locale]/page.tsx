@@ -26,31 +26,7 @@ type User = {};
 
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
-  // const { data, isLoading, error, isError } = useApiQuery<any[]>(
-  //   ["users"], // Query key
-  //   endpoints.createUser,
 
-  //   //   {
-  //   //   staleTime: (1000 * 60 * 5),
-  //   //   // retry: 2,
-  //   //   // enabled: true,
-  //   // }
-  // );
-  // console.log(data, isLoading, isError, "This is the response");
-  //  const t = useTranslations();
-  //  console.log(t, "are you muted");
-
-  // React.useEffect(() => {z
-  //   const fetchData = async () => {
-  //     // Usage:
-  //     const translatedText = await fetchTranslation(
-  //       "Choose a Subscription Plan",
-  //       "fr"
-  //     );
-  //     console.log(translatedText, "Testing this out"); // Outputs: "Connexion"
-  //   };
-  //   fetchData();
-  // }, []);
 
 
 

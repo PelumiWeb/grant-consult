@@ -22,7 +22,7 @@ const ManageSubscription = (props: Props) => {
   const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
+  React.useCallback(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

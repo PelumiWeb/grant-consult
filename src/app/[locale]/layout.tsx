@@ -4,9 +4,10 @@ import "./globals.css";
 import StoreProvider from "../../../lib/storeProvider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import getMessagesSync from "./utils/getMessageAsync";
 import ReactQueryProvider from "./utils/ReactQueryProvider";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,7 +32,6 @@ export default async function RootLayout({
   children: ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  
   const resolvedParams = await params; // Resolve the promise
   const messages = await getMessages();
   // const messages = getMessagesSync();
@@ -44,7 +44,14 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ReactQueryProvider>
             <StoreProvider>
-              <div className="">{children}</div>
+              <Suspense
+                fallback={
+                  <div className="w-full h-screen bg-white flex justify-center items-center">
+                    <ScaleLoader color="rgb(54, 215, 183)" />
+                  </div>
+                }>
+                <div className="">{children}</div>
+              </Suspense>
             </StoreProvider>
           </ReactQueryProvider>
         </NextIntlClientProvider>

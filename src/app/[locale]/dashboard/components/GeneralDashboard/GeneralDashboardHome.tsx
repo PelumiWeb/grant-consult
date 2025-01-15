@@ -10,6 +10,7 @@ type Props = {};
 
 const GeneralDashboardHome = (props: Props) => {
   const dashboard = useAppSelector((state) => state.dashboard.dashboard);
+  console.log(dashboard, "This is the dashboard");
 
   const renderScreens = (route: any) => {
     switch (route) {
@@ -20,7 +21,7 @@ const GeneralDashboardHome = (props: Props) => {
         return <ManageSubscription />;
         break;
       default:
-        return null;
+        return <p>There is no dashboard</p>;
     }
   };
   return <div className="w-full h-full">{renderScreens(dashboard)};</div>;

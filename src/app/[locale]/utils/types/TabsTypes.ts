@@ -29,7 +29,7 @@ wallet: "wallet",
 settings: "settings",
 helpSupport: "help & support",
 logout: "logout",
-  generalDashboard: "Dashboard",
+  generalDashboard: "dashboard",
 
   grant: "grant",
   manageSubscription: "manageSubscription",

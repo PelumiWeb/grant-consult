@@ -1,6 +1,6 @@
 "use client";
 import type { Metadata } from "next";
-import React, { Suspense, useEffect, useState, useTransition } from "react";
+import React, { Suspense,} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "./components/Sidebar";

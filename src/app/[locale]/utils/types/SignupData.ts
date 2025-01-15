@@ -8,6 +8,12 @@ export type SignupData = {
   expertise?: string;
   password: string;
   confirmPassword: string;
+  sector?: string;
+  yearOfExperience?: 0;
+  organizationGroup?: string;
+  organizationName?: string;
+  organizationType?: string;
+
 };
 
 export type LoginData = {
