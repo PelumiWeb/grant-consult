@@ -1,13 +1,15 @@
 "use client";
 import type { Metadata } from "next";
-import React, { Suspense,} from "react";
+import React, { Suspense } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "./components/Sidebar";
 import { Poppins, Montserrat } from "next/font/google";
-import { useParams, usePathname } from "next/navigation";
+import { redirect, useParams, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { useAppSelector } from "../../../../lib/hooks";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 // import { useRouter } from "next/navi";
 
@@ -27,6 +29,15 @@ export default function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = useAppSelector((data) => data.user.user);
+  const locale = useLocale();
+  const handleNavigation = useHandleNavigation()
+
+  React.useEffect(() => {
+    if (!user) {
+     handleNavigation("/auth/login", redirect);
+    }
+  }, []);
   return (
     <html lang="en">
       <body

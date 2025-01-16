@@ -32,7 +32,6 @@ const Login = (props: Props) => {
   });
 
   const loginSuccessfully = () => toast.success("Login successful");
-  const loginFailed = () => toast.error("Login Failed");
 
   const { mutate, data, isPending } = useApiMutation<User, LoginData>(
     "post",
@@ -123,12 +122,11 @@ const Login = (props: Props) => {
               Remember me
             </p>
           </div>
-
-          <p
-            className="underline text-red-500 text-sm cursor-pointer"
-            onClick={() => handleNavigation(`/auth/forgotPassword`)}>
-            Forgot Password
-          </p>
+          <div onClick={() => handleNavigation(`/auth/forgotPassword`)} className="cursor-pointer">
+            <p className="underline text-red-500 text-sm cursor-pointer">
+              Forgot Password
+            </p>
+          </div>
         </div>
         <div className="mt-8">
           <CustomButton

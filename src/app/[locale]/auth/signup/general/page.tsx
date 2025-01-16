@@ -52,7 +52,6 @@ const GeneralSignup = (props: Props) => {
                 ...data.data,
                 userActivated: false,
               },
-              
             })
           );
           loginNotify();
@@ -188,8 +187,11 @@ const GeneralSignup = (props: Props) => {
               Remember me
             </p>
           </div>
-
-          <p className="underline text-red-500 text-sm">Forgot Password</p>
+          <div
+            onClick={() => handleNavigation(`/auth/forgotPassword`)}
+            className="cursor-pointer">
+            <p className="underline text-red-500 text-sm">Forgot Password</p>
+          </div>
         </div>
         <div className="mt-8">
           <CustomButton

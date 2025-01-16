@@ -505,7 +505,7 @@ const Header = ({}: Props) => {
                             rel="noopener noreferrer"
                             // href="/auth/signup"
                             onClick={() => {
-                              handleNavigation(`/consultant/become`);
+                              handleNavigation(`/dashboard/favourites`);
                             }}>
                             <p className="text-primaryBlack font-semibold text-[13px] text-center">
                               My Favourites

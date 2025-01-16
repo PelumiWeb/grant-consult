@@ -8,7 +8,7 @@ const useHandleNavigation = () => {
   const locale = useLocale();
 
   const handleNavigation = useCallback(
-    (path: string | undefined) => {
+    (path: string | undefined, redirect?: any) => {
       if (!path) return;
 
       const targetPath = path.startsWith(`/${locale}`)
@@ -16,7 +16,7 @@ const useHandleNavigation = () => {
         : `/${locale}${path}`;
 
       // Prevent unnecessary navigation if already on the target path
-      router.push(targetPath);
+      redirect ? redirect(targetPath) : router.push(targetPath);
     },
     [router, locale] // Dependencies
   );

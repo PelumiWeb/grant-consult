@@ -1,6 +1,7 @@
 
 export type tabsTypes = {
 profile: string;
+favourite: string;
 assignedGrants: string;
 consultation: string;
 message: string;
@@ -23,6 +24,7 @@ grantPerformanceMetric: string;
 export const tabsName:tabsTypes = {
 profile: "Profile",
 assignedGrants: "assigned grants",
+favourite: "My Favorites",
 consultation: "consultation",
 message: "message",
 wallet: "wallet",

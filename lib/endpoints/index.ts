@@ -4,6 +4,9 @@ const endpoints = {
 
   activateAccount: "api/Auth/activate-account",
   verifyUser: "user/verify/mobile",
+  forgotPassword: "api/Auth/forgotPassword",
+   resetPassword: "api/Auth/forgotPassword",
+
 
 };
 

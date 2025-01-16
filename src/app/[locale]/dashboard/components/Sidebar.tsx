@@ -35,6 +35,11 @@ const Sidebar = (props: Props) => {
       url: `/${locale}/dashboard/profile`,
     },
     {
+      imageTitle: tabsName.favourite,
+      image: "/profileDashboard.svg",
+      url: `/${locale}/dashboard/favourites`,
+    },
+    {
       imageTitle: tabsName.assignedGrants,
       image: "/dashboard2.svg",
       url: `/${locale}/dashboard/assigned`,
@@ -83,6 +88,11 @@ const Sidebar = (props: Props) => {
       url: `/${locale}/dashboard/profile`,
     },
     {
+      imageTitle: tabsName.favourite,
+      image: "/profileDashboard.svg",
+      url: `/${locale}/dashboard/favourites`,
+    },
+    {
       imageTitle: tabsName.grant,
       image: "/dashboard2.svg",
       url: `/${locale}/dashboard/grants`,
@@ -118,22 +128,27 @@ const Sidebar = (props: Props) => {
     {
       imageTitle: tabsName.profile,
       image: "/profileDashboard.svg",
-      url: `${locale}/dashboard/profile`,
+      url: `/${locale}/dashboard/profile`,
+    },
+    {
+      imageTitle: tabsName.favourite,
+      image: "/profileDashboard.svg",
+      url: `/${locale}/dashboard/favourites`,
     },
     {
       imageTitle: tabsName.myGrants,
       image: "/dashboard2.svg",
-      url: `${locale}/dashboard/mygrant`,
+      url: `/${locale}/dashboard/mygrant`,
     },
     {
       imageTitle: tabsName.settings,
       image: "/settings.svg",
-      url: `${locale}/dashboard/settings`,
+      url: `/${locale}/dashboard/settings`,
     },
     {
       imageTitle: tabsName.helpSupport,
       image: "/help.svg",
-      url: `${locale}/dashboard/help`,
+      url: `/${locale}/dashboard/help`,
     },
     {
       imageTitle: tabsName.logout,
@@ -145,7 +160,7 @@ const Sidebar = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
     if (user?.userType == userTypeName.general) {
-      return generalTabs;
+      return grantTabs;
     } else if (user?.userType == userTypeName.consultant) {
       return tabs;
     } else {

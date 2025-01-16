@@ -5,12 +5,12 @@ import { useAppDispatch } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
-type Props = { showButton: boolean };
+type Props = { showButton: boolean, margin?:string };
 const ConsultantComponent = (props: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="m-16">
+    <div className={props.margin ? props.margin : "m-16"}>
       <div className="relative h-[320px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
         {/* Image container */}
         <div className=" absolute top-12 w-[130px] h-[130px] rounded-full">

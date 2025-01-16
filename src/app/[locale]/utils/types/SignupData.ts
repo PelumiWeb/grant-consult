@@ -22,6 +22,17 @@ export type LoginData = {
   password: string;
 };
 
+export type createNewPasswordData = {
+  email: string;
+  newPassword: string;
+  confirmPassword: string;
+  token: string;
+};
+
+export type forgotPassword = {
+  email: string;
+};
+
 
 
 export type User = any

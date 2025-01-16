@@ -10,11 +10,11 @@ import {
 import { Input, QRCode } from "antd";
 import { OTPProps } from "antd/es/input/OTP";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 type Props = {};
 
-const TypedCopyToClipboard: any = CopyToClipboard;
+// const TypedCopyToClipboard: any = CopyToClipboard;
 const QrAuthentication = (props: Props) => {
   const open = useAppSelector((state) => state.modal.open);
   const dispatch = useAppDispatch();
@@ -78,10 +78,10 @@ const QrAuthentication = (props: Props) => {
                   </p>
                 </div>
 
-                <TypedCopyToClipboard
+                {/* <TypedCopyToClipboard
                   text={"Copy to Clickboard"}
                   // onCopy={() => this.setState({ copied: true })}
-                >
+                > */}
                   <CustomButton
                     title="Copy"
                     radius="rounded-[10px]"
@@ -90,7 +90,7 @@ const QrAuthentication = (props: Props) => {
                     borderColor="border-borderColor"
                     textStyle="text-textColor"
                   />
-                </TypedCopyToClipboard>
+                {/* </TypedCopyToClipboard> */}
               </div>
             )}
             <button onClick={() => setShowCode((prev) => !prev)}>
