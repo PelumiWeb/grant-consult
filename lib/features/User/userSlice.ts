@@ -4,7 +4,7 @@ import { Action, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
 export interface UserState {
-    user: {
+    user?: {
 accountStatus: null,
 code: string
 country: null
@@ -33,10 +33,12 @@ userActivated:false
 userName: string;
 userType: string;
     } | null;
+resetPasswordEmail?: string
 }
 
 const initialState: UserState = {
     user: null,
+    resetPasswordEmail: ""
 }
 
 
@@ -48,6 +50,7 @@ export const userSlice = createSlice({
     reducers:{
         setUser: (state, action:PayloadAction<UserState>) => {
            state.user = action.payload.user
+           state.resetPasswordEmail = action.payload.resetPasswordEmail
 
         },
         logout: (state) => {

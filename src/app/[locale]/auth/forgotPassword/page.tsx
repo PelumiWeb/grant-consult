@@ -16,6 +16,8 @@ import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { Controller, useForm } from "react-hook-form";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { setUser } from "../../../../../lib/features/User/userSlice";
 
 type Props = {};
 
@@ -23,6 +25,7 @@ const CreateNewPassword = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
   const fotgorPasswordNotify = () => toast.success("email sent successfully");
 
   const { handleSubmit, control, reset } = useForm({
@@ -39,6 +42,9 @@ const CreateNewPassword = (props: Props) => {
         console.log(data, "it's success");
         if (data.success) {
           fotgorPasswordNotify();
+
+          handleNavigation("/auth/resetPassword");
+
           console.log(data.data, "from forgotpassowrd");
         } else {
           const failed = () => toast.error(data.message);
@@ -56,6 +62,7 @@ const CreateNewPassword = (props: Props) => {
     mutate({
       email: data.email,
     });
+    dispatch(setUser({ resetPasswordEmail: data.email }));
   };
   return (
     <div className="py-32 px-8 w-full flex flex-col items-center justify-center ">

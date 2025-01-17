@@ -60,7 +60,9 @@ const Grants = (props: Props) => {
           <p className="w-full leading-[28px] py-4 text-textColor font-poppins text-[15px] font-medium">
             {data.text}
           </p>
-          <div onClick={() => handleNavigation(`/grants/1`)} className="-ml-6 absolute bottom-[5px]">
+          <div
+            onClick={() => handleNavigation(`/grants/1`)}
+            className="-ml-6 absolute bottom-[5px]">
             <CustomButton
               title="Read More"
               backgrounColor="bg-transparent"
@@ -85,7 +87,7 @@ const Grants = (props: Props) => {
           <h3
             className="text-secondaryColor cursor-pointer hover:cursor-pointer text-base font-semibold
             "
-            onClick={() => handleNavigation(`${locale}/grants`)}>
+            onClick={() => handleNavigation(`/grants`)}>
             View all grants
           </h3>
           <img src="/chevronRight.svg" alt="" />
