@@ -8,8 +8,14 @@ import ConsultantComponent from "../component/ConsultantComponent";
 import LabelInput from "@/app/[locale]/components/LabelInput";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import { countryData } from "../../utils/customData";
+import useHandleNavigation from "../../utils/HandleNavigation";
+import { grantsData } from "../../utils/constants/grants";
+import { useAppDispatch } from "../../../../../lib/hooks";
+import { setActiveConsultantType } from "../../../../../lib/features/Consultant/consultantSlice";
+
 
 export default function Home() {
+  const dispatch = useAppDispatch()
   const countriesData = React.useMemo(() => {
     const data = countryData?.map((data) => ({
       label: data.name,
@@ -18,6 +24,25 @@ export default function Home() {
 
     return data;
   }, []);
+
+  const handleChange = (value:string) => {
+    dispatch(setActiveConsultantType({
+      selectedConsultantTypes: value
+    }))
+    console.log(value, "This is the value")
+
+  }
+
+  const consultationType = React.useMemo(() => {
+    const data = grantsData?.map((data) => ({
+      value: data.name,
+      label: data.name,
+    }));
+
+    return data;
+  }, []);
+
+  const handleNavigation = useHandleNavigation();
   return (
     <div className="w-full px-16">
       <div className="flex flex-col items-center justify-center py-8">
@@ -70,6 +95,10 @@ export default function Home() {
                 required={true}
                 placeholder="Select Consultation Type"
                 select
+                options={consultationType}
+                handleChange={handleChange
+
+              }
               />
               <LabelInput
                 label={"Select Client Category"}
@@ -141,6 +170,7 @@ export default function Home() {
 
         <div className="w-full flex items-center justify-center my-8">
           <CustomButton
+            onClick={() => handleNavigation("/consultant/request-complete")}
             title="PROCEED"
             backgrounColor="bg-buttonPrimary"
             width="w-[370px]"
