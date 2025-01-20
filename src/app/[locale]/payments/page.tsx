@@ -100,7 +100,7 @@ export default function Home() {
 
         {/* Right */}
         <div className="w-[45%]">
-          <div className="w-full bg-white px-16 mt-8">
+          <div className="w-full bg-white px-16 mt-16">
             <h3 className="text-primary py-4">Payment Method</h3>
             <CustomButton
               width="w-[432px]"
