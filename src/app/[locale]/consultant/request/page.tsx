@@ -141,10 +141,10 @@ export default function Home() {
 
         <div className="w-full flex items-center justify-center my-8">
           <CustomButton
-            title="CONFIRM BOOKING/PROCEED TO PAYMENT"
+            title="PROCEED"
             backgrounColor="bg-buttonPrimary"
             width="w-[370px]"
-            textStyle="text-white text-[12px] lg:text-lg"
+            textStyle="text-white text-[12px] lg:text-lg font-semibold"
             // height="h-[20px]"
           />
         </div>

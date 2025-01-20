@@ -53,6 +53,7 @@ const config: Config = {
         'service-card-4': "linear-gradient(180deg, rgba(243, 240, 210, 0.1) 0%, #FFFFFF 67.5%)",
         'service-card-5': " linear-gradient(180deg, rgba(252, 231, 243, 0.4) 0%, #FFFFFF 75%)",
         'service-card-6': "linear-gradient(180deg, rgba(255, 237, 213, 0.2) 19%, #FFFFFF 100%)",
+        
       },
     extend: {
        boxShadow: {
@@ -74,7 +75,11 @@ const config: Config = {
         'service-shadow': "4px 10px 15px 0px #329DFD4D",
         'article-shadow': "1px 1px 15px 0px #329DFD4D",
         'article-tags': "0px 0px 4px 0px #329DFD4D",
-        "read-more-shadow":'0px 0px 4px 0px #329DFD4D'
+        "read-more-shadow":'0px 0px 4px 0px #329DFD4D',
+        "complete-shadow-1": "0px 2px 10px 0px #329DFD4D",
+        "complete-shadow-2": "0px 1px 4px 0px #00000040",
+        "complete-shadow-3": "0px 2px 10px 0px #329DFD4D",
+
         
 
       },
