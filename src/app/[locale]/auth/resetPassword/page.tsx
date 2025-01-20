@@ -8,21 +8,29 @@ import { OTPProps } from "antd/es/input/OTP";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
-import { createNewPasswordData, forgotPassword } from "../../utils/types/SignupData";
+import {
+  createNewPasswordData,
+  forgotPassword,
+} from "../../utils/types/SignupData";
 import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
-
 type Props = {};
 
 const ResetPassword = (props: Props) => {
   const router = useRouter();
-  const locale = useLocale()
-  const handleNavigation = useHandleNavigation()
+  const locale = useLocale();
+  const handleNavigation = useHandleNavigation();
 
   const fotgorPasswordNotify = () => toast.success("email sent successfully");
+  const [otp, setOtp] = React.useState("");
+
+  const onChange: OTPProps["onChange"] = (text) => {
+    console.log("onChange:", text);
+    setOtp(text);
+  };
 
   const { handleSubmit, control, reset } = useForm({
     defaultValues: {
@@ -30,25 +38,28 @@ const ResetPassword = (props: Props) => {
     },
   });
 
-  const { mutate, data, isPending } = useApiMutation<any, createNewPasswordData>(
-    "post",
-    endpoints.resetPassword,
-    {
-      onSuccess: (data) => {
-        console.log(data, "it's success");
-        if (data.success) {
-          fotgorPasswordNotify();
-          console.log(data.data, "from forgotpassowrd");
-        } else {
-          const failed = () => toast.error(data.message);
-          failed();
-        }
-      },
-      onError: (data) => {
-        console.log("User error:", data);
-      },
-    }
-  );
+  const { mutate, data, isPending } = useApiMutation<
+    any,
+    createNewPasswordData
+  >("post", endpoints.resetPassword, {
+    onSuccess: (data) => {
+      console.log(data, "it's success");
+      if (data.success) {
+        fotgorPasswordNotify();
+        console.log(data.data, "from forgotpassowrd");
+      } else {
+        const failed = () => toast.error(data.message);
+        failed();
+      }
+    },
+    onError: (data) => {
+      console.log("User error:", data);
+    },
+  });
+
+  const sharedProps: OTPProps = {
+    onChange,
+  };
 
   const onSubmit = async (data: createNewPasswordData) => {
     console.log(data);
@@ -56,7 +67,7 @@ const ResetPassword = (props: Props) => {
       email: data.email,
       newPassword: "",
       confirmPassword: "",
-      token: ""
+      token: "",
     });
   };
   return (
@@ -84,14 +95,26 @@ const ResetPassword = (props: Props) => {
             value=""
             rightIcon
           />
+
+          <div className="w-full flex justify-start items-start my-1 flex-col">
+            <p className="text-[14px] text-textColor">Enter Token</p>
+            <Input.OTP
+              className="w-[200px]"
+              variant="filled"
+              size={"large"}
+              {...sharedProps}
+            />
+          </div>
           <div className="w-full flex items-center justify-center">
             <CustomButton title="Create New Password" width="w-[220px]" />
           </div>
-          <p
-            className="text-secondaryColor200 text-center cursor-pointer py-2 hover:underline"
-            onClick={() => handleNavigation("/auth/login")}>
-            Back to Sign in
-          </p>
+          <button className="flex justify-center items-center w-full">
+            <p
+              className="text-secondaryColor200 text-center cursor-pointer py-2 hover:underline"
+              onClick={() => handleNavigation("/auth/login")}>
+              Back to Sign in
+            </p>
+          </button>
         </form>
       </div>
     </div>
