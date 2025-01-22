@@ -5,64 +5,67 @@ type Props = {};
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCardMore = (props: Props) => {
   return (
-    <div className=" h-full">
+    <div className=" h-full ">
       {/* Up */}
-      <div className="flex flex-col justify-between lg:justify-start bg-white mb-8 w-full sm:w-[500px] md:w-[600px] lg:w-full">
-        <h4 className=" block lg:hidden mb-4 text-primary mx-0 text-[14px] leading-[15px]  lg:mx-2 lg:text-[16px] lg:leading-[26px]font-semibold mt-8">
+      <div className="flex flex-col justify-between lg:justify-start bg-white mb-8 w-full sm:w-[500px] md:w-[600px] lg:w-full ">
+        <h4 className=" block lg:hidden mb-4 text-primary mx-0 text-[14px] leading-[15px]  lg:mx-2 lg:text-[16px] lg:leading-[26px]font-semibold mt-8 text-center">
           Aspire Coronation Trust (ACT) Foundation Grant 2024
         </h4>
         <div className="flex items-start justify-between lg:justify-start w-full">
-          <div className="w-[150px] h-[200px] sm:w-[200px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
+          <div className="w-[100%] h-[200px] sm:w-[200px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
             <img
               src="/GrantsImage.svg"
               className="w-full  object-contain h-full"
             />
           </div>
-          <div className="mt-4">
+          <div className="mt-0">
             <h4 className="hidden lg:block text-primary mx-2 text-[20px] mb-4 leading-[23px]">
               Aspire Coronation Trust (ACT) Foundation Grant 2024
             </h4>
-            <p className="text-[#1E1E1E] text-[10px]  lg:text-[16px] my-0 lg:my-2 font-semibold">
-              Date Posted:
-              <span className="text-textColor ml-1  text-[10px] lg:text-[16px]">
-                October 24, 2024
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
-              Deadline:
-              <span className="text-textColor ml-1 text-[10px] lg:text-[16px]">
-                December 1st, 2024
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
-              Location:
-              <span className="text-textColor ml-1 text-[10px] lg:text-[16px]">
-                AMERICA
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] text-[10px] font-semibold my-0 lg:my-2lg:text-[16px]">
-              Category:
-              <span className="text-textColor ml-1 text-[10px] lg:text-[16px]">
-                Agriculture
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
-              Grant Size:
-              <span className="text-textColor ml-1 lg:text-[16px] text-[10px]">
-                $100,000 to $500,000
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
-              <span className="text-textColor text-[10px] lg:text-[16px]">
-                Donor Agency: United States African Development Foundation
-              </span>
-            </p>
-            <p className="text-[#1E1E1E] leading-15 text-[10px] my-0 lg:my-2 lg:text-[16px] font-semibold">
-              Reference URL:
-              <span className="hover:underline text-secondaryColor lg:text-[16px] text-[10px] ml-[1px]">
-                hhtps://www.exampleofgrants.com
-              </span>
-            </p>
+            <div>
+              <p className="text-[#1E1E1E] text-[10px]  lg:text-[16px] my-0 lg:my-2 font-semibold">
+                Date Posted:
+                <span className="text-textColor ml-1  text-[9px] lg:text-[16px]">
+                  October 24, 2024
+                </span>
+              </p>
+              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+                Deadline:
+                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                  December 1st, 2024
+                </span>
+              </p>
+              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+                Location:
+                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                  AMERICA
+                </span>
+              </p>
+              <p className="text-[#1E1E1E] text-[10px] font-semibold my-0 lg:my-2lg:text-[16px]">
+                Category:
+                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                  Agriculture
+                </span>
+              </p>
+              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+                Grant Size:
+                <span className="text-textColor ml-1 lg:text-[16px] text-[9px]">
+                  $100,000 to $500,000
+                </span>
+              </p>
+              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+                <span className="text-textColor text-[9px] lg:text-[16px]">
+                  Donor Agency: United States African Development Foundation
+                </span>
+              </p>
+              <p className="hidden md:block text-[#1E1E1E] leading-15 text-[14px] my-0 lg:my-2 lg:text-[16px] font-semibold">
+                Reference URL:
+                <span className="hover:underline text-secondaryColor lg:text-[16px] text-[12px]">
+                  hhtps://www.exampleofgrants.com
+                </span>
+              </p>
+            </div>
+
             <div className="hidden lg:flex w-full items-center justify-between my-2 m-2 mt-4">
               <CustomButton
                 IconLeft={"/googleCalendar.svg"}
@@ -90,24 +93,36 @@ const GrantCardMore = (props: Props) => {
             </div>
           </div>
         </div>
+        <div>
+          <p className="block md:hidden text-[#1E1E1E] leading-15 text-[14px] my-2 lg:text-[16px] font-semibold text-center mr-2">
+            Reference URL:
+            <span className="hover:underline text-secondaryColor lg:text-[16px] text-[12px] ml-2">
+              hhtps://www.exampleofgrants.com
+            </span>
+          </p>
+        </div>
+
         <div className="flex lg:hidden  items-center w-[100%] sm:w-[90%] md:w-[80%] justify-between mt-4 lg:w-full">
-          <CustomButton
-            IconLeft={"/googleCalendar.svg"}
-            title="Add to Google Calendar"
-            backgrounColor="bg-white"
-            height="h-[40px]"
-            width="w-[160px] lg:w-[200px]"
-            borderColor="border-secondaryColor"
-            textStyle="text-secondaryColor text-center text-[8px] lg:text-sm"
-          />
           <CustomButton
             IconLeft={"/love.svg"}
             title="Save this grant"
             backgrounColor="bg-buttonPrimary"
             height="h-[40px]"
-            width="w-[160px] lg:w-[200px]"
-            textStyle="text-white text-[8px] lg:text-sm"
+            width="w-[140px]"
+            textStyle="text-white text-[10px] lg:text-sm font-medium "
+            radius="rounded-[3px]"
           />
+          <CustomButton
+            IconLeft={"/googleCalendar.svg"}
+            title="Add to Google Calendar"
+            backgrounColor="bg-white"
+            height="h-[40px]"
+            width="w-[140px]"
+            borderColor="border-secondaryColor"
+            textStyle="text-secondaryColor text-center text-[10px] lg:text-sm font-medium leading-[12px]"
+            radius="rounded-[3px]"
+          />
+
           <div>
             <img src="/mesage.svg" />
           </div>
@@ -118,7 +133,7 @@ const GrantCardMore = (props: Props) => {
       </div>
 
       {/* Down */}
-      <div className="w-[90%] px-4">
+      <div className="w-full lg:w-[90%] lg:px-4">
         <p className="leading-[40px] w-full text-textColor">
           Lorem ipsum dolor sit amet consectetur. Feugiat nam imperdiet
           consectetur laoreet. Diam elementum urna sit tristique dictumst
@@ -277,7 +292,7 @@ const GrantCardMore = (props: Props) => {
         <p className="text-secondaryColor text-center py-2 border-t-borderColor border-b-borderColor border-b border-t mt-4">
           RELATED POST
         </p>
-        <div className="bg-white pt-8 flex justify-between items-center flex-wrap">
+        <div className="bg-white pt-8 flex justify-center lg:justify-between items-center flex-wrap mb-8">
           {[1, 2, 3].map((data) => (
             <div className="w-[250px] h-[310px] rounded-[22px] shadow-related-news-card mt-8">
               <div className="h-[70%] w-full flex items-center justify-center">

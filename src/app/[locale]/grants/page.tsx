@@ -25,6 +25,7 @@ export default function Home() {
           </p>
         </div>
         {/* Filter Options */}
+        
         <FilterComponent />
       </div>
 

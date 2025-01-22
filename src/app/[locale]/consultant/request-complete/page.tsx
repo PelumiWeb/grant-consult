@@ -21,7 +21,7 @@ const ConsultBookingCard = (props: any) => {
           })
         );
       }}
-      className={`p-4 shadow-complete-shadow-2 w-[260px] ${
+      className={`p-4 shadow-complete-shadow-2 w-full lg:w-[260px] ${
         props.name === props.selectedConsultant
           ? "border-[2px] border-secondaryColor"
           : "border-[0.5px] border-borderColor"
@@ -68,17 +68,17 @@ const page = (props: Props) => {
   const selectedConsultant = useAppSelector(
     (data) => data.consultant.selectedConsultant
   );
- 
-const handleNavigation = useHandleNavigation()
+
+  const handleNavigation = useHandleNavigation();
   return (
     <div className="w-full h-full bg-white p-8">
-      <div className="flex justify-between items-center my-12">
-        <h4 className="text-[20px] leading-[26px] ">
+      <div className="flex justify-between items-center my-12 flex-wrap">
+        <h4 className="text-[20px] leading-[26px] w-full lg:w-[50%]  ">
           Complete Your Consultation Booking
         </h4>
 
-        <div className="flex justify-between items-center">
-          <p className="text-textColor font-bold text-[13px] leading-[21px] mt-2 mr-1">
+        <div className="flex justify-between items-center ">
+          <p className="text-textColor font-bold text-[13px] leading-[21px] mt-2 mr-1 w-full">
             Step 2 of 3
           </p>
           <div className="w-[70px] flex items-center justify-center">
@@ -88,9 +88,9 @@ const handleNavigation = useHandleNavigation()
       </div>
 
       <div className="w-full ">
-        <div className="w-full flex justify-between items-start mt-8">
+        <div className="w-full flex justify-between items-start mt-8 flex-wrap">
           {/* Select Date and Time */}
-          <div className="w-[70%]">
+          <div className="w-full lg:w-[70%]">
             <div className="w-full shadow-complete-shadow-1 h-[180px] rounded-[5px] border-borderColor border-[0.5px] p-4 ">
               <p className="text-primary font-semibold leading-[18px] font-mono mb-4">
                 Select Date & Time
@@ -121,7 +121,7 @@ const handleNavigation = useHandleNavigation()
             </div>
           </div>
 
-          <div className="w-[25%]">
+          <div className="w-full lg:w-[25%]">
             <div className="bg-white shadow-complete-shadow-3 border-[0.5px] border-borderColor  p-2 ">
               <p className="font-semibold text-[18px] leading-[22px] text-secondaryColor text-center my-4 mb-8">
                 Booking Summary

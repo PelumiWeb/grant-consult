@@ -9,7 +9,7 @@ import GrantFunder from "../components/GrantFunder";
 
 export default function Home() {
   return (
-    <div className="w-full px-16 h-full">
+    <div className="w-full px-4 lg:px-16 h-full">
       {/*  */}
       <div className="w-full h-full">
         <div className=" py-16">
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
 
         <div className="w-full py-16 flex flex-col items-center justify-center">
-          <p className="my-4">
+          <p className="my-4 text-center" >
             For your security, all orders are processed in USD via Stripe or
             PayPal.
           </p>

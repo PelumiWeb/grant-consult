@@ -44,7 +44,7 @@ export default function Home() {
 
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="w-full px-16">
+    <div className="w-full px-4 lg:px-16">
       <div className="flex flex-col items-center justify-center py-8">
         <p className="text-secondaryColor font-semibold text-[24px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
           Request Consultation

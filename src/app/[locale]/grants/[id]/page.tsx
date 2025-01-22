@@ -8,7 +8,7 @@ import FilterComponent from "@/app/[locale]/components/FilterComponent";
 
 export default function Grants() {
   return (
-    <div className="w-full px-16 bg-white">
+    <div className="w-full  px-4 lg:px-16 bg-white">
       {/*  */}
       <div className="bg-white">
         <div className="flex items-center justify-between w-[70%] md:w-[40%] lg:w-[30%] mt-4 mb-2">
@@ -28,7 +28,7 @@ export default function Grants() {
       </div>
 
       {/* Grants Cards */}
-      <div className="flex justify-between">
+      <div className="w-full flex justify-between">
         {/* Left */}
         <div>
           <GrantCard />

@@ -10,7 +10,7 @@ const ConsultantComponent = (props: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={props.margin ? props.margin : "m-16"}>
+    <div className={props.margin ? props.margin : "m-8"}>
       <div className="relative h-[320px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
         {/* Image container */}
         <div className=" absolute top-12 w-[130px] h-[130px] rounded-full">
