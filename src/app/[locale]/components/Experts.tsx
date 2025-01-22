@@ -41,7 +41,7 @@ const Experts = (props: Props) => {
   const ImageContainer = (data: imageProps) => {
     return (
       <div className="grid place-items-center mr-2 my-2" onClick={handleClick}>
-        <div className="w-[100px] sm:w-[120px] md:w-[170px] lg:w-[220px] 2lg:w-[250px] xl:w-[300px]">
+        <div className="w-full md:w-[170px] lg:w-[220px] 2lg:w-[250px] xl:w-[300px]">
           <img src={data.image} className="object-contain w-full h-full" />
         </div>
         <div className="w-full flex flex-col justify-center items-center">
@@ -58,13 +58,16 @@ const Experts = (props: Props) => {
 
   return (
     <div className="bg-white h-full w-full py-16">
-      <h1 className="text-center ">{t("Experts.title")}</h1>
+      <h1 className="text-center font-semibold text-[20px] leading-[26px]">
+        {t("Experts.title")}
+      </h1>
       <div className="w-full flex items-center justify-center">
         <p className="text-[#6E6E6E] text-center w-full lg:w-[60%] px-4 lg:px-0 py-4">
           {t("Experts.content")}
         </p>
       </div>
-      <div className="flex items-center justify-center  w-[100%] ">
+      {/* Web clients */}
+      <div className="hidden md:flex items-center justify-center  w-[100%] ">
         {/* Left */}
         <div className="">
           <ImageContainer
@@ -100,6 +103,47 @@ const Experts = (props: Props) => {
         <div className="">
           <ImageContainer
             name="JAMES RWANDA"
+            title={t("Experts.name")}
+            image="/expert6.svg"
+          />
+        </div>
+      </div>
+
+      {/* Mobile Client */}
+
+      <div className="w-full px-8">
+        <div className="w-full flex justify-between items-center">
+          <ImageContainer
+            name="PAUL SMITH"
+            title={t("Experts.name")}
+            image="/expert1.svg"
+          />
+          <ImageContainer
+            name="PAUL SMITH"
+            title={t("Experts.name")}
+            image="/expert2.svg"
+          />
+        </div>
+        <div className="w-full flex justify-between items-center">
+          <ImageContainer
+            name="PAUL SMITH"
+            title={t("Experts.name")}
+            image="/expert3.svg"
+          />
+          <ImageContainer
+            name="PAUL SMITH"
+            title={t("Experts.name")}
+            image="/expert4.svg"
+          />
+        </div>
+        <div className="w-full flex justify-between items-center">
+          <ImageContainer
+            name="PAUL SMITH"
+            title={t("Experts.name")}
+            image="/expert5.svg"
+          />
+          <ImageContainer
+            name="PAUL SMITH"
             title={t("Experts.name")}
             image="/expert6.svg"
           />

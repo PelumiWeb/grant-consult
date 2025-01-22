@@ -19,7 +19,7 @@ type Cardprops = {
 const SubscriptionCard = (data: Cardprops) => {
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="  bg-white mt-4 w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative">
+    <div className="  bg-white mt-4 w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[450px] md:h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative ">
       {data.popular && (
         <div className="absolute -top-4 left-[35px]">
           <CustomButton

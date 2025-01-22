@@ -15,8 +15,8 @@ type Cardprops = {
 const Subscription = (props: Props) => {
   const t = useTranslations("Homepage");
   return (
-    <div className="w-full h-full px-16  py-16">
-      <h1 className="text-lg md:text-2xl text-center mb-16">
+    <div className="w-full h-full px-0 md:px-16  py-16">
+      <h1 className="text-lg md:text-2xl text-center mb-4 lg:mb-16">
         {t("Subscription.title")}
       </h1>
       <div className="flex items-center justify-center 2lg:justify-between w-full flex-wrap">
