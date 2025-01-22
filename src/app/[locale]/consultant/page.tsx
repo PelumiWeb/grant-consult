@@ -13,7 +13,7 @@ import RenderModals from "../components/RenderModals";
 
 export default function Home() {
   return (
-    <div className="w-full px-16">
+    <div className="w-full px-4 lg:px-16">
       <div className="w-full pt-8">
         <p className="text-secondaryColor font-semibold text-[36px] leading-[42px] text-center ">
           Our Consultants

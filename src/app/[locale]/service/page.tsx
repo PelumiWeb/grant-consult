@@ -5,7 +5,7 @@ import GrantFunder from "../components/GrantFunder";
 
 export default function Home() {
   return (
-    <div className="w-full px-16">
+    <div className="w-full  p-4 lg:px-16">
       {/*  */}
       <div className="w-full">
         <div className=" py-16">
