@@ -93,7 +93,7 @@ const HeroPage = (props: Props) => {
          bg-buttonPrimary w-full "
             style={{ clipPath: "polygon(64% 0, 100% 0%, 100% 100%, 30% 100%)" }}
           />
-          <div className="relative right-4 w-full h-full z-10 top-4">
+          <div className="relative right-4 w-full h-full z-0 top-4">
             <img
               className=" w-full object-contain z-10"
               src="/newHeroImage.svg"

@@ -1,7 +1,7 @@
 "use client";
 import { Image, Input } from "antd";
 import React from "react";
-import { ArrowLeftOutlined, DownOutlined, UpOutlined } from "@ant-design/icons";
+import {  DownOutlined, UpOutlined } from "@ant-design/icons";
 
 type Props = {};
 

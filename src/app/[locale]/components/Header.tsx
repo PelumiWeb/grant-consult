@@ -2,6 +2,7 @@
 
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import CustomInput from "@/app/[locale]/components/CustomInput";
+import { ArrowLeftOutlined, DownOutlined, UpOutlined } from "@ant-design/icons";
 import { Button, Input, Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import React, { ChangeEvent } from "react";
@@ -23,12 +24,69 @@ type Props = { locale?: string };
 //   options: any[];
 //   locale: string
 // };
+type optionProps = {
+  url: string;
+  name: string;
+};
+type mobileDropDownProps = {
+  option?: optionProps[];
+  title: string;
+  url?: string;
+};
+const DropdownMobile = (props: mobileDropDownProps) => {
+  const [optionIsOpen, setOptionIsOpen] = React.useState(false);
+  const handleNavigation = useHandleNavigation();
+  return (
+    <div
+      className=" min-h-[50px] cursor-pointer"
+      onClick={() => {
+        props.url && handleNavigation(props.url);
+      }}>
+      <div className="w-full flex justify-between items-center">
+        <p className="text-primary font-semibold uppercase text-[20px] leading-[24px]">
+          {props.title}
+        </p>
+
+        {props.option && (
+          <div>
+            {!optionIsOpen ? (
+              <DownOutlined
+                style={{ fontSize: 20, color: "#111111" }}
+                onClick={() => setOptionIsOpen((prev) => !prev)}
+              />
+            ) : (
+              <UpOutlined
+                style={{ fontSize: 20, color: "#111111" }}
+                onClick={() => setOptionIsOpen((prev) => !prev)}
+              />
+            )}
+          </div>
+        )}
+      </div>
+      {optionIsOpen && (
+        <div className="mb-4">
+          {props.option?.map((data) => (
+            <div>
+              {" "}
+              <button onClick={() => handleNavigation(data.url)}>
+                <p className="font-medium font-mono text-[13px] leading-[20px] text-left text-black hover:text-secondaryColor">
+                  {data.name}
+                </p>
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Header = ({}: Props) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const pathname = usePathname();
   const locale = useLocale();
+  const [showHeaderMobile, setShowHeaderMobile] = React.useState(false);
   const { user } = useAppSelector((state) => state.user);
   // console.log(user);
 
@@ -420,7 +478,7 @@ const Header = ({}: Props) => {
   ];
 
   return (
-    <div className=" w-full px-4 md:px-0">
+    <div className=" w-full px-4 md:px-0 relative z-10">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => handleNavigation(`/`)}>
@@ -447,9 +505,11 @@ const Header = ({}: Props) => {
         <div className="flex items-center justify-between">
           {!user ? (
             <div className="flex items-center justify-center 2lg:justify-between w-full lg:w-[450px]">
-              <div className="block lg:hidden">
+              <button
+                className="block lg:hidden"
+                onClick={() => setShowHeaderMobile(true)}>
                 <img src="/hamburger.svg" alt="" />
-              </div>
+              </button>
               <div className="mr-2 hidden lg:block">
                 <CustomButton
                   onClick={() => handleNavigation("/auth/login")}
@@ -488,9 +548,11 @@ const Header = ({}: Props) => {
             </div>
           ) : (
             <div>
-              <div className="block lg:hidden">
+              <button
+                className="block lg:hidden"
+                onClick={() => setShowHeaderMobile(true)}>
                 <img src="/hamburger.svg" alt="" />
-              </div>
+              </button>
 
               <div className=" hidden lg:flex items-center cursor-pointer">
                 <Dropdown
@@ -758,6 +820,262 @@ const Header = ({}: Props) => {
           />
         </div>
       </div>
+
+      {/* Header Mobile */}
+
+      {showHeaderMobile && (
+        <div className="absolute top-0 left-0 z-50 bg-white h-sreen w-full cursor-pointer pb-8">
+          <div
+            className="flex items-end justify-end  p-4"
+            onClick={() => {
+              setShowHeaderMobile(false);
+            }}>
+            <Image
+              src={"/cancel-navigation.svg"}
+              width={32}
+              height={32}
+              alt=""
+              // className="flex items-end"
+            />
+          </div>
+
+          <div className="p-4">
+            <DropdownMobile title="Home" />
+            <DropdownMobile
+              title="Grants"
+              option={[
+                {
+                  name: "Grants for NGO",
+                  url: "/grants",
+                },
+                {
+                  name: "Grants for Individuals",
+                  url: "/grants",
+                },
+                {
+                  name: "Grants for organizations",
+                  url: "/grants",
+                },
+                {
+                  name: "Grants Application Process",
+                  url: "/grant-application",
+                },
+              ]}
+            />
+
+            <DropdownMobile
+              title="Consultation"
+              option={[
+                {
+                  name: "Become a Consultant",
+                  url: "/consultant/become",
+                },
+                {
+                  name: "Request Consultation",
+                  url: "/consultant/request",
+                },
+                {
+                  name: "FAQ About Consultations",
+                  url: "/",
+                },
+                {
+                  name: "Testimonials from Consultations",
+                  url: "/",
+                },
+                {
+                  name: "Our Consultants Profile",
+                  url: "/consultant",
+                },
+              ]}
+            />
+            <DropdownMobile
+              title="Pricing"
+              option={[
+                {
+                  name: "Subscription Plans",
+                  url: "/subscription",
+                },
+                {
+                  name: "Grant Writing Plans",
+                  url: "/service",
+                },
+              ]}
+            />
+
+            <DropdownMobile
+              title="RESOURCES"
+              option={[
+                {
+                  name: "Blog/Articles",
+                  url: "/articles",
+                },
+                {
+                  name: "Grant Writing Guides",
+                  url: "/grant-guidelines",
+                },
+                {
+                  name: "Templates & Tools",
+                  url: "/",
+                },
+                {
+                  name: "Webinars and Workshops",
+                  url: "/",
+                },
+                {
+                  name: "Frequently Asked Questions ",
+                  url: "/faq",
+                },
+              ]}
+            />
+
+            <DropdownMobile title="Our Service" />
+            <DropdownMobile
+              title="Grantors"
+              option={[
+                {
+                  name: "Become a Grantor/Donor",
+                  url: "/grants/become",
+                },
+                {
+                  name: "List A Grant",
+                  url: "/grants/list",
+                },
+              ]}
+            />
+          </div>
+
+          <div className="p-4">
+            {!user && (
+              <div>
+                <div className="my-2">
+                  <CustomButton
+                    title="Login"
+                    radius="rounded-[5px]"
+                    borderColor="border-buttonPrimary"
+                    backgrounColor="bg-white"
+                    textStyle="text-buttonPrimary font-inter font-bold text-[16px] leading-[16px]"
+                    width="w-full"
+                    height="h-[40px]"
+                    onClick={() => handleNavigation("/auth/login")}
+                  />
+                </div>
+
+                <div className="my-2">
+                  <CustomButton
+                    title="Try 7 days Free"
+                    radius="rounded-[5px]"
+                    backgrounColor="bg-buttonPrimary"
+                    textStyle="text-white font-inter font-bold text-[16px] leading-[16px]"
+                    width="w-full"
+                    height="h-[40px]"
+                    onClick={() => handleNavigation("/auth/login")}
+                  />
+                </div>
+
+                <div className="my-2">
+                  <CustomButton
+                    title="Become a Grantor"
+                    radius="rounded-[5px]"
+                    backgrounColor="bg-secondaryColor"
+                    textStyle="text-white font-inter font-bold text-[16px] leading-[16px]"
+                    width="w-full"
+                    height="h-[40px]"
+                    onClick={() => handleNavigation("/grants/become")}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex w-full justify-center items-center">
+            <LabelInput
+              handleChange={(e: any) => HandleLanguageChange(e)}
+              width="w-[123px]"
+              select
+              placeholder="English"
+              height="h-[40px]"
+              value={locale}
+              options={[
+                {
+                  value: "en",
+                  label: (
+                    <div className="flex items-center w-full">
+                      <Image
+                        src={"/unitedKingdom.svg"}
+                        className="mr-1"
+                        alt="Grant Logo"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="font-normal text-[14px]">English</p>
+                    </div>
+                  ),
+                },
+                {
+                  value: "de",
+                  label: (
+                    <div className="flex items-center w-full">
+                      <Image
+                        src={"/Germany (DE).svg"}
+                        className="mr-1"
+                        alt="Grant Logo"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="font-normal text-[14px]">Germany</p>
+                    </div>
+                  ),
+                },
+                {
+                  value: "pt",
+                  label: (
+                    <div className="flex items-center w-full">
+                      <Image
+                        src={"/Portugal (PT).svg"}
+                        className="mr-1"
+                        alt="Grant Logo"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="font-normal text-[14px]">Portugal</p>
+                    </div>
+                  ),
+                },
+                {
+                  value: "fr",
+                  label: (
+                    <div className="flex items-center w-full">
+                      <Image
+                        src={"/France (FR).svg"}
+                        className="mr-1"
+                        alt="Grant Logo"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="font-normal text-[14px]">France</p>
+                    </div>
+                  ),
+                },
+                {
+                  value: "zh",
+                  label: (
+                    <div className="flex items-center w-full">
+                      <Image
+                        src={"/China (CN).svg"}
+                        className="mr-1"
+                        alt="Grant Logo"
+                        width={20}
+                        height={20}
+                      />
+                      <p className="font-normal text-[14px]">Chinese</p>
+                    </div>
+                  ),
+                },
+              ]}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
