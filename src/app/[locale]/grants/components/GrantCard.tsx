@@ -20,44 +20,63 @@ const GrantCard = (props: Props) => {
     <div
       className={`flex flex-col justify-between border-[0.5px] ${
         !props.border && "border-borderColor"
-      }  my-4 px-4  w-full lg:w-[900px] h-[420px] lg:h-[360px] py-4 lg:py-0`}>
+      }  my-4 px-1  w-full lg:w-[900px] h-full md:h-[420px] lg:h-[360px] py-4 lg:py-0`}>
       <h4 className=" block lg:hidden text-primary mx-2 text-[16px] leading-[26px] font-semibold">
         Aspire Coronation Trust (ACT) Foundation Grant 2024
       </h4>
-      <div className="flex items-center justify-between py-0 bg-white my-4 px-4 w-full h-full cursor-pointer">
-        <div className="md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
+      <div className="flex items-center  justify-start md:justify-between py-0 bg-white my-4 px-2  md:px-4 w-full h-full cursor-pointer">
+        <div className="w-[150px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
           <img src="/GrantsImage.svg" className="w-full object-cover " />
         </div>
         <div>
           <h4 className="hidden lg:block text-primary mx-2 text-[20px] leading-[26px] font-semibold">
             Aspire Coronation Trust (ACT) Foundation Grant 2024
           </h4>
-          <div className="flex items-center mx-2">
-            <p className="text-[#1E1E1E]">Date Posted</p>
-            <p className="text-textColor ml-4">October 24, 2024</p>
+          <div className="flex items-center lg:mx-2">
+            <p className="text-[#1E1E1E] text-[10px] leading-[15px] font-semibold">
+              Date Posted
+            </p>
+            <p className="text-textColor ml-2 lg:ml-4 font-normal text-[8px] leading-[23px]">
+              October 24, 2024
+            </p>
           </div>
-          <div className="flex items-center mx-2">
-            <p className="text-[#1E1E1E]">Deadline</p>
-            <p className="text-textColor ml-4">December 1st, 2024</p>
+          <div className="flex items-center lg:mx-2">
+            <p className="text-[#1E1E1E] text-[10px] leading-[15px] font-semibold">
+              Deadline
+            </p>
+            <p className="text-textColor ml-2 lg:ml-4 font-normal text-[8px] leading-[23px]">
+              December 1st, 2024
+            </p>
           </div>
-          <div className="flex items-center mx-2 ">
-            <p className="text-[#1E1E1E]">Location</p>
-            <p className="text-textColor ml-4">AMERICA</p>
+          <div className="flex items-center lg:mx-2 ">
+            <p className="text-[#1E1E1E] text-[10px] leading-[15px] font-semibold">
+              Location
+            </p>
+            <p className="text-textColor ml-2 lg:ml-4 font-normal text-[8px] leading-[23px]">
+              AMERICA
+            </p>
           </div>
-          <div className="flex items-center mx-2">
-            <p className="text-[#1E1E1E]">Category</p>
-            <p className="text-textColor ml-4">Agriculture</p>
+          <div className="flex items-center lg:mx-2">
+            <p className="text-[#1E1E1E] text-[10px] leading-[15px] font-semibold">
+              Category
+            </p>
+            <p className="text-textColor ml-2 lg:ml-4 font-normal text-[8px] leading-[23px]">
+              Agriculture
+            </p>
           </div>
           {/* <div className="flex items-center mx-2">
             <p className="text-[#1E1E1E]">Grant Size</p>
             <p className="text-textColor ml-4">$100,000 to $500,000</p>
           </div> */}
-          <div className="flex items-center mx-2">
-            <p className={`text-[#1E1E1E] ${user ? "blur-none" : "blur-sm"}`}>
+          <div className="flex items-center lg:mx-2">
+            <p
+              className={`text-[#1E1E1E] text-[10px] leading-[15px] font-semibold ${
+                user ? "blur-none" : "blur-sm"
+              }`}>
               Grant Size
             </p>
             <p
-              className={`text-textColor ml-4 ${
+              className={`text-textColor ml-2 lg:ml-4 font-normal text-[8px] leading-[23px] ${
                 user ? "blur-none" : "blur-sm"
               }`}>
               $100,000 to $500,000
@@ -66,7 +85,7 @@ const GrantCard = (props: Props) => {
           <div>
             {!props?.showMore && (
               <p
-                className={`hidden lg:block w-[500px] ml-2 ${
+                className={`hidden lg:block w-full ml-2 ${
                   user ? "blur-none" : "blur-sm"
                 }`}>
                 Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
@@ -75,7 +94,7 @@ const GrantCard = (props: Props) => {
               </p>
             )}
             <button onClick={() => handleNavigation(`/grants/1`)}>
-              <p className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer">
+              <p className="ml-0 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer text-[12px] leading-[15px] font-semibold">
                 Read more...
               </p>
             </button>
@@ -84,14 +103,14 @@ const GrantCard = (props: Props) => {
       </div>
       {!props.showMore && (
         <p
-          className={`block lg:hidden w-[500px] ml-2 ${
+          className={`block lg:hidden w-full ml-2 ${
             user ? "blur-none" : "blur-sm"
           }`}>
           Lorem ipsum dolor sit amet consectetur. Ac odio eu a Vel neque
           ullamcorper in auctor. Urna laoreet bibendum nullam adipiscing tellus
           est posuere dolor sit am
           <span
-            className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer"
+            className="ml-2 text-secondaryColor backdrop-blur-0 blur-none cursor-pointer text-[12px] leading-[15px] font-semibold"
             onClick={() => handleNavigation(`/grants/1`)}>
             Read more...
           </span>

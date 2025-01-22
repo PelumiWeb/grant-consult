@@ -9,7 +9,7 @@ import { Pagination } from "antd";
 
 export default function Home() {
   return (
-    <div className="w-full px-16 bg-white">
+    <div className="w-full px-4 lg:px-16 bg-white">
       {/*  */}
       <div className="bg-white mb-8">
         <div className="flex items-center justify-between w-[70%] md:w-[40%] lg:w-[30%] mt-4 mb-2">
