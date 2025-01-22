@@ -5,35 +5,37 @@ import { CalendarOutlined } from "@ant-design/icons";
 type Props = { showButton: boolean };
 const ConsultantComponentModal = (props: Props) => {
   return (
-    <div className="m-8">
-      <div className="relative h-[254px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
-        {/* Image container */}
-        <div className=" absolute top-8 w-[130px] h-[130px] rounded-full">
-          <img
-            src="/consultantImage.svg"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <div className="absolute bottom-0 bg-boderConsultant h-[50%] w-full ">
-          <p className="font-bold text-base text-center uppercase  bg-primary leading-[19px] text-transparent bg-clip-text mt-14">
-            Alice Brooklyn
-          </p>
-          <div className="flex w-full items-center justify-center">
-            <p className="font-medium text-sm text-center text-secondaryTextColor">
-              Grant Consult
+    <div className="m-0 lg:m-8 w-full">
+      <div className="w-full flex justify-center items-center">
+        <div className="relative h-[254px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
+          {/* Image container */}
+          <div className=" absolute top-8 w-[130px] h-[130px] rounded-full">
+            <img
+              src="/consultantImage.svg"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute bottom-0 bg-boderConsultant h-[50%] w-full ">
+            <p className="font-bold text-base text-center uppercase  bg-primary leading-[19px] text-transparent bg-clip-text mt-14">
+              Alice Brooklyn
             </p>
-            <div className="w-[2px] bg-borderColor h-[15px] mx-2" />
-            <p className="font-medium text-sm text-center text-secondaryTextColor">
-              NGO Advisor
+            <div className="flex w-full items-center justify-center">
+              <p className="font-medium text-sm text-center text-secondaryTextColor">
+                Grant Consult
+              </p>
+              <div className="w-[2px] bg-borderColor h-[15px] mx-2" />
+              <p className="font-medium text-sm text-center text-secondaryTextColor">
+                NGO Advisor
+              </p>
+            </div>
+            <p className="text-secondaryTextColor text-center font-normal text-[10px] leading-[13px]">
+              Years of Experience: 25
             </p>
           </div>
-          <p className="text-secondaryTextColor text-center font-normal text-[10px] leading-[13px]">
-            Years of Experience: 25
-          </p>
         </div>
       </div>
 
-      <div className="flex items-center justify-between w-[221px]">
+      <div className="flex items-center justify-center lg:justify-between w-full lg:w-[221px]">
         <div className="my-4">
           <CustomButton
             title="Request Consultant"

@@ -22,15 +22,15 @@ const ConsultantModal = (props: Props) => {
   return (
     <CustomModal open={open} setOpen={() => openMmodal()} height="h-full">
       <div className="w-full bg-backgroundColor h-full">
-        <div className="w-full h-full flex justify-between p-4 items-start ">
+        <div className="w-full h-full flex justify-between p-4 items-start flex-wrap  ">
           {/*  */}
-          <div className="w-[333px] bg-white p-4 rounded-[10px]">
+          <div className="w-full lg:w-[333px] bg-white p-4 rounded-[10px]">
             {/* Profile */}
             <ConsultantComponentModal showButton />
             {/* Content  */}
             <div>
               <ul className="list-disc">
-                <h4 className="text-primary font-semibold text-[20px] leading-[26px] my-4 font-mono">
+                <h4 className="text-primary font-semibold  text-[20px] leading-[26px] my-4 font-mono">
                   Expertise
                 </h4>
                 <div className="ml-8">
@@ -110,9 +110,9 @@ const ConsultantModal = (props: Props) => {
 
             {/* Content  */}
           </div>
-          <div className="w-[450px] flex flex-col flex-1 justify-between">
+          <div className="w-full lg:w-[450px] flex flex-col flex-1 justify-between m-0">
             {/* Bio */}
-            <div className="bg-white w-full rounded-[10px] px-4 py-1 h-[25%] mx-4 mb-4">
+            <div className="bg-white w-full rounded-[10px] px-4 my-4 py-2  h-full lg:h-[25%] mx-0 lg:mx-4 mb-4">
               <h4 className="text-primary font-semibold text-[20px] leading-[26px] my-4 font-mono">
                 Bio
               </h4>
@@ -127,7 +127,7 @@ const ConsultantModal = (props: Props) => {
               </p>
             </div>
             {/* Experience */}
-            <div className="bg-white w-full rounded-[10px] px-4 py-1 mx-4 pb-4">
+            <div className="bg-white w-full rounded-[10px] px-4 py-1 lg:mx-4 pb-4">
               <h4 className="text-primary font-semibold text-[20px] leading-[26px] my-4 font-mono">
                 Experience
               </h4>
@@ -235,14 +235,14 @@ const ConsultantModal = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="ml-8">
+          <div className=" w-full lg:ml-8 mt-4 lg:mt-4">
             {/* Grants */}
             <div className="bg-white w-full rounded-[10px] pb-4 mb-4">
               <h4 className="text-buttonPrimary font-semibold text-[20px] leading-[26px] p-4 font-mono">
                 Secured Grants
               </h4>
 
-              <div className=" w-[450px] bg-backgroundColor mx-4 py-2 ">
+              <div className=" w-[92%] lg:w-[450px] bg-backgroundColor mx-4 py-2 ">
                 <p className="font-semibold text-sm font-mono text-buttonPrimary px-2">
                   Community Health Grants
                 </p>
@@ -270,7 +270,7 @@ const ConsultantModal = (props: Props) => {
                   </li>
                 </ul>
               </div>
-              <div className=" w-[450px] bg-backgroundColor m-4 py-2 ">
+              <div className=" w-[92%] lg:w-[450px] bg-backgroundColor m-4 py-2 ">
                 <p className="font-semibold text-sm font-mono text-buttonPrimary px-2">
                   Youth Empowerment Grant
                 </p>
@@ -298,7 +298,7 @@ const ConsultantModal = (props: Props) => {
                   </li>
                 </ul>
               </div>
-              <div className=" w-[450px] bg-backgroundColor m-4 py-2 ">
+              <div className=" w-[92%] lg:w-[450px] bg-backgroundColor m-4 py-2 ">
                 <p className="font-semibold text-sm font-mono text-buttonPrimary px-2">
                   Sustainable Agriculture Grant{" "}
                 </p>
@@ -328,7 +328,7 @@ const ConsultantModal = (props: Props) => {
               </div>
             </div>
             {/* Rating */}
-            <div className=" bg-white pl-4 rounded-[10px] w-[500px] py-2">
+            <div className=" bg-white pl-4 rounded-[10px] w-full lg:w-[500px] py-2">
               <h4 className="text-primary font-semibold text-[20px] leading-[26px] my-4 font-mono">
                 Rating & Reviews
               </h4>
@@ -346,7 +346,10 @@ const ConsultantModal = (props: Props) => {
                   <div className="pb-4 mr-4">
                     <div className="flex items-center">
                       <p className="mr-4 font-bold">5</p>
-                      <Flex vertical gap="small" style={{ width: 300 }}>
+                      <Flex
+                        vertical
+                        gap="small"
+                        className="w-[150px] lg:w-[300px]">
                         <Progress
                           strokeColor="#FFC531"
                           percent={99}
@@ -356,7 +359,10 @@ const ConsultantModal = (props: Props) => {
                     </div>
                     <div className="flex items-center">
                       <p className="mr-4 font-bold">4</p>
-                      <Flex vertical gap="small" style={{ width: 300 }}>
+                      <Flex
+                        vertical
+                        gap="small"
+                        className="w-[150px] lg:w-[300px]">
                         <Progress
                           strokeColor="#FFC531"
                           percent={50}
@@ -366,7 +372,10 @@ const ConsultantModal = (props: Props) => {
                     </div>
                     <div className="flex items-center">
                       <p className="mr-4 font-bold">3</p>
-                      <Flex vertical gap="small" style={{ width: 300 }}>
+                      <Flex
+                        vertical
+                        gap="small"
+                        className="w-[150px] lg:w-[300px]">
                         <Progress
                           strokeColor="#FFC531"
                           percent={0}
@@ -376,7 +385,10 @@ const ConsultantModal = (props: Props) => {
                     </div>
                     <div className="flex items-center">
                       <p className="mr-4 font-bold">2</p>
-                      <Flex vertical gap="small" style={{ width: 300 }}>
+                      <Flex
+                        vertical
+                        gap="small"
+                        className="w-[150px] lg:w-[300px]">
                         <Progress
                           strokeColor="#FFC531"
                           percent={0}
@@ -386,7 +398,10 @@ const ConsultantModal = (props: Props) => {
                     </div>
                     <div className="flex items-center">
                       <p className="mr-4 font-bold">1</p>
-                      <Flex vertical gap="small" style={{ width: 300 }}>
+                      <Flex
+                        vertical
+                        gap="small"
+                        className="w-[150px] lg:w-[300px]">
                         <Progress
                           strokeColor="#FFC531"
                           percent={0}
