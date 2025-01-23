@@ -23,7 +23,7 @@ const Card = (data: any) => {
 
 const PartnerCard = (data: any) => {
   return (
-    <div className="max-h-[300px] max-w-[320px] flex flex-col items-center justify-around">
+    <div className="max-h-[300px] max-w-[320px] flex flex-col items-center justify-around my-2 lg:my-0">
       <img src={data.image} alt="" />
       <p className="font-bold text-black font-mono text-center text-[16px] leading-[19px] my-4">
         {data.name}
@@ -70,7 +70,7 @@ const page = (props: Props) => {
 
       <h3 className="text-center pb-12">Benefits of Partnering with Us</h3> */}
 
-      <div className="bg-white flex items-start px-8  py-16 justify-between ">
+      <div className="bg-white flex items-center lg:items-start px-8  py-16 justify-center lg:justify-between flex-wrap ">
         {[
           {
             name: "Professional Network",
@@ -106,7 +106,7 @@ const page = (props: Props) => {
         <h3 className=" text-center font-semibold text-[24px] leading-[36px] text-secondaryColor">
           Required Qualification
         </h3>
-        <div className=" flex items-start px-8  py-16 justify-between ">
+        <div className=" flex items-center lg:items-start px-8  py-16 justify-center lg:justify-between flex-wrap ">
           {[
             {
               name: "Grant Management Expertise",

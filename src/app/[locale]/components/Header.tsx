@@ -32,6 +32,7 @@ type mobileDropDownProps = {
   option?: optionProps[];
   title: string;
   url?: string;
+  setShowHeaderMobile: (value: boolean) => void;
 };
 const DropdownMobile = (props: mobileDropDownProps) => {
   const [optionIsOpen, setOptionIsOpen] = React.useState(false);
@@ -41,6 +42,7 @@ const DropdownMobile = (props: mobileDropDownProps) => {
       className=" min-h-[50px] cursor-pointer"
       onClick={() => {
         props.url && handleNavigation(props.url);
+        props.url && props.setShowHeaderMobile(false);
       }}>
       <div className="w-full flex justify-between items-center">
         <p className="text-primary font-semibold uppercase text-[20px] leading-[24px]">
@@ -68,7 +70,11 @@ const DropdownMobile = (props: mobileDropDownProps) => {
           {props.option?.map((data) => (
             <div>
               {" "}
-              <button onClick={() => handleNavigation(data.url)}>
+              <button
+                onClick={() => {
+                  props.setShowHeaderMobile(false);
+                  handleNavigation(data.url);
+                }}>
                 <p className="font-medium font-mono text-[13px] leading-[20px] text-left text-black hover:text-secondaryColor">
                   {data.name}
                 </p>
@@ -840,7 +846,10 @@ const Header = ({}: Props) => {
           </div>
 
           <div className="p-4">
-            <DropdownMobile title="Home" />
+            <DropdownMobile
+              title="Home"
+              setShowHeaderMobile={setShowHeaderMobile}
+            />
             <DropdownMobile
               title="Grants"
               option={[
@@ -861,6 +870,7 @@ const Header = ({}: Props) => {
                   url: "/grant-application",
                 },
               ]}
+              setShowHeaderMobile={setShowHeaderMobile}
             />
 
             <DropdownMobile
@@ -887,6 +897,7 @@ const Header = ({}: Props) => {
                   url: "/consultant",
                 },
               ]}
+              setShowHeaderMobile={setShowHeaderMobile}
             />
             <DropdownMobile
               title="Pricing"
@@ -900,6 +911,7 @@ const Header = ({}: Props) => {
                   url: "/service",
                 },
               ]}
+              setShowHeaderMobile={setShowHeaderMobile}
             />
 
             <DropdownMobile
@@ -926,9 +938,13 @@ const Header = ({}: Props) => {
                   url: "/faq",
                 },
               ]}
+              setShowHeaderMobile={setShowHeaderMobile}
             />
 
-            <DropdownMobile title="Our Service" />
+            <DropdownMobile
+              title="Our Service"
+              setShowHeaderMobile={setShowHeaderMobile}
+            />
             <DropdownMobile
               title="Grantors"
               option={[
@@ -941,6 +957,7 @@ const Header = ({}: Props) => {
                   url: "/grants/list",
                 },
               ]}
+              setShowHeaderMobile={setShowHeaderMobile}
             />
           </div>
 

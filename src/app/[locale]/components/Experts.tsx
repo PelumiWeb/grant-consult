@@ -111,7 +111,7 @@ const Experts = (props: Props) => {
 
       {/* Mobile Client */}
 
-      <div className="w-full px-8">
+      <div className="block md:hidden w-full px-8">
         <div className="w-full flex justify-between items-center">
           <ImageContainer
             name="PAUL SMITH"
