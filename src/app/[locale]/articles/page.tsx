@@ -41,7 +41,7 @@ const FilterOptions = ({ text, active, setActive }: FilterType) => {
   return (
     <button
       onClick={() => setActive(text)}
-      className={`w-full h-[40px] rounded-[5px] p-2 border   mx-2 ${
+      className={`w-full sm:w-[200px] h-[40px] rounded-[5px] p-2 border  m-4  mx-2 ${
         active ? "bg-secondaryColor" : "bg-white border-borderColor"
       } flex items-center justify-center`}>
       <p
@@ -168,7 +168,7 @@ const page = (props: Props) => {
   //   );
   // };
   return (
-    <div className="bg-white px-16">
+    <div className="bg-white px-4 md:px-16">
       <div className="flex items-center w-full mt-8 pb-10">
         <p className="text-textColor"> Home </p>
         <p className="text-textColor mx-3">{">>"}</p>
@@ -188,8 +188,8 @@ const page = (props: Props) => {
         </div>
 
         {/* Filter Options */}
-        <div className="w-full flex justify-between items-center">
-          <div className="w-[70%] flex justify-between">
+        <div className="w-full flex justify-between items-center flex-wrap">
+          <div className="w-full lg:w-[70%] flex justify-between flex-wrap lg:flex-nowrap">
             {filterData.map((data: string) => (
               <FilterOptions
                 text={data}
@@ -199,7 +199,7 @@ const page = (props: Props) => {
             ))}
             {/* {FilterOptions()} */}
           </div>
-          <div className="w-[25%]">
+          <div className="w-full lg:w-[25%]">
             <LabelInput
               value=""
               placeholder="search articles by topic, keyword, or author..."
@@ -212,7 +212,7 @@ const page = (props: Props) => {
       </div>
 
       <div className="mt-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center  lg:justify-between flex-wrap">
           {articleData.map((data: ArticleData) => (
             <ArticleComponent {...data} />
           ))}
@@ -220,8 +220,8 @@ const page = (props: Props) => {
 
         <div>
           <h4 className="text-secondaryColor m-2 my-4">Latest Articles</h4>
-          <div className="w-full flex justify-between items-start">
-            <div className="flex flex-col justify-between w-[65%]">
+          <div className="w-full flex justify-between items-start flex-wrap">
+            <div className="flex flex-col justify-between w-full md:w-[55%] lg:w-[65%]">
               {latestArticleData.map((data: ArticleData) => (
                 <LatestArticleComponent {...data} />
               ))}
@@ -230,7 +230,7 @@ const page = (props: Props) => {
               </div>
             </div>
 
-            <div className="w-[30%]">
+            <div className="w-full md:w-[40%] lg:w-[30%]">
               <div className="shadow-article-shadow w-full rounded-[5px] bg-[#FFFFFF] h-[150px] p-4 my-4">
                 <p className="text-primary font-semibold text-[14px] leading-[21px]">
                   Popular Tags

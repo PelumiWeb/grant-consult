@@ -1,5 +1,6 @@
 import React from "react";
 import useHandleNavigation from "../utils/HandleNavigation";
+import Image from "next/image";
 
 type ArticleData = {
   image: string;
@@ -17,8 +18,9 @@ const ArticleComponent = (data: ArticleData) => {
     <div className="shadow-article-shadow bg-white rounded-[5px] w-[405px] h-[430px] m-2 relative">
       {/* image */}
 
-      <div className="w-full h-[175px] ">
-        <img src={data.image} className="w-full h-full object-cover" alt="" />
+      <div className="relative w-full h-[200px] ">
+        <Image src={data.image} alt="" fill style={{ objectFit: "cover" }} />
+        {/* <img src={data.image} className="w-full h-full object-cover" alt="" /> */}
       </div>
       <div className="p-4">
         {/* content */}
@@ -39,9 +41,11 @@ const ArticleComponent = (data: ArticleData) => {
           <div className="flex justify-between w-full items-center">
             {/* Left */}
             <div className="flex items-center">
-              <img src={data.authorImage} alt="" />
+              <div className="relative w-[50px] h-[50px]">
+                <Image src={data.authorImage} alt=""  fill/>
+              </div>
               <div className="ml-2">
-                <p className="text-primary leading-[14px] text-[12px] font-semibold">
+                <p className="text-primary text-[8px] leading-[10px] lg:leading-[14px] lg:text-[12px] font-semibold">
                   {data.authorName}
                 </p>
                 <p className="font-normal text-[10px] leading-[13px] text-textColor">
@@ -53,7 +57,7 @@ const ArticleComponent = (data: ArticleData) => {
             <button
               className="flex items-center "
               onClick={() => handleNavigation("/articles/1")}>
-              <p className="font-semibold text-[14px] leading-[14px] text-secondaryColor">
+              <p className="font-semibold text-[10px] leading-[10px]  md:text-[14px] md:leading-[14px] text-secondaryColor">
                 Read More
               </p>
               <img src="/arrowRight.svg" alt="" />

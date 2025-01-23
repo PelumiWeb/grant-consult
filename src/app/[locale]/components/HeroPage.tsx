@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useAppDispatch } from "../../../../lib/hooks";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
+import Image from "next/image";
 
 type Props = {};
 
@@ -34,7 +35,7 @@ const HeroPage = (props: Props) => {
                 onClick={() => {
                   handleNavigation(`/grants`);
                 }}
-                width="md:w-[170px] w-[190px]"
+                width="lg:w-[170px] w-[190px]"
                 height="h-[52px]"
                 title={t("button")}
                 radius="rounded-[5px]"
@@ -44,7 +45,7 @@ const HeroPage = (props: Props) => {
             </div>
             <div className="ml-4">
               <CustomButton
-                width="md:w-[170px] w-[200px]"
+                width="lg:w-[170px] w-[200px]"
                 height="h-[52px]"
                 backgrounColor="bg-transparent"
                 title={t("button2")}
@@ -94,43 +95,56 @@ const HeroPage = (props: Props) => {
             style={{ clipPath: "polygon(64% 0, 100% 0%, 100% 100%, 30% 100%)" }}
           />
           <div className="relative right-4 w-full h-full z-0 top-4">
-            <img
-              className=" w-full object-contain z-10"
+            <Image
+              className=" z-10"
               src="/newHeroImage.svg"
+              alt=""
+              height={100}
+              width={200}
+              objectFit="cover"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </div>
         </div>
         {/* Bottom */}
         <div className="">
-          <h1 className="w-full font-semibold text-[20px] leading-[26px] text-center   lg:w-full ">
-            {t("title")}
-          </h1>
-          <p className="w-full font-poppins text-newPrimaryTextColor font-medium leading-[23px] text-[14px] text-center">
+          <div className="w-full flex justify-center items-center ">
+            <h1 className=" font-semibold text-[20px] leading-[26px] text-center   lg:w-full ">
+              {t("title")}
+            </h1>
+            <h1 className=" font-semibold text-[20px] leading-[26px] text-center  lowercase ml-2 lg:w-full">
+              {t("title2")}
+            </h1>
+          </div>
+
+          <p className="w-full font-mono text-newPrimaryTextColor font-normal  md:font-medium leading-[23px] text-[14px] text-center px-2 lg:px-0">
             {t("content")}
           </p>
-          <div className="flex items-center justify-center w-full mt-4">
-            <div onClick={() => handleNavigation(`${locale}/grants`)}>
+          <div className="flex items-center justify-center w-full mt-4 flex-wrap ">
+            <div
+              onClick={() => handleNavigation(`${locale}/grants`)}
+              className="w-full lg:w-[134px] m-2 lg:m-0">
               <CustomButton
-                width="w-[134px]"
-                height="h-[52px]"
-                title="Available Grants"
+                width="w-full "
+                height="h-[40px] lg:h-[52px]"
+                title={t("button")}
                 radius="rounded-[5px]"
-                textStyle="text-[10px] font-semibold text-white"
+                textStyle="text-[12px] font-bold text-white leading-[14px]"
                 padding="p-0"
               />
             </div>
             <div
-              className="ml-4"
+              className="lg:ml-4 w-full lg:w-[134px] m-2 lg:m-0"
               onClick={() => {
                 handleNavigation(`/auth/signup/consultant`);
               }}>
               <CustomButton
-                width="w-[134px]"
-                height="h-[52px]"
+                width="w-full "
+                height="h-[40px] lg:h-[52px]"
                 backgrounColor="bg-transparent"
-                title="Become a consultant"
+                title={t("button2")}
                 radius="rounded-[5px]"
-                textStyle="text-[10px] font-semibold text-primary"
+                textStyle="text-[12px] font-bold text-primary leading-[14px]"
                 borderWidth="border-[2px]"
                 borderColor="border-primary"
                 padding="p-0"

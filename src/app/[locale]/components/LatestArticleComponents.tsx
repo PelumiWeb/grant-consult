@@ -1,5 +1,6 @@
 import React from "react";
 import useHandleNavigation from "../utils/HandleNavigation";
+import Image from "next/image";
 
 type Props = {};
 
@@ -17,11 +18,20 @@ type ArticleData = {
 const LatestArticleComponent = (data: ArticleData) => {
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="shadow-article-shadow bg-white rounded-[5px] full h-[220px] m-2 flex items-center justify-between p-4">
+    <div className="shadow-article-shadow bg-white rounded-[5px] full h-[220px] m-2 flex items-center justify-between  lg:p-4 ">
       {/* image */}
 
       <div className="w-[226px] h-[130px] ">
-        <img src={data.image} className="w-full h-full object-cover" alt="" />
+        <Image
+          src={data.image}
+          alt=""
+          width={226}
+          height={130}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
+        />
       </div>
       <div className="ml-8">
         {/* content */}
@@ -37,15 +47,18 @@ const LatestArticleComponent = (data: ArticleData) => {
             {data.content}
           </p>
 
-          <div className="flex justify-between items-center h-[40px] mt-6">
+          <div className=" w-fullflex justify-between items-center h-[40px] mt-6">
             {/* Left */}
-            <div className="flex items-center">
-              <img src={data.authorImage} alt="" />
+            <div className="w-full flex items-center">
+              {/* <img src={data.authorImage} alt="" /> */}
+              <div className="relative w-[50px] h-[50px] ">
+                <Image src={data.authorImage} fill alt="" />
+              </div>
               <div className="ml-2">
-                <p className="text-primary leading-[14px] text-[12px] font-semibold">
+                <p className="text-primary leading-[10px] lg:leading-[14px]  text-[8px] lg:text-[12px] font-semibold">
                   {data.authorName}
                 </p>
-                <p className="font-normal text-[10px] leading-[13px] text-textColor">
+                <p className="font-normal text-[9px] lg:text-[10px] leading-[10px] lg:leading-[13px] text-textColor">
                   {data.dateCreated}
                 </p>
               </div>
@@ -54,7 +67,7 @@ const LatestArticleComponent = (data: ArticleData) => {
             <button
               className="flex items-center "
               onClick={() => handleNavigation("/articles/1")}>
-              <p className="font-semibold text-[14px] leading-[14px] text-secondaryColor">
+              <p className="font-semibold text-[10px] lg:text-[14px] leading-[10px] lg:leading-[14px] text-secondaryColor">
                 Read More
               </p>
               <img src="/arrowRight.svg" alt="" />
