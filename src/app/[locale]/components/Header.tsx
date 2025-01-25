@@ -44,7 +44,11 @@ const DropdownMobile = (props: mobileDropDownProps) => {
         props.url && handleNavigation(props.url);
         props.url && props.setShowHeaderMobile(false);
       }}>
-      <div className="w-full flex justify-between items-center">
+      <button
+        className="w-full flex justify-between items-center"
+        onClick={() => {
+          props.option && setOptionIsOpen((prev) => !prev);
+        }}>
         <p className="text-primary font-semibold uppercase text-[20px] leading-[24px]">
           {props.title}
         </p>
@@ -54,17 +58,17 @@ const DropdownMobile = (props: mobileDropDownProps) => {
             {!optionIsOpen ? (
               <DownOutlined
                 style={{ fontSize: 20, color: "#111111" }}
-                onClick={() => setOptionIsOpen((prev) => !prev)}
+                // onClick={() => setOptionIsOpen((prev) => !prev)}
               />
             ) : (
               <UpOutlined
                 style={{ fontSize: 20, color: "#111111" }}
-                onClick={() => setOptionIsOpen((prev) => !prev)}
+                // onClick={() => setOptionIsOpen((prev) => !prev)}
               />
             )}
           </div>
         )}
-      </div>
+      </button>
       {optionIsOpen && (
         <div className="mb-4">
           {props.option?.map((data) => (
@@ -484,7 +488,7 @@ const Header = ({}: Props) => {
   ];
 
   return (
-    <div className=" w-full px-4 md:px-0 relative z-10">
+    <div className=" w-full px-4 md:px-0 relative z-10 mb-[20px] lg:mb-0">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => handleNavigation(`/`)}>
@@ -503,7 +507,13 @@ const Header = ({}: Props) => {
             placeholder="Search Site Content"
           />
           <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
-            <img src="/searchgrant.svg" className="w-[20px]" />
+            <Image
+              src="/searchgrant.svg"
+              className="w-[20px]"
+              width={20}
+              height={20}
+              alt="search grant"
+            />
           </div>
         </div>
         {/* Avatar */}
@@ -514,7 +524,7 @@ const Header = ({}: Props) => {
               <button
                 className="block lg:hidden"
                 onClick={() => setShowHeaderMobile(true)}>
-                <img src="/hamburger.svg" alt="" />
+                <Image src="/hamburger.svg" width={30} height={30} alt="" />
               </button>
               <div className="mr-2 hidden lg:block">
                 <CustomButton
@@ -557,7 +567,7 @@ const Header = ({}: Props) => {
               <button
                 className="block lg:hidden"
                 onClick={() => setShowHeaderMobile(true)}>
-                <img src="/hamburger.svg" alt="" />
+                <Image src="/hamburger.svg" width={30} height={30} alt="" />
               </button>
 
               <div className=" hidden lg:flex items-center cursor-pointer">
@@ -693,8 +703,20 @@ const Header = ({}: Props) => {
             placeholder="Search Site Content"
           />
           <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
-            <img src="/searchgrant.svg" className="hidden  lg:block w-[20px]" />
-            <img src="/filterOption.svg" className="block lg:hidden w-[20px]" />
+            <Image
+              src="/searchgrant.svg"
+              className="hidden  lg:block w-[20px]"
+              width={20}
+              height={20}
+              alt=""
+            />
+            <Image
+              src="/filterOption.svg"
+              className="block lg:hidden w-[20px]"
+              width={20}
+              height={20}
+              alt=""
+            />
           </div>
         </div>
         <div className="hidden bg-primary w-full lg:flex items-center justify-between py-4 px-16">
@@ -848,6 +870,7 @@ const Header = ({}: Props) => {
           <div className="p-4">
             <DropdownMobile
               title="Home"
+              url="/"
               setShowHeaderMobile={setShowHeaderMobile}
             />
             <DropdownMobile
@@ -944,6 +967,7 @@ const Header = ({}: Props) => {
             <DropdownMobile
               title="Our Service"
               setShowHeaderMobile={setShowHeaderMobile}
+              url="/service/services"
             />
             <DropdownMobile
               title="Grantors"

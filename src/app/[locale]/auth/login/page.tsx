@@ -71,7 +71,7 @@ const Login = (props: Props) => {
   };
 
   return (
-    <div className="py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
+    <div className="py-8 md:py-32 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Login</h3>
 
       <form className="mt-8 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -114,7 +114,7 @@ const Login = (props: Props) => {
           )}
         />
 
-        <div className="flex justify-between  items-center w-[85%] ">
+        <div className="flex justify-between  items-center w-full md:w-[85%] ">
           <div className="flex items-center">
             <Checkbox />
             <p className="underline text-secondaryColor text-sm ml-2 ">
@@ -150,7 +150,7 @@ const Login = (props: Props) => {
         </div>
       </form>
 
-      <div className="w-[640px] -ml-20">
+      <div className="w-full md:w-[640px] md:-ml-20">
         <p className="text-sm underline text-center mt-4 ">
           Don't have an account?{" "}
           <span

@@ -12,7 +12,7 @@ export default function Home() {
     <div className="w-full px-4 lg:px-16 h-full">
       {/*  */}
       <div className="w-full h-full">
-        <div className=" py-16">
+        <div className=" py-4 md:py-16">
           <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
             Choose Your Subscription Plan
           </h1>

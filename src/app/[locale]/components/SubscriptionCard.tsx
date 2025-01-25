@@ -19,9 +19,9 @@ type Cardprops = {
 const SubscriptionCard = (data: Cardprops) => {
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="  bg-white mt-4 w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[450px] md:h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative ">
+    <div className="  bg-white mt-4 w-full sm:w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-[350px] md:h-[400px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 relative ">
       {data.popular && (
-        <div className="absolute -top-4 left-[35px]">
+        <div className="absolute -top-4 left-[35%] md:left-[35px]">
           <CustomButton
             backgrounColor="bg-secondaryColor"
             radius="rounded-[18px]"
@@ -44,14 +44,14 @@ const SubscriptionCard = (data: Cardprops) => {
       <p className="text-[13px] leading-[16px] text-textColor text-center">
         {data.days}
       </p>
-      <ul className="mt-2">
+      <ul className="mt-2 h-full">
         {data.list?.map((data: string) => (
-          <li className="flex items-center justify-around w-full j-full">
+          <li className="flex items-center justify-berween w-full">
             {/* list */}
-            <div className="w-[20%]">
+            <div className="w-[15%]">
               <img src="/check.svg" alt="" className="w-[12px] h-[12px]" />
             </div>
-            <p className="font-medium text-[11px] leading-[16px] text-textColor w-[80%]">
+            <p className="font-medium text-[11px] leading-[16px] text-textColor w-[85%]">
               {data}
             </p>
           </li>

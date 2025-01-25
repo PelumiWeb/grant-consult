@@ -96,7 +96,7 @@ const Consultant = (props: Props) => {
   };
 
   return (
-    <div className="py-2 px-8 flex flex-col items-center justify-center mb-[5%]">
+    <div className="p-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Sign up Consultant</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -321,8 +321,8 @@ const Consultant = (props: Props) => {
         </div>
       </form>
       <div className="w-full flex justify-center items-center">
-        <p className="text-sm py-2 mx-16">
-          Already hanve an account
+        <p className="text-sm text-center py-2 mx-4  md:mx-16">
+          Already have an account
           <button onClick={() => handleNavigation("/auth/login")}>
             <span className="underline text-secondaryColor ml-1">
               Click to login
@@ -332,7 +332,7 @@ const Consultant = (props: Props) => {
       </div>
 
       <div className="w-full">
-        <p className="text-sm py-2 mx-16">
+        <p className="text-sm text-center py-2 mx-4  md:mx-16">
           By creating an account, you agree to Grantsconsult {" "}
           <span className="underline text-secondaryColor">
             Terms of Use, Privacy Policy

@@ -78,7 +78,7 @@ const GeneralSignup = (props: Props) => {
   };
 
   return (
-    <div className="pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
+    <div className="pt-8 md:pt-16 px-8 flex flex-col items-center justify-center mb-[5%]">
       <h3 className="w-full">Signup</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -179,7 +179,7 @@ const GeneralSignup = (props: Props) => {
           )}
         />
 
-        <div className="flex justify-between  items-center w-[85%] ">
+        <div className="flex justify-between  items-center w-full  md:w-[85%] ">
           <div className="flex items-center">
             <Checkbox />
             <p className="underline text-secondaryColor text-sm ml-2 ">
@@ -214,7 +214,7 @@ const GeneralSignup = (props: Props) => {
         </div>
       </form>
       <div className="w-full flex justify-center items-center">
-        <p className="text-sm py-2 mx-16">
+        <p className="text-sm py-2 mx-4 md:mx-16">
           Already hanve an account
           <button onClick={() => handleNavigation("/auth/login")}>
             <span className="underline text-secondaryColor ml-1">
@@ -225,7 +225,7 @@ const GeneralSignup = (props: Props) => {
       </div>
 
       <div className="w-full">
-        <p className="text-sm py-2 mx-16">
+        <p className="text-sm py-2 mx-4 md:mx-16">
           By creating an account, you agree to Grantsconsult {" "}
           <span className="underline text-secondaryColor">
             Terms of Use, Privacy Policy

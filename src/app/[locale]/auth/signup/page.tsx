@@ -28,7 +28,7 @@ type User = any;
 const Signup = (props: Props) => {
   const dispatch = useAppDispatch();
   const handleNavigation = useHandleNavigation();
-    const userType: UserType = [
+  const userType: UserType = [
     {
       name: "(NGO, corporate, Individual)",
       id: 1,
@@ -36,9 +36,8 @@ const Signup = (props: Props) => {
     },
     { name: "Consultant", id: 2, url: "/auth/signup/consultant" },
     { name: "Grantor(Donor)", id: 3, url: "/auth/signup/grantor" },
-  ]; //  
+  ]; //
   const [url, seturl] = React.useState(userType[0].url);
-
 
   //       email: "john.doe@example.com",
   //       usertype: "GENERAL_USER",
@@ -53,12 +52,12 @@ const Signup = (props: Props) => {
   // }, []);
 
   return (
-    <div className="relative h-full lg:h-screen px-4">
+    <div className="relative h-screen lg:h-screen px-4">
       <h2 className="w-full py-6  pl-4 text-base lg:text-3xl">Sign up</h2>
       {/*  */}
       <div>
-        <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-          <h3 className="w-full ml-16 text-base lg:text-2xl">
+        <div className="h-full flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full -mt-[20%] md:-mt-[0]">
+          <h3 className="w-full pl-8 text-base lg:text-2xl">
             Select User Type
           </h3>
 
@@ -67,7 +66,7 @@ const Signup = (props: Props) => {
               <div
                 key={data.id}
                 onClick={() => seturl(data.url)}
-                className={`flex h-[179px] sm:h-[220px] lg:h-[300px] w-[119px] sm:w-[170px] lg:w-[200px] rounded-[10px] border  border-borderColor hover:shadow-custom-green justify-center ${
+                className={`flex h-[179px] sm:h-[220px] lg:h-[300px] w-[119px] sm:w-[170px] lg:w-[200px] rounded-[10px] border m-[2px]  lg:m-0 border-borderColor hover:shadow-custom-green justify-center ${
                   data.url === url &&
                   "border-secondaryColor shadow-custom-green "
                 } hover:border-secondaryColor  cursor-pointer`}>
@@ -81,7 +80,7 @@ const Signup = (props: Props) => {
           </div>
         </div>
 
-        <div className="absolute bottom-[10%] w-full flex items-center justify-center">
+        <div className="absolute bottom-[30%]  md:bottom-[10%] w-full flex items-center justify-center">
           <CustomButton
             onClick={() => handleNavigation(url)}
             title="Continue"
