@@ -12,10 +12,10 @@ import useHandleNavigation from "../../utils/HandleNavigation";
 import { grantsData } from "../../utils/constants/grants";
 import { useAppDispatch } from "../../../../../lib/hooks";
 import { setActiveConsultantType } from "../../../../../lib/features/Consultant/consultantSlice";
-
+import { ClientCategory } from "../../utils/constants/clientCategory";
 
 export default function Home() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const countriesData = React.useMemo(() => {
     const data = countryData?.map((data) => ({
       label: data.name,
@@ -25,13 +25,14 @@ export default function Home() {
     return data;
   }, []);
 
-  const handleChange = (value:string) => {
-    dispatch(setActiveConsultantType({
-      selectedConsultantTypes: value
-    }))
-    console.log(value, "This is the value")
-
-  }
+  const handleChange = (value: string) => {
+    dispatch(
+      setActiveConsultantType({
+        selectedConsultantTypes: value,
+      })
+    );
+    console.log(value, "This is the value");
+  };
 
   const consultationType = React.useMemo(() => {
     const data = grantsData?.map((data) => ({
@@ -96,15 +97,14 @@ export default function Home() {
                 placeholder="Select Consultation Type"
                 select
                 options={consultationType}
-                handleChange={handleChange
-
-              }
+                handleChange={handleChange}
               />
               <LabelInput
                 label={"Select Client Category"}
                 value=""
                 required={true}
                 placeholder="Select Client Category"
+                options={ClientCategory}
                 select
               />
             </div>

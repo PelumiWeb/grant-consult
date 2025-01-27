@@ -1,0 +1,1 @@
+export const ClientCategory = [{label: "NGO", value: "NGO"}, {label: "Individual", value: "Individual"}, {label: "Organisation", value: "Organisation"}]
