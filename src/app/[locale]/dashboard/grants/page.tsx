@@ -20,7 +20,7 @@ const Grant = (props: Props) => {
   const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  React.useCallback(() => {
+  React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

@@ -17,7 +17,9 @@ const DashboardHeader = (props: Props) => {
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
   const { user } = useAppSelector((state) => state.user);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  console.log(isScrolled && isScrolled, "This is scrolled");
 
   return (
     <div

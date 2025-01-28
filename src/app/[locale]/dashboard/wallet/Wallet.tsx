@@ -140,7 +140,7 @@ const Wallet = (props: Props) => {
       ),
     },
   ];
-  React.useCallback(() => {
+  React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

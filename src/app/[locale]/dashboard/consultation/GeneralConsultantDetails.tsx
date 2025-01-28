@@ -33,7 +33,7 @@ const GeneralConsultantDetails = (props: Props) => {
   const dashboardRoutes = useAppSelector((state) => state.dashboard);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   
-  React.useCallback(() => {
+  React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;

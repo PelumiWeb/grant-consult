@@ -318,7 +318,7 @@ const MyGrants = (props: Props) => {
   ];
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  React.useCallback(() => {
+  React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) return;
