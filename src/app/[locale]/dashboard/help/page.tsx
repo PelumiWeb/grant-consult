@@ -53,16 +53,16 @@ const HelpSupport = (props: Props) => {
           How can we help you today?
         </h2>
 
-        <div className="w-full flex justify-between items-center px-16">
+        <div className="w-full flex justify-center lg:justify-between items-center px-8 lg:px-16 flex-wrap lg:flex-nowrap">
           <img src="/contactt.svg" alt="" />
           <img src="/dev.svg" alt="" />
           <img src="/blog.svg" alt="" />
         </div>
 
-        <div className="mt-8 flex items-start">
+        <div className="mt-8 flex flex-col-reverse lg:flex-row items-start">
           {/* Left */}
-          <div className="w-[35%]">
-            <div className="mt-4">
+          <div className="w-full md:w-[35%]">
+            <div className="mt-4 w-full">
               <p className="text-[20px] leading-[26px] font-extrabold text-primary mb-6">
                 Quick Access Links
               </p>
@@ -86,7 +86,7 @@ const HelpSupport = (props: Props) => {
                 Quisque a a ante, at volutpat enim.
               </p>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 w-full">
               <p className="text-[20px] leading-[26px] font-extrabold text-primary mb-6">
                 Knowledge Based
               </p>
@@ -138,7 +138,7 @@ const HelpSupport = (props: Props) => {
             </div>
           </div>
           {/* Right */}
-          <div className="w-[65%]">
+          <div className="w-full md:w-[65%]">
             <div className="bg-white px-8 py-4">
               <p className="text-[20px] leading-[26px] font-extrabold text-primary mb-6">
                 Common Questions

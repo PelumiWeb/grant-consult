@@ -1,19 +1,21 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {
+  DoNotshowButton?: boolean;
+};
 
 const DashboardGrantCard = (props: Props) => {
   return (
-    <div className="shadow-grant-card-dashboard w-[500px] h-[205px] flex justify-between bg-white  py-4 px-2 rounded-[5px] m-4">
-      <div className="w-[125px] h-[125px] flex justify-center items-center mt-4 ml-2">
+    <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[205px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-2 rounded-[5px] my-2  md:my-4">
+      <div className="w-full md:w-[125px] h-[250px] md:h-[125px] flex justify-center items-center mt-4 ml-0 md:ml-2 mr-0 md:mr-2 ">
         <img
           src="/grantFrame.svg"
-          className="w-full h-full object-contain"
+          className="w-[95%] h-full object-cover  md:object-contain rounded-[10px] md:rounded-none"
           alt=""
         />
       </div>
 
-      <div>
+      <div className="p-3 md:p-0">
         <p className="text-[12.48px] leading-[16.23px] font-semibold mb-4">
           Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
         </p>
@@ -66,16 +68,18 @@ const DashboardGrantCard = (props: Props) => {
             United States African Development Foundation
           </p>
         </div>
-        <div className="flex justify-end mt-6">
-          <button className="">
-            <p className="text-[8.81px] leading-[10.4px] font-bold text-secondaryColor underline">
-              View Details
-            </p>
-          </button>
-        </div>
+        {!props.DoNotshowButton && (
+          <div className="flex justify-center  md:justify-end mt-6">
+            <button className="">
+              <p className="text-[12px] md:text-[8.81px] leading-[10.4px] font-bold text-secondaryColor underline">
+                View Details
+              </p>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
-export default DashboardGrantCard
+export default DashboardGrantCard;

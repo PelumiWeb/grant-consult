@@ -49,7 +49,7 @@ const Settings = (props: Props) => {
     return (
       <div
         onClick={data.onClick}
-        className={`w-[516px] py-4 flex justify-between items-center ${
+        className={`w-full md:w-[516px] py-4 flex justify-between items-center ${
           data.border && "border-b-[0.5px] border-b-borderColor "
         }`}>
         <div className="w-full">
@@ -81,7 +81,7 @@ const Settings = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div className="w-full bg-white px-4 py-4 mt-8">
@@ -120,7 +120,7 @@ const Settings = (props: Props) => {
         <h4 className="font-semibold text-[20px] leading-[26px]">
           Availability
         </h4>
-        <div className="flex justify-between items-start w-[516px]  mt-4">
+        <div className="flex justify-between items-start w-full lg:w-[516px]  mt-4">
           <div>
             <p className="my-2">Monday - Friday: 10:00 AM - 4:00 PM</p>
             <p>Saturdays: By appointment only</p>

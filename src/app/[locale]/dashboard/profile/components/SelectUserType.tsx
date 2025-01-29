@@ -16,7 +16,7 @@ const SelectUserType = (props: Props) => {
           placeholder="Select user type"
           value=""
           height="h-[50px]"
-          width="w-[444px]"
+          width="w-full lg:w-[444px]"
           options={[
             { label: "Individual", value: "Individual" },
             { label: "NGO", value: "NGO" },

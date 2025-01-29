@@ -121,7 +121,7 @@ const EditProfile = (props: Props) => {
         </div>
         <CustomButton
           title="Save"
-          width="w-[123px]"
+          width="w-full md:w-[123px]"
           height="h-[60px]"
           backgrounColor="bg-primary"
         />

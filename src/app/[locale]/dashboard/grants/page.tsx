@@ -40,7 +40,7 @@ const Grant = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
 
@@ -50,14 +50,14 @@ const Grant = (props: Props) => {
         <p className="text-textColor">Grants </p>
       </div>
 
-      <div className="flex justify-between items-center py-4">
-        <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">
+      <div className="flex flex-col lg:flex-row justify-between items-center py-4">
+        <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] w-full ">
           Recommended Grants For You
         </h3>
-        <div className="flex justify-between ">
-          <div className="mr-4">
+        <div className="flex flex-col lg:flex-row justify-between w-full lg:w-[50%] ">
+          <div className=" m-1 mr-0 lg:mr-4 w-full">
             <CustomButton
-              width="w-[170.21px]"
+              width="w-full lg:w-[170.21px]"
               height="h-[35px]"
               title="Available Grants"
               radius="rounded-[5px]"
@@ -65,16 +65,18 @@ const Grant = (props: Props) => {
             />
           </div>
 
-          <CustomButton
-            width="w-[200.21px]"
-            height="h-[30px]"
-            title="Request for consultant"
-            radius="rounded-[5px]"
-            backgrounColor="bg-transparent"
-            borderColor="border-buttonPrimary"
-            textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
-            borderWidth="border-[2px]"
-          />
+          <div className="m-1 w-full">
+            <CustomButton
+              width="w-full lg:w-[200.21px]"
+              height="h-[30px]"
+              title="Request for consultant"
+              radius="rounded-[5px]"
+              backgrounColor="bg-transparent"
+              borderColor="border-buttonPrimary"
+              textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
+              borderWidth="border-[2px]"
+            />
+          </div>
         </div>
       </div>
 

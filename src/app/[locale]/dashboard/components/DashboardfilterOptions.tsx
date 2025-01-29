@@ -6,59 +6,59 @@ import CustomButton from "@/app/[locale]/components/CustomButton";
 type Props = {};
 
 const DashboardfilterOptions = (props: Props) => {
-  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-  };
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {};
   return (
     <div
       className="w-full bg-white flex items-center justify-between
       px-4
       mt-4
-      h-[80px]
+      h-full md:h-[200px] lg:h-[80px]
       rounded-[5px]
+      flex-wrap lg:flex-nowrap
     ">
       <LabelInput
         placeholder="Grant title"
-        width={"w-[130px]"}
+        width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
       />
-      <DatePicker onChange={onChange} height={35} className="h-[35px]" />
+      <DatePicker onChange={onChange} height={35} className="w-full lg:w-[130px] h-[35px]" />
       <LabelInput
         placeholder="Client Name"
-        width={"w-[130px]"}
+        width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
       />
       <LabelInput
         placeholder="Deadline"
-        width={"w-[130px]"}
+        width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
         select
       />
       <LabelInput
         placeholder="Status"
-        width={"w-[130px]"}
+        width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
         select
       />
       <LabelInput
         placeholder="Category"
-        width={"w-[130px]"}
+        width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
         select
       />
       <CustomButton
         height="h-[35px]"
-        width="w-[76px]"
+        width="w-full lg:w-[76px]"
         title="Filter"
         backgrounColor="bg-primary"
       />
       <CustomButton
         height="h-[35px]"
-        width="w-[76px]"
+        width="w-full lg:w-[76px]"
         title="Reset"
         backgrounColor="bg-white"
         borderColor="bg-secondaryColor"

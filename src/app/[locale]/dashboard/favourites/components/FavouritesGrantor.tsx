@@ -4,6 +4,7 @@ import DashboardHeader from "../../components/DashboardHeader";
 import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch } from "../../../../../../lib/hooks";
 import DashboardGrantCard from "../../components/DashboardGrantCard";
+import LabelInput from "@/app/[locale]/components/LabelInput";
 
 type Props = {};
 type filterDataProps = string[];
@@ -74,12 +75,29 @@ const FavouritesGrants = (props: Props) => {
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Featured Article</p>
         </div>
+        <div>
+          <LabelInput
+            value=""
+            label="Favourite Options"
+            placeholder="Grants"
+            required
+            select
+            width="w-full"
+            options={[
+              { value: "Grants", label: "Grant (4)" },
+              { value: "Consultants", label: "Consultants (4)" },
+              { value: "Feautured Articles", label: "Feautured Articles (3)" },
+              { value: "Training Videos", label: "Training Videos (4)" },
+              { value: "Courses", label: "Courses (4)" },
+            ]}
+          />
+        </div>
 
         <div className="bg-white p-8 w-full">
           <h3>My Favourites</h3>
 
           <div>
-            <div className="w-full flex justify-between">
+            <div className="hidden w-full lg:flex justify-between">
               {filterData.map((data: string) => (
                 <FilterOptions
                   text={data}
@@ -88,9 +106,10 @@ const FavouritesGrants = (props: Props) => {
                 />
               ))}
             </div>
+
             <div className="flex flex-wrap justify-between">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
-                <DashboardGrantCard />
+                <DashboardGrantCard DoNotshowButton />
               ))}
             </div>
           </div>
