@@ -188,10 +188,10 @@ const Consultation = (props: Props) => {
         <DashboardfilterOptions />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
-      <div className="bg-white mt-4">
-        <div className="bg-backgroundColor m-4">
+      <div className="bg-white mt-4 py-8">
+        <div className="bg-backgroundColor m-4  h-full">
           <div className=" m-4 p-4 h-[110px]">
-            <h4>Your Upcoming Consultations</h4>
+            <h4 className=" ">Your Upcoming Consultations</h4>
             <p className="text-textColor text-[16px] leading-[20px] text-sm mt-4">
               “You have 3 upcoming consultations this week”{" "}
             </p>
@@ -217,36 +217,42 @@ const Consultation = (props: Props) => {
               Location <span className="text-textColor">Online Zoom</span>
             </p>
           </div>
-          <div className=" w-[50%] flex items-center  justify-between ml-8 py-4">
-            <CustomButton
-              width="w-[190px]"
-              height="h-[40px]"
-              IconLeft="/calendarNew.svg"
-              title="View Calendar"
-              backgrounColor="bg-buttonPrimary"
-              radius="rounded-[5px]"
-              textStyle="font-semibold text-white"
-            />
-            <CustomButton
-              width="w-[190px]"
-              height="h-[40px]"
-              IconLeft="/video.svg"
-              title="Join Meeting"
-              backgrounColor="bg-secondaryColor"
-              radius="rounded-[5px]"
-              textStyle="font-semibold text-white"
-            />
-            <CustomButton
-              width="w-[125px]"
-              height="h-[40px]"
-              title="Reschedule"
-              backgrounColor="bg-white"
-              textStyle="text-buttonPrimary"
-              borderColor="border-buttonPrimary"
-              radius="rounded-[5px]"
-            />
+          <div className="w-full lg:w-[50%] px-4 lg:px-0 flex items-center justify-center lg:justify-between ml-0 lg:ml-8  py-4 flex-col lg:flex-row">
+            <div className="w-full m-2">
+              <CustomButton
+                width="w-full lg:w-[190px]"
+                height="h-[40px]"
+                IconLeft="/calendarNew.svg"
+                title="View Calendar"
+                backgrounColor="bg-buttonPrimary"
+                radius="rounded-[5px]"
+                textStyle="font-semibold text-white"
+              />
+            </div>
+            <div className="w-full m-2">
+              <CustomButton
+                width="w-full lg:w-[190px]"
+                height="h-[40px]"
+                IconLeft="/video.svg"
+                title="Join Meeting"
+                backgrounColor="bg-secondaryColor"
+                radius="rounded-[5px]"
+                textStyle="font-semibold text-white"
+              />
+            </div>
+            <div className="w-full m-2">
+              <CustomButton
+                width="w-full lg:w-[125px]"
+                height="h-[40px]"
+                title="Reschedule"
+                backgrounColor="bg-white"
+                textStyle="text-buttonPrimary"
+                borderColor="border-buttonPrimary"
+                radius="rounded-[5px]"
+              />
+            </div>
           </div>
-          <div className="ml-8 my-4">
+          <div className="ml-8 my-4 w-[70%]">
             <h4>Upcoming List Preview</h4>
             <p className="font-semibold text-black text-[16px] leading-[32px] my-2">
               Grant Proposal Review –
@@ -259,30 +265,35 @@ const Consultation = (props: Props) => {
             </p>
           </div>
 
-          <div className="flex items-center justify-between w-[55%] my-8 ml-8">
-            <CustomButton
-              width="w-[226px]"
-              height="h-[40px]"
-              title="View All Consultations"
-              backgrounColor="bg-buttonPrimary"
-              radius="rounded-[5px]"
-            />
-
-            <CustomButton
-              onClick={() => {
-                dispatch(
-                  setActiveRoute({
-                    ...dashboardRoute,
-                    consultation: dashboardRouteName.performanceMetrics,
-                  })
-                );
-              }}
-              width="w-[300px]"
-              height="h-[40px]"
-              title="View Your Performance Metrics"
-              backgrounColor="bg-secondaryColor"
-              radius="rounded-[5px]"
-            />
+          <div className="flex items-center justify-between w-full lg:w-[55%] my-8 ml-0 px-4 lg:px-0 lg:ml-8 flex-col lg:flex-row">
+            <div className="w-full m-2">
+              <CustomButton
+                width="w-full lg:w-[226px]"
+                height="h-[40px]"
+                title="View All Consultations"
+                backgrounColor="bg-buttonPrimary"
+                radius="rounded-[5px]"
+                textStyle="text-white text-sm lg:text-base font-semibold "
+              />
+            </div>
+            <div className="w-full m-2">
+              <CustomButton
+                onClick={() => {
+                  dispatch(
+                    setActiveRoute({
+                      ...dashboardRoute,
+                      consultation: dashboardRouteName.performanceMetrics,
+                    })
+                  );
+                }}
+                width="w-full lg:w-[300px]"
+                height="h-[40px]"
+                title="View Your Performance Metrics"
+                backgrounColor="bg-secondaryColor"
+                radius="rounded-[5px]"
+                textStyle="text-white text-sm lg:text-base font-semibold "
+              />
+            </div>
           </div>
         </div>
       </div>

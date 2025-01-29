@@ -85,7 +85,7 @@ const PerformanceMetric = (props: Props) => {
 
   const HeaderChart = (data: HeaderChartProps) => {
     return (
-      <div className="flex flex-col justify-between w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px]">
+      <div className="flex flex-col justify-between w-[200px] md:w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px] m-2 lg:m-0">
         <div className="w-[40px] h-[40px]">
           <img
             src={data?.data?.image}
@@ -115,7 +115,7 @@ const PerformanceMetric = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[580px] mt-8">
+        <div className="flex items-center w-full lg:w-[580px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Consultation </p>
@@ -133,13 +133,13 @@ const PerformanceMetric = (props: Props) => {
         </div>
       </div>
       {/* Charts */}
-      <div className="flex items-center justify-between">
-        <div className="flex justify-between w-[65%]">
+      <div className="flex items-center justify-between flex-col lg:flex-row py-4">
+        <div className="flex justify-between w-full lg:w-[65%] flex-wrap md:flex-nowrap">
           {Chartdata.map((data) => (
             <HeaderChart data={data} />
           ))}
         </div>
-        <div className="bg-white w-[340px] h-[210px] shadow-graphchart px-4 flex flex-col items-center justify-center">
+        <div className="bg-white w-full md:w-[340px] h-[210px] shadow-graphchart px-4 flex flex-col items-center justify-center m-2 lg:m-0">
           <div className="flex items-center justify-between w-full mt-1">
             <p className="font-semibold text-[10px] leading-[13px]">
               Total Cancelled Consultation
@@ -160,8 +160,8 @@ const PerformanceMetric = (props: Props) => {
         <BarchartComponent />
       </div>
       {/* Key metric and insights */}
-      <div className="flex justify-between w-full items-center">
-        <div className="w-[520px] h-[170px] rounded-[5px]  bg-white shadow-graphchart p-4">
+      <div className="flex justify-between w-full items-center flex-col md:flex-row">
+        <div className="w-full md:w-[520px] h-[170px] rounded-[5px]  bg-white shadow-graphchart p-4 m-2">
           <h4 className="font-semibold text-[20px] leading-[26px]">
             Key Metric
           </h4>
@@ -176,7 +176,7 @@ const PerformanceMetric = (props: Props) => {
             Declined Consultations: 25{" "}
           </p>
         </div>
-        <div className="w-[520px] h-[170px] rounded-[5px]  bg-white shadow-graphchart p-4">
+        <div className="w-full md:w-[520px] h-[170px] rounded-[5px]  bg-white shadow-graphchart p-4 m-2">
           <h4 className="font-semibold text-[20px] leading-[26px]">Insights</h4>
           <p className="leading-[31px] text-[14px]">
             High activity observed in March with a 30% spike.
@@ -191,12 +191,30 @@ const PerformanceMetric = (props: Props) => {
       {/* Filter Data */}
       <div className="w-full bg-white p-4 shadow-graphchart mt-4">
         <h4 className="font-semibold text-[20px] leading-[26px]">Filters</h4>
-        <div className="flex w-full items-center justify-between">
-          <LabelInput select placeholder="Select Month" value="" />
-          <LabelInput select value="" placeholder="Completion Rate" />
-          <LabelInput select placeholder="Consultation Type" value="" />
+        <div className="flex w-full items-center justify-between flex-col lg:flex-row">
+          <LabelInput
+            select
+            placeholder="Select Month"
+            value=""
+            width="w-full"
+            mr="lg:mr-1"
+          />
+          <LabelInput
+            select
+            value=""
+            placeholder="Completion Rate"
+            width="w-full"
+            mr="lg:mr-1"
+          />
+          <LabelInput
+            select
+            placeholder="Consultation Type"
+            value=""
+            width="w-full"
+            mr="lg:mr-1"
+          />
           <CustomButton
-            width="w-[120px]"
+            width="w-full md:w-[120px]"
             height="h-[40px]"
             radius="rounded-[5px]"
             backgrounColor="bg-primary"

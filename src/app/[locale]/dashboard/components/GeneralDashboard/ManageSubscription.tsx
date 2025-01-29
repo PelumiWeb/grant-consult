@@ -57,7 +57,7 @@ const ManageSubscription = (props: Props) => {
           Manage Subscription{" "}
         </h3>
         <div className="hidden lg:flex justify-between  ">
-          <div className="mr-4">
+          <div className="mr-4 flex w-full items-center justify-between">
             <CustomButton
               width="w-[170.21px]"
               height="h-[35px]"
@@ -66,7 +66,7 @@ const ManageSubscription = (props: Props) => {
               textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
             />
 
-            <div>
+            <div className="ml-4">
               <CustomButton
                 width="w-[200.21px]"
                 height="h-[30px]"
@@ -214,7 +214,7 @@ const ManageSubscription = (props: Props) => {
             </button>
           </div>
 
-          <div className="hidden lg:block w-full">
+          <div className="hidden lg:block w-full lg:w-[75%]">
             <div className="border-b border-b-borderColor  flex justify-between">
               {["Plan", "Date", "Amount", "Payment Method", "Status"].map(
                 (data) => (
@@ -378,7 +378,7 @@ const ManageSubscription = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between lg:items-center p-4 bg-white my-4 h-full">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-start p-4 bg-white my-4 h-full lg:h-[300px]">
         <div className="flex flex-col justify-start h-[190px]">
           <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary mb-8">
             Manage Payment Methods

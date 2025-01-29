@@ -72,10 +72,10 @@ const ConsultationDetails = (props: Props) => {
             </p>
           </div>
           {/* Status */}
-          <div className="mt-4 flex items-center w-full justify-between">
+          <div className="mt-4 flex items-center w-full justify-between flex-col md:flex-row">
             {/* Left */}
-            <div className="flex items-center">
-              <div className="w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
+            <div className="flex justify-between items-center w-full md:w-[40%]">
+              <div className=" w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
                 <p className="font-semibold text-sm">Status : Ongoing 🟢</p>
               </div>
               {/* Update Status */}
@@ -88,7 +88,7 @@ const ConsultationDetails = (props: Props) => {
               />
             </div>
             {/* Right */}
-            <div className="flex items-center  ">
+            <div className="flex items-center justify-between md:justify-end  w-full">
               <div className="mr-4">
                 <CustomButton
                   width="w-[190px]"
@@ -137,7 +137,7 @@ const ConsultationDetails = (props: Props) => {
                 </span>
               </p>
               {/* Component 1 */}
-              <div className="w-[30%] flex items-center justify-between mt-4">
+              <div className="w-full sm:w-[70%] md:w-[40%] flex items-center justify-between mt-4">
                 <CustomButton
                   width="w-[150px]"
                   height="h-[40px]"
@@ -232,115 +232,95 @@ const ConsultationDetails = (props: Props) => {
                   </p>
                 </li>
               </ul> */}
-              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
-                <img src="/folder.svg" alt="" />
-                <p className="font-semibold text-primary text-[16px] leading-[19px]">
-                  Grant Proposal Template (PDF)
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  Uploaded By Alice Brooklyn
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  17.07.2024
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  8:34 AM
-                </p>
+              {[1, 2, 3, 4, 5].map((data) => (
+                <div className="hidden lg:flex items-center w-full py-4 justify-between border-b border-b-borderColor">
+                  <img src="/folder.svg" alt="" />
+                  <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                    Grant Proposal Template (PDF)
+                  </p>
+                  <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                    Uploaded By Alice Brooklyn
+                  </p>
+                  <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                    17.07.2024
+                  </p>
+                  <p className="font-medium text-[12px] leading-[17px] text-textColor">
+                    8:34 AM
+                  </p>
 
-                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
-                  Download
-                </p>
-                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
-                  Delete
-                </p>
-              </div>
-              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
-                <img src="/folder.svg" alt="" />
-                <p className="font-semibold text-primary text-[16px] leading-[19px]">
-                  Grant Proposal Template (PDF)
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  Uploaded By Alice Brooklyn
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  17.07.2024
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  8:34 AM
-                </p>
+                  <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
+                    Download
+                  </p>
+                  <p className="font-bold text-[13px] leading-[20px] text-errorColor">
+                    Delete
+                  </p>
+                </div>
+              ))}
+              <div className="mt-4 flex lg:hidden flex-col justify-center items-center w-full">
+                {[1, 2, 3, 4, 5].map((data) => (
+                  <div className="p-0 my-2 w-full">
+                    <div className="flex items-center my-2">
+                      <div className="w-[24px] h-[24px]">
+                        <img
+                          src="/folder.svg"
+                          className="w-full h-full object-cover"
+                          alt=""
+                        />
+                      </div>
 
-                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
-                  Download
-                </p>
-                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
-                  Delete
-                </p>
-              </div>
-              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
-                <img src="/folder.svg" alt="" />
-                <p className="font-semibold text-primary text-[16px] leading-[19px]">
-                  Grant Proposal Template (PDF)
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  Uploaded By Alice Brooklyn
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  17.07.2024
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  8:34 AM
-                </p>
+                      <p className="font-semibold text-primary text-[16px] leading-[19px]">
+                        Grant Proposal Template (PDF)
+                      </p>
+                    </div>
+                    <div className="flex items-center py-1">
+                      <p className="text-primaryBlack font-semibold text-[16px] leading-[28px] ">
+                        Updated:
+                      </p>
+                      <p className="text-textColor font-semibold text-[16px] leading-[28px] ml-2 ">
+                        By Alice Brooklyn
+                      </p>
+                    </div>
+                    <div className="flex items-center py-1">
+                      <p className="text-primaryBlack font-semibold text-[16px] leading-[28px] ">
+                        Date:
+                      </p>
+                      <p className="text-textColor font-semibold text-[16px] leading-[28px] ml-2 ">
+                        17.07.2024
+                      </p>
+                    </div>
+                    <div className="flex items-center py-1">
+                      <p className="text-primaryBlack font-semibold text-[16px] leading-[28px] ">
+                        Time:
+                      </p>
+                      <p className="text-textColor font-semibold text-[16px] leading-[28px] ml-2">
+                        8:34pm
+                      </p>
+                    </div>
 
-                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
-                  Download
-                </p>
-                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
-                  Delete
-                </p>
-              </div>
-              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
-                <img src="/folder.svg" alt="" />
-                <p className="font-semibold text-primary text-[16px] leading-[19px]">
-                  Grant Proposal Template (PDF)
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  Uploaded By Alice Brooklyn
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  17.07.2024
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  8:34 AM
-                </p>
-
-                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
-                  Download
-                </p>
-                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
-                  Delete
-                </p>
-              </div>
-              <div className="flex items-center w-full py-4 justify-between border-b border-b-borderColor">
-                <img src="/folder.svg" alt="" />
-                <p className="font-semibold text-primary text-[16px] leading-[19px]">
-                  Grant Proposal Template (PDF)
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  Uploaded By Alice Brooklyn
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  17.07.2024
-                </p>
-                <p className="font-medium text-[12px] leading-[17px] text-textColor">
-                  8:34 AM
-                </p>
-
-                <p className="font-bold text-[13px] leading-[20px] text-secondaryColor">
-                  Download
-                </p>
-                <p className="font-bold text-[13px] leading-[20px] text-errorColor">
-                  Delete
-                </p>
+                    <div className="w-full">
+                      <CustomButton
+                        width="w-full"
+                        radius="rounded-[5px]"
+                        height="h-[40px]"
+                        title="Download"
+                        backgrounColor="bg-secondaryColor"
+                        textStyle="font-inter font-bold text-[16px] leading-[16px] text-center text-white"
+                      />
+                      <div className="mt-2">
+                        <CustomButton
+                          width="w-full"
+                          height="h-[40px]"
+                          title="Delete"
+                          backgrounColor="bg-white"
+                          textStyle="font-inter font-bold text-[16px] leading-[16px] text-center text-errorColor"
+                          borderColor="border-errorColor"
+                          borderWidth="border"
+                          radius="rounded-[5px]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             {/* Component 4 */}
