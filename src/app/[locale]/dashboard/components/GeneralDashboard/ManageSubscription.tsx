@@ -41,7 +41,7 @@ const ManageSubscription = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 lg:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
@@ -52,11 +52,11 @@ const ManageSubscription = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center py-4">
+      <div className="flex justify-between items-center py-4 flex-wrap">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">
           Manage Subscription{" "}
         </h3>
-        <div className="flex justify-between ">
+        <div className="hidden lg:flex justify-between  ">
           <div className="mr-4">
             <CustomButton
               width="w-[170.21px]"
@@ -65,29 +65,31 @@ const ManageSubscription = (props: Props) => {
               radius="rounded-[5px]"
               textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
             />
-          </div>
 
-          <CustomButton
-            width="w-[200.21px]"
-            height="h-[30px]"
-            title="Request for consultant"
-            radius="rounded-[5px]"
-            backgrounColor="bg-transparent"
-            borderColor="border-buttonPrimary"
-            textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
-            borderWidth="border-[2px]"
-          />
+            <div>
+              <CustomButton
+                width="w-[200.21px]"
+                height="h-[30px]"
+                title="Request for consultant"
+                radius="rounded-[5px]"
+                backgrounColor="bg-transparent"
+                borderColor="border-buttonPrimary"
+                textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
+                borderWidth="border-[2px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-subscriptionBackground w-full h-[238px] rounded-[5px] grid place-items-center px-4">
-        <div className="bg-white h-[204px] w-full p-4 flex justify-between items-center">
-          <div>
-            <div className="flex ">
+      <div className="bg-subscriptionBackground w-full  h-[550px] lg:h-[238px] rounded-[5px] grid place-items-center px-4  my-4">
+        <div className="bg-white h-[480px] lg:h-[204px] w-full p-4 flex justify-center lg:justify-between items-center flex-wrap lg:flex-nowrap">
+          <div className="w-full">
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center my-2 lg:my-0">
               <h4 className="font-semibold text-[20px] leading-[26px] mr-2">
                 Current Plan:{" "}
               </h4>
-              <h4 className="ont-semibold text-[20px] leading-[26px] text-secondaryColor ">
+              <h4 className="font-semibold text-[20px] leading-[26px] text-secondaryColor ">
                 $100 / Monthly{" "}
               </h4>
             </div>
@@ -109,8 +111,8 @@ const ManageSubscription = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="w-[529px] h-[137px] bg-subscriptionBackground rounded-[5px] p-4 flex flex-col justify-between">
-            <div className="flex justify-between items-center">
+          <div className=" w-[529px] h-[137px] bg-subscriptionBackground rounded-[5px] p-4 hidden lg:flex flex-col justify-between">
+            <div className=" ">
               <div className="flex items-center">
                 <p className="text-black text-[16px] leading-[18.88px] mr-2 font-semibold">
                   Subscription Status:
@@ -119,7 +121,7 @@ const ManageSubscription = (props: Props) => {
                   Active
                 </p>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center my-2">
                 <p className="font-bold text-[15px] leading-[17.1px] text-[#003399] mr-2">
                   Auto-Renew
                 </p>
@@ -152,27 +154,67 @@ const ManageSubscription = (props: Props) => {
               </button>
             </div>
           </div>
+          <div className=" bg-subscriptionBackground rounded-[5px] p-4 flex lg:hidden flex-col justify-between items-center w-full h-[200px]">
+            <div className="flex items-center">
+              <p className="text-black text-[16px] leading-[18.88px] mr-2 font-semibold">
+                Subscription Status:
+              </p>
+              <p className="text-secondaryColor text-[16px] leading-[18.88px] font-semibold ">
+                Active
+              </p>
+            </div>
+            <div>
+              <p className="font-mono font-semibold text-[14px] leading-[22px] text-textColor">
+                Renewal Date: November 7, 2024
+              </p>
+            </div>
+            <button>
+              <p className="underline text-[#007AFF] mr-4">Upgrade Plan</p>
+            </button>
+            <button
+              onClick={() =>
+                dispatch(
+                  openModal({
+                    open: true,
+                    modalType: modalName.warning,
+                    modalContent:
+                      "Are you sure you want to cancel your subscription? You can subscribe again",
+                  })
+                )
+              }>
+              <p className="text-textColor text-[14px] leading-[21.96px] underline">
+                Cancel Subscription
+              </p>
+            </button>
+
+            <div className="flex justify-center items-center w-full">
+              <p className="font-bold text-[15px] leading-[17.1px] text-[#003399] mr-2">
+                Auto-Renew
+              </p>
+              <Switch />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-white p-4 h-[204px] w-full">
+      <div className="bg-white p-4  h-[650px] lg:h-[204px] w-full ">
         <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary ">
           Payment History
         </h4>
-        <div className="flex justify-between items-start">
-          <div className="flex flex-col h-[150px] w-[25%] justify-around">
+        <div className="flex flex-col lg:flex-row justify-between items-start">
+          <div className="flex flex-col h-[150px] w-[70%] lg:w-[25%] justify-around">
             <p className="text-textColor font-medium text-[14px] leading-[28px]">
               Here, you can view all your past payment history both successful
               and declined ones{" "}
             </p>
-            <button>
+            <button className="-mt-8 lg:mt-0">
               <p className="underline font-semibold text-secondaryColor text-[16px] leading-[18.88px] w-full text-left">
                 View More
               </p>
             </button>
           </div>
 
-          <div>
+          <div className="hidden lg:block w-full">
             <div className="border-b border-b-borderColor  flex justify-between">
               {["Plan", "Date", "Amount", "Payment Method", "Status"].map(
                 (data) => (
@@ -221,20 +263,132 @@ const ManageSubscription = (props: Props) => {
               </div>
             </div>
           </div>
+          <div className="block lg:hidden w-full h-full ">
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Plan:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Monthly
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Date:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                12/11/2021
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Amount:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                $100
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Payment method:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Visa ****1234
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Status
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Paid
+              </p>
+            </div>
+            <div className="mt-4">
+              <CustomButton
+                width="w-full"
+                title="Download"
+                height="h-[40px]"
+                backgrounColor="bg-secondaryColor"
+                textStyle="text-white font-bold text-[16px] leading-[16px] text-center"
+              />
+            </div>
+          </div>
+          <div className="block lg:hidden w-full h-full mt-4">
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Plan:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Monthly
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Date:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                12/11/2021
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Amount:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                $100
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Payment method:
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Visa ****1234
+              </p>
+            </div>
+            <div className="w-full flex items-center  justify-between my-2">
+              <p className="font-medium text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Status
+              </p>
+
+              <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+                Paid
+              </p>
+            </div>
+            <div className="mt-4 w-full h-full">
+              <CustomButton
+                width="w-full"
+                title="Download"
+                height="h-[40px]"
+                backgrounColor="bg-secondaryColor"
+                textStyle="text-white font-bold text-[16px] leading-[16px] text-center"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="flex justify-between items-center p-4 bg-white my-4">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center p-4 bg-white my-4 h-full">
         <div className="flex flex-col justify-start h-[190px]">
           <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary mb-8">
             Manage Payment Methods
           </h4>
           <div>
-            <div className="flex justify-between">
-              <p className="font-mono text-[14px] leading-[30.8px] text-textColor">
+            <div className="flex flex-col lg:flex-row justify-between   lg:items-center">
+              <p className="font-mono text-[14px font-semibold  leading-[30.8px] text-textColor">
                 1. Visa ****1234{" "}
               </p>
-              <div className="flex items-center">
+              <div className="flex flex-col lg:flex-row items-center">
                 <button
                   onClick={() =>
                     dispatch(
@@ -246,7 +400,8 @@ const ManageSubscription = (props: Props) => {
                         from: "cancel-subscription",
                       })
                     )
-                  }>
+                  }
+                  className="border border-errorColor lg:border-none w-full rounded-[5px] m-2">
                   <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
                     Remove
                   </p>
@@ -259,18 +414,19 @@ const ManageSubscription = (props: Props) => {
                         modalType: modalName.editCardModal,
                       })
                     )
-                  }>
+                  }
+                  className="border border-buttonPrimary lg:border-none w-full rounded-[5px] m-2">
                   <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
                     Edit
                   </p>
                 </button>
               </div>
             </div>
-            <div className="flex justify-between">
-              <p className="font-mono text-[14px] leading-[30.8px] text-textColor">
+            <div className="flex flex-col lg:flex-row justify-between lg:items-center">
+              <p className="font-mono text-[14px font-semibold  leading-[30.8px] text-textColor">
                 2. Mastercard ****5678
               </p>
-              <div className="flex items-center">
+              <div className="flex flex-col lg:flex-row items-center">
                 <button
                   onClick={() =>
                     dispatch(
@@ -279,14 +435,15 @@ const ManageSubscription = (props: Props) => {
                         modalType: modalName.warning,
                         modalContent:
                           "Are you sure you want to delete this Card? You can not undo this action",
+                        from: "cancel-subscription",
                       })
                     )
-                  }>
+                  }
+                  className="border border-errorColor lg:border-none w-full rounded-[5px] m-2">
                   <p className="font-semibold text-errorColor text-[14px] leading-[30.8px] mr-2">
                     Remove
                   </p>
                 </button>
-
                 <button
                   onClick={() =>
                     dispatch(
@@ -295,7 +452,8 @@ const ManageSubscription = (props: Props) => {
                         modalType: modalName.editCardModal,
                       })
                     )
-                  }>
+                  }
+                  className="border border-buttonPrimary lg:border-none w-full rounded-[5px] m-2">
                   <p className="font-semibold text-buttonPrimary text-[14px] leading-[30.8px]">
                     Edit
                   </p>
@@ -308,7 +466,7 @@ const ManageSubscription = (props: Props) => {
           <p className="text-textColor py-1 font-bold text-[16px] leading-[19px]">
             Add New Card
           </p>
-          <div className="w-[530px] h-[170px]  rounded-[6.11px] border border-borderColor ">
+          <div className="w-full lg:w-[530px] h-[170px]  rounded-[6.11px] border border-borderColor ">
             {/* Top */}
             <div className="flex items-center border-b border-b-borderColor justify-between py-1 ">
               <div className="h-[54.81px] w-full cursor-pointer px-4">
@@ -355,16 +513,16 @@ const ManageSubscription = (props: Props) => {
 
       <div className=" p-4 bg-white my-4">
         <h4 className="font-mono font-semibold text-[20px] leading-[26px] text-primary mb-8">
-          Notifications & Alert
+          Payment History
         </h4>
 
-        <div className="flex justify-between items-center w-[30%] py-2">
+        <div className="flex justify-between items-center w-full md:w-[30%] py-2">
           <p className="font-medium text-[14px] leading-[30.8px] text-textColor">
             Enable Renewal Reminder
           </p>
           <Switch size="small" />
         </div>
-        <div className="flex justify-between items-center w-[30%]">
+        <div className="flex justify-between items-center w-full md:w-[30%]">
           <p className="font-medium text-[14px] leading-[30.8px] text-textColor">
             Notify on Payment Failures
           </p>

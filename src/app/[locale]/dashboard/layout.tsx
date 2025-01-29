@@ -54,7 +54,7 @@ export default function DashboardLayout({
                   <ScaleLoader color="rgb(54, 215, 183)" />
                 </div>
               }>
-              <div className="w-[80%] h-full ">{children}</div>
+              <div className="w-full lg:w-[80%] h-full ">{children}</div>
             </Suspense>
           </div>
           {/* Footer */}

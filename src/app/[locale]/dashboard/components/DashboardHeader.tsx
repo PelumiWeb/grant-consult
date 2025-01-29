@@ -19,19 +19,17 @@ const DashboardHeader = (props: Props) => {
   const { user } = useAppSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  console.log(isScrolled && isScrolled, "This is scrolled");
-
   return (
     <div
       className={`${
         isScrolled &&
         "bg-white border-b-borderColor border-b-[.5px] h-[100px] z-30 px-2"
-      } flex items-center justify-between sticky -top-10  transition-all`}>
-      <div className="w-[40%]" onClick={() => handleNavigation(`/`)}>
+      } h-[50px] md:h-[100px]  flex items-center justify-between sticky -top-10  transition-all`}>
+      <div className="w-[30%]" onClick={() => handleNavigation(`/`)}>
         <img src="/grantLogo.svg" />
       </div>
 
-      <div className="w-[60%] flex items-center justify-between">
+      <div className="hidden  md:flex  w-[70%] items-center justify-between">
         {/* Input */}
         <div className="flex items-center h-[40px] w-[234px]">
           <Input
@@ -182,6 +180,9 @@ const DashboardHeader = (props: Props) => {
 
         {/* <div className="w-[75px] h-[30px] rounded-[3.75px] bg-white border-[0.3px] border-borderColor"></div> */}
       </div>
+      <button className="block md:hidden relative w-[20px] h-[20px]">
+        <Image src={"/hamburger.svg"} alt="" fill />
+      </button>
     </div>
   );
 };
