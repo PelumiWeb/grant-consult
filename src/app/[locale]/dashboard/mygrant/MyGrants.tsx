@@ -341,8 +341,8 @@ const MyGrants = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
 
-      <div className="flex justify-between items-center py-4 mt-8">
-        <div className="h-[60px] flex items-center justify-between w-[350px]">
+      <div className="flex justify-between items-center py-4 mt-8 flex-col md:flex-row">
+        <div className="h-[60px] flex items-center md:justify-between w-full md:w-[350px]">
           {/* Image */}
           <div className="w-[60px] h-[60px] rounded-full ">
             <img
@@ -360,10 +360,10 @@ const MyGrants = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between ">
-          <div className="mr-4">
+        <div className="flex justify-between flex-col md:flex-row w-full md:w-[40%]">
+          <div className="mr-4 w-full my-2">
             <CustomButton
-              width="w-[170.21px]"
+              width="w-full md:w-[170.21px]"
               height="h-[35px]"
               title="List a New Grant"
               radius="rounded-[5px]"
@@ -371,38 +371,40 @@ const MyGrants = (props: Props) => {
             />
           </div>
 
-          <CustomButton
-            // onClick={() => {
-            //   console.log("ypppp")
-            //   dispatch(
-            //     setActiveRoute({
-            //       ...dashboardRoutes,
-            //       consultation: dashboardRouteName.generalConsultationDetails,
-            //     })
-            //   );
-            // }}
+          <div className="w-full my-2">
+            <CustomButton
+              // onClick={() => {
+              //   console.log("ypppp")
+              //   dispatch(
+              //     setActiveRoute({
+              //       ...dashboardRoutes,
+              //       consultation: dashboardRouteName.generalConsultationDetails,
+              //     })
+              //   );
+              // }}
 
-            onClick={() => {
-              dispatch(
-                setActiveRoute({
-                  ...dashboardRoutes,
-                  mygrant: dashboardRouteName.allGrants,
-                })
-              );
-            }}
-            width="w-[200.21px]"
-            height="h-[30px]"
-            title="View all Grant"
-            radius="rounded-[5px]"
-            backgrounColor="bg-transparent"
-            borderColor="border-secondaryColor"
-            textStyle="text-secondaryColor font-semibold text-[12px] leading-[17px] "
-            borderWidth="border-[2px]"
-          />
+              onClick={() => {
+                dispatch(
+                  setActiveRoute({
+                    ...dashboardRoutes,
+                    mygrant: dashboardRouteName.allGrants,
+                  })
+                );
+              }}
+              width="w-full md:w-[200.21px]"
+              height="h-[30px]"
+              title="View all Grant"
+              radius="rounded-[5px]"
+              backgrounColor="bg-transparent"
+              borderColor="border-secondaryColor"
+              textStyle="text-secondaryColor font-semibold text-[12px] leading-[17px] "
+              borderWidth="border-[2px]"
+            />
+          </div>
         </div>
       </div>
-      <div className="flex justify-between items-center my-4">
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+      <div className="flex justify-between items-center my-4 flex-col md:flex-row">
+        <div className="w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-errorColor font-bold text-[16px] leading-[18.88px] font-mono">
               Total Grants:{" "}
@@ -412,7 +414,7 @@ const MyGrants = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className="my-1 md:m-0 w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] font-mono">
               Active Grants:{" "}
@@ -423,7 +425,7 @@ const MyGrants = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className=" my-1 md:m-0  w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-[#6E6E6E] font-bold text-[16px] leading-[18.88px] font-mono">
               Expired Grants:{" "}
@@ -434,7 +436,7 @@ const MyGrants = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className="my-1 md:m-0  w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] font-mono">
               Saved Drafts:{" "}

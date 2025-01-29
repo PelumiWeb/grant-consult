@@ -22,7 +22,11 @@ const DashboardfilterOptions = (props: Props) => {
         value=""
         height="h-[35px]"
       />
-      <DatePicker onChange={onChange} height={35} className="w-full lg:w-[130px] h-[35px]" />
+      <DatePicker
+        onChange={onChange}
+        height={35}
+        className="w-full lg:w-[130px] h-[35px]"
+      />
       <LabelInput
         placeholder="Client Name"
         width={"w-full md:w-[130px]"}
@@ -56,14 +60,16 @@ const DashboardfilterOptions = (props: Props) => {
         title="Filter"
         backgrounColor="bg-primary"
       />
-      <CustomButton
-        height="h-[35px]"
-        width="w-full lg:w-[76px]"
-        title="Reset"
-        backgrounColor="bg-white"
-        borderColor="bg-secondaryColor"
-        textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
-      />
+      <div className="my-2 md:my-0 w-full">
+        <CustomButton
+          height="h-[35px]"
+          width="w-full lg:w-[76px]"
+          title="Reset"
+          backgrounColor="bg-white"
+          borderColor="bg-secondaryColor"
+          textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
+        />
+      </div>
     </div>
   );
 };

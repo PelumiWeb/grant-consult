@@ -20,7 +20,7 @@ const EditProfile = (props: Props) => {
           placeholder="Williams Smith / ABC NGO"
           label="Name/Organization Name"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
         />
@@ -28,7 +28,7 @@ const EditProfile = (props: Props) => {
           placeholder="alicebrooklyn@gmail.com"
           label="Email Address"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
         />
@@ -37,7 +37,7 @@ const EditProfile = (props: Props) => {
           placeholder="+31 890 783 456"
           label="Phone Number"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
         />
@@ -45,7 +45,7 @@ const EditProfile = (props: Props) => {
           placeholder="United States"
           label="Country/Region"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
           select
@@ -55,7 +55,7 @@ const EditProfile = (props: Props) => {
           placeholder="Gender"
           label="Gender"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
           select
@@ -64,7 +64,7 @@ const EditProfile = (props: Props) => {
           <p className="text-sm text-[#000000]">Date of Birth</p>
           <DatePicker
             placeholder="DD/MM/YYYY"
-            className="w-[444px] h-[55px] placeholder:text-[#000000]"
+            className="w-full md:w-[444px] h-[55px] placeholder:text-[#000000]"
           />
         </div>
 
@@ -72,7 +72,7 @@ const EditProfile = (props: Props) => {
           placeholder=" e.g Teacher"
           label="Occupation"
           value=""
-          width="w-[444px]"
+          width="w-full md:w-[444px]"
           height="h-[55px]"
           required
           select
@@ -83,7 +83,7 @@ const EditProfile = (props: Props) => {
             <p className="text-sm font-normal text-errorColor ml-1">*</p>
           </div>
 
-          <div className="border-[0.5px] border-borderColor  w-[444px] rounded-[5px] mb-8">
+          <div className="border-[0.5px] border-borderColor  w-full md:w-[444px] rounded-[5px] mb-8">
             <div className="flex justify-between items-center p-4">
               <p className="font-mono text-sm text-textColor">Education</p>
               <Checkbox />
