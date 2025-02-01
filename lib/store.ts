@@ -16,7 +16,7 @@ import { consultantSlice } from './features/Consultant/consultantSlice';
 const persistConfig = {
   key: 'root', // Key for storage
   storage, // Define where to store the data
-  blacklist: ["tab", "scrolled"], // List of
+  blacklist: ["tab", "scrolled", "consultant", "scrolled", "counter", "modal" , "dashboard"], // List of
 };
 
 const rootReducer = {

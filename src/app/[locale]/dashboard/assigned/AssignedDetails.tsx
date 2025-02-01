@@ -22,7 +22,6 @@ const AssignedDetails = (props: Props) => {
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
-  
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
@@ -46,15 +45,15 @@ const AssignedDetails = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[580px] mt-8">
-          <p className="text-textColor"> Dashboard </p>
-          <p className="text-textColor mx-3">{">>"}</p>
-          <p className="text-textColor">Assigned Grants </p>
-          <p className="text-textColor mx-3">{">>"}</p>
-          <p>Community Health Initiative</p>
+        <div className="flex items-center w-full  mt-8 flex-col md:flex-row">
+          <p className="text-textColor text-sm md:text-lg"> Dashboard </p>
+          <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
+          <p className="text-textColor text-sm md:text-lg">Assigned Grants </p>
+          <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
+          <p className="text-sm md:text-lg">Community Health Initiative</p>
         </div>
 
-        <div className="w-full flex justify-end ">
+        <div className="w-full flex justify-center md:justify-end mt-4 md:mt-0">
           <CustomButton
             borderWidth="border-[1px]"
             width="w-[228px]"
@@ -70,15 +69,15 @@ const AssignedDetails = (props: Props) => {
         <div>
           {/* Header */}
           <div className="w-full bg-grantColor h-[43px] mt-4">
-            <p className="text-white p-2 font-semibold text-[20px] leading-[26px]">
+            <p className="text-white p-2 font-semibold text-[14px] md:text-[20px] leading-[18px] md:leading-[26px] text-center md:text-left">
               Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
             </p>
           </div>
           {/* Status */}
-          <div className="mt-4 flex items-center w-full justify-between">
+          <div className="mt-4 flex items-center w-full justify-center md:justify-between flex-col md:flex-row">
             {/* Left */}
-            <div className="flex items-center">
-              <div className="w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
+            <div className="flex items-center w-full md:w-[40%] flex-col md:flex-row">
+              <div className="w-full md:w-[250px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center md:mr-4">
                 <p className="font-semibold text-sm">Status : Ongoing 🟢</p>
               </div>
               {/* Update Status */}
@@ -86,15 +85,15 @@ const AssignedDetails = (props: Props) => {
                 placeholder="Update Status"
                 value=""
                 select
-                width="w-[173px]"
+                width="w-full md:w-[173px]"
                 height=" h-[50px]"
               />
             </div>
             {/* Right */}
-            <div className="flex items-center  ">
-              <div className="mr-4">
+            <div className="flex items-center  w-full md:w-[40%] flex-col md:flex-row">
+              <div className="mr-0 md:mr-4 w-full mb-4 md:mb-0">
                 <CustomButton
-                  width="w-[190px]"
+                  width="w-full md:w-[190px]"
                   height="h-[40px]"
                   title="Mark as completeed"
                   backgrounColor="bg-buttonPrimary"
@@ -111,7 +110,7 @@ const AssignedDetails = (props: Props) => {
                     })
                   );
                 }}
-                width="w-[190px]"
+                width="w-full md:w-[190px]"
                 height="h-[40px]"
                 title="Request Extension"
                 backgrounColor="bg-secondaryColor"
@@ -127,7 +126,7 @@ const AssignedDetails = (props: Props) => {
 
           {/* Grant contents */}
           <div className="ml-4">
-            <div className="w-[700px]">
+            <div className="w-full md:w-[700px]">
               <p className="font-bold leading-[24px] text-[16px]">
                 Grant Objectives
               </p>
@@ -137,7 +136,7 @@ const AssignedDetails = (props: Props) => {
                 diseases, and capacity building for local health workers.
               </p>
             </div>
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4 ">
               <p className="font-bold leading-[24px] text-[16px]">
                 Use of Funds
               </p>
@@ -162,7 +161,7 @@ const AssignedDetails = (props: Props) => {
                 </li>
               </ul>
             </div>
-            <div className="w-[700px] mt-4 ">
+            <div className="w-full md:w-[700px] mt-4 ">
               <p className="font-bold leading-[24px] text-[16px]">
                 Additional Notes
               </p>
@@ -172,7 +171,7 @@ const AssignedDetails = (props: Props) => {
               </p>
             </div>
 
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4">
               <p className="font-bold leading-[24px] text-[16px]">
                 Eligibility Criteria:
               </p>
@@ -197,7 +196,7 @@ const AssignedDetails = (props: Props) => {
               </ul>
             </div>
 
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4">
               <p className="font-bold leading-[24px] text-[16px]">
                 Application Guildelines
               </p>
@@ -230,7 +229,7 @@ const AssignedDetails = (props: Props) => {
               </ul>
             </div>
 
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4">
               <p className="font-bold leading-[24px] text-[16px]">
                 Required Document
               </p>
@@ -260,7 +259,7 @@ const AssignedDetails = (props: Props) => {
 
             <p className="mt-12 text-buttonPrimary">[Apply Here]</p>
 
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4">
               <p className="font-bold leading-[24px] text-[16px]">
                 Contact Information
               </p>
@@ -288,7 +287,7 @@ const AssignedDetails = (props: Props) => {
               </ul>
             </div>
 
-            <div className="w-[700px] mt-4">
+            <div className="w-full md:w-[700px] mt-4">
               <p className="font-bold leading-[24px] text-[16px]">
                 Key Dates and Milestones
               </p>

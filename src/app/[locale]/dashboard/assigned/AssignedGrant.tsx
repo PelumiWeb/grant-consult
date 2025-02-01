@@ -6,6 +6,7 @@ import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
+import MobileCustomTable from "../../components/MobileCustomTable";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -98,7 +99,234 @@ const dataSource = [
 const AssignedGrant = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
+  const dataSourceMobile = [
+    {
+      "Grant Title": { value: "Clean Water Project" },
+      "Assigned Date": { value: "Youth Education Program" },
+      "client Name": { value: "Future Leaders Org" },
+      dealine: { value: "Nov 10, 2024 (13 days)" },
+      status: { value: "In Review 🟡" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Clean Water Project" },
+      "Assigned Date": { value: "Youth Education Program" },
+      "client Name": { value: "Future Leaders Org" },
+      dealine: { value: "Nov 10, 2024 (13 days)" },
+      status: { value: "In Review 🟡" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
 
+    {
+      "Grant Title": { value: "Clean Water Project" },
+      "Assigned Date": { value: "Youth Education Program" },
+      "client Name": { value: "Future Leaders Org" },
+      dealine: { value: "Nov 10, 2024 (13 days)" },
+      status: { value: "In Review 🟡" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Clean Water Project" },
+      "Assigned Date": { value: "Oct 18, 2024" },
+      "client Name": { value: "Aqua Solutions Inc" },
+      dealine: { value: "Nov 18, 2024 (13 days)" },
+      status: { value: "Urgent🔴" },
+      Category: { value: "Environment" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Women Empowerment Program" },
+      "Assigned Date": { value: "Oct 21, 2024" },
+      "client Name": { value: "EmpowerHer Foundation" },
+      dealine: { value: "Nov 18, 2024 (13 days)" },
+      status: { value: "Ongoing 🟢" },
+      Category: { value: "Social Development" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Small Business Startup Grants " },
+      "Assigned Date": { value: "Oct 25, 2024" },
+      "client Name": { value: "BizGrowth Partners" },
+      dealine: { value: "Nov 20, 2024 (9 days)" },
+      status: { value: "In Review 🟡" },
+      Category: { value: "Business" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Agricultural Funding Program" },
+      "Assigned Date": { value: "Oct 23, 2024" },
+      "client Name": { value: "Farmer's Uniion Global" },
+      dealine: { value: "Nov 12, 2024 (9 days)" },
+      status: { value: "In Review 🟡" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "Urban Development Initiative" },
+      "Assigned Date": { value: "Urban Development Initiative" },
+      "client Name": { value: "Scholars Netowrk" },
+      dealine: { value: "Nov 10, 2024 (7 days)" },
+      status: { value: "Ongoing" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Grant Title": { value: "International Scholarship Fund" },
+      "Assigned Date": { value: "Oct 30, 2024" },
+      "client Name": { value: "Scholars Netowrk" },
+      dealine: { value: "Nov 10, 2024 (7 days)" },
+      status: { value: "Ongoing" },
+      Category: { value: "Education" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+    },
+  ];
   const columns = [
     {
       title: "Grant Title",
@@ -215,6 +443,9 @@ const AssignedGrant = (props: Props) => {
         <DashboardfilterOptions />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
+      {dataSourceMobile.map((data) => (
+        <MobileCustomTable data={data} />
+      ))}
       <div className="flex items-center cursor-pointer">
         <img src="/arrowLeft.svg" alt="" />
         <p className="text-secondaryColor ml-2">Return to Dashboard</p>

@@ -39,11 +39,11 @@ const ConsultationDetails = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[580px] mt-8">
+        <div className="flex items-center w-full md:w-[580px] mt-8 flex-col md:flex-row mb-4 md:mb-0">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Consultation </p>
@@ -51,7 +51,7 @@ const ConsultationDetails = (props: Props) => {
           <p>Strategic Funding Advisory</p>
         </div>
 
-        <div className="w-full flex justify-end ">
+        <div className="w-full flex justify-center md:justify-end ">
           <CustomButton
             borderWidth="border-[1px]"
             width="w-[228px]"
@@ -74,8 +74,8 @@ const ConsultationDetails = (props: Props) => {
           {/* Status */}
           <div className="mt-4 flex items-center w-full justify-between flex-col md:flex-row">
             {/* Left */}
-            <div className="flex justify-between items-center w-full md:w-[40%]">
-              <div className=" w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
+            <div className="flex justify-between items-center w-full md:w-[40%] flex-col md:flex-row">
+              <div className=" w-full md:w-[173px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center mr-4">
                 <p className="font-semibold text-sm">Status : Ongoing 🟢</p>
               </div>
               {/* Update Status */}
@@ -88,12 +88,12 @@ const ConsultationDetails = (props: Props) => {
               />
             </div>
             {/* Right */}
-            <div className="flex items-center justify-between md:justify-end  w-full">
-              <div className="mr-4">
+            <div className="flex items-center justify-center md:ustify-between md:justify-end  w-full md:w-[40%] flex-col md:flex-row">
+              <div className="mr-0 md:mr-4 w-full mb-4 md:mb-0 ">
                 <CustomButton
-                  width="w-[190px]"
+                  width="w-full md:w-[190px]"
                   height="h-[40px]"
-                  title="Mark as completeed"
+                  title="Mark as completed"
                   backgrounColor="bg-buttonPrimary"
                   textStyle="text-white font-semibold text-[14px] leading-[22px] text-center"
                 />
@@ -108,11 +108,11 @@ const ConsultationDetails = (props: Props) => {
                     })
                   );
                 }}
-                width="w-[230px]"
+                width="w-full md:w-[350px]"
                 height="h-[40px]"
                 title="Reschedule Consultation"
                 backgrounColor="bg-secondaryColor"
-                textStyle="text-white font-semibold text-[14px] leading-[22px] text-center"
+                textStyle="text-white font-semibold text-[12px] leading-[16px] text-center"
               />
             </div>
           </div>
@@ -215,7 +215,7 @@ const ConsultationDetails = (props: Props) => {
               </ul>
             </div>
 
-            <div className="relative w-full p-4 pr-16 bg-white my-2">
+            <div className="relative w-full p-4 pr-4 md:pr-16 bg-white my-2">
               <h4>Discussion Notes</h4>
               {/* <ul className="list-disc ml-4 mt-4">
                 <p className="text-textColor text-sm -ml-4">
@@ -367,9 +367,10 @@ const ConsultationDetails = (props: Props) => {
               </div>
               <div className="mt-12">
                 <CustomButton
-                  width="w-[350px]"
+                  width="w-full md:w-[350px]"
                   height="h-[40px]"
                   title="Request Feedback/Review from Client"
+                  textStyle="text-white text-sm font-semibold md:text-base"
                 />
               </div>
             </div>
