@@ -81,7 +81,7 @@ const PersonalData = (props: Props) => {
             placeholder="Select year of Experience"
             select
           />
-          <div className="flex items-center">
+          <div className="flex md:items-center flex-col md:flex-row">
             <LabelInput
               width="w-[288px]"
               label={"Birthday"}
@@ -91,7 +91,7 @@ const PersonalData = (props: Props) => {
               select
               mr="mr-24"
             />
-            <div className="mt-9 ml-4">
+            <div className="md:mt-9 md:ml-4">
               <LabelInput
                 width="w-[288px]"
                 value=""

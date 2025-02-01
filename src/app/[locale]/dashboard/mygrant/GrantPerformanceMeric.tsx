@@ -64,11 +64,11 @@ const GrantPerformance = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
 
-      <div className="flex items-center w-[480px] mt-8">
+      <div className="flex items-center w-full md:w-[480px] mt-8">
         <p className="text-textColor"> Dashboard </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">My Grants </p>
@@ -83,9 +83,9 @@ const GrantPerformance = (props: Props) => {
           </h4>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-center">
+      <div className="flex flex-wrap justify-between items-center flex-col md:flex-row">
         {cardData.map((data) => (
-          <div className="w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between ">
+          <div className="w-full md:w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between m-2">
             <p
               className={`font-semibold text-[16px] leading-[19px] ${data.color}`}>
               {data.header}
@@ -98,12 +98,12 @@ const GrantPerformance = (props: Props) => {
         ))}
       </div>
 
-      <div className="flex justify-between items-start w-full mt-8">
+      <div className="flex justify-center lg:justify-between items-center lg:items-start w-full mt-8  flex-col lg:flex-row">
         <div>
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Engagement By Audience Type
           </h4>
-          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4">
+          <div className="w-full lg:w-[470px] h-full lg:h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4">
             <GrantPieChart />
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -132,7 +132,7 @@ const GrantPerformance = (props: Props) => {
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Views By Location
           </h4>
-          <div className="w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-center p-4">
+          <div className=" w-full  lg:w-[470px] h-full lg:h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-center p-4">
             <GrantBarChart />
           </div>
         </div>
@@ -146,12 +146,12 @@ const GrantPerformance = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex items-start justify-between  bg-white shadow-chart-grant mt-8 w-full p-8">
-        <div className="w-[370px]">
+      <div className="flex items-center justify-center lg:items-start lg:justify-between  bg-white shadow-chart-grant mt-8 w-full p-8 flex-col lg:flex-row">
+        <div className="w-full lg:w-[370px]">
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
             Summary/Key Metrics
           </h4>
-          <div className="h-full bg-white border-[0.5px] border-borderColor p-4">
+          <div className="h-full bg-white border-[0.5px] border-borderColor p-4 w-full">
             <p className="font-mono font-semibold text-[14px] leading-[30.8px] text-textColor">
               Grant Status:
               <span className="font-normal ml-2">Active</span>
@@ -230,7 +230,7 @@ const GrantPerformance = (props: Props) => {
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
             Suggestions for Improvement
           </h4>
-          <div className="w-[446px] h-[330px] bg-white border-[0.5px] border-borderColor p-4">
+          <div className="w-full lg:w-[446px] h-full lg:h-[330px] bg-white border-[0.5px] border-borderColor p-4">
             <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
               Optimize Grant Description and Tags:
             </p>

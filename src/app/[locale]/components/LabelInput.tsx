@@ -40,7 +40,7 @@ const LabelInput = (props: Props) => {
       return (
         <Select
           className={`${props.height ? props.height : "h-[55px]"} ${
-            props.width ? props.width : "w-full"
+            props.width ? `w-full md:${props.width}` : "w-full"
           } !placeholder-black text-black font-normal`}
           placeholder={props.placeholder}
           defaultValue={props.value ? props.value : props.placeholder}
@@ -57,7 +57,7 @@ const LabelInput = (props: Props) => {
         <TextArea
           placeholder={props.placeholder}
           className={`${props.height ? props.height : "h-[55px]"} ${
-            props.width ? props.width : "w-full"
+            props.width ? `w-full md:${props.width}` : "w-full"
           } `}
           allowClear
         />
@@ -66,7 +66,7 @@ const LabelInput = (props: Props) => {
       return (
         <Input
           className={`${props.height ? props.height : "h-[55px]"} ${
-            props.width ? props.width : "w-full"
+            props.width ? `w-full md:${props.width}` : "w-full"
           } placeholder-black`}
           placeholder={props.placeholder}
           suffix={props.righticon}
@@ -79,7 +79,7 @@ const LabelInput = (props: Props) => {
 
   return (
     <div
-      className={`${props.width ? props.width : "w-[267px]"} ${
+      className={`${props.width ? `w-full md:${props.width}` : "w-[267px]"} ${
         props.my ? props.my : "my-4"
       } ${props.mr ? "mr-2" : "mr-0"}`}>
       <div className="flex items-center">

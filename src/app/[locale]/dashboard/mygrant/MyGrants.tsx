@@ -13,10 +13,12 @@ import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dash
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import DashboardfilterOptions from "../components/DashboardfilterOptions";
 import CustomTable from "../components/CustomTable";
+import MobileCustomTable from "../../components/MobileCustomTable";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
 };
+
 
 const dataSource = [
   {
@@ -317,6 +319,452 @@ const MyGrants = (props: Props) => {
     },
   ];
 
+  const dataSourceMobile = [
+    {
+      Title: { value: "Community Development" },
+      datePosted: { value: "Oct 15, 2024" },
+      status: { value: "Active" },
+      views: { value: "152" },
+      action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+
+    {
+      Title: { value: "Education for All" },
+      datePosted: { value: "Oct 22, 2024" },
+      status: { value: "Active" },
+      views: { value: "84" },
+      action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+
+    {
+      Title: { value: "Clean Water Initiative" },
+      datePosted: { value: "Oct 18, 2024" },
+      status: { value: "Active" },
+      views: { value: "179" },
+      action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "Empowerment Program" },
+      datePosted: { value: "Oct 31, 2024" },
+      status: { value: "Active" },
+      views: { value: "245" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "Renewable Energy Initiative" },
+      datePosted: { value: "Oct 19, 2024" },
+      status: { value: "Active" },
+      views: { value: "567" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "Small Business Startup Grants" },
+      datePosted: { value: "Oct 25, 2024" },
+      status: { value: "Active" },
+      views: { value: "345" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "Agricultural Funding Program" },
+      datePosted: { value: "Oct 23, 2024" },
+      status: { value: "Expired" },
+      views: { value: "234" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "Urban Development Initiative" },
+      datePosted: { value: "Oct 18, 2024" },
+      status: { value: "Expired" },
+      views: { value: "500" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      Title: { value: "International Scholarship Fund" },
+      datePosted: { value: "Oct 17, 2024" },
+      status: { value: "Expired" },
+      views: { value: "900" },
+      action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Edit
+            </p>
+          </button>
+        ),
+      },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+      performaceTracking: {
+        CustomContent: () => (
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
+              View Perfomance
+            </p>
+          </button>
+        ),
+      },
+    },
+  ];
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -455,7 +903,12 @@ const MyGrants = (props: Props) => {
 
         <DashboardfilterOptions />
       </div>
+      <div></div>
+      <div></div>
       <CustomTable columns={columns} dataSource={dataSource} />
+      {dataSourceMobile.map((data) => (
+        <MobileCustomTable data={data} />
+      ))}
 
       <div className="mt-8">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">

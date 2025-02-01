@@ -49,14 +49,14 @@ const AllGrants = (props: Props) => {
         <p className="text-textColor">Grants </p>
       </div>
 
-      <div className="flex justify-between items-center py-4">
+      <div className="flex justify-between items-center py-4 flex-col md:flex-row">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">
           Total Grants
         </h3>
-        <div className="flex justify-between ">
-          <div className="mr-4">
+        <div className="flex justify-center md:justify-between  flex-col md:flex-row  w-full md:w-[35%]">
+          <div className="mr-4 w-full mb-4 md:mb-0">
             <CustomButton
-              width="w-[170.21px]"
+              width="w-full md:w-[170.21px]"
               height="h-[35px]"
               title="List A New Grant"
               radius="rounded-[5px]"
@@ -66,7 +66,7 @@ const AllGrants = (props: Props) => {
           </div>
 
           <CustomButton
-            width="w-[200.21px]"
+            width="w-full md:w-[200.21px]"
             height="h-[30px]"
             title="View All Grant"
             radius="rounded-[5px]"
