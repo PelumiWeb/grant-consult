@@ -14,25 +14,32 @@ const WalletFilterPption = (props: Props) => {
       className="w-full bg-white flex items-center justify-between
       px-4
       mt-4
-      h-[80px]
+      h-full md:h-[80px]
       rounded-[5px]
+      flex-col
+      md:flex-row
+      my-4
+      py-4
+      md:my-0
+      md:py-0
+
     ">
       <DatePicker
         onChange={onChange}
         height={40}
-        className="h-[40px] w-[250px]"
+        className="h-[40px] w-full md:w-[250px]"
         placeholder="Month"
       />
       <LabelInput
         placeholder="Service Rendered"
-        width={"w-[250px]"}
+        width={"w-full md:w-[250px]"}
         value=""
         height="h-[40px]"
         select
       />
       <LabelInput
         placeholder="Status"
-        width={"w-[250px]"}
+        width={"w-full md:w-[250px]"}
         value=""
         height="h-[40px]"
         select
@@ -40,7 +47,7 @@ const WalletFilterPption = (props: Props) => {
 
       <CustomButton
         height="h-[40px]"
-        width="w-[120px]"
+        width="w-full md:w-[120px]"
         title="Filter"
         backgrounColor="bg-primary"
       />

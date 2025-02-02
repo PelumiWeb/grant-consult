@@ -100,7 +100,7 @@ const WithdrawFunds = (props: Props) => {
           Withdraw Funds
         </p>
 
-        <div className="w-[618px] h-[130px] rounded-[5px] border bg-[#FEFAED] border-[#FBC848] flex flex-col justify-around py-4 px-4 mt-8">
+        <div className="w-full md:w-[618px] h-[130px] rounded-[5px] border bg-[#FEFAED] border-[#FBC848] flex flex-col justify-around py-4 px-4 mt-8">
           <p className="text-[20px] leading-[26px] text-black">
             Current Wallet Balance
           </p>
@@ -120,8 +120,8 @@ const WithdrawFunds = (props: Props) => {
           Saved Bank Accounts
         </h4>
 
-        <div className="flex justify-between w-full">
-          <p className="font-medium text-[12px] leading-[17px] text-textColor">
+        <div className="flex items-start md:items-center justify-between w-full flex-col md:flex-row">
+          <p className="font-medium text-[12px] leading-[17px] text-textColor mb-4 md:mb-0">
             Select any of the previously saved accounts or add a new one
           </p>
           <button
@@ -148,7 +148,7 @@ const WithdrawFunds = (props: Props) => {
         ))}
       </div>
 
-      <div className=" mt-4 w-[60%] flex justify-between items-center">
+      <div className=" mt-4 w-full md:w-[60%] flex justify-between items-center">
         <CustomButton
           width="w-[200px]"
           height="h-[50px]"

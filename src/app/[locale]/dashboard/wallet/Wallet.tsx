@@ -15,6 +15,7 @@ import CustomInput from "@/app/[locale]/components/CustomInput";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import WalletFilterPption from "./components/WalletFilterOptions";
+import MobileCustomTable from "../../components/MobileCustomTable";
 
 type Props = {};
 
@@ -83,6 +84,51 @@ const Wallet = (props: Props) => {
   const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const dataSourceMobile = [
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Grant Writing Consultation" },
+      client: { value: "FutureCorp Ltd." },
+      "Amount Earned ($)	": { value: "500" },
+      status: { value: "Completed" },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Grant Research Assistance" },
+      client: { value: "EduCare Initiative" },
+      "Amount Earned ($)	": { value: "700" },
+      status: { value: "Pending Payment" },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Strategy Session" },
+      client: { value: "UnityBridge Org." },
+      "Amount Earned ($)	": { value: "250" },
+      status: { value: "Completed" },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Application Submission" },
+      client: { value: "SolarAid Society" },
+      "Amount Earned ($)	": { value: "600" },
+      status: { value: "Completed" },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Follow-up Session" },
+      client: { value: "HealthPlus NGO" },
+      "Amount Earned ($)	": { value: "150" },
+      status: { value: "Pending Payment" },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Proposal Editing" },
+      client: { value: "Artisan Org" },
+      "Amount Earned ($)	": { value: "300" },
+      status: { value: "Completed" },
+    },
+  ];
 
   const columns = [
     {
@@ -160,7 +206,7 @@ const Wallet = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
@@ -174,8 +220,10 @@ const Wallet = (props: Props) => {
           <p className="text-left">Manage your earnings and payouts</p>
         </div>
         <div>
-          <div className="flex w-full justify-between items-center py-4">
-            <h4 className="text-[20px] leading-[26px]">Earnings Summary</h4>
+          <div className="flex w-full justify-start md:justify-between items-start md:items-center py-4 flex-col md:flex-row">
+            <h4 className="text-[20px] leading-[26px] mb-2">
+              Earnings Summary
+            </h4>
             <p
               className="underline text-secondaryColor font-semibold text-[14px] leading-[16px] cursor-pointer"
               onClick={() => {
@@ -190,16 +238,16 @@ const Wallet = (props: Props) => {
               View Transaction History
             </p>
           </div>
-          <div className="flex justify-between">
-            <div className="w-full h-[130px] bg-white shadow-walletSummary flex flex-col justify-around py-4 px-4 mr-4">
-              <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
+          <div className="flex justify-center md:justify-between  items-center flex-col md:flex-row">
+            <div className="w-full h-[130px] bg-white shadow-walletSummary flex flex-col justify-around py-4 px-4 mr-0 md:mr-4">
+              <p className="text-textColor font-semibold text-[16px] leading-[25px]  ">
                 Total Revenue Earned
               </p>
               <p className="font-semibold text-[28px] leading-[42px] text-secondaryColor">
                 $3,000
               </p>
             </div>
-            <div className="w-full h-[130px]  py-4 px-4 ml-4 bg-white  shadow-walletSummary flex  justify-between items-center">
+            <div className="w-full h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-center mt-4 mt:ml-0">
               <div className=" flex flex-col justify-around h-full">
                 <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
                   Current Wallet Balance
@@ -247,6 +295,11 @@ const Wallet = (props: Props) => {
         <WalletFilterPption />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
+      <div className="mr-4">
+        {dataSourceMobile?.map((data) => (
+          <MobileCustomTable data={data} />
+        ))}
+      </div>
 
       <div className="py-2 px-4 bg-white w-full h-[150px] border-[0.5px] border-borderColor relative">
         <h4 className="text-[20px] leading-[26px]">Bank Account Management</h4>
