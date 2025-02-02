@@ -100,7 +100,7 @@ const WithdrawFunds = (props: Props) => {
           Withdraw Funds
         </p>
 
-        <div className="w-full md:w-[618px] h-[130px] rounded-[5px] border bg-[#FEFAED] border-[#FBC848] flex flex-col justify-around py-4 px-4 mt-8">
+        <div className="w-full md:w-[618px] h-[130px] rounded-[5px] border bg-[#FEFAED] border-[#FBC848] flex flex-col justify-around py-4 px-4 mt-8 md:mt-0">
           <p className="text-[20px] leading-[26px] text-black">
             Current Wallet Balance
           </p>

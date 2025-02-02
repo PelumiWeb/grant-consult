@@ -247,7 +247,7 @@ const Wallet = (props: Props) => {
                 $3,000
               </p>
             </div>
-            <div className="w-full h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-center mt-4 mt:ml-0">
+            <div className="w-full h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-center mt-4 md:mt-0">
               <div className=" flex flex-col justify-around h-full">
                 <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
                   Current Wallet Balance
