@@ -11,7 +11,9 @@ import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 
-type Props = {};
+type Props = {
+  setShowMobileNavigation: React.Dispatch<React.SetStateAction<boolean>>;
+};
 type TabsProps = {
   imageTitle: string;
   image: string;
@@ -19,7 +21,7 @@ type TabsProps = {
   url?: string | undefined;
 }[];
 
-const Sidebar = (props: Props) => {
+const SidebarModal = (props: Props) => {
   const tabName = useAppSelector((state) => state.tab.name);
   const { user } = useAppSelector((state) => state.user);
   const pathName = usePathname();
@@ -184,7 +186,12 @@ const Sidebar = (props: Props) => {
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
   return (
-    <div className="hidden lg:block bg-primary h-full w-[20%] px-8 ">
+    <div className="block lg:hidden bg-primary h-full w-full fixed top-0 left-0 px-8 z-50 p-4">
+      <button
+        className="flex w-full justify-end"
+        onClick={() => props.setShowMobileNavigation((prev: boolean) => !prev)}>
+        <img src="/cancel-white.svg" alt="" />
+      </button>
       <div className="pb-2 mt-6" onClick={() => handleNavigation(`/`)}>
         <TabsComponent
           imageTitle="Home"
@@ -208,4 +215,4 @@ const Sidebar = (props: Props) => {
   );
 };
 
-export default Sidebar;
+export default SidebarModal;

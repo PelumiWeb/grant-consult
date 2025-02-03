@@ -30,7 +30,7 @@ const TabsComponent = ({
       // href={`${locale}/dashboard/page1`}
       className={`w-[224px] cursor-pointer h-[51px] rounded-[5px] flex items-center ${
         active && "bg-secondaryColor"
-      } my-4 mr-5 pl-4 transition-all`}
+      } my-2 mr-5 pl-4 transition-all`}
       onClick={() => {
         // setActive();
         handleNavigation(url);
