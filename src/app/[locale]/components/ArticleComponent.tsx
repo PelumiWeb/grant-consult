@@ -15,7 +15,7 @@ type ArticleData = {
 const ArticleComponent = (data: ArticleData) => {
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="shadow-article-shadow bg-white rounded-[5px] w-[405px] h-[430px] m-2 relative">
+    <div className="shadow-article-shadow bg-white rounded-[5px] w-full md:w-[405px] h-[430px] m-2 relative">
       {/* image */}
 
       <div className="relative w-full h-[200px] ">

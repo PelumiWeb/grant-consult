@@ -104,7 +104,7 @@ const page = (props: Props) => {
         ))}
       </div>
 
-      <div className=" p-16 w-full">
+      <div className=" p-4 md:p-16 w-full">
         <h4 className="text-center w-full leading-[31px] pt-8">Our Process</h4>
         <p className="px-4 md:px-16 lg:px-64 text-center py-8">
           We provide comprehensive guidance through every step of the
@@ -132,12 +132,12 @@ const page = (props: Props) => {
             },
           ].map((data) => (
             <div className="flex items-center m-4">
-              <div className="w-[50px] h-[42px] rounded-[5px] bg-secondaryColor mr-2" />
-              <div>
+              <div className="min-w-[50px] min-h-[42px] rounded-[5px] bg-secondaryColor mr-2" />
+              <div className="ml-1">
                 <p className="text-primary font-semibold text-base ">
                   {data.title}
                 </p>
-                <p className="text-textColor font-semibold text-[14px] leading-[18px] w-[500px]">
+                <p className="text-textColor font-semibold text-[14px] leading-[18px] w-full md:w-[500px]">
                   {data.text}
                 </p>
               </div>

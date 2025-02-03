@@ -47,7 +47,7 @@ const LatestArticleComponent = (data: ArticleData) => {
             {data.content}
           </p>
 
-          <div className=" w-fullflex justify-between items-center h-[40px] mt-6">
+          <div className=" w-full flex justify-between items-center h-[40px] mt-6">
             {/* Left */}
             <div className="w-full flex items-center">
               {/* <img src={data.authorImage} alt="" /> */}
@@ -65,7 +65,7 @@ const LatestArticleComponent = (data: ArticleData) => {
             </div>
             {/* right */}
             <button
-              className="flex items-center "
+              className="flex items-center w-[150px]"
               onClick={() => handleNavigation("/articles/1")}>
               <p className="font-semibold text-[10px] lg:text-[14px] leading-[10px] lg:leading-[14px] text-secondaryColor">
                 Read More

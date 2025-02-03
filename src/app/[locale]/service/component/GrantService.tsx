@@ -27,7 +27,7 @@ const GrantService = ({
 
   return (
     <div
-      className={`relative w-[234px] h-[424px] rounded-[10px]  ${
+      className={`relative w-full md:w-[234px] h-[424px] rounded-[10px]  ${
         backgroundColor && backgroundColor
       } shadow-grant-service-card  p-2 m-4 lg:m-0`}>
       {/* Image */}
@@ -94,11 +94,12 @@ const GrantService = ({
         </li>
       </ul>
       <div
-        className=" absolute left-4 bottom-3 w-[200px] justify-center items-center 
+        className=" absolute left-0  bottom-3 w-full flex justify-center items-center 
+        px-4
       ">
         <CustomButton
           onClick={() => handleNavigation(`/payments`)}
-          width="w-full"
+          width="w-full md:w-[200px]"
           height="h-[40px]"
           title="Subscribe Now"
           radius="rounded-[5px]"

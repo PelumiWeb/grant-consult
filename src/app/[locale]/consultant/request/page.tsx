@@ -57,11 +57,11 @@ export default function Home() {
         </p>
       </div>
       {/* Consultant */}
-      <div className="w-full h-full p-16 bg-white">
+      <div className="w-full h-full p-2 md:p-16 bg-white">
         {/* Left */}
         <div className="w-full h-full p-0 lg:p-8 bg-white flex justify-center lg:justify-between ">
           <div className="w-full flex flex-col items-center 2lg:w-[55%]">
-            <div className="flex w-full items-center justify-between flex-wrap ">
+            <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row ">
               <LabelInput
                 label={"First Name"}
                 value=""
@@ -75,7 +75,7 @@ export default function Home() {
                 placeholder="Enter Last Name"
               />
             </div>
-            <div className="flex w-full items-center justify-between flex-wrap">
+            <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <LabelInput
                 label={"Email Address"}
                 value=""
@@ -89,7 +89,7 @@ export default function Home() {
                 placeholder="Enter Phone Number"
               />
             </div>
-            <div className="flex w-full items-center justify-between flex-wrap">
+            <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <LabelInput
                 label={"Select Consultation Type"}
                 value=""
@@ -108,7 +108,7 @@ export default function Home() {
                 select
               />
             </div>
-            <div className="flex w-full items-center justify-between flex-wrap">
+            <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <LabelInput
                 label={"Select Grant Company"}
                 value=""
@@ -123,7 +123,7 @@ export default function Home() {
                 placeholder="Enter Grant Amount"
               />
             </div>
-            <div className="flex w-full items-center justify-between flex-wrap">
+            <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <LabelInput
                 label={"Select Country Of Residence"}
                 value=""
@@ -141,7 +141,7 @@ export default function Home() {
                 textArea
               />
             </div>
-            <div className="mt-4 flex w-full items-start ">
+            <div className="mt-4 flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <CustomButton
                 title="Save"
                 width="w-[157px]"

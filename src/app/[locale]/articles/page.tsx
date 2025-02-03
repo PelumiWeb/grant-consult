@@ -221,13 +221,18 @@ const page = (props: Props) => {
         <div>
           <h4 className="text-secondaryColor m-2 my-4">Latest Articles</h4>
           <div className="w-full flex justify-between items-start flex-wrap">
-            <div className="flex flex-col justify-between w-full md:w-[55%] lg:w-[65%]">
+            <div className="hidden md:flex flex-col justify-between w-full md:w-[55%] lg:w-[65%]">
               {latestArticleData.map((data: ArticleData) => (
                 <LatestArticleComponent {...data} />
               ))}
               <div className="mt-8">
                 <Pagination defaultCurrent={1} total={500} />
               </div>
+            </div>
+            <div className="flex md:hidden items-center justify-center  lg:justify-between flex-wrap">
+              {latestArticleData.map((data: ArticleData) => (
+                <ArticleComponent {...data} />
+              ))}
             </div>
 
             <div className="w-full md:w-[40%] lg:w-[30%]">

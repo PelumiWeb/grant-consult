@@ -41,7 +41,7 @@ const GuidelinesCard = ({
   proTipList,
 }: GuidelinesProps) => {
   return (
-    <div className="w-full  bg-white p-6 m-4 rounded-[5px] ">
+    <div className="w-full  bg-white p-6 my-4 md:m-4 rounded-[5px] ">
       <h4 className="font-semibold text-[20px] leading-[26px] text-primary ">
         {title}
       </h4>
@@ -97,12 +97,14 @@ const page = (props: Props) => {
   const handleNavigation = useHandleNavigation();
 
   return (
-    <div className=" relative w-full p-16 bg-backgroundColor">
+    <div className=" relative w-full p-4 md:p-4  lg:p-16 bg-backgroundColor">
       <div className="  ">
-        <div className="flex justify-between">
-          <div className="w-[70%] h-full ">
+        <div
+          className="flex justify-center md:justify-between items-center md:items-start
+         flex-col md:flex-row w-full">
+          <div className="w-full md:w-[70%] h-full ">
             {/* Grant writing Guiidelines */}
-            <div className="w-full h-full bg-white p-6 m-4 rounded-[5px]">
+            <div className="w-full h-full bg-white p-6 my-4 md:m-4 rounded-[5px]">
               <p className="text-primary font-semibold font-mono leading-[42px] text-[36px] mb-4">
                 Grant Writing Guidelines
               </p>
@@ -139,7 +141,7 @@ const page = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="w-full  bg-white p-6 m-4 rounded-[5px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+            <div className="w-full  bg-white p-6 my-4 md:m-4 rounded-[5px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
               {guidelinesList.map((guidelines: IconProps) => (
                 <IconComponent {...guidelines} />
               ))}
@@ -198,8 +200,8 @@ const page = (props: Props) => {
             {/* <div></div> */}
           </div>
 
-          <div className="w-[25%] h-full">
-            <div className="w-full  bg-white p-6 m-4 rounded-[5px] flex flex-col items-start">
+          <div className="w-full md:w-[25%] h-full">
+            <div className="w-full  bg-white p-6 my-4 md:m-4 rounded-[5px] flex flex-col items-start">
               <h4>Resources Toolkit</h4>
               <IconComponent
                 id={1}
@@ -222,7 +224,7 @@ const page = (props: Props) => {
               />
             </div>
 
-            <div className="w-full  bg-white p-6 m-4 rounded-[5px] flex flex-col items-start">
+            <div className="w-full  bg-white p-6 my-4 md:m-4 rounded-[5px] flex flex-col items-start">
               <h4>Need Professional Help?</h4>
               <p className="font-medium text-[14px] leading-[22px] text-textColor my-4">
                 Our expert consultants are here to guide you through the grant
@@ -238,7 +240,7 @@ const page = (props: Props) => {
               />
             </div>
 
-            <div className="w-full  bg-white p-6 m-4 rounded-[5px] flex flex-col items-start">
+            <div className="w-full  bg-white p-6 my-4 md:m-4 rounded-[5px] flex flex-col items-start">
               <h4 className="mb-8">Success Rate</h4>
               <div>
                 <p className="text-[14px] leading-[21px] font-semibold text-textColor -mb-3">
