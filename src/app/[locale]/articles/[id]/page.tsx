@@ -34,8 +34,8 @@ const page = (props: Props) => {
         <p className="text-textColor">Read More </p>
       </div>
 
-      <div className="flex w-full justify-between items-start ">
-        <div className="w-[60%] bg-white shadow-read-more-shadow rounded-[5px] p-5 relative">
+      <div className="flex w-full justify-between items-center md:items-start flex-col md:flex-row">
+        <div className="w-full md:w-[60%] bg-white shadow-read-more-shadow rounded-[5px] p-5 relative">
           <div className="mb-32">
             <h4 className="text-secondaryColor text-[30px] font-bold leading-[40px] w-[80%]">
               Overcoming Rejection in Grant Writing Applications: Effective Tips
@@ -134,7 +134,7 @@ const page = (props: Props) => {
 
             <ArticleContent paragraph="By embracing these strategies, you can turn rejection into a stepping stone for success. Grant writing is a journey of continuous improvement, and each attempt brings you closer to your goals. Let 2025 be the year your persistence and preparation yield transformative outcomes." />
           </div>
-          <div className="absolute bottom-0 border-t border-t-borderColor w-[95%] py-4 flex items-center justify-between">
+          <div className="absolute bottom-0 border-t border-t-borderColor w-[95%] py-4 flex items-center justify-between px-4 md:px-0">
             <div className="flex items-center justify-between w-[25%]">
               <CustomButton
                 IconLeft="/likeArticle.svg"
@@ -180,7 +180,7 @@ const page = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="w-[35%]">
+        <div className="w-full md:w-[35%] mt-4 md:mt-0">
           <div className="shadow-article-shadow w-full rounded-[5px] bg-[#FFFFFF] h-full p-4">
             <p className="text-primary font-semibold text-[14px] leading-[21px] pb-4">
               Related Articles
