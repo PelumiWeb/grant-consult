@@ -36,6 +36,8 @@ const config: Config = {
         "subscription": "url('/subscription.svg')",
         "becomeGrantImage": "url('/becomeGrantor.svg')",
         "becomeConsultantImage": "url('/becomeConsultant.svg')",
+        "becomeConsultantImageMobile": "url('/becomeGrantMobile.svg')",
+
 
         'linearGradient': 'linear-gradient(180deg, #FD32B2 0%, #F2D4E7 100%)',
         'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",

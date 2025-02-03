@@ -42,7 +42,7 @@ const page = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   return (
     <div className="pb-20">
-      <div className="min-h-[421px] bg-becomeGrantImage bg-cover  bg-left md:bg-center bg-no-repeat relative mt-8 sm:mt-0">
+      <div className="min-h-[421px] hidden md:block bg-becomeGrantImage bg-cover  bg-left md:bg-center bg-no-repeat relative mt-8 sm:mt-0">
         <div className="w-[600px] min-h-[316px] px-16 flex flex-col justify-between absolute top-[15%]">
           <h3 className="font-mono font-bold text-[25px] md:text-[35px] lg:text-[45px] leading-[30px] lg:leading-[60px] text-white">
             {" "}
@@ -62,6 +62,35 @@ const page = (props: Props) => {
             radius="rounded-[5px]"
             backgrounColor="bg-secondaryColor"
             width="w-[190px]"
+            height="h-[40px]"
+          />
+        </div>
+      </div>
+
+      <div className="w-full h-full block md:hidden">
+        <div className="h-[300px] w-full">
+          <img
+            src="/becomeGrantMobile.svg"
+            className="object-cover w-full h-full"
+            alt=""
+          />
+        </div>
+        <div className="w-full p-2">
+          <h3 className="text-center font-mono">Become a Grantor</h3>
+
+          <p className="text-newPrimaryTextColor  text-center font-mono my-2">
+            Are you a trustor with funding opportunities? Do you want to ensure
+            that the most impactful project ideas receive your grants?
+            GrantsConsult is the ideal platform to give your grant(s) the
+            visibility it deserves.
+          </p>
+
+          <CustomButton
+            title="Partner With Us"
+            textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"
+            radius="rounded-[5px]"
+            backgrounColor="bg-secondaryColor"
+            width="w-full"
             height="h-[40px]"
           />
         </div>

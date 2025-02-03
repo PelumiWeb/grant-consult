@@ -40,7 +40,7 @@ const page = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   return (
     <div className="pb-20">
-      <div className="min-h-[421px] bg-becomeConsultantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
+      <div className="hidden md:block min-h-[421px] bg-becomeConsultantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
         <div className="w-[600px] min-h-[316px] px-16 flex flex-col justify-between absolute top-[15%]">
           <h3 className="font-mono font-bold text-[25px] md:text-[35px] lg:text-[45px] leading-[30px] lg:leading-[60px] text-white">
             {" "}
@@ -66,6 +66,35 @@ const page = (props: Props) => {
           />
         </div>
       </div>
+
+      <div className="w-full h-full block md:hidden">
+        <div className="h-[300px] w-full">
+          <img
+            src="/becomeConsultantMobile.svg"
+            className="object-cover w-full h-full"
+            alt=""
+          />
+        </div>
+        <div className="w-full p-2">
+          <h3 className="text-center font-mono">Become a Consultant</h3>
+
+          <p className="text-newPrimaryTextColor  text-center font-mono my-2">
+            Join our professional network of seasoned consultants. we value the
+            right talent and offer rewarding opportunities for your
+            contributions.
+          </p>
+
+          <CustomButton
+            title="Sign Up Now"
+            textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"
+            radius="rounded-[5px]"
+            backgrounColor="bg-secondaryColor"
+            width="w-full"
+            height="h-[40px]"
+          />
+        </div>
+      </div>
+
       {/* 
 
       <h3 className="text-center pb-12">Benefits of Partnering with Us</h3> */}

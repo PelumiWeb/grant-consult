@@ -3831,6 +3831,7 @@ __metadata:
     antd: ^5.21.6
     axios: ^1.7.9
     chart.js: ^4.4.7
+    clsx: ^2.1.1
     dayjs: ^1.11.13
     eslint: ^8
     eslint-config-next: 15.0.2
@@ -3855,6 +3856,7 @@ __metadata:
     recharts: ^2.13.3
     redux-persist: ^6.0.0
     tailwind-clip-path: ^1.0.0
+    tailwind-merge: ^3.0.1
     tailwindcss: ^3.4.1
     typescript: ^5
   languageName: unknown
@@ -7102,6 +7104,13 @@ __metadata:
   version: 1.0.0
   resolution: "tailwind-clip-path@npm:1.0.0"
   checksum: 119424d851770dfa297fab45d309bd3a31724e3e7ebfa96ff838384d0a5076d8f2ad13b88f96bfadfe2c99ffe3838fa3cb8d619eae8cf0fc72400f572ad8ca3a
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "tailwind-merge@npm:3.0.1"
+  checksum: a058ca9d4d1c954c68acfdd6be375023e7d6614234920f9b710562fbabb2038c5a11c9a01f1d3a77051071343489aca1bd51909caad305b3fd3b1875683ee0c9
   languageName: node
   linkType: hard
 

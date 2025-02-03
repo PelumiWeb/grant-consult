@@ -33,7 +33,7 @@ const page = (props: Props) => {
           Grant Information
         </h3>
 
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Grant Name"
             required
@@ -54,7 +54,7 @@ const page = (props: Props) => {
             select
           />
         </div>
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Grant Description"
             value=""
@@ -65,7 +65,7 @@ const page = (props: Props) => {
             my="my-2"
           />
         </div>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Grant Size ($)"
             required
@@ -85,7 +85,7 @@ const page = (props: Props) => {
             my="my-2"
           />
         </div>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Application Deadline"
             required
@@ -113,7 +113,7 @@ const page = (props: Props) => {
           Application Requirements
         </h3>
 
-        <div className="flex justify-between w-full">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <div>
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               Upload Supporting Document
@@ -176,7 +176,7 @@ const page = (props: Props) => {
             <p className="text-[14px] leading-[23px] font-mono text-textColor w-[350px] mb-2">
               Applicants must provide the following:
             </p>
-            <div className="p-2 w-[453px] h-[215px] border-[0.5px] border-borderColor">
+            <div className="p-2 w-full md:w-[453px] h-[215px] border-[0.5px] border-borderColor">
               <p className="text-[14px] text-textColor leading-[23px] my-1 ">
                 1. Project proposal (maximum 5 pages).
               </p>
@@ -199,16 +199,16 @@ const page = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between w-full mt-8">
+        <div className="w-full flex justify-between flex-col md:flex-row mt-8">
           <div>
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               Application Process
             </p>
 
-            <p className="text-[14px] leading-[23px] font-mono text-textColor w-[350px] mb-2">
+            <p className="text-[14px] leading-[23px] font-mono text-textColor w-full md:w-[350px] mb-2">
               Applicants must do the following:
             </p>
-            <div className="p-2 w-[453px] h-[215px] border-[0.5px] border-borderColor">
+            <div className="p-2 w-full md:w-[453px] h-[215px] border-[0.5px] border-borderColor">
               <p className="text-[14px] text-textColor leading-[23px] my-1 ">
                 1. Fill out the online application form.
               </p>
@@ -222,7 +222,7 @@ const page = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="w-[450px]">
+          <div className="w-full md:w-[450px]">
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               Upload Grant Image
             </p>
@@ -304,7 +304,7 @@ const page = (props: Props) => {
           Grantor’s Details
         </h3>
 
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Grantor’s Organization Name*"
             required
@@ -322,7 +322,7 @@ const page = (props: Props) => {
             height="h-[55px]"
           />
         </div>
-        <div className="w-full flex flex-1 justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row flex-1">
           <LabelInput
             label="Contact Email"
             value=""
@@ -340,7 +340,7 @@ const page = (props: Props) => {
             required
           />
         </div>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between flex-col md:flex-row">
           <LabelInput
             label="Grant Application URL"
             required
@@ -362,7 +362,7 @@ const page = (props: Props) => {
           <p className="text-black text-[14px] leading-[24px] pb-2">
             Listing Options
           </p>
-          <div className="border-[0.5px] rounded-[5px] border-borderColor bg-white p-2 w-[460px]">
+          <div className="border-[0.5px] rounded-[5px] border-borderColor bg-white p-2 w-full md:w-[460px]">
             <div className="flex items-center justify-between">
               <p className="text-[14px] leading-[24px] text-textColor font-normal font-mono">
                 Public Listing
@@ -380,7 +380,7 @@ const page = (props: Props) => {
       </div>
 
       {/* Submission section  */}
-      <div className="px-16 py-4 flex justify-between items-center w-[600px]">
+      <div className=" px-4 md:px-16 py-4 flex justify-between items-center w-full  md:w-[600px] flex-col md:flex-row">
         <CustomButton
           title="PREVIEW"
           backgrounColor="bg-secondaryColor"
@@ -390,7 +390,7 @@ const page = (props: Props) => {
           textStyle="font-inter font-bold leading-[16px] text-[16px] text-white "
         />
         <button>
-          <p className="capitalize font-semibold underline text-[14px] leading-[22px] font-mono text-textColor">
+          <p className="capitalize font-semibold underline text-[14px] leading-[22px] font-mono text-textColor my-2 md:my-0">
             Save as a draft
           </p>
         </button>
