@@ -42,7 +42,7 @@ const Grants = (props: Props) => {
 
   const CardComponent = (data: any) => {
     return (
-      <div className="relative bg-white pr-4 py-4 shadow-grant-card  mr-6 rounded-[20px] px-4 my-4 w-full lg:w-[556px] h-[480px]">
+      <div className="relative bg-white pr-4 py-4 shadow-grant-card  mr-6 rounded-[20px] px-4 my-4 w-full lg:w-[556px] h-full  md:h-[480px]">
         <div className="flex items-center justify-between w-full py-4">
           <h3
             className={`text-[16px] leading-[18px] ${data.bgColor} ${data.textColor} p-2 font-bold rounded-[5px]`}>
@@ -57,12 +57,12 @@ const Grants = (props: Props) => {
           <h4 className="w-full font-bold text-secondaryColor pt-2 text-base  font-poppins">
             {data.headTitle}
           </h4>
-          <p className="w-full leading-[28px] py-4 text-textColor font-poppins text-[15px] font-medium">
+          <p className="w-full leading-[28px] py-4 text-textColor font-poppins text-[15px] font-medium mb-[10px]">
             {data.text}
           </p>
           <div
             onClick={() => handleNavigation(`/grants/1`)}
-            className="-ml-6 absolute bottom-[5px]">
+            className="-ml-6 absolute bottom-[5px] mt-5">
             <CustomButton
               title="Read More"
               backgrounColor="bg-transparent"
