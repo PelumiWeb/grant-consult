@@ -71,7 +71,7 @@ const serviceData = [
 
 const Card = (data: any) => {
   return (
-    <div className="w-[400px] flex items-center justify-center h-[138px]">
+    <div className="w-full md:w-[400px] flex items-center justify-center h-[138px]">
       <div>
         <p className="font-semibold font-mono text-[36px] leading-[43px] text-secondaryColor text-center">
           {data.name}
@@ -90,7 +90,7 @@ const ServiceCard = (data: serviceDataProps) => {
   return (
     <button
       onClick={() => handleNavigation("/consultant/request")}
-      className={`w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
+      className={` w-full md:w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
       <div className="flex items-center py-2">
         <img src={data.image} alt="" />
         <p className="font-bold text-[16px] leading-[18px] text-black ml-6">
@@ -111,11 +111,11 @@ const page = (props: Props) => {
   return (
     <div>
       <div className="flex flex-col justify-between items-center py-8">
-        <h2 className="font-semibold text-[46px] leading-[55px] text-secondaryColor ">
+        <h2 className="font-semibold text-[26px] md:text-[46px] leading-[55px] text-secondaryColor ">
           Our Services
         </h2>
 
-        <p className="font-medium text-textColor text-[16px] leading-[25px] text-center w-[70%]">
+        <p className="font-medium text-textColor text-[16px] leading-[25px] text-center w-[90%]  md:w-[70%]">
           Applying for grants can be complex, but we’re here to simplify the
           process. With customized advice, professional writing, and expert
           consultation. Our team is dedicated to helping you secure the funding
@@ -123,13 +123,13 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="p-16 flex items-center justify-center xl:justify-between flex-wrap">
+      <div className="p-4  md:p-16 flex items-center justify-center xl:justify-between flex-wrap">
         {serviceData.map((data) => (
           <ServiceCard key={data.id} {...data} />
         ))}
       </div>
 
-      <div className="p-16 flex justify-between items-center">
+      <div className="p-4 md:p-16 flex justify-between items-center flex-col md:flex-row">
         {[
           {
             name: "500+",

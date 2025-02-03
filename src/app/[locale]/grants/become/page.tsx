@@ -115,7 +115,7 @@ const page = (props: Props) => {
         ))}
       </div>
 
-      <h3 className="text-center pb-12">Benefits of Partnering with Us</h3>
+      <h3 className="text-center pb-12 px-4 md:px-0">Benefits of Partnering with Us</h3>
 
       <div className="bg-white flex items-start p-8 justify-center lg:justify-between flex-wrap ">
         {[

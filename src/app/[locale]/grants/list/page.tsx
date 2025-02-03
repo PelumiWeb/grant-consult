@@ -22,13 +22,13 @@ const page = (props: Props) => {
     showUploadList: false,
   };
   return (
-    <div className="bg-white">
+    <div className="bg-white p-2 md:p-0">
       <h2 className="font-mono font-medium text-[36px] leading-[42px] text-secondaryColor text-center my-12">
         List a Grant
       </h2>
       {/* Grant Information */}
 
-      <div className="px-16 py-4">
+      <div className="px-0 md:px-16 py-4">
         <h3 className="font-semibold text-[24px] leading-[36px] text-primary ">
           Grant Information
         </h3>
@@ -108,7 +108,7 @@ const page = (props: Props) => {
       </div>
 
       {/* Application Requirement */}
-      <div className="px-16 py-4">
+      <div className=" px-0 md:px-16 py-4">
         <h3 className="font-semibold text-[24px] leading-[36px] text-primary pb-8">
           Application Requirements
         </h3>
@@ -119,12 +119,12 @@ const page = (props: Props) => {
               Upload Supporting Document
             </p>
 
-            <p className="text-[14px] leading-[23px] font-mono text-textColor w-[350px]">
+            <p className="text-[14px] leading-[23px] font-mono text-textColor w-full md:w-[350px]">
               Upload any relevant documents containing full grants details and
               Application requirements
             </p>
 
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-center md:justify-between flex-col md:flex-row">
               <LabelInput
                 width="w-[221px]"
                 height="h-[40px]"
@@ -150,7 +150,7 @@ const page = (props: Props) => {
             {fileList.map((file) => (
               <div
                 key={file.uid}
-                className="bg-backgroundColor w-[377px] h-[62px] rounded-[5px] flex justify-between items-center">
+                className="bg-backgroundColor w-full md:w-[377px] h-[62px] rounded-[5px] flex justify-between items-center">
                 <img src="/folder.svg" alt="" />
                 <div className="w-[200px]  flex flex-col items-start justify-around">
                   <p className="font-bold text-[13px] leading-[20.8px] font-mono">
@@ -168,7 +168,7 @@ const page = (props: Props) => {
               </div>
             ))}
           </div>
-          <div>
+          <div className="w-full mt-2">
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               List Required Documents
             </p>
@@ -223,7 +223,7 @@ const page = (props: Props) => {
             </div>
           </div>
           <div className="w-full md:w-[450px]">
-            <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
+            <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2 mt-2 md:mt-0">
               Upload Grant Image
             </p>
 
@@ -299,7 +299,7 @@ const page = (props: Props) => {
 
       {/* Grantor's Details */}
 
-      <div className="px-16 py-8">
+      <div className="px-0 md:px-16 py-8">
         <h3 className="font-semibold text-[24px] leading-[36px] text-primary ">
           Grantor’s Details
         </h3>
@@ -380,7 +380,7 @@ const page = (props: Props) => {
       </div>
 
       {/* Submission section  */}
-      <div className=" px-4 md:px-16 py-4 flex justify-between items-center w-full  md:w-[600px] flex-col md:flex-row">
+      <div className=" px-0 md:px-16 py-4 flex justify-between items-center w-full  md:w-[600px] flex-col md:flex-row">
         <CustomButton
           title="PREVIEW"
           backgrounColor="bg-secondaryColor"
