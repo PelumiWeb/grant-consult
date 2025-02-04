@@ -9,12 +9,12 @@ const ServicePage = (props: Props) => {
   const t = useTranslations("Homepage");
 
   return (
-    <div className="w-full flex items-start justify-between   h-full relative py-16 pb-8 px-8 lg:px-16 bg-white flex-wrap">
+    <div className="w-full flex items-start justify-between   h-full relative py-8 lg:py-16 pb-8 px-8 lg:px-16 bg-white flex-wrap">
       <div className="w-full lg:w-[25%] 2lg:w-[30%]">
-        <h1 className="text-center lg:text-left mb-8 text-2xl lg:text-3xl">
+        <h1 className="text-center lg:text-left mb-2 lg:mb-8 text-[20px] leading-[26px] lg:leading-[30px] md:text-[45px] font-semibold">
           {t("Service.service")}
         </h1>
-        <h3 className="text-textColor text-[16px] leading-[35px] font-medium mt-20">
+        <h3 className="text-textColor text-[11px] md:text-[16px] leading-[23px] md:leading-[35px] font-normal md:font-medium lg:mt-20">
           {t("Service.content")}
         </h3>
       </div>
