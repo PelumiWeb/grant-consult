@@ -57,7 +57,7 @@ const Grants = (props: Props) => {
           <h4 className="w-full font-bold text-secondaryColor pt-2 text-base  font-poppins">
             {data.headTitle}
           </h4>
-          <p className="w-full leading-[28px] py-4 text-textColor font-poppins text-[15px] font-medium mb-[10px]">
+          <p className="w-full leading-[25px] py-2 text-textColor font-mono text-[14px] font-medium mb-[20px]">
             {data.text}
           </p>
           <div
@@ -148,7 +148,7 @@ const Grants = (props: Props) => {
         </Carousel>
       </div>
 
-      <div className="block lg:hidden bg-[#329DFD66] w-full pl-8 p-8">
+      <div className="block lg:hidden bg-[#329DFD66] w-full p-4">
         {[
           {
             title: "Agriculture",

@@ -488,7 +488,7 @@ const Header = ({}: Props) => {
   ];
 
   return (
-    <div className=" w-full px-4 md:px-0 relative z-10 mb-[20px] lg:mb-0 bg-transparent">
+    <div className=" w-full px-4 md:px-0 relative z-10 mb-[20px] lg:mb-0 bg-white">
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => handleNavigation(`/`)}>

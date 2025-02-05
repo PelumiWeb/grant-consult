@@ -21,7 +21,7 @@ const SubscriptionCard = (data: Cardprops) => {
   return (
     <div className="  bg-white mt-4 w-full sm:w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-full md:h-[450px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 md:p-2 relative  flex flex-col justify-between items-center">
       {data.popular && (
-        <div className="absolute -top-4 left-[35%] md:left-[35px]">
+        <div className="absolute -top-4 left-[25%] md:left-[35px]">
           <CustomButton
             backgrounColor="bg-secondaryColor"
             radius="rounded-[18px]"
