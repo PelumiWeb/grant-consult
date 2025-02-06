@@ -7,10 +7,8 @@ import CustomInput from "../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../components/CustomButton";
 import { Poppins, Montserrat } from "next/font/google";
-import { useRouter , redirect, } from "next/navigation";
+import { useRouter, redirect, usePathname } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
-
-
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +26,11 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   const router = useRouter();
+  const pathname = usePathname();
+  console.log(pathname);
+
+  // Define paths where you want to hide/show elements
+  const signUpScreen = pathname.includes("/auth/signup");
   return (
     <html lang="en">
       <body
@@ -68,10 +71,61 @@ export default function AuthLayout({
                   className="w-[450px] h-[465px] absolute -left-[15%] top-[55%] overflow-hidden"
                 />
               </div>
+              {signUpScreen && (
+                <div className="flex items-center justify-center h-[40%] flex-1 w-full absolute top-10 z-30">
+                  <ul className="mr-8">
+                    <div>
+                      <p className="font-bold text-[16px] leading-[20px] font-mono text-[#000000]">
+                        Join the GrantsConsult Community!
+                      </p>
+                      <p className="font-normal font-mono text-[16px] leading-[20px] text-primaryBlack">
+                        Whether you’re a General User, Consultant, or Grantor,
+                        we have the right space for you.
+                      </p>
+                    </div>
+                    <li className="mt-2 list-disc ml-4">
+                      <p className="font-bold text-[16px] leading-[20px] font-mono text-primaryBlack">
+                        Genral Users:{" "}
+                        <span className="font-normal font-mono text-[16px] leading-[20px] text-primaryBlack">
+                          Includes individuals, NGOs, and corporate bodies
+                          seeking grants for projects, education, or
+                          initiatives. Access tailored opportunities and request
+                          expert consultations.
+                        </span>
+                      </p>
+                    </li>
+                    <li className="mt-2 list-disc ml-4">
+                      <p className="font-bold text-[16px] leading-[20px] font-mono text-primaryBlack">
+                        Consultant:{" "}
+                        <span className="font-normal font-mono text-[16px] leading-[20px] text-primaryBlack">
+                          Grant writing and advisory professionals can showcase
+                          their expertise, connect with clients, and earn
+                          through successful applications.
+                        </span>
+                      </p>
+                    </li>
+                    <li className="mt-2 list-disc ml-4">
+                      <p className="font-bold text-[16px] leading-[20px] font-mono text-primaryBlack">
+                        Grantors:{" "}
+                        <span className="font-normal font-mono text-[16px] leading-[20px] text-primaryBlack">
+                          Funding organizations or donors can upload grant
+                          details, connect with qualified applicants, and track
+                          the impact of their contributions.
+                        </span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              )}
 
-              <div className="flex items-center justify-center h-screen flex-1 w-full absolute top-0 z-30">
+              <div
+                className={`flex items-center justify-center ${
+                  signUpScreen ? "h-[60%]" : "h-screen"
+                } flex-1 w-full absolute bottom-0 z-30`}>
                 <img
-                  className="max-w-full h-auto"
+                  className={`${
+                    signUpScreen ? "h-[300px] w-[300px]" : "h-auto max-w-full"
+                  }`}
                   src="/people.svg"
                   alt="Grant Logo"
                 />
