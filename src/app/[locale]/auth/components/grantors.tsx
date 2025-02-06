@@ -2,18 +2,18 @@
 
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../../components/CustomInput";
+import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
-import CustomButton from "../../../components/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import endpoints from "../../../../../../lib/endpoints";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { useApiMutation } from "@/app/[locale]/utils/useApi";
 import { Controller, useForm } from "react-hook-form";
-import { setUser } from "../../../../../../lib/features/User/userSlice";
+import { setUser } from "../../../../../lib/features/User/userSlice";
 import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
 import {
@@ -101,7 +101,7 @@ const Grantor = (props: Props) => {
   };
 
   return (
-    <div className="p-8 flex flex-col items-center justify-center mb-[5%] ">
+    <div className="mt-8 flex flex-col items-center justify-center mb-[5%] ">
       <h3 className="w-full text-lg lg:text-current">Sign up Donor/GRANTOR</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -119,7 +119,7 @@ const Grantor = (props: Props) => {
                 // value=""
                 type="text"
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Full Name"
               />
 
@@ -142,7 +142,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Email"
                 inputType="input"
                 type="text"
@@ -167,7 +167,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.phone}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 contentLeft
                 label="Phone Number"
                 inputType="input"
@@ -193,7 +193,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.country}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Select Country/Region"
                 inputType="select"
                 type="text"
@@ -221,7 +221,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.organizationName}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Organization Name"
                 inputType="input"
                 type="text"
@@ -247,7 +247,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.organizationType}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Organization Type"
                 inputType="select"
                 type="text"
@@ -272,7 +272,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.sector}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Sector"
                 inputType="select"
                 type="text"
@@ -297,7 +297,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
+                width="w-full "
                 // defaultValue="Health"
                 label="Password"
                 inputType="input"
@@ -323,7 +323,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.confirmPassword}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 // defaultValue="Health"
                 label="Confirm Password"
                 inputType="input"
@@ -339,7 +339,7 @@ const Grantor = (props: Props) => {
         />
         <div className="mt-4">
           <CustomButton
-            width="w-full lg:w-[616px]"
+            width="w-full"
             title="Sign up"
             radius="rounded-[5px]"
             loading={isPending}

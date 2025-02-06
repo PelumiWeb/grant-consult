@@ -1,30 +1,29 @@
 "use client";
-
 import Image from "next/image";
 import React from "react";
-import CustomInput from "../../../components/CustomInput";
+import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
-import CustomButton from "../../../components/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
-import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
-import endpoints from "../../../../../../lib/endpoints";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import { Controller, useForm } from "react-hook-form";
+import { setUser } from "../../../../../lib/features/User/userSlice";
+import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
 import { toast } from "react-toastify";
 import { useApiMutation } from "@/app/[locale]/utils/useApi";
-import { Controller, useForm } from "react-hook-form";
-import { setUser } from "../../../../../../lib/features/User/userSlice";
-import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+import endpoints from "../../../../../lib/endpoints";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
-import {
-  countryData,
-  expertiseData,
-  organizationType,
-} from "@/app/[locale]/utils/customData";
+import { countryData, expertiseData } from "@/app/[locale]/utils/customData";
 
 type Props = {};
 
-const Grantor = (props: Props) => {
+const Consultant = (props: Props) => {
+  const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
+
   const countriesData = React.useMemo(() => {
     const data = countryData?.map((data) => ({
       label: data.name,
@@ -33,8 +32,6 @@ const Grantor = (props: Props) => {
 
     return data;
   }, []);
-  const handleNavigation = useHandleNavigation();
-  const dispatch = useAppDispatch();
 
   const {
     handleSubmit,
@@ -47,11 +44,10 @@ const Grantor = (props: Props) => {
       email: "",
       phone: "",
       country: "",
-      sector: "",
-      organizationType: "",
+      expertise: "",
+      yearsOfExperience: "",
       password: "",
       confirmPassword: "",
-      organizationName: "",
     },
   });
   const loginNotify = () => toast.success("Signup successful");
@@ -63,7 +59,6 @@ const Grantor = (props: Props) => {
       onSuccess: (data) => {
         console.log("User created:", data);
         if (data.success) {
-          console.log(data);
           dispatch(
             setUser({
               user: {
@@ -90,19 +85,17 @@ const Grantor = (props: Props) => {
     const res = mutate({
       fullName: data.fullName,
       email: data.email,
-      usertype: "GRANTOR",
+      usertype: "CONSULTANT",
       password: data.password,
       confirmPassword: data.confirmPassword,
-      country: data.country,
+      country: "NIGERIA",
       expertise: data.expertise,
-      organizationName: data?.organizationName,
-      organizationGroup: data?.organizationType,
     });
   };
 
   return (
-    <div className="p-8 flex flex-col items-center justify-center mb-[5%] ">
-      <h3 className="w-full text-lg lg:text-current">Sign up Donor/GRANTOR</h3>
+    <div className="mt-8 flex flex-col items-center justify-center mb-[5%]">
+      <h3 className="w-full">Sign up Consultant</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -119,7 +112,7 @@ const Grantor = (props: Props) => {
                 // value=""
                 type="text"
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Full Name"
               />
 
@@ -142,7 +135,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
+                width="w-full "
                 label="Email"
                 inputType="input"
                 type="text"
@@ -167,7 +160,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.phone}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 contentLeft
                 label="Phone Number"
                 inputType="input"
@@ -193,7 +186,7 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.country}
-                width="w-full lg:w-[616px]"
+                width="w-full"
                 label="Select Country/Region"
                 inputType="select"
                 type="text"
@@ -210,9 +203,9 @@ const Grantor = (props: Props) => {
         />
 
         <Controller
-          name="organizationName"
+          name="expertise"
           control={control}
-          // rules={{ required: "Oragnization Name is required" }}
+          rules={{ required: "Expertise  is required" }}
           render={({ field: { value, onChange, ref } }) => (
             <>
               <CustomInput
@@ -220,71 +213,48 @@ const Grantor = (props: Props) => {
                 onChange={onChange}
                 value={value}
                 // value=""
-                error={errors.organizationName}
-                width="w-full lg:w-[616px]"
-                label="Organization Name"
+                error={errors.expertise}
+                width="w-full"
+                label="Expertise"
+                inputType="select"
+                type="text"
+                defaultValue="Health"
+                options={expertiseData}
+              />
+
+              {errors.expertise && (
+                <ErrorMessage message={errors?.expertise?.message} />
+              )}
+            </>
+          )}
+        />
+
+        <Controller
+          name="yearsOfExperience"
+          control={control}
+          // rules={{ required: "Years Of Experience  is required" }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                // value=""
+                error={errors.yearsOfExperience}
+                width="w-full"
+                defaultValue="Health"
+                label="Years of Experience"
                 inputType="input"
                 type="text"
-                placeholder="if representing an organization"
               />
 
-              {errors.organizationName && (
-                <ErrorMessage message={errors?.organizationName?.message} />
+              {errors.yearsOfExperience && (
+                <ErrorMessage message={errors?.yearsOfExperience?.message} />
               )}
             </>
           )}
         />
 
-        <Controller
-          name="organizationType"
-          control={control}
-          rules={{ required: "organization Type  is required" }}
-          render={({ field: { value, onChange, ref } }) => (
-            <>
-              <CustomInput
-                ref={ref}
-                onChange={onChange}
-                value={value}
-                // value=""
-                error={errors.organizationType}
-                width="w-full lg:w-[616px]"
-                label="Organization Type"
-                inputType="select"
-                type="text"
-                options={organizationType}
-              />
-
-              {errors.organizationType && (
-                <ErrorMessage message={errors?.organizationType?.message} />
-              )}
-            </>
-          )}
-        />
-        <Controller
-          name="sector"
-          control={control}
-          rules={{ required: "Sectore  is required" }}
-          render={({ field: { value, onChange, ref } }) => (
-            <>
-              <CustomInput
-                ref={ref}
-                onChange={onChange}
-                value={value}
-                // value=""
-                error={errors.sector}
-                width="w-full lg:w-[616px]"
-                label="Sector"
-                inputType="select"
-                type="text"
-                options={organizationType}
-              />
-
-              {errors.sector && (
-                <ErrorMessage message={errors?.sector?.message} />
-              )}
-            </>
-          )}
-        />
         <Controller
           name="password"
           control={control}
@@ -297,8 +267,8 @@ const Grantor = (props: Props) => {
                 value={value}
                 // value=""
                 error={errors.fullName}
-                width="w-full lg:w-[616px]"
-                // defaultValue="Health"
+                width="w-full"
+                defaultValue="Health"
                 label="Password"
                 inputType="input"
                 type="password"
@@ -311,6 +281,7 @@ const Grantor = (props: Props) => {
             </>
           )}
         />
+
         <Controller
           name="confirmPassword"
           control={control}
@@ -324,7 +295,7 @@ const Grantor = (props: Props) => {
                 // value=""
                 error={errors.confirmPassword}
                 width="w-full lg:w-[616px]"
-                // defaultValue="Health"
+                defaultValue="Health"
                 label="Confirm Password"
                 inputType="input"
                 type="password"
@@ -337,20 +308,19 @@ const Grantor = (props: Props) => {
             </>
           )}
         />
+
         <div className="mt-4">
           <CustomButton
-            width="w-full lg:w-[616px]"
+            width="w-full "
             title="Sign up"
-            radius="rounded-[5px]"
             loading={isPending}
             type="submit"
-            // onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
       </form>
       <div className="w-full flex justify-center items-center">
-        <p className="text-sm py-2 mx-4 md:mx-16">
-          Already hanve an account
+        <p className="text-sm text-center py-2 mx-4  md:mx-16">
+          Already have an account
           <button onClick={() => handleNavigation("/auth/login")}>
             <span className="underline text-secondaryColor ml-1">
               Click to login
@@ -359,8 +329,8 @@ const Grantor = (props: Props) => {
         </p>
       </div>
 
-      <div className="w-full flex justify-center items-center">
-        <p className="text-sm py-2 mx-4 md:mx-16">
+      <div className="w-full">
+        <p className="text-sm text-center py-2 mx-4  md:mx-16">
           By creating an account, you agree to Grantsconsult {" "}
           <span className="underline text-secondaryColor">
             Terms of Use, Privacy Policy
@@ -370,4 +340,4 @@ const Grantor = (props: Props) => {
     </div>
   );
 };
-export default Grantor;
+export default Consultant;

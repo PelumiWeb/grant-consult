@@ -30,7 +30,7 @@ export default function AuthLayout({
   console.log(pathname);
 
   // Define paths where you want to hide/show elements
-  const signUpScreen = pathname.includes("/auth/signup");
+  const signUpScreen = pathname.includes("/auth");
   return (
     <html lang="en">
       <body
@@ -48,7 +48,7 @@ export default function AuthLayout({
                   // router.refresh();
                   redirect("/");
                 }}
-                className="relative z-40 cursor-pointer">
+                className="absolute top-3 z-40 cursor-pointer">
                 <Image
                   src="/grantLogo.svg"
                   alt="Grant Logo"

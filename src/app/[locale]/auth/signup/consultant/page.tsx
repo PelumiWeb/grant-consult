@@ -21,8 +21,6 @@ import { countryData, expertiseData } from "@/app/[locale]/utils/customData";
 type Props = {};
 
 const Consultant = (props: Props) => {
-  const router = useRouter();
-  const locale = useLocale();
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
 
