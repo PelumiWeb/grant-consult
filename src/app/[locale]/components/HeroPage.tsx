@@ -136,7 +136,7 @@ const HeroPage = (props: Props) => {
             <div
               className="lg:ml-4 w-full lg:w-[134px] m-2 lg:m-0"
               onClick={() => {
-                handleNavigation(`/auth/signup/consultant`);
+                handleNavigation(`/auth/`);
               }}>
               <CustomButton
                 width="w-full "

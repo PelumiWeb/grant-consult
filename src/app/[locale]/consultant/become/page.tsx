@@ -55,7 +55,7 @@ const page = (props: Props) => {
 
           <CustomButton
             onClick={() => {
-              handleNavigation(`/auth/signup/consultant`);
+              handleNavigation(`/auth/`);
             }}
             title="Sign Up Now"
             textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"

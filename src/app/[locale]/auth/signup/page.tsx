@@ -34,8 +34,8 @@ const Signup = (props: Props) => {
       id: 1,
       url: "/auth/signup/general",
     },
-    { name: "Consultant", id: 2, url: "/auth/signup/consultant" },
-    { name: "Grantor(Donor)", id: 3, url: "/auth/signup/grantor" },
+    { name: "Consultant", id: 2, url: "/auth/" },
+    { name: "Grantor(Donor)", id: 3, url: "/auth/" },
   ]; //
   const [url, seturl] = React.useState(userType[0].url);
 

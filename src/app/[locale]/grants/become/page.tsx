@@ -153,7 +153,7 @@ const page = (props: Props) => {
         </p>
         <CustomButton
           onClick={() => {
-            handleNavigation(`/auth/signup/grantor`);
+            handleNavigation(`/auth/`);
           }}
           title="Sign Up Now"
           textStyle="font-bold text-[16px] leading-[16px] text-secondaryColor"

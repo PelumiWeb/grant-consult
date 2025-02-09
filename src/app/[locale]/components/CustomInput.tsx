@@ -26,7 +26,7 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
     <div
       className={`relative ${
         props.width ? props.width : "w-[640px]"
-      } w-[640px] my-4 rounded-[5px] `}>
+      } w-[640px] my-4 rounded-[5px] h-[50px] `}>
       <Space.Compact
         className={`${props?.width ? props?.width : " w-[640px]"}`}>
         {props.contentLeft && (
@@ -50,7 +50,7 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
               props?.error
                 ? "border-errorColor dark:border-errorColor  dark:focus:border-errorColor focus:border-errorColor"
                 : "border-borderColor dark:border-borderColor dark:focus:border-borderColor focus:border-borderColor  "
-            } appearance-none dark:text-white focus:outline-none focus:ring-0 peer cursor-pointer active:bg-white autofill:bg-white py-4`}
+            } appearance-none dark:text-white focus:outline-none focus:ring-0 peer cursor-pointer active:bg-white autofill:bg-white py-4 h-[50px]`}
             placeholder={props.placeholder}
             suffix={
               props?.rightIcon && (
@@ -70,7 +70,7 @@ const CustomInput = forwardRef<Props, Ref>((props, ref) => {
             // value={props.value}
             // value={props.value}
             onChange={props.onChange}
-            className={`block  w-full h-14 text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer placeholder:text-black`}
+            className={`block  w-full h-[50px] text-md text-gray-900 bg-transparent rounded-lg border border-borderColor appearance-none dark:text-white dark:border-borderColor dark:focus:border-borderColor focus:outline-none focus:ring-0 focus:border-borderColor peer placeholder:text-black `}
             options={props.options}
             showSearch
             filterOption={(input, option: any) =>

@@ -155,7 +155,7 @@ const Login = (props: Props) => {
           Don't have an account?{" "}
           <span
             className="text-secondaryColor cursor-pointer"
-            onClick={() => handleNavigation(`/auth/signup`)}>
+            onClick={() => handleNavigation(`/auth/`)}>
             Sign up here
           </span>
         </p>
