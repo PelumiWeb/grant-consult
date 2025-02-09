@@ -115,7 +115,7 @@ const Auth = () => {
       </div>
 
       <div className="block lg:hidden mt-4">
-        <p className="font-mono font-medium text-[16px] leading-[20px] text-secondaryColor">
+        <p className="font-mono font-medium text-[16px] leading-[20px] text-secondaryColor mb-2">
           Join the GrantsConsult Community!
         </p>
         <p className="font-mono font-normal text-[14px] leading-[20px] text-primaryBlack">
