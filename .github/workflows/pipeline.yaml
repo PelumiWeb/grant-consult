@@ -26,7 +26,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /root/grants-consult/
-            echo "Pulling the latest changes from GitHub..."
+            echo "Pulling the latest changes from GitHub"
             git pull origin main
-            echo "Checking restarting the grantsconsult service on the server"
+            echo "Restarting grantsconsult service on the server"
             sudo systemctl restart grantsconsult.service
