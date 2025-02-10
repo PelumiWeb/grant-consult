@@ -29,5 +29,5 @@ jobs:
             echo "Pulling the latest changes from GitHub"
             git fetch origin main
             git reset --hard origin/main
-            echo "Restarting grantsconsult service on the server"
+            echo "Restarting grants consult service on the server"
             sudo systemctl restart grantsconsult.service
