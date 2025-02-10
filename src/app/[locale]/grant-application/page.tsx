@@ -14,24 +14,24 @@ const page = (props: Props) => {
     <div className="h-full bg-backgroundColor">
       {/* Hero Page */}
       <div className="flex flex-col md:flex-row items-start justify-between h-full md:h-[550px] bg-white ">
-        <div className="w-[55%] h-full px-4 md:px-16 flex flex-col justify-start">
-          <div className="flex items-center w-[580px] mt-8 pb-10">
+        <div className="w-full md:w-[55%] h-full px-4 md:px-16 flex flex-col justify-start">
+          <div className="flex items-center justify-center md:justify-between w-full flex-col md:flex-row  md:w-[580px] mt-8 pb-10">
             <p className="text-textColor"> Home </p>
             <p className="text-textColor mx-3">{">>"}</p>
             <p className="text-textColor">Resources </p>
             <p className="text-textColor mx-3">{">>"}</p>
             <p className="text-textColor">Grants Application </p>
           </div>
-          <div className="w-[400px] my-2">
-            <h4 className="font-bold text-[36px] font-mono leading-[45px] ">
+          <div className="w-full md:w-[400px] my-2">
+            <h4 className="font-bold text-[16px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  ">
               Grants Application
             </h4>
-            <h4 className="font-bold text-[36px] font-mono leading-[45px]  text-secondaryColor">
+            <h4 className="font-bold text-[16px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  text-secondaryColor">
               Success Starts Here
             </h4>
           </div>
 
-          <p className="font-medium text-[16px] leading-[25px] text-textColor w-[500px] my-2 mb-8">
+          <p className="font-medium text-[12px] md:text-[16px] leading-[25px] text-textColor w-full md:w-[500px] my-2 mb-8">
             Applying for grants can be complex, but we’re here to simplify the
             process. With customized advice, professional writing and expert
             consultation. Our team is dedicated to helping you secure the
@@ -49,7 +49,7 @@ const page = (props: Props) => {
           />
         </div>
 
-        <div className="w-[40%] h-full">
+        <div className="mt-4 md:mt-0 w-full md:w-[40%] h-full">
           <img
             src="/grant-application.svg"
             className="w-full h-full object-contain"
@@ -58,7 +58,7 @@ const page = (props: Props) => {
         </div>
       </div>
 
-      <div className="p-16 w-full h-full">
+      <div className="p-4 md:p-16 w-full h-full">
         <h4 className="text-center font-bold text-[24px] leading-[32px] my-8">
           Why Choose GrantsConsult?
         </h4>
@@ -71,7 +71,7 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="bg-white w-full flex justify-center md:justify-between flex-wrap p-16">
+      <div className="bg-white w-full flex justify-center md:justify-between flex-wrap p-4 md:p-16">
         {[
           {
             image: "/grant-consult.svg",
@@ -94,7 +94,7 @@ const page = (props: Props) => {
             text: "We do not take months to prepare your grant application. Our expert consultants ensure your application is completed well before the deadline, helping you tick this task off your to-do list  as soon as possible",
           },
         ].map((data) => (
-          <div className="flex flex-col items-center  w-[300px]  justify-start h-[350px] ">
+          <div className="flex flex-col items-center  w-full  md:w-[300px]  justify-start h-[350px] ">
             <img src={data.image} alt="" />
             <p className="text-primary font-bold text-[16px] leading-[19px] my-4">
               {data.title}
