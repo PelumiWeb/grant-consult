@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../../../../lib/features/User/userSlice";
 import Sidebar from "./Sidebar";
 import SidebarModal from "./SidebarMobile";
+import CustomGrantsLogo from "../../customIcon/GrantsLogo";
 
 type Props = {
   onChange?: any;
@@ -30,7 +31,8 @@ const DashboardHeader = (props: Props) => {
           "bg-white border-b-borderColor border-b-[.5px] h-[100px] z-30 px-2"
         } h-[50px] md:h-[100px] flex items-center justify-between sticky -top-10  transition-all`}>
         <div className="w-[30%]" onClick={() => handleNavigation(`/`)}>
-          <img src="/grantLogo.svg" />
+          {/* <img src="/grantLogo.svg" /> */}
+          <CustomGrantsLogo />
         </div>
 
         <div className="hidden  md:flex  w-[70%] items-center justify-between">

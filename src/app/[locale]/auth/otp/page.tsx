@@ -59,7 +59,7 @@ const Otp = (props: Props) => {
   };
 
   return (
-    <div className="py-32 px-8 flex flex-col items-center justify-center ">
+    <div className="py-32 px-2 md:px-8 flex flex-col items-center justify-center ">
       <div className="mt-[20%]">
         <h3 className="text-center">Check your email</h3>
         <p className="text-center">

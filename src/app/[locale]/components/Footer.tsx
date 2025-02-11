@@ -2,6 +2,7 @@
 import { Image, Input } from "antd";
 import React from "react";
 import {  DownOutlined, UpOutlined } from "@ant-design/icons";
+import CustomGrantsLogo from "../customIcon/GrantsLogo";
 
 type Props = {};
 
@@ -42,11 +43,12 @@ function Footer({}: Props) {
         <div className="hidden lg:flex items-start justify-between w-full mt-8">
           {/* 1 */}
           <div>
-            <img
+            {/* <img
               className="w-[150px] h-full object-cover lg:w-[280px] lg:h-[38px]"
               src="/grantLogo.svg"
               alt="Grant Logo"
-            />
+            /> */}
+            <CustomGrantsLogo />
             <p className="w-[150px] lg:w-[300px] text-white text-sm font-semibold ">
               Your trusted platform for navigating the world of grant
               opportunities. We provide comprehensive access to active grants,
@@ -149,11 +151,12 @@ function Footer({}: Props) {
         {/* Bottom Mobile */}
         <div className="block lg:hidden mt-4">
           <div className="w-full flex justify-center items-center">
-            <img
+            {/* <img
               className="w-[150px] h-full object-cover lg:w-[280px] lg:h-[38px]"
               src="/grantLogo.svg"
               alt="Grant Logo"
-            />
+            /> */}
+            <CustomGrantsLogo />
           </div>
           <div className="my-2">
             <p className="text-center font-normal text-[12px] leading-[14px] text-white ">

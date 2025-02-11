@@ -14,6 +14,8 @@ import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
 import { useAppSelector } from "../../../../lib/hooks";
 import { logout } from "../../../../lib/features/User/userSlice";
+import CustomGrantsLogo from "../customIcon/GrantsLogo";
+import SearchIcon from "../customIcon/SearchIcon";
 
 // import { getLocale } from "next-intl";
 
@@ -49,22 +51,16 @@ const DropdownMobile = (props: mobileDropDownProps) => {
         onClick={() => {
           props.option && setOptionIsOpen((prev) => !prev);
         }}>
-        <p className="text-primary font-semibold uppercase text-[20px] leading-[24px]">
+        <p className="text-primary font-semibold uppercase text-[20px] leading-[24px] mb-2">
           {props.title}
         </p>
 
         {props.option && (
           <div>
             {!optionIsOpen ? (
-              <DownOutlined
-                style={{ fontSize: 20, color: "#111111" }}
-                // onClick={() => setOptionIsOpen((prev) => !prev)}
-              />
+              <img src="/down-outline.svg" alt="" />
             ) : (
-              <UpOutlined
-                style={{ fontSize: 20, color: "#111111" }}
-                // onClick={() => setOptionIsOpen((prev) => !prev)}
-              />
+              <img src="/up-outline.svg" alt="" />
             )}
           </div>
         )}
@@ -78,8 +74,9 @@ const DropdownMobile = (props: mobileDropDownProps) => {
                 onClick={() => {
                   props.setShowHeaderMobile(false);
                   handleNavigation(data.url);
-                }}>
-                <p className="font-medium font-mono text-[13px] leading-[20px] text-left text-black hover:text-secondaryColor">
+                }}
+                className="w-full border-b-[0.5px] border-b-borderColor bg-backgroundColor h-[50px] px-2">
+                <p className="font-semibold font-mono text-[18px] leading-[15px] text-left text-[#132D46] hover:text-secondaryColor">
                   {data.name}
                 </p>
               </button>
@@ -492,12 +489,13 @@ const Header = ({}: Props) => {
       {/* Up */}
       <div className="flex h-[122px] md:px-8 xl:px-16 items-center  justify-between w-full">
         <div className="cursor-pointer" onClick={() => handleNavigation(`/`)}>
-          <Image
+          {/* <Image
             src="/grantLogo.svg"
             alt="Grant Logo"
             width={206}
             height={30}
-          />
+          /> */}
+          <CustomGrantsLogo />
         </div>
 
         {/* Input */}
@@ -507,13 +505,14 @@ const Header = ({}: Props) => {
             placeholder="Search Site Content"
           />
           <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
-            <Image
+            {/* <Image
               src="/searchgrant.svg"
               className="w-[20px]"
               width={20}
               height={20}
               alt="search grant"
-            />
+            /> */}
+            <SearchIcon />
           </div>
         </div>
         {/* Avatar */}
@@ -703,20 +702,21 @@ const Header = ({}: Props) => {
             placeholder="Search Site Content"
           />
           <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[5px] ">
-            <Image
+            {/* <Image
               src="/searchgrant.svg"
-              className="hidden  lg:block w-[20px]"
+              className=" w-[20px]"
               width={20}
               height={20}
               alt=""
-            />
-            <Image
+            /> */}
+            <SearchIcon />
+            {/* <Image
               src="/filterOption.svg"
               className="block lg:hidden w-[20px]"
               width={20}
               height={20}
               alt=""
-            />
+            /> */}
           </div>
         </div>
         <div className="hidden bg-primary w-full lg:flex items-center justify-between py-4 px-16">

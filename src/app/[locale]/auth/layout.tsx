@@ -9,6 +9,7 @@ import CustomButton from "../components/CustomButton";
 import { Poppins, Montserrat } from "next/font/google";
 import { useRouter, redirect, usePathname } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
+import CustomGrantsLogo from "../customIcon/GrantsLogo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,12 +50,7 @@ export default function AuthLayout({
                   redirect("/");
                 }}
                 className="absolute top-3 z-40 cursor-pointer">
-                <Image
-                  src="/grantLogo.svg"
-                  alt="Grant Logo"
-                  width={206}
-                  height={30}
-                />
+                <CustomGrantsLogo />
               </div>
 
               <div className="z-20 ">
@@ -132,9 +128,23 @@ export default function AuthLayout({
               </div>
             </div>
           </div>
+          {/* Mobile Header */}
 
           {/* Content */}
           <div className="w-full lg:w-[55%]  border-gray-500 bg-white absolute top-0 right-0  ">
+            <div className="flex items-center py-4 px-2 md:hidden">
+                <button
+                  className="flex items-center justify-start mr-8"
+                  onClick={() => router.back()}>
+                  <div className="w-[16px] h-[16px] relative">
+                    <Image src={"/goBackNew.svg"} alt="" fill />
+                  </div>
+                  <p className=" font-mono font-medium text-[16px] leading-[18px] text-primary ml-2 ">
+                    Back
+                  </p>
+                </button>
+              <CustomGrantsLogo height="22" width="163" />
+            </div>
             {children}
           </div>
           <ToastContainer />

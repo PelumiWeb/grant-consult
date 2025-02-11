@@ -71,7 +71,7 @@ const ResetPassword = (props: Props) => {
     });
   };
   return (
-    <div className="py-32 px-8 w-full flex flex-col items-center justify-center ">
+    <div className="py-32 px-2 md:px-8 w-full flex flex-col items-center justify-center ">
       <div className="mt-[10%] w-full">
         <h3 className="text-center"> Create new assword</h3>
         <p className="py-4 text-center">

@@ -103,16 +103,7 @@ const Auth = () => {
   const router = useRouter();
   return (
     <div className="flex flex-col p-4 md:mr-[10%] md:ml-[5%]">
-      <div>
-        <button className="flex items-center " onClick={() => router.back()}>
-          <div className="w-[16px] h-[16px] relative">
-            <Image src={"/goBackNew.svg"} alt="" fill />
-          </div>
-          <p className=" font-mono font-medium text-[16px] leading-[18px] text-primary ml-2 ">
-            Back
-          </p>
-        </button>
-      </div>
+     
 
       <div className="block lg:hidden mt-4">
         <p className="font-mono font-medium text-[16px] leading-[20px] text-secondaryColor mb-2">
