@@ -695,7 +695,7 @@ const Header = ({}: Props) => {
       </div>
 
       {/* Down */}
-      <div className="grid place-items-center">
+      <div className="grid place-items-center bg-white">
         <div className="flex items-center lg:hidden h-[40px] w-full md:px-8 lg:px-0">
           <Input
             className="w-[80%] h-full rounded-l-[5px] rounded-r-[0px] "

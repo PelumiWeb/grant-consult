@@ -4,7 +4,7 @@ import { Action, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
 export interface UserState {
-    user?: {
+user?: {
 accountStatus: null,
 code: string
 country: null

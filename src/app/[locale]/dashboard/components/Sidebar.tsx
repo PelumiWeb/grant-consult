@@ -159,7 +159,7 @@ const Sidebar = (props: Props) => {
 
   const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
-    if (user?.userType == userTypeName.general) {
+    if ("GENERAL_USER" == userTypeName.general) {
       return tabs;
     } else if (user?.userType == userTypeName.consultant) {
       return tabs;
@@ -184,7 +184,7 @@ const Sidebar = (props: Props) => {
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
   return (
-    <div className="hidden lg:block bg-primary h-full w-[20%] px-8 ">
+    <div className="hidden lg:block bg-primary h-screen w-[20%] px-8 ">
       <div className="pb-2 mt-6" onClick={() => handleNavigation(`/`)}>
         <TabsComponent
           imageTitle="Home"

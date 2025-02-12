@@ -63,11 +63,12 @@ const Login = (props: Props) => {
   );
 
   const onSubmit = async (data: LoginData) => {
-    console.log(data);
-    mutate({
-      email: data.email,
-      password: data.password,
-    });
+    // console.log(data);
+    // mutate({
+    //   email: data.email,
+    //   password: data.password,
+    // });
+          handleNavigation(`/dashboard/profile`);
   };
 
   return (

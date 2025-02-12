@@ -120,9 +120,9 @@ const page = (props: Props) => {
           <PartnerCard {...data} />
         ))}
       </div>
-      <div className="py-8 flex flex-col items-center">
-        <h3 className="text-center pb-12">Join Our Expert Team</h3>
-        <p className="font-normal text-[18px] leading-[30px] text-center text-primaryBlack w-[70%]">
+      <div className="py-8 px-4 flex flex-col items-center">
+        <h3 className="text-center pb-4 md:pb-12">Join Our Expert Team</h3>
+        <p className="font-normal text-[18px] leading-[30px] text-center text-primaryBlack w-full  md:w-[70%]">
           GrantsConsult welcomes talented individuals with expertise and
           knowledge in grant consultancy. If you have strong skills in grant
           management, a passion for the complexities of grant writing, and the
@@ -158,15 +158,15 @@ const page = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-around items-center h-[300px]">
+      <div className="flex flex-col justify-around items-center h-full  md:h-[300px] p-4 md:p-0">
         <div className="w-[130px] h-[130px] rounded-full  ">
           <img src="/consultantProfile.svg" alt="" />
         </div>
-        <p className="font-normal text-[18px] leading-[30px] text-primaryBlack font-mono w-[70%] text-center">
+        <p className="font-normal text-[18px] leading-[30px] text-primaryBlack font-mono w-full  md:w-[70%] text-center">
           “Joining GrantsConsult was one of the best decisions in my consulting
           career. The support and resources are unmatched.”
         </p>
-        <p className="text-black leading-[30px] font-mono text-[18px] font-bold w-[70%] text-center">
+        <p className="text-black leading-[30px] font-mono text-[18px] font-bold w-full md:w-[70%] text-center">
           Alice Brooklyn, Senior Grant Consultant
         </p>
       </div>

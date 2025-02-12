@@ -50,6 +50,11 @@ const LabelInput = (props: Props) => {
           defaultValue={props.value ? props.value : props.placeholder}
           onChange={props.handleChange}
           options={props.options}
+          // dropdownStyle={{
+          //   fontWeight: "bold",
+          //   backgroundColor: "#1F4E79",
+          //   color: "#1F4E79",
+          // }}
           showSearch
           filterOption={(input, option: any) =>
             option?.label?.toLowerCase().includes(input.toLowerCase())

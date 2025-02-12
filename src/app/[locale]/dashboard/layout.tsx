@@ -33,11 +33,11 @@ export default function DashboardLayout({
   const locale = useLocale();
   const handleNavigation = useHandleNavigation()
 
-  React.useEffect(() => {
-    if (!user) {
-     handleNavigation("/auth/login", redirect);
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (!user) {
+  //    handleNavigation("/auth/login", redirect);
+  //   }
+  // }, []);
   return (
     <html lang="en">
       <body
