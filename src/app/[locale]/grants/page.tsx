@@ -9,14 +9,14 @@ import { Pagination } from "antd";
 
 export default function Home() {
   return (
-    <div className="w-full px-4 lg:px-16 bg-white">
+    <div className="w-full">
       {/*  */}
-      <div className="bg-white mb-8">
-        <div className="flex items-center justify-between w-[70%] md:w-[40%] lg:w-[30%] mt-4 mb-2">
+      <div className="bg-white mb-8 p-4 ">
+        {/* <div className="flex items-center justify-between w-[70%] md:w-[40%] lg:w-[30%] mt-4 mb-2">
           <p className="text-textColor">Home</p>
           <p className="text-textColor mr-4">{">>"}</p>
           <p className="text-textColor">View All Grants</p>
-        </div>
+        </div> */}
         <div className="flex items-center">
           <div className="h-[25px] w-[2px] bg-buttonPrimary mr-2" />
           <p className="text-textColor">
@@ -25,19 +25,19 @@ export default function Home() {
           </p>
         </div>
         {/* Filter Options */}
-        
+
         <FilterComponent />
       </div>
 
       {/* Grants Cards */}
-      <div className="flex justify-between h-full mb-8">
+      <div className="flex justify-between h-full mb-8 p-0 md:p-6">
         {/* Left */}
         <div className="h-full">
           {[1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10].map((data) => (
             <GrantCard />
           ))}
 
-          <div className="w-full flex items-center justify-center mt-16">
+          <div className="w-full flex items-center justify-center mt-16 mb-8">
             <Pagination defaultCurrent={1} total={50} />
           </div>
         </div>
