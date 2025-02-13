@@ -17,7 +17,12 @@ export default function Home() {
           <p className="text-textColor mr-4">{">>"}</p>
           <p className="text-textColor">View All Grants</p>
         </div> */}
-        <div className="flex items-center">
+        <div className="block md:hidden">
+          <h4 className="text-secondaryColor font-semibold text-[20px] leading-[26px] text-left">
+            Grants Opportunity
+          </h4>
+        </div>
+        <div className="hidden md:flex items-center">
           <div className="h-[25px] w-[2px] bg-buttonPrimary mr-2" />
           <p className="text-textColor">
             Find opportunities that suit your business, corporate and Individual
