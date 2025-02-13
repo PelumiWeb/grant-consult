@@ -160,7 +160,7 @@ const Sidebar = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
     if ("GENERAL_USER" == userTypeName.general) {
-      return tabs;
+      return generalTabs;
     } else if (user?.userType == userTypeName.consultant) {
       return tabs;
     } else {
