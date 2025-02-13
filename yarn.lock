@@ -3838,6 +3838,7 @@ __metadata:
     negotiator: ^1.0.0
     next: 15.0.2
     next-intl: ^3.26.3
+    next-themes: ^0.4.4
     postcss: ^8
     react: 19.0.0-rc-02c0e824-20241028
     react-calendar: ^5.1.0
@@ -4953,6 +4954,16 @@ __metadata:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
   checksum: 9480412be46db8c8b937e7dd9e28dda719d781cdc78c60a3a069930e1c078455f29dfd7c1598629497a347888e5e2d6e6d0567ce1f50a93398e9cdf9ac4ec29b
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "next-themes@npm:0.4.4"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 9107fd68152eec5e4681e18c7ddbf17f8d4d65abc0ff3b17f6f5d8ee61d2b2106ee5f26d93942da52799214354eed3bb5d4a76a8bf2c7274e73ac09467441390
   languageName: node
   linkType: hard
 

@@ -8,6 +8,7 @@ import React, { ReactNode, Suspense } from "react";
 import getMessagesSync from "./utils/getMessageAsync";
 import ReactQueryProvider from "./utils/ReactQueryProvider";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { ThemeProvider } from "next-themes";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -44,20 +45,22 @@ export default async function RootLayout({
         className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <ReactQueryProvider>
-            <StoreProvider>
-              <Suspense
-                fallback={
-                  <div className="w-full h-screen bg-white flex justify-center items-center">
-                    <ScaleLoader color="rgb(54, 215, 183)" />
-                  </div>
-                }>
-                <div className="">{children}</div>
-              </Suspense>
-            </StoreProvider>
-          </ReactQueryProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <NextIntlClientProvider messages={messages}>
+            <ReactQueryProvider>
+              <StoreProvider>
+                <Suspense
+                  fallback={
+                    <div className="w-full h-screen bg-white flex justify-center items-center">
+                      <ScaleLoader color="rgb(54, 215, 183)" />
+                    </div>
+                  }>
+                  <div className="">{children}</div>
+                </Suspense>
+              </StoreProvider>
+            </ReactQueryProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
