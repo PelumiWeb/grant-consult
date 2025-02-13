@@ -81,7 +81,7 @@ export default function AuthLayout({
                     </div>
                     <li className="mt-2 list-disc ml-4">
                       <p className="font-bold text-[16px] leading-[20px] font-mono text-primaryBlack">
-                        Genral Users:{" "}
+                        General Users:{" "}
                         <span className="font-normal font-mono text-[16px] leading-[20px] text-primaryBlack">
                           Includes individuals, NGOs, and corporate bodies
                           seeking grants for projects, education, or

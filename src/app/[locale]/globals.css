@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,7 +14,6 @@
     --foreground: #ededed;
   }
 }
-
 
 @layer base {
   h1 {
@@ -67,7 +67,6 @@
   @apply bg-blue-100; /* Hover background color for options */
 }
 
-
 .ant-picker-suffix {
   color: #3b82f6; /* Tailwind's blue-500 */
 }
@@ -85,20 +84,20 @@ body {
 }
 
 .ant-table-thead > tr > th {
-  background-color: #1F4E79 !important; /* Set your background color */
-  color: white !important;              /* Set text color */
-  font-weight: bold;                   /* Make text bold */
-  text-align: center;                  /* Align text center */
+  background-color: #1f4e79 !important; /* Set your background color */
+  color: white !important; /* Set text color */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Align text center */
 }
 
 @layer utilities {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
