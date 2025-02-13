@@ -49,13 +49,17 @@ const page = (props: Props) => {
             Become a Grantor
           </h3>
 
-          <p className="font-semibold text-[16px] leading-[25px] text-white">
-            Are you a trustor with funding opportunities? Do you want to ensure
-            that the most impactful project ideas receive your grants?
-            GrantsConsult is the ideal platform to give your grant(s) the
-            visibility it deserves.
-          </p>
-
+          <div className="w-full">
+            <p className="font-semibold text-[16px] leading-[25px] text-white">
+              Are you a trustor with funding opportunities?
+            </p>
+            <p className="font-semibold text-[16px] leading-[25px] text-white ">
+              Do you want to ensure that the most impactful project ideas
+              receive your grants? GrantsConsult is the ideal platform to give
+              your grant(s) the visibility it deserves.
+            </p>
+          </div>
+          
           <CustomButton
             title="Partner With Us"
             textStyle="font-inter font-semibold text-[16px] leading-[16px] text-white"
@@ -115,7 +119,9 @@ const page = (props: Props) => {
         ))}
       </div>
 
-      <h3 className="text-center pb-12 px-4 md:px-0">Benefits of Partnering with Us</h3>
+      <h3 className="text-center pb-12 px-4 md:px-0">
+        Benefits of Partnering with Us
+      </h3>
 
       <div className="bg-white flex items-start p-8 justify-center lg:justify-between flex-wrap ">
         {[

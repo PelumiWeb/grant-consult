@@ -41,17 +41,20 @@ const page = (props: Props) => {
   return (
     <div className="pb-20">
       <div className="hidden md:block min-h-[421px] bg-becomeConsultantImage bg-cover  bg-left md:bg-center bg-no-repeat relative">
-        <div className="w-[600px] min-h-[316px] px-16 flex flex-col justify-between absolute top-[15%]">
+        <div className="w-[650px] min-h-[316px] px-16 flex flex-col justify-between absolute top-[15%]">
           <h3 className="font-mono font-bold text-[25px] md:text-[35px] lg:text-[45px] leading-[30px] lg:leading-[60px] text-white">
             {" "}
             Become a Consultant
           </h3>
 
-          <p className="font-semibold text-[16px] leading-[25px] text-white">
-            Join our professional network of seasoned consultants. we value the
-            right talent and offer rewarding opportunities for your
-            contributions.
-          </p>
+          <div className="w-full">
+            <p className="font-semibold text-[16px] leading-[25px] text-white">
+              Join our professional network of seasoned consultants. we value
+              the right talent and offer rewarding opportunities for your
+              contributions.
+            </p>
+           
+          </div>
 
           <CustomButton
             onClick={() => {

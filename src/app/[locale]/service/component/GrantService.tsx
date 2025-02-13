@@ -11,6 +11,7 @@ type Props = {
   buttonBackground: string;
   title: string;
   price: string;
+  list: string[]
 };
 
 const GrantService = ({
@@ -19,6 +20,7 @@ const GrantService = ({
   buttonBackground,
   title,
   price,
+  list
 }: Props) => {
   const router = useRouter();
   const locale = useLocale();
@@ -33,24 +35,27 @@ const GrantService = ({
       {/* Image */}
       <div className="h-[20%]">
         {/* serviceType */}
-        <p className="font-semibold text-newPrimaryTextColor text-[16px] leading-[28px] text-center mt-4">
+        <p className="font-semibold text-newPrimaryTextColor text-[16px] leading-[24px] text-center mt-4 ">
           {title}{" "}
         </p>
-        <p className="font-semibold text-textColor text-[16px] leading-[28px] text-center">
+        <p className="font-normal text-textColor text-[14px] leading-[23px] text-center">
           {price}
         </p>
       </div>
       {/* lists */}
       <ul className="list-disc px-8  h-full">
-        <li className=" text-[#982B24]">
-          <div>
-            <p className="font-semibold text-[12px] leading-[24px] text-[#333333]">
-              {" "}
-              Upfront Fee + 10% of secured grant amount
-            </p>
-          </div>
-        </li>
-        <li className=" text-[#982B24]">
+        {list.map((data:string) => (
+          <li className=" text-[#F9C03B]">
+            <div>
+              <p className="font-extrabold text-[12px] leading-[24px] text-[#333333]">
+                {" "}
+                {data}
+              </p>
+            </div>
+          </li>
+        ))}
+
+        {/* <li className=" text-[#982B24]">
           <div>
             <p className="font-semibold text-[12px] leading-[24px] text-[#333333]">
               {" "}
@@ -91,7 +96,7 @@ const GrantService = ({
               </p>
             </div>
           </li>
-        </li>
+        </li> */}
       </ul>
       <div
         className=" absolute left-0  bottom-3 w-full flex justify-center items-center 

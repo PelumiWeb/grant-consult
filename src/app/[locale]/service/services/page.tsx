@@ -123,7 +123,7 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="p-4  md:p-16 flex items-center justify-center xl:justify-between flex-wrap">
+      <div className="p-4  md:p-16 flex items-center justify-center lg:justify-between flex-wrap">
         {serviceData.map((data) => (
           <ServiceCard key={data.id} {...data} />
         ))}
