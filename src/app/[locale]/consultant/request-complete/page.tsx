@@ -95,7 +95,7 @@ const page = (props: Props) => {
         <div className="w-full flex justify-between items-start mt-8 flex-wrap">
           {/* Select Date and Time */}
           <div className="w-full lg:w-[70%]">
-            <div className="w-full shadow-complete-shadow-1 h-[180px] rounded-[5px] border-borderColor border-[0.5px] p-4 ">
+            <div className="w-full shadow-complete-shadow-1 h-full md:h-[180px] rounded-[5px] border-borderColor border-[0.5px] p-4 ">
               <p className="text-primary font-semibold leading-[18px] font-mono mb-4">
                 Select Date & Time
               </p>

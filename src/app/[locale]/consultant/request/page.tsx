@@ -45,7 +45,7 @@ export default function Home() {
 
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="w-full px-4 lg:px-16">
+    <div className="w-full px-4 lg:px-16 bg-white">
       <div className="flex flex-col items-center justify-center py-8">
         <p className="text-secondaryColor font-semibold text-[24px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
           Request Consultation
@@ -67,6 +67,7 @@ export default function Home() {
                 value=""
                 required={true}
                 placeholder="Enter First Name"
+                mr="mr-0 md:mr-2"
               />
               <LabelInput
                 label={"Last Name"}
@@ -81,6 +82,7 @@ export default function Home() {
                 value=""
                 required={true}
                 placeholder="Enter Email Address"
+                mr="mr-0 md:mr-2"
               />
               <LabelInput
                 label={"Phone"}
@@ -98,6 +100,7 @@ export default function Home() {
                 select
                 options={consultationType}
                 handleChange={handleChange}
+                mr="mr-0 md:mr-2"
               />
               <LabelInput
                 label={"Select Client Category"}
@@ -110,11 +113,12 @@ export default function Home() {
             </div>
             <div className="flex w-full items-center justify-center md:justify-between  flex-col md:flex-row">
               <LabelInput
-                label={"Select Grant Company"}
+                label={"Select Grant Category"}
                 value=""
                 // required={true}
                 placeholder="Enter Grant Company"
                 select
+                mr="mr-0 md:mr-2"
               />
               <LabelInput
                 label={"Grant Amount (Optional)"}
@@ -131,6 +135,7 @@ export default function Home() {
                 placeholder="Select Country"
                 select
                 options={countriesData}
+                mr="mr-0 md:mr-2"
               />
               <LabelInput
                 label={"Add a Message"}
@@ -148,7 +153,7 @@ export default function Home() {
                 height="h-[60px]"
                 backgrounColor="bg-white"
                 borderColor="border-buttonPrimary"
-                textStyle="text-buttonPrimary"
+                textStyle="text-buttonPrimary font-inter font-bold"
               />
             </div>
             {/* Consultant Matching */}
@@ -157,8 +162,8 @@ export default function Home() {
             <img src="/requestConsultant.svg" />
           </div>
         </div>
-        <div className="w-full">
-          <h3 className="text-primary text-sm md:text-md lg:text-2xl my-8 text-left ml-16">
+        <div className="w-full bg-backgroundColor py-4 mt-4">
+          <h3 className="text-primary text-[20px] leading-[26px]  my-8 text-center md:text-left ml-0 md:ml-16 ">
             Consultant Matching
           </h3>
           <div className="flex w-full flex-wrap items-center justify-center ">
