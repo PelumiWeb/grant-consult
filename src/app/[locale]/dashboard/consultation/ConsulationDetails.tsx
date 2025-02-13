@@ -43,13 +43,13 @@ const ConsultationDetails = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-full md:w-[580px] mt-8 flex-col md:flex-row mb-4 md:mb-0">
+        {/* <div className="flex items-center w-full md:w-[580px] mt-8 flex-col md:flex-row mb-4 md:mb-0">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Consultation </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Strategic Funding Advisory</p>
-        </div>
+        </div> */}
 
         <div className="w-full flex justify-center md:justify-end ">
           <CustomButton

@@ -45,13 +45,13 @@ const AssignedDetails = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-full  mt-8 flex-col md:flex-row">
+        {/* <div className="flex items-center w-full  mt-8 flex-col md:flex-row">
           <p className="text-textColor text-sm md:text-lg"> Dashboard </p>
           <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
           <p className="text-textColor text-sm md:text-lg">Assigned Grants </p>
           <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
           <p className="text-sm md:text-lg">Community Health Initiative</p>
-        </div>
+        </div> */}
 
         <div className="w-full flex justify-center md:justify-end mt-4 md:mt-0">
           <CustomButton

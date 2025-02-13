@@ -260,7 +260,7 @@ function Footer({}: Props) {
                 <div className="flex items-center my-4">
                   <Image src="/message.svg" width={18} height={18} />
                   <p className="font-normal text-[13px] leading-[15px] text-white  ml-2">
-                    Grantconsult@gmail.com
+                    info@grantsconsult.com
                   </p>
                 </div>
                 <div className="flex items-center my-4">
@@ -272,7 +272,9 @@ function Footer({}: Props) {
               </div>
             </ul>
             <div className="w-full flex justify-center items-center my-8">
-              <p className="text-[14px] leading-[12px] text-white ">Copyright @Grantsconsult2025</p>
+              <p className="text-[14px] leading-[12px] text-white ">
+                Copyright @Grantsconsult2025
+              </p>
             </div>
           </div>
         </div>

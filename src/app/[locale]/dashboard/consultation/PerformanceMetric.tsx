@@ -115,13 +115,13 @@ const PerformanceMetric = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-full lg:w-[580px] mt-8">
+        {/* <div className="flex items-center w-full lg:w-[580px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Consultation </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Performance Metrics</p>
-        </div>
+        </div> */}
 
         <div>
           {/* Header */}

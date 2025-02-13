@@ -111,7 +111,7 @@ const page = (props: Props) => {
   return (
     <div>
       <div className="flex flex-col justify-between items-center py-8">
-        <h2 className="font-semibold text-[26px] md:text-[46px] leading-[55px] text-secondaryColor ">
+        <h2 className="font-semibold text-[26px] md:text-[46px] leading-[55px] text-secondaryColor mb-6">
           Our Services
         </h2>
 

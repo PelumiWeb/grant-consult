@@ -459,11 +459,11 @@ const Consultation = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[280px] mt-8">
+        {/* <div className="flex items-center w-[280px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Assigned Grants </p>
-        </div>
+        </div> */}
         <div className="flex items-center justify-center flex-col">
           <h2 className="text-secondaryColor">Consultation Overview</h2>
           <p className="mt-4">

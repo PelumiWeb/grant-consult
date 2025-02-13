@@ -7,8 +7,11 @@ import SubscriptionCard from "../components/SubscriptionCard";
 import GrantFunder from "../components/GrantFunder";
 import { ArrowLeftOutlined, CreditCardFilled } from "@ant-design/icons";
 import { Checkbox, Input, Select, Space, Tooltip } from "antd";
+import React from "react";
 
 export default function Home() {
+  const [selected, setSelected] = React.useState(1)
+
   return (
     <div className="w-full">
       {/*  */}
@@ -19,7 +22,7 @@ export default function Home() {
 
       {/* </div> */}
       <div className="py-8">
-        <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center ">
+        <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center mb-6">
           Complete Your Payment
         </h1>
         <p className="text-center text-textColor font-normal text-[14px] md:text-[16px] leading-[23px]">
@@ -162,16 +165,32 @@ export default function Home() {
                 Payment Method
               </h4>
               <div>
-                <div className="w-full h-[60px] rounded-[5px] border-borderColor border-[0.5px] flex items-center px-4 my-4">
-                  <div className="w-[20px] h-[20px] rounded-full border-secondaryColor border-[6px] bg-white" />
+                <button
+                  className="w-full h-[60px] rounded-[5px] border-borderColor border-[0.5px] flex items-center px-4 my-4"
+                  onClick={() => {
+                    setSelected(1);
+                  }}>
+                  <div
+                    className={`w-[20px] h-[20px] rounded-full border-secondaryColor ${
+                      selected === 1 ? "border-[6px]" : "border-[3px]"
+                    } bg-white `}
+                  />
                   <p className="font-medium text-[16px] leading-[19px] ml-4">
                     Credit/Debit Card
                   </p>
-                </div>
-                <div className="w-full h-[60px] rounded-[5px] border-borderColor border-[0.5px] flex items-center px-4 my-4">
-                  <div className="w-[20px] h-[20px] rounded-full border-secondaryColor border-[6px] bg-white" />
+                </button>
+                <button
+                  className="w-full h-[60px] rounded-[5px] border-borderColor border-[0.5px] flex items-center px-4 my-4"
+                  onClick={() => {
+                    setSelected(2);
+                  }}>
+                  <div
+                    className={`w-[20px] h-[20px] rounded-full border-secondaryColor ${
+                      selected === 2 ? "border-[6px]" : "border-[3px]"
+                    } bg-white`}
+                  />
                   <img src="/paypalIcon.svg" alt="" className="ml-4" />
-                </div>
+                </button>
 
                 <CustomButton
                   backgrounColor="bg-secondaryColor"

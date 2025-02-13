@@ -44,13 +44,13 @@ const ManageSubscription = (props: Props) => {
       className="bg-backgroundColor  w-full p-4 lg:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
-      <div>
+      {/* <div>
         <div className="flex items-center w-[580px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Grants </p>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex justify-between items-center py-4 flex-wrap">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">

@@ -44,11 +44,11 @@ const Grant = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
 
-      <div className="flex items-center w-[280px] mt-8">
+      {/* <div className="flex items-center w-[280px] mt-8">
         <p className="text-textColor"> Dashboard </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Grants </p>
-      </div>
+      </div> */}
 
       <div className="flex flex-col lg:flex-row justify-between items-center py-4">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] w-full ">

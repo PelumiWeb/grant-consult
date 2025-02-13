@@ -43,11 +43,11 @@ const HelpSupport = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[280px] mt-8">
+        {/* <div className="flex items-center w-[280px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Help & Support </p>
-        </div>
+        </div> */}
 
         <h2 className="text-secondaryColor text-center w-full text-[36px] leading-[42px] py-4">
           How can we help you today?

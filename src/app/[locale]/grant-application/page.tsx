@@ -15,23 +15,23 @@ const page = (props: Props) => {
       {/* Hero Page */}
       <div className="flex flex-col md:flex-row items-start justify-between h-full md:h-[550px] bg-white ">
         <div className="w-full md:w-[55%] h-full px-4 md:px-16 flex flex-col justify-start">
-          <div className="flex items-center justify-center md:justify-between w-full flex-col md:flex-row  md:w-[580px] mt-8 pb-10">
+          {/* <div className="flex items-center justify-center md:justify-between w-full flex-col md:flex-row  md:w-[580px] mt-8 pb-10">
             <p className="text-textColor"> Home </p>
             <p className="text-textColor mx-3">{">>"}</p>
             <p className="text-textColor">Resources </p>
             <p className="text-textColor mx-3">{">>"}</p>
             <p className="text-textColor">Grants Application </p>
-          </div>
-          <div className="w-full md:w-[400px] my-2">
-            <h4 className="font-bold text-[16px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  ">
+          </div> */}
+          <div className="w-full md:w-[400px] my-2 pt-0 md:pt-[100px]">
+            <h4 className="font-bold text-[20px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  text-center md:text-left mb-2 md:mb-0">
               Grants Application
             </h4>
-            <h4 className="font-bold text-[16px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  text-secondaryColor">
+            <h4 className="font-bold text-[20px]   md:text-[36px] font-mono leading-[20px] md:leading-[45px]  text-secondaryColor text-center md:text-left">
               Success Starts Here
             </h4>
           </div>
 
-          <p className="font-medium text-[12px] md:text-[16px] leading-[25px] text-textColor w-full md:w-[500px] my-2 mb-8">
+          <p className="font-medium text-[12px] md:text-[16px] leading-[25px] text-textColor w-full md:w-[500px] mt-2 md:mt-6 mb-8">
             Applying for grants can be complex, but we’re here to simplify the
             process. With customized advice, professional writing and expert
             consultation. Our team is dedicated to helping you secure the
@@ -43,7 +43,7 @@ const page = (props: Props) => {
             title="Request Consultation"
             backgrounColor="bg-secondaryColor"
             radius="rounded-[5px]"
-            width="w-[250px]"
+            width="w-full md:w-[250px]"
             height="h-[45px]"
             textStyle="font-inter font-bold text-[16px] leading-[16px] text-center text-white"
           />
@@ -94,7 +94,7 @@ const page = (props: Props) => {
             text: "We do not take months to prepare your grant application. Our expert consultants ensure your application is completed well before the deadline, helping you tick this task off your to-do list  as soon as possible",
           },
         ].map((data) => (
-          <div className="flex flex-col items-center  w-full  md:w-[300px]  justify-start h-[350px] ">
+          <div className="flex flex-col items-center  w-full  md:w-[300px]  justify-start h-full md:h-[350px] my-4 md:my-0">
             <img src={data.image} alt="" />
             <p className="text-primary font-bold text-[16px] leading-[19px] my-4">
               {data.title}
@@ -117,22 +117,30 @@ const page = (props: Props) => {
             {
               title: "Initial Consultation",
               text: "We assess your needs and match you with the perfect consultant.",
+              letter: "A",
             },
             {
               title: "Strategy Development",
               text: "We create a customized plan to maximize your chances of success.",
+              letter: "B",
             },
             {
               title: "Application Preparation",
               text: "We collaboratively create a compelling, polished grant application for you.",
+              letter: "C",
             },
             {
               title: "Submission and Follow-Up",
               text: "We handle the entire submission process with attention to details and provide ongoing support to track its progress.",
+              letter: "D",
             },
           ].map((data) => (
             <div className="flex items-center m-4">
-              <div className="min-w-[50px] min-h-[42px] rounded-[5px] bg-secondaryColor mr-2" />
+              <div className="min-w-[50px] min-h-[42px] rounded-[5px] bg-secondaryColor mr-2 grid place-items-center">
+                <p className="font-semibold text-[24px] leading-[31px] text-white">
+                  {data?.letter}
+                </p>
+              </div>
               <div className="ml-1">
                 <p className="text-primary font-semibold text-base ">
                   {data.title}
@@ -145,7 +153,7 @@ const page = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8 mt-8">
+      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8 my-16">
         <p className="text-center font-mono font-bold text-[24px] leading-[36px] text-white">
           Ready to Get Started?
         </p>

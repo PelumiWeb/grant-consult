@@ -169,11 +169,11 @@ const page = (props: Props) => {
   // };
   return (
     <div className="bg-white px-4 md:px-16">
-      <div className="flex items-center w-full mt-8 pb-10">
+      {/* <div className="flex items-center w-full mt-8 pb-10">
         <p className="text-textColor"> Home </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Blogs/Articles </p>
-      </div>
+      </div> */}
 
       <div className="w-full ">
         {/*  */}

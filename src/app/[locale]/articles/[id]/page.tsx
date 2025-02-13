@@ -26,13 +26,13 @@ const page = (props: Props) => {
   const tags = ["Grant Writing", "Rejection Tips", "2025"];
   return (
     <div className="px-16 py-4">
-      <div className="flex items-center w-full mt-8 pb-10">
+      {/* <div className="flex items-center w-full mt-8 pb-10">
         <p className="text-textColor"> Home </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Blogs/Articles </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Read More </p>
-      </div>
+      </div> */}
 
       <div className="flex w-full justify-between items-center md:items-start flex-col md:flex-row">
         <div className="w-full md:w-[60%] bg-white shadow-read-more-shadow rounded-[5px] p-5 relative">

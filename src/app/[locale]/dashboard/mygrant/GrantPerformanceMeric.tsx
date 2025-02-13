@@ -68,13 +68,13 @@ const GrantPerformance = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
 
-      <div className="flex items-center w-full md:w-[480px] mt-8">
+      {/* <div className="flex items-center w-full md:w-[480px] mt-8">
         <p className="text-textColor"> Dashboard </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">My Grants </p>
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Performance Metrics </p>
-      </div>
+      </div> */}
 
       <div className="flex justify-between items-center py-4">
         <div className="bg-grantColor shadow-headline-shadow w-full p-2 rounded-[5px]">

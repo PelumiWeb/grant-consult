@@ -165,13 +165,13 @@ const WalletHistory = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center w-[380px] mt-8">
+        {/* <div className="flex items-center w-[380px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Wallet </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Transaction History </p>
-        </div>
+        </div> */}
         <div className="flex flex-col mb-6 mt-8">
           <h2 className="text-secondaryColor text-center">
             Transaction History

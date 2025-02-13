@@ -68,13 +68,13 @@ const FavouritesGrants = (props: Props) => {
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
-        <div className="flex items-center justify-center md:justify-between w-full md:w-[580px] mt-8 flex-col md:flex-row">
+        {/* <div className="flex items-center justify-center md:justify-between w-full md:w-[580px] mt-8 flex-col md:flex-row">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">My Favourites </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Featured Article</p>
-        </div>
+        </div> */}
         <div>
           <LabelInput
             value=""
