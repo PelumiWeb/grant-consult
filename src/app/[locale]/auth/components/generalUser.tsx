@@ -34,6 +34,7 @@ const GeneralSignup = (props: Props) => {
       fullName: "",
       email: "",
       password: "",
+      confirm_password: "",
     },
   });
   const loginNotify = () => toast.success("Signup successful");
@@ -174,6 +175,41 @@ const GeneralSignup = (props: Props) => {
               />
               {errors.password && (
                 <ErrorMessage message={errors.password.message} />
+              )}
+            </>
+          )}
+        />
+
+        <Controller
+          name="confirm_password"
+          control={control}
+          rules={{
+            required: "Confirm Password is required",
+            pattern: {
+              value: /^(?=.)(?=.*[^a-zA-Z0-9]).+$/,
+              message: `Confirm Password must have at least one non-alphanumeric character.`,
+            },
+
+            minLength: {
+              value: 6,
+              message: "Confirm Password must be at least 6 characters",
+            },
+          }}
+          render={({ field: { value, onChange, ref } }) => (
+            <>
+              <CustomInput
+                ref={ref}
+                onChange={onChange}
+                value={value}
+                inputType="input"
+                width="w-full "
+                label="Confirm Password"
+                type="password"
+                rightIcon
+                error={errors.confirm_password?.message}
+              />
+              {errors.password && (
+                <ErrorMessage message={errors.confirm_password?.message} />
               )}
             </>
           )}
