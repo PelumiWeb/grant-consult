@@ -161,7 +161,7 @@ const SidebarModal = (props: Props) => {
 
   const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
-    if (user?.userType == userTypeName.general) {
+    if ("GENERAL_USER" == userTypeName.general) {
       return tabs;
     } else if (user?.userType == userTypeName.consultant) {
       return tabs;

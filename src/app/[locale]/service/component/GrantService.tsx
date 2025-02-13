@@ -30,7 +30,7 @@ const GrantService = ({
     <div
       className={`relative w-full md:w-[234px] h-[456px] rounded-[10px]  ${
         backgroundColor && backgroundColor
-      } shadow-grant-service-card  p-2 m-4 lg:m-0`}>
+      } shadow-grant-service-card  p-2 m-4 lg:m-2`}>
       {/* Image */}
       <div className="h-[15%]">
         {/* serviceType */}

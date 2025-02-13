@@ -73,15 +73,17 @@ const page = (props: Props) => {
   return (
     <div className="w-full h-full bg-white p-8">
       <div className="flex justify-between items-center my-2 lg:my-12 flex-wrap">
-        <h4 className="text-center lg:text-left text-[20px] leading-[26px] w-full lg:w-[50%] text-secondaryColor ">
-          Complete Your Consultation Booking
-        </h4>
-        <p className="w-full text-center font-medium text-[12px] leading-[17px] text-textColor my-1">
-          Please complete the form below and we will contact you within one
-          business day to understand your needs and provide tailored support.
-        </p>
+        <div>
+          <h4 className="text-center lg:text-left text-[20px] leading-[26px] w-full lg:w-[50%] text-secondaryColor ">
+            Complete Your Consultation Booking
+          </h4>
+          <p className="w-full  font-medium text-[12px] leading-[17px] text-textColor my-1 text-center lg:text-left">
+            Please complete the form below and we will contact you within one
+            business day to understand your needs and provide tailored support.
+          </p>
+        </div>
 
-        <div className=" w-full flex justify-center md:justify-between items-center ">
+        <div className=" flex justify-center md:justify-between items-center ">
           <p className="text-textColor font-bold text-[13px] leading-[21px] mt-2 mr-1 w-full">
             Step 2 of 3
           </p>

@@ -68,7 +68,7 @@ export default function AuthLayout({
                 />
               </div>
               {signUpScreen && (
-                <div className="flex items-center justify-center h-[40%] flex-1 w-full absolute top-10 z-30">
+                <div className="flex items-center justify-center h-[40%] flex-1 w-full absolute top-16 z-30">
                   <ul className="mr-8">
                     <div>
                       <p className="font-bold text-[16px] leading-[20px] font-mono text-[#000000]">
