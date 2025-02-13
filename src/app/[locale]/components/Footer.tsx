@@ -280,7 +280,7 @@ function Footer({}: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Footer;
