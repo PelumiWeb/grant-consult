@@ -14,9 +14,8 @@ const FilterComponent = ({ backgroundColor }: Props) => {
         backgroundColor ? backgroundColor : "bg-backgroundColor"
       } px-4 mt-8 rounded-[10px] flex-col md:flex-row`}>
       <div className="flex items-start md:items-center justify-center md:justify-between flex-col md:flex-row w-full ">
-        <div className="md:mr-2 w-full">
           <LabelInput
-            width="w-[320px]"
+            width="w-[305px]"
             // type="text"
             placeholder="Select Country"
             // inputType="text"
@@ -25,31 +24,29 @@ const FilterComponent = ({ backgroundColor }: Props) => {
             value=""
             select
             my="my-2"
+            mr="md:mr-2"
           />
-        </div>
-        <div className="md:mr-2 w-full">
           <LabelInput
-            width="w-[320px]"
+            width="w-[305px]"
             placeholder="Grant Category"
             // label="Grant Category"
             height="h-[47px]"
             value=""
             select
             my="my-2"
+            mr="md:mr-2"
           />
-        </div>
 
-        <div className="md:mr-2 w-full">
           <LabelInput
-            width="w-[320px]"
+            width="w-[305px]"
             placeholder="Grant Size"
             // label="Grant Size"
             height="h-[47px]"
             value=""
             select
             my="my-2"
+            mr="md:mr-2"
           />
-        </div>
         <div className="hidden md:flex ">
           <div className="flex items-center justify-center w-[78px] h-[45px] bg-primary rounded-[10px] mr-4">
             <img
@@ -57,7 +54,6 @@ const FilterComponent = ({ backgroundColor }: Props) => {
               className="object-contain w-[20px] h-[20px]"
             />
           </div>
-
         </div>
       </div>
 
