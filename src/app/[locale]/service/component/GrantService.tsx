@@ -11,7 +11,7 @@ type Props = {
   buttonBackground: string;
   title: string;
   price: string;
-  list: string[]
+  list: string[];
 };
 
 const GrantService = ({
@@ -20,20 +20,19 @@ const GrantService = ({
   buttonBackground,
   title,
   price,
-  list
+  list,
 }: Props) => {
   const router = useRouter();
   const locale = useLocale();
-    const handleNavigation = useHandleNavigation();
-
+  const handleNavigation = useHandleNavigation();
 
   return (
     <div
-      className={`relative w-full md:w-[234px] h-[424px] rounded-[10px]  ${
+      className={`relative w-full md:w-[234px] h-[456px] rounded-[10px]  ${
         backgroundColor && backgroundColor
       } shadow-grant-service-card  p-2 m-4 lg:m-0`}>
       {/* Image */}
-      <div className="h-[20%]">
+      <div className="h-[15%]">
         {/* serviceType */}
         <p className="font-semibold text-newPrimaryTextColor text-[16px] leading-[24px] text-center mt-4 ">
           {title}{" "}
@@ -44,16 +43,21 @@ const GrantService = ({
       </div>
       {/* lists */}
       <ul className="list-disc px-8  h-full">
-        {list.map((data:string) => (
-          <li className=" text-[#F9C03B]">
-            <div>
-              <p className="font-extrabold text-[12px] leading-[24px] text-[#333333]">
-                {" "}
-                {data}
-              </p>
-            </div>
-          </li>
-        ))}
+        {list?.map((data: string, index) => {
+          return (
+            <li className=" text-[#F9C03B]">
+              <div>
+                <p
+                  className={`${
+                    index === 0 ? "font-extrabold" : "font-semibold"
+                  } text-[12px] leading-[18px] text-textColor`}>
+                  {" "}
+                  {data}
+                </p>
+              </div>
+            </li>
+          );
+        })}
 
         {/* <li className=" text-[#982B24]">
           <div>

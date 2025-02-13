@@ -4,7 +4,7 @@ import "./globals.css";
 import StoreProvider from "../../../lib/storeProvider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode, Suspense } from "react";
+import React, { ReactNode, Suspense } from "react";
 import getMessagesSync from "./utils/getMessageAsync";
 import ReactQueryProvider from "./utils/ReactQueryProvider";
 import ScaleLoader from "react-spinners/ScaleLoader";
@@ -34,6 +34,9 @@ export default async function RootLayout({
 }) {
   const resolvedParams = await params; // Resolve the promise
   const messages = await getMessages();
+  //  React.useEffect(() => {
+  //    document.documentElement.classList.remove("dark"); // Ensures dark mode is never applied
+  //  }, []);
   // const messages = getMessagesSync();
   return (
     <html lang={resolvedParams.locale}>

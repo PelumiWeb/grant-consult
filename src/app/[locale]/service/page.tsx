@@ -24,6 +24,14 @@ export default function Home() {
 
         <div className="flex items-center justify-center lg:justify-between flex-wrap w-full px-8 md:px-32">
           <GrantService
+            list={[
+              "$800 Upfront Fee + 10% of Secured Grant Amount",
+              "Grant review and advisory",
+              "One strategy session",
+              "Assistance for up to $50k funding goal",
+              "Grant application review and improvement",
+              "Application submission assistance",
+            ]}
             title="BRONZE"
             price="$500"
             backgroundColor="bg-white"
@@ -31,6 +39,14 @@ export default function Home() {
             buttonBackground={"bg-bronze"}
           />
           <GrantService
+            list={[
+              "$1,500 Upfront Fee + 10% of Secured Grant Amount",
+              "Includes Bronze features, PLUS:",
+              "In-depth strategy session",
+              "Mission-matched grant research",
+              "Support for up to $150k funding goal",
+              "Two grant applications written and submitted",
+            ]}
             title="SILVER"
             price="$1,000"
             backgroundColor="bg-[#ECDFC2]"
@@ -38,6 +54,14 @@ export default function Home() {
             buttonBackground={"bg-silver"}
           />
           <GrantService
+            list={[
+              "$3,000 Upfront Fee + 5% of Secured Grant Amount",
+              "Includes Silver features, PLUS:",
+              "Tailored grant application calendar",
+              "Dedicated grant writer",
+              "Assistance for up to $500k funding goal",
+              "Quarterly grant performance review",
+            ]}
             title="GOLD"
             price="$1,500"
             backgroundColor="bg-white"
@@ -45,6 +69,14 @@ export default function Home() {
             buttonBackground={"bg-gold"}
           />
           <GrantService
+            list={[
+              "$5,000 Upfront Fee + 3% of Secured Grant Amount",
+              "Includes Gold features, PLUS:",
+              "Custom grant strategy execution",
+              "Full-service application management",
+              "Post-grant reporting and compliance support",
+              "Support for over $500k funding goal",
+            ]}
             title="PLATINUM"
             price="$2,500"
             backgroundColor="bg-[#ECDFC2]"

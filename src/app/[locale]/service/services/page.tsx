@@ -90,7 +90,7 @@ const ServiceCard = (data: serviceDataProps) => {
   return (
     <button
       onClick={() => handleNavigation("/consultant/request")}
-      className={` w-full md:w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-2`}>
+      className={` w-full md:w-[400px] h-[300px] rounded-[10px] shadow-service-shadow ${data.gradient} p-4 m-4`}>
       <div className="flex items-center py-2">
         <img src={data.image} alt="" />
         <p className="font-bold text-[16px] leading-[18px] text-black ml-6">
@@ -123,7 +123,7 @@ const page = (props: Props) => {
         </p>
       </div>
 
-      <div className="p-4  md:p-16 flex items-center justify-center lg:justify-between flex-wrap">
+      <div className="p-4  xl:p-16 flex items-center justify-center lg:justify-between flex-wrap">
         {serviceData.map((data) => (
           <ServiceCard key={data.id} {...data} />
         ))}
@@ -152,7 +152,7 @@ const page = (props: Props) => {
         ))}
       </div>
 
-      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8 mt-8">
+      <div className="bg-secondaryColor w-full flex flex-col justify-around items-center py-8 mt-8 mb-32">
         <p className="text-center font-mono font-bold text-[24px] leading-[36px] text-white mb-4">
           Ready to Get Started?
         </p>
