@@ -99,14 +99,14 @@ const page = (props: Props) => {
               <p className="text-primary font-semibold leading-[18px] font-mono mb-4">
                 Select Date & Time
               </p>
-              <div className="flex w-full justify-between items-center">
-                <div className="w-[45%]">
+              <div className="flex w-full justify-between items-center flex-col md:flex-row">
+                <div className="w-full md:w-[45%]">
                   <p className="font-normal text-[16px] leading-[20px] mb-2">
                     Date
                   </p>
                   <DatePicker className="h-[55px] w-full" />
                 </div>
-                <div className="w-[45%]">
+                <div className="w-full md:w-[45%]">
                   <p className="font-normal text-[16px] leading-[20px] mb-2">
                     Time
                   </p>
@@ -198,7 +198,7 @@ const page = (props: Props) => {
                   title="Proceed to Payment"
                   onClick={() => handleNavigation("/subscription")}
                   width="w-full"
-                  height="h-[35px]"
+                  height="h-[50px]"
                   radius="rounded-[5px]"
                   backgrounColor="bg-secondaryColor"
                   textStyle="text-white font-bold text-[14px] leading-[19px] "
@@ -207,7 +207,7 @@ const page = (props: Props) => {
                   <CustomButton
                     title="Back"
                     width="w-full"
-                    height="h-[35px]"
+                    height="h-[50px]"
                     radius="rounded-[5px]"
                     backgrounColor="bg-backgroundColor"
                     textStyle="text-textColor font-bold text-[14px] leading-[19px] "
