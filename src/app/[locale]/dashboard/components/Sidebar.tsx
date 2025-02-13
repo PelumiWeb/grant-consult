@@ -168,6 +168,7 @@ const Sidebar = (props: Props) => {
     }
   }, []);
 
+
   React.useCallback(() => {
     const FetchData = () => {
       dispatch(
@@ -180,6 +181,8 @@ const Sidebar = (props: Props) => {
 
     FetchData();
   }, []);
+
+  
 
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
