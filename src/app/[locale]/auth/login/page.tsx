@@ -68,7 +68,7 @@ const Login = (props: Props) => {
     //   email: data.email,
     //   password: data.password,
     // });
-          handleNavigation(`/dashboard/profile`);
+    handleNavigation(`/dashboard/general`);
   };
 
   return (
@@ -123,7 +123,9 @@ const Login = (props: Props) => {
               Remember me
             </p>
           </div>
-          <div onClick={() => handleNavigation(`/auth/forgotPassword`)} className="cursor-pointer">
+          <div
+            onClick={() => handleNavigation(`/auth/forgotPassword`)}
+            className="cursor-pointer">
             <p className="underline text-red-500 text-sm cursor-pointer">
               Forgot Password
             </p>
