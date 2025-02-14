@@ -175,7 +175,7 @@ export default function Home() {
 
         <div className="w-full flex items-center justify-center my-8">
           <CustomButton
-            onClick={() => handleNavigation("/consultant/request-complete")}
+            onClick={() => handleNavigation("/payments")}
             title="PROCEED"
             backgrounColor="bg-buttonPrimary"
             width="w-[370px]"

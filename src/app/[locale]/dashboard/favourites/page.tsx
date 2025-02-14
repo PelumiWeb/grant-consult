@@ -23,7 +23,7 @@ const MyFavourites = (props: Props) => {
         return <FavouritesGrantor />;
     }
   };
-  return <div className="w-full h-full">{renderScreens(user?.userType)};</div>;
+  return <div className="w-full h-full">{renderScreens("GENERAL_USER")};</div>;
 };
 
 export default MyFavourites;

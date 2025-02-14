@@ -14,7 +14,7 @@ const ServicePage = (props: Props) => {
         <h1 className="text-center lg:text-left mb-4 lg:mb-8 text-[20px] leading-[26px] lg:leading-[30px] md:text-[45px] font-semibold">
           {t("Service.service")}
         </h1>
-        <h3 className="text-textColor text-[14px] leading-[23px] md:leading-[35px] font-normal md:font-medium lg:mt-[6.5rem] w-full lg:w-[300px]">
+        <h3 className="text-textColor text-[14px] leading-[23px] md:leading-[35px] font-normal md:font-medium lg:mt-[6.5rem] w-full lg:w-[300px] text-center md:text-left ">
           {t("Service.content")}
         </h3>
       </div>

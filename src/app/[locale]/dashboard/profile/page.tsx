@@ -42,7 +42,7 @@ const ProfileHome = (props: Props) => {
         return null;
     }
   };
-  return renderScreens(user?.userType);
+  return renderScreens("GENERAL_USER");
 };
 
 export default ProfileHome;

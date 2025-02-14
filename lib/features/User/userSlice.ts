@@ -25,7 +25,7 @@ kycDeclineReason: null
 kycverification: null
 lastLogin: null
 numberOfReferrals: number,
-phoneNumber: null
+phoneNumber: number | null
 phoneNumberConfirmed: boolean
 photo: null
 profilePicUrl: null
@@ -37,7 +37,34 @@ resetPasswordEmail?: string
 }
 
 const initialState: UserState = {
-    user: null,
+    user: { userType: "GENERAL_USER",
+        accountStatus: null,
+        code: "string",
+        country: null,
+       countryName: null,
+      dateKycSubmitted: null,
+      email: "string",
+      emailConfirmed:false,
+fullName: "string",
+homeAddress: null,
+id: 0,
+idCard: null,
+idCardName: null,
+idNumber: null,
+is2FAEnabled: true,
+isDeleted: false,
+isDisable: false,
+kycDeclineReason: null,
+kycverification: null,
+lastLogin: null,
+numberOfReferrals: 0,
+phoneNumber: null,
+phoneNumberConfirmed: false,
+photo: null,
+profilePicUrl: null,
+userActivated:false,
+userName: "string",
+},
     resetPasswordEmail: ""
 }
 
