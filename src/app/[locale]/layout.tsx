@@ -45,7 +45,7 @@ export default async function RootLayout({
         className={` ${mont.variable}
         ${poppins.variable}
         antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        {/* <ThemeProvider attribute="class" defaultTheme="light"> */}
           <NextIntlClientProvider messages={messages}>
             <ReactQueryProvider>
               <StoreProvider>
@@ -60,7 +60,7 @@ export default async function RootLayout({
               </StoreProvider>
             </ReactQueryProvider>
           </NextIntlClientProvider>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
