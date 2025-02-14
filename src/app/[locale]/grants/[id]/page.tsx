@@ -16,7 +16,7 @@ export default function Grants() {
           <p className="text-textColor mr-4">{">>"}</p>
           <p className="text-textColor">View All Grants</p>
         </div> */}
-        <div className="flex items-center">
+        <div className="flex items-center md:my-4">
           <div className="h-[25px] w-[2px] bg-buttonPrimary mr-2" />
           <p className="text-borderColor">
             Find opportunities that suit your business, corporate and Individual
@@ -24,11 +24,21 @@ export default function Grants() {
           </p>
         </div>
         {/* Filter Options */}
-        <FilterComponent />
+        <FilterComponent
+          options={[
+            {
+              placeholder: "Select Country",
+            },
+            {
+              placeholder: "Grant Category",
+            },
+            {  placeholder: "Grant Type" },
+          ]}
+        />
       </div>
 
       {/* Grants Cards */}
-      <div className="w-full flex justify-between">
+      <div className="w-full flex justify-between md:mt-8">
         {/* Left */}
         <div>
           <GrantCard />

@@ -31,7 +31,17 @@ export default function Home() {
         </div>
         {/* Filter Options */}
 
-        <FilterComponent />
+        <FilterComponent
+          options={[
+            {
+              placeholder: "Select Country",
+            },
+            {
+              placeholder: "Grant Category",
+            },
+            { placeholder: "Grant Type" },
+          ]}
+        />
       </div>
 
       {/* Grants Cards */}

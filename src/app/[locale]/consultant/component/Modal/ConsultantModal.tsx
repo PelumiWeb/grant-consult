@@ -112,7 +112,7 @@ const ConsultantModal = (props: Props) => {
           </div>
           <div className="w-full lg:w-[450px] flex flex-col flex-1 justify-between m-0">
             {/* Bio */}
-            <div className="bg-white w-full rounded-[10px] px-4 my-4 py-2  h-full lg:h-[25%] mx-0 lg:mx-4 mb-4">
+            <div className="bg-white w-full rounded-[10px] px-4 my-4 md:my-0 py-2  h-full lg:h-[25%] mx-0 lg:mx-4 mb-4">
               <h4 className="text-primary font-semibold text-[20px] leading-[26px] my-4 font-mono">
                 Bio
               </h4>
@@ -235,7 +235,7 @@ const ConsultantModal = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className=" w-full lg:ml-8 mt-4 lg:mt-4">
+          <div className="  lg:ml-8 mt-4 lg:mt-0">
             {/* Grants */}
             <div className="bg-white w-full rounded-[10px] pb-4 mb-4">
               <h4 className="text-buttonPrimary font-semibold text-[20px] leading-[26px] p-4 font-mono">

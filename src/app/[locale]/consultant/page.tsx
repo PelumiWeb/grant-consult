@@ -24,7 +24,19 @@ export default function Home() {
           various domains.
         </p>
 
-        <FilterComponent backgroundColor="bg-white" />
+        <FilterComponent
+          options={[
+            {
+              placeholder: "Years of experience",
+            },
+            {
+              placeholder: "Location",
+            },
+            { placeholder: "Specialty" },
+          ]}
+          backgroundColor="bg-white"
+          search="search"
+        />
         <div className=" w-full flex items-center justify-center flex-wrap ">
           {[...Array(25)].map((data) => (
             <div key={data}>

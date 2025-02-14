@@ -5,14 +5,14 @@ import { CalendarOutlined } from "@ant-design/icons";
 type Props = { showButton: boolean };
 const ConsultantComponentModal = (props: Props) => {
   return (
-    <div className="m-0 lg:m-8 w-full">
+    <div className="m-0  w-full">
       <div className="w-full flex justify-center items-center">
         <div className="relative h-[254px] w-[221px] rounded-tl-[100px] rounded-tr-[100px] border-boderConsultant border-[5px] bg-white flex flex-col items-center justify-center ">
           {/* Image container */}
-          <div className=" absolute top-8 w-[130px] h-[130px] rounded-full">
+          <div className=" absolute top-8 w-[115px] h-[115px] rounded-full border-borderColor border-[5px]">
             <img
               src="/consultantImage.svg"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
           <div className="absolute bottom-0 bg-boderConsultant h-[50%] w-full ">
@@ -35,8 +35,8 @@ const ConsultantComponentModal = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center lg:justify-between w-full lg:w-[221px]">
-        <div className="my-4">
+      <div className="flex items-center justify-center  w-full ">
+        <div className="my-4 mr-1">
           <CustomButton
             title="Request Consultant"
             width="w-[145px]"
@@ -45,7 +45,7 @@ const ConsultantComponentModal = (props: Props) => {
             borderWidth="border-[0.5px]"
             padding="p-0"
             radius="rounded-[5px]"
-            textStyle="text-buttonPrimary text-sm text-buttonPrimary"
+            textStyle="text-buttonPrimary text-[12px] leading-[13px] text-buttonPrimary font-medium"
             borderColor="border-buttonPrimary"
           />
         </div>
@@ -59,7 +59,7 @@ const ConsultantComponentModal = (props: Props) => {
             IconLeft="/like.svg"
             radius="rounded-[5px]"
             padding="p-0"
-            textStyle="text-secondaryColor"
+            textStyle="text-secondaryColor text-[12px] leading-[13px] font-medium"
           />
         </div>
       </div>
