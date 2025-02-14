@@ -73,7 +73,7 @@ const Login = (props: Props) => {
 
   return (
     <div className="py-8 md:py-32 px-2 md:px-8 flex flex-col items-center justify-center mb-[5%]">
-      <h3 className="w-full">Logi</h3>
+      <h3 className="w-full">Login</h3>
 
       <form className="mt-8 w-full" onSubmit={handleSubmit(onSubmit)}>
         <Controller
