@@ -19,9 +19,9 @@ type Cardprops = {
 const SubscriptionCard = (data: Cardprops) => {
   const handleNavigation = useHandleNavigation();
   return (
-    <div className="  bg-white mt-4 w-full sm:w-[250px] 2lg:w-[220px] m-8 2lg:m-2 h-full md:h-[450px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 md:p-2 relative  flex flex-col justify-between items-center">
+    <div className="  bg-white mt-4 w-full sm:w-[250px] 2lg:w-[220px]  md:m-8 2lg:m-2 h-full md:h-[470px] border-[2.42px] border-secondaryColor rounded-[8px] p-2 md:p-2 relative  flex flex-col justify-between items-center">
       {data.popular && (
-        <div className="absolute -top-4 left-[25%] md:left-[35px]">
+        <div className="absolute -top-4 left-[30%] md:left-[35px]">
           <CustomButton
             backgrounColor="bg-secondaryColor"
             radius="rounded-[18px]"
@@ -53,7 +53,7 @@ const SubscriptionCard = (data: Cardprops) => {
               <div className="w-[15%]">
                 <img src="/check.svg" alt="" className="w-[25px] h-[12px]" />
               </div>
-              <p className="font-medium text-[14px] md:text-[11px] leading-[16px] text-textColor w-[85%]">
+              <p className="font-medium text-[14px] md:text-[11px] leading-[16px] text-textColor w-[85%] capitalize">
                 {data}
               </p>
             </li>
@@ -62,13 +62,13 @@ const SubscriptionCard = (data: Cardprops) => {
       </div>
 
       <div
-        className={`flex justify-center items-center w-full mt-4 md:mt-0 ${
+        className={`flex justify-center items-center w-full mt-4 md:mt-0 h-[50px] ${
           data.popular ? "mb-[10px]" : "mb-2"
         } `}>
         <CustomButton
           onClick={() => handleNavigation("/payments")}
           width="w-full md:w-[180px]"
-          height="h-[33px]"
+          height="h-[50px]"
           borderColor="border-none"
           backgrounColor={`${
             data.plan === "Free Trial"

@@ -38,8 +38,9 @@ const config: Config = {
         "becomeGrantImage": "url('/becomeGrantor.svg')",
         "becomeConsultantImage": "url('/becomeConsultant.svg')",
         "becomeConsultantImageMobile": "url('/becomeGrantMobile.svg')",
-
-
+        "faqBrush": "url('/faqBrush.svg')",
+        "faqBrush2": "url('/faqBrush2.png')",
+        "faqBrush3": "url('/faqBrush3.svg')",
         'linearGradient': 'linear-gradient(180deg, #FD32B2 0%, #F2D4E7 100%)',
         'bronze': "linear-gradient(90deg, #972921 67%, #E8B744 100%)",
         'silver': "linear-gradient(90deg, #A19FA3 29.5%, rgba(255, 255, 255, 0.7) 100%)",
@@ -82,6 +83,7 @@ const config: Config = {
         "complete-shadow-1": "0px 2px 10px 0px #329DFD4D",
         "complete-shadow-2": "0px 1px 4px 0px #00000040",
         "complete-shadow-3": "0px 2px 10px 0px #329DFD4D",
+        "duration-shadow": "0px 1px 2px 0px #0000000D"
 
         
 

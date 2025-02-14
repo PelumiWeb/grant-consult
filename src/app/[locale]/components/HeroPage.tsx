@@ -26,7 +26,7 @@ const HeroPage = (props: Props) => {
             {t("title2")}
           </h1>
 
-          <p className="w-[90%] font-poppins text-newPrimaryTextColor font-medium leading-[25px] text-[16px] my-4">
+          <p className="w-[90%] font-mono text-newPrimaryTextColor ftext-[14px] leading-[23px] md:leading-[35px] font-normal md:font-medium  my-4">
             {t("content")}
           </p>
           <div className="flex items-center justify-between my-8 md:w-[80%] lg:w-[50%] w-full">

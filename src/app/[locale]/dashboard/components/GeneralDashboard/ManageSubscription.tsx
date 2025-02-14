@@ -469,10 +469,10 @@ const ManageSubscription = (props: Props) => {
           <div className="w-full lg:w-[530px] h-[170px]  rounded-[6.11px] border border-borderColor ">
             {/* Top */}
             <div className="flex items-center border-b border-b-borderColor justify-between py-1 ">
-              <div className="h-[54.81px] w-full cursor-pointer px-4">
+              <div className="h-[54.81px] w-full cursor-pointer px-0 md:px-4">
                 <input
                   type="text"
-                  className="h-full w-full outline-none placeholder:text-textColor placeholder:text-[16px] placeholder:leading-[23.24px] placeholder:font-mono placeholder:ml-2 font-mono text-[16px] leading-[23.24px] font-medium"
+                  className="h-full w-full outline-none placeholder:text-textColor placeholder:text-[16px] placeholder:leading-[23.24px] placeholder:font-mono placeholder:ml-2 font-mono text-[16px] leading-[23.24px] font-medium pl-2 md:pl-0"
                   placeholder="Williams Smith"
                 />
               </div>
@@ -503,11 +503,21 @@ const ManageSubscription = (props: Props) => {
               </div>
             </div>
           </div>
-          <button>
+          <button className="hidden md:block">
             <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] underline mt-8">
               Save Card
             </p>
           </button>
+          <div className="blobk md:hidden mt-4">
+            <CustomButton
+              title="Save Card"
+              width="w-full"
+              backgrounColor="bg-secondaryColor"
+              height="h-[40px]"
+              radius="rounded-[5px]"
+              textStyle="text-white font-inter font-bold text-[16px] leading-[16px]"
+            />
+          </div>
         </div>
       </div>
 

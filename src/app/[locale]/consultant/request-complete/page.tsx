@@ -198,7 +198,7 @@ const page = (props: Props) => {
               <div className="mt-8">
                 <CustomButton
                   title="Proceed to Payment"
-                  onClick={() => handleNavigation("/subscription")}
+                  onClick={() => handleNavigation("/payment")}
                   width="w-full"
                   height="h-[50px]"
                   radius="rounded-[5px]"

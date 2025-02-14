@@ -28,7 +28,7 @@ const GrantService = ({
 
   return (
     <div
-      className={`relative w-full md:w-[234px] h-[456px] rounded-[10px]  ${
+      className={`relative w-full md:w-[234px] h-full md:h-[456px] rounded-[10px]  ${
         backgroundColor && backgroundColor
       } shadow-grant-service-card  p-2 m-4 lg:m-2`}>
       {/* Image */}
@@ -103,7 +103,7 @@ const GrantService = ({
         </li> */}
       </ul>
       <div
-        className=" absolute left-0  bottom-3 w-full flex justify-center items-center 
+        className=" my-4 md:my-0 md:absolute left-0  bottom-3 w-full flex justify-center items-center 
         px-4
       ">
         <CustomButton

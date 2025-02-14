@@ -6,6 +6,7 @@ import CustomButton from "../components/CustomButton";
 import SubscriptionCard from "../components/SubscriptionCard";
 import Faq from "./components.tsx/Faq";
 import GrantFunder from "../components/GrantFunder";
+import { Checkbox, Switch } from "antd";
 
 export default function Home() {
   return (
@@ -20,6 +21,19 @@ export default function Home() {
             Find the plan that best suits your needs and unlock full access to
             grant opportunities and expert services.
           </p>
+        </div>
+        <div className=" grid place-items-center w-full mb-8 md:mb-16 md:-mt-8">
+          <div className="w-[310px] sm:w-[350px] h-[50px] flex items-center bg-white rounded-[5px] shadow-duration-shadow justify-around px-2">
+            <p className="text-grantBlack text-[16px] font-semibold">Monthly</p>
+            <Switch style={{ fontSize: 24 }} />
+            <p className="text-grantBlack text-[16px] font-semibold">
+              Annual
+              <span className="text-secondaryColor text-[16px] font-semibold">
+                {" "}
+                (Save 20%){" "}
+              </span>
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center justify-center 2lg:justify-between w-full flex-wrap">
@@ -97,7 +111,7 @@ export default function Home() {
         </div>
 
         <div className="w-full py-16 flex flex-col items-center justify-center">
-          <p className="my-4 text-center" >
+          <p className="my-4 text-center">
             For your security, all orders are processed in USD via Stripe or
             PayPal.
           </p>

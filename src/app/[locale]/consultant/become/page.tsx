@@ -161,7 +161,7 @@ const page = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-around items-center h-full  md:h-[300px] p-4 md:p-0">
+      <div className="flex flex-col justify-around items-center h-full  md:h-[300px] p-4 py-8 md:py-0 md:p-0">
         <div className="w-[130px] h-[130px] rounded-full  ">
           <img src="/consultantProfile.svg" alt="" />
         </div>

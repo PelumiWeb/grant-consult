@@ -5,15 +5,18 @@ import GrantFunder from "../components/GrantFunder";
 
 export default function Home() {
   return (
-    <div className="w-full  p-4 lg:px-16">
+    <div className="w-full  p-4 ">
       {/*  */}
       <div className="w-full">
-        <div className=" py-16">
-          <h1 className="text-lg text-center text-primaryBlack lg:leading-[60px] lg:text-[48px]  ">
+        <div className="py-4  md:py-16">
+          <h1 className="hidden md:block text-lg text-center  text-primaryBlack lg:leading-[60px] lg:text-[48px]  ">
             Grant Writing Services
           </h1>
+          <h4 className="block md:hidden font-semibold text-secondaryColor leading-[26px] text-[20px] text-center  ">
+            Grant Writing Services
+          </h4>
           <div className="w-full flex items-center justify-center ">
-            <p className="texts-sm w-full text-center text-textColor lg:w-[70%] mt-8">
+            <p className="font-medium text-[12px] leading-[17px] md:text-[16px] md:leading-[23px] w-full text-center text-textColor lg:w-[70%] mt-4">
               Let our experienced team handle the entire grant process for you,
               from start to finish. All plans include an onboarding call,
               mission-matched grant research, custom grant calendar, grant
@@ -22,7 +25,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center lg:justify-between flex-wrap w-full px-8 md:px-32">
+        <div className="flex items-center justify-center lg:justify-between flex-wrap w-full px-2 md:px-32">
           <GrantService
             list={[
               "$800 Upfront Fee + 10% of Secured Grant Amount",
@@ -90,16 +93,36 @@ export default function Home() {
             For your security, all orders are processed in USD via Stripe or
             PayPal.
           </p>
-          <div className="flex items-center flex-wrap justify-between w-[60%] my-4">
-            <img src="/card.svg" className="m-2" />
-            <img src="/card2.svg" className="m-2" />
-            <img src="/card3.svg" className="m-2" />
-            <img src="/card4.svg" className="m-2" />
-            <img src="/card5.svg" className="m-2" />
-            <img src="/card6.svg" className="m-2" />
+          <div className="flex items-center flex-wrap justify-between w-full md:w-[60%] my-4">
+            <img
+              src="/card.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
+            <img
+              src="/card2.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
+            <img
+              src="/card3.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
+            <img
+              src="/card4.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
+            <img
+              src="/card5.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
+            <img
+              src="/card6.svg"
+              className="md:m-2 w-[50px] h-[15px] md:w-[108px] md:h-[26px]"
+            />
           </div>
 
-          <p className="my-4">You can cancel your subscription anytime.</p>
+          <p className="my-4 text-[10px] md:text-[16px] leading-[13px] md:leading-[20px] text-grantBlack ">
+            You can cancel your subscription anytime.
+          </p>
         </div>
       </div>
       <Faq />
