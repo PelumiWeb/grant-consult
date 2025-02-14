@@ -63,7 +63,7 @@ const GeneralDashboard = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center flex-col md:flex-row mt-2 w-full md:[40%] lg:w-[35%]">
+        <div className="flex justify-between items-center flex-col md:flex-row mt-2 w-full md:w-[40%]">
           <div className="mr-0 md:mr-4 w-full md:w-[170.21px] y-2">
             <CustomButton
               width="w-full md:w-[170.21px]"
