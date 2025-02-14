@@ -7,7 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    darkMode: 'class',
+    // darkMode: 'class',
     screens: {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
