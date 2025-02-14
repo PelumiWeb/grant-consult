@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html {
+html {
   color-scheme: light !important;
 }
 
@@ -15,7 +15,7 @@
   :root {
     --background: white;
   }
-} */
+}
 
 @layer base {
   h1 {
