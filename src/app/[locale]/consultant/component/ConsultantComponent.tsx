@@ -16,9 +16,10 @@ const ConsultantComponent = (props: Props) => {
         <div className=" absolute top-12 w-[130px] h-[130px] rounded-full">
           <img
             src="/consultantProfileImage.svg"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-full border-[5px] border-boderConsultant"
           />
         </div>
+
         <div className="absolute bottom-0 bg-boderConsultant h-[60%] w-full ">
           <p className="font-bold text-base text-center bg-consultantTitle  text-transparent bg-clip-text mt-14">
             Alice Brooklyn

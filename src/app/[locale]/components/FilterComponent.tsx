@@ -5,18 +5,24 @@ import CustomButton from "./CustomButton";
 
 type Props = {
   backgroundColor?: string;
-  options: { placeholder: string; label?: string }[];
+  options?: { placeholder: string; label?: string }[];
   search?: string;
+  children?: React.ReactNode
 };
 
-const FilterComponent = ({ backgroundColor, options, search }: Props) => {
+const FilterComponent = ({
+  backgroundColor,
+  options,
+  search,
+  children,
+}: Props) => {
   return (
     <div
       className={`py-4 flex items-start md:items-center justify-center md:justify-between w-full ${
         backgroundColor ? backgroundColor : "bg-backgroundColor"
       } px-4 mt-8 rounded-[10px] flex-col md:flex-row`}>
       <div className="flex items-start md:items-center justify-center md:justify-between flex-col md:flex-row w-full ">
-        {options?.map((data) => (
+        {/* {options?.map((data) => (
           <LabelInput
             width="w-[305px]"
             // type="text"
@@ -30,7 +36,8 @@ const FilterComponent = ({ backgroundColor, options, search }: Props) => {
             mr="md:mr-2"
             label={data.label && data.label}
           />
-        ))}
+        ))} */}
+        {children}
 
         {/* <LabelInput
             width="w-[305px]"

@@ -1,5 +1,6 @@
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import React from "react";
+import LatestNews from "../../components/LatestNews";
 
 type Props = {};
 // border-bottom: 0.5px solid #6E6E6E80
@@ -306,6 +307,10 @@ const GrantCardMore = (props: Props) => {
               </p>
             </div>
           ))}
+        </div>
+        <div className="block lg:hidden px-8">
+          <LatestNews />
+          
         </div>
       </div>
       <div>

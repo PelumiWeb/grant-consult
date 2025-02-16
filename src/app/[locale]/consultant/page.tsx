@@ -13,42 +13,47 @@ import RenderModals from "../components/RenderModals";
 
 export default function Home() {
   return (
-    <div className="w-full px-4 lg:px-16">
-      <div className="w-full pt-8">
-        <p className="text-secondaryColor font-semibold text-[36px] leading-[42px] text-center ">
-          Our Consultants
-        </p>
+    <div className="w-full ">
+      <div className="px-4 lg:px-16">
+        <div className="w-full pt-8">
+          <p className="text-secondaryColor font-semibold text-[36px] leading-[42px] text-center ">
+            Our Consultants
+          </p>
 
-        <p className="py-4 text-textColor text-[16px] leading-[20px] text-center">
-          Connect with grant consultants and advisors with expertise across
-          various domains.
-        </p>
+          <p className="py-4 text-textColor text-[16px] leading-[20px] text-center">
+            Connect with grant consultants and advisors with expertise across
+            various domains.
+          </p>
 
-        <FilterComponent
-          options={[
-            {
-              placeholder: "Years of experience",
-            },
-            {
-              placeholder: "Location",
-            },
-            { placeholder: "Specialty" },
-          ]}
-          backgroundColor="bg-white"
-          search="search"
-        />
-        <div className=" w-full flex items-center justify-center flex-wrap ">
-          {[...Array(25)].map((data) => (
-            <div key={data}>
-              <ConsultantComponent showButton={false} />
-            </div>
-          ))}
+          <FilterComponent
+            options={[
+              {
+                placeholder: "Years of experience",
+              },
+              {
+                placeholder: "Location",
+              },
+              { placeholder: "Specialty" },
+            ]}
+            backgroundColor="bg-white"
+            search="search"
+          />
+          <div className=" w-full flex items-center justify-center flex-wrap ">
+            {[...Array(25)].map((data) => (
+              <div key={data}>
+                <ConsultantComponent showButton={false} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center mt-16">
+          <Pagination defaultCurrent={1} total={50} />
         </div>
       </div>
-      <div className="w-full flex items-center justify-center mt-16">
-        <Pagination defaultCurrent={1} total={50} />
+      <div className="bg-white my-8">
+        <GrantFunder />
       </div>
-      <GrantFunder />
+
       <RenderModals />
     </div>
   );

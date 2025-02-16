@@ -1,12 +1,13 @@
 import { useTranslations } from "next-intl";
 import React, { useTransition } from "react";
 
-type Props = {};
+type Props = {
+};
 
 const GrantFunder = (props: Props) => {
   const t = useTranslations("Homepage")
   return (
-    <div className=" py-8 lg:py-32 flex flex-col items-center justify-center">
+    <div className=" py-8 lg:py-16 flex flex-col items-center justify-center">
       <h3 className="text-center py-8 font-semibold text-[12px] md:text-[20px] leading-[18px] md:leading-[30px]">
         {t("Grants.content")}
       </h3>

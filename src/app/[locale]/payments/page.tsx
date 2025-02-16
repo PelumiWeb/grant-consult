@@ -44,7 +44,7 @@ export default function Home() {
           </p>
           <div className="flex items-start justify-between w-full flex-col md:flex-row">
             {/* Left */}
-            <div className="bg-backgroundColor w-full md:w-[45%] h-[656px] p-4">
+            <div className="bg-backgroundColor w-full md:w-[45%] h-full p-4">
               <h4 className="font-semibold text-[20px] leading-[26px] text-primary mb-4">
                 Order Summary
               </h4>
@@ -54,7 +54,7 @@ export default function Home() {
               </p>
 
               <div className="border-b-[0.5px] border-b-borderColor py-2 my-2">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between my-1">
                   <p className="font-medium text-[14px] leading-[25px] text-textColor ">
                     Name
                   </p>
@@ -62,7 +62,7 @@ export default function Home() {
                     Williams Smith
                   </p>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between my-1">
                   <p className="font-medium text-[14px] leading-[25px] text-textColor ">
                     Phone
                   </p>
@@ -70,7 +70,7 @@ export default function Home() {
                     +234899033456
                   </p>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between my-1">
                   <p className="font-medium text-[14px] leading-[25px] text-textColor ">
                     Email:
                   </p>
@@ -95,7 +95,7 @@ export default function Home() {
                 </h4>
                 {/* Plan Benefits */}
                 <div>
-                  <div className="flex items-center my-2">
+                  <div className="flex items-center my-4">
                     <img
                       src="/check.svg"
                       alt=""
@@ -105,7 +105,7 @@ export default function Home() {
                       Full access to grant listings and personalized dashboard
                     </p>
                   </div>
-                  <div className="flex items-center my-2">
+                  <div className="flex items-center my-4">
                     <img
                       src="/check.svg"
                       alt=""
@@ -115,7 +115,7 @@ export default function Home() {
                       Tailored grant opportunities matched to your profile
                     </p>
                   </div>
-                  <div className="flex items-center my-2">
+                  <div className="flex items-center my-4">
                     <img
                       src="/check.svg"
                       alt=""
@@ -125,7 +125,7 @@ export default function Home() {
                       1 free monthly consultation
                     </p>
                   </div>
-                  <div className="flex items-center my-2">
+                  <div className="flex items-center my-4">
                     <img
                       src="/check.svg"
                       alt=""
@@ -139,7 +139,7 @@ export default function Home() {
                 <div></div>
               </div>
               {/* Total */}
-              <div className="flex items-center justify-between w-full mt-2">
+              <div className="flex items-center justify-between w-full mt-2 pt-2">
                 <h4 className="font-semibold text-[20px] leading-[20px] text-primary mb-4">
                   Total
                 </h4>

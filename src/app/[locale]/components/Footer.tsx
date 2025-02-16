@@ -12,7 +12,7 @@ function Footer({}: Props) {
 
 
   return (
-    <div className="relative bg-footer   bg-repeat bg-cover bg-bottom bottom-0">
+    <div className="relative bg-footer   bg-repeat bg-cover bg-bottom bottom-0 mt-8">
       <div className=" h-full w-full bg-repeat bg-cover px-8 py-4  bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
         <div className="bg-[#27AE6080] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8">

@@ -21,11 +21,11 @@ const page = (props: Props) => {
       {/* <DashboardHeader /> */}
       <div>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-secondaryColor text-center w-full text-[36px] leading-[42px] py-4">
+          <h2 className="text-secondaryColor text-center w-full text-[20px] md:text-[36px] leading-[26px] lg:leading-[42px] py-4">
             Frequently Asked Questions
           </h2>
 
-          <p className="text-center text-[16px] leading-[25px] text-primaryBlack font-mono w-[80%]">
+          <p className="text-center text-[14px] md:text-[16px] leading-[23px] md:leading-[25px] text-primaryBlack font-mono w-[80%]">
             Welcome to our FAQ section! Here, you'll find answers to common
             questions about our services, processes, and how we can assist you
             in achieving your goals. If you don't find what you're looking for,
@@ -33,7 +33,7 @@ const page = (props: Props) => {
           </p>
         </div>
 
-        <div className="mt-8 flex items-center lg:items-start  flex-wrap justify-center lg:justify-between">
+        <div className="mt-8 flex items-center lg:items-start  flex-wrap justify-center lg:justify-between flex-col-reverse md:flex-row">
           {/* Left */}
           <div className="w-full lg:w-[35%] grid place-items-center">
             <div className="mt-4">

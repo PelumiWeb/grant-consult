@@ -109,9 +109,9 @@ const page = (props: Props) => {
   const handleNavigation = useHandleNavigation();
 
   return (
-    <div>
-      <div className="flex flex-col justify-between items-center py-8">
-        <h2 className="font-semibold text-[26px] md:text-[46px] leading-[55px] text-secondaryColor mb-6">
+    <div className="bg-white">
+      <div className="flex flex-col justify-between items-center py-8 mb-12">
+        <h2 className="font-semibold text-[26px] md:text-[46px] leading-[55px] text-secondaryColor mb-8">
           Our Services
         </h2>
 

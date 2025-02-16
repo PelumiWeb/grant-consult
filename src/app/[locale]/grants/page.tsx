@@ -6,8 +6,22 @@ import CustomButton from "../components/CustomButton";
 import GrantCard from "./components/GrantCard";
 import FilterComponent from "../components/FilterComponent";
 import { Pagination } from "antd";
+import LatestNews from "../components/LatestNews";
+import React from "react";
+import { countryData } from "../utils/customData";
 
 export default function Home() {
+
+
+   const countriesData = React.useMemo(() => {
+     const data = countryData?.map((data) => ({
+       label: data.name,
+       value: data.name,
+     }));
+
+     return data;
+   }, []);
+
   return (
     <div className="w-full">
       {/*  */}
@@ -61,6 +75,7 @@ export default function Home() {
           <div className="w-[324px] h-[287px] ">
             <img src="/Ads.svg" className="w-full h-full object-contain" />
           </div>
+         <LatestNews />
         </div>
       </div>
     </div>
