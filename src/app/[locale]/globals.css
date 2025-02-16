@@ -52,6 +52,10 @@ html {
   @apply text-blue-500;
 }
 
+.ant-collapse-content-box {
+  background: #F4F6F9 !important;
+}
+
 .custom-dropdown .ant-select-selector {
   @apply rounded-lg border border-blue-500 shadow-md;
   /* Tailwind CSS classes for rounded border, custom border color, and shadow */

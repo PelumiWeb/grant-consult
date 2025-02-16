@@ -12,11 +12,10 @@ type Props = {};
 
 const text = `Lorem ipsum dolor sit amet consectetur. Eget a eget ut ultrices etiam. Proin et semper nullam nisl condimentum facilisi interdum orci. Convallis nam egestas nibh arcu felis ipsum. Bibendum in vitae bibendum feugiat feugiat.`;
 
-
 const Faq = (props: Props) => {
   return (
     <div className="w-full grid place-items-center">
-      <div className="py-16 relative left-0 right-0 bg-white m-0  flex-col md:flex-row flex  flex-wrap items-center justify-around  z-0 w-[100%]">
+      <div className="py-16 relative left-0 right-0 bg-white m-0  flex-col md:flex-row flex  flex-wrap items-center justify-between  z-0 w-[100%]">
         {/* <div className="w-full items-center justify-center">
         <img src="/bg-faq.svg" alt="" />
       </div> */}
@@ -24,7 +23,7 @@ const Faq = (props: Props) => {
         <div className=" hidden md:block bg-faqBrush2 object-contain bg-no-repeat h-[320px] w-[306px] absolute -top-[20%] -right-[6%] z-1 overflow-hidden" />
         <div className="hidden md:block bg-faqBrush3 object-contain bg-no-repeat h-[194px] w-[268px] absolute bottom-[0%] -right-[9%] z-1 overflow-hidden" />
 
-        <div className="w-[40%] lg:w-[50%] flex items-center justify-start relative z-2">
+        <div className="w-[40%] lg:w-[50%] flex items-center justify-center relative z-2">
           <img src="/FAQ.svg" />
         </div>
 
@@ -33,7 +32,7 @@ const Faq = (props: Props) => {
             Frequently Asked Questions
           </p>
           <Collapse
-            className="my-8"
+            className="my-8 w-[535px] border-[0.2px] border-borderColor flex flex-col gap-y-4"
             defaultActiveKey={["1"]}
             expandIcon={({ isActive }) =>
               !isActive ? (
@@ -42,14 +41,29 @@ const Faq = (props: Props) => {
                 <MinusCircleOutlined className="text-blue-500" />
               )
             }>
-            <Panel header="What is included in each subscription plan?" key="1">
-              <p className="font-poppins leading-[20px] text-[12px] ">{text}</p>
+            <Panel
+              header="What is included in each subscription plan?"
+              key="1"
+              className="my-2">
+              <div className="p-4">
+                <p className="font-poppins leading-[20px] text-[12px] ">
+                  {text}
+                </p>
+              </div>
             </Panel>
             <Panel header="How does the 7-day free trial work?" key="2">
-              <p className="font-poppins leading-[20px] text-[12px] ">{text}</p>
+              <div className="p-4">
+                <p className="font-poppins leading-[20px] text-[12px] ">
+                  {text}
+                </p>
+              </div>
             </Panel>
             <Panel header="What is included in each subscription plan?" key="3">
-              <p className="font-poppins leading-[20px] text-[12px] ">{text}</p>
+              <div className="p-4">
+                <p className="font-poppins leading-[20px] text-[12px] ">
+                  {text}
+                </p>
+              </div>
             </Panel>
           </Collapse>
           <p className="text-[12px] font-mono leading-[23px]">
