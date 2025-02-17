@@ -223,7 +223,7 @@ const GeneralDashboard = (props: Props) => {
 
         <div className="flex flex-wrap justify-between">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
-            <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[205px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-2 rounded-[5px] my-2  md:my-4">
+            <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[215px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-2 rounded-[5px] my-2  md:my-4">
               <div className="w-full md:w-[125px] h-[250px] md:h-[125px] flex justify-center items-center mt-4 ml-0 md:ml-2 mr-0 md:mr-2 ">
                 <img
                   src="/grantFrame.svg"
@@ -232,8 +232,8 @@ const GeneralDashboard = (props: Props) => {
                 />
               </div>
 
-              <div className="p-3 md:p-0">
-                <p className="text-[12.48px] leading-[16.23px] font-semibold mb-4">
+              <div className="p-3 md:p-0 w-[70%]">
+                <p className="text-[12.48px] leading-[16.23px] font-semibold mb-2 w-[95%]">
                   Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
                 </p>
                 <div className="flex items-center my-2 ">

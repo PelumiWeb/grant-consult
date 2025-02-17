@@ -25,10 +25,10 @@ const GrantCard = (props: Props) => {
         Aspire Coronation Trust (ACT) Foundation Grant 2024
       </h4>
       <div className="flex items-center  justify-start md:justify-between py-0 my-4 px-2  md:px-4 w-full h-full cursor-pointer  ">
-        <div className="w-[150px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
-          <img src="/GrantsImage.svg" className="w-full object-cover " />
+        <div className="w-[150px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[260px] flex items-center justify-center rounded-[15px] mr-4">
+          <img src="/GrantsImage.svg" className="w-full object-contain h-full " />
         </div>
-        <div className="w-[60%] md:w-[70%]">
+        <div className="w-[60%] md:w-[70%] space-y-1">
           <h4 className="hidden md:block text-primary  text-[20px] leading-[26px] font-semibold">
             Aspire Coronation Trust (ACT) Foundation Grant 2024
           </h4>

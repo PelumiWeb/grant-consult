@@ -49,7 +49,7 @@ const GrantService = ({
               <div>
                 <p
                   className={`${
-                    index === 0 ? "font-extrabold" : "font-semibold"
+                    index === 0 ? "font-extrabold text-newPrimaryTextColor" : "font-semibold"
                   } text-[12px] leading-[18px] text-textColor`}>
                   {" "}
                   {data}

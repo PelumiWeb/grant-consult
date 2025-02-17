@@ -6,7 +6,7 @@ type Props = {
 
 const DashboardGrantCard = (props: Props) => {
   return (
-    <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[205px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-2 rounded-[5px] my-2  md:my-4">
+    <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[205px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-4 rounded-[5px] my-2  md:my-4">
       <div className="w-full md:w-[125px] h-[250px] md:h-[125px] flex justify-center items-center mt-4 ml-0 md:ml-2 mr-0 md:mr-2 ">
         <img
           src="/grantFrame.svg"
