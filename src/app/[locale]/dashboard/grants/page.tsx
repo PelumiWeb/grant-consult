@@ -51,7 +51,7 @@ const Grant = (props: Props) => {
       </div> */}
 
       <div className="flex flex-col lg:flex-row justify-between items-center py-4">
-        <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] w-full ">
+        <h3 className="text-secondaryColor text-[20px] md:text-[24px] font-semibold leading-[26px] md:leading-[36.24px] w-full text-center md:text-left my-2 md:my-0">
           Recommended Grants For You
         </h3>
         <div className="flex flex-col lg:flex-row justify-between w-full lg:w-[50%] ">

@@ -12,7 +12,7 @@ const DashboardfilterOptions = (props: Props) => {
       className="w-full bg-white flex items-center justify-between
       px-4
       mt-4
-      h-full md:h-[200px] lg:h-[80px]
+      h-[450px] md:h-[200px] lg:h-[80px]
       rounded-[5px]
       flex-wrap lg:flex-nowrap
     ">
@@ -21,6 +21,7 @@ const DashboardfilterOptions = (props: Props) => {
         width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
+        my="my-1 md:my-4"
       />
       <DatePicker
         onChange={onChange}
@@ -32,6 +33,7 @@ const DashboardfilterOptions = (props: Props) => {
         width={"w-full md:w-[130px]"}
         value=""
         height="h-[35px]"
+        my="my-1 md:my-4"
       />
       <LabelInput
         placeholder="Deadline"
@@ -39,6 +41,7 @@ const DashboardfilterOptions = (props: Props) => {
         value=""
         height="h-[35px]"
         select
+        my="my-1 md:my-4"
       />
       <LabelInput
         placeholder="Status"
@@ -46,6 +49,7 @@ const DashboardfilterOptions = (props: Props) => {
         value=""
         height="h-[35px]"
         select
+        my="my-1 md:my-4"
       />
       <LabelInput
         placeholder="Category"
@@ -53,12 +57,15 @@ const DashboardfilterOptions = (props: Props) => {
         value=""
         height="h-[35px]"
         select
+        my="my-1 md:my-4"
       />
+      <div></div>
       <CustomButton
         height="h-[35px]"
         width="w-full lg:w-[76px]"
         title="Filter"
         backgrounColor="bg-primary"
+        // my="my-1"
       />
       <div className="my-2 md:my-0 w-full">
         <CustomButton
