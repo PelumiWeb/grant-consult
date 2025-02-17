@@ -9,6 +9,7 @@ import { Pagination } from "antd";
 import LatestNews from "../components/LatestNews";
 import React from "react";
 import { countryData } from "../utils/customData";
+import LabelInput from "../components/LabelInput";
 
 export default function Home() {
 
@@ -45,17 +46,40 @@ export default function Home() {
         </div>
         {/* Filter Options */}
 
-        <FilterComponent
-          options={[
-            {
-              placeholder: "Select Country",
-            },
-            {
-              placeholder: "Grant Category",
-            },
-            { placeholder: "Grant Type" },
-          ]}
-        />
+        <FilterComponent>
+          <LabelInput
+            width="w-[305px]"
+            placeholder="Select Country"
+            // label="Grant Category"
+            height="h-[47px]"
+            value=""
+            select
+            my="my-2"
+            mr="md:mr-2"
+            options={countriesData}
+          />
+
+          <LabelInput
+            width="w-[305px]"
+            placeholder="Grant Category"
+            // label="Grant Category"
+            height="h-[47px]"
+            value=""
+            select
+            my="my-2"
+            mr="md:mr-2"
+          />
+          <LabelInput
+            width="w-[305px]"
+            placeholder="Grant Type"
+            // label="Grant Category"
+            height="h-[47px]"
+            value=""
+            select
+            my="my-2"
+            mr="md:mr-2"
+          />
+        </FilterComponent>
       </div>
 
       {/* Grants Cards */}
@@ -75,7 +99,7 @@ export default function Home() {
           <div className="w-[324px] h-[287px] ">
             <img src="/Ads.svg" className="w-full h-full object-contain" />
           </div>
-         <LatestNews />
+          <LatestNews />
         </div>
       </div>
     </div>
