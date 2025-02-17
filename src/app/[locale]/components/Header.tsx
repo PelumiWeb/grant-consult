@@ -212,6 +212,7 @@ const Header = ({}: Props) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleNavigation("/faq")}
               // href="https://www.luohanacademy.com"
             >
               <p className="text-primaryBlack font-semibold text-[13px] text-left">
