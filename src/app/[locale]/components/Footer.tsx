@@ -126,7 +126,7 @@ function Footer({}: Props) {
               <div className="flex items-center w-full">
                 <Image src="/message.svg" width={18} height={18} />
                 <p className="text-white text-sm font-semibold cursor-pointer ml-4">
-                  Grantconsult@gmail.com
+                  info@grantsconsult.com
                 </p>
               </div>
               <div className="flex items-center w-full">
@@ -280,7 +280,7 @@ function Footer({}: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Footer;
