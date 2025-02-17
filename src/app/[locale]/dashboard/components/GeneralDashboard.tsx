@@ -40,7 +40,7 @@ const GeneralDashboard = (props: Props) => {
   return (
     <div
       className={`bg-backgroundColor
- w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
+ w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
       ref={scrollContainerRef}>
       <DashboardHeader />
       {/* Header Modals */}

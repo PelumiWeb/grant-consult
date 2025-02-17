@@ -80,7 +80,7 @@ const IconComponent = ({
 }: IconProps) => {
   return (
     <div
-      className={`w-full  h-[30px] bg-transparent border-none flex items-center my-2 ${ml} `}
+      className={` w-[100px] md:w-full  h-[30px] bg-transparent border-none flex items-center my-2 ${ml} `}
       key={id}>
       <img src={icon} alt="" />
       <p

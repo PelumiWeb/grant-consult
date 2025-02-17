@@ -161,7 +161,7 @@ const WalletHistory = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth"
+      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
