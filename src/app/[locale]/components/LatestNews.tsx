@@ -4,7 +4,7 @@ type Props = {};
 
 const LatestNews = (props: Props) => {
   return (
-    <div className="w-full md:w-[324px] h-[391px] bg-white rounded-[15px] mt-4 border-borderColor border">
+    <div className="w-full md:w-[324px] h-full md:h-[391px] bg-white rounded-[15px] mt-4 border-borderColor border">
       <div className="bg-primaryBlack rounded-tl-[15px] rounded-tr-[15px] p-3">
         <p className="font-poppins text-[15px] leading-[22px] text-white text-center font-semibold">
           LATEST NEWS
