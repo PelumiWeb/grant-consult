@@ -10,6 +10,7 @@ import ConsultantComponent from "./component/ConsultantComponent";
 import FilterComponent from "../components/FilterComponent";
 import { Pagination } from "antd";
 import RenderModals from "../components/RenderModals";
+import LabelInput from "../components/LabelInput";
 
 export default function Home() {
   return (
@@ -26,18 +27,48 @@ export default function Home() {
           </p>
 
           <FilterComponent
-            options={[
-              {
-                placeholder: "Years of experience",
-              },
-              {
-                placeholder: "Location",
-              },
-              { placeholder: "Specialty" },
-            ]}
+            // options={[
+            //   {
+            //     placeholder: "Years of experience",
+            //   },
+            //   {
+            //     placeholder: "Location",
+            //   },
+            //   { placeholder: "Specialty" },
+            // ]}
             backgroundColor="bg-white"
-            search="search"
-          />
+            search="search">
+            <LabelInput
+              width="w-[305px]"
+              placeholder="Years of experience"
+              // label="Grant Category"
+              height="h-[47px]"
+              value=""
+              select
+              my="my-2"
+              mr="md:mr-2"
+            />
+            <LabelInput
+              width="w-[305px]"
+              placeholder="Location"
+              // label="Grant Category"
+              height="h-[47px]"
+              value=""
+              select
+              my="my-2"
+              mr="md:mr-2"
+            />
+            <LabelInput
+              width="w-[305px]"
+              placeholder="Specialty"
+              // label="Grant Category"
+              height="h-[47px]"
+              value=""
+              select
+              my="my-2"
+              mr="md:mr-2"
+            />
+          </FilterComponent>
           <div className=" w-full flex items-center justify-center flex-wrap ">
             {[...Array(25)].map((data) => (
               <div key={data}>
