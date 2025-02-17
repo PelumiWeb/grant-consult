@@ -103,7 +103,7 @@ const GrantCardMore = (props: Props) => {
           </p>
         </div>
 
-        <div className="flex lg:hidden  items-center w-[100%] sm:w-[90%] md:w-[80%] justify-between mt-4 lg:w-full">
+        <div className="flex lg:hidden  items-center w-[100%] sm:w-[90%] md:w-[80%] justify-between mt-4 lg:w-full gap-x-2">
           <CustomButton
             IconLeft={"/love.svg"}
             title="Save this grant"
@@ -112,9 +112,11 @@ const GrantCardMore = (props: Props) => {
             width="w-[140px]"
             textStyle="text-white text-[10px] lg:text-sm font-medium "
             radius="rounded-[3px]"
+            padding="p-2"
           />
           <CustomButton
             IconLeft={"/googleCalendar.svg"}
+            padding="p-2"
             title="Add to Google Calendar"
             backgrounColor="bg-white"
             height="h-[40px]"
@@ -310,12 +312,9 @@ const GrantCardMore = (props: Props) => {
         </div>
         <div className="block lg:hidden px-8">
           <LatestNews />
-          
         </div>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 };
