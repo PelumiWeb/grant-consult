@@ -148,7 +148,7 @@ const Consultant = (props: Props) => {
           )}
         />
 
-        <Controller
+        {/* <Controller
           name="phone"
           control={control}
           rules={{ required: "Phone  is required" }}
@@ -172,9 +172,9 @@ const Consultant = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
 
-        <Controller
+        {/* <Controller
           name="country"
           control={control}
           rules={{ required: "Country  is required" }}
@@ -253,7 +253,7 @@ const Consultant = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
 
         <Controller
           name="password"

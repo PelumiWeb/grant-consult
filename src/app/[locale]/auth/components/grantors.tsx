@@ -155,7 +155,7 @@ const Grantor = (props: Props) => {
           )}
         />
 
-        <Controller
+        {/* <Controller
           name="phone"
           control={control}
           rules={{ required: "Phone  is required" }}
@@ -179,9 +179,9 @@ const Grantor = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
 
-        <Controller
+        {/* <Controller
           name="country"
           control={control}
           rules={{ required: "Country  is required" }}
@@ -207,9 +207,9 @@ const Grantor = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
 
-        <Controller
+        {/* <Controller
           name="organizationName"
           control={control}
           // rules={{ required: "Oragnization Name is required" }}
@@ -233,9 +233,9 @@ const Grantor = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
 
-        <Controller
+        {/* <Controller
           name="organizationType"
           control={control}
           rules={{ required: "organization Type  is required" }}
@@ -259,8 +259,8 @@ const Grantor = (props: Props) => {
               )}
             </>
           )}
-        />
-        <Controller
+        /> */}
+        {/* <Controller
           name="sector"
           control={control}
           rules={{ required: "Sectore  is required" }}
@@ -284,7 +284,7 @@ const Grantor = (props: Props) => {
               )}
             </>
           )}
-        />
+        /> */}
         <Controller
           name="password"
           control={control}
