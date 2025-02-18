@@ -270,7 +270,7 @@ const page = (props: Props) => {
                     grant consultants who are specialists with the grant
                     application process and other advisory services. Find our
                     packages{" "}
-                    <a className="mx-1" href={`${locale}/subscription`}>
+                    <a className="mx-1" href={`subscription`}>
                       here
                     </a>
                     . Additional services include Grant Research &
@@ -306,7 +306,7 @@ const page = (props: Props) => {
                       Kindly click{" "}
                       <a
                         className="mx-1 text-secondaryColor"
-                        href={`${locale}/grants/become`}>
+                        href={`grants/become`}>
                         here
                       </a>{" "}
                       to begin.
