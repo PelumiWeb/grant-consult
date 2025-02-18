@@ -156,6 +156,7 @@ const Experts = (props: Props) => {
           width="w-[325px]"
           height="h-[50px]"
           title={t("Experts.meet")}
+          textStyle="text-backgroundColor text-[21px] leading-[31px] text-center font-semibold font-mont"
         />
       </div>
     </div>

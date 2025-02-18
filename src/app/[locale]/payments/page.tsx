@@ -31,7 +31,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="bg-white p-8">
+      <div className="bg-white p-8 my-16">
         {/* Left  */}
         <div>
           <h3 className="text-primary font-semibold text-[24px] leading-[36px] my-4">

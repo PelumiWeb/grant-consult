@@ -29,8 +29,10 @@ export default function SubscriptionLayout({
         <section className="w-full ">
           <Header />
           {/* Content */}
-          <div className="bg-backgroundColor">{children}</div>
-          <Footer />
+          <div className="bg-backgroundColor h-full w-full">{children}</div>
+          <div className="mt-16 h-full">
+            <Footer />
+          </div>
         </section>
       </body>
     </html>

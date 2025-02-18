@@ -1,7 +1,7 @@
 "use client";
 import { Image, Input } from "antd";
 import React from "react";
-import {  DownOutlined, UpOutlined } from "@ant-design/icons";
+import { DownOutlined, UpOutlined } from "@ant-design/icons";
 import CustomGrantsLogo from "../customIcon/GrantsLogo";
 
 type Props = {};
@@ -9,7 +9,6 @@ type Props = {};
 function Footer({}: Props) {
   const [option, setOptions] = React.useState(false);
   const [serviceOption, setServiceOption] = React.useState(false);
-
 
   return (
     <div className="relative bg-footer   bg-repeat bg-cover bg-bottom bottom-0 mt-8">
@@ -49,74 +48,18 @@ function Footer({}: Props) {
               alt="Grant Logo"
             /> */}
             <CustomGrantsLogo />
-            <p className="w-[150px] lg:w-[300px] text-white text-sm font-semibold ">
-              Your trusted platform for navigating the world of grant
-              opportunities. We provide comprehensive access to active grants,
-              expert consultations, and essential tools to help nonprofits,
-              businesses, and individuals secure funding with confidence.
-            </p>
-            <p className="w-[300px] text-white text-sm font-semibold  mt-4">
-              Note: GrantsConsult connects you with grant information and offers
-              application assistance but does not award grants directly. Avoid
-              scams; never pre-pay for guaranteed funding.
+            <p className="w-[150px] lg:w-[450px] text-white text-[14px] leading-[22px] font-semibold ">
+              At GrantsConsult we provide grant and other funding opportunities
+              tailored to various niche and backed up with expert consultation
+              to guide you through the grant application process. Our
+              comprehensive approach is designed to simplify your path to
+              success.
             </p>
           </div>
           {/* 2 About Us */}
-          <div>
-            <div className="h-[300px] flex flex-col justify-between">
-              <h3 className="text-white ">About Us</h3>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Our Team
-              </p>
-
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                FAQ
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Gallery
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                News
-              </p>
-            </div>
-          </div>
-          {/* Services */}
-          <div>
-            <div className="h-[300px] flex flex-col justify-between">
-              <h3 className="text-white ">Services</h3>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Consulting
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Grant Application
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Scholarship
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Training & Worship
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Grant Writing
-              </p>
-            </div>
-          </div>
-          {/* Blog */}
-          <div>
-            <div className="h-[150px] flex flex-col justify-between">
-              <h3 className="text-white ">Blog</h3>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Lorem
-              </p>
-              <p className="text-white text-sm font-semibold cursor-pointer">
-                Lorem
-              </p>
-            </div>
-          </div>
-          {/* Contact */}
-          <div>
-            <div className="h-[200px] flex flex-col justify-between">
-              <h3 className="text-white ">Contact</h3>
+          <div className="w-full">
+            <h3 className="text-white ">Contact</h3>
+            <div className="flex items-start">
               <div className="flex items-center w-full">
                 <Image src="/location.svg" width={18} height={18} />
                 <p className="text-white text-sm font-semibold cursor-pointer ml-4">
@@ -129,13 +72,24 @@ function Footer({}: Props) {
                   info@grantsconsult.com
                 </p>
               </div>
+
               <div className="flex items-center w-full">
                 <Image src="/call.svg" width={18} height={18} />
                 <p className="text-white text-sm font-semibold cursor-pointer ml-4">
                   +2349106288373
                 </p>
               </div>
-              <div className="flex items-center w-[60%] justify-between">
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-between w-full">
+           <p className="hidden lg:block text-white font-thin mt-8">
+          Copyright @Grantsconsult 2024
+        </p>
+
+          <div className="hidden lg:block">
+            <div className="flex justify-between">
+              <div className="flex items-center  justify-between space-x-4">
                 <Image src="/social1.svg" width={18} height={18} />
                 <Image src="/social2.svg" width={18} height={18} />
                 <Image src="/social3.svg" width={18} height={18} />
@@ -144,10 +98,7 @@ function Footer({}: Props) {
             </div>
           </div>
         </div>
-        <p className="hidden lg:block text-white font-thin mt-8">
-          Copyright @Grantsconsult 2024
-        </p>
-
+       
         {/* Bottom Mobile */}
         <div className="block lg:hidden mt-4">
           <div className="w-full flex justify-center items-center">
@@ -177,7 +128,7 @@ function Footer({}: Props) {
             </div>
           </div>
           <div>
-            <ul>
+            {/* <ul>
               <div className="flex justify-between mb-2">
                 <p className="font-semibold text-[13px] leading-[20px] text-white">
                   About Us
@@ -207,8 +158,8 @@ function Footer({}: Props) {
                     </li>
                   )
                 )}
-            </ul>
-            <ul>
+            </ul> */}
+            {/* <ul>
               <div className="flex justify-between mb-2">
                 <p className="font-semibold text-[13px] leading-[20px] text-white">
                   Services
@@ -243,7 +194,7 @@ function Footer({}: Props) {
                     </p>
                   </li>
                 ))}
-            </ul>
+            </ul> */}
             <ul>
               <div className="flex justify-between mb-2">
                 <p className="font-semibold text-[13px] leading-[20px] text-white">
