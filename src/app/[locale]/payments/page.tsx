@@ -13,7 +13,7 @@ export default function Home() {
   const [selected, setSelected] = React.useState(1)
 
   return (
-    <div className="w-full">
+    <div className="w-full py-8">
       {/*  */}
       {/* <div className="flex  lg:flex-row justify-center lg:justify-between items-start w-full  flex-wrap px-4">
         {/* left */}
@@ -21,7 +21,7 @@ export default function Home() {
       {/* Right */}
 
       {/* </div> */}
-      <div className="py-8">
+      <div className="">
         <h1 className="text-secondaryColor font-semibold text-[20px] lg:text-[36px] leading-[20px] lg:leading-[42px] text-center mb-6">
           Complete Your Payment
         </h1>
