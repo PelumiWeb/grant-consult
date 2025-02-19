@@ -114,7 +114,7 @@ const page = (props: Props) => {
         </h3>
 
         <div className="w-full flex justify-between flex-col md:flex-row">
-          <div>
+          <div className="w-full">
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               Upload Supporting Document
             </p>
@@ -124,15 +124,17 @@ const page = (props: Props) => {
               Application requirements
             </p>
 
-            <div className="flex items-center justify-center md:justify-between flex-col md:flex-row">
-              <LabelInput
-                width="w-[221px]"
-                height="h-[40px]"
-                label=""
-                value=""
-                placeholder=""
-                mr="mr-4"
-              />
+            <div className="flex items-center justify-center md:justify-start flex-col md:flex-row space-x-4">
+              <div className="w-full md:w-[221px]">
+                <LabelInput
+                  width="w-full"
+                  height="h-[40px]"
+                  label=""
+                  value=""
+                  placeholder=""
+                  mr="mr-4"
+                />
+              </div>
 
               <Upload
                 {...uploadProps}
@@ -168,7 +170,7 @@ const page = (props: Props) => {
               </div>
             ))}
           </div>
-          <div className="w-full mt-2">
+          <div className="w-full md:w-[460px] mt-8 md:mt-0">
             <p className="font-bold font-mono text-[16px] leading-[19px] text-primary mb-2">
               List Required Documents
             </p>
