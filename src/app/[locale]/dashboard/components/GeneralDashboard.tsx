@@ -10,6 +10,7 @@ import GrantCard from "@/app/[locale]/grants/components/GrantCard";
 import { Pagination } from "antd";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
+import useHandleNavigation from "../../utils/HandleNavigation";
 type Props = {};
 
 const GeneralDashboard = (props: Props) => {
@@ -35,12 +36,15 @@ const GeneralDashboard = (props: Props) => {
 
   const dashboardRoute = useAppSelector((state) => state.dashboard);
 
+  const handleNavigation = useHandleNavigation()
+  
+
   // console.log(dashboardRoute, "routee")
 
   return (
     <div
       className={`bg-backgroundColor
- w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
+ w-full p-8 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
       ref={scrollContainerRef}>
       <DashboardHeader />
       {/* Header Modals */}
@@ -63,26 +67,28 @@ const GeneralDashboard = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center flex-col md:flex-row mt-2 w-full md:w-[40%]">
-          <div className="mr-0 md:mr-4 w-full md:w-[170.21px] y-2">
+        <div className="flex justify-between items-center flex-col md:flex-row mt-4 w-full md:w-[40%]">
+          <div className="mr-0 md:mr-4 w-full md:w-[170.21px] my-2">
             <CustomButton
               width="w-full md:w-[170.21px]"
-              height="h-[35px]"
+              height="h-[50px] md:h-[35px]"
               title="Available Grants"
               radius="rounded-[5px]"
               textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
+              onClick={() => handleNavigation("/grants")}
             />
           </div>
 
           <div className="w-full md:w-[200.21px] my-2">
             <CustomButton
+              onClick={() => handleNavigation("/consultant/request")}
               width="w-full md:w-[200.21px]"
-              height="h-[30px]"
+              height="h-[50px] md:h-[35px]"
               title="Request for consultant"
               radius="rounded-[5px]"
               backgrounColor="bg-transparent"
               borderColor="border-buttonPrimary"
-              textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
+              textStyle="text-buttonPrimary font-semibold text-[12px] leading-[17px] "
               borderWidth="border-[2px]"
             />
           </div>
@@ -138,7 +144,7 @@ const GeneralDashboard = (props: Props) => {
         <p className="font-semibold text-primary text-[16px] leading-[18.88px] py-4">
           Activity Summary
         </p>
-        <div className="w-full h-full lg:h-[259px] shadow-active-summary flex justify-center  lg:justify-between bg-white border-[0.5px] border-borderColor p-8 flex-wrap">
+        <div className="w-full h-full lg:h-[259px] shadow-active-summary flex justify-center  lg:justify-between items-center bg-white border-[0.5px] border-borderColor p-8 flex-wrap flex-col md:flex-row">
           <div className="relative border-[9.99px] border-transparent rounded-full bg-gradient-border  h-[180px] w-[180px] z-10 m-2 lg:m-0">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white h-[160px] rounded-full w-[160px] z-0 flex flex-col justify-between items-center py-6">
               <img src="/summary1.svg" alt="" />
@@ -224,15 +230,15 @@ const GeneralDashboard = (props: Props) => {
         <div className="flex flex-wrap justify-between">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
             <div className="shadow-grant-card-dashboard w-full md:w-[500px] h-full md:h-[215px] flex flex-col md:flex-row justify-between bg-white  py-4 md:px-2 rounded-[5px] my-2  md:my-4">
-              <div className="w-full md:w-[125px] h-[250px] md:h-[125px] flex justify-center items-center mt-4 ml-0 md:ml-2 mr-0 md:mr-2 ">
+              <div className="w-full md:w-[125px] h-full md:h-[125px] flex justify-center items-center  ml-0 md:ml-2 mr-0 md:mr-2 ">
                 <img
                   src="/grantFrame.svg"
-                  className="w-[95%] h-full object-cover  md:object-contain rounded-[10px] md:rounded-none"
+                  className="w-[95%] h-[185px] md:h-full object-cover  md:object-contain rounded-[10px] md:rounded-none"
                   alt=""
                 />
               </div>
 
-              <div className="p-3 md:p-0 w-[70%]">
+              <div className="p-3 md:p-0  w-full md:w-[70%]">
                 <p className="text-[12.48px] leading-[16.23px] font-semibold mb-2 w-[95%]">
                   Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
                 </p>

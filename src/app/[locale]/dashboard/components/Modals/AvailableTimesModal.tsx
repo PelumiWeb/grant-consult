@@ -26,9 +26,9 @@ const AvailableTimes = (props: Props) => {
       setOpen={() => openMmodal()}
       width="1000px"
       height="">
-      <div className="w-full h-[588px]">
+      <div className="w-full h-full md:h-[588px]">
         <h3>Edit Available Times</h3>
-        <div className="flex items-center justify-between w-[600px]">
+        <div className="flex items-center justify-between w-full md:w-[600px] flex-col md:flex-row">
           <LabelInput
             value=""
             placeholder="Select days"
@@ -64,7 +64,7 @@ const AvailableTimes = (props: Props) => {
                 })
               );
             }}
-            width="w-[123px]"
+            width="w-full md:w-[123px]"
             height="h-[60px]"
             title="Save"
             radius="rounded-[5px]"

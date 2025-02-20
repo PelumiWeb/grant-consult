@@ -33,9 +33,9 @@ const RescheduleModal = (props: Props) => {
       setOpen={() => openMmodal()}
       width="1000px"
       height="">
-      <div className="w-full h-[588px] px-4 ">
+      <div className="w-full h-full md:h-[588px] px-4 ">
         <h3>Request to Reschedule Consultation</h3>
-        <p className="py-8 w-[480px]">
+        <p className="py-2 md:py-8 w-[480px]">
           If you are unable to attend the scheduled consultation, please select
           a new date and provide a reason for rescheduling.
         </p>
@@ -52,13 +52,13 @@ Character limit: 300 characters."
         />
 
         <div className="w-full">
-          <p className="mb-4">
+          <p className="mb-2 md:mb-4">
             Proposed Date and Time<span className="text-errorColor">*</span>
           </p>
-          <div className="flex items-center">
-            <DatePicker className="w-[288px] h-[55px] " />
+          <div className="flex items-center flex-col md:flex-row space-y-4 md:space-y-0">
+            <DatePicker className="w-full md:w-[288px] h-[55px] " />
             <TimePicker
-              className="w-[288px] h-[55px] ml-4"
+              className="w-full md:w-[288px] h-[55px] ml-0 md:ml-4"
               onChange={onChange}
               defaultOpenValue={dayjs("00:00:00", "HH:mm:ss")}
             />
@@ -67,7 +67,7 @@ Character limit: 300 characters."
 
         <div className="mt-8">
           <CustomButton
-            width="w-[183px]"
+            width="w-full md:w-[183px]"
             height="h-[60px]"
             title="Submit Request"
             radius="rounded-[5px]"

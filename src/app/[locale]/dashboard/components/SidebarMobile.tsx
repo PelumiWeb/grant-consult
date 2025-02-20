@@ -51,11 +51,11 @@ const SidebarModal = (props: Props) => {
       image: "/dashboard3.svg",
       url: `/${locale}/dashboard/consultation`,
     },
-    {
-      imageTitle: tabsName.message,
-      image: "/dashboard4.svg",
-      url: `/${locale}/dashboard/message`,
-    },
+    // {
+    //   imageTitle: tabsName.message,
+    //   image: "/dashboard4.svg",
+    //   url: `/${locale}/dashboard/message`,
+    // },
     {
       imageTitle: tabsName.wallet,
       image: "/dashboard3.svg",
@@ -104,11 +104,11 @@ const SidebarModal = (props: Props) => {
       image: "/dashboard3.svg",
       url: `/${locale}/dashboard/consultation`,
     },
-    {
-      imageTitle: tabsName.message,
-      image: "/dashboard4.svg",
-      url: `/${locale}/dashboard/message`,
-    },
+    // {
+    //   imageTitle: tabsName.message,
+    //   image: "/dashboard4.svg",
+    //   url: `/${locale}/dashboard/message`,
+    // },
     {
       imageTitle: tabsName.settings,
       image: "/settings.svg",

@@ -41,11 +41,11 @@ const ConfirmTransactionPin = (props: Props) => {
         <h3>Confirm Transaction PIN</h3>
 
         <div>
-          <p className="text-[14px] leading-[24px] font-normal py-8">
+          <p className="text-[14px] leading-[24px] font-normal py-4 md:py-8">
             Please enter the six digit pin that will be used for all your
             financial transactions
           </p>
-          <div className="pb-16">
+          <div className=" pb-4 md:pb-16 flex justify-center items-center md:block">
             <Input.OTP
               className="w-[200px]"
               variant="filled"
@@ -66,7 +66,7 @@ const ConfirmTransactionPin = (props: Props) => {
           }}
           title="Confirm"
           backgrounColor="bg-primary"
-          width="w-[140px]"
+          width="w-full md:w-[140px]"
           height="h-[60px]"
           textStyle="text-white uppercase font-semibold leading-[16px] text-[16px]"
         />

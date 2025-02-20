@@ -27,11 +27,11 @@ const DeleteAccountModal = (props: Props) => {
       width="980px"
       height="">
       <div className="w-full h-full">
-        <h4 className="text-errorColor text-[20px] leading-[26px] my-8">
+        <h4 className="text-errorColor text-[20px] leading-[26px] my-8 font-semibold w-[92%] md:w-full">
           Are you sure you want to deactivate this account? You can reactivate
           again by signing up
         </h4>
-        <div className="w-[35%] flex justify-between">
+        <div className="w-full md:w-[35%] flex justify-between flex-col md:flex-row space-y-4 md:space-y-0">
           <CustomButton
             onClick={() =>
               dispatch(
@@ -44,8 +44,8 @@ const DeleteAccountModal = (props: Props) => {
             }
             title="Yes, Deactive"
             backgrounColor="bg-errorColor"
-            textStyle="text-white text-[16px] leading-[16px]"
-            width="w-[170px]"
+            textStyle="text-white text-[16px] leading-[16px] font-semibold"
+            width="w-full md:w-[170px]"
             height="h-[40px]"
             radius="rounded-[5px]"
           />
@@ -53,9 +53,9 @@ const DeleteAccountModal = (props: Props) => {
           <CustomButton
             onClick={() => openMmodal()}
             backgrounColor="bg-borderColor"
-            textStyle="text-white"
+            textStyle="text-white font-semibold"
             title="Cancel"
-            width="w-[100px]"
+            width="w-full md:w-[100px]"
             height="h-[40px]"
             radius="rounded-[5px]"
           />

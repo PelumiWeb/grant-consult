@@ -36,15 +36,15 @@ const ForgotTransactionPin = (props: Props) => {
       width="800px"
       height="">
       <div className="w-full h-full">
-        <h3>Forgot Transaction Pin</h3>
+        <h3>Forgot Transaction PIN</h3>
 
         <p
           className="text-sm
-        text-textColor mt-8">
+        text-textColor mt-6 md:mt-8">
           Don’t worry, we will send you a reset link
         </p>
 
-        <div className="mb-16">
+        <div className="mb-4 md:mb-16">
           <LabelInput
             required
             placeholder=""
@@ -64,10 +64,10 @@ const ForgotTransactionPin = (props: Props) => {
               })
             );
           }}
-          width="w-[150px]"
+          width="w-full md:w-[150px]"
           height="h-[60px]"
           title="reset my pin"
-          textStyle="uppercase text-white "
+          textStyle="uppercase text-white font-semibold "
           backgrounColor="bg-primary"
         />
       </div>

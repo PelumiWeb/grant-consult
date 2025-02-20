@@ -18,6 +18,7 @@ type settingComponentProps = {
   edit?: boolean;
   showTitle?: boolean;
   checker?: boolean;
+  
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 };
 
@@ -55,16 +56,30 @@ const Settings = (props: Props) => {
         <div className="w-full">
           {data?.showTitle && (
             <div className="w-full flex justify-between items-center">
-              <p className="font-semibold text-[18px] leading-[40px]">
+              <p className="font-semibold text-[18px] leading-[28px] md:leading-[40px]">
                 {data.title}
               </p>
-              {data.iconPosition === "top" && <Switch />}
+              <div className="hidden md:block">
+                {data.iconPosition === "top" && <Switch size="default" />}
+              </div>
+              <div className="block md:hidden">
+                {data.iconPosition === "top" && <Switch size="small" />}
+              </div>
+              {/* {data.iconPosition === "top" && <Switch />} */}
             </div>
           )}
 
           <div className="w-full flex justify-between items-center">
-            <p>{data.message} </p>
-            {data.iconPosition === "bottom" && <Switch />}
+            <p className="font-semibold text-[14px] leading-[23px] text-textColor">
+              {data.message}{" "}
+            </p>
+            <div className="hidden md:block">
+              {data.iconPosition === "bottom" && <Switch size="default" />}
+            </div>
+
+            <div className="block md:hidden">
+              {data.iconPosition === "bottom" && <Switch size="small" />}
+            </div>
           </div>
         </div>
 
@@ -122,8 +137,12 @@ const Settings = (props: Props) => {
         </h4>
         <div className="flex justify-between items-start w-full lg:w-[516px]  mt-4">
           <div>
-            <p className="my-2">Monday - Friday: 10:00 AM - 4:00 PM</p>
-            <p>Saturdays: By appointment only</p>
+            <p className="my-2 text-[14px] leading-[23px] ">
+              Monday - Friday: 10:00 AM - 4:00 PM
+            </p>
+            <p className="my-2 text-[14px] leading-[23px] ">
+              Saturdays: By appointment only
+            </p>
           </div>
           <div
             className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-backgroundColor 

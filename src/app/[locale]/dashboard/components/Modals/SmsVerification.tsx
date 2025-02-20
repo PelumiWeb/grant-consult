@@ -105,7 +105,7 @@ const SmsVerification = (props: Props) => {
           </div>
         )}
 
-        <p className="text-textColor w-full px-8">
+        <p className="text-textColor w-full px-8 font-medium text-[12px] leading-[17px] md:text-base">
           Your phone number helps us keep your account secure by adding an
           additional layer of verification
         </p>
@@ -125,7 +125,7 @@ const SmsVerification = (props: Props) => {
                 );
               }
             }}
-            width="w-[150px]"
+            width="w-full md:w-[150px]"
             height="h-[40px]"
             title={!codeSent ? "Send Code" : "Verify"}
             textStyle="uppercase text-white font-semibold"

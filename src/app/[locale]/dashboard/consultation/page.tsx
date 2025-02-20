@@ -28,16 +28,15 @@ const ConsultanHome = (props: Props) => {
 
   const { user } = useAppSelector((state) => state.user);
 
-
   const consultation = useAppSelector((state) => state.dashboard.consultation);
 
-  React.useCallback(() => {
+  React.useEffect(() => {
     const fetchData = () => {
       dispatch(
         setActiveRoute({
           ...dashboardRoute,
           consultation:
-            user?.userType === "GENERAL_USER" 
+            user?.userType === "GENERAL_USER"
               ? dashboardRouteName.grantConsulatation
               : dashboardRouteName.consultation,
         })
@@ -45,7 +44,7 @@ const ConsultanHome = (props: Props) => {
     };
     fetchData();
   }, []);
-  
+
   const renderScreens = (route: any) => {
     switch (route) {
       case dashboardRouteName.consultation:

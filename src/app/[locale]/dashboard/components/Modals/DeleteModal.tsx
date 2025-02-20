@@ -32,7 +32,7 @@ const DeleteAccount = (props: Props) => {
           Are you sure you want to delete this grant from our platform? You can
           not undo this
         </h4>
-        <div className="w-[35%] flex justify-between">
+        <div className="w-full md:w-[35%] flex justify-between flex-col md:flex-row space-y-4 md:space-y-0">
           <CustomButton
             onClick={() =>
               dispatch(
@@ -47,7 +47,7 @@ const DeleteAccount = (props: Props) => {
             title="Yes, Deactive"
             backgrounColor="bg-errorColor"
             textStyle="text-white text-[16px] leading-[16px]"
-            width="w-[170px]"
+            width="w-full md:w-[170px]"
             height="h-[40px]"
             radius="rounded-[5px]"
           />
@@ -57,7 +57,7 @@ const DeleteAccount = (props: Props) => {
             backgrounColor="bg-borderColor"
             textStyle="text-white"
             title="Cancel"
-            width="w-[100px]"
+            width="w-full md:w-[100px]"
             height="h-[40px]"
             radius="rounded-[5px]"
           />

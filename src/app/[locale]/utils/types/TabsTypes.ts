@@ -33,7 +33,7 @@ helpSupport: "help & support",
 logout: "logout",
   generalDashboard: "dashboard",
 
-  grant: "grant",
+  grant: "grants",
   manageSubscription: "manageSubscription",
   grantConsulatation: "grantConsulatation",
   generalConsultationDetails: "generalConsultationDetails",

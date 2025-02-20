@@ -29,7 +29,7 @@ const DashboardHeader = (props: Props) => {
         className={`${
           isScrolled &&
           "bg-white border-b-borderColor border-b-[.5px] h-[100px] z-30 px-2"
-        } h-[50px] md:h-[100px] flex items-center justify-between sticky -top-10  transition-all`}>
+        } h-[50px] md:h-[100px] flex items-center justify-between sticky -top-10  transition-all px-6 md:px-0`}>
         <div className="w-[30%]" onClick={() => handleNavigation(`/`)}>
           {/* <img src="/grantLogo.svg" /> */}
           <CustomGrantsLogo />

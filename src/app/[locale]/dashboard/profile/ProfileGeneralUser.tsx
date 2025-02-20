@@ -52,7 +52,7 @@ const ProfileGeneral = (props: Props) => {
       <div className="">
         <ProfileGeneralHeader
           email=" alicebrooklyn@gmail.com"
-          phone="+31 890 783 456"
+          phone="--- --- --- ---"
           image="/generalUser.svg"
           contactInformation="Contact Information"
         />

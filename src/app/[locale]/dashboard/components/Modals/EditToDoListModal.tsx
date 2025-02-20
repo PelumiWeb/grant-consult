@@ -49,7 +49,7 @@ Schedule follow-up consultation."
                 })
               );
             }}
-            width="w-[123px]"
+            width="w-full md:w-[123px]"
             height="h-[60px]"
             title="Save"
             radius="rounded-[5px]"

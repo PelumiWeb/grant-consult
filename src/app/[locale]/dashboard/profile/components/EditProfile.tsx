@@ -34,7 +34,7 @@ const EditProfile = (props: Props) => {
         />
 
         <LabelInput
-          placeholder="+31 890 783 456"
+          placeholder="--- --- --- ---"
           label="Phone Number"
           value=""
           width="w-full md:w-[444px]"

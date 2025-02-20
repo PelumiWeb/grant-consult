@@ -49,7 +49,7 @@ const HelpSupport = (props: Props) => {
           <p className="text-textColor">Help & Support </p>
         </div> */}
 
-        <h2 className="text-secondaryColor text-center w-full text-[36px] leading-[42px] py-4">
+        <h2 className="text-secondaryColor text-center w-full text-[20px] md:text-[36px] leading-[26px] md:leading-[42px] py-4">
           How can we help you today?
         </h2>
 
@@ -61,7 +61,7 @@ const HelpSupport = (props: Props) => {
 
         <div className="mt-8 flex flex-col-reverse lg:flex-row items-start">
           {/* Left */}
-          <div className="w-full md:w-[35%]">
+          <div className="w-full md:w-[35% pl-8 md:pl-0">
             <div className="mt-4 w-full">
               <p className="text-[20px] leading-[26px] font-extrabold text-primary mb-6">
                 Quick Access Links
@@ -91,22 +91,22 @@ const HelpSupport = (props: Props) => {
                 Knowledge Based
               </p>
 
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
-              <p className="text-textColor leading-[21px] text-[16px] font-normal underline my-6">
+              <p className="text-textColor leading-[21px] text-[16px] font-normal  my-6">
                 Quisque a a ante, at volutpat enim.
               </p>
             </div>

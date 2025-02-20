@@ -191,35 +191,35 @@ const GrantConsultation = (props: Props) => {
         <p className="text-textColor mx-3">{">>"}</p>
         <p className="text-textColor">Consultation </p>
       </div> */}
-      <div className="flex justify-between items-center py-4">
-        <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">
+      <div className="flex justify-between items-center py-4 flex-col md:flex-row">
+        <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px]  text-left w-full my-4">
           Consultation Summary
         </h3>
-        <div className="flex justify-between ">
-          <div className="mr-4">
+        <div className="flex justify-between flex-col md:flex-row flex-wrap  space-y-4 md:space-y-0 w-full">
+          <div className="mr-0 md:mr-4">
             <CustomButton
-              width="w-[170.21px]"
-              height="h-[35px]"
-              title="Available Grants"
+              width="w-full md:w-[170.21px]"
+              height="h-[50px] md:h-[35px]"
+              title="View all Grants"
               radius="rounded-[5px]"
-              textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
+              textStyle="text-backgroundColor leading-[21px] text-[14px] font-semibold"
             />
           </div>
 
           <CustomButton
-            width="w-[200.21px]"
-            height="h-[30px]"
+            width="w-full md:w-[200.21px]"
+            height="h-[50px] md:h-[30px]"
             title="Request for consultant"
             radius="rounded-[5px]"
             backgrounColor="bg-transparent"
             borderColor="border-buttonPrimary"
-            textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
+            textStyle="text-buttonPrimary font-semibold text-[14px] leading-[21px] "
             borderWidth="border-[2px]"
           />
         </div>
       </div>
-      <div className="flex justify-between items-center my-4">
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+      <div className="flex justify-between items-center my-4 flex-col md:flex-row flex-wrap space-y-1 ">
+        <div className="w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-errorColor font-bold text-[16px] leading-[18.88px] font-mono">
               Total Consultation:{" "}
@@ -229,7 +229,7 @@ const GrantConsultation = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className=" w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] font-mono">
               Ongoing:{" "}
@@ -240,7 +240,7 @@ const GrantConsultation = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className="w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-[#FF9500] font-bold text-[16px] leading-[18.88px] font-mono">
               Upcoming:{" "}
@@ -251,7 +251,7 @@ const GrantConsultation = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
+        <div className="w-full md:w-[250px] h-[77.64px] bg-white border-[0.5px] border-borderColor shadow-genera-user-shdow-card grid place-items-center">
           <div className="flex justify-between items-center">
             <p className="text-secondaryColor font-bold text-[16px] leading-[18.88px] font-mono">
               Completed:{" "}

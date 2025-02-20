@@ -53,7 +53,7 @@ const QrAuthentication = (props: Props) => {
           <p className="ml-1 text-sm">Back</p>
         </div>
 
-        <div className="px-4 mt-4">
+        <div className="px-4 mt-4 border-b border-b-borderColor ">
           <p className="font-semibold text-[24px] leading-[32px] text-primary">
             Add authenticator app
           </p>
@@ -67,12 +67,12 @@ const QrAuthentication = (props: Props) => {
             </p>
           </div>
 
-          <div className="w-full flex items-center justify-center border-b border-b-borderColor py-8 flex-col">
+          <div className="w-full flex items-center justify-center py-6 flex-col ">
             {showCode ? (
               <QRCode value="hey" />
             ) : (
-              <div>
-                <div className="w-full py-2 bg-[#191C1D0F] mb-4">
+              <div className="flex flex-col justify-center items-center">
+                <div className=" py-2 bg-[#191C1D0F] mb-4 w-[90%]">
                   <p className="text-sm text-[#191C1D] p-4">
                     HDOEIDAOMCICSALDIVOVLAODIDC932DJSLDKLDNCCCCSD
                   </p>
@@ -82,24 +82,25 @@ const QrAuthentication = (props: Props) => {
                   text={"Copy to Clickboard"}
                   // onCopy={() => this.setState({ copied: true })}
                 > */}
-                  <CustomButton
-                    title="Copy"
-                    radius="rounded-[10px]"
-                    backgrounColor="bg-transparent"
-                    width="w-full"
-                    borderColor="border-borderColor"
-                    textStyle="text-textColor"
-                  />
+                <CustomButton
+                  title="Copy"
+                  radius="rounded-[10px]"
+                  backgrounColor="bg-transparent"
+                  width="w-[90%]"
+                  height="h-[40px]"
+                  borderColor="border-borderColor"
+                  textStyle="text-[#191C1D] font-semiboldr"
+                />
                 {/* </TypedCopyToClipboard> */}
               </div>
             )}
             <button onClick={() => setShowCode((prev) => !prev)}>
               {showCode ? (
-                <p className="text-secondaryColor text-sm text-center py-2">
+                <p className="text-secondaryColor text-sm text-center py-2 font-semibold">
                   Can’t scan the QR code?
                 </p>
               ) : (
-                <p className="text-secondaryColor text-sm text-center py-2">
+                <p className="text-secondaryColor font-semibold text-sm text-center py-2">
                   Want to scan QR code?
                 </p>
               )}
@@ -138,10 +139,10 @@ const QrAuthentication = (props: Props) => {
                 })
               );
             }}
-            width="w-[150px]"
+            width="w-full md:w-[150px]"
             height="h-[40px]"
             title="continue"
-            textStyle="uppercase text-white "
+            textStyle="uppercase text-white font-semibold"
             backgrounColor="bg-primary"
           />
         </div>

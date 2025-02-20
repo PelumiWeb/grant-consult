@@ -41,14 +41,16 @@ const SetTransactionPin = (props: Props) => {
         <h3>Set Transaction PIN</h3>
 
         <div>
-          <p className="text-[14px] leading-[24px] font-normal py-8">
+          <p className="text-[14px] leading-[24px] font-normal py-4 md:py-8">
             Please enter the six digit pin that will be used for all your
             financial transactions
           </p>
-          <div className="pb-16">
+          <div className="pb-4 md:pb-16 flex items-center justify-center md:block">
             <Input.OTP
+              length={4}
               className="w-[200px]"
               variant="filled"
+             
               size={"large"}
               {...sharedProps}
             />
@@ -65,7 +67,7 @@ const SetTransactionPin = (props: Props) => {
           }}
           title="Continue"
           backgrounColor="bg-primary"
-          width="w-[140px]"
+          width="w-full md:w-[140px]"
           height="h-[60px]"
           textStyle="text-white uppercase font-semibold leading-[16px] text-[16px]"
         />
