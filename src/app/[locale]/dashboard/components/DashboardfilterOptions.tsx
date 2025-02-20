@@ -3,7 +3,9 @@ import React from "react";
 import { DatePicker, DatePickerProps, Space } from "antd";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 
-type Props = {};
+type Props = {
+  children: React.ReactNode;
+};
 
 const DashboardfilterOptions = (props: Props) => {
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {};
@@ -12,71 +14,14 @@ const DashboardfilterOptions = (props: Props) => {
       className="w-full bg-white flex items-center justify-between
       px-4
       mt-4
-      h-[450px] md:h-[200px] lg:h-[80px]
+      h-full md:h-[200px] lg:h-[80px]
       rounded-[5px]
       flex-wrap lg:flex-nowrap
+      space-x-0 md:space-x-4 
+      space-y-4 md:space-y-0
+      py-2 md:py-0
     ">
-      <LabelInput
-        placeholder="Grant title"
-        width={"w-full md:w-[130px]"}
-        value=""
-        height="h-[35px]"
-        my="my-1 md:my-4"
-      />
-      <DatePicker
-        onChange={onChange}
-        height={35}
-        className="w-full lg:w-[130px] h-[35px]"
-      />
-      <LabelInput
-        placeholder="Client Name"
-        width={"w-full md:w-[130px]"}
-        value=""
-        height="h-[35px]"
-        my="my-1 md:my-4"
-      />
-      <LabelInput
-        placeholder="Deadline"
-        width={"w-full md:w-[130px]"}
-        value=""
-        height="h-[35px]"
-        select
-        my="my-1 md:my-4"
-      />
-      <LabelInput
-        placeholder="Status"
-        width={"w-full md:w-[130px]"}
-        value=""
-        height="h-[35px]"
-        select
-        my="my-1 md:my-4"
-      />
-      <LabelInput
-        placeholder="Category"
-        width={"w-full md:w-[130px]"}
-        value=""
-        height="h-[35px]"
-        select
-        my="my-1 md:my-4"
-      />
-      <div></div>
-      <CustomButton
-        height="h-[35px]"
-        width="w-full lg:w-[76px]"
-        title="Filter"
-        backgrounColor="bg-primary"
-        // my="my-1"
-      />
-      <div className="my-2 md:my-0 w-full">
-        <CustomButton
-          height="h-[35px]"
-          width="w-full lg:w-[76px]"
-          title="Reset"
-          backgrounColor="bg-white"
-          borderColor="bg-secondaryColor"
-          textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
-        />
-      </div>
+      {props.children}
     </div>
   );
 };

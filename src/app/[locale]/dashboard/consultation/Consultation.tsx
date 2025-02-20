@@ -8,6 +8,11 @@ import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import MobileCustomTable from "../../components/MobileCustomTable";
+import FilterComponent from "../../components/FilterComponent";
+import LabelInput from "../../components/LabelInput";
+import { DatePicker } from "antd";
+const { RangePicker } = DatePicker;
+
 
 type Props = {};
 
@@ -169,8 +174,6 @@ const Consultation = (props: Props) => {
   }, []);
 
   const dataSourceMobile = [
-
-
     {
       "Consultation Title	": { value: "Strategic Funding Advisory" },
       "Client Name": { value: "Jane Doe (Doe Inc.)" },
@@ -471,7 +474,49 @@ const Consultation = (props: Props) => {
             and statuses
           </p>
         </div>
-        <DashboardfilterOptions />
+        <DashboardfilterOptions>
+          {/* <div className="w-full md:w-[180px]"> */}
+            <LabelInput
+              placeholder="Status"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          {/* </div> */}
+
+          {/* <div className="w-full lg:w-[180px] h-[35px]"> */}
+            <RangePicker  className="w-full"/>
+          {/* </div> */}
+
+          <div className="w-full lg:w-[180px]">
+            <LabelInput
+              placeholder="Client Name"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+            />
+          </div>
+
+            <CustomButton
+              height="h-[35px]"
+              width="w-full lg:w-[76px]"
+              title="Filter"
+              backgrounColor="bg-primary"
+              textStyle="font-bold text-[12px] font-mont text-white"
+              // my="my-1"
+            />
+            <CustomButton
+              height="h-[35px]"
+              width="w-full lg:w-[76px]"
+              title="Reset"
+              backgrounColor="bg-white"
+              borderColor="bg-secondaryColor"
+              textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
+            />
+        </DashboardfilterOptions>
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
       {dataSourceMobile.map((data) => (

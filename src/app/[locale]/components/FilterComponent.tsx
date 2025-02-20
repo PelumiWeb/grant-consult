@@ -70,7 +70,7 @@ const FilterComponent = ({
         </div>
       </div>
 
-      <div className=" mt-4 blobk md:hidden w-full">
+      <div className=" mt-4 block md:hidden w-full">
         {/* <CustomButton  /> */}
         <CustomButton
           title={search ? "Search" : "Filter"}

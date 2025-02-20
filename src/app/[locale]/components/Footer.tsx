@@ -195,26 +195,26 @@ function Footer({}: Props) {
                   </li>
                 ))}
             </ul> */}
-            <ul>
-              <div className="flex justify-between mb-2">
-                <p className="font-semibold text-[13px] leading-[20px] text-white">
+            <ul className="grid place-items-center my-10">
+              <div className="flex justify-between">
+                <p className="font-semibold text-[14px] leading-[21.14px] text-white">
                   Contact
                 </p>
               </div>
               <div>
-                <div className="flex items-center my-4">
+                <div className="flex items-center my-4 justify-center">
                   <Image src="/location.svg" width={18} height={18} />
                   <p className="font-normal text-[13px] leading-[15px] text-white  ml-2">
                     24 Ekololu Street, Lawason Road, Surulere
                   </p>
                 </div>
-                <div className="flex items-center my-4">
+                <div className="flex items-center my-4 justify-center">
                   <Image src="/message.svg" width={18} height={18} />
                   <p className="font-normal text-[13px] leading-[15px] text-white  ml-2">
                     info@grantsconsult.com
                   </p>
                 </div>
-                <div className="flex items-center my-4">
+                <div className="flex items-center my-4 justify-center">
                   <Image src="/call.svg" width={18} height={18} />
                   <p className="font-normal text-[13px] leading-[15px] text-white  ml-2">
                     +2349106288373
@@ -222,8 +222,8 @@ function Footer({}: Props) {
                 </div>
               </div>
             </ul>
-            <div className="w-full flex justify-center items-center my-8">
-              <p className="text-[14px] leading-[12px] text-white ">
+            <div className="w-full flex justify-center items-center my-2 mb-6">
+              <p className="text-[10px] leading-[12px] text-white ">
                 Copyright @Grantsconsult2025
               </p>
             </div>
