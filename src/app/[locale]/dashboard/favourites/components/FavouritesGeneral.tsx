@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../../../lib/hooks";
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import DashboardHeader from "../../components/DashboardHeader";
 import ArticleComponent from "@/app/[locale]/components/ArticleComponent";
+import LabelInput from "@/app/[locale]/components/LabelInput";
 
 type Props = {};
 type filterDataProps = string[];
@@ -120,12 +121,29 @@ const FavouritesGeneral = (props: Props) => {
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Featured Article</p>
         </div> */}
+        <div className="block lg:hidden">
+          <LabelInput
+            value=""
+            label="Favourite Options"
+            placeholder="Grants"
+            required
+            select
+            width="w-full"
+            options={[
+              { value: "Grants", label: "Grant (4)" },
+              { value: "Consultants", label: "Consultants (4)" },
+              { value: "Feautured Articles", label: "Feautured Articles (3)" },
+              { value: "Training Videos", label: "Training Videos (4)" },
+              { value: "Courses", label: "Courses (4)" },
+            ]}
+          />
+        </div>
 
         <div className="bg-white p-8 w-full mt-8">
-          <h3>My Favourites</h3>
+          <h3 className="mb-2">My Favourites</h3>
 
           <div>
-            <div className="w-full flex justify-between">
+            <div className="w-full hidden lg:flex justify-between">
               {filterData.map((data: string) => (
                 <FilterOptions
                   text={data}

@@ -13,7 +13,6 @@ import LabelInput from "../../components/LabelInput";
 import { DatePicker } from "antd";
 const { RangePicker } = DatePicker;
 
-
 type Props = {};
 
 const dataSource = [
@@ -458,7 +457,7 @@ const Consultation = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
@@ -468,26 +467,28 @@ const Consultation = (props: Props) => {
           <p className="text-textColor">Assigned Grants </p>
         </div> */}
         <div className="flex items-center justify-center flex-col">
-          <h2 className="text-secondaryColor">Consultation Overview</h2>
-          <p className="mt-4">
+          <h2 className="text-secondaryColor text-[20px] leading-[26px]">
+            Consultation Overview
+          </h2>
+          <p className="mt-1 md:mt-4 font-medium leading-[17px] text-center text-textColor text-[12px] w-full">
             View all requested consultation here including details of deadlines
             and statuses
           </p>
         </div>
         <DashboardfilterOptions>
           {/* <div className="w-full md:w-[180px]"> */}
-            <LabelInput
-              placeholder="Status"
-              width={"w-full"}
-              value=""
-              height="h-[35px]"
-              my="my-1 md:my-4"
-              select
-            />
+          <LabelInput
+            placeholder="Status"
+            width={"w-full"}
+            value=""
+            height="h-[35px]"
+            my="my-1 md:my-4"
+            select
+          />
           {/* </div> */}
 
           {/* <div className="w-full lg:w-[180px] h-[35px]"> */}
-            <RangePicker  className="w-full"/>
+          <RangePicker className="w-full" />
           {/* </div> */}
 
           <div className="w-full lg:w-[180px]">
@@ -500,27 +501,29 @@ const Consultation = (props: Props) => {
             />
           </div>
 
-            <CustomButton
-              height="h-[35px]"
-              width="w-full lg:w-[76px]"
-              title="Filter"
-              backgrounColor="bg-primary"
-              textStyle="font-bold text-[12px] font-mont text-white"
-              // my="my-1"
-            />
-            <CustomButton
-              height="h-[35px]"
-              width="w-full lg:w-[76px]"
-              title="Reset"
-              backgrounColor="bg-white"
-              borderColor="bg-secondaryColor"
-              textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
-            />
+          <CustomButton
+            height="h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Filter"
+            backgrounColor="bg-primary"
+            textStyle="font-bold text-[16px] leading-[16px] font-mont text-white font-inter"
+            // my="my-1"
+          />
+          <CustomButton
+            height="h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Reset"
+            backgrounColor="bg-white"
+            borderColor="bg-secondaryColor"
+            textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
+          />
         </DashboardfilterOptions>
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
       {dataSourceMobile.map((data) => (
-        <MobileCustomTable data={data} />
+        <div className="space-y-4 mt-4">
+          <MobileCustomTable data={data} />
+        </div>
       ))}
       <div className="bg-white mt-4 py-8">
         <div className="bg-backgroundColor m-4  h-full">

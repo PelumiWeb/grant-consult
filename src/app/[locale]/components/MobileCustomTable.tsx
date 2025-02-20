@@ -7,7 +7,7 @@ type Props = {
 const MobileCustomTable = (props: Props) => {
   const dataObject: any = props.data;
   return (
-    <div className="block md:hidden w-full p-4 mx-h-[280px] border border-borderColor m-2">
+    <div className="block md:hidden w-full p-4 mx-h-[280px] border border-borderColor ">
       {Object.keys(dataObject).map((data) => {
         const CustomContent = dataObject?.[data].CustomContent;
         const value = dataObject?.[data].value;

@@ -14,8 +14,10 @@ const DashboardfilterOptions = (props: Props) => {
       className="w-full bg-white flex items-center justify-between
       px-4
       mt-4
-      h-full md:h-[200px] lg:h-[80px]
+      md:h-[200px] lg:h-[80px]
       rounded-[5px]
+      flex-col
+      md:flex-row
       flex-wrap lg:flex-nowrap
       space-x-0 md:space-x-4 
       space-y-4 md:space-y-0

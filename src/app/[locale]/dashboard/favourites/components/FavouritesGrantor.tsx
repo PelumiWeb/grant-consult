@@ -27,13 +27,13 @@ const FilterOptions = ({ text, active, setActive }: FilterType) => {
   return (
     <button
       onClick={() => setActive(text)}
-      className={`w-full h-[40px] rounded-[5px] p-2 border my-4 mr-2 ${
+      className={`w-full h-[40px] rounded-[5px] p-1 border my-4 mr-2 ${
         active ? "bg-secondaryColor" : "bg-white border-borderColor"
       } flex items-center justify-center`}>
       <p
         className={`text-[14px] ${
           active ? "text-white" : "text-textColor"
-        } leading-[14px] text-center`}>
+        } leading-[14px] text-center font-semibold`}>
         {text}
       </p>
     </button>
@@ -75,7 +75,7 @@ const FavouritesGrants = (props: Props) => {
           <p className="text-textColor mx-3">{">>"}</p>
           <p>Featured Article</p>
         </div> */}
-        <div>
+        <div className="block lg:hidden">
           <LabelInput
             value=""
             label="Favourite Options"
@@ -94,7 +94,7 @@ const FavouritesGrants = (props: Props) => {
         </div>
 
         <div className="bg-white p-8 w-full">
-          <h3>My Favourites</h3>
+          <h3 className="mb-2">My Favourites</h3>
 
           <div>
             <div className="hidden w-full lg:flex justify-between">

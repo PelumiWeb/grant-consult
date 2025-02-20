@@ -45,7 +45,7 @@ const LabelInput = (props: Props) => {
             props.width
               ? clsx("w-full", `md:${props.width}`)
               : "w-full  md:w-[267px]"
-          } !placeholder-black text-black font-normal`}
+          } !placeholder-black text-black placeholder:font-semibold placeholder:text-black font-semibold`}
           placeholder={props.placeholder}
           defaultValue={props.value ? props.value : props.placeholder}
           onChange={props.handleChange}

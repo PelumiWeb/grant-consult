@@ -12,7 +12,7 @@ const MyFavourites = (props: Props) => {
   const { user } = useAppSelector((data) => data.user);
 
   const renderScreens = (userType: string | undefined) => {
-    switch (userTypeName.grantor) {
+    switch (userType) {
       case userTypeName.general:
         return <FavouritesGeneral />;
         break;
@@ -23,7 +23,9 @@ const MyFavourites = (props: Props) => {
         return <FavouritesGrantor />;
     }
   };
-  return <div className="w-full h-full">{renderScreens("GENERAL_USER")};</div>;
+  return (
+    <div className="w-full h-full">{renderScreens(userTypeName.general)};</div>
+  );
 };
 
 export default MyFavourites;

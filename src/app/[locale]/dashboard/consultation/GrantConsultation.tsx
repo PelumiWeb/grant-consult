@@ -13,6 +13,9 @@ import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dash
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import DashboardfilterOptions from "../components/DashboardfilterOptions";
 import CustomTable from "../components/CustomTable";
+import { DatePicker } from "antd";
+import MobileCustomTable from "../../components/MobileCustomTable";
+const { RangePicker } = DatePicker;
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -89,6 +92,7 @@ const dataSource = [
 const GrantConsultation = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoutes = useAppSelector((state) => state.dashboard);
+  const dashboardRoute = useAppSelector((state) => state.dashboard);
 
   const columns = [
     {
@@ -163,6 +167,290 @@ const GrantConsultation = (props: Props) => {
     },
   ];
 
+   const dataSourceMobile = [
+     {
+       "Consultation Title	": { value: "Strategic Funding Advisory" },
+       "Client Name": { value: "Jane Doe (Doe Inc.)" },
+       "Date/Time": { value: "Nov 5, 2024, 5 PM" },
+       status: { value: "Upcoming" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "Grant Proposal Review" },
+       "Client Name": { value: "Jane Smith (HealthPro)" },
+       "Date/Time": { value: "Nov 7, 2024, 5 PM" },
+       status: { value: "In Progress" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "NGO Capacity Building" },
+       "Client Name": { value: "Hope Foundation" },
+       "Date/Time": { value: "Nov 3, 2024, 5 PM" },
+       status: { value: "Completed" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "Mary Adams" },
+       "Client Name": { value: "Mary Adams" },
+       "Date/Time": { value: "Nov 8, 2024, 5 PM" },
+       status: { value: "Completed" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "Impact Assessment Planning" },
+       "Client Name": { value: "Green Future Alliance" },
+       "Date/Time": { value: "Nov 6, 2024, 5 PM" },
+       status: { value: "Completed" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "Corporate Social Initiative" },
+       "Client Name": { value: "ABC Corporates" },
+       "Date/Time": { value: "Nov 2, 2024, 5 PM" },
+       status: { value: "Completed" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+     {
+       "Consultation Title	": { value: "Grant Reporting Training" },
+       "Client Name": { value: "Elena Miller (EduCare" },
+       "Date/Time": { value: "Nov 9, 2024, 5 PM" },
+       status: { value: "Upcoming" },
+       Action: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   consultation: dashboardRouteName.consultationDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               View Details
+             </p>
+           </button>
+         ),
+       },
+       Actions: {
+         CustomContent: () => (
+           <button
+             onClick={() => {
+               dispatch(
+                 setActiveRoute({
+                   ...dashboardRoute,
+                   assignedGrant: dashboardRouteName.assignDetails,
+                 })
+               );
+             }}>
+             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+               Reschedule
+             </p>
+           </button>
+         ),
+       },
+     },
+   ];
+
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -183,7 +471,7 @@ const GrantConsultation = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       {/* <div className="flex items-center w-[580px] mt-8">
@@ -205,17 +493,18 @@ const GrantConsultation = (props: Props) => {
               textStyle="text-backgroundColor leading-[21px] text-[14px] font-semibold"
             />
           </div>
-
-          <CustomButton
-            width="w-full md:w-[200.21px]"
-            height="h-[50px] md:h-[30px]"
-            title="Request for consultant"
-            radius="rounded-[5px]"
-            backgrounColor="bg-transparent"
-            borderColor="border-buttonPrimary"
-            textStyle="text-buttonPrimary font-semibold text-[14px] leading-[21px] "
-            borderWidth="border-[2px]"
-          />
+          <div>
+            <CustomButton
+              width="w-full md:w-[210.21px]"
+              height="h-[50px] md:h-[30px]"
+              title="Request for consultant"
+              radius="rounded-[5px]"
+              backgrounColor="bg-transparent"
+              borderColor="border-buttonPrimary"
+              textStyle="text-buttonPrimary font-semibold text-[14px] leading-[21px] "
+              borderWidth="border-[2px]"
+            />
+          </div>
         </div>
       </div>
       <div className="flex justify-between items-center my-4 flex-col md:flex-row flex-wrap space-y-1 ">
@@ -268,9 +557,60 @@ const GrantConsultation = (props: Props) => {
           Consultation History
         </h3>
 
-        <DashboardfilterOptions />
+        <DashboardfilterOptions>
+          {/* <div className="w-full md:w-[180px]"> */}
+          <LabelInput
+            placeholder="Consultation Type"
+            width={"w-full"}
+            value=""
+            height="h-[40px]"
+            my="my-1 md:my-4"
+            select
+          />
+          {/* </div> */}
+
+          {/* <div className="w-full lg:w-[180px] h-[35px]"> */}
+          {/* </div> */}
+
+          <div className="w-full lg:w-[180px]">
+            <LabelInput
+              placeholder="Consultant"
+              width={"w-full"}
+              value=""
+              height="h-[40px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+          <RangePicker className="w-full" />
+
+          <div className="w-full lg:w-[180px]">
+            <LabelInput
+              placeholder="Status"
+              width={"w-full"}
+              value=""
+              height="h-[40px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+
+          <CustomButton
+            height="h-[50px] md:h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Filter"
+            backgrounColor="bg-primary"
+            textStyle="font-bold text-[16px] leading-[16px] font-mont text-white font-inter"
+            // my="my-1"
+          />
+        </DashboardfilterOptions>
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
+      {dataSourceMobile.map((data) => (
+        <div className="space-y-4 mt-4">
+          <MobileCustomTable data={data} />
+        </div>
+      ))}
 
       <RenderModals />
     </div>
