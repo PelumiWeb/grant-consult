@@ -14,12 +14,12 @@ function Footer({}: Props) {
     <div className="relative bg-footer   bg-repeat bg-cover bg-bottom bottom-0 mt-8">
       <div className=" h-full w-full bg-repeat bg-cover px-8 py-4  bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
-        <div className="bg-[#27AE6080] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8">
+        <div className="bg-[#27AE60] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8 py-6">
           <div className="flex flex-col justify-center items-center w-full">
-            <h3 className="text-white text-sm lg:text-base text-center font-semibold w-[200px] lg:w-full">
+            <h3 className="text-white text-sm lg:text-base text-center font-semibold w-full md:w-[200px] lg:w-full">
               Stay Updated on the Latest Grants
             </h3>
-            <p className="text-white text-[8px] leading-[8px]   lg:leading-[12px] text-center font-normal  w-[200px] lg:w-full">
+            <p className="text-white text-[8px] leading-[8px]   lg:leading-[12px] text-center font-normal w-full md:w-[200px] lg:w-full">
               Sign up for our newsletter to receive updates on new grants and
               more.
             </p>
@@ -28,7 +28,7 @@ function Footer({}: Props) {
             <div className="w-[300px] md:w-[400px] lg:w-[628px] flex items-center ">
               <Input
                 placeholder="Enter Email Address"
-                className="text-sm rounded-l-[10px] rounded-r-none w-[70%] lg:w-[80%] h-[40px] lg:h-[60px] placeholder:text-textColor placeholder:text-md placeholder:leading-[10px]"
+                className="text-sm rounded-l-[10px] rounded-r-none w-[70%] lg:w-[80%] h-[40px] lg:h-[60px] placeholder:text-textColor placeholder:text-[10px] placeholder:leading-[10px]"
               />
               <button className="bg-secondaryGreenColor  h-[40px] lg:h-[60px] w-[30%] lg:w-[20%] flex items-center justify-center rounded-r-[10px]">
                 <p className="ml-4 mr-5 text-[10px] leading-[10px] lg:text-base font-mono  text-white text-center  font-semibold">
@@ -39,7 +39,7 @@ function Footer({}: Props) {
           </div>
         </div>
         {/* Bottom */}
-        <div className="hidden lg:flex items-start justify-between w-full mt-8">
+        <div className="hidden lg:flex items-start justify-between w-full mt-16">
           {/* 1 */}
           <div>
             {/* <img
@@ -83,9 +83,9 @@ function Footer({}: Props) {
           </div>
         </div>
         <div className="flex items-center justify-between w-full">
-           <p className="hidden lg:block text-white font-thin mt-8">
-          Copyright @Grantsconsult 2024
-        </p>
+          <p className="hidden lg:block text-white font-thin mt-8">
+            Copyright @Grantsconsult 2024
+          </p>
 
           <div className="hidden lg:block">
             <div className="flex justify-between">
@@ -98,7 +98,7 @@ function Footer({}: Props) {
             </div>
           </div>
         </div>
-       
+
         {/* Bottom Mobile */}
         <div className="block lg:hidden mt-4">
           <div className="w-full flex justify-center items-center">
