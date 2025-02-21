@@ -7,6 +7,9 @@ import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import MobileCustomTable from "../../components/MobileCustomTable";
+import CustomButton from "../../components/CustomButton";
+import LabelInput from "../../components/LabelInput";
+import { DatePicker } from "antd";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -440,13 +443,96 @@ const AssignedGrant = (props: Props) => {
             and statuses
           </p>
         </div>
-        <DashboardfilterOptions />
+
+        <DashboardfilterOptions>
+          {/* <div className="w-full lg:w-[180px] h-[35px]"> */}
+          {/* <RangePicker className="w-full" /> */}
+          {/* </div> */}
+
+          <div className="w-full">
+            <LabelInput
+              placeholder="Grant Title"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+
+          <div className="w-full">
+            <DatePicker  className="w-full" />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Client Name"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+            />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Deadline"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Status"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Category"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+
+          <CustomButton
+            height="h-[40px] md:h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Filter"
+            backgrounColor="bg-primary"
+            textStyle="font-bold text-[12px] font-mont text-white"
+            radius="rounded-[5px]"
+            // my="my-1"
+          />
+          <CustomButton
+            height="h-[40px] md:h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Reset"
+            backgrounColor="bg-white"
+            textStyle="font-semibold text-[12px] font-mont text-secondaryColor"
+            radius="rounded-[5px]"
+            borderColor="border-secondaryColor"
+            borderWidth="border"
+            // my="my-1"
+          />
+        </DashboardfilterOptions>
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
-      {dataSourceMobile.map((data) => (
-        <MobileCustomTable data={data} />
-      ))}
-      <div className="flex items-center cursor-pointer">
+      <div className="space-y-4 mt-4">
+        {dataSourceMobile.map((data) => (
+          <MobileCustomTable data={data} />
+        ))}
+      </div>
+
+      <div className="flex items-center cursor-pointer my-4">
         <img src="/arrowLeft.svg" alt="" />
         <p className="text-secondaryColor ml-2">Return to Dashboard</p>
       </div>

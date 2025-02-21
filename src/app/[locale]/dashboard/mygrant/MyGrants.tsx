@@ -14,6 +14,7 @@ import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteTyp
 import DashboardfilterOptions from "../components/DashboardfilterOptions";
 import CustomTable from "../components/CustomTable";
 import MobileCustomTable from "../../components/MobileCustomTable";
+import { DatePicker } from "antd";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -785,7 +786,7 @@ const MyGrants = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-6 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
 
@@ -799,7 +800,7 @@ const MyGrants = (props: Props) => {
               alt=""
             />
           </div>
-          <div className="ml-1">
+          <div className="ml-2">
             <p className="font-mono font-semibold text-[13.2px] leading-[15.58px] text-textColor">
               Welcome!
             </p>
@@ -808,11 +809,11 @@ const MyGrants = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between flex-col md:flex-row w-full md:w-[40%]">
+        <div className="flex justify-between flex-col md:flex-row w-full md:w-[40%] ">
           <div className="mr-4 w-full my-2">
             <CustomButton
               width="w-full md:w-[170.21px]"
-              height="h-[35px]"
+              height="h-[50px] md:h-[35px]"
               title="List a New Grant"
               radius="rounded-[5px]"
               textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
@@ -840,7 +841,7 @@ const MyGrants = (props: Props) => {
                 );
               }}
               width="w-full md:w-[200.21px]"
-              height="h-[30px]"
+              height="h-[50px] md:h-[30px]"
               title="View all Grant"
               radius="rounded-[5px]"
               backgrounColor="bg-transparent"
@@ -901,14 +902,74 @@ const MyGrants = (props: Props) => {
           Published Grants History
         </h3>
 
-        <DashboardfilterOptions />
+        <DashboardfilterOptions>
+          <div className="w-full md:w-[180px]">
+            <LabelInput
+              placeholder="Title"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Status"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+
+          <div className="w-full">
+            <DatePicker placeholder="Date Range - From" className="w-full" />
+          </div>
+          <div className="w-full">
+            <DatePicker placeholder="To" className="w-full" />
+          </div>
+          <div className="w-full">
+            <LabelInput
+              placeholder="Grant Category"
+              width={"w-full"}
+              value=""
+              height="h-[35px]"
+              my="my-1 md:my-4"
+              select
+            />
+          </div>
+
+          <CustomButton
+            height="h-[40px] md:h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Filter"
+            backgrounColor="bg-primary"
+            textStyle="font-bold text-[12px] font-mont text-white"
+            radius="rounded-[5px]"
+            // my="my-1"
+          />
+          <CustomButton
+            height="h-[40px] md:h-[35px]"
+            width="w-full lg:w-[76px]"
+            title="Reset"
+            backgrounColor="bg-white"
+            textStyle="font-semibold text-[12px] font-mont text-secondaryColor"
+            radius="rounded-[5px]"
+            borderColor="border-secondaryColor"
+            borderWidth="border"
+            // my="my-1"
+          />
+        </DashboardfilterOptions>
       </div>
-      <div></div>
-      <div></div>
+
       <CustomTable columns={columns} dataSource={dataSource} />
-      {dataSourceMobile.map((data) => (
-        <MobileCustomTable data={data} />
-      ))}
+      <div className="space-y-4 mt-4">
+        {dataSourceMobile.map((data) => (
+          <MobileCustomTable data={data} />
+        ))}
+      </div>
 
       <div className="mt-8">
         <h3 className="text-secondaryColor text-[24px] font-semibold leading-[36.24px] ">

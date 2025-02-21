@@ -487,9 +487,12 @@ const Consultation = (props: Props) => {
           />
           {/* </div> */}
 
-          {/* <div className="w-full lg:w-[180px] h-[35px]"> */}
-          <RangePicker className="w-full" />
-          {/* </div> */}
+          <div className="w-full">
+            <DatePicker placeholder="Date Range - From" className="w-full" />
+          </div>
+          <div className="w-full">
+            <DatePicker placeholder="To" className="w-full" />
+          </div>
 
           <div className="w-full lg:w-[180px]">
             <LabelInput
@@ -502,7 +505,7 @@ const Consultation = (props: Props) => {
           </div>
 
           <CustomButton
-            height="h-[35px]"
+            height="h-[50px] md:h-[35px]"
             width="w-full lg:w-[76px]"
             title="Filter"
             backgrounColor="bg-primary"
@@ -510,7 +513,7 @@ const Consultation = (props: Props) => {
             // my="my-1"
           />
           <CustomButton
-            height="h-[35px]"
+            height="h-[50px] md:h-[35px]"
             width="w-full lg:w-[76px]"
             title="Reset"
             backgrounColor="bg-white"

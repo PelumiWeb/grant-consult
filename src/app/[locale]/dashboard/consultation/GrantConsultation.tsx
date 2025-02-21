@@ -582,7 +582,12 @@ const GrantConsultation = (props: Props) => {
               select
             />
           </div>
-          <RangePicker className="w-full" />
+          <div className="w-full">
+            <DatePicker placeholder="Date Range - From" className="w-full" />
+          </div>
+          <div className="w-full">
+            <DatePicker placeholder="To" className="w-full" />
+          </div>
 
           <div className="w-full lg:w-[180px]">
             <LabelInput

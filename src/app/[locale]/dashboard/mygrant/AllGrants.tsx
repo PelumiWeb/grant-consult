@@ -7,8 +7,9 @@ import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import CustomButton from "@/app/[locale]/components/CustomButton";
-import { Pagination } from "antd";
+import { DatePicker, Pagination } from "antd";
 import DashboardGrantCard from "../components/DashboardGrantCard";
+import LabelInput from "../../components/LabelInput";
 
 type Props = {
   // setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -78,7 +79,56 @@ const AllGrants = (props: Props) => {
         </div>
       </div>
 
-      <DashboardfilterOptions />
+      <DashboardfilterOptions>
+        <div className="w-full md:w-[180px]">
+          <LabelInput
+            placeholder="Title"
+            width={"w-full"}
+            value=""
+            height="h-[35px]"
+            my="my-1 md:my-4"
+            select
+          />
+        </div>
+
+        <div className="w-full">
+          <DatePicker placeholder="Date Range - From" className="w-full" />
+        </div>
+        <div className="w-full">
+          <DatePicker placeholder="To" className="w-full" />
+        </div>
+        <div className="w-full">
+          <LabelInput
+            placeholder="Grant Category"
+            width={"w-full"}
+            value=""
+            height="h-[35px]"
+            my="my-1 md:my-4"
+            select
+          />
+        </div>
+
+        <CustomButton
+          height="h-[40px] md:h-[35px]"
+          width="w-full lg:w-[76px]"
+          title="Filter"
+          backgrounColor="bg-primary"
+          textStyle="font-bold text-[12px] font-mont text-white"
+          radius="rounded-[5px]"
+          // my="my-1"
+        />
+        <CustomButton
+          height="h-[40px] md:h-[35px]"
+          width="w-full lg:w-[76px]"
+          title="Reset"
+          backgrounColor="bg-white"
+          textStyle="font-semibold text-[12px] font-mont text-secondaryColor"
+          radius="rounded-[5px]"
+          borderColor="border-secondaryColor"
+          borderWidth="border"
+          // my="my-1"
+        />
+      </DashboardfilterOptions>
       <div className="mt-8">
         <div className="flex flex-wrap justify-between">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
