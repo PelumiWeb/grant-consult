@@ -27,7 +27,7 @@ const EditExprience = (props: Props) => {
       setOpen={() => openMmodal()}
       width="1000px"
       height="">
-      <div className="w-full h-full px-8">
+      <div className="w-full h-full md:px-8">
         <h3>Edit Your Experience</h3>
         <LabelInput
           label="Job Title"
@@ -43,23 +43,27 @@ const EditExprience = (props: Props) => {
           placeholder=""
           width="w-[600px]"
         />
-        <div className="w-[600px]">
+        <div className="w-full md:w-[600px]">
           <p>Employment Dates*</p>
-          <div className="flex items-center justify-between w-full">
-            <LabelInput
-              label="From"
-              value="16-01-2020"
-              placeholder=""
-              width="w-[288px]"
-              righticon={<CalendarOutlined style={{ fontSize: 24 }} />}
-            />
-            <LabelInput
-              label="To"
-              value="16-01-2020"
-              placeholder=""
-              width="w-[288px]"
-              righticon={<CalendarOutlined style={{ fontSize: 24 }} />}
-            />
+          <div className="flex items-center justify-between w-full flex-col md:flex-row">
+            <div className="w-full md:w-[288px]">
+              <LabelInput
+                label="From"
+                value="16-01-2020"
+                placeholder=""
+                width="w-full"
+                righticon={<CalendarOutlined style={{ fontSize: 24 }} />}
+              />
+            </div>
+            <div className="w-full md:w-[288px]">
+              <LabelInput
+                label="To"
+                value="16-01-2020"
+                placeholder=""
+                width="w-full md:w-[288px]"
+                righticon={<CalendarOutlined style={{ fontSize: 24 }} />}
+              />
+            </div>
           </div>
         </div>
         <LabelInput

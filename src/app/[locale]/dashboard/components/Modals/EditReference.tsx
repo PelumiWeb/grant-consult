@@ -73,7 +73,7 @@ const EditReference = (props: Props) => {
           width="w-[600px]"
         />
 
-        <div className="mt-8 w-[600px] flex items-center justify-between">
+        <div className="mt-8 w-full md:w-[600px] flex items-center justify-between flex-col-reverse md:flex-row">
           <CustomButton
             onClick={() => {
               dispatch(
@@ -84,14 +84,14 @@ const EditReference = (props: Props) => {
                 })
               );
             }}
-            width="w-[123px]"
+            width="w-full md:w-[123px]"
             height="h-[60px]"
             title="Save"
             radius="rounded-[5px]"
             backgrounColor="bg-primary"
             textStyle="font-semibold text-white"
           />
-          <p className="underline cursor-pointer font-sembold text-secondaryColor">
+          <p className="md:underline cursor-pointer font-sembold text-secondaryColor py-6 font-bold uppercase">
             Add New Reference
           </p>
         </div>

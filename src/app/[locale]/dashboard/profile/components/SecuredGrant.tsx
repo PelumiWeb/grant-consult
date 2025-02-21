@@ -8,7 +8,7 @@ const SecuredGrant = (props: Props) => {
   return (
     <ContentComponent title="Secured Grants" modalType={modalName.SecureGrant}>
       <div className="border-borderColor border-[.5px] border-solid p-2  mt-8">
-        <ul className="mt-4 list-disc w-[428px] ">
+        <ul className="mt-4 list-disc w-full md:w-[428px] ">
           <p className="font-bold">Community Health Grant</p>
           <li className="ml-6">
             <p>Awarded by: National Health Foundation.</p>
@@ -30,7 +30,7 @@ const SecuredGrant = (props: Props) => {
         </ul>
       </div>
       <div className="border-borderColor border-[.5px] border-solid p-2  mt-8">
-        <ul className="mt-4 list-disc w-[428px] ">
+        <ul className="mt-4 list-disc w-full md:w-[428px] ">
           <p className="font-bold"> Youth Empowerment Grantt</p>
           <li className="ml-6">
             <p>Awarded by: Global Youth Fund.</p>
@@ -52,7 +52,7 @@ const SecuredGrant = (props: Props) => {
         </ul>
       </div>
       <div className="border-borderColor border-[.5px] border-solid p-2  mt-8">
-        <ul className="mt-4 list-disc w-[428px] ">
+        <ul className="mt-4 list-disc w-full md:w-[428px] ">
           <p className="font-normal"> Sustainable Agriculture Grant</p>
           <li className="ml-6">
             <p>Awarded by: Green Earth Foundation..</p>

@@ -7,7 +7,7 @@ type Props = {};
 const Experience = (props: Props) => {
   return (
     <ContentComponent title="Experience" modalType={modalName.Experience}>
-      <div className="mt-4 w-[405px]">
+      <div className="mt-4 w-full md:w-[405px]">
         <div>
           <p className="font-bold">Senior Grant Consultant </p>
           <p className="font-semibold">ABC Consulting Group</p>
