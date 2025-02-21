@@ -9,11 +9,11 @@ const GrantCardMore = (props: Props) => {
     <div className=" h-full ">
       {/* Up */}
       <div className="flex flex-col justify-between lg:justify-start bg-white mb-8 w-full sm:w-[500px] md:w-[600px] lg:w-full ">
-        <h4 className=" block lg:hidden mb-4 text-primary mx-0 text-[14px] leading-[15px]  lg:mx-2 lg:text-[16px] lg:leading-[26px]font-semibold mt-8 text-center">
+        <h4 className=" block lg:hidden mb-4 text-primary mx-0 text-[14px] leading-[15px]  lg:mx-2 lg:text-[16px] lg:leading-[26px]font-semibold mt-8 text-left">
           Aspire Coronation Trust (ACT) Foundation Grant 2024
         </h4>
         <div className="flex items-start justify-between lg:justify-start w-full">
-          <div className="w-[100%] h-[200px] sm:w-[200px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4">
+          <div className="w-[70%]  sm:w-[50%] h-[200px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[350px] flex items-center justify-center rounded-[15px] mr-4 -mt-[28px]  sm:-mt-0 lg:-mt-[20px]">
             <img
               src="/GrantsImage.svg"
               className="w-full  object-contain h-full"
@@ -24,39 +24,40 @@ const GrantCardMore = (props: Props) => {
               Aspire Coronation Trust (ACT) Foundation Grant 2024
             </h4>
             <div>
-              <p className="text-[#1E1E1E] text-[10px]  lg:text-[16px] my-0 lg:my-2 font-semibold">
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px]  lg:text-[16px] my-0 lg:my-2 font-semibold leading-[20px]">
                 Date Posted:
-                <span className="text-textColor ml-1  text-[9px] lg:text-[16px]">
+                <span className="text-textColor ml-1  text-[10px] sm:text-[12px]  lg:text-[16px] font-normal">
                   October 24, 2024
                 </span>
               </p>
-              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px]  lg:text-[16px] my-0 lg:my-2 font-semibold leading-[20px]">
                 Deadline:
-                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                <span className="text-textColor ml-1 text-[10px] sm:text-[12px]  lg:text-[16px] font-normal">
                   December 1st, 2024
                 </span>
               </p>
-              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] lg:text-[16px] my-0 lg:my-2 font-semibold leading-[20px]">
                 Location:
-                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                <span className="text-textColor ml-1 text-[10px] sm:text-[12px]  lg:text-[16px] font-normal">
                   AMERICA
                 </span>
               </p>
-              <p className="text-[#1E1E1E] text-[10px] font-semibold my-0 lg:my-2lg:text-[16px]">
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px]  font-semibold my-0 lg:my-2lg:text-[16px] leading-[20px]">
                 Category:
-                <span className="text-textColor ml-1 text-[9px] lg:text-[16px]">
+                <span className="text-textColor ml-1 text-[10px] sm:text-[12px]  lg:text-[16px] font-normal">
                   Agriculture
                 </span>
               </p>
-              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px]  lg:text-[16px] my-0 lg:my-2 font-semibold leading-[20px]">
                 Grant Size:
-                <span className="text-textColor ml-1 lg:text-[16px] text-[9px]">
+                <span className="text-textColor ml-1 text-[10px] sm:text-[12px]  lg:text-[16px] font-normal">
                   $100,000 to $500,000
                 </span>
               </p>
-              <p className="text-[#1E1E1E] text-[10px] lg:text-[16px] my-0 lg:my-2 font-semibold">
-                <span className="text-textColor text-[9px] lg:text-[16px]">
-                  Donor Agency: United States African Development Foundation
+              <p className="text-[#1E1E1E] text-[10px] sm:text-[12px]lg:text-[16px] my-0 lg:my-2 font-semibold leading-[20px]">
+                Donor Agency:{" "}
+                <span className="text-textColor text-[10px] sm:text-[12px] lg:text-[16px] font-normal">
+                  United States African Development Foundation
                 </span>
               </p>
               <p className="hidden md:block text-[#1E1E1E] leading-15 text-[14px] my-0 lg:my-2 lg:text-[16px] font-semibold">
@@ -94,8 +95,8 @@ const GrantCardMore = (props: Props) => {
             </div>
           </div>
         </div>
-        <div>
-          <p className="block md:hidden text-[#1E1E1E] leading-15 text-[14px] my-2 lg:text-[16px] font-semibold text-center mr-2">
+        <div className="-mt-6 block md:hidden">
+          <p className=" text-[#1E1E1E] leading-15 text-[12px] my-2 lg:text-[16px] font-semibold text-center mr-2">
             Reference URL:
             <span className="hover:underline text-secondaryColor lg:text-[16px] text-[12px] ml-2">
               hhtps://www.exampleofgrants.com
@@ -103,7 +104,7 @@ const GrantCardMore = (props: Props) => {
           </p>
         </div>
 
-        <div className="flex lg:hidden  items-center w-[100%] sm:w-[90%] md:w-[80%] justify-between mt-4 lg:w-full gap-x-2">
+        <div className="flex lg:hidden  items-center w-[100%] sm:w-[90%] md:w-[80%] justify-between  lg:w-full gap-x-2">
           <CustomButton
             IconLeft={"/love.svg"}
             title="Save this grant"
