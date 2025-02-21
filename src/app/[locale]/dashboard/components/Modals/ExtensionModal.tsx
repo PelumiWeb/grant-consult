@@ -24,7 +24,7 @@ const ExtensiionModal = (props: Props) => {
       setOpen={() => openMmodal()}
       width="1000px"
       height="">
-      <div className="w-full h-full px-8">
+      <div className="w-full h-full md:px-8">
         <h3>Request Extension for Grant Submission</h3>
 
         <div className="mt-8">
@@ -84,11 +84,11 @@ Character Limit:300-500 characters"
             <p className="my-4 text-[10px] leading-[13px] text-textColor">
               Attach any relevant documents to support your request.
             </p>
-            <div className="w-full flex items-center mt-4">
-              <div className="w-[221px] h-[40px] mr-4 border border-borderColor"></div>
+            <div className="w-full flex items-center mt-4  flex-col md:flex-row space-y-4 md:space-y-0">
+              <div className="w-full md:w-[221px] h-[40px] md:mr-4 border border-borderColor"></div>
               <CustomButton
                 title="Upload file"
-                width="w-[150px]"
+                width="w-full md:w-[150px]"
                 height="h-[40px]"
                 backgrounColor="bg-primary"
                 textStyle="font-semibold text-white uppercase"
@@ -111,7 +111,7 @@ Character Limit:300-500 characters"
             title="SUBMIT REQUEST"
             textStyle="font-bold text-white"
             backgrounColor="bg-primary"
-            width="w-[200px]"
+            width="w-full md:w-[200px]"
             height="h-[60px]"
           />
         </div>

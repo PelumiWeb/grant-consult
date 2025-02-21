@@ -41,7 +41,7 @@ const AssignedDetails = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>
@@ -56,7 +56,7 @@ const AssignedDetails = (props: Props) => {
         <div className="w-full flex justify-center md:justify-end mt-4 md:mt-0">
           <CustomButton
             borderWidth="border-[1px]"
-            width="w-[228px]"
+            width=" w-full md:w-[228px]"
             height="h-[40px]"
             IconLeft="/downloadImage.svg"
             title="Download Summary"
@@ -69,7 +69,7 @@ const AssignedDetails = (props: Props) => {
         <div>
           {/* Header */}
           <div className="w-full bg-grantColor h-[43px] mt-4">
-            <p className="text-white p-2 font-semibold text-[14px] md:text-[20px] leading-[18px] md:leading-[26px] text-center md:text-left">
+            <p className="text-white p-2 font-semibold text-[12px] md:text-[20px] leading-[18px] md:leading-[26px] text-center md:text-left">
               Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
             </p>
           </div>

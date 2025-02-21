@@ -85,7 +85,7 @@ const PerformanceMetric = (props: Props) => {
 
   const HeaderChart = (data: HeaderChartProps) => {
     return (
-      <div className="flex flex-col justify-between w-[200px] md:w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px] m-2 lg:m-0">
+      <div className="flex flex-col justify-between w-[150px] md:w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px] m-2 lg:m-0">
         <div className="w-[40px] h-[40px]">
           <img
             src={data?.data?.image}

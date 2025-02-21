@@ -9,6 +9,7 @@ import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dash
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import CustomInput from "@/app/[locale]/components/CustomInput";
 import WalletFilterPption from "./components/WalletFilterOptions";
+import MobileCustomTable from "../../components/MobileCustomTable";
 
 type Props = {};
 
@@ -159,6 +160,63 @@ const WalletHistory = (props: Props) => {
     };
   }, []);
 
+   const dataSourceMobile = [
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Grant Writing Consultation" },
+       client: { value: "FutureCorp Ltd." },
+       "Amount Earned ($)	": { value: "500" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Grant Research Assistance" },
+       client: { value: "EduCare Initiative" },
+       "Amount Earned ($)	": { value: "700" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Strategy Session" },
+       client: { value: "UnityBridge Org." },
+       "Amount Earned ($)	": { value: "250" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Application Submission" },
+       client: { value: "SolarAid Society" },
+       "Amount Earned ($)	": { value: "600" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Follow-up Session" },
+       client: { value: "HealthPlus NGO" },
+       "Amount Earned ($)	": { value: "150" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+     {
+       Date: { value: "2024-10-29" },
+       "Service Rendered": { value: "Proposal Editing" },
+       client: { value: "Artisan Org" },
+       "Amount Earned ($)	": { value: "300" },
+       Type: {
+         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+       },
+     },
+   ];
+
   return (
     <div
       className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth"
@@ -182,6 +240,11 @@ const WalletHistory = (props: Props) => {
         <WalletFilterPption />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
+      <div className="mr-4 space-y-4">
+        {dataSourceMobile?.map((data) => (
+          <MobileCustomTable data={data} />
+        ))}
+      </div>
 
       <div
         className="flex items-center mt-16 ml-4 cursor-pointer"

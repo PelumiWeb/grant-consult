@@ -247,8 +247,8 @@ const Wallet = (props: Props) => {
                 $3,000
               </p>
             </div>
-            <div className="w-full h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-center mt-4 md:mt-0">
-              <div className=" flex flex-col justify-around h-full">
+            <div className="w-full h-full md:h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-start md:items-center mt-4 md:mt-0 flex-col md:flex-row">
+              <div className=" flex flex-col justify-around h-full mb-4">
                 <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
                   Current Wallet Balance
                 </p>
@@ -268,7 +268,7 @@ const Wallet = (props: Props) => {
                   console.log("View Profile clicked");
                 }}
                 title="Withdraw"
-                width="w-[107px]"
+                width="w-full md:w-[107px]"
                 height="h-[41px]"
                 radius="rounded-[5px]"
                 textStyle="text-white font-semibold text-[17px] leading-[17px]"
@@ -276,13 +276,13 @@ const Wallet = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center pt-4 pb-2">
+        <div className="flex justify-between items-center pt-4 pb-2 flex-col md:flex-row space-y-2">
           <h4 className="font-semibold text-[20px] leading-[26px]">
             Earnings History
           </h4>
           <CustomButton
             borderWidth="border-[1px]"
-            width="w-[228px]"
+            width="w-full md:w-[228px]"
             height="h-[40px]"
             IconLeft="/downloadImage.svg"
             title="Download Summary"
@@ -295,13 +295,13 @@ const Wallet = (props: Props) => {
         <WalletFilterPption />
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
-      <div className="mr-4">
+      <div className="mr-4 space-y-4">
         {dataSourceMobile?.map((data) => (
           <MobileCustomTable data={data} />
         ))}
       </div>
 
-      <div className="py-2 px-4 bg-white w-full h-[150px] border-[0.5px] border-borderColor relative">
+      <div className="py-2 px-4 bg-white w-full h-[150px] border-[0.5px] border-borderColor relative mt-4 md:mt-0">
         <h4 className="text-[20px] leading-[26px]">Bank Account Management</h4>
         <div className="mt-2">
           <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
