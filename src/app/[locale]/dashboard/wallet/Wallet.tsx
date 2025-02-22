@@ -209,113 +209,121 @@ const Wallet = (props: Props) => {
       className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
-      <div>
-        {/* <div className="flex items-center w-[280px] mt-8">
+      <div className="w-full h-full bg-white mt-4 pt-2">
+        <div>
+          {/* <div className="flex items-center w-[280px] mt-8">
           <p className="text-textColor"> Dashboard </p>
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Wallet </p>
         </div> */}
-        <div className="flex flex-col mb-6">
-          <h2 className="text-secondaryColor text-left my-4">Your Wallet</h2>
-          <p className="text-left">Manage your earnings and payouts</p>
-        </div>
-        <div>
-          <div className="flex w-full justify-start md:justify-between items-start md:items-center py-4 flex-col md:flex-row">
-            <h4 className="text-[20px] leading-[26px] mb-2">
-              Earnings Summary
-            </h4>
-            <p
-              className="underline text-secondaryColor font-semibold text-[14px] leading-[16px] cursor-pointer"
-              onClick={() => {
-                // console.log("What's wrong!!!")
-                dispatch(
-                  setActiveRoute({
-                    ...dashboardRoute,
-                    wallet: dashboardRouteName.walletHistory,
-                  })
-                );
-              }}>
-              View Transaction History
+          <div className="flex flex-col mb-6">
+            <h2 className="text-secondaryColor text-left my-2 md:my-4 font-semibold text-[16px] leading-[19px] ">
+              Your Wallet
+            </h2>
+            <p className="text-left font-medium text-[12px] leading-[17px]">
+              Manage your earnings and payouts
             </p>
           </div>
-          <div className="flex justify-center md:justify-between  items-center flex-col md:flex-row">
-            <div className="w-full h-[130px] bg-white shadow-walletSummary flex flex-col justify-around py-4 px-4 mr-0 md:mr-4">
-              <p className="text-textColor font-semibold text-[16px] leading-[25px]  ">
-                Total Revenue Earned
-              </p>
-              <p className="font-semibold text-[28px] leading-[42px] text-secondaryColor">
-                $3,000
-              </p>
-            </div>
-            <div className="w-full h-full md:h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-start md:items-center mt-4 md:mt-0 flex-col md:flex-row">
-              <div className=" flex flex-col justify-around h-full mb-4">
-                <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
-                  Current Wallet Balance
-                </p>
-                <p className="font-semibold text-[28px] leading-[42px] text-buttonPrimary">
-                  $2,300
-                </p>
-              </div>
-              <CustomButton
+          <div>
+            <div className="flex w-full justify-start md:justify-between items-start md:items-center py-4 flex-col md:flex-row">
+              <h4 className="text-[16px] leading-[18px] md:text-[20px] md:leading-[26px] font-semibold  mb-2">
+                Earnings Summary
+              </h4>
+              <p
+                className="underline text-secondaryColor font-semibold text-[14px] leading-[16px] cursor-pointer"
                 onClick={() => {
+                  // console.log("What's wrong!!!")
                   dispatch(
-                    openModal({
-                      open: true,
-                      modalType: modalName.withdraFundsModal,
+                    setActiveRoute({
+                      ...dashboardRoute,
+                      wallet: dashboardRouteName.walletHistory,
                     })
                   );
+                }}>
+                View Transaction History
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-between  items-center flex-col md:flex-row">
+              <div className="w-full h-full md:h-[130px] bg-white shadow-walletSummary flex flex-col justify-around py-4 px-4 mr-0 md:mr-4 border border-buttonPrimary">
+                <p className="text-textColor font-semibold text-[16px] leading-[25px]  ">
+                  Total Revenue Earned
+                </p>
+                <p className="font-semibold text-[28px] leading-[42px] text-secondaryColor">
+                  $3,000
+                </p>
+              </div>
+              <div className="w-full h-full md:h-[130px]  py-4 px-4 ml-0 md:ml-4 bg-white  shadow-walletSummary flex  justify-between items-start md:items-center mt-4 md:mt-0 flex-col md:flex-row border border-buttonPrimary">
+                <div className=" flex flex-col justify-around h-full mb-4">
+                  <p className="text-textColor font-semibold text-[16px] leading-[25px] ">
+                    Current Wallet Balance
+                  </p>
+                  <p className="font-semibold text-[28px] leading-[42px] text-buttonPrimary">
+                    $2,300
+                  </p>
+                </div>
+                <CustomButton
+                  onClick={() => {
+                    dispatch(
+                      openModal({
+                        open: true,
+                        modalType: modalName.withdraFundsModal,
+                      })
+                    );
 
-                  console.log("View Profile clicked");
-                }}
-                title="Withdraw"
-                width="w-full md:w-[107px]"
-                height="h-[41px]"
-                radius="rounded-[5px]"
-                textStyle="text-white font-semibold text-[17px] leading-[17px]"
-              />
+                    console.log("View Profile clicked");
+                  }}
+                  title="Withdraw"
+                  width="w-full md:w-[107px]"
+                  height="h-[41px]"
+                  radius="rounded-[5px]"
+                  textStyle="text-white font-semibold text-[17px] leading-[17px]"
+                />
+              </div>
             </div>
           </div>
+          <div className="flex justify-between items-center pt-4 pb-2 flex-col md:flex-row space-y-2">
+            <h4 className="font-semibold text-[20px] leading-[26px]">
+              Earnings History
+            </h4>
+            <CustomButton
+              borderWidth="border-[1px]"
+              width="w-full md:w-[228px]"
+              height="h-[40px]"
+              IconLeft="/downloadImage.svg"
+              title="Download Summary"
+              backgrounColor="bg-white"
+              borderColor="border-borderColor"
+              textStyle="text-[16px] leading-[16px] font-semibold"
+              radius="rounded-[5px]"
+            />
+          </div>
+          <WalletFilterPption />
         </div>
-        <div className="flex justify-between items-center pt-4 pb-2 flex-col md:flex-row space-y-2">
-          <h4 className="font-semibold text-[20px] leading-[26px]">
-            Earnings History
-          </h4>
-          <CustomButton
-            borderWidth="border-[1px]"
-            width="w-full md:w-[228px]"
-            height="h-[40px]"
-            IconLeft="/downloadImage.svg"
-            title="Download Summary"
-            backgrounColor="bg-white"
-            borderColor="border-borderColor"
-            textStyle="text-[16px] leading-[16px] font-semibold"
-            radius="rounded-[5px]"
-          />
+        <CustomTable columns={columns} dataSource={dataSource} />
+        <div className="md:mr-4 space-y-4 py-4">
+          {dataSourceMobile?.map((data) => (
+            <MobileCustomTable data={data} />
+          ))}
         </div>
-        <WalletFilterPption />
-      </div>
-      <CustomTable columns={columns} dataSource={dataSource} />
-      <div className="mr-4 space-y-4">
-        {dataSourceMobile?.map((data) => (
-          <MobileCustomTable data={data} />
-        ))}
-      </div>
 
-      <div className="py-2 px-4 bg-white w-full h-[150px] border-[0.5px] border-borderColor relative mt-4 md:mt-0">
-        <h4 className="text-[20px] leading-[26px]">Bank Account Management</h4>
-        <div className="mt-2">
-          <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
-            Bank Name: Globus Bank{" "}
-          </p>
-          <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
-            Account Number: *******4567
-          </p>
-          <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
-            Account Holder: Alice Brooklyn
-          </p>
-        </div>
-        <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center absolute top-4 right-4 bg-backgroundColor cursor-pointer">
-          <img src="/edit.svg" alt="" />
+        <div className="py-2 px-4 bg-white w-full h-[150px] border-[0.5px] border-borderColor relative mt-4 md:mt-0">
+          <h4 className="text-[20px] leading-[26px] w-[70%] md:w-[100%]">
+            Bank Account Management
+          </h4>
+          <div className="mt-2">
+            <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+              Bank Name: Globus Bank{" "}
+            </p>
+            <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+              Account Number: *******4567
+            </p>
+            <p className="font-semibold text-[14px] leading-[22px] text-newPrimaryTextColor">
+              Account Holder: Alice Brooklyn
+            </p>
+          </div>
+          <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center absolute top-4 right-4 bg-backgroundColor cursor-pointer">
+            <img src="/edit.svg" alt="" />
+          </div>
         </div>
       </div>
     </div>

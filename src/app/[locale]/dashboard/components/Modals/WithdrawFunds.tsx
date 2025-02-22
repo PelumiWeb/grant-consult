@@ -54,18 +54,21 @@ const WithdrawFunds = (props: Props) => {
               : "border-borderColor"
           } border ${
             activeCard === data.id ? "bg-[#F5FFFD]" : "bg-white"
-          } flex h-[65px] items-center`}>
-          <Checkbox className="rounded-full mr-8 ml-4" />
-          {/* Bank type */}
-          <img src={data.banklogo} className="w-[40px] h-[30px]" />
-          <div className=" ml-8">
+          } flex h-[65px] items-center justify-between`}>
+          <div className="flex items-center w-[10%]">
+            <Checkbox className="rounded-full mr-2 md:mr-8 ml-4" />
+            {/* Bank type */}
+            <img src={data.banklogo} className="w-[40px] h-[30px]" />
+          </div>
+
+          <div className="w-[70%] md:ml-8">
             <p className="text-sm font-semibold text-black">{data.name}</p>
             <p className="text-sm font-medium text-textColor">
               {data.bankName}
             </p>
           </div>
         </div>
-        <div className="flex w-full self-end mt-4 justify-end">
+        <div className="hidden md:flex w-full self-end mt-4 justify-end">
           <button>
             <p className="text-secondaryColor font-medium mx-4 cursor-pointer">
               Set as Default
@@ -85,6 +88,44 @@ const WithdrawFunds = (props: Props) => {
           <button>
             <p className="text-errorColor font-medium ml-4">Remove</p>
           </button>
+        </div>
+        <div className="space-y-4 my-2">
+          <CustomButton
+            title="Set as Default"
+            backgrounColor="bg-white"
+            width="w-full"
+            height="h-[40px]"
+            textStyle="font-inter font-bold text-[16px] leading-[16px] text-secondaryColor"
+            borderColor="border-secondaryColor"
+            radius="rounded-[5px]"
+          />
+          <CustomButton
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.editBankAccount,
+                })
+              );
+            }}
+            title="Edit"
+            backgrounColor="bg-white"
+            width="w-full"
+            height="h-[40px]"
+            textStyle="font-inter font-bold text-[16px] leading-[16px] text-buttonPrimary"
+            borderColor="border-buttonPrimary"
+            radius="rounded-[5px]"
+          />
+
+          <CustomButton
+            title="Remove"
+            backgrounColor="bg-white"
+            width="w-full"
+            height="h-[40px]"
+            textStyle="font-inter font-bold text-[16px] leading-[16px] text-errorColor"
+            borderColor="border-errorColor"
+            radius="rounded-[5px]"
+          />
         </div>
       </div>
     );
@@ -148,9 +189,9 @@ const WithdrawFunds = (props: Props) => {
         ))}
       </div>
 
-      <div className=" mt-4 w-full md:w-[60%] flex justify-between items-center">
+      <div className=" mt-4 w-full md:w-[60%] flex justify-between items-center  flex-col md:flex-row space-y-4 md:space-y-0">
         <CustomButton
-          width="w-[200px]"
+          width="w-full md:w-[200px]"
           height="h-[50px]"
           radius="rounded-[5px]"
           backgrounColor="bg-buttonPrimary"
@@ -168,7 +209,7 @@ const WithdrawFunds = (props: Props) => {
         <CustomButton
           onClick={() => openMmodal()}
           title="CANCEL"
-          width="w-[144px]"
+          width="w-full md:w-[144px]"
           height="h-[50px]"
           radius="rounded-[5px]"
           backgrounColor="bg-borderColor"

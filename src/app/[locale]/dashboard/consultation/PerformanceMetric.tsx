@@ -85,7 +85,7 @@ const PerformanceMetric = (props: Props) => {
 
   const HeaderChart = (data: HeaderChartProps) => {
     return (
-      <div className="flex flex-col justify-between w-[150px] md:w-[158px] h-[210px] bg-white my-4 items-center py-2 shadow-graphchart rounded-[5px] m-2 lg:m-0">
+      <div className="flex flex-col justify-between w-[150px] md:w-[158px] h-[190px] md:h-[210px] bg-white my-4 items-center md:py-2 shadow-graphchart rounded-[5px] m-2 lg:m-0 py-8">
         <div className="w-[40px] h-[40px]">
           <img
             src={data?.data?.image}
@@ -94,7 +94,7 @@ const PerformanceMetric = (props: Props) => {
           />
         </div>
         <p
-          className={`font-medium leading-[17px] text-[12px] text-center  ${
+          className={`font-semibold leading-[17px] text-[12px] text-center  ${
             data.data.textColor && data.data.textColor
           }`}>
           {data.data.text}
@@ -141,7 +141,7 @@ const PerformanceMetric = (props: Props) => {
         </div>
         <div className="bg-white w-full md:w-[340px] h-[210px] shadow-graphchart px-4 flex flex-col items-center justify-center m-2 lg:m-0">
           <div className="flex items-center justify-between w-full mt-1">
-            <p className="font-semibold text-[10px] leading-[13px]">
+            <p className="font-semibold text-[10px] leading-[13px] w-[100px] text-primary">
               Total Cancelled Consultation
             </p>
             <DatePicker className="w-[100px] h-[30px]" placeholder="Today" />
@@ -154,7 +154,7 @@ const PerformanceMetric = (props: Props) => {
 
       {/* Preview Overview Bar chart */}
       <div className="h-[500px] w-full bg-white mb-4 py-8">
-        <h4 className="font-semibold text-[20px] leading-[26px] ml-8 mb-4">
+        <h4 className="font-semibold text-[20px] leading-[26px] md:ml-8 mb-4">
           Performance Overview
         </h4>
         <BarchartComponent />
@@ -165,23 +165,23 @@ const PerformanceMetric = (props: Props) => {
           <h4 className="font-semibold text-[20px] leading-[26px]">
             Key Metric
           </h4>
-          <p className="leading-[31px] text-[14px]">
+          <p className="leading-[31px] text-[14px] font-semibold">
             Total Completed Consultations: 110
           </p>
-          <p className="leading-[31px] text-[14px]">
+          <p className="leading-[31px] text-[14px] font-semibold">
             Pending Consultations: 60
           </p>
-          <p className="leading-[31px] text-[14px]">
+          <p className="leading-[31px] text-[14px] font-semibold">
             {" "}
             Declined Consultations: 25{" "}
           </p>
         </div>
         <div className="w-full md:w-[520px] h-[170px] rounded-[5px]  bg-white shadow-graphchart p-4 m-2">
           <h4 className="font-semibold text-[20px] leading-[26px]">Insights</h4>
-          <p className="leading-[31px] text-[14px]">
+          <p className="leading-[31px] text-[14px] font-semibold">
             High activity observed in March with a 30% spike.
           </p>
-          <p className="leading-[31px] text-[14px]">
+          <p className="leading-[31px] text-[14px] font-semibold">
             April saw a decrease due to fewer consultations.
           </p>
           <p className="leading-[31px] text-[14px]"> </p>
@@ -198,6 +198,7 @@ const PerformanceMetric = (props: Props) => {
             value=""
             width="w-full"
             mr="lg:mr-1"
+            my="my-2"
           />
           <LabelInput
             select
@@ -205,6 +206,7 @@ const PerformanceMetric = (props: Props) => {
             placeholder="Completion Rate"
             width="w-full"
             mr="lg:mr-1"
+            my="my-2"
           />
           <LabelInput
             select
@@ -212,20 +214,21 @@ const PerformanceMetric = (props: Props) => {
             value=""
             width="w-full"
             mr="lg:mr-1"
+            my="my-2"
           />
           <CustomButton
             width="w-full md:w-[120px]"
-            height="h-[40px]"
+            height=" h-[50px] md:h-[40px]"
             radius="rounded-[5px]"
             backgrounColor="bg-primary"
             title="Apply"
-            textStyle="text-white text-[14px] leading-[16px] text-center"
+            textStyle="text-white text-[14px] leading-[16px] text-center font-semibold"
           />
         </div>
       </div>
       {/* Return to dashboard */}
       <div
-        className="flex items-center mt-16 ml-4 cursor-pointer"
+        className="flex items-center mt-8 my-8 ml-4 cursor-pointer"
         onClick={() => {
           dispatch(
             setActiveRoute({
@@ -235,7 +238,7 @@ const PerformanceMetric = (props: Props) => {
           );
         }}>
         <img src="/arrowLeft.svg" alt="" />
-        <p className="text-secondaryColor ml-2">Return to Dashboard</p>
+        <p className="text-secondaryColor ml-2">Go back</p>
       </div>
       <RenderModals />
     </div>

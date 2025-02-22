@@ -12,7 +12,7 @@ const WalletFilterPption = (props: Props) => {
   return (
     <div
       className="w-full bg-white flex items-center justify-between
-      px-4
+      md:px-4
       mt-4
       h-full md:h-[80px]
       rounded-[5px]
@@ -36,6 +36,7 @@ const WalletFilterPption = (props: Props) => {
         value=""
         height="h-[40px]"
         select
+        my="my-2"
       />
       <LabelInput
         placeholder="Status"
@@ -43,6 +44,7 @@ const WalletFilterPption = (props: Props) => {
         value=""
         height="h-[40px]"
         select
+        my="my-2"
       />
 
       <CustomButton
@@ -50,6 +52,8 @@ const WalletFilterPption = (props: Props) => {
         width="w-full md:w-[120px]"
         title="Filter"
         backgrounColor="bg-primary"
+        textStyle="text-white font-semibold"
+        radius="rounded-[5px]"
       />
     </div>
   );

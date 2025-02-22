@@ -26,10 +26,10 @@ const AddNewBank = (props: Props) => {
       setOpen={() => openMmodal()}
       width="738px"
       height="">
-      <div className="w-[80%] h-full">
+      <div className="w-full md:w-[80%] h-full">
         <h3>Add New Bank Details</h3>
         <div className="flex justify-between items-start ">
-          <div>
+          <div className="w-full">
             <LabelInput required label="Account Name" placeholder="" value="" />
             <LabelInput
               required
@@ -39,7 +39,7 @@ const AddNewBank = (props: Props) => {
             />
             <LabelInput required label="Bank Name" placeholder="" value="" />
           </div>
-          <div className="mt-12">
+          <div className="hidden md:block mt-12">
             <CustomButton
               backgrounColor="bg-white"
               title="Set as Default"
@@ -53,10 +53,11 @@ const AddNewBank = (props: Props) => {
 
         <div className="w-full flex justify-between mt-8">
           <CustomButton
-            width="w-[150px]"
+            width="w-full md:w-[150px]"
             height="h-[60px]"
             backgrounColor="bg-primary"
             title="Save"
+            textStyle="font-semibold text-white"
             onClick={() => {
               dispatch(
                 openModal({
@@ -70,6 +71,17 @@ const AddNewBank = (props: Props) => {
           {/* <button>
             <p className="text-buttonPrimary underline font-semibold">Add New Account</p>
           </button> */}
+        </div>
+        <div className="my-4">
+          <CustomButton
+            title="Set as Default"
+            backgrounColor="bg-white"
+            width="w-full"
+            height="h-[40px]"
+            textStyle="font-inter font-bold text-[16px] leading-[16px] text-secondaryColor"
+            borderColor="border-secondaryColor"
+            radius="rounded-[5px]"
+          />
         </div>
       </div>
     </CustomModal>

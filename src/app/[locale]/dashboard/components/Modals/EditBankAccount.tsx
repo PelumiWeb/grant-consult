@@ -26,10 +26,10 @@ const AddNewBank = (props: Props) => {
       setOpen={() => openMmodal()}
       width="738px"
       height="">
-      <div className="w-[80%] h-full">
+      <div className="w-full md:w-[80%] h-full">
         <h3>Edit Your Bank Details</h3>
-        <div className="flex justify-between items-start ">
-          <div>
+        <div className="flex justify-between items-start">
+          <div className="w-full">
             <LabelInput required label="Account Name" placeholder="" value="" />
             <LabelInput
               required
@@ -39,7 +39,7 @@ const AddNewBank = (props: Props) => {
             />
             <LabelInput required label="Bank Name" placeholder="" value="" />
           </div>
-          <div className="mt-12">
+          <div className="hidden md:block mt-12">
             <CustomButton
               backgrounColor="bg-white"
               title="Set as Default"
@@ -51,12 +51,13 @@ const AddNewBank = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-full flex justify-between mt-8">
+        <div className="w-full flex justify-between mt-8 flex-col md:flex-row ">
           <CustomButton
-            width="w-[150px]"
+            width="w-full md:w-[150px]"
             height="h-[60px]"
             backgrounColor="bg-primary"
             title="Save"
+            radius="rounded-[5px]"
             onClick={() => {
               dispatch(
                 openModal({
@@ -66,8 +67,10 @@ const AddNewBank = (props: Props) => {
                 })
               );
             }}
+            textStyle="text-white font-semibold"
           />
           <button
+            className="hidden md:block"
             onClick={() => {
               dispatch(
                 openModal({
@@ -76,11 +79,39 @@ const AddNewBank = (props: Props) => {
                 })
               );
             }}>
-            <p className="text-buttonPrimary underline font-semibold">
+            <p className="text-buttonPrimary underline font-semibold ">
               Add New Account
             </p>
             s
           </button>
+          <div className="py-4 space-y-4">
+            <CustomButton
+              onClick={() => {
+                dispatch(
+                  openModal({
+                    open: true,
+                    modalType: modalName.addNewBank,
+                  })
+                );
+              }}
+              title="Add new Account"
+              backgrounColor="bg-white"
+              width="w-full"
+              height="h-[40px]"
+              textStyle="font-inter font-bold text-[16px] leading-[16px] text-buttonPrimary"
+              borderColor="border-buttonPrimary"
+              radius="rounded-[5px]"
+            />
+            <CustomButton
+              title="Set as Default"
+              backgrounColor="bg-white"
+              width="w-full"
+              height="h-[40px]"
+              textStyle="font-inter font-bold text-[16px] leading-[16px] text-secondaryColor"
+              borderColor="border-secondaryColor"
+              radius="rounded-[5px]"
+            />
+          </div>
         </div>
       </div>
     </CustomModal>

@@ -466,77 +466,82 @@ const Consultation = (props: Props) => {
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Assigned Grants </p>
         </div> */}
-        <div className="flex items-center justify-center flex-col">
-          <h2 className="text-secondaryColor text-[20px] leading-[26px]">
-            Consultation Overview
-          </h2>
-          <p className="mt-1 md:mt-4 font-medium leading-[17px] text-center text-textColor text-[12px] w-full">
-            View all requested consultation here including details of deadlines
-            and statuses
-          </p>
-        </div>
-        <DashboardfilterOptions>
-          {/* <div className="w-full md:w-[180px]"> */}
-          <LabelInput
-            placeholder="Status"
-            width={"w-full"}
-            value=""
-            height="h-[35px]"
-            my="my-1 md:my-4"
-            select
-          />
-          {/* </div> */}
-
-          <div className="w-full">
-            <DatePicker placeholder="Date Range - From" className="w-full" />
+        <div className="bg-white md:bg-transparent py-4 md:py-0 mt-4">
+          <div className="flex items-center justify-center flex-col ">
+            <h2 className="text-secondaryColor text-[20px] leading-[26px]">
+              Consultation Overview
+            </h2>
+            <p className="mt-1 md:mt-4 font-medium leading-[17px] text-center text-textColor text-[12px] w-full">
+              View all requested consultation here including details of
+              deadlines and statuses
+            </p>
           </div>
-          <div className="w-full">
-            <DatePicker placeholder="To" className="w-full" />
-          </div>
-
-          <div className="w-full lg:w-[180px]">
+          <DashboardfilterOptions>
+            {/* <div className="w-full md:w-[180px]"> */}
             <LabelInput
-              placeholder="Client Name"
+              placeholder="Status"
               width={"w-full"}
               value=""
               height="h-[35px]"
               my="my-1 md:my-4"
+              select
             />
-          </div>
+            {/* </div> */}
 
-          <CustomButton
-            height="h-[50px] md:h-[35px]"
-            width="w-full lg:w-[76px]"
-            title="Filter"
-            backgrounColor="bg-primary"
-            textStyle="font-bold text-[16px] leading-[16px] font-mont text-white font-inter"
-            // my="my-1"
-          />
-          <CustomButton
-            height="h-[50px] md:h-[35px]"
-            width="w-full lg:w-[76px]"
-            title="Reset"
-            backgrounColor="bg-white"
-            borderColor="bg-secondaryColor"
-            textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
-          />
-        </DashboardfilterOptions>
+            <div className="w-full">
+              <DatePicker placeholder="Date Range - From" className="w-full" />
+            </div>
+            <div className="w-full">
+              <DatePicker placeholder="To" className="w-full" />
+            </div>
+
+            <div className="w-full lg:w-[180px]">
+              <LabelInput
+                placeholder="Client Name"
+                width={"w-full"}
+                value=""
+                height="h-[35px]"
+                my="my-1 md:my-4"
+              />
+            </div>
+
+            <CustomButton
+              height="h-[50px] md:h-[35px]"
+              width="w-full lg:w-[76px]"
+              title="Filter"
+              backgrounColor="bg-primary"
+              textStyle="font-bold text-[16px] leading-[16px] font-mont text-white font-inter"
+              // my="my-1"
+            />
+            <CustomButton
+              height="h-[50px] md:h-[35px]"
+              width="w-full lg:w-[76px]"
+              title="Reset"
+              backgrounColor="bg-white"
+              borderColor="bg-secondaryColor"
+              textStyle="text-secondaryColor font-semibold text-[12px] leading-[20px]"
+            />
+          </DashboardfilterOptions>
+        </div>
       </div>
       <CustomTable columns={columns} dataSource={dataSource} />
-      {dataSourceMobile.map((data) => (
-        <div className="space-y-4 mt-4">
-          <MobileCustomTable data={data} />
-        </div>
-      ))}
-      <div className="bg-white mt-4 py-8">
+      <div className="bg-white py-4 mt-4 px-2">
+        {dataSourceMobile.map((data) => (
+          <div className="space-y-4 mt-4 ">
+            <MobileCustomTable data={data} />
+          </div>
+        ))}
+      </div>
+
+      <div className=" mt-4 py-8">
         <div className="bg-backgroundColor m-4  h-full">
-          <div className=" m-4 p-4 h-[110px]">
+          <div className=" md:m-4 md:p-4 h-[110px]">
             <h4 className=" ">Your Upcoming Consultations</h4>
             <p className="text-textColor text-[16px] leading-[20px] text-sm mt-4">
               “You have 3 upcoming consultations this week”{" "}
             </p>
           </div>
-          <div className=" m-4 p-4">
+          <div className=" md:m-4 md:p-4">
             <h4 className="mb-2">Featured Next Consultation</h4>
             {/* Strategic Funding Advisory Client: John Doe (Doe Inc.) Date/Time: Nov
           5, 2024, 2:00 PM Location: Online - Zoom */}
@@ -557,8 +562,8 @@ const Consultation = (props: Props) => {
               Location <span className="text-textColor">Online Zoom</span>
             </p>
           </div>
-          <div className="w-full lg:w-[50%] px-4 lg:px-0 flex items-center justify-center lg:justify-between ml-0 lg:ml-8  py-4 flex-col lg:flex-row">
-            <div className="w-full m-2">
+          <div className="w-full lg:w-[50%] md:px-4 lg:px-0 flex items-center justify-center lg:justify-between ml-0 lg:ml-8  py-4 flex-col lg:flex-row">
+            <div className="w-full md:m-2">
               <CustomButton
                 width="w-full lg:w-[190px]"
                 height="h-[40px]"
@@ -592,7 +597,7 @@ const Consultation = (props: Props) => {
               />
             </div>
           </div>
-          <div className="ml-8 my-4 w-[70%]">
+          <div className="md:ml-8 my-4 w-full md:w-[70%]">
             <h4>Upcoming List Preview</h4>
             <p className="font-semibold text-black text-[16px] leading-[32px] my-2">
               Grant Proposal Review –
@@ -605,7 +610,7 @@ const Consultation = (props: Props) => {
             </p>
           </div>
 
-          <div className="flex items-center justify-between w-full lg:w-[55%] my-8 ml-0 px-4 lg:px-0 lg:ml-8 flex-col lg:flex-row">
+          <div className="flex items-center justify-between w-full lg:w-[55%] my-8 ml-0 md:px-4 lg:px-0 lg:ml-8 flex-col lg:flex-row">
             <div className="w-full m-2">
               <CustomButton
                 width="w-full lg:w-[226px]"

@@ -17,6 +17,43 @@ html {
   }
 }
 
+input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  /*styles here*/
+  color: #333333 !important;
+}
+
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  /*styles here*/
+  color: #333333 !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 1; /*Firefox by default has an opacity object that usually is ideal to reset so it matches webkit*/
+  /*styles here*/
+  color: #333333 !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 1; /*Firefox by default has an opacity object that usually is ideal to reset so it matches webkit*/
+  /*styles here*/
+  color: #333333 !important;
+}
+
+input::placeholder {
+  /*styles here*/
+  color: #333333 !important;
+}
+
+.ant-select-arrow {
+  font-weight: semibold !important;
+  color: #333333 !important;
+
+}
+
 @layer base {
   h1 {
     @apply text-4xl leading-[60px] font-semibold font-mono text-primary;
@@ -33,7 +70,7 @@ html {
     @apply text-2xl font-semibold font-mono text-primary;
   }
   h4 {
-    @apply text-[24px] font-semibold font-mono text-primary leading-[26px];
+    @apply text-[16px] md:text-[24px] font-semibold font-mono text-primary leading-[18px] md:leading-[26px];
   }
 
   p {
@@ -53,9 +90,22 @@ html {
 }
 
 .ant-collapse-content-box {
-  background: #F4F6F9 !important;
+  background: #f4f6f9 !important;
+}
+.ant-select-selector {
+  /* color: #333333 !important */
+}
+.ant-select-selection-item {
+  color: #333333 !important;
 }
 
+.ant-picker-input > input {
+  color: #333333 !important;
+}
+
+.ant-picker-input > input:placeholder-shown {
+  color: #333333 !important;
+}
 .custom-dropdown .ant-select-selector {
   @apply rounded-lg border border-blue-500 shadow-md;
   /* Tailwind CSS classes for rounded border, custom border color, and shadow */

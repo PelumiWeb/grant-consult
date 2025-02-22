@@ -12,9 +12,9 @@ function Footer({}: Props) {
 
   return (
     <div className="relative bg-footer   bg-repeat bg-cover bg-bottom bottom-0 mt-8">
-      <div className=" h-full w-full bg-repeat bg-cover px-8 py-4  bg-bottom  bg-[#1F1C1CCC]">
+      <div className=" h-full w-full bg-repeat bg-cover px-4 md:px-8 py-4  bg-bottom  bg-[#1F1C1CCC]">
         {/* Top */}
-        <div className="bg-[#27AE60] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-8 py-6 md:py-0">
+        <div className="bg-[#27AE60] w-full flex items-center justify-between flex-wrap h-[151px] rounded-[10px] px-2 py-6 md:py-0">
           <div className="flex flex-col justify-center items-center w-full">
             <h3 className="text-white text-sm lg:text-base text-center font-semibold w-full md:w-[200px] lg:w-full">
               Stay Updated on the Latest Grants

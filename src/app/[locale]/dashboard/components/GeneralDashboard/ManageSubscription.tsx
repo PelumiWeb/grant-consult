@@ -415,7 +415,7 @@ const ManageSubscription = (props: Props) => {
           );
         }}>
         <img src="/arrowLeft.svg" alt="" />
-        <p className="text-secondaryColor ml-2">Return to Dashboard</p>
+        <p className="text-secondaryColor ml-2">Go back</p>
       </div>
       <RenderModals />
     </div>

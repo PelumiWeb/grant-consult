@@ -437,8 +437,10 @@ const AssignedGrant = (props: Props) => {
           <p className="text-textColor">Assigned Grants </p>
         </div> */}
         <div className="flex items-center justify-center flex-col">
-          <h2 className="text-secondaryColor">Assign Grants</h2>
-          <p className="mt-4">
+          <h2 className="text-secondaryColor font-semibold text-[20px] leading-[26px]">
+            Assign Grants
+          </h2>
+          <p className="md:mt-4 text-center md:text-left font-medium text-[12px] leading-[17px] text-textColor">
             View all grants assigned to you here including details of deadlines
             and statuses
           </p>
@@ -461,7 +463,7 @@ const AssignedGrant = (props: Props) => {
           </div>
 
           <div className="w-full">
-            <DatePicker  className="w-full" />
+            <DatePicker className="w-full" placeholder="Assigned Date" />
           </div>
           <div className="w-full">
             <LabelInput
@@ -534,7 +536,7 @@ const AssignedGrant = (props: Props) => {
 
       <div className="flex items-center cursor-pointer my-4">
         <img src="/arrowLeft.svg" alt="" />
-        <p className="text-secondaryColor ml-2">Return to Dashboard</p>
+        <p className="text-secondaryColor ml-2">Go back</p>
       </div>
     </div>
   );

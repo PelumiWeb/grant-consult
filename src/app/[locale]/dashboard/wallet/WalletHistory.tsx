@@ -141,7 +141,7 @@ const WalletHistory = (props: Props) => {
       ),
     },
   ];
-  
+
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
@@ -160,62 +160,62 @@ const WalletHistory = (props: Props) => {
     };
   }, []);
 
-   const dataSourceMobile = [
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Grant Writing Consultation" },
-       client: { value: "FutureCorp Ltd." },
-       "Amount Earned ($)	": { value: "500" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Grant Research Assistance" },
-       client: { value: "EduCare Initiative" },
-       "Amount Earned ($)	": { value: "700" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Strategy Session" },
-       client: { value: "UnityBridge Org." },
-       "Amount Earned ($)	": { value: "250" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Application Submission" },
-       client: { value: "SolarAid Society" },
-       "Amount Earned ($)	": { value: "600" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Follow-up Session" },
-       client: { value: "HealthPlus NGO" },
-       "Amount Earned ($)	": { value: "150" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-     {
-       Date: { value: "2024-10-29" },
-       "Service Rendered": { value: "Proposal Editing" },
-       client: { value: "Artisan Org" },
-       "Amount Earned ($)	": { value: "300" },
-       Type: {
-         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
-       },
-     },
-   ];
+  const dataSourceMobile = [
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Grant Writing Consultation" },
+      client: { value: "FutureCorp Ltd." },
+      "Amount Earned ($)	": { value: "500" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Grant Research Assistance" },
+      client: { value: "EduCare Initiative" },
+      "Amount Earned ($)	": { value: "700" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Strategy Session" },
+      client: { value: "UnityBridge Org." },
+      "Amount Earned ($)	": { value: "250" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Application Submission" },
+      client: { value: "SolarAid Society" },
+      "Amount Earned ($)	": { value: "600" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Follow-up Session" },
+      client: { value: "HealthPlus NGO" },
+      "Amount Earned ($)	": { value: "150" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+    {
+      Date: { value: "2024-10-29" },
+      "Service Rendered": { value: "Proposal Editing" },
+      client: { value: "Artisan Org" },
+      "Amount Earned ($)	": { value: "300" },
+      Type: {
+        value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
+      },
+    },
+  ];
 
   return (
     <div
@@ -257,7 +257,7 @@ const WalletHistory = (props: Props) => {
           );
         }}>
         <img src="/arrowLeft.svg" alt="" />
-        <p className="text-secondaryColor ml-2">Return to Dashboard</p>
+        <p className="text-secondaryColor ml-2">Go back</p>
       </div>
     </div>
   );
