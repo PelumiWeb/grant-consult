@@ -36,12 +36,33 @@ const ProfileHeader = (props: Props) => {
         <img src="/profileImage.svg" className="absolute top-16 left-8" />
         <div className="flex w-full justify-between items-start md:items-center absolute bottom-12 flex-col md:flex-row px-4 md:px-0">
           <div className="ml-0 md:ml-8 mt-4 md:mt-0">
-            <h4 className="font-mono my-2 text-[24px] leading-[36px]">Alice brooklyn</h4>
-            <p className="text-base text-textColor font-semibold my-1">
+            <h4 className="font-mono my-2 text-[24px] leading-[36px]">
+              Alice brooklyn
+            </h4>
+            {/* <p className="text-base text-textColor font-semibold my-1">
               Grant Consultant | NGO Advisor
-            </p>
-            <p className="my-1">Years of experience</p>
-            <p className="text-secondaryColor my-1">New york, USA</p>
+            </p> */}
+            <div className="flex items-center">
+              <p className="font-semibold text-[16px] leading-[19px] mr-1 text-textColor">
+                Headline:
+              </p>
+              <p className="font-semibold text-[16px] leading-[19px]">----</p>
+            </div>
+            <div className="flex items-center ">
+              <p className="my-1 mr-1">Years of experience</p>
+              <p>---</p>
+            </div>
+            <div className="flex items-center ">
+              <div className="w-[15px] h-[18px]">
+                <img
+                  src="/locationIcon.svg"
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <p className="ml-2 text-secondaryColor">--- --- --- ---</p>
+            </div>
+            {/* <p className="text-secondaryColor my-1">New york, USA</p> */}
           </div>
           <div className="md:mr-20 md:-mt-8">
             <h4 className="font-mono my-2">Contact Information</h4>
@@ -53,7 +74,8 @@ const ProfileHeader = (props: Props) => {
             </div>
             <div className="flex items-center my-1">
               <img src="/callImage.svg" alt="" />
-              <p className="ml-2 text-secondaryColor ">+31 890 783 456</p>
+              {/* <p className="ml-2 text-secondaryColor ">+31 890 783 456</p> */}
+              <p className="ml-2 text-secondaryColor ">--- --- --- ---</p>
             </div>
           </div>
         </div>

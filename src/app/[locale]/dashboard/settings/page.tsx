@@ -56,7 +56,7 @@ const Settings = (props: Props) => {
         <div className="w-full">
           {data?.showTitle && (
             <div className="w-full flex justify-between items-center">
-              <p className="font-semibold text-[18px] leading-[28px] md:leading-[40px]">
+              <p className="font-semibold text-[18px] leading-[28px] md:leading-[40px] text-primary">
                 {data.title}
               </p>
               <div className="hidden md:block">
@@ -232,7 +232,7 @@ const Settings = (props: Props) => {
         <h4 className="font-semibold text-[20px] leading-[26px] mb-4">
           Privacy Settings
         </h4>
-        <p className="text-black font-semibold text-[18px] leading-[40px]">
+        <p className="text-primary font-semibold text-[18px] leading-[40px]">
           Manage Your Profile Visibility
         </p>
         <SettingsComponent message="Public" iconPosition="none" checker />
@@ -265,7 +265,7 @@ const Settings = (props: Props) => {
           Accessibility
         </h4>
 
-        <p className="text-black font-semibold text-[18px] leading-[40px] mt-4">
+        <p className="text-primary font-semibold text-[18px] leading-[40px] mt-4">
           Choose the right accessibility profile for you
         </p>
 

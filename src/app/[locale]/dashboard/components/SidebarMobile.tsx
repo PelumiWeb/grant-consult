@@ -36,11 +36,11 @@ const SidebarModal = (props: Props) => {
       image: "/dashboard.svg",
       url: `/${locale}/dashboard/profile`,
     },
-    {
-      imageTitle: tabsName.favourite,
-      image: "/profileDashboard.svg",
-      url: `/${locale}/dashboard/favourites`,
-    },
+    // {
+    //   imageTitle: tabsName.favourite,
+    //   image: "/profileDashboard.svg",
+    //   url: `/${locale}/dashboard/favourites`,
+    // },
     {
       imageTitle: tabsName.assignedGrants,
       image: "/dashboard2.svg",

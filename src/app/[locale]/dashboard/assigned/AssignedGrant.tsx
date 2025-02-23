@@ -436,7 +436,7 @@ const AssignedGrant = (props: Props) => {
           <p className="text-textColor mx-3">{">>"}</p>
           <p className="text-textColor">Assigned Grants </p>
         </div> */}
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex items-center justify-center flex-col mt-4 md:mt-0">
           <h2 className="text-secondaryColor font-semibold text-[20px] leading-[26px]">
             Assign Grants
           </h2>

@@ -13,7 +13,7 @@ type Props = {
 const ContentComponent = (props: Props) => {
   const dispatch = useAppDispatch();
   return (
-    <div className="w-full p-8 bg-white my-8">
+    <div className="w-full p-4 md:p-8 bg-white my-8">
       {/* Header */}
       <div className="w-full flex items-center justify-between">
         <h3>{props.title}</h3>

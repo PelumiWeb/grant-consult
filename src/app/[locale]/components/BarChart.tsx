@@ -118,7 +118,7 @@ const BarchartComponent = () => {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: -25,
           bottom: 5,
         }}>
         {evenTicks.map((tick) => (

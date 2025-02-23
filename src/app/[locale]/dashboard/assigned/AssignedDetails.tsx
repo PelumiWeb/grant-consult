@@ -11,6 +11,7 @@ import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
+import AssignedGrantCardMore from "./component/AssignedGrantCardMore";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
@@ -41,10 +42,10 @@ const AssignedDetails = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full  overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
-      <div>
+      <div className="bg-white w-full p-4  md:p-8">
         {/* <div className="flex items-center w-full  mt-8 flex-col md:flex-row">
           <p className="text-textColor text-sm md:text-lg"> Dashboard </p>
           <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
@@ -52,6 +53,13 @@ const AssignedDetails = (props: Props) => {
           <p className="text-textColor mx-3 text-sm md:text-lg">{">>"}</p>
           <p className="text-sm md:text-lg">Community Health Initiative</p>
         </div> */}
+
+        <div className="block md:hidden mt-4">
+          <p className="md:mt-4 text-center md:text-left font-medium text-[12px] leading-[17px] text-textColor">
+            View all grants assigned to you here including details of deadlines
+            and statuses
+          </p>
+        </div>
 
         <div className="w-full flex justify-center md:justify-end mt-4 md:mt-0">
           <CustomButton
@@ -68,7 +76,7 @@ const AssignedDetails = (props: Props) => {
 
         <div>
           {/* Header */}
-          <div className="w-full bg-grantColor h-[43px] mt-4">
+          <div className="w-full bg-grantColor h-[43px] mt-4 grid place-items-center ">
             <p className="text-white p-2 font-semibold text-[12px] md:text-[20px] leading-[18px] md:leading-[26px] text-center md:text-left">
               Aspire Coronation Trust (ACT) Foundation Grant 2024{" "}
             </p>
@@ -77,8 +85,14 @@ const AssignedDetails = (props: Props) => {
           <div className="mt-4 flex items-center w-full justify-center md:justify-between flex-col md:flex-row">
             {/* Left */}
             <div className="flex items-center w-full md:w-[40%] flex-col md:flex-row">
-              <div className="w-full md:w-[250px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-center md:mr-4">
-                <p className="font-semibold text-sm">Status : Ongoing 🟢</p>
+              <div className="w-full md:w-[250px] h-[50px] border-[0.5px] border-borderColor bg-white flex items-center justify-between px-2 md:mr-4 ">
+                <p className="font-semibold text-[14px] leadng-[21px]  text-newPrimaryTextColor">
+                  Status :
+                </p>
+                <p className="font-semibold text-[14px] leadng-[21px]  text-newPrimaryTextColor">
+                  {" "}
+                  Ongoing 🟢
+                </p>
               </div>
               {/* Update Status */}
               <LabelInput
@@ -110,7 +124,7 @@ const AssignedDetails = (props: Props) => {
                     })
                   );
                 }}
-                width="w-full md:w-[190px]"
+                width="w-full md:w-[270px]"
                 height="h-[40px]"
                 title="Request Extension"
                 backgrounColor="bg-secondaryColor"
@@ -121,7 +135,7 @@ const AssignedDetails = (props: Props) => {
 
           {/* Grants details */}
           <div>
-            <GrantCard border showMore />
+            <AssignedGrantCardMore border />
           </div>
 
           {/* Grant contents */}
@@ -318,7 +332,7 @@ const AssignedDetails = (props: Props) => {
         </div>
       </div>
       <div
-        className="flex items-center mt-16 ml-4 cursor-pointer"
+        className="flex items-center mt-8 my-8  ml-4 cursor-pointer"
         onClick={() => {
           dispatch(
             setActiveRoute({

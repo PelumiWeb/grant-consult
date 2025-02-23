@@ -8,6 +8,7 @@ type Props = {
   moreDetails?: boolean;
   border?: boolean;
   showMore?: boolean;
+  assignedGrant?: boolean;
 };
 // border-bottom: 0.5px solid #6E6E6E80
 const GrantCard = (props: Props) => {
@@ -26,44 +27,103 @@ const GrantCard = (props: Props) => {
       </h4>
       <div className="flex items-center  justify-start md:justify-between py-0 my-4 px-2  md:px-4 w-full h-full cursor-pointer  ">
         <div className="w-[150px] md:w-[252px] md:h-[200px] lg:w-[320px] lg:h-[260px] flex items-center justify-center rounded-[15px] mr-4">
-          <img src="/GrantsImage.svg" className="w-full object-contain h-full " />
+          <img
+            src="/GrantsImage.svg"
+            className="w-full object-contain h-full "
+          />
         </div>
         <div className="w-[60%] md:w-[70%] space-y-1">
           <h4 className="hidden md:block text-primary  text-[20px] leading-[26px] font-semibold">
             Aspire Coronation Trust (ACT) Foundation Grant 2024
           </h4>
-          <div className="flex items-center lg:mx-2">
-            <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] md:leading-[20px] font-semibold">
-              Date Posted
-            </p>
-            <p className="text-textColor ml-2 lg:ml-4 font-normal text-[10px] md:text-[14px]  leading-[23px]">
-              October 24, 2024
-            </p>
-          </div>
-          <div className="flex items-center lg:mx-2">
-            <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
-              Deadline
-            </p>
-            <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
-              December 1st, 2024
-            </p>
-          </div>
-          <div className="flex items-center lg:mx-2 ">
-            <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
-              Location
-            </p>
-            <p className="text-textColor ml-2 lg:ml-4  md:text-[14px] font-normal text-[10px] leading-[23px]">
-              AMERICA
-            </p>
-          </div>
-          <div className="flex items-center lg:mx-2">
-            <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
-              Category
-            </p>
-            <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
-              Agriculture
-            </p>
-          </div>
+
+          {/* {props.assignedGrant && (
+            <div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] md:leading-[20px] font-semibold">
+                  Assigned Grant
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 font-normal text-[10px] md:text-[14px]  leading-[23px]">
+                  October 24, 2024
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Deadline
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  December 1st, 2024
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2 ">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Client's Name
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4  md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  Global Outreach
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Category
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  Health
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Grant Size
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  $100,000 to $500,000
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Donor Agency:
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                 United States African Development Foundation
+                </p>
+              </div>
+            </div>
+          )}
+            <div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] md:leading-[20px] font-semibold">
+                  Date Posted
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 font-normal text-[10px] md:text-[14px]  leading-[23px]">
+                  October 24, 2024
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Deadline
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  December 1st, 2024
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2 ">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Location
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4  md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  AMERICA
+                </p>
+              </div>
+              <div className="flex items-center lg:mx-2">
+                <p className="text-[#1E1E1E] text-[10px] sm:text-[12px] md:text-[14px] leading-[15px] font-semibold">
+                  Category
+                </p>
+                <p className="text-textColor ml-2 lg:ml-4 md:text-[14px] font-normal text-[10px] leading-[23px]">
+                  Agriculture
+                </p>
+              </div>
+            </div> */}
+
           {/* <div className="flex items-center mx-2">
             <p className="text-[#1E1E1E]">Grant Size</p>
             <p className="text-textColor ml-4">$100,000 to $500,000</p>
@@ -71,13 +131,13 @@ const GrantCard = (props: Props) => {
           <div className="flex items-center lg:mx-2">
             <p
               className={`text-[#1E1E1E] text-[10px] leading-[15px] md:text-[14px] font-semibold ${
-                user ? "blur-none" : "blur-sm"
+                !user ? "blur-none" : "blur-sm"
               }`}>
               Grant Size
             </p>
             <p
               className={`text-textColor ml-2 lg:ml-4 font-normal text-[8px] md:text-[14px] leading-[23px] ${
-                user ? "blur-none" : "blur-sm"
+                !user ? "blur-none" : "blur-sm"
               }`}>
               $100,000 to $500,000
             </p>

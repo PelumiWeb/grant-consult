@@ -209,7 +209,7 @@ const Wallet = (props: Props) => {
       className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
-      <div className="w-full h-full bg-white mt-4 pt-2">
+      <div className="w-full h-full bg-white md:bg-backgroundColor mt-4 pt-2 ">
         <div>
           {/* <div className="flex items-center w-[280px] mt-8">
           <p className="text-textColor"> Dashboard </p>
@@ -217,10 +217,10 @@ const Wallet = (props: Props) => {
           <p className="text-textColor">Wallet </p>
         </div> */}
           <div className="flex flex-col mb-6">
-            <h2 className="text-secondaryColor text-left my-2 md:my-4 font-semibold text-[16px] leading-[19px] ">
+            <h2 className="text-secondaryColor text-left my-2 md:my-4 font-semibold text-[16px] md:text-[36px]  leading-[19px] md:leading-[42px] ">
               Your Wallet
             </h2>
-            <p className="text-left font-medium text-[12px] leading-[17px]">
+            <p className="text-left font-medium text-[12px] md:text-[16px] leading-[17px] md:leading-[20px] text-textColor">
               Manage your earnings and payouts
             </p>
           </div>
@@ -282,7 +282,7 @@ const Wallet = (props: Props) => {
             </div>
           </div>
           <div className="flex justify-between items-center pt-4 pb-2 flex-col md:flex-row space-y-2">
-            <h4 className="font-semibold text-[20px] leading-[26px]">
+            <h4 className="font-semibold text-[16px] leading-[19px] md:text-[20px] md:leading-[26px] text-left  my-4 md:my-0 w-full md:w-[50%]">
               Earnings History
             </h4>
             <CustomButton

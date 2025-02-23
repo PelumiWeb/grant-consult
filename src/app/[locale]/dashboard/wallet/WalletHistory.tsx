@@ -165,8 +165,10 @@ const WalletHistory = (props: Props) => {
       Date: { value: "2024-10-29" },
       "Service Rendered": { value: "Grant Writing Consultation" },
       client: { value: "FutureCorp Ltd." },
+      Type: { value: "Payment" },
+
       "Amount Earned ($)	": { value: "500" },
-      Type: {
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -175,7 +177,10 @@ const WalletHistory = (props: Props) => {
       "Service Rendered": { value: "Grant Research Assistance" },
       client: { value: "EduCare Initiative" },
       "Amount Earned ($)	": { value: "700" },
-      Type: {
+
+      Type: { value: "Withrawal" },
+
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -184,7 +189,9 @@ const WalletHistory = (props: Props) => {
       "Service Rendered": { value: "Strategy Session" },
       client: { value: "UnityBridge Org." },
       "Amount Earned ($)	": { value: "250" },
-      Type: {
+      Type: { value: "Payment" },
+
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -193,7 +200,9 @@ const WalletHistory = (props: Props) => {
       "Service Rendered": { value: "Application Submission" },
       client: { value: "SolarAid Society" },
       "Amount Earned ($)	": { value: "600" },
-      Type: {
+      Type: { value: "Payment" },
+
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -202,7 +211,9 @@ const WalletHistory = (props: Props) => {
       "Service Rendered": { value: "Follow-up Session" },
       client: { value: "HealthPlus NGO" },
       "Amount Earned ($)	": { value: "150" },
-      Type: {
+      Type: { value: "Payment" },
+
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -211,7 +222,9 @@ const WalletHistory = (props: Props) => {
       "Service Rendered": { value: "Proposal Editing" },
       client: { value: "Artisan Org" },
       "Amount Earned ($)	": { value: "300" },
-      Type: {
+      Type: { value: "Payment" },
+
+      Source: {
         value: `10% commission from "Educational Grant Project" paid by Client ABC.`,
       },
     },
@@ -231,7 +244,7 @@ const WalletHistory = (props: Props) => {
           <p className="text-textColor">Transaction History </p>
         </div> */}
         <div className="flex flex-col mb-6 mt-8">
-          <h2 className="text-secondaryColor text-center">
+          <h2 className="text-secondaryColor text-center text-[20px] leading-[26px]">
             Transaction History
           </h2>
         </div>

@@ -84,7 +84,7 @@ const TwoStepVerfication = (props: Props) => {
             }}
             title="Continue"
             textStyle="uppercase font-semibold text-white"
-            width="w-[150px]"
+            width="w-full md:w-[150px]"
             height="h-[60px]"
             backgrounColor="bg-primary"
           />

@@ -16,15 +16,15 @@ const UploadProfile = (props: Props) => {
         <div className="flex  md:items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
           <div className="w-full md:w-[221px] h-[40px] border-[1px] border-borderColor rounded-[5px] mr-5"></div>
           <div className="w-full">
-            <Upload {...props} className="w-full">
-              <CustomButton
-                width="w-[300px] md:w-[150px]"
-                height="h-[40px]"
-                backgrounColor="bg-primary"
-                title="UPLOAD FILE"
-                textStyle="text-white font-semibold "
-              />
-            </Upload>
+            {/* <Upload {...props} className="w-full"> */}
+            <CustomButton
+              width="w-full md:w-[150px]"
+              height="h-[40px]"
+              backgrounColor="bg-primary"
+              title="UPLOAD FILE"
+              textStyle="text-white font-semibold "
+            />
+            {/* </Upload> */}
           </div>
         </div>
       </div>

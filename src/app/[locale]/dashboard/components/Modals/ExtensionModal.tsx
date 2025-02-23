@@ -40,7 +40,7 @@ const ExtensiionModal = (props: Props) => {
 
         <div>
           <LabelInput
-            width="w-[500px]"
+            width="w-full md:w-[500px]"
             height="h-[170px]"
             textArea
             value=""
@@ -63,7 +63,7 @@ Character Limit:300-500 characters"
             </p>
             <DatePicker
               placeholder="DD-MM-YYYY"
-              className="text-black placeholder:text-black w-[290px] h-[55px]"
+              className="text-black placeholder:text-black w-full md:w-[290px] h-[55px]"
               suffixIcon={
                 <CalendarOutlined
                   className="text-[#1F4E79]"

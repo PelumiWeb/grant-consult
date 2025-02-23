@@ -24,26 +24,26 @@ const EditResume = (props: Props) => {
       setOpen={() => openMmodal()}
       width="1000px"
       height="">
-      <div className="w-full h-[524px]">
+      <div className="w-full h-full md:h-[524px]">
         <h3>Change Resume Upload</h3>
         <p className="py-8">Upload a new professional resume here.</p>
 
-        <div className="flex items-center mt-8">
-          <div className="w-[221px] h-[40px] border-[1px] border-borderColor rounded-[5px] mr-5"></div>
-          <Upload {...props}>
-            <CustomButton
-              width="w-[150px]"
-              height="h-[40px]"
-              backgrounColor="bg-primary"
-              title="UPLOAD FILE"
-              textStyle="text-white font-semibold "
-            />
-          </Upload>
+        <div className="flex items-center mt-8 flex-col md:flex-row space-y-4 md:space-y-0">
+          <div className="w-full md:w-[221px] h-[40px] border-[1px] border-borderColor rounded-[5px] md:mr-5"></div>
+          {/* <Upload {...props}> */}
+          <CustomButton
+            width="w-full md:w-[150px]"
+            height="h-[40px]"
+            backgrounColor="bg-primary"
+            title="UPLOAD FILE"
+            textStyle="text-white font-semibold "
+          />
+          {/* </Upload> */}
         </div>
 
         <div className="mt-8">
           <CustomButton
-            width="w-[123px]"
+            width="w-full md:w-[123px]"
             height="h-[60px]"
             title="Save"
             radius="rounded-[5px]"
