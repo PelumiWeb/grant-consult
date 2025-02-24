@@ -16,7 +16,7 @@ const EditOrganization = (props: Props) => {
       modalType={modalName.editAboutModal}
       notEditable={props.notEditable}>
       <div className="w-full mt-4">
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center flex-col md:flex-row">
           <LabelInput
             placeholder="U.S. Agency for International Development (USAID)"
             label="Organization Name"
@@ -35,7 +35,7 @@ const EditOrganization = (props: Props) => {
           />
         </div>
 
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center flex-col md:flex-row">
           <LabelInput
             placeholder="usaidglobal@gmail.com"
             label="Email Address"
@@ -120,9 +120,10 @@ const EditOrganization = (props: Props) => {
 
         <CustomButton
           title="Save"
-          width="w-[123px]"
+          width="w-full md:w-[123px]"
           height="h-[60px]"
-          backgrounColor="bg-primary"
+          backgrounColor="bg-primary "
+          textStyle="text-white font-semibold"
         />
       </div>
     </ContentComponent>

@@ -31,9 +31,10 @@ const CustomTable = ({dataSource, columns, bordered=true}: Props) => {
     <Table
       bordered={bordered}
       scroll={{ x: true }}
-      className="mt-4 hidden md:block"
+      className="mt-4 hidden md:block shadow-table-shadow"
       dataSource={dataSource}
       columns={columns}
+      
       // headerBg="red"
       
     />

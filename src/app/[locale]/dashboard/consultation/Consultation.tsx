@@ -457,7 +457,7 @@ const Consultation = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>

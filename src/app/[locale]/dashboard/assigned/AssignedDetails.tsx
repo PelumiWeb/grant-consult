@@ -42,7 +42,7 @@ const AssignedDetails = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full  overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full  overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div className="bg-white w-full p-4  md:p-8">

@@ -132,11 +132,11 @@ const SidebarModal = (props: Props) => {
       image: "/profileDashboard.svg",
       url: `/${locale}/dashboard/profile`,
     },
-    {
-      imageTitle: tabsName.favourite,
-      image: "/profileDashboard.svg",
-      url: `/${locale}/dashboard/favourites`,
-    },
+    // {
+    //   imageTitle: tabsName.favourite,
+    //   image: "/profileDashboard.svg",
+    //   url: `/${locale}/dashboard/favourites`,
+    // },
     {
       imageTitle: tabsName.myGrants,
       image: "/dashboard2.svg",
@@ -163,7 +163,7 @@ const SidebarModal = (props: Props) => {
   const renderTabs = React.useMemo(() => {
     if (user?.userType == userTypeName.general) {
       return generalTabs;
-    } else if (userTypeName.consultant == userTypeName.consultant) {
+    } else if (user?.userType == userTypeName.consultant) {
       return tabs;
     } else {
       return grantTabs;

@@ -63,7 +63,7 @@ const GrantPerformance = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
 
@@ -82,9 +82,9 @@ const GrantPerformance = (props: Props) => {
           </h4>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-center flex-col md:flex-row">
+      <div className="flex flex-wrap justify-between items-center flex-row">
         {cardData.map((data) => (
-          <div className="w-full md:w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between m-2">
+          <div className="w-[150px] md:w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between m-2  ">
             <p
               className={`font-semibold text-[16px] leading-[19px] ${data.color}`}>
               {data.header}
@@ -97,14 +97,14 @@ const GrantPerformance = (props: Props) => {
         ))}
       </div>
 
-      <div className="flex justify-center lg:justify-between items-center lg:items-start w-full mt-8  flex-col lg:flex-row">
-        <div>
+      <div className="flex justify-center lg:justify-between items-center lg:items-start w-full md:mt-8  flex-col md:flex-row  ">
+        <div className="w-full">
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Engagement By Audience Type
           </h4>
-          <div className="w-full lg:w-[470px] h-full lg:h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4">
+          <div className="w-full lg:w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4 relative">
             <GrantPieChart />
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between absolute bottom-[2%] left-[17%] space-x-4">
               <div className="flex items-center">
                 <div className="w-[12.46px] h-[12.46px] border-[1.36px] rounded-full border-[#EECA34] mr-2" />
                 <p className="font-mono font-semibold text-[13.85px] leading-[18.14px]">
@@ -127,16 +127,16 @@ const GrantPerformance = (props: Props) => {
           </div>
         </div>
 
-        <div>
+        <div className="w-full">
           <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-4">
             Views By Location
           </h4>
-          <div className=" w-full  lg:w-[470px] h-full lg:h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-center p-4">
+          <div className=" w-full  lg:w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-center p-4">
             <GrantBarChart />
           </div>
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <h4 className="font-semibold text-[20px] leading-[26px] text-left text-primary my-8">
           Engagement Overtime
         </h4>
@@ -209,7 +209,7 @@ const GrantPerformance = (props: Props) => {
               </p>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-32">
               <p className="font-mono font-semibold text-[14px] leading-[30px] text-newPrimaryTextColor ">
                 Engagement Over Time:
               </p>
@@ -249,7 +249,7 @@ const GrantPerformance = (props: Props) => {
               textStyle="font-inter font-semibold text-[16px] leading-[16px] text-center text-secondaryColor"
               borderColor="border-secondaryColor"
               height="h-[40px]"
-              width="w-[220px]"
+              width="w-full md:w-[220px]"
               backgrounColor="bg-white"
               radius="rounded-[5px]"
             />
@@ -258,7 +258,7 @@ const GrantPerformance = (props: Props) => {
       </div>
 
       <div
-        className="flex items-center cursor-pointer ml-4 mt-8"
+        className="flex items-center cursor-pointer ml-4 my-8"
         onClick={() => {
           dispatch(
             setActiveRoute({

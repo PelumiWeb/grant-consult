@@ -45,13 +45,13 @@ const ProfileGrant = (props: Props) => {
   return (
     <div
       className={`bg-backgroundColor
- w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar`}
+ w-full p-2 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar`}
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div className="usaidglobal@gmail.com">
         <ProfileGeneralHeader
           email="usaidglobal@gmail.com"
-          phone="+1 234 567 89 0"
+          phone="--- --- --- ---"
           image="/grantImage.svg"
           contactInformation="U.S. Agency for International Development (USAID) ·"
         />

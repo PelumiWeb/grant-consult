@@ -50,7 +50,7 @@ export default function DashboardLayout({
             <Sidebar />
             <Suspense
               fallback={
-                <div className="w-full h-screen bg-white flex justify-center items-center">
+                <div className="w-full h-full md:h-screen bg-white flex justify-center items-center">
                   <ScaleLoader color="rgb(54, 215, 183)" />
                 </div>
               }>

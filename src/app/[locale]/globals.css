@@ -140,10 +140,20 @@ body {
 }
 
 .ant-table-thead > tr > th {
-  background-color: #1f4e79 !important; /* Set your background color */
+  background-color: #1f4e79 !important; 
   color: white !important; /* Set text color */
   font-weight: bold; /* Make text bold */
   text-align: center; /* Align text center */
+}
+
+.custom-header .ant-table-thead > tr > th {
+  background-color: white !important; 
+  color: #000000 !important; /* Set text color */
+  font-weight: semibold; /* Make text bold */
+  text-align: left; /* Align text center */
+  font-size: 16px;
+  line-height: 19px;
+  padding: 20px 10px;
 }
 
 @layer utilities {

@@ -130,11 +130,11 @@ const Sidebar = (props: Props) => {
       image: "/profileDashboard.svg",
       url: `/${locale}/dashboard/profile`,
     },
-    {
-      imageTitle: tabsName.favourite,
-      image: "/profileDashboard.svg",
-      url: `/${locale}/dashboard/favourites`,
-    },
+    // {
+    //   imageTitle: tabsName.favourite,
+    //   image: "/profileDashboard.svg",
+    //   url: `/${locale}/dashboard/favourites`,
+    // },
     {
       imageTitle: tabsName.myGrants,
       image: "/dashboard2.svg",
@@ -161,7 +161,7 @@ const Sidebar = (props: Props) => {
   const renderTabs = React.useMemo(() => {
     if (user?.userType == userTypeName.general) {
       return generalTabs;
-    } else if (userTypeName.consultant == userTypeName.consultant) {
+    } else if (user?.userType == userTypeName.consultant) {
       return tabs;
     } else {
       return grantTabs;
@@ -187,7 +187,7 @@ const Sidebar = (props: Props) => {
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
   return (
-    <div className="hidden lg:block bg-primary h-screen w-[20%] px-8 ">
+    <div className="hidden lg:block bg-primary h-full md:h-screen w-[20%] px-8 ">
       <div className="pb-2 mt-6" onClick={() => handleNavigation(`/`)}>
         <TabsComponent
           imageTitle="Home"

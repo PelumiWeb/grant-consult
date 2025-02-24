@@ -64,7 +64,7 @@ const FavouritesConsultant = (props: Props) => {
     }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-screen scroll-smooth mt-8"
+      className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth mt-8"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div>

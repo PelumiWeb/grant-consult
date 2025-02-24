@@ -20,7 +20,6 @@ type Props = {
   //   setActiveScreen: Dispatch<SetStateAction<undefined>>;
 };
 
-
 const dataSource = [
   {
     key: "1",
@@ -115,94 +114,25 @@ const dataSource = [
     performaceTracking: "View Performance",
   },
 ];
-const draftDataSource = [
+
+const dataSourceSaveGrant = [
   {
     key: "1",
-    Title: "Women in Tech Initiative",
-    lastEdit: "April 2, 2024, 5 PM",
-    Actions: "Edit Draft",
+    Title: "Community Development",
+    datePosted: "Oct 15, 2024",
+    status: "Active",
+    action: "Edit Draft",
+
+    Action: "Delete",
   },
 
   {
     key: "2",
     Title: "Education for All",
     datePosted: "Oct 22, 2024",
+    action: "Edit Draft",
     status: "Active",
-    views: "84",
-    action: "Edit",
     Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-
-  {
-    key: "3",
-    Title: "Clean Water Initiative",
-    datePosted: "Oct 18, 2024",
-    status: "Active",
-    views: "179",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "4",
-    Title: "Empowerment Program  ",
-    datePosted: "Oct 31, 2024",
-    status: "Active",
-    views: "245",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "5",
-    Title: "Renewable Energy Initiative",
-    datePosted: "Oct 19, 2024",
-    status: "Active",
-    views: "567",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "6",
-    Title: "Small Business Startup Grants",
-    datePosted: "Oct 25, 2024",
-    status: "Active",
-    views: "345",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "7",
-    Title: "Agricultural Funding Program",
-    datePosted: "Oct 23, 2024",
-    status: "Expired",
-    views: "234",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "8",
-    Title: "Urban Development Initiative",
-    datePosted: "Oct 18, 2024",
-    status: "Expired",
-    views: "500",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
-  },
-  {
-    key: "9",
-    Title: "International Scholarship Fund",
-    datePosted: "Oct 17, 2024",
-    status: "Expired",
-    views: "900",
-    action: "Edit",
-    Action: "Delete",
-    performaceTracking: "View Performance",
   },
 ];
 
@@ -316,6 +246,64 @@ const MyGrants = (props: Props) => {
           className="underline text-secondaryColor cursor-pointer text-[14px] leading-[21.98px] font-semibold">
           View Performance
         </p>
+      ),
+    },
+  ];
+  const savedGrantColumns = [
+    {
+      title: "Title",
+      dataIndex: "Title",
+      render: (item: string) => (
+        <p className=" font-semibold text-[14px] leading-[22px] text-grantBlack">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Last Edited",
+      dataIndex: "datePosted",
+      render: (item: string) => (
+        <p className="font-semibold text-[14px] leading-[22px] text-grantBlack">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "Actions",
+      dataIndex: "action",
+      render: (item: string) => (
+        <p
+          onClick={() => {
+            dispatch(
+              setActiveRoute({
+                ...dashboardRoutes,
+                consultation: dashboardRouteName.generalConsultationDetails,
+              })
+            );
+          }}
+          className="underline text-buttonPrimary cursor-pointer text-[14px] leading-[21.98px] font-semibold">
+          {item}
+        </p>
+      ),
+    },
+    {
+      title: "",
+      dataIndex: "Action",
+      render: (item: string) => (
+        <button>
+          <p
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}
+            className="underline text-errorColor cursor-pointer text-[14px] leading-[21.98px] font-semibold">
+            Delete
+          </p>
+        </button>
       ),
     },
   ];
@@ -766,6 +754,71 @@ const MyGrants = (props: Props) => {
     },
   ];
 
+  const dataSourceSavedGrantMobile = [
+    {
+      Title: { value: "Community Development" },
+      "Last Edited": { value: "Oct 15, 2024" },
+      Actions: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary  text-right underline">
+              Edit Draft
+            </p>
+          </button>
+        ),
+      },
+      "": {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+    },
+
+    {
+      Title: { value: "Community Development" },
+      "Last Edited": { value: "Oct 15, 2024" },
+      Actions: {
+        CustomContent: () => (
+          <button>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary  text-right underline">
+              Edit Draft
+            </p>
+          </button>
+        ),
+      },
+
+      "": {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+              Delete
+            </p>
+          </button>
+        ),
+      },
+    },
+  ];
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -786,7 +839,7 @@ const MyGrants = (props: Props) => {
   }, []);
   return (
     <div
-      className="bg-backgroundColor  w-full p-6 md:p-8 overflow-scroll h-screen scroll-smooth overflow-y-auto no-scrollbar"
+      className="bg-backgroundColor  w-full p-6 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar"
       ref={scrollContainerRef}>
       <DashboardHeader />
 
@@ -976,11 +1029,18 @@ const MyGrants = (props: Props) => {
           Saved Grant
         </h3>
 
-        <CustomTable
-          columns={columns}
-          dataSource={dataSource}
-          bordered={false}
-        />
+        <div className="custom-header ">
+          <CustomTable
+            columns={savedGrantColumns}
+            dataSource={dataSourceSaveGrant}
+            bordered={false}
+          />
+        </div>
+        <div className="space-y-4 mt-4">
+          {dataSourceSavedGrantMobile.map((data) => (
+            <MobileCustomTable data={data} />
+          ))}
+        </div>
       </div>
 
       <RenderModals />

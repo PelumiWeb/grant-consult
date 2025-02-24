@@ -52,7 +52,7 @@ const Signup = (props: Props) => {
   // }, []);
 
   return (
-    <div className="relative h-screen lg:h-screen px-4">
+    <div className="relative h-full md::h-screen px-4">
       <h2 className="w-full py-6  pl-4 text-base lg:text-3xl">Sign up</h2>
       {/*  */}
       <div>

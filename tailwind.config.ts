@@ -83,10 +83,8 @@ const config: Config = {
         "complete-shadow-1": "0px 2px 10px 0px #329DFD4D",
         "complete-shadow-2": "0px 1px 4px 0px #00000040",
         "complete-shadow-3": "0px 2px 10px 0px #329DFD4D",
-        "duration-shadow": "0px 1px 2px 0px #0000000D"
-
-        
-
+        "duration-shadow": "0px 1px 2px 0px #0000000D",
+        "table-shadow":  "0px 4px 25px 0px #329DFD4D"
       },
       colors: {
         background: "var(--background)",

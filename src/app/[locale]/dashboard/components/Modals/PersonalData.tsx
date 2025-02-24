@@ -103,7 +103,7 @@ const PersonalData = (props: Props) => {
           </div>
           <div className="mt-8">
             <CustomButton
-              width="w-[123px]"
+              width="w-full md:w-[123px]"
               height="h-[60px]"
               title="Save"
               radius="rounded-[5px]"

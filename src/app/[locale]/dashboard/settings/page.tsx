@@ -96,7 +96,7 @@ const Settings = (props: Props) => {
 
   return (
     <div
-      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-screen scroll-smooth"
+      className="bg-backgroundColor  w-full p-4 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth"
       ref={scrollContainerRef}>
       <DashboardHeader />
       <div className="w-full bg-white px-4 py-4 mt-8">

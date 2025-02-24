@@ -18,7 +18,7 @@ const ProfileHome = (props: Props) => {
   const [activeScreen, setActiveScreen] = React.useState(
     assignedScreens[1].name
   );
- 
+
   const { user } = useAppSelector((state) => state.user);
 
   const assignedGrant = useAppSelector(
@@ -42,7 +42,7 @@ const ProfileHome = (props: Props) => {
         return null;
     }
   };
-  return renderScreens(userTypeName.consultant);
+  return renderScreens(userTypeName.grantor);
 };
 
 export default ProfileHome;
