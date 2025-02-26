@@ -316,8 +316,16 @@ const MyGrants = (props: Props) => {
       views: { value: "152" },
       action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
               Edit
             </p>
           </button>
@@ -325,8 +333,16 @@ const MyGrants = (props: Props) => {
       },
       Action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
               Delete
             </p>
           </button>
@@ -334,8 +350,16 @@ const MyGrants = (props: Props) => {
       },
       performaceTracking: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
               View Perfomance
             </p>
           </button>
@@ -350,8 +374,16 @@ const MyGrants = (props: Props) => {
       views: { value: "84" },
       action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
               Edit
             </p>
           </button>
@@ -359,8 +391,16 @@ const MyGrants = (props: Props) => {
       },
       Action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
               Delete
             </p>
           </button>
@@ -368,8 +408,16 @@ const MyGrants = (props: Props) => {
       },
       performaceTracking: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
               View Perfomance
             </p>
           </button>
@@ -384,8 +432,16 @@ const MyGrants = (props: Props) => {
       views: { value: "179" },
       action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  consultation: dashboardRouteName.generalConsultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
               Edit
             </p>
           </button>
@@ -393,8 +449,16 @@ const MyGrants = (props: Props) => {
       },
       Action: {
         CustomContent: () => (
-          <button>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor  text-right underline">
+          <button
+            onClick={() => {
+              dispatch(
+                openModal({
+                  open: true,
+                  modalType: modalName.deleteModal,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-errorColor w-[180px] text-right underline">
               Delete
             </p>
           </button>
@@ -402,7 +466,15 @@ const MyGrants = (props: Props) => {
       },
       performaceTracking: {
         CustomContent: () => (
-          <button>
+          <button
+            onClick={() =>
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoutes,
+                  mygrant: dashboardRouteName.grantPerformanceMetric,
+                })
+              )
+            }>
             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
               View Perfomance
             </p>
@@ -460,7 +532,7 @@ const MyGrants = (props: Props) => {
                 })
               )
             }>
-            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor text-right underline ">
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-secondaryColor  text-right underline ">
               View Perfomance
             </p>
           </button>
@@ -869,7 +941,7 @@ const MyGrants = (props: Props) => {
               height="h-[50px] md:h-[35px]"
               title="List a New Grant"
               radius="rounded-[5px]"
-              textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
+              textStyle="text-backgroundColor leading-[25px] text-[16px] font-semibold"
             />
           </div>
 
@@ -899,7 +971,7 @@ const MyGrants = (props: Props) => {
               radius="rounded-[5px]"
               backgrounColor="bg-transparent"
               borderColor="border-secondaryColor"
-              textStyle="text-secondaryColor font-semibold text-[12px] leading-[17px] "
+              textStyle="text-secondaryColor font-semibold text-[16px] leading-[25px] "
               borderWidth="border-[2px]"
             />
           </div>

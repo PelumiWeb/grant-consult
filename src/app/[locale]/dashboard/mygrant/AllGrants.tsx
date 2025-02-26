@@ -62,7 +62,7 @@ const AllGrants = (props: Props) => {
               title="List A New Grant"
               radius="rounded-[5px]"
               backgrounColor="bg-buttonPrimary"
-              textStyle="text-backgroundColor leading-[17px] text-[12px] font-semibold"
+              textStyle="text-backgroundColor leading-[25px] text-[16px] font-semibold"
             />
           </div>
 
@@ -73,7 +73,7 @@ const AllGrants = (props: Props) => {
             radius="rounded-[5px]"
             backgrounColor="bg-transparent"
             borderColor="border-buttonPrimary"
-            textStyle="text-[#6E6E6EB2] font-semibold text-[12px] leading-[17px] "
+            textStyle="text-[#6E6E6EB2] font-semibold text-[16px] leading-[25px] "
             borderWidth="border-[2px]"
           />
         </div>

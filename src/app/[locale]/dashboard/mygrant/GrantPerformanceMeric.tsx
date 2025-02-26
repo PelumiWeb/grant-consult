@@ -84,7 +84,7 @@ const GrantPerformance = (props: Props) => {
       </div>
       <div className="flex flex-wrap justify-between items-center flex-row">
         {cardData.map((data) => (
-          <div className="w-[150px] md:w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between m-2  ">
+          <div className="w-[158px] h-[150px] rounded-[5px] bg-white shadow-graphchart p-4 flex flex-col items-center justify-between m-2  ">
             <p
               className={`font-semibold text-[16px] leading-[19px] ${data.color}`}>
               {data.header}
@@ -104,7 +104,7 @@ const GrantPerformance = (props: Props) => {
           </h4>
           <div className="w-full lg:w-[470px] h-[370px] rounded-[5px] bg-white shadow-chart-grant flex flex-col justify-between p-4 relative">
             <GrantPieChart />
-            <div className="flex items-center justify-between absolute bottom-[2%] left-[17%] space-x-4">
+            <div className="flex items-center justify-between absolute bottom-[2%] left-[5%] md:left-[17%] space-x-4">
               <div className="flex items-center">
                 <div className="w-[12.46px] h-[12.46px] border-[1.36px] rounded-full border-[#EECA34] mr-2" />
                 <p className="font-mono font-semibold text-[13.85px] leading-[18.14px]">

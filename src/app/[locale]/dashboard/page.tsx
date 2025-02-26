@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-full md:h-screen  w-full flex justify-center items-center">
+    <div className="h-screen  w-full flex justify-center items-center">
       <ScaleLoader color="rgb(54, 215, 183)" />
     </div>
   );
