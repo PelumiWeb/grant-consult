@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 import { ResendVerification } from "../../utils/types/SignupData";
 import { setUser } from "../../../../../lib/features/User/userSlice";
 import GoBack from "../../components/GoBack";
+import { userTypeName } from "../../utils/types/userTypes";
 
 type Props = {};
 type ActivateAccount = {
@@ -49,7 +50,6 @@ const Otp = (props: Props) => {
     endpoints.resendVerificationEmail,
     {
       onSuccess: (data) => {
-        console.log(data, "it's success");
         dispatch(
           setUser({
             user: {
@@ -76,7 +76,11 @@ const Otp = (props: Props) => {
         console.log(data, "it's success");
         if (data.status) {
           loginSuccessfully();
-          handleNavigation(`/dashboard/profile`);
+          if (user?.role === userTypeName.general) {
+            handleNavigation(`/dashboard/general`);
+          } else {
+            handleNavigation(`/dashboard/profile`);
+          }
         }
       },
       onError: (data: any) => {
@@ -119,7 +123,7 @@ const Otp = (props: Props) => {
             onClick={() => {
               mutate({
                 otp,
-                email: user?.email || "",
+                email: user?.email?.toLocaleLowerCase() || "",
               });
             }}
           />

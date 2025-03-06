@@ -19,6 +19,7 @@ import { toast } from "react-toastify";
 import endpoints from "../../../../../lib/endpoints";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setUser } from "../../../../../lib/features/User/userSlice";
+import { userTypeName } from "../../utils/types/userTypes";
 
 type Props = {};
 
@@ -85,7 +86,16 @@ const Login = (props: Props) => {
                 },
               })
             );
-            handleNavigation(`/dashboard/profile`);
+            console.log(
+              data.data.user?.role,
+              data.data.user?.role === userTypeName.general,
+              "user's role -----"
+            );
+            if (data.data.user?.role === userTypeName.general) {
+              handleNavigation(`/dashboard/general`);
+            } else {
+              handleNavigation(`/dashboard/profile`);
+            }
           } else {
             console.log(data?.data?.user?.email);
             resendVerificationEmail({
