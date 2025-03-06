@@ -15,6 +15,7 @@ type Props = {};
 
 const GeneralDashboard = (props: Props) => {
   const dispatch = useAppDispatch();
+  const user = useAppSelector((data) => data.user.user);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -36,8 +37,7 @@ const GeneralDashboard = (props: Props) => {
 
   const dashboardRoute = useAppSelector((state) => state.dashboard);
 
-  const handleNavigation = useHandleNavigation()
-  
+  const handleNavigation = useHandleNavigation();
 
   // console.log(dashboardRoute, "routee")
 
@@ -62,7 +62,7 @@ const GeneralDashboard = (props: Props) => {
               Welcome!
             </p>
             <p className="text-[16.5px] leading-[21px] font-semibold text-textColor ">
-              Brooklyn Smith
+              {user?.fullName}
             </p>
           </div>
         </div>
