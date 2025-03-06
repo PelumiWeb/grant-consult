@@ -10,10 +10,14 @@ import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useApiMutation } from "../../utils/useApi";
-import { LoginData, User } from "../../utils/types/SignupData";
+import {
+  LoginData,
+  ResendVerification,
+  User,
+} from "../../utils/types/SignupData";
 import { toast } from "react-toastify";
 import endpoints from "../../../../../lib/endpoints";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setUser } from "../../../../../lib/features/User/userSlice";
 
 type Props = {};
@@ -24,6 +28,8 @@ const Login = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
 
+  const user = useAppSelector((data) => data.user.user);
+
   const { handleSubmit, control, reset } = useForm({
     defaultValues: {
       email: "",
@@ -31,30 +37,28 @@ const Login = (props: Props) => {
     },
   });
 
-  const loginSuccessfully = () => toast.success("Login successful");
+  console.log(user, "hwre is the user");
 
-  const { mutate, data, isPending } = useApiMutation<User, LoginData>(
+  const loginSuccessfully = () => toast.success("Login successful");
+  const {
+    mutate: resendVerificationEmail,
+    isPending: resendVerificationEmailLoading,
+  } = useApiMutation<User, ResendVerification>(
     "post",
-    endpoints.loginUser,
+    endpoints.resendVerificationEmail,
     {
       onSuccess: (data) => {
         console.log(data, "it's success");
-        if (data.success) {
-          loginSuccessfully();
-          console.log(data.data, "from login");
-          dispatch(
-            setUser({
-              user: {
-                ...data.data,
-                userActivated: false,
-              },
-            })
-          );
-          handleNavigation(`/dashboard/profile`);
-        } else {
-          const loginFailed = () => toast.error(data.message);
-          loginFailed();
-        }
+        console.log(data.data.otp);
+        dispatch(
+          setUser({
+            user: {
+              ...user,
+              otp: data?.data?.otp && data?.data?.otp,
+            },
+          })
+        );
+        handleNavigation(`/auth/otp`);
       },
       onError: (data) => {
         console.log("User error:", data);
@@ -62,13 +66,54 @@ const Login = (props: Props) => {
     }
   );
 
+  const { mutate, data, isPending } = useApiMutation<User, LoginData>(
+    "post",
+    endpoints.loginUser,
+    {
+      onSuccess: (data) => {
+        console.log(data, "it's success");
+        console.log(data.data.user?.emailVerified);
+        if (data.status) {
+          if (data.data.user?.emailVerified) {
+            loginSuccessfully();
+            console.log(data.data.user, "from login");
+            dispatch(
+              setUser({
+                user: {
+                  ...data.data.user,
+                  userActivated: false,
+                },
+              })
+            );
+            handleNavigation(`/dashboard/profile`);
+          } else {
+            console.log(data?.data?.user?.email);
+            resendVerificationEmail({
+              email: data?.data?.user?.email,
+            });
+            return;
+          }
+        } else {
+          const loginFailed = () => toast.error(data.message);
+          loginFailed();
+        }
+      },
+      onError: (data: any) => {
+        console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
+      },
+    }
+  );
+
   const onSubmit = async (data: LoginData) => {
-    // console.log(data);
-    // mutate({
-    //   email: data.email,
-    //   password: data.password,
-    // });
-    handleNavigation(`/dashboard/general`);
+    console.log(data);
+    mutate({
+      email: data.email,
+      password: data.password,
+      role: "consultant",
+    });
+    // handleNavigation(`/dashboard/general`);
   };
 
   return (
@@ -115,7 +160,7 @@ const Login = (props: Props) => {
           )}
         />
 
-        <div className="flex justify-between  items-center w-full md:w-[85%] ">
+        <div className="flex justify-between  items-center w-full md:w-full">
           <div className="flex items-center">
             <Checkbox />
             <p className="underline text-secondaryColor text-sm ml-2 ">

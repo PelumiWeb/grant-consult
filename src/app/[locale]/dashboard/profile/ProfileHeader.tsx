@@ -5,12 +5,13 @@ import {
   selectModal,
 } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 
 type Props = {};
 
 const ProfileHeader = (props: Props) => {
   const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.user);
   return (
     <div className="relative w-full h-[545px] md:h-[454px] flex flex-col mt-16 ">
       {/* Top */}
@@ -37,7 +38,7 @@ const ProfileHeader = (props: Props) => {
         <div className="flex w-full justify-between items-start md:items-center absolute bottom-12 flex-col md:flex-row px-4 md:px-0">
           <div className="ml-0 md:ml-8 mt-4 md:mt-0">
             <h4 className="font-mono my-2 text-[24px] leading-[36px]">
-              Alice brooklyn
+              {user?.fullName}
             </h4>
             {/* <p className="text-base text-textColor font-semibold my-1">
               Grant Consultant | NGO Advisor
@@ -69,7 +70,7 @@ const ProfileHeader = (props: Props) => {
             <div className="flex items-center my-1">
               <img src="/email.svg" alt="" />
               <p className="ml-2 text-secondaryColor ">
-                alicebrooklyn@gmail.com
+                {user?.email}
               </p>
             </div>
             <div className="flex items-center my-1">

@@ -57,6 +57,7 @@ const config: Config = {
         'service-card-4': "linear-gradient(180deg, rgba(243, 240, 210, 0.1) 0%, #FFFFFF 67.5%)",
         'service-card-5': " linear-gradient(180deg, rgba(252, 231, 243, 0.4) 0%, #FFFFFF 75%)",
         'service-card-6': "linear-gradient(180deg, rgba(255, 237, 213, 0.2) 19%, #FFFFFF 100%)",
+        "service-bg": "linear-gradient(180deg, rgba(255, 255, 255, 0.4) 3.5%, rgba(209, 243, 255, 0.3) 45.17%, rgba(214, 245, 255, 0.3) 90.65%)"
         
       },
     extend: {

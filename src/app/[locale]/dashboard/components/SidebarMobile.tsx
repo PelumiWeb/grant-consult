@@ -4,7 +4,7 @@ import React from "react";
 import TabsComponent from "./TabsComponent";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
-import { usePathname, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import { tabsName } from "@/app/[locale]/utils/types/TabsTypes";
 import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { useLocale } from "next-intl";
@@ -19,6 +19,7 @@ type TabsProps = {
   image: string;
   textColor?: string;
   url?: string | undefined;
+  logout?: boolean;
 }[];
 
 const SidebarModal = (props: Props) => {
@@ -29,6 +30,11 @@ const SidebarModal = (props: Props) => {
 
   const locale = useLocale();
   const dispatch = useAppDispatch();
+  React.useEffect(() => {
+    if (!user) {
+      redirect("/");
+    }
+  }, [user]);
 
   const tabs: TabsProps | undefined = [
     {
@@ -75,6 +81,7 @@ const SidebarModal = (props: Props) => {
       imageTitle: tabsName.logout,
       image: "/logout-gray.svg",
       textColor: "text-textColor",
+      logout: true,
     },
   ];
 
@@ -123,6 +130,7 @@ const SidebarModal = (props: Props) => {
       imageTitle: tabsName.logout,
       image: "/logout-gray.svg",
       textColor: "text-textColor",
+      logout: true,
     },
   ];
 
@@ -156,31 +164,19 @@ const SidebarModal = (props: Props) => {
       imageTitle: tabsName.logout,
       image: "/logout-gray.svg",
       textColor: "text-textColor",
+      logout: true,
     },
   ];
 
   const handleNavigation = useHandleNavigation();
   const renderTabs = React.useMemo(() => {
-    if (user?.userType == userTypeName.general) {
+    if (user?.role == userTypeName.general) {
       return generalTabs;
-    } else if (user?.userType == userTypeName.consultant) {
+    } else if (user?.role == userTypeName.consultant) {
       return tabs;
     } else {
       return grantTabs;
     }
-  }, []);
-
-  React.useCallback(() => {
-    const FetchData = () => {
-      dispatch(
-        setActiveRoute({
-          ...dashboardRoute,
-          initialDashboardRoute: renderTabs[0]?.url,
-        })
-      );
-    };
-
-    FetchData();
   }, []);
 
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
@@ -205,6 +201,7 @@ const SidebarModal = (props: Props) => {
           setActive={() => setActiveUrl(tab?.url)}
           // setActive={() => dispatch(setActiveTab(tab.imageTitle))}
           image={tab.image}
+          Logout={tab.logout}
           url={tab?.url}
           imageTitle={tab.imageTitle}
           active={pathName === tab?.url}

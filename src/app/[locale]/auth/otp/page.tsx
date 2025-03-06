@@ -12,44 +12,76 @@ import useHandleNavigation from "../../utils/HandleNavigation";
 import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
+import { ResendVerification } from "../../utils/types/SignupData";
+import { setUser } from "../../../../../lib/features/User/userSlice";
 
 type Props = {};
 type ActivateAccount = {
   email: string | undefined;
-  otp: string;
+  otp: string | undefined;
 };
 type User = any;
 
 const Otp = (props: Props) => {
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
-  const [otp, setOtp] = React.useState("");
+  const { user } = useAppSelector((state) => state.user);
+
+  const [otp, setOtp] = React.useState(user?.otp);
 
   const onChange: OTPProps["onChange"] = (text) => {
     console.log("onChange:", text);
     setOtp(text);
   };
 
-  const { user } = useAppSelector((state) => state.user);
   console.log(user);
 
   const dispatch = useAppDispatch();
   const router = useRouter();
   const loginSuccessfully = () => toast.success("User authenticated");
 
-  const { mutate, data, isPending } = useApiMutation<User, ActivateAccount>(
+  const {
+    mutate: resendVerificationEmail,
+    isPending: resendVerificationEmailLoading,
+  } = useApiMutation<User, ResendVerification>(
     "post",
-    endpoints.activateAccount,
+    endpoints.resendVerificationEmail,
     {
       onSuccess: (data) => {
         console.log(data, "it's success");
-        if (data.success) {
+        dispatch(
+          setUser({
+            user: {
+              ...user,
+              otp: data?.data?.otp && data?.data?.otp,
+            },
+          })
+        );
+        handleNavigation(`/auth/otp`);
+      },
+      onError: (data: any) => {
+        console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
+      },
+    }
+  );
+
+  const { mutate, data, isPending } = useApiMutation<User, ActivateAccount>(
+    "patch",
+    endpoints.verifyUser,
+    {
+      onSuccess: (data) => {
+        console.log(data, "it's success");
+        if (data.status) {
           loginSuccessfully();
-          handleNavigation(`/auth/login`);
+          handleNavigation(`/dashboard/profile`);
         }
       },
-      onError: (data) => {
+      onError: (data: any) => {
         console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
       },
     }
   );
@@ -63,11 +95,12 @@ const Otp = (props: Props) => {
       <div className="mt-[20%]">
         <h3 className="text-center">Check your email</h3>
         <p className="text-center">
-          please enter the six digit verification code that we sent to {" "}
+          please enter the six digit verification code that we sent to{" "}
           {user?.email}
         </p>
         <div className="w-full flex justify-center items-center my-8">
           <Input.OTP
+            value={otp}
             className="w-[200px]"
             variant="filled"
             size={"large"}
@@ -78,7 +111,7 @@ const Otp = (props: Props) => {
           <CustomButton
             width="w-[204px]"
             title="Verify and submit"
-            loading={isPending}
+            loading={isPending || resendVerificationEmailLoading}
             onClick={() => {
               mutate({
                 otp,
@@ -87,6 +120,15 @@ const Otp = (props: Props) => {
             }}
           />
         </div>
+        <button
+          className="w-full"
+          onClick={() => {
+            resendVerificationEmail({ email: user?.email });
+          }}>
+          <p className="underline text-center text-secondaryColor my-4">
+            Resend Otp
+          </p>
+        </button>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const MyFavourites = (props: Props) => {
     }
   };
   return (
-    <div className="w-full h-full">{renderScreens(userTypeName.consultant)};</div>
+    <div className="w-full h-full">{renderScreens(user?.role)};</div>
   );
 };
 

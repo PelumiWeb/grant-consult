@@ -41,7 +41,7 @@ const Experts = (props: Props) => {
   const ImageContainer = (data: imageProps) => {
     return (
       <div className="grid place-items-center mr-2 my-2" onClick={handleClick}>
-        <div className="w-full md:w-[170px] lg:w-[220px] 2lg:w-[250px] xl:w-[300px]">
+        <div className="relative w-full md:w-[170px] lg:w-[220px] 2lg:w-[250px] xl:w-[300px]">
           <img src={data.image} className="object-contain w-full h-full" />
         </div>
         <div className="w-full flex flex-col justify-center items-center">

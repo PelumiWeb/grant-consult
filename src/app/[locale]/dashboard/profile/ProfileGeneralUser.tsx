@@ -12,7 +12,7 @@ import UploadProfile from "./components/Upload";
 import References from "./components/References";
 import RenderModals from "../../components/RenderModals";
 import { useDispatch } from "react-redux";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import ProfileGeneralHeader from "./ProfileGeneralHeader";
 import About from "./components/About";
@@ -23,6 +23,7 @@ import DashboardHeader from "../components/DashboardHeader";
 type Props = {};
 
 const ProfileGeneral = (props: Props) => {
+    const { user } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
@@ -51,7 +52,7 @@ const ProfileGeneral = (props: Props) => {
       <DashboardHeader />
       <div className="">
         <ProfileGeneralHeader
-          email=" alicebrooklyn@gmail.com"
+          email={user?.email || ""}
           phone="--- --- --- ---"
           image="/generalUser.svg"
           contactInformation="Contact Information"

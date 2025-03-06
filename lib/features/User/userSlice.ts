@@ -3,67 +3,52 @@
 import { Action, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
+// export type User = {
+  
+// createdAt: string;
+// email: string;
+// emailVerified: boolean
+// fullName: string
+// id: string;
+// lastLoggedIn: string;
+// permissions: []
+// role: string
+// status:string
+// updatedAt: string
+// }
+
 export interface UserState {
 user?: {
-accountStatus: null,
-code: string
-country: null
-countryName: null
-dateKycSubmitted: null
-email: string,
-emailConfirmed:boolean
-fullName: string
-homeAddress: null
-id: number
-idCard: null
-idCardName: null
-idNumber: null
-is2FAEnabled: boolean
-isDeleted: boolean
-isDisable: boolean
-kycDeclineReason: null
-kycverification: null
-lastLogin: null
-numberOfReferrals: number,
-phoneNumber: number | null
-phoneNumberConfirmed: boolean
-photo: null
-profilePicUrl: null
-userActivated:false
-userName: string;
-userType: string;
+createdAt?: string | undefined;
+email?: string | undefined | null;
+emailVerified?: boolean | undefined;
+fullName?: string | undefined
+id?: string;
+lastLoggedIn?: string;
+permissions?: []
+role?: string
+status?:string
+updatedAt?: string
+otp?:string
+
     } | null;
 resetPasswordEmail?: string
 }
 
 const initialState: UserState = {
-    user: { userType: "GENERAL_USER",
-        accountStatus: null,
-        code: "string",
-        country: null,
-       countryName: null,
-      dateKycSubmitted: null,
-      email: "string",
-      emailConfirmed:false,
-fullName: "string",
-homeAddress: null,
-id: 0,
-idCard: null,
-idCardName: null,
-idNumber: null,
-is2FAEnabled: true,
-isDeleted: false,
-isDisable: false,
-kycDeclineReason: null,
-kycverification: null,
-lastLogin: null,
-numberOfReferrals: 0,
-phoneNumber: null,
-phoneNumberConfirmed: false,
-photo: null,
-profilePicUrl: null,
-userActivated:false,
-userName: "string",
+    user: { 
+    // userType: "GENERAL_USER",
+     createdAt: "",
+    email: "",
+    emailVerified: false,
+    fullName: "",
+    id: "",
+    lastLoggedIn: "",
+    permissions: [],
+    role: "",
+    status:"",
+    updatedAt: "",
+    otp:""
 },
     resetPasswordEmail: ""
 }
@@ -77,6 +62,9 @@ export const userSlice = createSlice({
     reducers:{
         setUser: (state, action:PayloadAction<UserState>) => {
            state.user = action.payload.user
+
+        },
+          setResetPassword: (state, action:PayloadAction<UserState>) => {
            state.resetPasswordEmail = action.payload.resetPasswordEmail
 
         },
@@ -87,7 +75,7 @@ export const userSlice = createSlice({
 }) 
 
 
-export const {setUser, logout} = userSlice.actions
+export const {setUser, logout, setResetPassword} = userSlice.actions
 
 export const selectUser = (state: RootState) => state.user
 

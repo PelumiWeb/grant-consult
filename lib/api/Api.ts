@@ -51,6 +51,22 @@ class Api {
       transform
     );
   }
+    patch<T, R = T>(
+    path: string,
+    body: Record<string, unknown>,
+    options?: AxiosRequestConfig,
+    transform?: Transformer<T, R>
+  ) {
+    return this.request<T, R>(
+      `${this.url}/${path}`,
+      {
+        method: "PATCH",
+        data: body,
+        ...options,
+      },
+      transform
+    );
+  }
 
   put<T, R = T>(
     path: string,

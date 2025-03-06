@@ -11,6 +11,7 @@ import { useRouter, redirect, usePathname } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import CustomGrantsLogo from "../customIcon/GrantsLogo";
 import { useLocale } from "next-intl";
+import GoBack from "../components/GoBack";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -135,16 +136,7 @@ export default function AuthLayout({
           {/* Content */}
           <div className="w-full lg:w-[55%]  border-gray-500 bg-white absolute top-0 right-0  ">
             <div className="flex items-center py-4 px-2 md:hidden">
-              <button
-                className="flex items-center justify-start mr-8"
-                onClick={() => router.back()}>
-                <div className="w-[16px] h-[16px] relative">
-                  <Image src={"/goBackNew.svg"} alt="" fill />
-                </div>
-                <p className=" font-mono font-medium text-[16px] leading-[18px] text-primary ml-2 ">
-                  Back
-                </p>
-              </button>
+              <GoBack />
               <CustomGrantsLogo height="22" width="163" />
             </div>
             {children}

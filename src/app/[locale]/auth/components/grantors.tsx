@@ -90,7 +90,7 @@ const Grantor = (props: Props) => {
     const res = mutate({
       fullName: data.fullName,
       email: data.email,
-      usertype: "GRANTOR",
+      usertype: "grantor",
       password: data.password,
       confirmPassword: data.confirmPassword,
       country: data.country,
@@ -102,7 +102,7 @@ const Grantor = (props: Props) => {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center mb-[5%] ">
-      <h3 className="w-full text-lg lg:text-current">Sign up Donor/GRANTOR</h3>
+      <h3 className="w-full">Sign up Donor/GRANTOR</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
         <Controller

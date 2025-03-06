@@ -6,6 +6,7 @@ import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
 import { useAppDispatch } from "../../../../../lib/hooks";
 import { useRouter } from "next/navigation";
+import { logout } from "../../../../../lib/features/User/userSlice";
 
 type Props = {
   image: string;
@@ -14,6 +15,7 @@ type Props = {
   setActive?: any;
   textColor?: string;
   url?: string | undefined;
+  Logout?: boolean;
 };
 
 const TabsComponent = ({
@@ -23,8 +25,10 @@ const TabsComponent = ({
   setActive,
   textColor = " text-white",
   url,
+  Logout,
 }: Props) => {
   const handleNavigation = useHandleNavigation();
+  const dispatch = useAppDispatch();
   return (
     <button
       // href={`${locale}/dashboard/page1`}
@@ -33,7 +37,11 @@ const TabsComponent = ({
       } my-2 mr-5 pl-4 transition-all`}
       onClick={() => {
         // setActive();
-        handleNavigation(url);
+        if (Logout) {
+          dispatch(logout());
+        } else {
+          handleNavigation(url);
+        }
       }}>
       <img src={image} />
       <p

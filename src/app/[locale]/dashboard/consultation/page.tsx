@@ -36,7 +36,7 @@ const ConsultanHome = (props: Props) => {
         setActiveRoute({
           ...dashboardRoute,
           consultation:
-            user?.userType === "GENERAL_USER"
+            user?.role === "GENERAL_USER"
               ? dashboardRouteName.grantConsulatation
               : dashboardRouteName.consultation,
         })

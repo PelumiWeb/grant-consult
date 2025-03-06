@@ -14,11 +14,13 @@ import { useApiMutation } from "@/app/[locale]/utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { setUser } from "../../../../../lib/features/User/userSlice";
-import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { useAppDispatch } from "../../../../../lib/hooks";
 import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
 
-type Props = {};
+type Props = {
+  title: string;
+  userType: string;
+};
 
 const GeneralSignup = (props: Props) => {
   const handleNavigation = useHandleNavigation();
@@ -34,19 +36,18 @@ const GeneralSignup = (props: Props) => {
       fullName: "",
       email: "",
       password: "",
-      confirm_password: "",
+      passwordConfirm: "",
     },
   });
   const loginNotify = () => toast.success("Signup successful");
 
-  const { mutate, data, isPending } = useApiMutation<User, SignupData>(
+  const { mutate, isPending, isError } = useApiMutation<User, SignupData>(
     "post",
     endpoints.createUser,
     {
       onSuccess: (data) => {
         console.log("User created:", data);
-        if (data.success) {
-          console.log(data.data, "here is the data");
+        if (data.status) {
           dispatch(
             setUser({
               user: {
@@ -58,12 +59,19 @@ const GeneralSignup = (props: Props) => {
           loginNotify();
           handleNavigation(`/auth/otp`);
         } else {
-          const loginNotify = () => toast.error(data.message);
+          console.log(data, "this is the error response");
           loginNotify();
         }
       },
+      // onError: (data: any) => {
+      //   console.log("User error---", data);
+      //     const loginNotify = () => toast.error(data);
+      //     loginNotify();
+      // },
       onError: (data: any) => {
         console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
       },
     }
   );
@@ -72,15 +80,15 @@ const GeneralSignup = (props: Props) => {
     const res = mutate({
       fullName: data.fullName,
       email: data.email,
-      usertype: "GENERAL_USER",
+      role: props.userType,
       password: data.password,
-      confirmPassword: data.password,
+      passwordConfirm: data.passwordConfirm,
     });
   };
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center mb-[5%]">
-      <h3 className="w-full">Signup</h3>
+      <h3 className="w-full">{props.title}</h3>
 
       <form className="mt-1 lg:mt-4 w-full" onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -181,7 +189,7 @@ const GeneralSignup = (props: Props) => {
         />
 
         <Controller
-          name="confirm_password"
+          name="passwordConfirm"
           control={control}
           rules={{
             required: "Confirm Password is required",
@@ -206,16 +214,16 @@ const GeneralSignup = (props: Props) => {
                 label="Confirm Password"
                 type="password"
                 rightIcon
-                error={errors.confirm_password?.message}
+                error={errors.passwordConfirm?.message}
               />
               {errors.password && (
-                <ErrorMessage message={errors.confirm_password?.message} />
+                <ErrorMessage message={errors.passwordConfirm?.message} />
               )}
             </>
           )}
         />
 
-        <div className="flex justify-between  items-center w-full  md:w-[85%] ">
+        {/* <div className="flex justify-between  items-center w-full  md:w-[85%] ">
           <div className="flex items-center">
             <Checkbox />
             <p className="underline text-secondaryColor text-sm ml-2 ">
@@ -228,14 +236,13 @@ const GeneralSignup = (props: Props) => {
             className="cursor-pointer">
             <p className="underline text-red-500 text-sm">Forgot Password</p>
           </div>
-        </div>
+        </div> */}
         <div className="mt-8">
           <CustomButton
             width="w-full "
             title="Signup"
             type="submit"
             loading={isPending}
-            // onClick={() => handleNavigation(`/auth/otp`)}
           />
         </div>
         <div className="mt-8">

@@ -1,13 +1,11 @@
 const endpoints = {
-  createUser: "api/Auth/register",
-  loginUser: "api/Auth/login",
-
+  createUser: "auth/sign-up",
+  loginUser: "auth/sign-in",
   activateAccount: "api/Auth/activate-account",
-  verifyUser: "user/verify/mobile",
-  forgotPassword: "api/Auth/forgotPassword",
-   resetPassword: "api/Auth/forgotPassword",
-
-
+  verifyUser: "auth/verify-email",
+  resendVerificationEmail: "auth/resend-verification-email",
+  forgotPassword: "auth/forgot-password",
+  resetPassword: "auth/reset-password",
 };
 
 

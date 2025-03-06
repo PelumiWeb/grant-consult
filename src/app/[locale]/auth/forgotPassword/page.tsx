@@ -16,8 +16,12 @@ import { useApiMutation } from "../../utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { Controller, useForm } from "react-hook-form";
-import { useAppDispatch } from "../../../../../lib/hooks";
-import { setUser } from "../../../../../lib/features/User/userSlice";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
+import {
+  setResetPassword,
+  setUser,
+} from "../../../../../lib/features/User/userSlice";
+import GoBack from "../../components/GoBack";
 
 type Props = {};
 
@@ -27,6 +31,10 @@ const CreateNewPassword = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
   const fotgorPasswordNotify = () => toast.success("email sent successfully");
+  const user = useAppSelector((data) => data.user.user);
+  const newUser = useAppSelector((data) => data.user.resetPasswordEmail);
+
+  console.log("the new user", newUser);
 
   const { handleSubmit, control, reset } = useForm({
     defaultValues: {
@@ -39,33 +47,40 @@ const CreateNewPassword = (props: Props) => {
     endpoints.forgotPassword,
     {
       onSuccess: (data) => {
-        console.log(data, "it's success");
-        if (data.success) {
-          fotgorPasswordNotify();
+        console.log(data.data.otp, "it's success");
+        dispatch(
+          setUser({
+            user: {
+              ...user,
+              otp: data.data.otp,
+            },
+          })
+        );
+        fotgorPasswordNotify();
 
-          handleNavigation("/auth/resetPassword");
+        handleNavigation("/auth/resetPassword");
 
-          console.log(data.data, "from forgotpassowrd");
-        } else {
-          const failed = () => toast.error(data.message);
-          failed();
-        }
+        console.log(data, "from forgotpassowrd");
       },
-      onError: (data) => {
+      onError: (data: any) => {
         console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
       },
     }
   );
 
   const onSubmit = async (data: forgotPassword) => {
-    console.log(data);
     mutate({
       email: data.email,
     });
-    dispatch(setUser({ resetPasswordEmail: data.email }));
+    dispatch(setResetPassword({ resetPasswordEmail: data.email }));
   };
   return (
-    <div className="py-32 px-2 md:px-8 w-full flex flex-col items-center justify-center ">
+    <div className="py-32 px-2 md:px-8 w-full flex flex-col items-center justify-center relative ">
+      <div className="absolute top-4 left-4">
+        <GoBack />
+      </div>
       <div className="mt-[10%] w-full">
         <h3 className="text-center"> Forgot Pasword?</h3>
         <p className="py-4 text-center">

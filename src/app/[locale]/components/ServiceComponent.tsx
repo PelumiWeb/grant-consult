@@ -18,7 +18,7 @@ const ServiceComponent = ({ data }: { data: Props }) => {
   return (
     <div
       onClick={() => handleNavigation(data?.url)}
-      className={` flex items-center justify-center border cursor-pointer h-[111px] w-[100px] sm:w-[170px] lg:h-[200px] lg:w-[200px] 2lg:h-[211px] 2lg:w-[201px] ${
+      className={` flex items-center justify-center border-[0.9px] cursor-pointer h-[111px] w-[100px] sm:w-[170px] lg:h-[200px] lg:w-[200px] 2lg:h-[211px] 2lg:w-[201px] bg-white ${
         data.serviceTwo && "shadow-card mb-16"
       }  ${
         data.serviceTwo ? "border-none" : "border-secondaryColor border-[1.5px]"

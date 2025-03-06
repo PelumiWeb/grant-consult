@@ -63,6 +63,8 @@ const GeneralSignup = (props: Props) => {
       },
       onError: (data: any) => {
         console.log("User error:", data);
+        const errorMessage = () => toast.error(data?.message);
+        errorMessage();
       },
     }
   );

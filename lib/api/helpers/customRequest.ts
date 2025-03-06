@@ -23,10 +23,10 @@ export default async function customRequest<T, R = T>(
     return res.data;
   } catch (err:any) {
     console.log(err, err?.message, err?.response?.data, "this is from axios");
-    if (!axios.isAxiosError(err)) throw err;
+    // if (!axios.isAxiosError(err)) throw err;
 
-    if (err.response) {
-      throw new ResponseError(err.response.data.message, err.response.status);
+   if (axios.isAxiosError(err) && err.response) {
+      throw err.response.data; //  This will return { status: 400, message: 'Invalid otp' }
     }
 
     throw new ConnectionError();

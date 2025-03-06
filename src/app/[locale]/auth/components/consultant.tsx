@@ -24,15 +24,6 @@ const Consultant = (props: Props) => {
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
 
-  const countriesData = React.useMemo(() => {
-    const data = countryData?.map((data) => ({
-      label: data.name,
-      value: data.name,
-    }));
-
-    return data;
-  }, []);
-
   const {
     handleSubmit,
     control,

@@ -12,7 +12,7 @@ import UploadProfile from "./components/Upload";
 import References from "./components/References";
 import RenderModals from "../../components/RenderModals";
 import { useDispatch } from "react-redux";
-import { useAppDispatch } from "../../../../../lib/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import ProfileGeneralHeader from "./ProfileGeneralHeader";
 import About from "./components/About";
@@ -23,6 +23,7 @@ type Props = {};
 
 const ProfileGrant = (props: Props) => {
   const dispatch = useAppDispatch();
+   const { user } = useAppSelector((state) => state.user);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -50,7 +51,7 @@ const ProfileGrant = (props: Props) => {
       <DashboardHeader />
       <div className="usaidglobal@gmail.com">
         <ProfileGeneralHeader
-          email="usaidglobal@gmail.com"
+          email={user?.email || ""}
           phone="--- --- --- ---"
           image="/grantImage.svg"
           contactInformation="U.S. Agency for International Development (USAID) ·"

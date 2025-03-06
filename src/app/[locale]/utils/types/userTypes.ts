@@ -7,7 +7,7 @@ export type userType = {
 }
 
 export const userTypeName:userType = {
- general: "GENERAL_USER",
- consultant: "CONSULTANT",
- grantor: "GRANTOR",
+ general: "seeker",
+ consultant: "consultant",
+ grantor: "grantor",
 }

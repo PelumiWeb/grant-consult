@@ -5,28 +5,34 @@ export type SignupData = {
   phoneNumber?: string;
   email: string;
   country?: string;
+  role?: string
   expertise?: string;
   password: string;
-  confirmPassword: string;
+  confirmPassword?: string;
   sector?: string;
   yearOfExperience?: 0;
   organizationGroup?: string;
   organizationName?: string;
   organizationType?: string;
+  passwordConfirm?: string; 
 
 };
 
 export type LoginData = {
-
   email: string;
   password: string;
+  role?: string;
+};
+
+export type ResendVerification = {
+  email: string;
 };
 
 export type createNewPasswordData = {
-  email: string;
-  newPassword: string;
-  confirmPassword: string;
-  token: string;
+  email?: string;
+  password: string;
+  passwordConfirm: string;
+  otp: string;
 };
 
 export type forgotPassword = {
@@ -36,26 +42,3 @@ export type forgotPassword = {
 
 
 export type User = any
-
-// export const tabsName:tabsTypes = {
-// profile: "Profile",
-// assignedGrants: "assigned grants",
-// consultation: "consultation",
-// message: "message",
-// wallet: "wallet",
-// settings: "settings",
-// helpSupport: "help & support",
-// logout: "logout",
-//   generalDashboard: "Dashboard",
-
-//   grant: "grant",
-//   manageSubscription: "manageSubscription",
-//   grantConsulatation: "grantConsulatation",
-//   generalConsultationDetails: "generalConsultationDetails",
-// myGrants: "my Grants",
-//   allGrants: "allGrants",
-//   grantPerformanceMetric: "grantPerformanceMetric"
-
-
-
-// }

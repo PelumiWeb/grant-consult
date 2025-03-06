@@ -5,11 +5,14 @@ import GeneralSignup from "./components/generalUser";
 import Consultant from "./components/consultant";
 import Grantor from "./components/grantors";
 import { useRouter } from "next/navigation";
+import { userTypeName } from "../utils/types/userTypes";
 
 type Props = {};
 
 type SignupOptionProps = {
-  active: string;
+  active: {
+    title: string;
+  };
   icon: string;
   title: string;
   content: string;
@@ -23,6 +26,8 @@ const signupData = [
     activeIcon: "/userTypeIconActive.svg",
     title: "General Users",
     content: "Individuals/NGOs/Corporate Bodies",
+    bodyTitle: "Signup",
+    userType: userTypeName.general,
   },
   {
     icon: "/userTypeIcon2.svg",
@@ -30,22 +35,26 @@ const signupData = [
 
     title: "Consultants",
     content: "Grant Writing & Advisory Professionals",
+    bodyTitle: "Sign up Consultant",
+    userType: userTypeName.consultant,
   },
   {
     icon: "/userTypeIcon3.svg",
     activeIcon: "/userTypeIconActive3.svg",
     title: "Grantors",
     content: "Funding Organizations or Donors",
+    bodyTitle: "Sign up Donor/GRANTOR",
+    userType: userTypeName.grantor,
   },
 ];
 
 const SignupOptions = (props: SignupOptionProps) => {
-  console.log(props.active === props.title);
+  console.log(props.active?.title === props.title);
   return (
     <div
       onClick={props.setActive}
       className={`rounded-[2px] cursor-pointer ${
-        props.active === props.title
+        props.active?.title === props.title
           ? "border-secondaryColor border-[2px]"
           : "border-borderColor border-[0.5px]"
       } w-[115px] h-[120px] sm:h-[160px]  sm:w-[180px] p-1 md:p-2 flex flex-col items-center justify-around mr-2 `}>
@@ -54,7 +63,9 @@ const SignupOptions = (props: SignupOptionProps) => {
           className="relative w-[20px] h-[20px] md:w-[30px] md:h-[30px] bg-center bg-contain bg-no-repeat transition-all duration-300"
           style={{
             backgroundImage: `url(${
-              props.active === props.title ? props.activeIcon : props.icon
+              props.active?.title === props.title
+                ? props.activeIcon
+                : props.icon
             })`,
           }}>
           {/* {props.active === props.title ? (
@@ -79,7 +90,7 @@ const SignupOptions = (props: SignupOptionProps) => {
 
       <p
         className={`font-mono font-medium text-[12px] md:text-[16px] lg:leading-[19px] text-center ${
-          props.active === props.title
+          props.active?.title === props.title
             ? "text-secondaryColor"
             : "text-textColor"
         }`}>
@@ -88,7 +99,7 @@ const SignupOptions = (props: SignupOptionProps) => {
 
       <p
         className={`text-center font-medium text-[7px] md:text-[10px] leading-[13px] ${
-          props.active !== props.title
+          props.active?.title !== props.title
             ? "text-borderColor"
             : "text-secondaryColor"
         }`}>
@@ -99,12 +110,17 @@ const SignupOptions = (props: SignupOptionProps) => {
 };
 
 const Auth = () => {
-  const [active, setActive] = React.useState("General Users");
+  const [active, setActive] = React.useState({
+    icon: "/userTypeIcon.svg",
+    activeIcon: "/userTypeIconActive.svg",
+    title: "General Users",
+    content: "Individuals/NGOs/Corporate Bodies",
+    bodyTitle: "Signup",
+    userType: userTypeName.general,
+  });
   const router = useRouter();
   return (
     <div className="flex flex-col p-4 md:mr-[10%] md:ml-[5%]">
-     
-
       <div className="block lg:hidden mt-4">
         <p className="font-mono font-medium text-[16px] leading-[20px] text-secondaryColor mb-2">
           Join the GrantsConsult Community!
@@ -119,22 +135,16 @@ const Auth = () => {
         Select Your User Type
       </h3>
       <div className="flex mt-5 justify-between items-center ">
-        {signupData.map((data) => (
+        {signupData.map((data: any) => (
           <SignupOptions
             {...data}
             active={active}
-            setActive={() => setActive(data.title)}
+            setActive={() => setActive(data)}
           />
         ))}
       </div>
 
-      {active === signupData[0].title ? (
-        <GeneralSignup />
-      ) : active === signupData[1].title ? (
-        <Consultant />
-      ) : (
-        <Grantor />
-      )}
+      <GeneralSignup title={active.bodyTitle} userType={active.userType} />
     </div>
   );
 };
