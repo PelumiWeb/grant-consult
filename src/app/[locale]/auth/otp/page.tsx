@@ -127,7 +127,9 @@ const Otp = (props: Props) => {
         <button
           className="w-full"
           onClick={() => {
-            resendVerificationEmail({ email: user?.email || "" });
+            resendVerificationEmail({
+              email: user?.email?.toLocaleLowerCase() || "",
+            });
           }}>
           <p className="underline text-center text-secondaryColor my-4">
             Resend Otp

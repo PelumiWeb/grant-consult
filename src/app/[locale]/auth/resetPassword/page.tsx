@@ -34,7 +34,8 @@ const ResetPassword = (props: Props) => {
 
   console.log(user, "current user");
 
-  const fotgorPasswordNotify = () => toast.success("email sent successfully");
+  const fotgorPasswordNotify = () =>
+    toast.success("Password reset successfully");
   const { handleSubmit, control, reset } = useForm({
     defaultValues: {
       password: "",
@@ -49,13 +50,8 @@ const ResetPassword = (props: Props) => {
   >("patch", endpoints.resetPassword, {
     onSuccess: (data) => {
       console.log(data, "it's success");
-      if (data.success) {
-        fotgorPasswordNotify();
-        console.log(data.data, "from forgotpassowrd");
-      } else {
-        const failed = () => toast.error(data.message);
-        failed();
-      }
+      fotgorPasswordNotify();
+      handleNavigation("/auth/login");
     },
     onError: (data: any) => {
       console.log("User error:", data);
@@ -70,7 +66,7 @@ const ResetPassword = (props: Props) => {
 
   const onSubmit = async (data: createNewPasswordData) => {
     mutate({
-      email: resetPasswordEmail,
+      email: resetPasswordEmail?.toLocaleLowerCase(),
       password: data.password,
       passwordConfirm: data.passwordConfirm,
       otp: data.otp,

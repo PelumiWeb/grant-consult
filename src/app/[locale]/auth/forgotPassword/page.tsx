@@ -47,7 +47,7 @@ const CreateNewPassword = (props: Props) => {
     endpoints.forgotPassword,
     {
       onSuccess: (data) => {
-        console.log(data.data.otp, "it's success");
+        console.log(data.data.otp, "it's success from forgot password");
         dispatch(
           setUser({
             user: {
