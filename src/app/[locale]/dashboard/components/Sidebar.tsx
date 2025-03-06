@@ -10,6 +10,7 @@ import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { revalidatePath } from "next/cache";
 
 type Props = {};
 type TabsProps = {
@@ -176,7 +177,8 @@ const Sidebar = (props: Props) => {
 
   React.useEffect(() => {
     if (!user) {
-      redirect("/");
+      handleNavigation("/", redirect);
+      revalidatePath('/', 'page')
     }
   }, [user]);
 

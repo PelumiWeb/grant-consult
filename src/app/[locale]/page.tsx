@@ -19,17 +19,15 @@ import { useQuery } from "@tanstack/react-query";
 import getMovies from "./requests/getMovies";
 import { useApiMutation, useApiQuery } from "./utils/useApi";
 import endpoints from "../../../lib/endpoints";
+import { revalidatePath } from "next/cache";
 
 type Props = {};
 type User = {};
 
-
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
 
-
-
-
+  // revalidatePath("/", "page");
 
   return (
     <div className="">

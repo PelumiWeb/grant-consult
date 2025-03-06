@@ -10,6 +10,7 @@ import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import { useLocale } from "next-intl";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
+import { revalidatePath } from "next/cache";
 
 type Props = {
   setShowMobileNavigation: React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,7 +33,8 @@ const SidebarModal = (props: Props) => {
   const dispatch = useAppDispatch();
   React.useEffect(() => {
     if (!user) {
-      redirect("/");
+      handleNavigation("/", redirect);
+      revalidatePath("/", "page");
     }
   }, [user]);
 
