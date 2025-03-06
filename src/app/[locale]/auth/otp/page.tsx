@@ -14,6 +14,7 @@ import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { ResendVerification } from "../../utils/types/SignupData";
 import { setUser } from "../../../../../lib/features/User/userSlice";
+import GoBack from "../../components/GoBack";
 
 type Props = {};
 type ActivateAccount = {
@@ -91,7 +92,10 @@ const Otp = (props: Props) => {
   };
 
   return (
-    <div className="py-32 px-2 md:px-8 flex flex-col items-center justify-center ">
+    <div className="py-32 px-2 md:px-8 flex flex-col items-center justify-center relative">
+      <div className="absolute top-4 left-4">
+        <GoBack />
+      </div>
       <div className="mt-[20%]">
         <h3 className="text-center">Check your email</h3>
         <p className="text-center">
@@ -115,7 +119,7 @@ const Otp = (props: Props) => {
             onClick={() => {
               mutate({
                 otp,
-                email: user?.email,
+                email: user?.email || "",
               });
             }}
           />
@@ -123,7 +127,7 @@ const Otp = (props: Props) => {
         <button
           className="w-full"
           onClick={() => {
-            resendVerificationEmail({ email: user?.email });
+            resendVerificationEmail({ email: user?.email || "" });
           }}>
           <p className="underline text-center text-secondaryColor my-4">
             Resend Otp
