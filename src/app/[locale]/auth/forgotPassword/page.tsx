@@ -72,8 +72,9 @@ const CreateNewPassword = (props: Props) => {
 
   const onSubmit = async (data: forgotPassword) => {
     mutate({
-      email: data.email,
+      email: data.email.toLocaleLowerCase(),
     });
+    
     dispatch(setResetPassword({ resetPasswordEmail: data.email }));
   };
   return (
