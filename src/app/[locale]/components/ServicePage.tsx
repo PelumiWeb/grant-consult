@@ -2,11 +2,13 @@ import React from "react";
 import CustomButton from "./CustomButton";
 import ServiceComponent from "./ServiceComponent";
 import { useTranslations } from "next-intl";
+import useHandleNavigation from "../utils/HandleNavigation";
 
 type Props = {};
 
 const ServicePage = (props: Props) => {
   const t = useTranslations("Homepage");
+  const handleNavigation = useHandleNavigation();
 
   return (
     <div className="w-full flex items-start justify-between   h-full relative py-8 lg:py-16 pb-8 px-4 md:px-8  lg:pt-32  flex-wrap bg-service-bg">
@@ -20,6 +22,7 @@ const ServicePage = (props: Props) => {
 
         <div className="hidden md:block">
           <CustomButton
+            onClick={() => handleNavigation("/consultant/request")}
             title="Schedule a Consultation"
             backgrounColor="bg-secondaryColor"
             width="w-[245px]"
@@ -88,6 +91,7 @@ const ServicePage = (props: Props) => {
 
       <div className="block md:hidden mt-8 w-full">
         <CustomButton
+          onClick={() => handleNavigation("/consultant/request")}
           title="Schedule a Consultation"
           backgrounColor="bg-secondaryColor"
           width="w-full md:w-[245px]"
