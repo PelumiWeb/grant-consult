@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
-import "./globals.css";
-import StoreProvider from "../../../lib/storeProvider";
+import "../globals.css";
+
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import React, { ReactNode, Suspense } from "react";
@@ -9,6 +9,7 @@ import getMessagesSync from "./utils/getMessageAsync";
 import ReactQueryProvider from "./utils/ReactQueryProvider";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { ThemeProvider } from "next-themes";
+import StoreProvider from "../../../lib/storeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],

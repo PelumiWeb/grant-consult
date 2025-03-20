@@ -74,7 +74,7 @@ const CreateNewPassword = (props: Props) => {
     mutate({
       email: data.email.toLocaleLowerCase(),
     });
-    
+
     dispatch(setResetPassword({ resetPasswordEmail: data.email }));
   };
   return (

@@ -122,7 +122,7 @@ const ManageSubscription = (props: Props) => {
                     Subscription Status:
                   </p>
                   <p className="text-buttonPrimary text-[16px] leading-[18.88px] font-semibold ">
-                    Active
+                    Null
                   </p>
                 </div>
                 <div className="flex justify-between items-center my-2">
@@ -134,7 +134,7 @@ const ManageSubscription = (props: Props) => {
               </div>
               <div>
                 <p className="font-mono font-semibold text-[14px] leading-[22px] text-textColor">
-                  Renewal Date: November 7, 2024
+                  Null
                 </p>
               </div>
               <div className="flex  items-center">

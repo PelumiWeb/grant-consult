@@ -7,15 +7,15 @@ import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
-import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
+import useHandleNavigation from "@/app/utils/HandleNavigation";
 import { Controller, useForm } from "react-hook-form";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
-import { useApiMutation } from "@/app/[locale]/utils/useApi";
+import { useApiMutation } from "@/app/utils/useApi";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
 import { setUser } from "../../../../../lib/features/User/userSlice";
 import { useAppDispatch } from "../../../../../lib/hooks";
-import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+import { SignupData, User } from "@/app/utils/types/SignupData";
 
 type Props = {
   title: string;

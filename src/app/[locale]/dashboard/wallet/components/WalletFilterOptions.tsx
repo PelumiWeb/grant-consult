@@ -25,29 +25,29 @@ const WalletFilterPption = (props: Props) => {
       md:py-0
 
     ">
-        <DatePicker
-          onChange={onChange}
-          height={40}
-          className="h-[40px] w-full md:w-[250px]"
-          placeholder="Month"
-        />
-        <LabelInput
-          placeholder="Service Rendered"
-          width={"w-[250px]"}
-          value=""
-          height="h-[40px]"
-          select
-          my="my-2"
-        />
+      <DatePicker
+        onChange={onChange}
+        height={40}
+        className="h-[40px] w-full md:w-[250px]"
+        placeholder="Month"
+      />
+      <LabelInput
+        placeholder="Service Rendered"
+        width={"w-[250px]"}
+        value=""
+        height="h-[40px]"
+        select
+        my="my-2"
+      />
 
-        <LabelInput
-          placeholder="Status"
-          width={"w-[250px]"}
-          value=""
-          height="h-[40px]"
-          select
-          my="my-2"
-        />
+      <LabelInput
+        placeholder="Status"
+        width={"w-[250px]"}
+        value=""
+        height="h-[40px]"
+        select
+        my="my-2"
+      />
 
       <CustomButton
         height="h-[40px]"

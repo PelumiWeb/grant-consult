@@ -10,7 +10,7 @@ import { PlusOutlined, StarOutlined } from "@ant-design/icons";
 import CustomModalComponent from "./CustomModalComponent";
 import { useAppDispatch } from "../../../../lib/hooks";
 import { openModal } from "../../../../lib/features/Modal/modalSlice";
-import { modalName } from "../utils/types/ModalTypes";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 import { useLocale, useTranslations } from "next-intl";
 import useHandleNavigation from "../utils/HandleNavigation";
 

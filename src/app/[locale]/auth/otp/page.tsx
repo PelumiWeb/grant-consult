@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 import { ResendVerification } from "../../utils/types/SignupData";
 import { setUser } from "../../../../../lib/features/User/userSlice";
 import GoBack from "../../components/GoBack";
-import { userTypeName } from "../../utils/types/userTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 
 type Props = {};
 type ActivateAccount = {

@@ -38,7 +38,10 @@ const ProfileGeneralHeader = (props: Props) => {
       </div>
       {/* Bottom */}
       <div className="bg-white h-[60%]">
-        <img src={props.image} className="absolute top-12 left-4 md:top-16 md:left-8" />
+        <img
+          src={props.image}
+          className="absolute top-12 left-4 md:top-16 md:left-8"
+        />
         <div className="flex w-full justify-between items-center absolute bottom-20 ml-8">
           <div className="mr-20 ">
             <h4 className="font-mono my-2">{props.contactInformation}</h4>

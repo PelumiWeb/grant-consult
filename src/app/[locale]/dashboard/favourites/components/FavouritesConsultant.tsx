@@ -44,24 +44,24 @@ const FavouritesConsultant = (props: Props) => {
   const [activeFilter, setActiveFilter] = React.useState(filterData[0]);
   const dispatch = useAppDispatch();
 
-    const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-    React.useEffect(() => {
-      const scrollContainer = scrollContainerRef.current;
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
 
-      if (!scrollContainer) return;
+    if (!scrollContainer) return;
 
-      const handleScroll = () => {
-        const scrollTop = scrollContainer.scrollTop; // Get the scroll position
-        console.log("Scroll Top:", scrollTop); // Debugging scroll value
-        dispatch(setIsScrolled(scrollTop > 50));
-      };
+    const handleScroll = () => {
+      const scrollTop = scrollContainer.scrollTop; // Get the scroll position
+      console.log("Scroll Top:", scrollTop); // Debugging scroll value
+      dispatch(setIsScrolled(scrollTop > 50));
+    };
 
-      scrollContainer.addEventListener("scroll", handleScroll);
+    scrollContainer.addEventListener("scroll", handleScroll);
 
-      return () => {
-        scrollContainer.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
       className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth mt-8"
@@ -96,7 +96,7 @@ const FavouritesConsultant = (props: Props) => {
         <div className="bg-white p-8 w-full min-h-screen">
           <h3 className="mb-2 text-[20px] leading-[26px] ">My Favourites</h3>
 
-          <div >
+          <div>
             <div className="w-full hidden lg:flex  justify-between">
               {filterData.map((data: string) => (
                 <FilterOptions

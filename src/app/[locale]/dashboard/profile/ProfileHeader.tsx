@@ -69,9 +69,7 @@ const ProfileHeader = (props: Props) => {
             <h4 className="font-mono my-2">Contact Information</h4>
             <div className="flex items-center my-1">
               <img src="/email.svg" alt="" />
-              <p className="ml-2 text-secondaryColor ">
-                {user?.email}
-              </p>
+              <p className="ml-2 text-secondaryColor ">{user?.email}</p>
             </div>
             <div className="flex items-center my-1">
               <img src="/callImage.svg" alt="" />

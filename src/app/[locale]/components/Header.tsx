@@ -105,7 +105,7 @@ const Header = ({}: Props) => {
   const HandleLanguageChange = (value: string | string[]) => {
     const path = pathname.split("/").slice(2).join("/");
     const newPath = `${value}/${path}`;
-    router.push(newPath);
+    router.push(path);
   };
 
   const tabs = [

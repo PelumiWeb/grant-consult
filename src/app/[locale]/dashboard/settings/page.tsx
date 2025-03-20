@@ -18,7 +18,7 @@ type settingComponentProps = {
   edit?: boolean;
   showTitle?: boolean;
   checker?: boolean;
-  
+
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 };
 

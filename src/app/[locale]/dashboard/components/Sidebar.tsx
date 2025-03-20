@@ -178,7 +178,7 @@ const Sidebar = (props: Props) => {
   React.useEffect(() => {
     if (!user) {
       handleNavigation("/", redirect);
-      revalidatePath('/', 'page')
+      revalidatePath("/", "page");
     }
   }, [user]);
 

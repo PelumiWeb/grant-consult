@@ -7,6 +7,8 @@ import useHandleNavigation from "../utils/HandleNavigation";
 import { redirect, useRouter } from "next/navigation";
 import React from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { useApiQuery } from "../utils/useApi";
+import endpoints from "../../../../lib/endpoints";
 
 export default function Home() {
   const handleNavigation = useHandleNavigation();

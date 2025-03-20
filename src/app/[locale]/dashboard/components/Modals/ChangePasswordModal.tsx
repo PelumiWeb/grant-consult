@@ -7,8 +7,9 @@ import {
   closeModal,
   openModal,
 } from "../../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
+
 import { Checkbox } from "antd";
+import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
 type Props = {};
 

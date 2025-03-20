@@ -17,13 +17,13 @@ import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import ProfileGeneralHeader from "./ProfileGeneralHeader";
 import About from "./components/About";
 import EditProfile from "./components/EditProfile";
-import CustomButton from "@/app/[locale]/components/CustomButton";
+
 import EditOrganization from "./components/EditOrganization";
 type Props = {};
 
 const ProfileGrant = (props: Props) => {
   const dispatch = useAppDispatch();
-   const { user } = useAppSelector((state) => state.user);
+  const { user } = useAppSelector((state) => state.user);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;

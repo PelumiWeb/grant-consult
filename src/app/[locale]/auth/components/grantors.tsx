@@ -7,20 +7,20 @@ import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
-import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
+import useHandleNavigation from "@/app/utils/HandleNavigation";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import endpoints from "../../../../../lib/endpoints";
 import { toast } from "react-toastify";
-import { useApiMutation } from "@/app/[locale]/utils/useApi";
+import { useApiMutation } from "@/app/utils/useApi";
 import { Controller, useForm } from "react-hook-form";
 import { setUser } from "../../../../../lib/features/User/userSlice";
-import { SignupData, User } from "@/app/[locale]/utils/types/SignupData";
+import { SignupData, User } from "@/app/utils/types/SignupData";
 import ErrorMessage from "@/app/[locale]/components/ErrorMessage";
 import {
   countryData,
   expertiseData,
   organizationType,
-} from "@/app/[locale]/utils/customData";
+} from "@/app/utils/customData";
 
 type Props = {};
 

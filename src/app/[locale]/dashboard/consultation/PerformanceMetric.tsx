@@ -147,7 +147,7 @@ const PerformanceMetric = (props: Props) => {
             <DatePicker className="w-[100px] h-[30px]" placeholder="Today" />
           </div>
           <div className="flex items-end justify-end">
-            <div className="w-full h-[160px]" >
+            <div className="w-full h-[160px]">
               <PieChartComponent />
             </div>
             <div className="flex md:hidden justify-between items-center py-4 w-full">

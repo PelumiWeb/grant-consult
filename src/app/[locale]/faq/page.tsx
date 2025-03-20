@@ -13,7 +13,7 @@ type Props = {};
 
 const page = (props: Props) => {
   const dispatch = useAppDispatch();
-  const locale = useLocale()
+  const locale = useLocale();
 
   return (
     <div

@@ -23,7 +23,7 @@ import DashboardHeader from "../components/DashboardHeader";
 type Props = {};
 
 const ProfileGeneral = (props: Props) => {
-    const { user } = useAppSelector((state) => state.user);
+  const { user } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {

@@ -53,7 +53,6 @@ const page = (props: Props) => {
               the right talent and offer rewarding opportunities for your
               contributions.
             </p>
-           
           </div>
 
           <CustomButton

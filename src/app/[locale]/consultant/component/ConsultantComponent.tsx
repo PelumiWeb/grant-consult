@@ -5,7 +5,8 @@ import { useAppDispatch } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
-type Props = { showButton: boolean, margin?:string };
+
+type Props = { showButton: boolean; margin?: string };
 const ConsultantComponent = (props: Props) => {
   const dispatch = useAppDispatch();
 

@@ -29,9 +29,11 @@ export default function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = useAppSelector((data) => data.user.user);
+
+
+
   const locale = useLocale();
-  const handleNavigation = useHandleNavigation()
+  const handleNavigation = useHandleNavigation();
 
   // React.useEffect(() => {
   //   if (!user) {

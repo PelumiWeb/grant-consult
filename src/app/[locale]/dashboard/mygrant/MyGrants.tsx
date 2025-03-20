@@ -3,7 +3,6 @@ import React, { Dispatch, SetStateAction } from "react";
 import DashboardHeader from "../components/DashboardHeader";
 import CustomButton from "@/app/[locale]/components/CustomButton";
 import LabelInput from "@/app/[locale]/components/LabelInput";
-import GrantCard from "@/app/[locale]/grants/components/GrantCard";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";

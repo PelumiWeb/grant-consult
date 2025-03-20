@@ -9,6 +9,7 @@ import {
 } from "../../../../../../lib/features/Modal/modalSlice";
 import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
 
+
 type Props = {};
 
 const DeleteAccountModal = (props: Props) => {

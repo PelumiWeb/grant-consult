@@ -82,7 +82,9 @@ const Grants = (props: Props) => {
   return (
     <div className="w-full px-0 lg:px-16 py-16 ">
       <div className="flex  items-center justify-between w-full py-4 px-2 lg:px-0">
-        <h1 className="text-lg lg:text-[36px] leading-[42px] font-semibold text-primary">Featured Grants</h1>
+        <h1 className="text-lg lg:text-[36px] leading-[42px] font-semibold text-primary">
+          Featured Grants
+        </h1>
         <div className="flex items-center ">
           <h3
             className="text-secondaryColor cursor-pointer hover:cursor-pointer text-base font-semibold

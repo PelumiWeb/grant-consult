@@ -2,7 +2,6 @@ import React from "react";
 import DashboardHeader from "../components/DashboardHeader";
 
 import CustomTable from "../components/CustomTable";
-import CustomButton from "@/app/[locale]/components/CustomButton";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";

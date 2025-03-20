@@ -13,13 +13,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useAppSelector } from "../../../lib/hooks";
 import RenderModals from "./components/RenderModals";
-import { useTranslations } from "next-intl";
-import fetchTranslation from "./utils/fetchTranslation";
-import { useQuery } from "@tanstack/react-query";
-import getMovies from "./requests/getMovies";
-import { useApiMutation, useApiQuery } from "./utils/useApi";
-import endpoints from "../../../lib/endpoints";
-import { revalidatePath } from "next/cache";
 
 type Props = {};
 type User = {};

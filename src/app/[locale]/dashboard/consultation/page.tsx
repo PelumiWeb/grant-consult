@@ -6,7 +6,7 @@ import PerformanceMetric from "./PerformanceMetric";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
-import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
+
 import GrantConsultation from "./GrantConsultation";
 import GeneralConsultantDetails from "./GeneralConsultantDetails";
 // import AssignedGrant from "./AssignedGrant";

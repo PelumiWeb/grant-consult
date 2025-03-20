@@ -22,6 +22,7 @@ import { locales } from './config';
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale: 'en',
+  localePrefix: "always"
 });
 
 // Authentication logic

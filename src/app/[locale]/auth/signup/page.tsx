@@ -6,10 +6,7 @@ import CustomInput from "../../components/CustomInput";
 import { Checkbox } from "antd";
 import CustomButton from "../../components/CustomButton";
 
-import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
-import { useApiMutation } from "../../utils/useApi";
-import endpoints from "../../../../../lib/endpoints";
+import { useAppDispatch,  } from "../../../../../lib/hooks";
 import useHandleNavigation from "../../utils/HandleNavigation";
 type Props = {};
 type UserType = { name: string; id: number; url: string }[];

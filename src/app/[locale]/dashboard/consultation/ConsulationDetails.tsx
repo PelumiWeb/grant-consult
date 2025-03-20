@@ -40,26 +40,24 @@ const ConsultationDetails = (props: Props) => {
     };
   }, []);
 
-   const [fileList, setFileList] = React.useState<UploadFile[]>([]);
+  const [fileList, setFileList] = React.useState<UploadFile[]>([]);
 
-   const handleChange: UploadProps["onChange"] = ({
-     fileList: newFileList,
-   }) => {
-     setFileList(newFileList);
-   };
+  const handleChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+  };
 
-   console.log(fileList, "file lost----");
+  console.log(fileList, "file lost----");
 
-   const uploadProps: UploadProps = {
-     fileList,
-     
-     onChange: handleChange,
-     beforeUpload: (file) => {
-       // Prevent automatic uploading
-       return false;
-     },
-     showUploadList: false,
-   };
+  const uploadProps: UploadProps = {
+    fileList,
+
+    onChange: handleChange,
+    beforeUpload: (file) => {
+      // Prevent automatic uploading
+      return false;
+    },
+    showUploadList: false,
+  };
   return (
     <div
       className="bg-backgroundColor  w-full p-2 md:p-8 overflow-scroll h-full md:h-screen scroll-smooth overflow-y-auto no-scrollbar"
@@ -431,19 +429,19 @@ const ConsultationDetails = (props: Props) => {
                   placeholder=""
                   mr="mr-4"
                 />
-                  {/* <Upload
+                {/* <Upload
                     {...uploadProps}
                     className="custom-upload w-full"
                     listType="picture"
                     > */}
-                    <CustomButton
-                      title="Upload file"
-                      width="w-full md:w-[150px]"
-                      height="h-[40px]"
-                      backgrounColor="bg-primary"
-                      textStyle="font-semibold text-white uppercase"
-                    />
-                  {/* </Upload> */}
+                <CustomButton
+                  title="Upload file"
+                  width="w-full md:w-[150px]"
+                  height="h-[40px]"
+                  backgrounColor="bg-primary"
+                  textStyle="font-semibold text-white uppercase"
+                />
+                {/* </Upload> */}
               </div>
 
               <div>

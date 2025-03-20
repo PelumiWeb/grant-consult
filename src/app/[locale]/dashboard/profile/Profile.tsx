@@ -19,7 +19,7 @@ type Props = {};
 
 const Profile = (props: Props) => {
   const dispatch = useAppDispatch();
- 
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -49,9 +49,7 @@ const Profile = (props: Props) => {
         <ProfileHeader />
         <Bio />
         <Expertise />
-        <Availability 
-        
-        />
+        <Availability />
         <Experience />
         <Education />
         <SecuredGrant />

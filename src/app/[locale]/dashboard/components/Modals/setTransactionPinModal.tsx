@@ -50,7 +50,6 @@ const SetTransactionPin = (props: Props) => {
               length={4}
               className="w-[200px]"
               variant="filled"
-             
               size={"large"}
               {...sharedProps}
             />

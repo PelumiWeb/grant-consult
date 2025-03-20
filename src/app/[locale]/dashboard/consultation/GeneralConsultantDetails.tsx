@@ -32,7 +32,7 @@ const GeneralConsultantDetails = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoutes = useAppSelector((state) => state.dashboard);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  
+
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 

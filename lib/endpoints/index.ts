@@ -6,6 +6,7 @@ const endpoints = {
   resendVerificationEmail: "auth/resend-verification-email",
   forgotPassword: "auth/forgot-password",
   resetPassword: "auth/reset-password",
+  getMe: "users/me"
 };
 
 

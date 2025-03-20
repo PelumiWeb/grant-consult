@@ -6,7 +6,7 @@ import LabelInput from "@/app/[locale]/components/LabelInput";
 import GrantCard from "@/app/[locale]/grants/components/GrantCard";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
 import { openModal } from "../../../../../lib/features/Modal/modalSlice";
-import { modalName } from "@/app/[locale]/utils/types/ModalTypes";
+
 import RenderModals from "@/app/[locale]/components/RenderModals";
 import { setIsScrolled } from "../../../../../lib/features/Scrolled/Scrolled";
 import { setActiveRoute } from "../../../../../lib/features/DashboardRoutes/dashboardSlice";
@@ -167,289 +167,288 @@ const GrantConsultation = (props: Props) => {
     },
   ];
 
-   const dataSourceMobile = [
-     {
-       "Consultation Title	": { value: "Strategic Funding Advisory" },
-       "Client Name": { value: "Jane Doe (Doe Inc.)" },
-       "Date/Time": { value: "Nov 5, 2024, 5 PM" },
-       status: { value: "Upcoming" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "Grant Proposal Review" },
-       "Client Name": { value: "Jane Smith (HealthPro)" },
-       "Date/Time": { value: "Nov 7, 2024, 5 PM" },
-       status: { value: "In Progress" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "NGO Capacity Building" },
-       "Client Name": { value: "Hope Foundation" },
-       "Date/Time": { value: "Nov 3, 2024, 5 PM" },
-       status: { value: "Completed" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "Mary Adams" },
-       "Client Name": { value: "Mary Adams" },
-       "Date/Time": { value: "Nov 8, 2024, 5 PM" },
-       status: { value: "Completed" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "Impact Assessment Planning" },
-       "Client Name": { value: "Green Future Alliance" },
-       "Date/Time": { value: "Nov 6, 2024, 5 PM" },
-       status: { value: "Completed" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "Corporate Social Initiative" },
-       "Client Name": { value: "ABC Corporates" },
-       "Date/Time": { value: "Nov 2, 2024, 5 PM" },
-       status: { value: "Completed" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-     {
-       "Consultation Title	": { value: "Grant Reporting Training" },
-       "Client Name": { value: "Elena Miller (EduCare" },
-       "Date/Time": { value: "Nov 9, 2024, 5 PM" },
-       status: { value: "Upcoming" },
-       Action: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   consultation: dashboardRouteName.consultationDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               View Details
-             </p>
-           </button>
-         ),
-       },
-       Actions: {
-         CustomContent: () => (
-           <button
-             onClick={() => {
-               dispatch(
-                 setActiveRoute({
-                   ...dashboardRoute,
-                   assignedGrant: dashboardRouteName.assignDetails,
-                 })
-               );
-             }}>
-             <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
-               Reschedule
-             </p>
-           </button>
-         ),
-       },
-     },
-   ];
-
+  const dataSourceMobile = [
+    {
+      "Consultation Title	": { value: "Strategic Funding Advisory" },
+      "Client Name": { value: "Jane Doe (Doe Inc.)" },
+      "Date/Time": { value: "Nov 5, 2024, 5 PM" },
+      status: { value: "Upcoming" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "Grant Proposal Review" },
+      "Client Name": { value: "Jane Smith (HealthPro)" },
+      "Date/Time": { value: "Nov 7, 2024, 5 PM" },
+      status: { value: "In Progress" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "NGO Capacity Building" },
+      "Client Name": { value: "Hope Foundation" },
+      "Date/Time": { value: "Nov 3, 2024, 5 PM" },
+      status: { value: "Completed" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "Mary Adams" },
+      "Client Name": { value: "Mary Adams" },
+      "Date/Time": { value: "Nov 8, 2024, 5 PM" },
+      status: { value: "Completed" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "Impact Assessment Planning" },
+      "Client Name": { value: "Green Future Alliance" },
+      "Date/Time": { value: "Nov 6, 2024, 5 PM" },
+      status: { value: "Completed" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "Corporate Social Initiative" },
+      "Client Name": { value: "ABC Corporates" },
+      "Date/Time": { value: "Nov 2, 2024, 5 PM" },
+      status: { value: "Completed" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+    {
+      "Consultation Title	": { value: "Grant Reporting Training" },
+      "Client Name": { value: "Elena Miller (EduCare" },
+      "Date/Time": { value: "Nov 9, 2024, 5 PM" },
+      status: { value: "Upcoming" },
+      Action: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  consultation: dashboardRouteName.consultationDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              View Details
+            </p>
+          </button>
+        ),
+      },
+      Actions: {
+        CustomContent: () => (
+          <button
+            onClick={() => {
+              dispatch(
+                setActiveRoute({
+                  ...dashboardRoute,
+                  assignedGrant: dashboardRouteName.assignDetails,
+                })
+              );
+            }}>
+            <p className="font-mono font-semibold  text-[14px] leading-[22px] text-buttonPrimary w-[180px] text-right underline">
+              Reschedule
+            </p>
+          </button>
+        ),
+      },
+    },
+  ];
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {

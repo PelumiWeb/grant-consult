@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useAppSelector } from "../../../../../lib/hooks";
-import { userTypeName } from "../../utils/types/userTypes";
+import { userTypeName } from "@/app/[locale]/utils/types/userTypes";
 import FavouritesGeneral from "./components/FavouritesGeneral";
 import FavouritesConsultant from "./components/FavouritesConsultant";
 import FavouritesGrantor from "./components/FavouritesGrantor";
@@ -23,9 +23,7 @@ const MyFavourites = (props: Props) => {
         return <FavouritesGrantor />;
     }
   };
-  return (
-    <div className="w-full h-full">{renderScreens(user?.role)};</div>
-  );
+  return <div className="w-full h-full">{renderScreens(user?.role)};</div>;
 };
 
 export default MyFavourites;

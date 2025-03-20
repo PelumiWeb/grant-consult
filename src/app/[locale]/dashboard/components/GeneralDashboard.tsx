@@ -99,13 +99,13 @@ const GeneralDashboard = (props: Props) => {
 
       <div className="flex justify-center md:justify-between items-center w-full flex-wrap">
         <div className="p-4 shadow-genera-user-shdow-card w-full md:w-[315px] h-[78px] my-2 md:m-0">
-          <p className="text-primaryBlack font-semibold text-sm leading-[15.54px] my-1">
+          <p className="text-primaryBlack font-semibold text-sm leading-[15.54px] my-1 capitalize">
             Subscription Status
           </p>
           <div className="flex items-center">
             <img src="/status.svg" alt="" />
             <p className="text-sm font-normal font-mono ml-2 text-buttonPrimary">
-              Monthly
+              Null
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@ const GeneralDashboard = (props: Props) => {
             Renewal Date
           </p>
           <p className="text-sm font-normal font-mono text-textColor">
-            November 27, 2024
+            Null
           </p>
         </div>
         <div className="p-4 shadow-genera-user-shdow-card w-full md:w-[315px] h-[78px] my-2 md:m-0">
