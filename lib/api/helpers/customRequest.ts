@@ -1,6 +1,8 @@
 import ConnectionError from '@/app/[locale]/utils/ConnectionError';
 import ResponseError from '@/app/[locale]/utils/ResponseError';
 import axios, { AxiosRequestConfig } from 'axios';
+import { store } from '../../store';
+import { logout } from '../../features/User/userSlice';
 // import ResponseError from '../../../utils/ResponseError';
 // import ConnectionError from '../../../utils/ConnectionError';
 
@@ -22,7 +24,11 @@ export default async function customRequest<T, R = T>(
 
     return res.data;
   } catch (err:any) {
-    console.log(err, err?.message, err?.response?.data, "this is from axios");
+    if (err?.response?.data?.status === 401 ) {
+    console.log(err?.response?.data?.status, "this is from axios");
+
+      store.dispatch(logout());
+    }
     // if (!axios.isAxiosError(err)) throw err;
 
    if (axios.isAxiosError(err) && err.response) {

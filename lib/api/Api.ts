@@ -116,10 +116,11 @@ class Api {
 
       return response;
     } catch (error: any) {
+      console.log(error)
       if (error.response?.status === 401) {
-        console.error("Unauthorized! Logging out...");
+        console.log("Unauthorized! Logging out...");
         store.dispatch(logout()); // Logout user
-        window.location.href = "/login"; // Redirect to login page
+        // window.location.href = "/login"; // Redirect to login page
       }
       throw error;
     }
