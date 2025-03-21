@@ -1,26 +1,23 @@
 import { AxiosRequestConfig } from "axios";
 import customRequest, { Transformer } from "./helpers/customRequest";
+import { store } from "../store";
+import { logout } from "../features/User/userSlice";
 
 class Api {
   url: string;
 
-  private readonly defaultHeaders: {
-    Authorization: string;
-    "Content-Type": string;
-  };
-
   constructor(url: string) {
     this.url = url;
-    this.defaultHeaders = { 
-      Authorization: "",
-      "Content-Type": "application/json",
-    };
-
-    this.setAuth = this.setAuth.bind(this);
   }
 
-  setAuth(accessToken: string) {
-    this.defaultHeaders.Authorization = `Bearer ${accessToken}`;
+  private getHeaders() {
+    // Get token from Redux store
+    const token = store.getState().user.token;
+
+    return {
+      Authorization: token ? `Bearer ${token}` : "",
+      "Content-Type": "application/json",
+    };
   }
 
   get<T, R = T>(
@@ -51,7 +48,8 @@ class Api {
       transform
     );
   }
-    patch<T, R = T>(
+
+  patch<T, R = T>(
     path: string,
     body: Record<string, unknown>,
     options?: AxiosRequestConfig,
@@ -102,18 +100,30 @@ class Api {
     );
   }
 
-  private request: typeof customRequest = (path, options, transform) =>
-    customRequest(
-      path,
-      {
-        ...options,
-        headers: {
-          ...this.defaultHeaders,
-          ...(options?.headers || {}),
+  private request: typeof customRequest = async (path, options, transform) => {
+    try {
+      const response = await customRequest(
+        path,
+        {
+          ...options,
+          headers: {
+            ...this.getHeaders(),
+            ...(options?.headers || {}),
+          },
         },
-      },
-      transform
-    );
+        transform
+      );
+
+      return response;
+    } catch (error: any) {
+      if (error.response?.status === 401) {
+        console.error("Unauthorized! Logging out...");
+        store.dispatch(logout()); // Logout user
+        window.location.href = "/login"; // Redirect to login page
+      }
+      throw error;
+    }
+  };
 }
 
 export const apiInstance = new Api(process.env.NEXT_PUBLIC_API_URL || "");

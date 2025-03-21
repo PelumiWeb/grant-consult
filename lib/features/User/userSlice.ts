@@ -33,11 +33,11 @@ otp?:string
 
     } | null;
 resetPasswordEmail?: string
+token?:string | null
 }
 
 const initialState: UserState = {
     user: { 
-    // userType: "GENERAL_USER",
      createdAt: "",
     email: "",
     emailVerified: false,
@@ -48,10 +48,13 @@ const initialState: UserState = {
     role: "",
     status:"",
     updatedAt: "",
-    otp:""
+    otp:"",
 },
-    resetPasswordEmail: ""
+    resetPasswordEmail: "",
+    token: ""
 }
+
+
 
 
 
@@ -64,18 +67,23 @@ export const userSlice = createSlice({
            state.user = action.payload.user
 
         },
+        setToken: (state, action:PayloadAction<UserState>) => {
+           state.token = action.payload.token
+
+        },
           setResetPassword: (state, action:PayloadAction<UserState>) => {
            state.resetPasswordEmail = action.payload.resetPasswordEmail
 
         },
         logout: (state) => {
               state.user = null
+              state.token = null
         }
     }
 }) 
 
 
-export const {setUser, logout, setResetPassword} = userSlice.actions
+export const {setUser, logout, setResetPassword, setToken} = userSlice.actions
 
 export const selectUser = (state: RootState) => state.user
 

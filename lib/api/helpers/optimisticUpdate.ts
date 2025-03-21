@@ -1,7 +1,7 @@
 // import { QueryKey } from 'react-query/types/core';
 import { QueryKey } from '@tanstack/react-query';
 import queryClient from '../queryClient';
-import ResponseError from '@/app/utils/ResponseError';
+import ResponseError from '@/app/[locale]/utils/ResponseError';
 // import ResponseError from '../../../utils/ResponseError';
 
 

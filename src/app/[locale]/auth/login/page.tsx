@@ -18,8 +18,9 @@ import {
 import { toast } from "react-toastify";
 import endpoints from "../../../../../lib/endpoints";
 import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { setUser } from "../../../../../lib/features/User/userSlice";
+import { setToken, setUser } from "../../../../../lib/features/User/userSlice";
 import { userTypeName } from "../../utils/types/userTypes";
+import { apiInstance } from "../../../../../lib/api/Api";
 
 type Props = {};
 
@@ -73,11 +74,12 @@ const Login = (props: Props) => {
     {
       onSuccess: (data) => {
         console.log(data, "it's success");
-        console.log(data.data.user?.emailVerified);
+        const token = data.data.accessToken;
+
         if (data.status) {
           if (data.data.user?.emailVerified) {
             loginSuccessfully();
-            console.log(data.data.user, "from login");
+            // console.log(data.data.user, "from login");
             dispatch(
               setUser({
                 user: {
@@ -86,10 +88,12 @@ const Login = (props: Props) => {
                 },
               })
             );
-            console.log(
-              data.data.user?.role,
-              data.data.user?.role === userTypeName.general,
-              "user's role -----"
+
+            // apiInstance.setAuth(token);
+            dispatch(
+              setToken({
+                token,
+              })
             );
             if (data.data.user?.role === userTypeName.general) {
               handleNavigation(`/dashboard/general`);

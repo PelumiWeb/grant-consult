@@ -1,11 +1,14 @@
 import { useQuery, useMutation, UseQueryOptions, UseMutationOptions, QueryKey, MutationFunction } from "@tanstack/react-query";
 import { apiInstance } from "../../../../lib/api/Api";
+import { useAppSelector } from "../../../../lib/hooks";
 
 export const useApiQuery = <T>(
   key: QueryKey,
   path: string,
   options?: UseQueryOptions<T, Error>
 ) => {
+     const token = useAppSelector((state) => state.user.token);
+
   return useQuery<T, Error>({
     queryKey: key,
     queryFn: async () => {
@@ -29,18 +32,12 @@ export const useApiMutation = <
   path: string,
   options?: UseMutationOptions<T, unknown, R>
 ) => {
+   const token = useAppSelector((state) => state.user.token);
+
   const mutationFn: MutationFunction<T, R> = async (data: any) => {
+     
     try {
        const response:any = await apiInstance[method]<T>(path, data);
-      const token = response?.data?.token?.token 
-      console.log(response, "response from Mutation")
-
-      if (token) {
-           console.log(token, "from UseApiMutation")
-          apiInstance.setAuth(token);
-      }
-      console.log(response.data, "response from Mutation")
-
           return response ; // Ensure type compatibility
     } catch (error) {
        console.log(error, "Error from Mutation");

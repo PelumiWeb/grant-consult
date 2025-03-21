@@ -11,7 +11,9 @@ const page = (props: Props) => {
   const user = useAppSelector((state) => state.user.user);
 
   // const user =
-  const { data, isPending } = useApiQuery(["users"], `${endpoints.getMe}`);
+  const { data, isPending } = useApiQuery<any>(["users"], `${endpoints.getMe}`);
+
+  console.log(data?.data, "from General Home");
   return <GeneralDashboardHome />;
 };
 
