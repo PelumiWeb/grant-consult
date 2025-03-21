@@ -20,8 +20,6 @@ type User = {};
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
 
-  // revalidatePath("/", "page");
-
   return (
     <div className="">
       <Header />

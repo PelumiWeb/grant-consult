@@ -25,6 +25,7 @@ const Sidebar = (props: Props) => {
   const { user } = useAppSelector((state) => state.user);
   const pathName = usePathname();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
+  const router = useRouter();
 
   console.log(user);
 
@@ -177,8 +178,7 @@ const Sidebar = (props: Props) => {
 
   React.useEffect(() => {
     if (!user) {
-      handleNavigation("/", redirect);
-      revalidatePath("/", "page");
+      router.push(`/${locale}`);
     }
   }, [user]);
 

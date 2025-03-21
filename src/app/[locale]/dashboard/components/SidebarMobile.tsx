@@ -28,13 +28,14 @@ const SidebarModal = (props: Props) => {
   const { user } = useAppSelector((state) => state.user);
   const pathName = usePathname();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
-
+  const router = useRouter();
   const locale = useLocale();
   const dispatch = useAppDispatch();
   React.useEffect(() => {
     if (!user) {
-      handleNavigation("/", redirect);
-      revalidatePath("/", "page");
+      // handleNavigation("/", redirect);
+      // redirect(`/${locale}`)
+      router.push(`/${locale}`);
     }
   }, [user]);
 

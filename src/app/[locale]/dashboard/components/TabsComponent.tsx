@@ -5,7 +5,7 @@ import React from "react";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
 import { useAppDispatch } from "../../../../../lib/hooks";
-import { useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import { logout } from "../../../../../lib/features/User/userSlice";
 
 type Props = {
@@ -29,6 +29,8 @@ const TabsComponent = ({
 }: Props) => {
   const handleNavigation = useHandleNavigation();
   const dispatch = useAppDispatch();
+  const locale = useLocale();
+  const router = useRouter();
   return (
     <button
       // href={`${locale}/dashboard/page1`}
@@ -39,6 +41,7 @@ const TabsComponent = ({
         // setActive();
         if (Logout) {
           dispatch(logout());
+          router.push(`/${locale}`);
         } else {
           handleNavigation(url);
         }

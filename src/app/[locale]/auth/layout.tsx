@@ -50,7 +50,8 @@ export default function AuthLayout({
               <div
                 onClick={async () => {
                   // router.refresh();
-                  redirect("/");
+                  // redirect(`/${locale}`);
+                  router.push(`/${locale}`);
                 }}
                 className="absolute top-3 z-40 cursor-pointer">
                 <CustomGrantsLogo />

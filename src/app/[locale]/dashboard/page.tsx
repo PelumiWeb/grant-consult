@@ -9,9 +9,12 @@ import React from "react";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { useApiQuery } from "../utils/useApi";
 import endpoints from "../../../../lib/endpoints";
+import { useLocale } from "next-intl";
 
 export default function Home() {
+  const locale = useLocale();
   const handleNavigation = useHandleNavigation();
+  const router = useRouter()
   const { currentDashboardRoute } = useAppSelector((state) => state.dashboard);
   const user = useAppSelector((state) => state.user.user);
 
@@ -20,7 +23,9 @@ export default function Home() {
 
   React.useEffect(() => {
     if (!user) {
-      redirect("/");
+      // redirect(`/${locale}`);
+      router.push(`/${locale}`);
+
     } else {
       handleNavigation(currentDashboardRoute);
     }
