@@ -12,6 +12,7 @@ import { setIsScrolled } from "../../../../../../lib/features/Scrolled/Scrolled"
 import { setActiveRoute } from "../../../../../../lib/features/DashboardRoutes/dashboardSlice";
 import { dashboardRouteName } from "@/app/[locale]/utils/types/dashboardRouteType";
 import { Input, Switch } from "antd";
+import useHandleNavigation from "@/app/[locale]/utils/HandleNavigation";
 
 type Props = {
   //   setActiveScreen: Dispatch<SetStateActionf<undefined>>;
@@ -20,7 +21,7 @@ type Props = {
 const ManageSubscription = (props: Props) => {
   const dispatch = useAppDispatch();
   const dashboardRoute = useAppSelector((state) => state.dashboard);
-
+  const handleNavigation = useHandleNavigation();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -138,7 +139,7 @@ const ManageSubscription = (props: Props) => {
                 </p>
               </div>
               <div className="flex  items-center">
-                <button>
+                <button onClick={() => handleNavigation("/subscription")}>
                   <p className="underline text-[#007AFF] mr-4">Upgrade Plan</p>
                 </button>
                 <button
@@ -172,7 +173,7 @@ const ManageSubscription = (props: Props) => {
                   Renewal Date: November 7, 2024
                 </p>
               </div>
-              <button>
+              <button onClick={() => handleNavigation("subscription")}>
                 <p className="underline text-[#007AFF] mr-4">Upgrade Plan</p>
               </button>
               <button

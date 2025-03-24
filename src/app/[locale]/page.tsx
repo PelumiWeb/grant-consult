@@ -13,12 +13,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useAppSelector } from "../../../lib/hooks";
 import RenderModals from "./components/RenderModals";
+import { redirect } from "next/navigation";
 
 type Props = {};
 type User = {};
 
 const Home = (props: Props) => {
   const modal = useAppSelector((state) => state.modal);
+  // redirect("/en");
 
   return (
     <div className="">

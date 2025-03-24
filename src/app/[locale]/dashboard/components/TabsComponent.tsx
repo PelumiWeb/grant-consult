@@ -5,7 +5,7 @@ import React from "react";
 import useHandleNavigation from "../../utils/HandleNavigation";
 import { setActiveTab } from "../../../../../lib/features/Tabs/tabsLice";
 import { useAppDispatch } from "../../../../../lib/hooks";
-import {  useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { logout } from "../../../../../lib/features/User/userSlice";
 
 type Props = {
@@ -40,8 +40,8 @@ const TabsComponent = ({
       onClick={() => {
         // setActive();
         if (Logout) {
-          dispatch(logout());
-          router.push(`/${locale}`);
+          // dispatch(logout());
+          handleNavigation("/auth/login");
         } else {
           handleNavigation(url);
         }

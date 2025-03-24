@@ -33,13 +33,11 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
   params: Promise<{ locale: string }>;
+  
 }) {
-  const resolvedParams = await params; // Resolve the promise
+  const resolvedParams:any = await params; // Resolve the promise
   const messages = await getMessages();
-  //  React.useEffect(() => {
-  //    document.documentElement.classList.remove("dark"); // Ensures dark mode is never applied
-  //  }, []);
-  // const messages = getMessagesSync();
+  
   return (
     <html lang={resolvedParams.locale}>
       <body
