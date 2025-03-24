@@ -40,7 +40,7 @@ const TabsComponent = ({
       onClick={() => {
         // setActive();
         if (Logout) {
-          // dispatch(logout());
+          dispatch(logout());
           handleNavigation("/auth/login");
         } else {
           handleNavigation(url);
