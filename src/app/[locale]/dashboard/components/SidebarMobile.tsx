@@ -31,13 +31,6 @@ const SidebarModal = (props: Props) => {
   const router = useRouter();
   const locale = useLocale();
   const dispatch = useAppDispatch();
-  React.useEffect(() => {
-    if (!user) {
-      // handleNavigation("/", redirect);
-      // redirect(`/${locale}`)
-      router.push(`/${locale}`);
-    }
-  }, [user]);
 
   const tabs: TabsProps | undefined = [
     {

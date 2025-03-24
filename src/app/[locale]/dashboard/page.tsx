@@ -14,7 +14,7 @@ import { useLocale } from "next-intl";
 export default function Home() {
   const locale = useLocale();
   const handleNavigation = useHandleNavigation();
-  const router = useRouter()
+  const router = useRouter();
   const { currentDashboardRoute } = useAppSelector((state) => state.dashboard);
   const user = useAppSelector((state) => state.user.user);
 
@@ -22,14 +22,8 @@ export default function Home() {
   // }, []);
 
   React.useEffect(() => {
-    if (!user) {
-      // redirect(`/${locale}`);
-      router.push(`/${locale}`);
-
-    } else {
-      handleNavigation(currentDashboardRoute);
-    }
-  }, [user]);
+    handleNavigation(currentDashboardRoute);
+  }, []);
 
   return (
     <div className="h-screen  w-full flex justify-center items-center">

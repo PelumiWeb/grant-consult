@@ -27,8 +27,6 @@ const Sidebar = (props: Props) => {
   const dashboardRoute = useAppSelector((state) => state.dashboard);
   const router = useRouter();
 
-  console.log(user);
-
   const locale = useLocale();
   const dispatch = useAppDispatch();
 
@@ -176,11 +174,6 @@ const Sidebar = (props: Props) => {
     }
   }, []);
 
-  React.useEffect(() => {
-    if (!user) {
-      router.push(`/${locale}`);
-    }
-  }, [user]);
 
   const [activeUrl, setActiveUrl] = React.useState(renderTabs[0].url);
 
