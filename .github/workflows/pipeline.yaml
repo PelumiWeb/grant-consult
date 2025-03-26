@@ -30,4 +30,4 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             echo "Restarting grants consult service on the server"
-            sudo systemctl restart grantsconsult.service
+            sudo systemctl restart grantsconsult-frontend.service
