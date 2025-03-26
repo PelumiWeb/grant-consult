@@ -37,7 +37,7 @@ const DashboardHeader = (props: Props) => {
 
         <div className="hidden  md:flex  w-[70%] items-center justify-between">
           {/* Input */}
-          <div className="flex items-center h-[40px] w-[234px]">
+          {/* <div className="flex items-center h-[40px] w-[234px]">
             <Input
               className="w-[80%] h-full rounded-r-[0px] "
               placeholder="Search Site Content"
@@ -45,7 +45,7 @@ const DashboardHeader = (props: Props) => {
             <div className="bg-primary w-[20%] h-full flex items-center justify-center rounded-r-[10px] ">
               <img src="/searchgrant.svg" className="w-[20px]" />
             </div>
-          </div>
+          </div> */}
 
           {/* Select Language */}
 
