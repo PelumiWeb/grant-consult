@@ -1,23 +1,28 @@
 name: Deploy to Droplet
 
+# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
       - main
 
+# Define the deployment job
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
+    # Step 1: Checkout the repository code
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
+        
+      # Step 2: Set up SSH agent for secure authentication
       - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      # Step 3: Deploy to the Droplet via SSH
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -27,7 +32,19 @@ jobs:
           script: |
             cd /root/grantsconsult-frontend/ 
             echo "Pulling the latest changes from GitHub"
+            
+            # Pull the latest changes from the main branch
             git fetch origin main
             git reset --hard origin/main
-            echo "Restarting grants consult service on the server"
-            sudo systemctl restart grantsconsult-frontend.service
+
+            # Stop and remove the existing PM2 process
+            echo "delete current PM2 process"
+            pm2 delete grantsconsult-frontend
+
+            # Start a new PM2 process for the frontend
+            echo "Starting new PM2 process for grantsconsult-backend"
+            PORT=3000 pm2 start yarn --name grantsconsult-frontend -- dev
+
+            # Persist the PM2 process list
+            echo "Saving PM2 process list"
+            pm2 save
