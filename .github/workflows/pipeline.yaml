@@ -38,9 +38,5 @@ jobs:
             git reset --hard origin/main
 
             # Start a new PM2 process for the frontend
-            echo "Reloading the PM2 process for grantsconsult-frontend"
+            echo "Reloading PM2 process for grantsconsult-frontend"
             pm2 restart grantsconsult-frontend
-
-            # Persist the PM2 process list
-            echo "Saving PM2 process list"
-            pm2 save
