@@ -37,6 +37,12 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
+            echo "Deleting old pm2 process"
+            pm2 delete grantsconsult-frontend
+
             # Start a new PM2 process for the frontend
-            echo "Reloading PM2 process for grantsconsult-frontend"
-            pm2 restart grantsconsult-frontend
+            echo "Starting a new PM2 process for grantsconsult-frontend"
+            PORT=3000 pm2 start yarn --name grantsconsult-frontend -- run start
+
+            echo "Saving the pm2 process"
+            pm2 save
