@@ -1,7 +1,11 @@
-import { redirect } from "next/navigation";
-import useHandleNavigation from "./[locale]/utils/HandleNavigation";
+import React from 'react'
 
-export default function RootPage() {
-  const handleNavigation = useHandleNavigation();
-  handleNavigation("/en");
+type Props = {}
+
+const page = (props: Props) => {
+  return (
+    <div>page</div>
+  )
 }
+
+export default page

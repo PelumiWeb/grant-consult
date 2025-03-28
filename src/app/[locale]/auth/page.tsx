@@ -2,8 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import GeneralSignup from "./components/generalUser";
-import Consultant from "./components/consultant";
-import Grantor from "./components/grantors";
 import { useRouter } from "next/navigation";
 import { userTypeName } from "../utils/types/userTypes";
 
