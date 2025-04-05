@@ -141,10 +141,10 @@ const GeneralDashboard = (props: Props) => {
       {/* Active Summary */}
 
       <div>
-        {/* <p className="font-semibold text-primary text-[16px] leading-[18.88px] py-4">
+        <p className="font-semibold text-primary text-[16px] leading-[18.88px] py-4">
           Activity Summary
-        </p> */}
-        {/* <div className="w-full h-full lg:h-[259px] shadow-active-summary flex justify-center  lg:justify-between items-center bg-white border-[0.5px] border-borderColor p-8 flex-wrap flex-col md:flex-row">
+        </p>
+        <div className="w-full h-full lg:h-[259px] shadow-active-summary flex justify-center  lg:justify-between items-center bg-white border-[0.5px] border-borderColor p-8 flex-wrap flex-col md:flex-row">
           <div className="relative border-[9.99px] border-transparent rounded-full bg-gradient-border  h-[180px] w-[180px] z-10 m-2 lg:m-0">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white h-[160px] rounded-full w-[160px] z-0 flex flex-col justify-between items-center py-6">
               <img src="/summary1.svg" alt="" />
@@ -219,7 +219,7 @@ const GeneralDashboard = (props: Props) => {
               </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="mt-8">
